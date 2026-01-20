@@ -1,0 +1,266 @@
+Project: Professional healthcare education platform landing page
+Brand: SmashMed
+Audience: Graduate-entry medicine aspirants (GAMSAT), Australia-focused
+Reference layout: Medify.co (match layout structure, spacing, hierarchy — not branding)
+
+Overall Design Direction
+
+Create a clean, minimal, premium SaaS landing page for a healthcare education platform.
+The platform must feel:
+
+Trustworthy
+
+Academically serious
+
+Calm and confident
+
+Professional (not playful, not flashy)
+
+Avoid loud colors, heavy gradients, or trendy animations.
+Use generous whitespace, strong typography hierarchy, and subtle visual details
+1️⃣ Header / Navbar (Exact Medify-style layout)
+
+Sticky top navigation
+
+White background
+
+Left: SmashMed logo (provided)
+
+Center / left navigation with dropdown menus (same interaction and visual style as Medify):
+
+Courses ▾
+
+GAMSAT
+
+Live Courses
+
+Pricing
+
+Resources ▾
+
+Company ▾
+
+About Us
+
+Right side:
+
+Region selector (AU)
+
+Primary CTA button: “Login”
+
+Design requirements:
+
+Clean, enterprise-grade spacing
+
+Subtle hover states and dropdown animations
+
+Dropdown panels should be minimal, well-spaced, and easy to scan
+
+Overall feel must be professional, healthcare-focused, and premium
+
+2️⃣ Hero Section (Above the fold)
+Background
+
+Solid warm ivory background: #FAF8F4
+
+Large-scale topographic / contour line pattern
+
+Color: Lavender #B4A7D6
+
+Opacity:
+
+Top: 2–3%
+
+Bottom: 6–8%
+
+Pattern must feel:
+
+Soft
+
+Organic
+
+Non-repeating
+
+Very subtle
+
+Must not interfere with text readability
+Hero Headline
+
+Text:
+
+Begin your journey into medicine
+
+Typography rules:
+
+Font: Source Sans 3
+
+Color: #674EA7
+
+Weight: 700–800
+
+Size: 56–64px
+
+Line height: tight but breathable
+
+Center-aligned (same as Medify)
+
+Hero Subtext
+
+Text:
+
+From mastering the GAMSAT to securing Graduate-Entry Medicine offers, SmashMed supports you through every stage of preparation.
+
+Typography rules:
+
+Font: IBM Plex Sans
+
+Color: #5C6770
+
+Weight: 400–500
+
+Max width: ~600px
+
+Slight margin-top from headline
+
+Calm, academic tone
+
+Hero CTAs
+
+Two buttons, Medify-style:
+
+Primary: “Explore GAMSAT courses”
+
+Secondary: “View expert guidance”
+
+Buttons must be:
+
+Rounded but not pill-shaped
+
+Subtle shadow
+
+Professional hover state
+
+No aggressive animations
+
+3️⃣ Full-Width Image Section (Scroll Down)
+
+Immediately after hero:
+
+Full-width image
+
+Edge-to-edge layout
+
+Use the provided image of medical students studying together
+
+Slight overlay if needed to soften contrast
+
+No text over the image
+
+Purpose: emotional grounding + credibility
+
+4️⃣ Authority Statement Section
+
+Centered text block (clean, spacious):
+
+Headline:
+
+SmashMed is the leading
+specialist GAMSAT preparation platform
+
+Font: Source Sans 3
+
+Weight: 700
+
+Color: #1F2937 or similar dark neutral
+
+Center aligned
+
+Sub-headline:
+
+Prepare with clarity. Perform with confidence.
+
+Font: IBM Plex Sans
+
+Weight: 400
+
+Color: muted neutral
+
+Slightly smaller than headline
+
+UI & UX Rules (Important)
+
+Desktop-first, fully responsive
+
+Use 8px spacing system
+
+Strong visual hierarchy
+
+No emojis
+
+No cartoon illustrations
+
+Icons only if subtle and medical-appropriate
+
+Transitions should be minimal and elegant
+
+Everything should feel production-ready
+
+Brand Consistency
+
+Respect SmashMed logo colors
+
+Do not introduce new bold brand colors
+
+Overall tone: calm, serious, aspirational
+
+Final Instruction to Level
+
+Match the layout, spacing, and structure of Medify’s landing page very closely, but keep all branding, content, and visuals unique to SmashMed. The result should look like a real, investor-ready healthcare education platform.
+i have attached the logo the image for hero 2 and the students images in this prompt
+Tech Stack (Use this explicitly)
+
+Framework: React.js 
+
+Language: TypeScript
+
+Styling: Tailwind CSS
+
+UI patterns: Modern SaaS / enterprise healthcare UI
+
+Icons: Lucide or Heroicons (outline style only)
+
+Fonts:
+
+Source Sans 3 (headings)
+
+IBM Plex Sans (body text)
+
+Responsive: Mobile-first, fully responsive
+
+Component & Code Quality Requirements
+
+Use semantic HTML
+
+Use accessible navigation
+
+Keyboard-navigable dropdowns
+
+Proper focus states
+
+Navbar and dropdowns should be component-based
+
+Avoid inline styles
+
+Use Tailwind utility classes with consistent spacing
+
+Sticky navbar should use position: sticky with proper z-index
+
+Clean, readable, production-ready code
+
+Performance & UX
+
+Optimize images using Next.js Image component
+
+No heavy animation libraries
+
+Use subtle transitions only (hover, dropdown open/close)
