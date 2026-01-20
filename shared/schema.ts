@@ -1,17 +1,14 @@
-import { pgTable, text, serial, boolean } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export * from "./models/auth";
-
-export const subscribers = pgTable("subscribers", {
-  id: serial("id").primaryKey(),
-  email: text("email").notNull().unique(),
+export const insertSubscriberSchema = z.object({
+  email: z.string().email(),
 });
 
-export const insertSubscriberSchema = createInsertSchema(subscribers).pick({
-  email: true,
+export const insertUserSchema = z.object({
+  username: z.string().min(3),
+  password: z.string().min(6),
 });
 
-export type Subscriber = typeof subscribers.$inferSelect;
 export type InsertSubscriber = z.infer<typeof insertSubscriberSchema>;
+export type InsertUser = z.infer<typeof insertUserSchema>;
+
