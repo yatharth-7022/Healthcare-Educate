@@ -6,20 +6,20 @@ import student1 from "@assets/student1_1768894056469.png";
 import student2 from "@assets/student2_1768894056469.png";
 import student3 from "@assets/student3_1768894056470.png";
 import logoImg from "@assets/logo_1768894056469.jpg";
-import heroImage from "/Users/yatharthagarwal/Healthcare-Educate/attached_assets/hero_image.png";
-import uni1 from "/Users/yatharthagarwal/Healthcare-Educate/attached_assets/uni1.png";
-import uni2 from "/Users/yatharthagarwal/Healthcare-Educate/attached_assets/uni2.png";
-import uni3 from "/Users/yatharthagarwal/Healthcare-Educate/attached_assets/uni3.png";
-import uni4 from "/Users/yatharthagarwal/Healthcare-Educate/attached_assets/uni4.png";
-import uni5 from "/Users/yatharthagarwal/Healthcare-Educate/attached_assets/uni5.png";
-import uni6 from "/Users/yatharthagarwal/Healthcare-Educate/attached_assets/uni6.png";
-import uni7 from "/Users/yatharthagarwal/Healthcare-Educate/attached_assets/uni7.png";
-import uni8 from "/Users/yatharthagarwal/Healthcare-Educate/attached_assets/uni8.png";
-import uni10 from "/Users/yatharthagarwal/Healthcare-Educate/attached_assets/uni10.png";
-import uni11 from "/Users/yatharthagarwal/Healthcare-Educate/attached_assets/uni11.png";
-import uni12 from "/Users/yatharthagarwal/Healthcare-Educate/attached_assets/uni12.png";
-import uni13 from "/Users/yatharthagarwal/Healthcare-Educate/attached_assets/uni13.png";
-import uni14 from "/Users/yatharthagarwal/Healthcare-Educate/attached_assets/uni14.png";
+import heroImage from "@assets/hero_image.png";
+import uni1 from "@assets/uni1.png";
+import uni2 from "@assets/uni2.png";
+import uni3 from "@assets/uni3.png";
+import uni4 from "@assets/uni4.png";
+import uni5 from "@assets/uni5.png";
+import uni6 from "@assets/uni6.png";
+import uni7 from "@assets/uni7.png";
+import uni8 from "@assets/uni8.png";
+import uni10 from "@assets/uni10.png";
+import uni11 from "@assets/uni11.png";
+import uni12 from "@assets/uni12.png";
+import uni13 from "@assets/uni13.png";
+import uni14 from "@assets/uni14.png";
 import {
   ArrowRight,
   CheckCircle2,
