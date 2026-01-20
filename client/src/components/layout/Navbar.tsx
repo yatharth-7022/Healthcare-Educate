@@ -1,56 +1,135 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { useAuth } from "@/hooks/use-auth";
 import logoImg from "@assets/logo_1768894056469.jpg";
 import { Button } from "@/components/ui/button";
-import { Menu, X, User, LogOut } from "lucide-react";
-import { useState } from "react";
+import { Menu, X, ChevronDown, LogOut, Globe } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const { user, isAuthenticated, logout } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [location] = useLocation();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const navLinks = [
-    { label: "Courses", href: "#courses" },
-    { label: "GAMSAT", href: "#gamsat" },
-    { label: "Live Courses", href: "#live" },
+    { 
+      label: "Courses", 
+      dropdown: [
+        { label: "GAMSAT", href: "#gamsat" },
+        { label: "Live Courses", href: "#live" }
+      ] 
+    },
     { label: "Pricing", href: "#pricing" },
-    { label: "Resources", href: "#resources" },
-    { label: "Company", href: "#company" },
+    { 
+      label: "Resources", 
+      dropdown: [
+        { label: "Blog", href: "#blog" },
+        { label: "Free Guide", href: "#guide" }
+      ] 
+    },
+    { 
+      label: "Company", 
+      dropdown: [
+        { label: "About Us", href: "#about" }
+      ] 
+    },
   ];
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActiveDropdown(null);
+    };
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, []);
+
   return (
-    <nav className="fixed top-0 w-full z-50 glass-nav transition-all duration-300">
+    <nav className="fixed top-0 w-full z-[100] bg-white border-b border-gray-100 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
-          {/* Logo */}
+          {/* Left: Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="cursor-pointer">
               <img 
                 src={logoImg} 
                 alt="SmashMed Logo" 
-                className="h-10 w-auto object-contain mix-blend-multiply" 
+                className="h-9 w-auto object-contain mix-blend-multiply" 
               />
             </Link>
           </div>
 
-          {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center space-x-8">
+          {/* Center: Desktop Nav */}
+          <div className="hidden lg:flex items-center space-x-1" ref={dropdownRef}>
             {navLinks.map((link) => (
-              <a 
+              <div 
                 key={link.label}
-                href={link.href}
-                className="text-[15px] font-medium text-gray-600 hover:text-primary transition-colors"
+                className="relative group px-3 py-2"
+                onMouseEnter={() => link.dropdown && setActiveDropdown(link.label)}
+                onMouseLeave={() => link.dropdown && setActiveDropdown(null)}
               >
-                {link.label}
-              </a>
+                {link.dropdown ? (
+                  <button
+                    className={cn(
+                      "flex items-center gap-1 text-[15px] font-medium text-gray-600 hover:text-primary transition-colors focus:outline-none",
+                      activeDropdown === link.label && "text-primary"
+                    )}
+                    aria-expanded={activeDropdown === link.label}
+                    aria-haspopup="true"
+                  >
+                    {link.label}
+                    <ChevronDown className={cn("w-4 h-4 transition-transform duration-200", activeDropdown === link.label && "rotate-180")} />
+                  </button>
+                ) : (
+                  <a 
+                    href={link.label.toLowerCase() === 'pricing' ? '#pricing' : '#'}
+                    className="text-[15px] font-medium text-gray-600 hover:text-primary transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                )}
+
+                {/* Dropdown Menu */}
+                <AnimatePresence>
+                  {link.dropdown && activeDropdown === link.label && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      className="absolute top-full left-0 w-48 bg-white border border-gray-100 shadow-xl rounded-xl mt-1 py-2 z-50"
+                    >
+                      {link.dropdown.map((subItem) => (
+                        <a
+                          key={subItem.label}
+                          href={subItem.href}
+                          className="block px-4 py-2.5 text-sm text-gray-600 hover:bg-primary/5 hover:text-primary transition-colors first:rounded-t-lg last:rounded-b-lg"
+                        >
+                          {subItem.label}
+                        </a>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             ))}
           </div>
 
           {/* Right Section */}
           <div className="hidden lg:flex items-center space-x-6">
-            <div className="flex items-center space-x-2 text-sm font-medium text-gray-500">
-              <span className="w-5 h-5 rounded-full bg-slate-200 flex items-center justify-center text-[10px]">🇦🇺</span>
+            <div className="flex items-center space-x-2 text-sm font-medium text-gray-500 cursor-default">
+              <Globe className="w-4 h-4 text-gray-400" />
               <span>AU</span>
             </div>
             
@@ -58,23 +137,34 @@ export function Navbar() {
 
             {isAuthenticated ? (
               <div className="flex items-center gap-4">
-                <span className="text-sm font-medium text-gray-700">Hi, {user?.firstName || 'User'}</span>
                 <Button 
                   onClick={() => logout()}
                   variant="ghost" 
                   size="sm"
-                  className="text-gray-600 hover:text-primary hover:bg-primary/5"
+                  className="text-gray-600 hover:text-primary hover:bg-primary/5 rounded-full"
                 >
                   <LogOut className="w-4 h-4 mr-2" />
                   Logout
                 </Button>
+                <Link href="/">
+                  <Button className="bg-primary hover:bg-primary/90 text-white px-6 rounded-full font-semibold">
+                    Open SmashMed
+                  </Button>
+                </Link>
               </div>
             ) : (
-              <a href="/api/login">
-                <Button className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20 px-6 rounded-full font-semibold">
-                  Login
-                </Button>
-              </a>
+              <div className="flex items-center gap-3">
+                <a href="/api/login">
+                  <Button variant="ghost" className="text-gray-600 hover:text-primary hover:bg-primary/5 rounded-full px-5">
+                    Login
+                  </Button>
+                </a>
+                <a href="/api/login">
+                  <Button className="bg-primary hover:bg-primary/90 text-white px-6 rounded-full font-semibold">
+                    Open SmashMed
+                  </Button>
+                </a>
+              </div>
             )}
           </div>
 
@@ -82,7 +172,8 @@ export function Navbar() {
           <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-500 hover:text-primary p-2"
+              className="text-gray-500 hover:text-primary p-2 transition-colors"
+              aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -94,31 +185,50 @@ export function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-gray-100 overflow-hidden"
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "tween", duration: 0.3 }}
+            className="fixed inset-0 top-20 bg-white z-[90] overflow-y-auto"
           >
-            <div className="px-4 pt-2 pb-6 space-y-2">
+            <div className="px-6 py-8 space-y-6">
               {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
+                <div key={link.label} className="space-y-4">
+                  <div className="text-lg font-bold text-gray-900">
+                    {link.label}
+                  </div>
+                  {link.dropdown ? (
+                    <div className="pl-4 space-y-3 border-l-2 border-gray-100">
+                      {link.dropdown.map((sub) => (
+                        <a
+                          key={sub.label}
+                          href={sub.href}
+                          className="block text-[15px] font-medium text-gray-600 hover:text-primary"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {sub.label}
+                        </a>
+                      ))}
+                    </div>
+                  ) : null}
+                </div>
               ))}
-              <div className="pt-4 mt-4 border-t border-gray-100">
+              
+              <div className="pt-8 border-t border-gray-100 space-y-4">
+                <a href="/api/login" className="block">
+                  <Button className="w-full h-12 bg-primary text-white rounded-full font-bold">
+                    Open SmashMed
+                  </Button>
+                </a>
                 {isAuthenticated ? (
-                  <Button onClick={() => logout()} variant="outline" className="w-full justify-start">
-                    <LogOut className="w-4 h-4 mr-2" />
+                  <Button onClick={() => logout()} variant="outline" className="w-full h-12 rounded-full border-2">
                     Logout
                   </Button>
                 ) : (
                   <a href="/api/login" className="block">
-                    <Button className="w-full bg-primary text-white">Login</Button>
+                    <Button variant="outline" className="w-full h-12 rounded-full border-2">
+                      Login
+                    </Button>
                   </a>
                 )}
               </div>

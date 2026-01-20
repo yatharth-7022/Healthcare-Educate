@@ -1,0 +1,151 @@
+Context:
+You have already generated the SmashMed landing page correctly (navbar, hero, image section, authority statement).
+Now add the missing sections below exactly as written.
+Do not remove, rewrite, paraphrase, or summarise any existing or new content.
+
+3️⃣ Student Reviews / Social Proof Section (MANDATORY)
+Purpose
+
+Establish credibility and trust using real student outcomes.
+This section must be visually rendered, not described.
+
+Layout
+
+Full-width section
+
+Light neutral background (white or very light ivory)
+
+Centered headline
+
+3 testimonial cards on desktop
+
+Carousel or stacked layout on mobile
+
+Clean, academic, enterprise-grade design
+
+Section Heading
+
+Trusted by future doctors across Australia
+
+Font: Source Sans 3
+
+Weight: 700
+
+Center aligned
+
+Professional spacing
+
+Render the following student reviews EXACTLY as written below
+
+⚠️ Do not paraphrase, shorten, or rewrite the text
+
+⭐⭐⭐⭐⭐ Review 1
+
+“SmashMed was my main method of preparation for the GAMSAT. The resources were structured, high-yield, and forced me to think the way the exam actually tests. It helped me reach a score I was genuinely proud of and confident applying with to multiple Graduate Entry Medicine programs.”
+
+— Daniel P.
+GAMSAT candidate
+
+⭐⭐⭐⭐⭐ Review 2
+
+“SmashMed didn’t just give me practice questions — it gave me a clear strategy. The explanations and tutor guidance helped me target my weaknesses efficiently, and ultimately secure multiple interview offers for Graduate Entry Medicine.”
+
+— Aisha M.
+Multiple interview offers
+
+⭐⭐⭐⭐⭐ Review 3
+
+“SmashMed played a major role in helping me perform in the top percentile of the GAMSAT. The depth of reasoning in the questions and feedback was unlike anything else I used, and it translated directly into exam-day confidence.”
+
+— Aditya M.
+Top-percentile GAMSAT score
+
+Review Card Design Rules
+
+Rounded corners
+
+Soft shadow
+
+Calm spacing
+
+Optional subtle star icon row (not bright or decorative)
+
+No gradients
+
+No emojis
+
+Typography must match existing site styles
+
+4️⃣ University Outcomes / Carousel Section (MANDATORY)
+Purpose
+
+Showcase institutional outcomes and reinforce trust.
+
+Layout
+
+Full-width horizontal logo carousel
+
+Equal spacing between logos
+
+Slow auto-scroll (optional)
+
+Pause on hover
+
+Fully responsive
+
+Section Heading
+
+Our students receive offers from leading medical schools
+
+Universities to include (logo placeholders allowed)
+
+University of Melbourne
+
+Monash University
+
+University of Sydney
+
+University of Queensland
+
+Australian National University
+
+Deakin University
+
+Flinders University
+
+Design Rules
+
+Logos should be monochrome or muted
+
+No oversized logos
+
+No visual clutter
+
+Professional, enterprise-grade appearance
+
+Technical & UX Constraints (Important)
+
+Maintain existing design system, spacing, and fonts
+
+Tech stack:
+
+Next.js (App Router)
+
+TypeScript
+
+Tailwind CSS
+
+Components must be reusable
+
+Lightweight carousel implementation
+
+Accessible (keyboard + ARIA where needed)
+
+Fully responsive
+
+FINAL INSTRUCTION (DO NOT IGNORE)
+
+These sections are mandatory and must be rendered visually in the page.
+Do not describe them.
+Do not skip them.
+Do not regenerate the entire page.

@@ -42,14 +42,14 @@ export default function Home() {
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center text-center lg:text-left">
             
             {/* Hero Text Content */}
             <motion.div 
               variants={staggerContainer}
               initial="initial"
               animate="animate"
-              className="max-w-2xl"
+              className="max-w-2xl mx-auto lg:mx-0"
             >
               <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-primary font-semibold text-sm mb-6">
                 <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
@@ -58,7 +58,7 @@ export default function Home() {
               
               <motion.h1 variants={fadeInUp} className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6 font-heading leading-[1.1]">
                 Begin your journey <br className="hidden lg:block"/>
-                into <span className="text-primary relative">
+                into <span className="text-primary relative inline-block">
                   medicine
                   <svg className="absolute w-full h-3 -bottom-1 left-0 text-secondary opacity-50 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
                     <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
@@ -66,22 +66,21 @@ export default function Home() {
                 </span>.
               </motion.h1>
               
-              <motion.p variants={fadeInUp} className="text-xl text-gray-600 mb-10 leading-relaxed max-w-lg">
-                SmashMed is the leading specialist GAMSAT preparation platform, designed by doctors to help you achieve your medical dreams.
+              <motion.p variants={fadeInUp} className="text-xl text-gray-600 mb-10 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                From mastering the GAMSAT to securing Graduate-Entry Medicine offers, SmashMed supports you through every stage of preparation.
               </motion.p>
               
-              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
-                <Button className="h-14 px-8 text-lg bg-primary hover:bg-primary/90 text-white rounded-full shadow-xl shadow-primary/25 transition-all hover:scale-105 active:scale-95 font-semibold">
-                  Explore Courses
+              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Button className="h-14 px-8 text-lg bg-primary hover:bg-primary/90 text-white rounded-xl shadow-xl shadow-primary/25 transition-all hover:scale-105 active:scale-95 font-semibold">
+                  Explore GAMSAT courses
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
-                <Button variant="outline" className="h-14 px-8 text-lg border-2 border-gray-200 hover:border-primary/50 hover:bg-primary/5 text-gray-700 hover:text-primary rounded-full font-semibold transition-all">
-                  <PlayCircle className="mr-2 w-5 h-5" />
-                  Watch Demo
+                <Button variant="outline" className="h-14 px-8 text-lg border-2 border-gray-200 hover:border-primary/50 hover:bg-primary/5 text-gray-700 hover:text-primary rounded-xl font-semibold transition-all">
+                  View expert guidance
                 </Button>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="mt-10 flex items-center gap-6 text-sm text-gray-500 font-medium">
+              <motion.div variants={fadeInUp} className="mt-10 flex items-center justify-center lg:justify-start gap-6 text-sm text-gray-500 font-medium">
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-5 h-5 text-primary" />
                   <span>Expert-verified Content</span>
@@ -139,12 +138,117 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Student Reviews Section */}
+      <section className="py-24 bg-[#FAF8F4]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-4">
+              Trusted by future doctors across Australia
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-body">
+              Prepare with clarity. Perform with confidence.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                text: "“SmashMed was my main method of preparation for the GAMSAT. The resources were structured, high-yield, and forced me to think the way the exam actually tests. It helped me reach a score I was genuinely proud of and confident applying with to multiple Graduate Entry Medicine programs.”",
+                author: "Daniel P.",
+                sub: "GAMSAT candidate"
+              },
+              {
+                text: "“SmashMed didn’t just give me practice questions — it gave me a clear strategy. The explanations and tutor guidance helped me target my weaknesses efficiently, and ultimately secure multiple interview offers for Graduate Entry Medicine.”",
+                author: "Aisha M.",
+                sub: "Multiple interview offers"
+              },
+              {
+                text: "“SmashMed played a major role in helping me perform in the top percentile of the GAMSAT. The depth of reasoning in the questions and feedback was unlike anything else I used, and it translated directly into exam-day confidence.”",
+                author: "Aditya M.",
+                sub: "Top-percentile GAMSAT score"
+              }
+            ].map((review, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full"
+              >
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                  ))}
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-8 italic flex-grow">
+                  {review.text}
+                </p>
+                <div className="pt-6 border-t border-gray-50">
+                  <p className="font-bold text-gray-900">{review.author}</p>
+                  <p className="text-sm text-gray-500 font-medium">{review.sub}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* University Outcomes Carousel */}
+      <section className="py-20 bg-white border-y border-gray-100 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 mb-12 text-center">
+          <h3 className="text-xl font-bold text-gray-400 font-heading uppercase tracking-widest">
+            Our students receive offers from leading medical schools
+          </h3>
+        </div>
+        
+        <div className="relative flex">
+          <motion.div 
+            className="flex gap-12 md:gap-24 items-center whitespace-nowrap px-12"
+            animate={{ x: [0, -1920] }}
+            transition={{ 
+              duration: 40, 
+              repeat: Infinity, 
+              ease: "linear" 
+            }}
+          >
+            {[
+              "University of Melbourne",
+              "Monash University",
+              "University of Sydney",
+              "University of Queensland",
+              "Australian National University",
+              "Deakin University",
+              "Flinders University"
+            ].map((uni, i) => (
+              <span key={i} className="text-2xl md:text-3xl font-bold text-gray-200 font-heading hover:text-gray-300 transition-colors cursor-default">
+                {uni}
+              </span>
+            ))}
+            {/* Duplicate for seamless loop */}
+            {[
+              "University of Melbourne",
+              "Monash University",
+              "University of Sydney",
+              "University of Queensland",
+              "Australian National University",
+              "Deakin University",
+              "Flinders University"
+            ].map((uni, i) => (
+              <span key={`dup-${i}`} className="text-2xl md:text-3xl font-bold text-gray-200 font-heading hover:text-gray-300 transition-colors cursor-default">
+                {uni}
+              </span>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* Authority Statement Banner */}
       <section className="bg-primary py-12 text-white overflow-hidden relative">
          <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
          <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
             <h2 className="text-2xl md:text-3xl font-heading font-semibold tracking-wide opacity-90">
-              "SmashMed is the leading specialist GAMSAT preparation platform."
+              SmashMed is the leading specialist GAMSAT preparation platform
             </h2>
          </div>
       </section>
