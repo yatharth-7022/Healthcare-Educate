@@ -435,49 +435,174 @@ export default function Home() {
       {/* Authority Statement Banner */}
 
       {/* Features Grid */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl font-bold font-heading text-gray-900 mb-4">
-              Everything you need to succeed
-            </h2>
-            <p className="text-lg text-gray-600">
-              Our comprehensive curriculum covers all three sections of the
-              GAMSAT with depth and precision.
-            </p>
-          </div>
+      <section className="py-32 bg-gradient-to-br from-gray-50 via-white to-primary/5 relative overflow-hidden">
+        {/* Animated background elements */}
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, 90, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute top-20 -right-20 w-96 h-96 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.3, 1],
+            rotate: [0, -90, 0],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-br from-secondary/10 to-primary/10 rounded-full blur-3xl"
+        />
 
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-4xl mx-auto mb-20"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-semibold text-sm mb-6"
+            >
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+              </span>
+              Complete GAMSAT Coverage
+            </motion.div>
+
+            <h2 className="text-5xl md:text-6xl font-bold font-heading text-gray-900 mb-6 leading-tight">
+              Everything you need to{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-600 to-secondary">
+                succeed
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Our comprehensive curriculum covers all three sections of the
+              GAMSAT with depth and precision, backed by expert tutors.
+            </p>
+          </motion.div>
+
+          {/* <div className="grid lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Section I Reasoning",
-                desc: "Master humanities and social sciences with our critical reasoning framework.",
+                title: "Section I",
+                subtitle: "Reasoning in Humanities",
+                desc: "Master critical thinking and textual analysis with our evidence-based reasoning framework. Build skills in logic, argumentation, and interpretation.",
                 icon: "📚",
+                color: "from-blue-500 to-cyan-500",
+                stats: "1,200+ Practice Questions",
+                features: [
+                  "Critical Reasoning",
+                  "Text Analysis",
+                  "Logic Puzzles",
+                ],
               },
               {
-                title: "Section II Writing",
-                desc: "Develop a sophisticated writing style with expert feedback on your essays.",
+                title: "Section II",
+                subtitle: "Written Communication",
+                desc: "Develop sophisticated academic writing with personalized essay feedback from medical school graduates. Learn structure, argumentation, and style.",
                 icon: "✍️",
+                color: "from-purple-500 to-pink-500",
+                stats: "Expert Essay Reviews",
+                features: [
+                  "Essay Structure",
+                  "Argumentative Writing",
+                  "Style Development",
+                ],
               },
               {
-                title: "Section III Science",
-                desc: "Deep dive into biology, chemistry and physics with university-level depth.",
+                title: "Section III",
+                subtitle: "Reasoning in Sciences",
+                desc: "Deep dive into biology, chemistry, and physics with university-level content. Master problem-solving and scientific reasoning.",
                 icon: "🔬",
+                color: "from-emerald-500 to-teal-500",
+                stats: "2,500+ Science Questions",
+                features: ["Biology", "Chemistry", "Physics"],
               },
             ].map((feature, idx) => (
-              <motion.div
-                key={idx}
-                whileHover={{ y: -5 }}
-                className="p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
-              >
-                <div className="text-4xl mb-6">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
-              </motion.div>
+              <div key={idx} className="group relative">
+                <div className="absolute -inset-0.5 bg-gradient-to-r opacity-0 group-hover:opacity-100 rounded-3xl blur transition duration-500 group-hover:duration-200 from-primary via-purple-500 to-secondary" />
+
+                <div className="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 h-full flex flex-col">
+                  <div className="relative mb-6">
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-10 rounded-2xl blur-xl group-hover:opacity-20 transition-opacity`}
+                    />
+                    <div
+                      className={`relative w-20 h-20 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center text-4xl shadow-lg group-hover:shadow-xl transition-shadow`}
+                    >
+                      {feature.icon}
+                    </div>
+                  </div>
+
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm font-semibold text-primary mb-4">
+                      {feature.subtitle}
+                    </p>
+                    <p className="text-gray-600 leading-relaxed mb-6">
+                      {feature.desc}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {feature.features.map((item, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1 bg-gray-50 text-gray-600 text-xs font-medium rounded-full border border-gray-200 group-hover:border-primary/30 group-hover:bg-primary/5 transition-colors"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2 pt-6 border-t border-gray-100 group-hover:border-primary/20 transition-colors">
+                    <CheckCircle2 className="w-5 h-5 text-primary" />
+                    <span className="text-sm font-semibold text-gray-700">
+                      {feature.stats}
+                    </span>
+                  </div>
+
+                  <div className="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <ArrowRight className="w-6 h-6 text-primary" />
+                  </div>
+                </div>
+              </div>
             ))}
-          </div>
+          </div> */}
+
+          {/* Bottom CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-center mt-16"
+          >
+            <Button className="h-14 px-8 text-lg bg-primary hover:bg-primary/90 text-white rounded-xl shadow-xl shadow-primary/25 transition-all hover:scale-105 active:scale-95 font-semibold">
+              Explore All Courses
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <p className="text-sm text-gray-500 mt-4">
+              Join 220,000+ students preparing with SmashMed
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -550,18 +675,16 @@ export default function Home() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary">
+                  <a
+                    href="https://www.youtube.com/@Smashmed"
+                    className="hover:text-primary"
+                  >
                     Free Guide
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-primary">
                     Webinars
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary">
-                    Success Stories
                   </a>
                 </li>
               </ul>
@@ -574,21 +697,21 @@ export default function Home() {
                     About Us
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="#" className="hover:text-primary">
                     Careers
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a href="#" className="hover:text-primary">
                     Contact
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="#" className="hover:text-primary">
                     Privacy Policy
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
