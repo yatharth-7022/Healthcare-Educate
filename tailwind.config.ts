@@ -84,6 +84,8 @@ export default {
       },
       fontFamily: {
         sans: ["var(--font-sans)"],
+        heading: ["Source Sans 3", "sans-serif"],
+        body: ["IBM Plex Sans", "sans-serif"],
         serif: ["var(--font-serif)"],
         mono: ["var(--font-mono)"],
       },
