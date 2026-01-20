@@ -15,32 +15,33 @@ export function Navbar() {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const navLinks = [
-    { 
-      label: "Courses", 
+    {
+      label: "Courses",
       dropdown: [
         { label: "GAMSAT", href: "#gamsat" },
-        { label: "Live Courses", href: "#live" }
-      ] 
+        { label: "Live Courses", href: "#live" },
+      ],
     },
     { label: "Pricing", href: "#pricing" },
-    { 
-      label: "Resources", 
+    {
+      label: "Resources",
       dropdown: [
         { label: "Blog", href: "#blog" },
-        { label: "Free Guide", href: "#guide" }
-      ] 
+        { label: "Free Guide", href: "#guide" },
+      ],
     },
-    { 
-      label: "Company", 
-      dropdown: [
-        { label: "About Us", href: "#about" }
-      ] 
+    {
+      label: "Company",
+      dropdown: [{ label: "About Us", href: "#about" }],
     },
   ];
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setActiveDropdown(null);
       }
     };
@@ -63,38 +64,50 @@ export function Navbar() {
           {/* Left: Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="cursor-pointer">
-              <img 
-                src={logoImg} 
-                alt="SmashMed Logo" 
-                className="h-9 w-auto object-contain mix-blend-multiply" 
+              <img
+                src={logoImg}
+                alt="SmashMed Logo"
+                className="h-9 w-auto object-contain mix-blend-multiply"
               />
             </Link>
           </div>
 
           {/* Center: Desktop Nav */}
-          <div className="hidden lg:flex items-center space-x-1" ref={dropdownRef}>
+          <div
+            className="hidden lg:flex items-center space-x-1"
+            ref={dropdownRef}
+          >
             {navLinks.map((link) => (
-              <div 
+              <div
                 key={link.label}
                 className="relative group px-3 py-2"
-                onMouseEnter={() => link.dropdown && setActiveDropdown(link.label)}
+                onMouseEnter={() =>
+                  link.dropdown && setActiveDropdown(link.label)
+                }
                 onMouseLeave={() => link.dropdown && setActiveDropdown(null)}
               >
                 {link.dropdown ? (
                   <button
                     className={cn(
                       "flex items-center gap-1 text-[15px] font-medium text-gray-600 hover:text-primary transition-colors focus:outline-none",
-                      activeDropdown === link.label && "text-primary"
+                      activeDropdown === link.label && "text-primary",
                     )}
                     aria-expanded={activeDropdown === link.label}
                     aria-haspopup="true"
                   >
                     {link.label}
-                    <ChevronDown className={cn("w-4 h-4 transition-transform duration-200", activeDropdown === link.label && "rotate-180")} />
+                    <ChevronDown
+                      className={cn(
+                        "w-4 h-4 transition-transform duration-200",
+                        activeDropdown === link.label && "rotate-180",
+                      )}
+                    />
                   </button>
                 ) : (
-                  <a 
-                    href={link.label.toLowerCase() === 'pricing' ? '#pricing' : '#'}
+                  <a
+                    href={
+                      link.label.toLowerCase() === "pricing" ? "#pricing" : "#"
+                    }
                     className="text-[15px] font-medium text-gray-600 hover:text-primary transition-colors"
                   >
                     {link.label}
@@ -132,14 +145,14 @@ export function Navbar() {
               <Globe className="w-4 h-4 text-gray-400" />
               <span>AU</span>
             </div>
-            
+
             <div className="h-6 w-px bg-gray-200" />
 
             {isAuthenticated ? (
               <div className="flex items-center gap-4">
-                <Button 
+                <Button
                   onClick={() => logout()}
-                  variant="ghost" 
+                  variant="ghost"
                   size="sm"
                   className="text-gray-600 hover:text-primary hover:bg-primary/5 rounded-full"
                 >
@@ -155,7 +168,10 @@ export function Navbar() {
             ) : (
               <div className="flex items-center gap-3">
                 <a href="/api/login">
-                  <Button variant="ghost" className="text-gray-600 hover:text-primary hover:bg-primary/5 rounded-full px-5">
+                  <Button
+                    variant="ghost"
+                    className="text-gray-600 hover:text-primary hover:bg-primary/5 rounded-full px-5"
+                  >
                     Login
                   </Button>
                 </a>
@@ -175,7 +191,11 @@ export function Navbar() {
               className="text-gray-500 hover:text-primary p-2 transition-colors"
               aria-label="Toggle mobile menu"
             >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
@@ -213,7 +233,7 @@ export function Navbar() {
                   ) : null}
                 </div>
               ))}
-              
+
               <div className="pt-8 border-t border-gray-100 space-y-4">
                 <a href="/api/login" className="block">
                   <Button className="w-full h-12 bg-primary text-white rounded-full font-bold">
@@ -221,12 +241,19 @@ export function Navbar() {
                   </Button>
                 </a>
                 {isAuthenticated ? (
-                  <Button onClick={() => logout()} variant="outline" className="w-full h-12 rounded-full border-2">
+                  <Button
+                    onClick={() => logout()}
+                    variant="outline"
+                    className="w-full h-12 rounded-full border-2"
+                  >
                     Logout
                   </Button>
                 ) : (
                   <a href="/api/login" className="block">
-                    <Button variant="outline" className="w-full h-12 rounded-full border-2">
+                    <Button
+                      variant="outline"
+                      className="w-full h-12 rounded-full border-2"
+                    >
                       Login
                     </Button>
                   </a>
