@@ -1,7 +1,8 @@
 {
   "buildCommand": "npx vite build",
   "outputDirectory": "dist/public",
-  "installCommand": "npm install",
+  "installCommand": "npm install --legacy-peer-deps",
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD ./client ./shared",
   "rewrites": [
     {
       "source": "/(.*)",
