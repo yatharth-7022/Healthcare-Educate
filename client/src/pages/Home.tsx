@@ -164,7 +164,7 @@ export default function Home() {
           {/* Heading */}
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-gray-900 mb-4 leading-tight">
-              SmashMed is the leading specialist GAMSAT preparation platform
+              SmashMed — Specialist GAMSAT Preparation
             </h2>
             <p className="text-3xl md:text-4xl lg:text-5xl font-heading text-gray-400">
               Prepare with clarity. Perform with confidence.
