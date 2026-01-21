@@ -5,7 +5,7 @@ import heroTexture from "@assets/image_1768894056469.png";
 import student1 from "@assets/student1_1768894056469.png";
 import student2 from "@assets/student2_1768894056469.png";
 import student3 from "@assets/student3_1768894056470.png";
-import logoImg from "@assets/logo_1768894056469.jpg";
+import logoImg from "@assets/final_logo.png";
 import heroImage from "@assets/hero_image.png";
 import uni1 from "@assets/uni1.png";
 import uni2 from "@assets/uni2.png";
@@ -263,40 +263,42 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold font-heading text-gray-900 mb-4">
-              Trusted by over 220,000 students since 2009
+              Trusted by over 1,500 students since 2022
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto font-body">
-              Including the highest UCAT scorer ever who achieved 3590/3600.
+              Including multiple top-1% GAMSAT scorers and successful medical
+              school applicants.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                text: '"Medify was my ',
-                highlight: "main method of preparation for the UCAT",
+                text: '"SmashMed was my ',
+                highlight: "main method of preparation for the GAMSAT.",
                 text2:
-                  ', helping me to achieve a score high enough to apply to, and secure interviews at, all my desired medical schools."',
-                author: "Simon P.",
-                sub: "Scored 3300 in UCAT",
+                  ' The resources were structured, high-yield, and forced me to think the way the exam actually tests. It helped me reach a score I was genuinely proud of and confident applying with."',
+                author: "Daniel P.",
+                sub: "Graduate Entry Medicine Applicant",
                 image: student1,
               },
               {
-                text: '"Medify provided not only an easily accessible and cheap programme... allowing me to ',
-                highlight:
-                  "secure two offers from two Russell Group Universities",
-                text2: '."',
-                author: "Aiat M.",
-                sub: "2 offers",
+                text: "\"SmashMed didn't just give me practice questions — ",
+                highlight: "it gave me a clear strategy.",
+                text2:
+                  ' The explanations and tutor guidance helped me target my weaknesses efficiently, and ultimately secure multiple interview offers."',
+                author: "Aisha M.",
+                sub: "Multiple Interview Offers",
                 image: student2,
               },
               {
-                text: '"Medify helped me score in the ',
-                highlight: "top 1% in GAMSAT",
+                text: '"SmashMed played a major role in ',
+                highlight:
+                  "helping me perform in the top percentile of the GAMSAT.",
                 text2:
-                  ', and ultimately secure places on several Graduate Entry Medicine courses."',
-                author: "Jonny W.",
-                sub: "Scored top 1% in GAMSAT",
+                  ' The depth of reasoning in the questions and feedback was unlike anything else I used, and it translated directly into exam-day confidence."',
+                author: "Aditya M.",
+                sub: "Top Percentile GAMSAT Score",
                 image: student3,
               },
             ].map((review, idx) => (
@@ -634,7 +636,7 @@ export default function Home() {
               <img
                 src={logoImg}
                 alt="SmashMed"
-                className="h-8 w-auto mb-6 opacity-80 mix-blend-multiply"
+                className="h-16 w-auto mb-6 opacity-80 mix-blend-multiply"
               />
               <p className="text-gray-500 max-w-xs leading-relaxed">
                 Empowering the next generation of medical professionals with

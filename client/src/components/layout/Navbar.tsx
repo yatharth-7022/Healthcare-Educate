@@ -1,6 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { useAuth } from "@/hooks/use-auth";
-import logoImg from "@assets/logo-removebg-preview.png";
+import logoImg from "@assets/final_logo.png";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, LogOut, Globe } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
@@ -67,7 +67,7 @@ export function Navbar() {
               <img
                 src={logoImg}
                 alt="SmashMed Logo"
-                className="h-16 w-auto object-contain mix-blend-multiply"
+                className="h-24 w-auto mt-2 object-contain mix-blend-multiply"
               />
             </Link>
           </div>
