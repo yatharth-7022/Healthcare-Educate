@@ -602,7 +602,7 @@ export default function Home() {
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <p className="text-sm text-gray-500 mt-4">
-              Join 220,000+ students preparing with SmashMed
+              Join 1,500+ students preparing with SmashMed
             </p>
           </motion.div>
         </div>
