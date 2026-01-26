@@ -1,0 +1,158 @@
+You have already generated the SmashMed landing page using Next.js, TypeScript, and Tailwind CSS.
+Now add a dedicated authentication page that matches the same design system, typography, and professionalism.
+
+Do not redesign the brand.
+Do not change existing components.
+
+1️⃣ Page Purpose & Tone
+
+Create a professional, calm, healthcare-grade authentication page for a medical education platform.
+
+The page must feel:
+
+Trustworthy
+
+Minimal
+
+Academic
+
+Premium (not startup-flashy)
+
+This is a serious platform for future doctors.
+
+2️⃣ Page Layout (MANDATORY)
+Structure
+
+Full viewport height
+
+Two-column layout on desktop
+
+Single-column on mobile
+
+Left Column (Visual / Branding)
+
+Background color: warm ivory #FAF8F4
+
+Subtle topographic / contour line pattern
+
+Lavender #B4A7D6
+
+Very low opacity (2–4%)
+
+SmashMed logo at top
+
+Short brand statement centered vertically:
+
+Prepare with clarity. Perform with confidence.
+
+Typography consistent with landing page
+
+Right Column (Auth Form)
+
+White background
+
+Centered card/container
+
+Soft shadow
+
+Rounded corners
+
+Max width ~420–460px
+
+3️⃣ Authentication Modes (DO NOT SKIP)
+Tabs at Top of Card
+
+Login
+
+Create account
+
+Tabs must be:
+
+Clearly visible
+
+Keyboard accessible
+
+Smooth underline or highlight transition
+
+No page reload when switching (client-side state)
+
+4️⃣ Login Form (MANDATORY)
+Fields
+
+Email address
+
+Password
+
+Actions
+
+Primary button: Log in
+
+Secondary text link: Forgot password?
+
+5️⃣ Register Form (MANDATORY)
+Fields
+
+Full name
+
+Email address
+
+Password
+
+Confirm password
+
+Actions
+
+Primary button: Create account
+
+6️⃣ Form Design Rules
+
+Use labels (not placeholders only)
+
+Clear error states (red but subtle)
+
+Accessible focus states
+
+No unnecessary fields
+
+Calm spacing (not cramped)
+
+7️⃣ Typography & Colors (MATCH LANDING PAGE)
+
+Headings: Source Sans 3
+
+Body & labels: IBM Plex Sans
+
+Primary accent: #674EA7
+
+Text secondary: #5C6770
+
+8️⃣ Tech Stack (USE EXACTLY)
+
+Next.js (App Router)
+
+TypeScript
+
+Tailwind CSS
+
+Controlled form components
+
+No external UI libraries
+
+No inline styles
+
+9️⃣ UX & Accessibility (IMPORTANT)
+
+Keyboard navigable
+
+Proper form semantics
+
+Accessible error messages
+
+Responsive on all screen sizes
+
+🔚 Final Instruction (CRITICAL)
+
+This page must be fully rendered visually, not described.
+Include both Login and Register states.
+Match SmashMed’s existing design system exactly.
+Output production-ready code.

@@ -154,16 +154,16 @@ export function Navbar() {
               </div>
             ) : (
               <div className="flex items-center gap-3">
-                <a href="/api/login">
+                <Link href="/auth">
                   <Button variant="ghost" className="text-gray-600 hover:text-primary hover:bg-primary/5 rounded-full px-5">
                     Login
                   </Button>
-                </a>
-                <a href="/api/login">
+                </Link>
+                <Link href="/auth">
                   <Button className="bg-primary hover:bg-primary/90 text-white px-6 rounded-full font-semibold">
                     Open SmashMed
                   </Button>
-                </a>
+                </Link>
               </div>
             )}
           </div>
