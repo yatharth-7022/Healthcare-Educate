@@ -237,11 +237,11 @@ export function Navbar() {
               ))}
 
               <div className="pt-8 border-t border-gray-100 space-y-4">
-                <a href="/api/login" className="block">
+                <Link href="/auth" className="block">
                   <Button className="w-full h-12 bg-primary text-white rounded-full font-bold">
                     Open SmashMed
                   </Button>
-                </a>
+                </Link>
                 {isAuthenticated ? (
                   <Button
                     onClick={() => logout()}
@@ -251,14 +251,14 @@ export function Navbar() {
                     Logout
                   </Button>
                 ) : (
-                  <a href="/api/login" className="block">
+                  <Link href="/auth" className="block">
                     <Button
                       variant="outline"
                       className="w-full h-12 rounded-full border-2"
                     >
                       Login
                     </Button>
-                  </a>
+                  </Link>
                 )}
               </div>
             </div>

@@ -45,7 +45,7 @@ export function setupAuth(app: Express) {
         if (!user) {
           return done(null, false, { message: "Incorrect username." });
         }
-        
+
         const isValid = await comparePassword(password, user.password);
         if (!isValid) {
           return done(null, false, { message: "Incorrect password." });
@@ -72,9 +72,11 @@ export function setupAuth(app: Express) {
 
   app.post("/api/register", async (req, res, next) => {
     try {
-      const { username, password } = req.body;
-      
-      const existingUser = await prisma.user.findUnique({ where: { username } });
+      const { username, password, email } = req.body;
+
+      const existingUser = await prisma.user.findUnique({
+        where: { username },
+      });
       if (existingUser) {
         return res.status(400).send("Username already exists");
       }
@@ -83,6 +85,7 @@ export function setupAuth(app: Express) {
       const user = await prisma.user.create({
         data: {
           username,
+          email: email || `${username}@temp.com`, // Fallback for backward compatibility
           password: hashedPassword,
         },
       });
