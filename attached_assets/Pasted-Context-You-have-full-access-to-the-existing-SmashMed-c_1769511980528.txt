@@ -1,0 +1,164 @@
+Context:
+You have full access to the existing SmashMed codebase, components, styles, and design system.
+Now create an About Us page that matches the current project visually, structurally, and technically.
+
+Do not introduce a new theme.
+Do not redesign existing patterns.
+Reuse spacing, typography, colors, and layout logic already present in the app.
+
+Page Purpose
+
+Create a professional, credible, and personable About Us page for a GAMSAT tutoring platform.
+
+This page should:
+
+Explain why SmashMed exists
+
+Clearly articulate what makes SmashMed different
+
+Build trust and authority
+
+Feel human, academic, and confident (not salesy)
+
+This should look like what a serious education company’s About page looks like.
+
+Content to Display (Render as Real Sections)
+Core Statement
+
+Display the following message prominently:
+
+Getting you into med.
+
+Followed by:
+
+How? By offering the highest quality tutoring AND resources.
+
+The Problem With Existing Tutoring Models
+
+Explain clearly that there are two common tutoring approaches:
+
+Companies with a large number of resources, but:
+
+Low quality
+
+Little to no individualized support
+
+Individual tutors with:
+
+High levels of personal support
+
+Poor quantity and scalability of resources
+
+SmashMed’s Solution
+
+Render this explanation clearly and confidently:
+
+SmashMed bridges this gap.
+We are the first tutoring company for GAMSAT to offer highly individualised tutoring in small groups, while also providing the highest quality resources available — including 80+ sample essays for Section 2, Section 3 concepts that actually come up, and Section 1 strategies to tackle even the most obscure passages.
+
+“About Me” Section
+About Me :)
+
+Include a creator image (asset provided)
+
+Present this section as:
+
+Personal
+
+Credible
+
+Approachable
+
+Should feel like a founder introduction, not a résumé dump
+
+Teaching Philosophy Sections (Image + Text Pairs)
+
+Using the provided images, create multiple image + explanatory text sections that explain SmashMed’s teaching approach.
+
+Section 1 (S1 – Reasoning)
+
+Display the following text:
+
+Learn the key strategies needed to tackle each and every different text format GAMSAT presents. You’ll learn the unique strategies required to handle the nuances baked into Section 1 questions — turning a confusing section into something logical, structured, and easy to follow.
+
+Section 2 (S2 – Writing)
+
+Display this text:
+
+Learn EXACTLY what you need to write to score an 80+. You’ll receive my own 80+ scoring sample essays and refined contentions so that you can consistently stand out from the rest of the cohort.
+
+Credibility Highlights
+
+Include the following achievements clearly:
+
+University of Melbourne CSP unbonded entry — one of the most competitive medical programs in Australia
+
+100+ students tutored
+
+1000+ hours of tutoring experience
+
+Section 3 (S3 – Science)
+
+Display this text:
+
+Learn ONLY relevant theory and gain exclusive access to handcrafted practice questions that accurately predicted elements of real GAMSAT questions in 2023 and 2024.
+
+Social Proof Section
+Heading
+
+See what past students have to say!
+
+Display a reviews/testimonials image (provided)
+
+This section should visually reinforce trust and outcomes
+
+Keep the tone calm and academic
+
+Contact & Community Section
+Closing CTA
+
+Display a friendly but professional invitation:
+
+Interested in joining? Or have some more questions?
+
+Contact Details
+
+Render the following clearly:
+
+Email: smashmedproductions@gmail.com
+
+Facebook: GAMSAT AUS STUDY GROUP | Melbourne VIC
+
+Include brief supporting copy such as:
+
+Response times
+
+Community support
+
+Open communication
+
+You may add light supportive content here (FAQ-style reassurance, community emphasis, or next steps), but do not overdo it.
+
+Design & Technical Constraints (IMPORTANT)
+
+Match existing SmashMed styles exactly
+
+Reuse existing components where possible
+
+Keep layout clean and readable
+
+Avoid decorative gimmicks
+
+No new color palette
+
+No new font system
+
+Fully responsive
+
+Production-ready code
+
+Final Instruction
+
+This About Us page must look and feel like a natural extension of the existing SmashMed platform.
+Render all sections visually.
+Do not summarise or describe — implement the page.

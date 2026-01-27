@@ -32,7 +32,7 @@ export function Navbar() {
     },
     {
       label: "Company",
-      dropdown: [{ label: "About Us", href: "#about" }],
+      dropdown: [{ label: "About Us", href: "/about" }],
     },
   ];
 
