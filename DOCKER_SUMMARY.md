@@ -77,7 +77,7 @@ npm run db:studio          # Open Prisma Studio
 # Full Docker
 npm run docker:full        # Start everything in Docker
 npm run docker:full:stop   # Stop everything
-npm run docker:clean       # Clean up (deletes data)
+npm run docker:clean       # Clean up (deletes data).
 
 # Setup
 npm run setup              # Complete setup script
