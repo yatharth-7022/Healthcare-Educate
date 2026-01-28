@@ -1,0 +1,285 @@
+Context:
+You are working inside the existing SmashMed project.
+You have full access to the current codebase, components, styles, animations, and layout system.
+
+Create a Live Courses page that visually and technically matches the rest of the SmashMed platform.
+Do not introduce a new theme.
+Reuse existing patterns, spacing, typography, and animations.
+
+Page Purpose
+
+Create a clean, professional, and content-rich Live Courses page that explains SmashMed’s three live course offerings clearly on a single page.
+
+This page should feel:
+
+Structured
+
+Academic
+
+Premium
+
+Confident
+
+Easy to navigate despite heavy content
+
+Page Structure (IMPORTANT)
+
+Display all three live course sections on one page
+
+Use a modern UI pattern such as:
+
+Tabs
+
+Segmented navigation
+
+Accordion-style sections
+
+Or another clean, professional interaction
+
+The navigation between sections must be clear and intuitive
+
+Smooth transitions / subtle animations (matching existing pages)
+
+Section 1 — Live Section 1 Classes (S1)
+Section Title
+
+Section 1 Live Classes
+
+Subheading
+
+What’s on Offer?
+
+Content to Display (Render Visually)
+
+Weekly 1-hour LIVE small group classes covering everything required to ace Section 1
+
+Covers a wide range of text types:
+
+Academic articles
+
+Social science texts
+
+Antiquated writings
+
+Cartoons
+
+Schematics
+
+Fiction
+
+Poetry
+
+Step-by-step approach to answer any S1 question
+
+Weekly handcrafted questions with fully worked solutions
+
+Weekly homework with fully worked solutions
+
+Line-by-line analysis of complex and obscure texts
+
+Focus on using the text correctly to reach answers with 100% accuracy
+
+Class Details
+
+Every Monday
+
+7:30 – 8:30 pm (Melbourne time)
+
+Supporting Visuals
+
+Use the provided images to demonstrate:
+
+Text analysis
+
+Annotated passages
+
+Question walkthroughs
+
+CTA
+
+Include a professional call-to-action section:
+
+Interested in joining? Or have some more questions?
+
+Contact:
+
+Email: smashmedproductions@gmail.com
+
+Facebook: GAMSAT AUS STUDY GROUP
+
+Section 2 — Live Section 2 Classes (S2)
+Section Title
+
+Section 2 Live Classes
+
+Subheading
+
+What’s on Offer?
+
+Content to Display
+
+Weekly 1-hour LIVE small group classes
+
+Focus on:
+
+Sample essays
+
+Nuanced contentions
+
+Writing strategies to score 80+
+
+BONUS 1-hour LIVE workshop:
+
+1-on-1 personalised essay feedback
+
+Access to 80+ scoring sample essays
+
+Live planning walkthroughs to answer ANY topic
+
+Unlimited detailed essay feedback outside class at no extra cost
+
+Provision of:
+
+Content examples
+
+Key analytical points
+
+Research summaries
+
+Saves students time researching articles, podcasts, and journals
+
+Supporting Visuals
+
+Use provided images (including war imagery) to support:
+
+Argument development
+
+Thematic depth
+
+Real-world relevance
+
+CTA
+
+Repeat clear enrollment contact:
+
+Email: smashmedproductions@gmail.com
+
+Facebook: GAMSAT AUS STUDY GROUP
+
+Section 3 — Live Section 3 Classes (S3)
+Section Title
+
+Section 3 Live Classes
+
+Subheading
+
+What’s on Offer?
+
+Content to Display
+
+Weekly 2-hour LIVE small group classes
+
+Covers:
+
+Relevant theory
+
+Strong emphasis on APPLYING concepts
+
+Live walkthroughs of difficult ACER-style S3 questions
+
+Weekly practice questions:
+
+High quality
+
+Some predicting EXACT concepts assessed by ACER
+
+Weekly progress tests:
+
+Track performance
+
+Receive regular feedback
+
+BONUS 1-hour LIVE workshop:
+
+Bring any S3 question
+
+Live one-on-one support
+
+High-impact weekly classes with workbooks covering:
+
+Basics
+
+Advanced topics
+
+Separator lessons
+
+Ongoing support outside of class
+
+Social Proof
+
+Include a section:
+
+See what past students have to say!
+
+Reuse existing testimonial styles/components
+
+CTA
+
+Interested in joining? Or have some more questions?
+
+Email: smashmedproductions@gmail.com
+
+Facebook: GAMSAT AUS STUDY GROUP
+
+Extra Content (IMPORTANT — ADD YOURSELF)
+
+To ensure the page feels full and premium, add:
+
+Brief comparison summaries between S1 / S2 / S3
+
+Small highlight cards (e.g. “Small group learning”, “Live feedback”, “ACER-aligned”)
+
+A short FAQ-style section (2–3 questions)
+
+Subtle dividers and spacing to improve readability
+
+Do not add fluff — keep everything academically relevant.
+
+Design & UX Constraints
+
+Match existing SmashMed theme exactly
+
+Reuse animations already present in the project
+
+Clean spacing and hierarchy
+
+No bright colors or playful elements
+
+No heavy animation libraries
+
+Smooth section transitions only
+
+Fully responsive
+
+Production-ready UI
+
+Technical Constraints
+
+Next.js (App Router)
+
+TypeScript
+
+Tailwind CSS
+
+Component-based structure
+
+Reusable sections
+
+Accessible interactions
+
+Final Instruction (CRITICAL)
+
+Render this as a fully implemented Live Courses page, not a description.
+All three sections must exist on one page.
+Use a modern, professional UI pattern to organise them.
+Add supportive content where appropriate to make the page feel complete.

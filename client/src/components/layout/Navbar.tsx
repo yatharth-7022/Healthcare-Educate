@@ -18,8 +18,8 @@ export function Navbar() {
     {
       label: "Courses",
       dropdown: [
+        { label: "Live Courses", href: "/courses" },
         { label: "GAMSAT", href: "#gamsat" },
-        { label: "Live Courses", href: "#live" },
       ],
     },
     { label: "Pricing", href: "#pricing" },
