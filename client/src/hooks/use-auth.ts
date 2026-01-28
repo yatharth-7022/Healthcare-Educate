@@ -11,7 +11,7 @@ import {
 } from "@/lib/api";
 import { useState, useEffect } from "react";
 
-// Store access token in memory (not localStorage for security)
+// Store access token in memory (not localStorage for security purposes)
 let accessToken: string | null = null;
 
 export function setAccessToken(token: string | null) {
