@@ -9,6 +9,7 @@ import AuthPage from "@/pages/AuthPage";
 import Dashboard from "@/pages/Dashboard";
 import About from "@/pages/About";
 import Courses from "@/pages/Courses";
+import Pricing from "@/pages/Pricing";
 
 function Router() {
   return (
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/about" component={About} />
       <Route path="/courses" component={Courses} />
+      <Route path="/pricing" component={Pricing} />
       <Route component={NotFound} />
     </Switch>
   );

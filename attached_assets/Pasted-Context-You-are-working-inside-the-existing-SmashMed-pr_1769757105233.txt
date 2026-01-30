@@ -1,0 +1,110 @@
+Context: You are working inside the existing SmashMed project. You have full access to the current codebase, components, styles, colors, fonts, and animations.
+Create a Pricing page that matches the layout, spacing, hierarchy, and structure of the provided Medify pricing page image exactly, while using SmashMed’s existing theme and color palette only.
+⚠️ Do NOT invent a new layout. ⚠️ Do NOT simplify the design. ⚠️ Copy the structure precisely.
+
+Page Goal
+Present SmashMed pricing in a clear, premium, enterprise-grade way that feels:
+* Trustworthy
+* Simple to compare
+* Calm and academic
+* Conversion-focused but not salesy
+
+1️⃣ Hero Section (MATCH IMAGE EXACTLY)
+Headline (Large, left-aligned)
+One subscription Everything you need to get into medical school
+* Two-line hierarchy exactly like the reference
+* Large, bold heading
+* Subheading in lighter weight
+* Same spacing and alignment as the image
+* Use SmashMed fonts and colors (do not use Medify blue)
+
+2️⃣ Currency Toggle (MATCH POSITION)
+* Toggle on the right side above pricing cards
+* Options:
+    * AUD
+    * GBP
+    * NZD
+* Rounded segmented control
+* Subtle active state
+* Fully functional UI (even if pricing values are placeholders)
+
+3️⃣ Pricing Cards Section (CRITICAL — DO NOT ALTER STRUCTURE)
+Render four pricing cards in a single row on desktop, stacked on mobile.
+Card 1 — Free
+* Title: Free
+* Price: $0 / week
+* Subtle muted card style
+* Disabled or low-emphasis CTA button: Continue
+
+Card 2 — Weekly
+* Title: Weekly
+* Price: $15 / week
+* Primary CTA button: Continue
+* Same size as other cards
+* No “best value” badge
+
+Card 3 — Monthly
+* Title: Monthly
+* Price: $6.90 / week
+* Subtext: Billed at $30/month
+* Primary CTA button
+* Slight visual emphasis compared to Free
+
+Card 4 — Yearly (BEST VALUE)
+* Title: Yearly
+* Badge: Best value
+* Price: $4.03 / week
+* Subtext: Billed at $210/year
+* Strongest visual emphasis
+* Primary CTA button
+* Same dimensions as other cards (no oversized card)
+
+Card Design Rules
+* Rounded corners
+* Soft shadows
+* Equal spacing
+* Consistent heights
+* Subtle hover lift or shadow
+* No gradients
+* No flashy effects
+* EXACT spacing and hierarchy as the reference image
+
+4️⃣ Feature Comparison Section (BELOW CARDS)
+Left Side — Free Includes:
+* Study notes
+* Guidebook
+* Work experience map
+Right Side — Paid Plans Include:
+* Full GAMSAT courses
+* Live & recorded classes
+* Practice questions with explanations
+* Mock exams
+* Performance tracking
+* Ongoing updates
+✔ Use check icons ✔ Clean two-column layout ✔ Same alignment as the reference image
+
+5️⃣ Visual Details (IMPORTANT)
+* Include subtle decorative icons (e.g. stars) in the same positions as the reference
+* These must be:
+    * Muted
+    * Low opacity
+    * Non-distracting
+* Use SmashMed accent color only
+
+6️⃣ Responsiveness
+* Desktop: 4 cards in a row
+* Tablet: 2×2 grid
+* Mobile: stacked cards
+* Currency toggle remains accessible
+
+7️⃣ Animations & UX
+* Use the same animation style already present in SmashMed
+* Subtle:
+    * Fade-in
+    * Slight translate-up
+* No heavy animation libraries
+* No scroll hijacking
+
+
+FINAL INSTRUCTION (VERY IMPORTANT)
+Replicate the layout, spacing, card structure, and hierarchy of the provided pricing page image exactly. Only change colors, fonts, and branding to match SmashMed. Do not redesign. Do not simplify. Render the full page visually.

@@ -22,7 +22,7 @@ export function Navbar() {
         { label: "GAMSAT", href: "#gamsat" },
       ],
     },
-    { label: "Pricing", href: "#pricing" },
+    { label: "Pricing", href: "/pricing" },
     {
       label: "Resources",
       dropdown: [
