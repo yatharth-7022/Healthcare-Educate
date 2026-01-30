@@ -1,5 +1,8 @@
 // API utility functions for authentication
 
+// Get API base URL from environment variable
+const API_BASE_URL = import.meta.env.VITE_API_URL || "";
+
 export interface RegisterData {
   username: string;
   email: string;
@@ -37,7 +40,7 @@ export interface RefreshResponse {
  * Register a new user
  */
 export async function register(data: RegisterData): Promise<AuthResponse> {
-  const response = await fetch("/api/auth/register", {
+  const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -59,7 +62,7 @@ export async function register(data: RegisterData): Promise<AuthResponse> {
  * Login user
  */
 export async function login(data: LoginData): Promise<AuthResponse> {
-  const response = await fetch("/api/auth/login", {
+  const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -81,7 +84,7 @@ export async function login(data: LoginData): Promise<AuthResponse> {
  * Logout user
  */
 export async function logout(accessToken: string): Promise<void> {
-  const response = await fetch("/api/auth/logout", {
+  const response = await fetch(`${API_BASE_URL}/api/auth/logout`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${accessToken}`,
@@ -99,7 +102,7 @@ export async function logout(accessToken: string): Promise<void> {
  * Refresh access token
  */
 export async function refreshToken(): Promise<RefreshResponse> {
-  const response = await fetch("/api/auth/refresh", {
+  const response = await fetch(`${API_BASE_URL}/api/auth/refresh`, {
     method: "POST",
     credentials: "include",
   });
@@ -117,7 +120,7 @@ export async function refreshToken(): Promise<RefreshResponse> {
  * Get current user profile
  */
 export async function getCurrentUser(accessToken: string) {
-  const response = await fetch("/api/auth/me", {
+  const response = await fetch(`${API_BASE_URL}/api/auth/me`, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
