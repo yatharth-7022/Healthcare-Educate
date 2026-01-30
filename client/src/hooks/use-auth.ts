@@ -118,7 +118,7 @@ export function useAuth() {
         }
       },
       10 * 60 * 1000,
-    ); // 10 minutes
+    ); // 10 minus
 
     return () => clearInterval(interval);
   }, [queryClient]);
