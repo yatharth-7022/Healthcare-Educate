@@ -124,15 +124,6 @@ export default function About() {
                 banks—and are delivered at a genuinely affordable price, making
                 high-quality GAMSAT preparation accessible without compromise.
               </p>
-              <p>
-                For Section 1, we provide precise strategies to tackle even the
-                most obscure passages with confidence and 100% accuracy. For
-                Section 2, students gain access to 80+ sample essays alongside a
-                clear, repeatable framework for generating unique ideas across
-                any theme. For Section 3, we focus on the concepts and reasoning
-                skills that regularly appear on the exam, ensuring students
-                prepare efficiently and effectively for the GAMSAT as a whole.
-              </p>
             </div>
           </motion.div>
         </div>
@@ -232,9 +223,8 @@ export default function About() {
       </section>
 
       {/* Teaching Philosophy */}
-      <section className="py-24 bg-white space-y-32">
+      {/* <section className="py-24 bg-white space-y-32">
         <div className="container mx-auto px-4">
-          {/* S1 */}
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16">
             <motion.div {...fadeIn} className="flex-1 space-y-6">
               <h3 className="text-3xl font-['Source_Sans_3'] font-bold text-[#2D2D2D] tracking-tight">
@@ -257,7 +247,6 @@ export default function About() {
             </motion.div>
           </div>
 
-          {/* S2 */}
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row-reverse items-center gap-16 mt-32">
             <motion.div {...fadeIn} className="flex-1 space-y-6">
               <h3 className="text-3xl font-['Source_Sans_3'] font-bold text-[#2D2D2D] tracking-tight">
@@ -279,7 +268,6 @@ export default function About() {
             </motion.div>
           </div>
 
-          {/* S3 */}
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16 mt-32">
             <motion.div {...fadeIn} className="flex-1 space-y-6">
               <h3 className="text-3xl font-['Source_Sans_3'] font-bold text-[#2D2D2D] tracking-tight">
@@ -300,7 +288,7 @@ export default function About() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Social Proof Section */}
       <section className="py-24 bg-[#FAF8F4]">
