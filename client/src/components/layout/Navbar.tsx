@@ -2,7 +2,7 @@ import { Link, useLocation } from "wouter";
 import { useAuth } from "@/hooks/use-auth";
 import logoImg from "@assets/final_logo.png";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, LogOut, Globe } from "lucide-react";
+import { Menu, X, ChevronDown, LogOut, Globe, ArrowLeft } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -11,8 +11,10 @@ export function Navbar() {
   const { user, isAuthenticated, logout } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const isHomePage = location === "/";
 
   const navLinks = [
     {
@@ -60,10 +62,22 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-[100] bg-white border-b border-gray-100 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20 items-center">
-          {/* Left: Logo */}
-          <div className="flex-shrink-0  flex items-center">
-            <Link href="/" className="cursor-pointer">
+        <div className="flex justify-between h-20 items-center gap-4">
+          {/* Left Section: Back Button and Logo */}
+          <div className="flex items-center gap-4 flex-shrink-0">
+            {!isHomePage && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => window.history.back()}
+                className="text-gray-500 hover:text-primary transition-colors flex items-center gap-2 group px-2"
+              >
+                <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
+                <span className="hidden sm:inline font-medium">Back</span>
+              </Button>
+            )}
+            
+            <Link href="/" className="cursor-pointer flex items-center">
               <img
                 src={logoImg}
                 alt="SmashMed Logo"
