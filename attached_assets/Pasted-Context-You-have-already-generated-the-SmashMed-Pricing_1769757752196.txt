@@ -1,0 +1,152 @@
+Context:
+You have already generated the SmashMed Pricing page.
+Now add one additional section directly BELOW the pricing cards and ABOVE any other sections.
+
+Do not modify the pricing cards themselves.
+
+Section Purpose (IMPORTANT)
+
+Add a moving, animated student reviews section that:
+
+Builds trust immediately after pricing
+
+Reinforces value before the user scrolls further
+
+Matches the exact interaction style of Medify’s pricing page
+
+This section is conversion-critical.
+
+Section Placement (DO NOT CHANGE)
+
+📍 Place this section:
+
+Immediately below the pricing cards
+
+Before any large testimonials or footer sections
+
+Layout & Structure (MATCH MEDIFY EXACTLY)
+Heading (Centered)
+
+SmashMed is trusted by GAMSAT students across Australia
+
+Same hierarchy as Medify
+
+Calm, professional typography
+
+No over-decoration
+
+Animated Reviews Row (CRITICAL)
+
+Render a horizontal, continuously moving carousel of student review cards that:
+
+Auto-scroll left → right
+
+Infinite loop
+
+Smooth, slow movement
+
+Pauses on hover
+
+Is NOT user-draggable (auto motion first)
+
+This must feel subtle, premium, and calm — not flashy.
+
+Review Card Design (MATCH IMAGE)
+
+Each card must include:
+
+⭐⭐⭐⭐⭐ (5-star rating)
+
+Short 1–2 line testimonial
+
+Student name
+
+Result / achievement (small text)
+
+Card Styling Rules
+
+White background
+
+Rounded corners
+
+Soft shadow
+
+Equal card sizes
+
+Plenty of padding
+
+No gradients
+
+No borders
+
+Match SmashMed colors & fonts
+
+Example Review Content (You may generate realistic placeholders)
+
+Use short, realistic lines like:
+
+“SmashMed helped me feel confident walking into the GAMSAT.”
+
+“The structure and explanations made a huge difference.”
+
+“I finally understood how to approach difficult passages.”
+
+“Clear strategies, high-quality resources, and great support.”
+
+⚠️ These are short trust signals, not long testimonials.
+
+Animation Rules (VERY IMPORTANT)
+
+Use CSS-based animation
+
+No heavy animation libraries
+
+No scroll-jacking
+
+Smooth linear motion
+
+Consistent speed
+
+Seamless loop (no jump at reset)
+
+Responsiveness
+
+Desktop: multiple cards visible, moving horizontally
+
+Tablet: fewer cards visible
+
+Mobile: cards still animate but slower and larger
+
+No horizontal scrollbar visible
+
+Tech Stack (USE EXISTING)
+
+Next.js (App Router)
+
+TypeScript
+
+Tailwind CSS
+
+Reusable testimonial card component
+
+Accessible markup
+
+Visual Consistency Rules
+
+Must match SmashMed’s existing theme
+
+Reuse spacing, shadows, and typography
+
+Same animation style as other SmashMed sections
+
+This section should feel native, not added later
+
+FINAL INSTRUCTION (DO NOT IGNORE)
+
+This section must be visually rendered and animated, not described.
+It must scroll automatically left to right like the Medify pricing page.
+Do not replace existing testimonials elsewhere.
+
+⚠️ If Lovable skips animation, paste this line after:
+
+Use an auto-scrolling, infinite horizontal animation — do not render this as a static grid.

@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Check, Star } from "lucide-react";
+import { Check, Star, StarHalf } from "lucide-react";
 import { cn } from "@/lib/utils";
+import avatar1 from "@assets/image_1769511849141.png";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -13,6 +14,45 @@ const fadeIn = {
 };
 
 type Currency = "AUD" | "GBP" | "NZD";
+
+const reviews = [
+  {
+    name: "Juliette",
+    text: "By the time I sat my exam, I felt calm and confident as I felt well prepared to answer each question type.",
+    result: "Scored 3410 in UCAT 2023",
+    image: avatar1
+  },
+  {
+    name: "Jonny",
+    text: "SmashMed helped me score in the top 1% in GAMSAT.",
+    result: "Scored top 1% in GAMSAT",
+    image: avatar1
+  },
+  {
+    name: "Eni",
+    text: "Using SmashMed, I turned from initially feeling very overwhelmed to having a feeling of readiness.",
+    result: "Scored 2780 in UCAT 2023",
+    image: avatar1
+  },
+  {
+    name: "Aiat",
+    text: "SmashMed's step by step interview guide helped me build my knowledge and confidence up in a short time.",
+    result: "4 interviews, 2 offers",
+    image: avatar1
+  },
+  {
+    name: "Dr R Mouhandes",
+    text: "SmashMed transformed the GAMSAT from what seemed like an impossible test into a manageable one.",
+    result: "Used SmashMed in 2022",
+    image: avatar1
+  },
+  {
+    name: "Sarah",
+    text: "The structure and explanations made a huge difference in my preparation journey.",
+    result: "Entry to Monash Medicine",
+    image: avatar1
+  }
+];
 
 const pricingData = {
   AUD: { symbol: "$", free: "0", weekly: "15", monthly: "6.90", monthlyTotal: "30", yearly: "4.03", yearlyTotal: "210" },
@@ -26,7 +66,20 @@ export default function Pricing() {
   const cur = pricingData[currency];
 
   return (
-    <div className="min-h-screen bg-[#FAF8F4] text-[#1A1A1A] font-['IBM_Plex_Sans'] pt-32 pb-20">
+    <div className="min-h-screen bg-[#FAF8F4] text-[#1A1A1A] font-['IBM_Plex_Sans'] pt-32 pb-20 overflow-x-hidden">
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(-250px * ${reviews.length})); }
+        }
+        .animate-scroll {
+          animation: scroll 40s linear infinite;
+        }
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}} />
+
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <div className="max-w-6xl mx-auto mb-16 flex flex-col md:flex-row justify-between items-end gap-8">
@@ -57,7 +110,7 @@ export default function Pricing() {
         </div>
 
         {/* Pricing Cards Section */}
-        <div className="max-w-6xl mx-auto relative">
+        <div className="max-w-6xl mx-auto relative mb-32">
           {/* Decorative Stars */}
           <Star className="absolute -top-8 left-[45%] w-6 h-6 text-[#B4A7D6] opacity-30 animate-pulse" fill="currentColor" />
           <Star className="absolute top-4 left-[48%] w-4 h-4 text-[#B4A7D6] opacity-20" fill="currentColor" />
@@ -141,41 +194,96 @@ export default function Pricing() {
               </Card>
             </motion.div>
           </div>
+
+          {/* Feature Comparison Section (Integrated below cards as per request) */}
+          <motion.div {...fadeIn} className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 pt-12 border-t border-gray-100 mb-20">
+            <div>
+              <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">Includes:</h4>
+              <ul className="space-y-4">
+                {["Study notes", "Guidebook", "Work experience map"].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-gray-600 font-medium">
+                    <Check className="w-5 h-5 text-gray-300" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">All plans contain everything in Free, plus:</h4>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  "Full GAMSAT courses",
+                  "Live & recorded classes",
+                  "Practice questions with explanations",
+                  "Mock exams",
+                  "Performance tracking",
+                  "Ongoing updates"
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-gray-700 font-medium text-sm">
+                    <Check className="w-4 h-4 text-green-500 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
         </div>
 
-        {/* Feature Comparison Section */}
-        <motion.div {...fadeIn} className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 pt-12 border-t border-gray-100">
-          <div>
-            <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">Includes:</h4>
-            <ul className="space-y-4">
-              {["Study notes", "Guidebook", "Work experience map"].map((item) => (
-                <li key={item} className="flex items-center gap-3 text-gray-600 font-medium">
-                  <Check className="w-5 h-5 text-gray-300" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+        {/* Animated Reviews Section */}
+        <section className="py-20 bg-white/30 -mx-4 px-4 border-y border-gray-100">
+          <div className="max-w-6xl mx-auto text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-['Source_Sans_3'] font-bold text-[#2D2D2D] mb-2 tracking-tight">
+              SmashMed is trusted by GAMSAT students across Australia
+            </h2>
           </div>
-          <div>
-            <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">All plans contain everything in Free, plus:</h4>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                "Full GAMSAT courses",
-                "Live & recorded classes",
-                "Practice questions with explanations",
-                "Mock exams",
-                "Performance tracking",
-                "Ongoing updates"
-              ].map((item) => (
-                <li key={item} className="flex items-center gap-3 text-gray-700 font-medium text-sm">
-                  <Check className="w-4 h-4 text-green-500 shrink-0" />
-                  {item}
-                </li>
+
+          <div className="relative overflow-hidden w-full py-4">
+            <div className="flex animate-scroll w-max gap-6">
+              {[...reviews, ...reviews].map((review, idx) => (
+                <div 
+                  key={idx}
+                  className="w-[280px] md:w-[320px] bg-white rounded-2xl p-6 shadow-sm border border-gray-50 flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex gap-1 mb-4">
+                      {[1, 2, 3, 4, 5].map((s) => (
+                        <Star key={s} className="w-4 h-4 text-yellow-400 fill-current" />
+                      ))}
+                    </div>
+                    <p className="text-[#4A4A4A] text-sm md:text-base leading-relaxed mb-6 font-medium italic">
+                      "{review.text}"
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full overflow-hidden border border-gray-100">
+                      <img src={review.image} alt={review.name} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="text-left">
+                      <div className="font-bold text-sm text-[#2D2D2D]">{review.name}</div>
+                      <div className="text-[10px] text-gray-400 uppercase tracking-wider font-bold">{review.result}</div>
+                    </div>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
-        </motion.div>
+        </section>
+
+        {/* Footer/Unlock Section */}
+        <div className="max-w-4xl mx-auto text-center py-32">
+          <h2 className="text-5xl md:text-7xl font-['Source_Sans_3'] font-bold text-[#2D2D2D] mb-12 tracking-tight">
+            Unlock everything
+          </h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            {["UCAT", "GAMSAT", "Interviews", "A Levels", "Admissions"].map((tag) => (
+              <Badge key={tag} className="bg-gray-100 text-gray-500 hover:bg-[#674EA7] hover:text-white transition-colors px-6 py-2 rounded-full text-sm font-bold border-none cursor-default">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
 }
+
