@@ -76,7 +76,7 @@ export function useAuth() {
     },
   });
 
-  // Register mutation
+  // Register mutation full
   const registerMutation = useMutation({
     mutationFn: async (data: RegisterData) => {
       const response = await apiRegister(data);
