@@ -52,6 +52,7 @@ async function fetchUser(): Promise<User | null> {
     }
   }
 }
+//auth hook
 
 export function useAuth() {
   const queryClient = useQueryClient();
