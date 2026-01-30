@@ -105,7 +105,7 @@ export function useAuth() {
   useEffect(() => {
     if (!accessToken) return;
 
-    // Refresh token every 10 minutes (access token expires in 15 minutes)
+    // Refresh token every 10 minutes (access token expires in 15 mins)
     const interval = setInterval(
       async () => {
         try {
