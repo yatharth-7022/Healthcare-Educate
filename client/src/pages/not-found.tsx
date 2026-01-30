@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Home, ArrowLeft, Search } from "lucide-react";
+import { Home, Search } from "lucide-react";
 import errorHero from "@/assets/404-hero.jpg";
 
 export default function NotFound() {
