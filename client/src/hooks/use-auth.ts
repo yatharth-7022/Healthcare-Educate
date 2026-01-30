@@ -101,7 +101,7 @@ export function useAuth() {
     },
   });
 
-  // Auto-refresh token
+  // Auto-refresh token every 10 minutes
   useEffect(() => {
     if (!accessToken) return;
 
