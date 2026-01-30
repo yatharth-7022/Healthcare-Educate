@@ -106,7 +106,7 @@ export function Navbar() {
                 ) : (
                   <a
                     href={
-                      link.label.toLowerCase() === "pricing" ? "#pricing" : "#"
+                      link.label.toLowerCase() === "pricing" ? "pricing" : "#"
                     }
                     className="text-[15px] font-medium text-gray-600 hover:text-primary transition-colors"
                   >
@@ -166,23 +166,22 @@ export function Navbar() {
                 </Link>
               </div>
             ) : (
-            <div className="flex items-center gap-3">
-  <Link to="/auth">
-    <Button
-      variant="ghost"
-      className="text-gray-600 hover:text-primary hover:bg-primary/5 rounded-full px-5"
-    >
-      Login
-    </Button>
-  </Link>
+              <div className="flex items-center gap-3">
+                <Link to="/auth">
+                  <Button
+                    variant="ghost"
+                    className="text-gray-600 hover:text-primary hover:bg-primary/5 rounded-full px-5"
+                  >
+                    Login
+                  </Button>
+                </Link>
 
-  <Link to="/auth">
-    <Button className="bg-primary hover:bg-primary/90 text-white px-6 rounded-full font-semibold">
-      Open SmashMed
-    </Button>
-  </Link>
-</div>
-
+                <Link to="/auth">
+                  <Button className="bg-primary hover:bg-primary/90 text-white px-6 rounded-full font-semibold">
+                    Open SmashMed
+                  </Button>
+                </Link>
+              </div>
             )}
           </div>
 
