@@ -88,7 +88,7 @@ export function useAuth() {
     },
   });
 
-  // Logout mutation
+  // Logout mutation full
   const logoutMutation = useMutation({
     mutationFn: async () => {
       if (accessToken) {
