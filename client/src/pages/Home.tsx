@@ -394,7 +394,7 @@ export default function Home() {
                       </p>
                     </div>
                   ))}
-                  {/* Duplicate for seamless loop */}
+                  {/* Duplicate for seamless loops */}
                   {[
                     { name: "University of Melbourne", logo: uni1 },
                     { name: "Monash University", logo: uni2 },
