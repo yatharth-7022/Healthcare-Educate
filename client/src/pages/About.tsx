@@ -11,6 +11,7 @@ import {
   FileText,
   Tag,
   TrendingUp,
+  Star,
 } from "lucide-react";
 import founderImage from "@assets/image_1769511869056.png";
 import uniMelbourneImage from "@assets/image_1769511903260.png";
@@ -18,6 +19,9 @@ import s1Image from "@assets/image_1769511915336.png";
 import s2Image from "@assets/image_1769511925906.png";
 import s3Image from "@assets/image_1769511935575.png";
 import socialProofImage from "@assets/image_1769511849141.png";
+import student1 from "@assets/student1_1768894056469.png";
+import student2 from "@assets/student2_1768894056469.png";
+import student3 from "@assets/student3_1768894056470.png";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -294,17 +298,77 @@ export default function About() {
       <section className="py-24 bg-[#FAF8F4]">
         <div className="container mx-auto px-4">
           <motion.div {...fadeIn} className="text-center mb-16">
-            <h2 className="text-4xl font-['Source_Sans_3'] font-bold text-[#2D2D2D] tracking-tight">
+            <h2 className="text-4xl font-['Source_Sans_3'] font-bold text-[#2D2D2D] tracking-tight mb-4">
               See what past students have to say!
             </h2>
           </motion.div>
-          <motion.div {...fadeIn} className="max-w-5xl mx-auto">
-            <img
-              src={socialProofImage}
-              alt="Student Testimonials"
-              className="w-full rounded-2xl shadow-xl border-8 border-white"
-            />
-          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                text: '"SmashMed was my ',
+                highlight: "main method of preparation for the GAMSAT.",
+                text2:
+                  ' The resources were structured, high-yield, and forced me to think the way the exam actually tests. It helped me reach a score I was genuinely proud of and confident applying with."',
+                author: "Daniel P.",
+                sub: "Graduate Entry Medicine Applicant",
+                image: student1,
+              },
+              {
+                text: "\"SmashMed didn't just give me practice questions — ",
+                highlight: "it gave me a clear strategy.",
+                text2:
+                  ' The explanations and tutor guidance helped me target my weaknesses efficiently, and ultimately secure multiple interview offers."',
+                author: "Aisha M.",
+                sub: "Multiple Interview Offers",
+                image: student2,
+              },
+              {
+                text: '"SmashMed played a major role in ',
+                highlight:
+                  "helping me perform in the top percentile of the GAMSAT.",
+                text2:
+                  ' The depth of reasoning in the questions and feedback was unlike anything else I used, and it translated directly into exam-day confidence."',
+                author: "Aditya M.",
+                sub: "Top Percentile GAMSAT Score",
+                image: student3,
+              },
+            ].map((review, idx) => (
+              <motion.div
+                key={idx}
+                {...fadeIn}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full"
+              >
+                <div className="flex gap-1 mb-6">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                    />
+                  ))}
+                </div>
+                <p className="text-[#4A4A4A] leading-relaxed mb-8 flex-grow text-base">
+                  {review.text}
+                  <span className="bg-yellow-200/60 px-1 font-medium">
+                    {review.highlight}
+                  </span>
+                  {review.text2}
+                </p>
+                <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
+                  <img
+                    src={review.image}
+                    alt={review.author}
+                    className="w-14 h-14 rounded-full object-cover border-2 border-gray-100"
+                  />
+                  <div>
+                    <p className="font-bold text-[#2D2D2D]">{review.author}</p>
+                    <p className="text-sm text-[#4A4A4A]">{review.sub}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

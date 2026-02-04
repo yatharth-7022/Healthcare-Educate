@@ -28,7 +28,10 @@ export function Navbar() {
     {
       label: "Resources",
       dropdown: [
-        { label: "Blog", href: "#blog" },
+        {
+          label: "Blog",
+          href: "https://medium.com/@smashmedproductions/how-to-prepare-for-gamsat-section-3-what-you-actually-need-to-know-45a8ace04204",
+        },
         { label: "Free Guide", href: "#guide" },
       ],
     },
@@ -76,7 +79,7 @@ export function Navbar() {
                 <span className="hidden sm:inline font-medium">Back</span>
               </Button>
             )}
-            
+
             <Link href="/" className="cursor-pointer flex items-center">
               <img
                 src={logoImg}
@@ -137,15 +140,20 @@ export function Navbar() {
                       exit={{ opacity: 0, y: 10 }}
                       className="absolute top-full left-0 w-48 bg-white border border-gray-100 shadow-xl rounded-xl mt-1 py-2 z-50"
                     >
-                      {link.dropdown.map((subItem) => (
-                        <a
-                          key={subItem.label}
-                          href={subItem.href}
-                          className="block px-4 py-2.5 text-sm text-gray-600 hover:bg-primary/5 hover:text-primary transition-colors first:rounded-t-lg last:rounded-b-lg"
-                        >
-                          {subItem.label}
-                        </a>
-                      ))}
+                      {link.dropdown.map((subItem) => {
+                        const isExternal = subItem.href.startsWith("http");
+                        return (
+                          <a
+                            key={subItem.label}
+                            href={subItem.href}
+                            target={isExternal ? "_blank" : undefined}
+                            rel={isExternal ? "noopener noreferrer" : undefined}
+                            className="block px-4 py-2.5 text-sm text-gray-600 hover:bg-primary/5 hover:text-primary transition-colors first:rounded-t-lg last:rounded-b-lg"
+                          >
+                            {subItem.label}
+                          </a>
+                        );
+                      })}
                     </motion.div>
                   )}
                 </AnimatePresence>
