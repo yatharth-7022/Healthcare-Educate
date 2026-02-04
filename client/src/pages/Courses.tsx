@@ -266,7 +266,7 @@ export default function Courses() {
                         </li>
                       ))}
                     </ul>
-
+                    {/* 
                     <Card className="bg-[#674EA7] text-white border-none shadow-lg">
                       <CardContent className="p-6 flex items-center justify-between">
                         <div className="flex items-center gap-4">
@@ -286,7 +286,7 @@ export default function Courses() {
                           </div>
                         </div>
                       </CardContent>
-                    </Card>
+                    </Card> */}
                   </div>
 
                   <div className="grid gap-6">
@@ -418,19 +418,17 @@ export default function Courses() {
                       ))}
                     </ul>
 
-                    <Card className="bg-white border-[#674EA7]/10 shadow-sm overflow-hidden">
-                      <div className="h-2 bg-[#674EA7]"></div>
-                      <CardContent className="p-6">
-                        <h4 className="font-bold text-[#2D2D2D] mb-3">
-                          Live S3 Support
-                        </h4>
-                        <img
-                          src={s3Support}
-                          alt="Direct Support"
-                          className="rounded-lg border border-gray-100"
-                        />
-                      </CardContent>
-                    </Card>
+                    <div className="bg-lavender-50 p-6 rounded-2xl border border-[#B4A7D6]/20">
+                      <p className="text-[#674EA7] font-bold flex items-center gap-2 mb-2">
+                        <BookOpen className="w-5 h-5" />
+                        Save Research Time
+                      </p>
+                      <p className="text-sm text-[#4A4A4A]">
+                        🧠 Think Beyond Content. We train you to handle
+                        unfamiliar equations, graphs, and experiments with
+                        confidence—exactly what high-scoring Section 3 demands.
+                      </p>
+                    </div>
                   </div>
 
                   <div className="grid gap-6">

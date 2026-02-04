@@ -365,19 +365,18 @@ export default function Home() {
                   }}
                 >
                   {[
-                    { name: "University of Dundee", logo: uni1 },
-                    { name: "University of Melbourne", logo: uni2 },
-                    { name: "Monash University", logo: uni3 },
-                    { name: "Deakin University", logo: uni4 },
-                    { name: "University of Wollongong", logo: uni5 },
-                    { name: "University of Sydney", logo: uni6 },
-                    { name: "Notre Dame Australia", logo: uni7 },
-                    { name: "University of Queensland", logo: uni8 },
-                    { name: "Griffith University", logo: uni10 },
-                    { name: "Macquarie University", logo: uni11 },
-                    { name: "University of Western Australia", logo: uni12 },
-                    { name: "University of Auckland", logo: uni13 },
-                    { name: "University of Liverpool", logo: uni14 },
+                    { name: "University of Melbourne", logo: uni1 },
+                    { name: "Monash University", logo: uni2 },
+                    { name: "Deakin University", logo: uni3 },
+                    { name: "University of Wollongong", logo: uni4 },
+                    { name: "University of Sydney", logo: uni5 },
+                    { name: "Notre Dame Australia", logo: uni6 },
+                    { name: "University of Queensland", logo: uni7 },
+                    { name: "Griffith University", logo: uni8 },
+                    { name: "University of Western Australia", logo: uni11 },
+                    { name: "University of Auckland", logo: uni12 },
+                    { name: "University of Liverpool", logo: uni13 },
+                    { name: "University of Dundee", logo: uni14 },
                   ].map((uni, i) => (
                     <div
                       key={i}
@@ -397,19 +396,18 @@ export default function Home() {
                   ))}
                   {/* Duplicate for seamless loop */}
                   {[
-                    { name: "University of Dundee", logo: uni1 },
-                    { name: "University of Melbourne", logo: uni2 },
-                    { name: "Monash University", logo: uni3 },
-                    { name: "Deakin University", logo: uni4 },
-                    { name: "University of Wollongong", logo: uni5 },
-                    { name: "University of Sydney", logo: uni6 },
-                    { name: "Notre Dame Australia", logo: uni7 },
-                    { name: "University of Queensland", logo: uni8 },
-                    { name: "Griffith University", logo: uni10 },
-                    { name: "Macquarie University", logo: uni11 },
-                    { name: "University of Western Australia", logo: uni12 },
-                    { name: "University of Auckland", logo: uni13 },
-                    { name: "University of Liverpool", logo: uni14 },
+                    { name: "University of Melbourne", logo: uni1 },
+                    { name: "Monash University", logo: uni2 },
+                    { name: "Deakin University", logo: uni3 },
+                    { name: "University of Wollongong", logo: uni4 },
+                    { name: "University of Sydney", logo: uni5 },
+                    { name: "Notre Dame Australia", logo: uni6 },
+                    { name: "University of Queensland", logo: uni7 },
+                    { name: "Griffith University", logo: uni8 },
+                    { name: "University of Western Australia", logo: uni11 },
+                    { name: "University of Auckland", logo: uni12 },
+                    { name: "University of Liverpool", logo: uni13 },
+                    { name: "University of Dundee", logo: uni14 },
                   ].map((uni, i) => (
                     <div
                       key={`dup-${i}`}

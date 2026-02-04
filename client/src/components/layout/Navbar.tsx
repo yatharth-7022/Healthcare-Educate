@@ -122,14 +122,12 @@ export function Navbar() {
                     />
                   </button>
                 ) : (
-                  <a
-                    href={
-                      link.label.toLowerCase() === "pricing" ? "pricing" : "#"
-                    }
+                  <Link
+                    href={link.href || "#"}
                     className="text-[15px] font-medium text-gray-600 hover:text-primary transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 )}
 
                 {/* Dropdown Menu */}
