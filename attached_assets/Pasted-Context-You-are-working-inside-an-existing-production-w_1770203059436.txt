@@ -1,0 +1,150 @@
+Context:
+You are working inside an existing production web application called Healthcare Educative.
+The application already has a defined theme, color palette, typography, layout system, animations, and navbar.
+You must strictly reuse the existing theme and styles — do not introduce new colors, fonts, or design systems.
+
+🎯 Objective
+
+Create a professional, elegant, and visually stunning Honour Roll page for Healthcare Educative and integrate it seamlessly into the app.
+
+🧭 Navigation Update
+
+Add a new navbar item labeled “Honour Roll”
+
+The navbar item should:
+
+Match existing navbar styling and animations
+
+Respect hover states, active states, and responsiveness
+
+On click, route the user to /honour-roll (or follow the app’s existing routing conventions)
+
+🏆 Honour Roll Page — Design & UX Requirements
+
+Design this page as a premium academic recognition page, similar to what top universities or medical institutions would publish.
+
+Overall Feel
+
+Clean, professional, and prestigious
+
+Emotion: achievement, pride, excellence
+
+Modern UI with subtle but smooth animations
+
+Fully responsive (desktop, tablet, mobile)
+
+🎨 Visual Design Guidelines
+
+Reuse existing colors, gradients, typography, spacing, and shadows
+
+No hard-coded colors — pull from the app’s theme
+
+Maintain visual consistency with:
+
+Pricing page
+
+About page
+
+Landing sections
+
+✨ Page Structure (Suggested – you may improve)
+1. Hero Section
+
+Large heading: “Honour Roll”
+
+Subheading explaining recognition, e.g.
+“Celebrating the outstanding achievements of our Medicine & Dentistry students”
+
+Soft background gradient or pattern consistent with app
+
+Entrance animation (fade-in + slight upward motion)
+
+2. Honour Roll Content Section
+
+Display the following exact data, formatted professionally (cards, list, timeline, or grid — your choice):
+
+Medicine & Dentistry Student Honour Roll
+
+Neesha Gopi – University of Sydney – 2026
+
+Diya Dasgupta – University of Melbourne – 2026
+
+Neesha Gopi – University of Sydney – 2026
+
+Madeline Windura – University of Notre Dame – 2026
+
+Liam Shirley – Macquarie University – 2026
+
+Rewaj Raut Chhetri – Griffith University – 2025
+
+Lini Millar – Griffith University – 2025
+
+Miranda Green – University of Wollongong – 2025
+
+Rosie Lee – University of Queensland (DMD) – 2025
+
+Maayra Taneja – University of Notre Dame – 2025
+
+Harriet Cummins – Macquarie University – 2024
+
+Hanna Mazurkiewicz – Macquarie University – 2024
+
+🪄 Presentation Requirements
+
+Use cards or elegant rows with:
+
+Student name emphasized
+
+University and year visually secondary
+
+Add:
+
+Subtle hover effects
+
+Soft shadows or glassmorphism if already used elsewhere
+
+Micro-animations on scroll (fade / slide / staggered reveal)
+
+Keep it readable, not flashy
+
+🎥 Animations
+
+Page load animation (hero first, then content)
+
+Staggered reveal for honour roll entries
+
+Smooth transitions only (no aggressive motion)
+
+Use the same animation libraries or patterns already in the app
+
+⚙️ Technical Requirements
+
+Follow existing:
+
+Component patterns
+
+Routing system
+
+Folder structure
+
+Styling conventions (Tailwind / CSS modules / etc.)
+
+Code should be:
+
+Clean
+
+Reusable
+
+Maintainable
+
+Do NOT break or modify existing pages
+
+✅ Final Quality Check
+
+Before finishing:
+
+Ensure visual consistency with the rest of Healthcare Educative
+
+Ensure the page looks credible for a medical education platform
+
+Ensure the Honour Roll feels aspirational and premium

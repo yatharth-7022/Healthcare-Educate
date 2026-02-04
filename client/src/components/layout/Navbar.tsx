@@ -25,6 +25,7 @@ export function Navbar() {
       ],
     },
     { label: "Pricing", href: "/pricing" },
+    { label: "Honour Roll", href: "/honour-roll" },
     {
       label: "Resources",
       dropdown: [
