@@ -8,99 +8,200 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import { motion } from "framer-motion";
+import { 
+  BookOpen, 
+  Calendar, 
+  Clock, 
+  TrendingUp, 
+  PlayCircle, 
+  FileText, 
+  Users,
+  ChevronRight,
+  ArrowRight
+} from "lucide-react";
 
 export default function Dashboard() {
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   const [, setLocation] = useLocation();
 
-  const handleLogout = async () => {
-    await logout();
-    setLocation("/auth");
+  const fadeInUp = {
+    initial: { opacity: 0, y: 15 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.4 }
+  };
+
+  const stagger = {
+    animate: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white p-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex justify-between items-center mb-8">
-          <div>
-            <h1 className="text-4xl font-bold text-gray-900">Dashboard</h1>
-            <p className="text-gray-600 mt-2">
-              Welcome back, {user?.username || "User"}!
-            </p>
+    <div className="min-h-screen bg-background pt-24 pb-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Welcome Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-10"
+        >
+          <h1 className="text-3xl font-bold font-heading text-foreground mb-1">
+            Welcome back, {user?.username || "Scholar"}
+          </h1>
+          <p className="text-muted-foreground font-body">
+            Your GAMSAT preparation, all in one place.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Main Content Area */}
+          <div className="lg:col-span-2 space-y-8">
+            {/* Primary Course Card */}
+            <motion.div variants={fadeInUp} initial="initial" animate="animate">
+              <Card className="overflow-hidden border-primary/10 shadow-lg shadow-primary/5 hover:shadow-xl transition-shadow">
+                <div className="h-2 bg-primary w-full" />
+                <CardHeader className="pb-4">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <CardTitle className="text-2xl font-bold font-heading mb-2">GAMSAT Preparation Course</CardTitle>
+                      <CardDescription className="text-base max-w-md">
+                        The ultimate comprehensive curriculum for Section I, II, and III success.
+                      </CardDescription>
+                    </div>
+                    <div className="bg-primary/10 p-3 rounded-xl">
+                      <BookOpen className="w-6 h-6 text-primary" />
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm font-medium">
+                      <span>Overall Progress</span>
+                      <span>45%</span>
+                    </div>
+                    <Progress value={45} className="h-2" />
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-4 py-4 border-y border-border/50">
+                    <div className="text-center">
+                      <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Modules</p>
+                      <p className="font-bold text-lg">12/24</p>
+                    </div>
+                    <div className="text-center border-x border-border/50">
+                      <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Questions</p>
+                      <p className="font-bold text-lg">840</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Next Goal</p>
+                      <p className="font-bold text-lg">Physics II</p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                    <Button className="flex-1 h-11 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl transition-all group">
+                      Continue learning
+                      <PlayCircle className="ml-2 w-4 h-4 group-hover:scale-110 transition-transform" />
+                    </Button>
+                    <Button variant="outline" className="flex-1 h-11 border-border/50 hover:bg-accent rounded-xl font-semibold">
+                      View syllabus
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Recent Activity */}
+            <motion.div variants={stagger} initial="initial" animate="animate" className="space-y-4">
+              <h2 className="text-xl font-bold font-heading">Recent Activity</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  { icon: FileText, title: "Section II Essay Submitted", time: "2 hours ago", status: "Pending Review" },
+                  { icon: TrendingUp, title: "Biology Mock Completed", time: "Yesterday", status: "Score: 78%" },
+                ].map((item, i) => (
+                  <motion.div key={i} variants={fadeInUp}>
+                    <Card className="hover:bg-accent/50 transition-colors border-border/40">
+                      <CardContent className="p-4 flex items-center gap-4">
+                        <div className="p-2 bg-muted rounded-lg">
+                          <item.icon className="w-5 h-5 text-primary/70" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="font-semibold text-sm truncate">{item.title}</p>
+                          <p className="text-xs text-muted-foreground">{item.time} • {item.status}</p>
+                        </div>
+                        <ChevronRight className="w-4 h-4 text-muted-foreground" />
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
-          <Button onClick={handleLogout} variant="outline">
-            Logout
-          </Button>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Profile Information</CardTitle>
-              <CardDescription>Your account details</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2">
-                <div>
-                  <span className="font-medium">Username:</span>
-                  <p className="text-gray-700">{user?.username}</p>
-                </div>
-                <div>
-                  <span className="font-medium">Email:</span>
-                  <p className="text-gray-700">{user?.email}</p>
-                </div>
-                <div>
-                  <span className="font-medium">Role:</span>
-                  <p className="text-gray-700">
-                    {user?.isAdmin ? "Admin" : "User"}
+          {/* Sidebar Area */}
+          <div className="space-y-8">
+            {/* Upcoming Live Classes */}
+            <motion.div variants={fadeInUp} initial="initial" animate="animate">
+              <Card className="border-border/40">
+                <CardHeader className="pb-2">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-5 h-5 text-primary" />
+                    <CardTitle className="text-lg">Upcoming Live Classes</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  {[
+                    { title: "S3 Physics Workshop", date: "Feb 12", time: "7:00 PM AEDT" },
+                    { title: "S2 Critical Thinking", date: "Feb 15", time: "6:30 PM AEDT" },
+                  ].map((session, i) => (
+                    <div key={i} className="flex items-center justify-between group cursor-pointer hover:bg-muted/50 p-2 -mx-2 rounded-lg transition-colors">
+                      <div className="flex gap-3 items-center">
+                        <div className="text-center bg-primary/5 p-2 rounded-lg min-w-[50px]">
+                          <p className="text-[10px] uppercase font-bold text-primary/60">{session.date.split(' ')[0]}</p>
+                          <p className="text-sm font-bold">{session.date.split(' ')[1]}</p>
+                        </div>
+                        <div>
+                          <p className="text-sm font-bold group-hover:text-primary transition-colors">{session.title}</p>
+                          <div className="flex items-center gap-1 text-[11px] text-muted-foreground">
+                            <Clock className="w-3 h-3" />
+                            {session.time}
+                          </div>
+                        </div>
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                    </div>
+                  ))}
+                  <Button variant="ghost" className="w-full text-xs text-primary font-bold mt-2">
+                    View Full Schedule
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Quick Resources */}
+            <motion.div variants={fadeInUp} initial="initial" animate="animate">
+              <Card className="bg-primary/5 border-primary/10">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Users className="w-5 h-5 text-primary" />
+                    Study Support
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-sm text-muted-foreground">
+                    Join our discord community to discuss questions with tutors and peers.
                   </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Quick Stats</CardTitle>
-              <CardDescription>Your activity overview</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2">
-                <p className="text-gray-700">More features coming soon!</p>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Recent Activity</CardTitle>
-              <CardDescription>Your latest actions</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2">
-                <p className="text-gray-700">No recent activity</p>
-              </div>
-            </CardContent>
-          </Card>
+                  <Button className="w-full bg-primary/10 hover:bg-primary/20 text-primary border-none font-bold">
+                    Join Discord
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
         </div>
-
-        <Card className="mt-6">
-          <CardHeader>
-            <CardTitle>Getting Started</CardTitle>
-            <CardDescription>Explore the platform</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-gray-700 mb-4">
-              Welcome to Healthcare Educate! This is your dashboard where you
-              can access all platform features.
-            </p>
-            <div className="flex gap-4">
-              <Button onClick={() => setLocation("/")}>Go to Home</Button>
-              <Button variant="outline">Browse Courses</Button>
-              <Button variant="outline">View Profile</Button>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

@@ -1,0 +1,108 @@
+Context: The SmashMed platform already has:
+* Landing pages
+* About pages and related pages
+* Pricing page
+* Authentication (Login / Register)
+Now create a post-login user dashboard that users are navigated to immediately after logging in.
+You have full access to the existing SmashMed codebase, design system, components, and styles.
+⚠️ Do not introduce a new theme. ⚠️ Do not redesign existing brand elements. The dashboard must feel like a natural continuation of the platform.
+
+Dashboard Goal
+Create a beautiful, professional, non-generic dashboard that feels:
+* Calm
+* Academic
+* Premium
+* Purposeful (not cluttered)
+This dashboard is for serious GAMSAT students, not a casual learning app.
+
+Core Requirements (MANDATORY)
+1️⃣ Welcome Section
+At the top of the dashboard:
+* Greet the user personally:
+    * “Welcome back, {UserName}”
+* Secondary line:
+    * A calm motivational or contextual line (e.g. “Your GAMSAT preparation, all in one place.”)
+* Pull the user’s name from authenticated user data
+
+2️⃣ Primary Course Card (CRITICAL)
+Since there is currently only one course, display a prominent course card for:
+GAMSAT Preparation Course
+The card should include:
+* Course title
+* Short description
+* Progress indicator (even if placeholder)
+* Primary CTA:
+    * “Go to course” / “Continue learning”
+* Secondary CTA (optional):
+    * “View syllabus” or “View schedule”
+This card should be:
+* Visually dominant
+* Clean
+* Confident
+* Not oversized or flashy
+
+Additional Dashboard Content (DESIGN FREEDOM — IMPORTANT)
+You are encouraged to add additional sections that make sense for a professional education dashboard, such as:
+* Progress overview
+* Upcoming live classes
+* Recent activity
+* Study reminders
+* Performance snapshots
+* Quick links to key resources
+⚠️ These should feel intentional and helpful, not filler.
+Avoid:
+* Social-media style feeds
+* Gamification
+* Overloaded widgets
+
+Navigation & Layout
+* Use a clean dashboard layout:
+    * Top navigation or side navigation (your choice)
+* Clear visual hierarchy
+* Plenty of whitespace
+* Subtle section separation
+
+Dark / Light Mode (MANDATORY)
+Theme Toggle
+* Add a Light / Dark mode toggle in the top-right corner
+* Place it near:
+    * Profile avatar
+    * Account menu
+* Toggle must:
+    * Persist user preference
+    * Affect entire dashboard
+    * Respect SmashMed color palette in both modes
+Dark mode should be:
+* Deep, muted
+* Easy on the eyes
+* Professional (not pure black)
+
+Profile Menu (Top Right)
+* Profile avatar icon
+* Dropdown menu:
+    * Account
+    * Settings
+    * Log out
+* Theme toggle accessible here
+
+Visual & UX Guidelines
+* Match SmashMed typography, spacing, and colors
+* Use subtle animations:
+    * Fade-in
+    * Small translate on load
+* No heavy animation libraries
+* Smooth interactions only
+
+Technical Constraints
+* Next.js (App Router)
+* TypeScript
+* Tailwind CSS
+* Component-based structure
+* Reusable dashboard cards
+* Accessible (keyboard + screen readers)
+
+Design Freedom Clause (IMPORTANT)
+You are encouraged to design this dashboard thoughtfully and creatively, within professional boundaries. Avoid generic admin dashboards. This should feel purpose-built for medical education.
+
+FINAL INSTRUCTION (CRITICAL)
+Render a fully implemented, visually rich dashboard. Do not describe it. Include welcome messaging, the GAMSAT course card, useful supporting sections, and a working light/dark mode toggle.
