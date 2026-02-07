@@ -1,5 +1,5 @@
 import { useAuth } from "@/hooks/use-auth";
-import { useLocation } from "wouter";
+import { useLocation, Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -19,11 +19,25 @@ import {
   FileText, 
   Users,
   ChevronRight,
-  ArrowRight
+  ArrowRight,
+  LogOut,
+  User,
+  Settings,
+  LayoutDashboard
 } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import logoImg from "@assets/final_logo.png";
 
 export default function Dashboard() {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
   const [, setLocation] = useLocation();
 
   const fadeInUp = {
@@ -41,8 +55,58 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-background pt-24 pb-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-background pb-12">
+      {/* Dashboard Header */}
+      <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+          <Link href="/dashboard" className="cursor-pointer flex items-center">
+            <img
+              src={logoImg}
+              alt="SmashMed Logo"
+              className="h-20 w-auto object-contain mix-blend-multiply"
+            />
+          </Link>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="relative h-10 w-10 rounded-full">
+                <Avatar className="h-10 w-10">
+                  <AvatarFallback className="bg-primary/10 text-primary font-bold">
+                    {user?.username?.charAt(0).toUpperCase()}
+                  </AvatarFallback>
+                </Avatar>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56" align="end" forceMount>
+              <DropdownMenuLabel className="font-normal">
+                <div className="flex flex-col space-y-1">
+                  <p className="text-sm font-medium leading-none">{user?.username}</p>
+                  <p className="text-xs leading-none text-muted-foreground">{user?.email}</p>
+                </div>
+              </DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem className="cursor-pointer">
+                <User className="mr-2 h-4 w-4" />
+                <span>Account</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer">
+                <Settings className="mr-2 h-4 w-4" />
+                <span>Settings</span>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem 
+                className="cursor-pointer text-destructive focus:text-destructive"
+                onClick={() => logout()}
+              >
+                <LogOut className="mr-2 h-4 w-4" />
+                <span>Log out</span>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+      </header>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         {/* Welcome Section */}
         <motion.div 
           initial={{ opacity: 0, y: -10 }}
@@ -56,6 +120,8 @@ export default function Dashboard() {
             Your GAMSAT preparation, all in one place.
           </p>
         </motion.div>
+        
+        {/* ... existing dashboard content ... */}
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content Area */}

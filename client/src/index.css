@@ -36,37 +36,6 @@
   --font-body: 'IBM Plex Sans', sans-serif;
 }
 
-.dark {
-  --background: 260 20% 12%; /* #1A1625 - Deep muted purple */
-  --foreground: 40 18% 97%;
-  
-  --card: 260 20% 15%;
-  --card-foreground: 40 18% 97%;
-  --card-border: 260 20% 20%;
-  
-  --popover: 260 20% 15%;
-  --popover-foreground: 40 18% 97%;
-  --popover-border: 260 20% 20%;
-  
-  --primary: 260 40% 65%; /* Lighter purple for dark mode */
-  --primary-foreground: 260 20% 12%;
-  
-  --secondary: 260 30% 35%;
-  --secondary-foreground: 40 18% 97%;
-  
-  --muted: 260 20% 18%;
-  --muted-foreground: 260 10% 70%;
-  
-  --accent: 260 30% 22%;
-  --accent-foreground: 260 40% 65%;
-  
-  --destructive: 0 62% 30%;
-  --destructive-foreground: 40 18% 97%;
-  
-  --border: 260 20% 20%;
-  --input: 260 20% 20%;
-  --ring: 260 40% 65%;
-}
 
 @layer base {
   body {

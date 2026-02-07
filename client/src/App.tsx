@@ -1,9 +1,9 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { ThemeProvider } from "@/hooks/use-theme";
+import { useAuth } from "@/hooks/use-auth";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import NotFound from "@/pages/not-found";
@@ -16,6 +16,7 @@ import Pricing from "@/pages/Pricing";
 import HonourRoll from "@/pages/HonourRoll";
 
 function Router() {
+  const { isAuthenticated } = useAuth();
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -31,20 +32,21 @@ function Router() {
 }
 
 function App() {
+  const [location] = useLocation();
+  const isDashboard = location === "/dashboard";
+
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider defaultTheme="light" storageKey="smashmed-ui-theme">
-        <TooltipProvider>
-          <div className="flex flex-col min-h-screen">
-            <Navbar />
-            <main className="flex-grow">
-              <Router />
-            </main>
-            <Footer />
-          </div>
-          <Toaster />
-        </TooltipProvider>
-      </ThemeProvider>
+      <TooltipProvider>
+        <div className="flex flex-col min-h-screen">
+          {!isDashboard && <Navbar />}
+          <main className="flex-grow">
+            <Router />
+          </main>
+          {!isDashboard && <Footer />}
+        </div>
+        <Toaster />
+      </TooltipProvider>
     </QueryClientProvider>
   );
 }
