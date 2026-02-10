@@ -60,11 +60,11 @@ const pricingData = {
   GBP: {
     symbol: "£",
     free: "0",
-    weekly: "15",
-    monthly: "6.90",
-    monthlyTotal: "30",
-    yearly: "4.03",
-    yearlyTotal: "210",
+    weekly: "25",
+    monthly: "45",
+    monthlyTotal: "45",
+    yearly: "350",
+    yearlyTotal: "350",
   },
   NZD: {
     symbol: "$",

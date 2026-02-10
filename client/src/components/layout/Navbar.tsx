@@ -25,7 +25,7 @@ export function Navbar() {
       ],
     },
     { label: "Pricing", href: "/pricing" },
-    { label: "Honour Roll", href: "/honour-roll" },
+
     {
       label: "Resources",
       dropdown: [
@@ -40,6 +40,7 @@ export function Navbar() {
       label: "Company",
       dropdown: [{ label: "About Us", href: "/about" }],
     },
+    { label: "Honour Roll", href: "/honour-roll" },
   ];
 
   useEffect(() => {
@@ -81,7 +82,10 @@ export function Navbar() {
               </Button>
             )}
 
-            <Link href={isAuthenticated ? "/dashboard" : "/"} className="cursor-pointer flex items-center">
+            <Link
+              href={isAuthenticated ? "/dashboard" : "/"}
+              className="cursor-pointer flex items-center"
+            >
               <img
                 src={logoImg}
                 alt="SmashMed Logo"
@@ -172,7 +176,10 @@ export function Navbar() {
             {isAuthenticated ? (
               <div className="flex items-center gap-4">
                 <Button
-                  onClick={() => logout()}
+                  onClick={async () => {
+                    await logout();
+                    setLocation("/auth");
+                  }}
                   variant="ghost"
                   size="sm"
                   className="text-gray-600 hover:text-primary hover:bg-primary/5 rounded-full"
@@ -253,8 +260,8 @@ export function Navbar() {
                       ))}
                     </div>
                   ) : (
-                    <Link 
-                      href={link.href || "#"} 
+                    <Link
+                      href={link.href || "#"}
                       className="block text-[15px] font-medium text-gray-600 hover:text-primary"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
@@ -267,14 +274,19 @@ export function Navbar() {
               <div className="pt-8 border-t border-gray-100 space-y-4">
                 {isAuthenticated ? (
                   <>
-                    <Link href="/dashboard" className="block" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link
+                      href="/dashboard"
+                      className="block"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
                       <Button className="w-full h-12 bg-primary text-white rounded-full font-bold">
                         Go to Dashboard
                       </Button>
                     </Link>
                     <Button
-                      onClick={() => {
-                        logout();
+                      onClick={async () => {
+                        await logout();
+                        setLocation("/auth");
                         setIsMobileMenuOpen(false);
                       }}
                       variant="outline"
@@ -285,12 +297,20 @@ export function Navbar() {
                   </>
                 ) : (
                   <>
-                    <Link href="/auth" className="block" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link
+                      href="/auth"
+                      className="block"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
                       <Button className="w-full h-12 bg-primary text-white rounded-full font-bold">
                         Open SmashMed
                       </Button>
                     </Link>
-                    <Link href="/auth" className="block" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link
+                      href="/auth"
+                      className="block"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
                       <Button
                         variant="outline"
                         className="w-full h-12 rounded-full border-2"

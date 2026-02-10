@@ -98,6 +98,13 @@ export function useAuth() {
     onSuccess: () => {
       accessToken = null;
       queryClient.setQueryData(["/api/auth/user"], null);
+      queryClient.clear(); // Clear all cached data on logout
+    },
+    onError: () => {
+      // Even if logout API fails, clear local state
+      accessToken = null;
+      queryClient.setQueryData(["/api/auth/user"], null);
+      queryClient.clear();
     },
   });
 

@@ -37,8 +37,7 @@ type LoginFormData = z.infer<typeof loginSchema>;
 type RegisterFormData = z.infer<typeof registerSchema>;
 
 export default function AuthPage() {
-  const { user, isAuthenticated, login, register, isLoggingIn, isRegistering } =
-    useAuth();
+  const { login, register, isLoggingIn, isRegistering } = useAuth();
   const [, setLocation] = useLocation();
   const { toast } = useToast();
 
@@ -49,12 +48,6 @@ export default function AuthPage() {
   const registerForm = useForm<RegisterFormData>({
     resolver: zodResolver(registerSchema),
   });
-
-  // Redirect if already authenticated
-  if (isAuthenticated) {
-    setLocation("/dashboard");
-    return null;
-  }
 
   const handleLogin = async (data: LoginFormData) => {
     try {
@@ -137,7 +130,7 @@ export default function AuthPage() {
       </div>
 
       {/* Right Column: Auth Form */}
-      <div className="flex-1 flex flex-col items-center justify-center p-6 lg:p-12 relative">
+      <div className="flex-1 flex flex-col items-center justify-center p-6 lg:p-12 relative min-h-screen lg:min-h-0">
         {/* Mobile Logo */}
         <div className="lg:hidden absolute top-8 left-8">
           <Link href="/">
@@ -149,19 +142,11 @@ export default function AuthPage() {
           </Link>
         </div>
 
-        <Link
-          href="/"
-          className="absolute top-8 right-8 text-sm font-medium text-gray-500 hover:text-primary flex items-center gap-2 transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to home
-        </Link>
-
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4 }}
-          className="w-full max-w-[440px]"
+          className="w-full max-w-[440px] my-auto"
         >
           <Card className="border-gray-100 shadow-xl shadow-gray-200/50 rounded-2xl overflow-hidden">
             <CardContent className="p-0">
@@ -181,7 +166,7 @@ export default function AuthPage() {
                   </TabsTrigger>
                 </TabsList>
 
-                <div className="p-8">
+                <div className="p-8 bg-white">
                   <TabsContent value="login" className="mt-0 space-y-6">
                     <div className="space-y-2">
                       <h3 className="text-2xl font-heading font-bold text-gray-900">

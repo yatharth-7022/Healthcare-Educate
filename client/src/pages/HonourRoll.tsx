@@ -13,12 +13,6 @@ import { useRef } from "react";
 
 const honourRollData = [
   {
-    name: "Neesha Gopi",
-    university: "University of Sydney",
-    year: "2026",
-    rank: "Gold",
-  },
-  {
     name: "Diya Dasgupta",
     university: "University of Melbourne",
     year: "2026",
@@ -34,43 +28,43 @@ const honourRollData = [
     name: "Madeline Windura",
     university: "University of Notre Dame",
     year: "2026",
-    rank: "Silver",
+    rank: "Gold",
   },
   {
     name: "Liam Shirley",
     university: "Macquarie University",
     year: "2026",
-    rank: "Silver",
+    rank: "Gold",
   },
   {
     name: "Rewaj Raut Chhetri",
     university: "Griffith University",
     year: "2025",
-    rank: "Silver",
+    rank: "Gold",
   },
   {
     name: "Lini Millar",
     university: "Griffith University",
     year: "2025",
-    rank: "Bronze",
+    rank: "Gold",
   },
   {
     name: "Miranda Green",
     university: "University of Wollongong",
     year: "2025",
-    rank: "Bronze",
+    rank: "Gold",
   },
   {
     name: "Rosie Lee",
     university: "University of Queensland (DMD)",
     year: "2025",
-    rank: "Bronze",
+    rank: "Gold",
   },
   {
     name: "Maayra Taneja",
     university: "University of Notre Dame",
     year: "2025",
-    rank: "Silver",
+    rank: "Gold",
   },
   {
     name: "Harriet Cummins",

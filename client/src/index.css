@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -12,7 +12,7 @@
   /* Premium Lavender/Purple Accents */
   --primary: 257 37% 47%; /* #674EA7 */
   --primary-foreground: 0 0% 100%;
-  
+
   --secondary: 260 30% 75%; /* #B4A7D6 */
   --secondary-foreground: 260 20% 20%;
 
@@ -29,20 +29,30 @@
   --input: 240 6% 90%;
   --ring: 257 37% 47%;
 
+  --card: 0 0% 100%;
+  --card-foreground: 260 20% 20%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 260 20% 20%;
+
   --radius: 0.5rem;
 
   /* Font variables matching Tailwind config */
-  --font-heading: 'Source Sans 3', sans-serif;
-  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-heading: "Source Sans 3", sans-serif;
+  --font-body: "IBM Plex Sans", sans-serif;
 }
-
 
 @layer base {
   body {
     @apply bg-background text-foreground antialiased font-body selection:bg-primary/20;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading tracking-tight;
   }
 }
@@ -51,7 +61,7 @@
   .text-balance {
     text-wrap: balance;
   }
-  
+
   .glass-nav {
     @apply bg-background/90 backdrop-blur-md border-b border-black/5;
   }
@@ -59,8 +69,12 @@
   .premium-shadow {
     box-shadow: 0 20px 40px -10px rgba(103, 78, 167, 0.1);
   }
-  
+
   .hero-gradient {
-    background: linear-gradient(135deg, rgba(250,248,244,1) 0%, rgba(240,235,250,0.5) 100%);
+    background: linear-gradient(
+      135deg,
+      rgba(250, 248, 244, 1) 0%,
+      rgba(240, 235, 250, 0.5) 100%
+    );
   }
 }

@@ -60,7 +60,7 @@ const fadeIn = {
 
 const reviews = [
   {
-    name: "Student 1",
+    name: "Velma H",
     text: "",
     highlight: "I got 83 in S3! In my previous sitting I got 65.",
     text2: " Thank you so much once again 😊❤️",
@@ -68,7 +68,7 @@ const reviews = [
     image: stud1Review,
   },
   {
-    name: "Student 2",
+    name: "Lesley S",
     text: "Hey Vab! Great mate — ",
     highlight: "ended with a 69 overall, with a 74 in S3",
     text2: " ❤️",
@@ -76,7 +76,7 @@ const reviews = [
     image: stud2Review,
   },
   {
-    name: "Student 3",
+    name: "Varun Q",
     text: "Vab is a ",
     highlight: "fantastic tutor",
     text2:
@@ -85,7 +85,7 @@ const reviews = [
     image: stud3Review,
   },
   {
-    name: "Student 4",
+    name: "Ranjeet K",
     text: "I really liked your teaching style. It was ",
     highlight: "focused and paced according to students' understanding.",
     text2:
@@ -94,7 +94,7 @@ const reviews = [
     image: stud4Review,
   },
   {
-    name: "Student 5",
+    name: "Chelsea C",
     text: "I just got my GAMSAT score back and really improved! ",
     highlight:
       "In my previous sitting I had little science knowledge and got 46. For this sitting I got a 57!",
@@ -103,7 +103,7 @@ const reviews = [
     image: stud5Review,
   },
   {
-    name: "Student 6",
+    name: "Leslie M",
     text: "I'm grateful for your help with my GAMSAT S3 prep, Vab. Your lessons were always ",
     highlight: "informative and engaging,",
     text2:
@@ -112,21 +112,13 @@ const reviews = [
     image: stud6Review,
   },
   {
-    name: "Student 7",
+    name: "Thilini S",
     text: "",
     highlight:
       "I wrote my first S3 in 2022 and got only 45. This time I got a 60.",
     text2: " Thanks for all of your support.",
     result: "45 → 60 in Section 3",
     image: stud7Review,
-  },
-  {
-    name: "Student 8",
-    text: "I'm working with Vab now. ",
-    highlight: "I'm really enjoying the content",
-    text2: " we are working through ❤️",
-    result: "Current Student",
-    image: stud8Review,
   },
 ];
 
