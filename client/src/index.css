@@ -42,6 +42,38 @@
   --font-body: "IBM Plex Sans", sans-serif;
 }
 
+.dark {
+  /* Dark mode - Rich Deep Background */
+  --background: 240 10% 8%; /* #131318 */
+  --foreground: 0 0% 98%; /* #FAFAFA */
+
+  /* Premium Purple Accents for Dark Mode */
+  --primary: 262 83% 68%; /* #A78BFA - Vibrant Purple */
+  --primary-foreground: 240 10% 8%;
+
+  --secondary: 260 35% 25%; /* #3E355A - Deep Purple */
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 240 8% 15%; /* #212127 */
+  --muted-foreground: 240 5% 65%; /* #9CA3AF */
+
+  --accent: 260 45% 20%; /* #2D2441 */
+  --accent-foreground: 262 83% 68%;
+
+  --destructive: 0 62% 50%; /* #DC2626 */
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 240 8% 20%; /* #2A2A31 */
+  --input: 240 8% 20%;
+  --ring: 262 83% 68%;
+
+  --card: 240 8% 12%; /* #1A1A20 */
+  --card-foreground: 0 0% 98%;
+
+  --popover: 240 8% 12%;
+  --popover-foreground: 0 0% 98%;
+}
+
 @layer base {
   body {
     @apply bg-background text-foreground antialiased font-body selection:bg-primary/20;

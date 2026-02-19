@@ -35,6 +35,8 @@ import {
   Flame,
   Trophy,
   LayoutDashboard,
+  Moon,
+  Sun,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -46,10 +48,12 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import logoImg from "@assets/final_logo.png";
+import { useTheme } from "@/components/theme-provider";
 
 export default function Dashboard() {
   const { user, logout } = useAuth();
   const [, setLocation] = useLocation();
+  const { theme, setTheme } = useTheme();
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -100,9 +104,9 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 dark:from-background dark:via-background dark:to-muted/10">
       {/* Enhanced Dashboard Header */}
-      <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-xl border-b border-border/40 shadow-sm">
+      <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-xl border-b border-border/40 shadow-sm dark:bg-background/98 dark:border-border">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-8">
             <Link
@@ -141,6 +145,18 @@ export default function Dashboard() {
           </div>
 
           <div className="flex items-center gap-3">
+            {/* Theme Toggle Button */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="h-9 w-9 rounded-full hover:bg-accent"
+            >
+              <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <span className="sr-only">Toggle theme</span>
+            </Button>
+            
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
@@ -279,7 +295,7 @@ export default function Dashboard() {
               >
                 <div className="flex flex-col items-center gap-2">
                   <action.icon className="w-6 h-6 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm font-semibold">{action.label}</span>
+                  <span className="text-sm font-semibold">{action.label}</span> dark:from-card dark:to-card/30 dark:shadow-2xl
                 </div>
               </Button>
             </motion.div>
@@ -315,7 +331,7 @@ export default function Dashboard() {
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
                       <span className="text-sm font-semibold">
-                        Overall Progress
+                        Overall Progress dark:bg-muted/50
                       </span>
                       <span className="text-2xl font-bold text-primary">
                         45%
@@ -448,7 +464,7 @@ export default function Dashboard() {
           <div className="space-y-6">
             {/* Upcoming Live Classes */}
             <motion.div variants={fadeInUp} initial="initial" animate="animate">
-              <Card className="border-border/50 shadow-lg">
+              <Card className="border-border/50 shadow-lg dark:shadow-2xl">
                 <CardHeader className="pb-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -518,7 +534,7 @@ export default function Dashboard() {
 
             {/* Study Support */}
             <motion.div variants={fadeInUp} initial="initial" animate="animate">
-              <Card className="bg-primary/5 border-primary/20 shadow-lg">
+              <Card className="bg-primary/5 border-primary/20 shadow-lg dark:bg-primary/10 dark:border-primary/30 dark:shadow-2xl">
                 <CardHeader className="pb-3">
                   <div className="flex items-center gap-2">
                     <div className="p-2 bg-primary/20 rounded-lg">

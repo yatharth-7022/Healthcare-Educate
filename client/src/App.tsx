@@ -8,6 +8,7 @@ import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import { PublicRoute } from "@/components/auth/PublicRoute";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
+import { ThemeProvider } from "@/components/theme-provider";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import AuthPage from "@/pages/AuthPage";
@@ -28,7 +29,9 @@ function Router() {
       </Route>
       <Route path="/dashboard">
         <ProtectedRoute>
-          <Dashboard />
+          <ThemeProvider defaultTheme="light" storageKey="dashboard-theme">
+            <Dashboard />
+          </ThemeProvider>
         </ProtectedRoute>
       </Route>
       <Route path="/about" component={About} />
