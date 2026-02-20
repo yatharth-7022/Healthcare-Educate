@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SubscribeButton } from "@/components/payment/SubscribeButton";
 import student1 from "@assets/student1_1768894056469.png";
 import student2 from "@assets/student2_1768894056469.png";
 import student3 from "@assets/student3_1768894056470.png";
@@ -81,6 +82,13 @@ export default function Pricing() {
   const [currency, setCurrency] = useState<Currency>("GBP");
 
   const cur = pricingData[currency];
+
+  // Stripe Price IDs - TODO: Replace these with your actual Stripe Price IDs from dashboard
+  const PRICE_IDS = {
+    weekly: "price_weekly_test",
+    monthly: "price_monthly_test",
+    yearly: "price_yearly_test",
+  };
 
   return (
     <div className="min-h-screen bg-[#FAF8F4] text-[#1A1A1A] font-['IBM_Plex_Sans'] pt-32 pb-20 overflow-x-hidden">
@@ -186,9 +194,11 @@ export default function Pricing() {
                   </h3>
                   <div className="mb-auto">
                     <div className="flex items-baseline gap-1">
-                      <span className="text-4xl font-bold">
-                        {cur.symbol}
-                        {cur.weekly}
+                   SubscribeButton
+                    plan="weekly"
+                    priceIds={PRICE_IDS}
+                    className="w-full mt-8 bg-[#674EA7] hover:bg-[#674EA7]/90 text-white rounded-full font-bold h-12 shadow-lg shadow-[#674EA7]/20"
+                  /ur.weekly}
                       </span>
                       <span className="text-gray-400">/week</span>
                     </div>
@@ -218,9 +228,11 @@ export default function Pricing() {
                     <p className="text-xs text-gray-400 mt-1">
                       Billed at {cur.symbol}
                       {cur.monthlyTotal}/month
-                    </p>
-                  </div>
-                  <Button className="w-full mt-8 bg-[#674EA7] hover:bg-[#674EA7]/90 text-white rounded-full font-bold h-12 shadow-lg shadow-[#674EA7]/20">
+                   SubscribeButton
+                    plan="monthly"
+                    priceIds={PRICE_IDS}
+                    className="w-full mt-8 bg-[#674EA7] hover:bg-[#674EA7]/90 text-white rounded-full font-bold h-12 shadow-lg shadow-[#674EA7]/20"
+                  /className="w-full mt-8 bg-[#674EA7] hover:bg-[#674EA7]/90 text-white rounded-full font-bold h-12 shadow-lg shadow-[#674EA7]/20">
                     Continue
                   </Button>
                 </CardContent>
@@ -248,9 +260,11 @@ export default function Pricing() {
                     <p className="text-xs text-gray-400 mt-1">
                       Billed at {cur.symbol}
                       {cur.yearlyTotal}/year
-                    </p>
-                  </div>
-                  <Button className="w-full mt-8 bg-[#674EA7] hover:bg-[#674EA7]/90 text-white rounded-full font-bold h-12 shadow-lg shadow-[#674EA7]/20">
+                   SubscribeButton
+                    plan="yearly"
+                    priceIds={PRICE_IDS}
+                    className="w-full mt-8 bg-[#674EA7] hover:bg-[#674EA7]/90 text-white rounded-full font-bold h-12 shadow-lg shadow-[#674EA7]/20"
+                  /className="w-full mt-8 bg-[#674EA7] hover:bg-[#674EA7]/90 text-white rounded-full font-bold h-12 shadow-lg shadow-[#674EA7]/20">
                     Continue
                   </Button>
                 </CardContent>

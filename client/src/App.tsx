@@ -17,6 +17,8 @@ import About from "@/pages/About";
 import Courses from "@/pages/Courses";
 import Pricing from "@/pages/Pricing";
 import HonourRoll from "@/pages/HonourRoll";
+import SubscriptionSuccess from "@/pages/SubscriptionSuccess";
+import Account from "@/pages/Account";
 
 function Router() {
   return (
@@ -38,6 +40,16 @@ function Router() {
       <Route path="/courses" component={Courses} />
       <Route path="/pricing" component={Pricing} />
       <Route path="/honour-roll" component={HonourRoll} />
+      <Route path="/subscription/success">
+        <ProtectedRoute>
+          <SubscriptionSuccess />
+        </ProtectedRoute>
+      </Route>
+      <Route path="/account">
+        <ProtectedRoute>
+          <Account />
+        </ProtectedRoute>
+      </Route>
       <Route component={NotFound} />
     </Switch>
   );

@@ -25,4 +25,14 @@ export const config = {
     sameSite: "strict" as const,
     maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
   },
+
+  // Stripe Configuration
+  stripe: {
+    secretKey: process.env.STRIPE_SECRET_KEY || "",
+    publishableKey: process.env.STRIPE_PUBLISHABLE_KEY || "",
+    webhookSecret: process.env.STRIPE_WEBHOOK_SECRET || "",
+  },
+
+  // Frontend URL
+  frontendUrl: process.env.FRONTEND_URL || "http://localhost:5173",
 };

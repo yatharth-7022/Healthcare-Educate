@@ -38,6 +38,16 @@ app.use((req, res, next) => {
 });
 
 // Body parsing middleware
+app.post(
+  "/api/webhooks/stripe",
+  express.raw({ type: "application/json" }), // Keep raw body
+  async (req, res) => {
+    const { handleStripeWebhook } =
+      await import("./controllers/webhookController");
+    await handleStripeWebhook(req, res);
+  },
+);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

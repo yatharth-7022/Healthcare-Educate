@@ -5,6 +5,7 @@ import { insertSubscriberSchema } from "@shared/schema";
 import { z } from "zod";
 import { setupAuth } from "./auth";
 import authRoutes from "./routes/authRoutes";
+import paymentRoutes from "./routes/paymentRoutes";
 import { logger } from "./utils/logger";
 
 export async function registerRoutes(
@@ -16,6 +17,9 @@ export async function registerRoutes(
 
   // Authentication routes
   app.use("/api/auth", authRoutes);
+
+  // Payment routes
+  app.use("/api", paymentRoutes);
 
   // App Routes
   app.post("/api/subscribers", async (req, res) => {

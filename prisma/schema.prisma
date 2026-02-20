@@ -19,9 +19,74 @@ model User {
   isAdmin      Boolean  @default(false)
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+  
+  // Stripe payment relationships
+  subscriptions Subscription[]
+  payments      Payment[]
 }
 
 model Subscriber {
   id    Int    @id @default(autoincrement())
   email String @unique
+}
+
+model Subscription {
+  id                   Int      @id @default(autoincrement())
+  
+  // Link to your User
+  userId               Int
+  user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  stripeCustomerId     String   // Links to Stripe Customer (e.g., "cus_ABC123")
+  stripeSubscriptionId String   @unique // Links to Stripe Subscription (e.g., "sub_XYZ789")
+  stripePriceId        String   // Which plan they're on (e.g., "price_1ABC...")
+
+  status               String
+  
+  currentPeriodStart   DateTime // When current billing period started
+  currentPeriodEnd     DateTime // When it ends (renewal date)
+  
+  // Cancellation tracking
+  cancelAtPeriodEnd    Boolean  @default(false) // True = user requested cancel, will end at period end
+  
+  // Timestamps
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+  
+  // Indexes for fast lookups
+  @@index([userId])
+  @@index([stripeCustomerId])
+  @@index([status])
+}
+
+// STRIPE PAYMENT MODEL
+// Historical record of all payment transactions
+model Payment {
+  id              Int      @id @default(autoincrement())
+  
+  // Link to your User
+  userId          Int
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Stripe Payment ID (for reference/refunds)
+  stripePaymentId String   @unique // Payment Intent ID or Invoice ID
+  
+  // Payment details
+  amount          Int      // Amount in cents (e.g., 2999 = $29.99)
+  currency        String   @default("usd") // ISO currency code
+  
+  // Payment status
+  // Values: "succeeded", "pending", "failed", "refunded"
+  status          String
+  
+  // Description (what was purchased)
+  description     String?
+  
+  // Timestamp
+  createdAt       DateTime @default(now())
+  
+  // Indexes for fast lookups
+  @@index([userId])
+  @@index([status])
+  @@index([createdAt])
 }
