@@ -14,7 +14,7 @@ export function serveStatic(app: Express) {
 
   // fall through to index.html if the file doesn't exist
   // This must come AFTER API routes are registered
-  app.use("*", (req, res) => {
+  app.get("*", (req, res) => {
     // Don't serve index.html for API routes
     if (req.originalUrl.startsWith("/api")) {
       return res.status(404).json({ error: "Not found" });
