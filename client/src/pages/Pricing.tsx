@@ -83,11 +83,11 @@ export default function Pricing() {
 
   const cur = pricingData[currency];
 
-  // Stripe Price IDs - TODO: Replace these with your actual Stripe Price IDs from dashboard
+  // Stripe Price IDs from your Stripe Dashboard
   const PRICE_IDS = {
-    weekly: "price_weekly_test",
-    monthly: "price_monthly_test",
-    yearly: "price_yearly_test",
+    weekly: "price_1T6Q7lKtu73eaqyQKkZVRPtk", // $15 AUD per week
+    monthly: "price_1T6Q81Ktu73eaqyQ9Eytc6QK", // $50 AUD per month
+    yearly: "price_1T6Q8IKtu73eaqyQGqkpBsLZ", // $500 AUD per year
   };
 
   return (
@@ -186,37 +186,42 @@ export default function Pricing() {
             </motion.div>
 
             {/* Weekly Card */}
+            {/* Weekly Card */}
             <motion.div {...fadeIn} transition={{ delay: 0.2 }}>
               <Card className="h-full border-none shadow-sm bg-white flex flex-col hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-8 flex flex-col h-full">
                   <h3 className="text-lg font-bold text-[#2D2D2D] mb-6">
                     Weekly
                   </h3>
+
                   <div className="mb-auto">
                     <div className="flex items-baseline gap-1">
-                   SubscribeButton
-                    plan="weekly"
-                    priceIds={PRICE_IDS}
-                    className="w-full mt-8 bg-[#674EA7] hover:bg-[#674EA7]/90 text-white rounded-full font-bold h-12 shadow-lg shadow-[#674EA7]/20"
-                  /ur.weekly}
+                      <span className="text-4xl font-bold">
+                        {cur.symbol}
+                        {cur.weekly}
                       </span>
                       <span className="text-gray-400">/week</span>
                     </div>
                   </div>
-                  <Button className="w-full mt-8 bg-[#674EA7] hover:bg-[#674EA7]/90 text-white rounded-full font-bold h-12 shadow-lg shadow-[#674EA7]/20">
-                    Continue
-                  </Button>
+
+                  <SubscribeButton
+                    plan="weekly"
+                    priceIds={PRICE_IDS}
+                    className="w-full mt-8 bg-[#674EA7] hover:bg-[#674EA7]/90 text-white rounded-full font-bold h-12 shadow-lg shadow-[#674EA7]/20"
+                  />
                 </CardContent>
               </Card>
             </motion.div>
 
             {/* Monthly Card */}
+            {/* Monthly Card */}
             <motion.div {...fadeIn} transition={{ delay: 0.3 }}>
               <Card className="h-full border-none shadow-sm bg-white flex flex-col border-t-4 border-t-[#B4A7D6]/20 hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-8 flex flex-col h-full">
-                  <h3 className="text-lg font-bold text-[#2D2D2D] mb-6">
+                  <h3 className="text-lg font-bold text-[#2D22D2] mb-6">
                     Monthly
                   </h3>
+
                   <div className="mb-auto">
                     <div className="flex items-baseline gap-1">
                       <span className="text-4xl font-bold">
@@ -225,20 +230,23 @@ export default function Pricing() {
                       </span>
                       <span className="text-gray-400">/month</span>
                     </div>
+
                     <p className="text-xs text-gray-400 mt-1">
                       Billed at {cur.symbol}
                       {cur.monthlyTotal}/month
-                   SubscribeButton
+                    </p>
+                  </div>
+
+                  <SubscribeButton
                     plan="monthly"
                     priceIds={PRICE_IDS}
                     className="w-full mt-8 bg-[#674EA7] hover:bg-[#674EA7]/90 text-white rounded-full font-bold h-12 shadow-lg shadow-[#674EA7]/20"
-                  /className="w-full mt-8 bg-[#674EA7] hover:bg-[#674EA7]/90 text-white rounded-full font-bold h-12 shadow-lg shadow-[#674EA7]/20">
-                    Continue
-                  </Button>
+                  />
                 </CardContent>
               </Card>
             </motion.div>
 
+            {/* Yearly Card */}
             {/* Yearly Card */}
             <motion.div {...fadeIn} transition={{ delay: 0.4 }}>
               <Card className="h-full border-none shadow-xl bg-white flex flex-col relative ring-2 ring-[#674EA7]/10 hover:shadow-2xl transition-shadow duration-300">
@@ -249,6 +257,7 @@ export default function Pricing() {
                       Best value!
                     </Badge>
                   </div>
+
                   <div className="mb-auto">
                     <div className="flex items-baseline gap-1">
                       <span className="text-4xl font-bold text-[#674EA7]">
@@ -257,16 +266,18 @@ export default function Pricing() {
                       </span>
                       <span className="text-gray-400">/year</span>
                     </div>
+
                     <p className="text-xs text-gray-400 mt-1">
                       Billed at {cur.symbol}
                       {cur.yearlyTotal}/year
-                   SubscribeButton
+                    </p>
+                  </div>
+
+                  <SubscribeButton
                     plan="yearly"
                     priceIds={PRICE_IDS}
                     className="w-full mt-8 bg-[#674EA7] hover:bg-[#674EA7]/90 text-white rounded-full font-bold h-12 shadow-lg shadow-[#674EA7]/20"
-                  /className="w-full mt-8 bg-[#674EA7] hover:bg-[#674EA7]/90 text-white rounded-full font-bold h-12 shadow-lg shadow-[#674EA7]/20">
-                    Continue
-                  </Button>
+                  />
                 </CardContent>
               </Card>
             </motion.div>
