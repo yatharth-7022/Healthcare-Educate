@@ -376,7 +376,11 @@ export default function Dashboard() {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-3">
-                    <Button className="flex-1 h-12 bg-primary hover:bg-primary/90 text-white font-semibold shadow-lg hover:shadow-xl transition-all group">
+                    <Button
+                      className="flex-1 h-12 bg-primary hover:bg-primary/90 text-white font-semibold shadow-lg hover:shadow-xl transition-all group"
+                      onClick={() => setLocation("/dashboard/practice")}
+                      data-testid="button-continue-learning"
+                    >
                       Continue Learning
                       <PlayCircle className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform" />
                     </Button>

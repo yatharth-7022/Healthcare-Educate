@@ -282,5 +282,12 @@ class StripeService {
   }
 }
 
-// Export singleton instance
-export const stripeService = new StripeService();
+// Export singleton instance — gracefully handle missing key in dev
+let stripeService: StripeService;
+try {
+  stripeService = new StripeService();
+} catch (err) {
+  logger.warn("Stripe service not initialized — STRIPE_SECRET_KEY is missing or invalid. Payment features will be unavailable.");
+  stripeService = null as unknown as StripeService;
+}
+export { stripeService };

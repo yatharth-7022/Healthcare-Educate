@@ -1,0 +1,167 @@
+Context:
+The SmashMed platform already includes:
+
+Landing pages
+Pricing page
+Auth system
+Dashboard (with GAMSAT course card)
+
+Now implement the Practice flow that users access when they click the GAMSAT course card on the dashboard.
+
+🔁 Navigation Flow (MANDATORY)
+User logs in → Dashboard
+User clicks GAMSAT Course Card
+Navigate to:
+👉 /dashboard/practice (Main Practice Page)
+User clicks a major category
+Navigate to:
+👉 /dashboard/practice/[category] (Subcategory Page)
+🎯 Page 1 — Main Practice Page
+Purpose
+
+Display major categories with progress tracking.
+
+Layout (Match Reference Image Style)
+Clean, dark/light adaptive UI (same as dashboard)
+Vertical list of categories
+Each row includes:
+Category name
+Icon (subtle, academic)
+Progress bar (horizontal)
+Completion text (e.g. 65 / 834 question sets completed)
+Categories (RENDER EXACTLY)
+Humanities
+General Chemistry
+Organic Chemistry
+Biology
+Physics
+UI Behavior
+Entire row is clickable
+On hover: subtle highlight
+Progress bars:
+Smooth
+Muted color (match theme)
+No flashy animations
+📊 Page 2 — Subcategory Page
+
+When user clicks a category → show subcategories
+
+Layout
+Same structure as main page
+Breadcrumb at top:
+Practice / Humanities (example)
+Back navigation
+Subcategories (RENDER EXACTLY)
+🧩 Humanities
+Academic Texts
+Populist Social Science
+Classical/Antiquated texts
+Fiction
+Cartoons
+Diagrams and Data
+Journalism
+Miscellaneous
+Poetry
+🧪 General Chemistry
+Acids and Bases
+Emulsions and Phase Equilibria
+Equilibrium
+Kinetics
+Methods of Analysis and Detection
+Mole Calculations and Gases
+Redox and Electrochemistry
+Thermodynamics
+Structure and Bonding
+The Periodic Table
+Atoms and Reactions
+Materials Chemistry
+Medicinal Chemistry
+Organometallic Chemistry
+⚗️ Organic Chemistry
+Structure and Bonding in Organic Chemistry
+Organic Nomenclature
+The Alkanes
+Alkenes
+Alkynes
+Stereochemistry and Stereoisomers
+The Haloalkanes
+The Oxygen Family
+Aromatic Chemistry
+Nitrogen Heterogroups
+Electrocyclic Reactions and Sigmatropic Rearrangements
+Spectroscopy
+Intermolecular Forces in Organic Chemistry
+Modern research based organic chemistry
+Polymer Chemistry
+🧬 Biology
+Bioenergetics
+Cellular Biology and Enzymes
+Digestive System and Renal System
+Embryology
+Exchange Surfaces
+Genetics and Evolution
+Homeostasis and Endocrinology
+Immunology
+Musculoskeletal System
+Nervous System
+Thermoregulation
+Transport in Animals
+⚛️ Physics
+Acoustics
+Astrophysics
+Classical Mechanics
+Electricity: Electrostatics and Electric circuits
+Magnetism
+Fluid Mechanics
+Medical Physics
+Nuclear Physics
+Optics
+Thermal Physics
+Wave Properties (coming soon)
+Modern research based physics
+Materials engineering
+📈 Progress System (IMPORTANT)
+Each category + subcategory should show:
+Progress bar
+Completed vs total (mock data is fine for now)
+“Coming soon” items:
+Disabled state
+Slightly faded
+Non-clickable
+🎨 UI & Design Requirements
+Match existing SmashMed dashboard UI exactly
+Use:
+Same spacing
+Same typography
+Same card/list style
+Keep it:
+Minimal
+Structured
+Academic
+No gamification
+No bright colors
+✨ Interaction & UX
+Smooth page transitions
+Subtle hover states
+Breadcrumb navigation
+Fast and clean
+🧱 Tech Requirements
+Next.js (App Router)
+TypeScript
+Tailwind CSS
+Dynamic routing:
+/practice
+/practice/[category]
+Reusable components:
+CategoryRow
+ProgressBar
+🧠 Design Intent (IMPORTANT)
+
+This should feel like a serious exam preparation system, not a generic LMS.
+The UI should communicate structure, depth, and clarity.
+
+FINAL INSTRUCTION
+
+Implement the full navigation flow and render both pages completely.
+Do not describe — build it.
+Match the reference layout closely while keeping SmashMed styling.

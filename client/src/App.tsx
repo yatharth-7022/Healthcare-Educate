@@ -19,6 +19,8 @@ import Pricing from "@/pages/Pricing";
 import HonourRoll from "@/pages/HonourRoll";
 import SubscriptionSuccess from "@/pages/SubscriptionSuccess";
 import Account from "@/pages/Account";
+import Practice from "@/pages/Practice";
+import PracticeCategory from "@/pages/PracticeCategory";
 
 function Router() {
   return (
@@ -33,6 +35,20 @@ function Router() {
         <ProtectedRoute>
           <ThemeProvider defaultTheme="light" storageKey="dashboard-theme">
             <Dashboard />
+          </ThemeProvider>
+        </ProtectedRoute>
+      </Route>
+      <Route path="/dashboard/practice">
+        <ProtectedRoute>
+          <ThemeProvider defaultTheme="light" storageKey="dashboard-theme">
+            <Practice />
+          </ThemeProvider>
+        </ProtectedRoute>
+      </Route>
+      <Route path="/dashboard/practice/:category">
+        <ProtectedRoute>
+          <ThemeProvider defaultTheme="light" storageKey="dashboard-theme">
+            <PracticeCategory />
           </ThemeProvider>
         </ProtectedRoute>
       </Route>
@@ -57,7 +73,7 @@ function Router() {
 
 function App() {
   const [location] = useLocation();
-  const isDashboard = location === "/dashboard";
+  const isDashboard = location.startsWith("/dashboard");
 
   return (
     <QueryClientProvider client={queryClient}>
