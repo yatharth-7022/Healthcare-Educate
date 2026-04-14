@@ -9,6 +9,7 @@ import {
   Dna,
   Zap,
   ChevronRight,
+  ArrowLeft,
 } from "lucide-react";
 
 const categoryIcons: Record<string, React.ElementType> = {
@@ -44,6 +45,15 @@ export default function Practice() {
           transition={{ duration: 0.4 }}
           className="mb-8"
         >
+          <button
+            onClick={() => setLocation("/dashboard")}
+            className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors mb-5 group"
+            data-testid="back-to-dashboard"
+          >
+            <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" />
+            Back to Dashboard
+          </button>
+
           <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-1">
             GAMSAT Preparation
           </p>
