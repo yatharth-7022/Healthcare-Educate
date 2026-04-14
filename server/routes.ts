@@ -6,6 +6,7 @@ import { z } from "zod";
 import { setupAuth } from "./auth";
 import authRoutes from "./routes/authRoutes";
 import paymentRoutes from "./routes/paymentRoutes";
+import practiceRoutes from "./routes/practiceRoutes";
 import { logger } from "./utils/logger";
 
 export async function registerRoutes(
@@ -20,6 +21,9 @@ export async function registerRoutes(
 
   // Payment routes
   app.use("/api", paymentRoutes);
+
+  // Practice routes
+  app.use("/api/practice", practiceRoutes);
 
   // App Routes
   app.post("/api/subscribers", async (req, res) => {

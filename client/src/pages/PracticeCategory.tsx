@@ -1,9 +1,13 @@
 import { useParams, useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
-import { getCategoryById } from "@/data/practiceData";
+import {
+  usePracticeCategoryProgress,
+  useRecordPracticeAnswer,
+} from "@/hooks/use-practice-progress";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useToast } from "@/hooks/use-toast";
 import {
   BookOpen,
   FlaskConical,
@@ -23,7 +27,13 @@ const categoryIcons: Record<string, React.ElementType> = {
   physics: Zap,
 };
 
-function ProgressBar({ value, disabled }: { value: number; disabled?: boolean }) {
+function ProgressBar({
+  value,
+  disabled,
+}: {
+  value: number;
+  disabled?: boolean;
+}) {
   return (
     <div className="w-full h-1.5 bg-border/60 rounded-full overflow-hidden">
       {!disabled && (
@@ -41,14 +51,32 @@ function ProgressBar({ value, disabled }: { value: number; disabled?: boolean })
 export default function PracticeCategory() {
   const { category: categoryId } = useParams<{ category: string }>();
   const [, setLocation] = useLocation();
+  const { data, isLoading, error } = usePracticeCategoryProgress(categoryId);
+  const recordAnswerMutation = useRecordPracticeAnswer(categoryId);
+  const { toast } = useToast();
+  const showManualRecordButton = import.meta.env.DEV;
 
-  const category = getCategoryById(categoryId ?? "");
+  const category = data?.category;
+
+  if (isLoading) {
+    return (
+      <DashboardLayout>
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+          <p className="text-muted-foreground">Loading category progress...</p>
+        </div>
+      </DashboardLayout>
+    );
+  }
 
   if (!category) {
     return (
       <DashboardLayout>
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-          <p className="text-muted-foreground">Category not found.</p>
+          <p className="text-muted-foreground">
+            {error
+              ? "We could not load this category right now."
+              : "Category not found."}
+          </p>
           <Button
             variant="ghost"
             className="mt-4"
@@ -106,7 +134,8 @@ export default function PracticeCategory() {
                 {category.name}
               </h1>
               <p className="text-muted-foreground text-sm mt-0.5">
-                {category.completed} of {category.total} question sets completed
+                {category.answeredQuestions} of {category.totalQuestions}{" "}
+                questions answered
               </p>
             </div>
           </div>
@@ -124,8 +153,8 @@ export default function PracticeCategory() {
         >
           {category.subcategories.map((sub, i) => {
             const pct =
-              sub.total > 0
-                ? Math.round((sub.completed / sub.total) * 100)
+              sub.totalQuestions > 0
+                ? Math.round((sub.answeredQuestions / sub.totalQuestions) * 100)
                 : 0;
             const isComingSoon = !!sub.comingSoon;
 
@@ -170,11 +199,46 @@ export default function PracticeCategory() {
                           </Badge>
                         )}
                       </div>
-                      {!isComingSoon && (
-                        <span className="text-xs text-muted-foreground ml-4 flex-shrink-0">
-                          {sub.completed} / {sub.total} completed
-                        </span>
-                      )}
+                      <div className="flex items-center gap-3 ml-4 flex-shrink-0">
+                        {!isComingSoon && (
+                          <span className="text-xs text-muted-foreground">
+                            {sub.answeredQuestions} / {sub.totalQuestions}{" "}
+                            answered
+                          </span>
+                        )}
+                        {!isComingSoon && showManualRecordButton && (
+                          <Button
+                            type="button"
+                            variant="outline"
+                            size="sm"
+                            disabled={recordAnswerMutation.isPending}
+                            onClick={async () => {
+                              try {
+                                await recordAnswerMutation.mutateAsync({
+                                  categoryId: category.id,
+                                  subcategoryId: sub.id,
+                                  questionKey: `${sub.id}-${Date.now()}`,
+                                  isCorrect: true,
+                                });
+                              } catch (recordError) {
+                                toast({
+                                  title: "Could not record answer",
+                                  description:
+                                    recordError instanceof Error
+                                      ? recordError.message
+                                      : "Please try again.",
+                                  variant: "destructive",
+                                });
+                              }
+                            }}
+                            className="h-7 px-2 text-[11px]"
+                          >
+                            {recordAnswerMutation.isPending
+                              ? "Saving..."
+                              : "+1 answer"}
+                          </Button>
+                        )}
+                      </div>
                     </div>
                     <ProgressBar value={pct} disabled={isComingSoon} />
                   </div>

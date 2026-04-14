@@ -1,7 +1,7 @@
 import { useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
-import { categories } from "@/data/practiceData";
+import { usePracticeProgressSummary } from "@/hooks/use-practice-progress";
 import {
   BookOpen,
   FlaskConical,
@@ -35,6 +35,9 @@ function ProgressBar({ value }: { value: number }) {
 
 export default function Practice() {
   const [, setLocation] = useLocation();
+  const { data, isLoading, error } = usePracticeProgressSummary();
+
+  const categories = data?.categories ?? [];
 
   return (
     <DashboardLayout>
@@ -72,9 +75,33 @@ export default function Practice() {
           }}
           className="flex flex-col gap-1"
         >
+          {isLoading && (
+            <p className="text-sm text-muted-foreground px-2 py-4">
+              Loading your progress...
+            </p>
+          )}
+
+          {!!error && (
+            <p className="text-sm text-red-500 px-2 py-4">
+              We could not load your practice progress right now.
+            </p>
+          )}
+
+          {!isLoading && !error && categories.length === 0 && (
+            <p className="text-sm text-muted-foreground px-2 py-4">
+              No categories available yet.
+            </p>
+          )}
+
           {categories.map((category) => {
             const Icon = categoryIcons[category.id] ?? BookOpen;
-            const pct = Math.round((category.completed / category.total) * 100);
+            const pct =
+              category.totalQuestions > 0
+                ? Math.round(
+                    (category.answeredQuestions / category.totalQuestions) *
+                      100,
+                  )
+                : 0;
 
             return (
               <motion.div
@@ -101,8 +128,8 @@ export default function Practice() {
                         {category.name}
                       </span>
                       <span className="text-xs text-muted-foreground ml-4 flex-shrink-0">
-                        {category.completed} / {category.total} question sets
-                        completed
+                        {category.answeredQuestions} / {category.totalQuestions}{" "}
+                        questions answered
                       </span>
                     </div>
                     <ProgressBar value={pct} />

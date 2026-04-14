@@ -23,6 +23,9 @@ model User {
   // Stripe payment relationships
   subscriptions Subscription[]
   payments      Payment[]
+
+  // Practice progress relationships
+  questionProgressEntries PracticeQuestionProgress[]
 }
 
 model Subscriber {
@@ -89,4 +92,50 @@ model Payment {
   @@index([userId])
   @@index([status])
   @@index([createdAt])
+}
+
+model PracticeCategory {
+  id            String   @id
+  name          String
+  displayOrder  Int
+  totalQuestions Int
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  subcategories PracticeSubcategory[]
+
+  @@index([displayOrder])
+}
+
+model PracticeSubcategory {
+  id             String   @id
+  categoryId     String
+  name           String
+  displayOrder   Int
+  totalQuestions Int
+  comingSoon     Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  category        PracticeCategory         @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  questionProgress PracticeQuestionProgress[]
+
+  @@index([categoryId, displayOrder])
+}
+
+model PracticeQuestionProgress {
+  id             Int      @id @default(autoincrement())
+  userId         Int
+  subcategoryId  String
+  questionKey    String
+  isCorrect      Boolean
+  attemptCount   Int      @default(1)
+  firstAnsweredAt DateTime @default(now())
+  lastAnsweredAt DateTime @updatedAt
+
+  user        User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  subcategory PracticeSubcategory @relation(fields: [subcategoryId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, subcategoryId, questionKey])
+  @@index([userId, subcategoryId])
 }

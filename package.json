@@ -10,6 +10,8 @@
     "start": "NODE_ENV=production node dist/index.cjs",
     "check": "tsc",
     "db:push": "prisma db push",
+    "db:seed:practice": "tsx script/seedPracticeCatalog.ts",
+    "db:setup:practice": "npm run db:push && npm run db:seed:practice",
     "db:studio": "prisma studio",
     "db:generate": "prisma generate",
     "docker:db": "docker-compose -f docker-compose.dev.yml up -d",
