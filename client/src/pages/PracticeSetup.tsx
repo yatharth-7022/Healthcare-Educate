@@ -106,7 +106,7 @@ export default function PracticeSetup() {
           </p>
         </motion.div>
 
-        {/* Question set list */}
+        {/* Question set list r*/}
         <motion.div
           initial="hidden"
           animate="visible"
