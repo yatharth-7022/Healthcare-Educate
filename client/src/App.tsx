@@ -23,6 +23,7 @@ import Practice from "@/pages/Practice";
 import PracticeCategory from "@/pages/PracticeCategory";
 import PracticeSetup from "@/pages/PracticeSetup";
 import PracticeConfirm from "@/pages/PracticeConfirm";
+import PracticeSession from "@/pages/PracticeSession";
 
 function Router() {
   return (
@@ -65,6 +66,13 @@ function Router() {
         <ProtectedRoute>
           <ThemeProvider defaultTheme="light" storageKey="dashboard-theme">
             <PracticeConfirm />
+          </ThemeProvider>
+        </ProtectedRoute>
+      </Route>
+      <Route path="/dashboard/practice/:category/:subcategory/session">
+        <ProtectedRoute>
+          <ThemeProvider defaultTheme="light" storageKey="dashboard-theme">
+            <PracticeSession />
           </ThemeProvider>
         </ProtectedRoute>
       </Route>

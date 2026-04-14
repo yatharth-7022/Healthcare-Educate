@@ -103,6 +103,7 @@ model PracticeCategory {
   updatedAt     DateTime @updatedAt
 
   subcategories PracticeSubcategory[]
+  questionSets  PracticeQuestionSet[]
 
   @@index([displayOrder])
 }
@@ -119,6 +120,7 @@ model PracticeSubcategory {
 
   category        PracticeCategory         @relation(fields: [categoryId], references: [id], onDelete: Cascade)
   questionProgress PracticeQuestionProgress[]
+  questionSets     PracticeQuestionSet[]
 
   @@index([categoryId, displayOrder])
 }
@@ -138,4 +140,21 @@ model PracticeQuestionProgress {
 
   @@unique([userId, subcategoryId, questionKey])
   @@index([userId, subcategoryId])
+}
+
+model PracticeQuestionSet {
+  id            Int      @id @default(autoincrement())
+  categoryId    String
+  subcategoryId String
+  title         String
+  stem          Json
+  questions     Json
+  isPublished   Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  category    PracticeCategory    @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  subcategory PracticeSubcategory @relation(fields: [subcategoryId], references: [id], onDelete: Cascade)
+
+  @@index([categoryId, subcategoryId, isPublished])
 }

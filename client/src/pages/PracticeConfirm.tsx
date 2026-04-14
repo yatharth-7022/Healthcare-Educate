@@ -185,9 +185,11 @@ export default function PracticeConfirm() {
           <Button
             className="h-11 px-8 bg-primary hover:bg-primary/90 text-white font-semibold shadow-md hover:shadow-lg transition-all"
             data-testid="button-start-practice"
-            onClick={() => {
-              // TODO: navigate to active practice session
-            }}
+            onClick={() =>
+              setLocation(
+                `/dashboard/practice/${categoryId}/${subcategoryId}/session?sets=${sets}`,
+              )
+            }
           >
             Start practice
           </Button>

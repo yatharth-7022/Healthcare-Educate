@@ -25,7 +25,7 @@ class StripeService {
     this.stripe = new Stripe(config.stripe.secretKey, {
       // Pin API version for consistency across deployments
       // Prevents breaking changes when Stripe updates their API
-      apiVersion: "2026-01-28.clover",
+      apiVersion: "2026-02-25.clover",
 
       // Add metadata to help Stripe support identify your requests
       appInfo: {
@@ -287,7 +287,9 @@ let stripeService: StripeService;
 try {
   stripeService = new StripeService();
 } catch (err) {
-  logger.warn("Stripe service not initialized — STRIPE_SECRET_KEY is missing or invalid. Payment features will be unavailable.");
+  logger.warn(
+    "Stripe service not initialized — STRIPE_SECRET_KEY is missing or invalid. Payment features will be unavailable.",
+  );
   stripeService = null as unknown as StripeService;
 }
 export { stripeService };

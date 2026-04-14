@@ -1,6 +1,10 @@
 import type {
+  CreatePracticeQuestionSetInput,
   PracticeCategoryProgressResponse,
   PracticeProgressSummaryResponse,
+  PracticeQuestionSetListResponse,
+  PracticeQuestionSetResponse,
+  PracticeSessionResponse,
   RecordPracticeAnswerInput,
 } from "@shared/models/practice";
 import { refreshToken } from "@/lib/api";
@@ -99,6 +103,55 @@ export async function recordPracticeAnswer(input: RecordPracticeAnswerInput) {
     {
       method: "POST",
       body: JSON.stringify(input),
+    },
+  );
+}
+
+export async function createPracticeQuestionSet(
+  input: CreatePracticeQuestionSetInput,
+) {
+  return authenticatedRequest<PracticeQuestionSetResponse>(
+    "/api/practice/content",
+    {
+      method: "POST",
+      body: JSON.stringify(input),
+    },
+  );
+}
+
+export async function listPracticeQuestionSets(
+  categoryId: string,
+  subcategoryId: string,
+) {
+  const query = new URLSearchParams({ categoryId, subcategoryId }).toString();
+
+  return authenticatedRequest<PracticeQuestionSetListResponse>(
+    `/api/practice/content?${query}`,
+    {
+      method: "GET",
+    },
+  );
+}
+
+export async function getPracticeQuestionSetById(questionSetId: number) {
+  return authenticatedRequest<PracticeQuestionSetResponse>(
+    `/api/practice/content/${questionSetId}`,
+    {
+      method: "GET",
+    },
+  );
+}
+
+export async function getPracticeSessionQuestionSet(
+  categoryId: string,
+  subcategoryId: string,
+) {
+  const query = new URLSearchParams({ categoryId, subcategoryId }).toString();
+
+  return authenticatedRequest<PracticeSessionResponse>(
+    `/api/practice/session?${query}`,
+    {
+      method: "GET",
     },
   );
 }

@@ -1,7 +1,10 @@
 import type {
+  CreatePracticeQuestionSetInput,
   PracticeCategoryProgress,
+  PracticeQuestionSet,
   RecordPracticeAnswerInput,
 } from "@shared/models/practice";
+import { Prisma } from "@prisma/client";
 import { prisma } from "../db";
 import { BadRequestError, NotFoundError } from "../utils/AppError";
 import { logger } from "../utils/logger";
@@ -146,7 +149,127 @@ function mapCategoryProgress(
   });
 }
 
+function mapQuestionSet(questionSet: {
+  id: number;
+  categoryId: string;
+  subcategoryId: string;
+  title: string;
+  stem: Prisma.JsonValue;
+  questions: Prisma.JsonValue;
+  isPublished: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+}): PracticeQuestionSet {
+  return {
+    id: questionSet.id,
+    categoryId: questionSet.categoryId,
+    subcategoryId: questionSet.subcategoryId,
+    title: questionSet.title,
+    stem: (questionSet.stem ?? []) as PracticeQuestionSet["stem"],
+    questions: (questionSet.questions ??
+      []) as PracticeQuestionSet["questions"],
+    isPublished: questionSet.isPublished,
+    createdAt: questionSet.createdAt.toISOString(),
+    updatedAt: questionSet.updatedAt.toISOString(),
+  };
+}
+
 export class PracticeService {
+  async createQuestionSet(
+    input: CreatePracticeQuestionSetInput,
+  ): Promise<PracticeQuestionSet> {
+    await ensurePracticeCatalogSeeded();
+
+    const categoryId = input.categoryId.trim();
+    const subcategoryId = input.subcategoryId.trim();
+
+    const subcategory = await prisma.practiceSubcategory.findUnique({
+      where: { id: subcategoryId },
+      select: {
+        categoryId: true,
+      },
+    });
+
+    if (!subcategory) {
+      throw new NotFoundError("Subcategory not found");
+    }
+
+    if (subcategory.categoryId !== categoryId) {
+      throw new BadRequestError("Subcategory does not belong to category");
+    }
+
+    const created = await prisma.practiceQuestionSet.create({
+      data: {
+        categoryId,
+        subcategoryId,
+        title: input.title.trim(),
+        stem: input.stem as unknown as Prisma.InputJsonValue,
+        questions: input.questions as unknown as Prisma.InputJsonValue,
+        isPublished: input.isPublished ?? true,
+      },
+    });
+
+    return mapQuestionSet(created);
+  }
+
+  async getQuestionSetById(
+    questionSetId: number,
+  ): Promise<PracticeQuestionSet> {
+    const questionSet = await prisma.practiceQuestionSet.findUnique({
+      where: { id: questionSetId },
+    });
+
+    if (!questionSet) {
+      throw new NotFoundError("Question set not found");
+    }
+
+    return mapQuestionSet(questionSet);
+  }
+
+  async listQuestionSets(
+    categoryId: string,
+    subcategoryId: string,
+  ): Promise<PracticeQuestionSet[]> {
+    await ensurePracticeCatalogSeeded();
+
+    const questionSets = await prisma.practiceQuestionSet.findMany({
+      where: {
+        categoryId,
+        subcategoryId,
+        isPublished: true,
+      },
+      orderBy: {
+        createdAt: "asc",
+      },
+    });
+
+    return questionSets.map(mapQuestionSet);
+  }
+
+  async getSessionQuestionSet(
+    categoryId: string,
+    subcategoryId: string,
+  ): Promise<PracticeQuestionSet> {
+    await ensurePracticeCatalogSeeded();
+
+    const questionSet = await prisma.practiceQuestionSet.findFirst({
+      where: {
+        categoryId,
+        subcategoryId,
+        isPublished: true,
+      },
+      orderBy: {
+        createdAt: "asc",
+      },
+    });
+
+    if (!questionSet) {
+      throw new NotFoundError("No published question set found for this topic");
+    }
+
+    return mapQuestionSet(questionSet);
+  }
+
   async getProgressSummary(
     userId: number,
   ): Promise<PracticeCategoryProgress[]> {

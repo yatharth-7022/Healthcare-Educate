@@ -1,8 +1,14 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import type { RecordPracticeAnswerInput } from "@shared/models/practice";
+import type {
+  CreatePracticeQuestionSetInput,
+  RecordPracticeAnswerInput,
+} from "@shared/models/practice";
 import {
+  createPracticeQuestionSet,
   getPracticeCategoryProgress,
   getPracticeProgressSummary,
+  getPracticeSessionQuestionSet,
+  listPracticeQuestionSets,
   recordPracticeAnswer,
 } from "@/lib/practice-api";
 
@@ -38,5 +44,53 @@ export function useRecordPracticeAnswer(categoryId?: string) {
         });
       }
     },
+  });
+}
+
+export function usePracticeQuestionSets(
+  categoryId?: string,
+  subcategoryId?: string,
+) {
+  return useQuery({
+    queryKey: ["/api/practice/content", categoryId, subcategoryId],
+    queryFn: () =>
+      listPracticeQuestionSets(categoryId as string, subcategoryId as string),
+    enabled: Boolean(categoryId && subcategoryId),
+    staleTime: 1000 * 30,
+  });
+}
+
+export function useCreatePracticeQuestionSet() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (input: CreatePracticeQuestionSetInput) =>
+      createPracticeQuestionSet(input),
+    onSuccess: (_data, variables) => {
+      queryClient.invalidateQueries({
+        queryKey: [
+          "/api/practice/content",
+          variables.categoryId,
+          variables.subcategoryId,
+        ],
+      });
+    },
+  });
+}
+
+export function usePracticeSessionQuestionSet(
+  categoryId?: string,
+  subcategoryId?: string,
+) {
+  return useQuery({
+    queryKey: ["/api/practice/session", categoryId, subcategoryId],
+    queryFn: () =>
+      getPracticeSessionQuestionSet(
+        categoryId as string,
+        subcategoryId as string,
+      ),
+    enabled: Boolean(categoryId && subcategoryId),
+    staleTime: 1000 * 10,
+    retry: false,
   });
 }
