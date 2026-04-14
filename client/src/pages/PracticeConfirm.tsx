@@ -1,7 +1,7 @@
 import { useParams, useLocation, useSearch } from "wouter";
 import { motion } from "framer-motion";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
-import { getCategoryById, getSubcategoryById } from "@/data/practiceData";
+import { usePracticeCategoryProgress } from "@/hooks/use-practice-progress";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ChevronRight } from "lucide-react";
 
@@ -19,7 +19,9 @@ function EditableRow({
       <span className="w-20 text-sm text-muted-foreground flex-shrink-0">
         {label}
       </span>
-      <span className="flex-1 text-sm font-medium text-foreground">{value}</span>
+      <span className="flex-1 text-sm font-medium text-foreground">
+        {value}
+      </span>
       <button
         onClick={onEdit}
         className="text-sm text-primary hover:text-primary/80 font-medium transition-colors flex-shrink-0"
@@ -40,15 +42,32 @@ export default function PracticeConfirm() {
   const search = useSearch();
   const params = new URLSearchParams(search);
   const sets = parseInt(params.get("sets") ?? "1", 10);
+  const { data, isLoading, error } = usePracticeCategoryProgress(categoryId);
 
-  const category = getCategoryById(categoryId ?? "");
-  const subcategory = getSubcategoryById(categoryId ?? "", subcategoryId ?? "");
+  const category = data?.category;
+  const subcategory = category?.subcategories.find(
+    (s) => s.id === subcategoryId,
+  );
+
+  if (isLoading) {
+    return (
+      <DashboardLayout>
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+          <p className="text-muted-foreground">Loading settings...</p>
+        </div>
+      </DashboardLayout>
+    );
+  }
 
   if (!category || !subcategory) {
     return (
       <DashboardLayout>
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-          <p className="text-muted-foreground">Settings could not be loaded.</p>
+          <p className="text-muted-foreground">
+            {error
+              ? "Could not load settings."
+              : "Settings could not be loaded."}
+          </p>
           <Button
             variant="ghost"
             className="mt-4"
@@ -92,7 +111,7 @@ export default function PracticeConfirm() {
             <button
               onClick={() =>
                 setLocation(
-                  `/dashboard/practice/${categoryId}/${subcategoryId}/setup`
+                  `/dashboard/practice/${categoryId}/${subcategoryId}/setup`,
                 )
               }
               className="hover:text-foreground transition-colors"
@@ -106,7 +125,7 @@ export default function PracticeConfirm() {
           <button
             onClick={() =>
               setLocation(
-                `/dashboard/practice/${categoryId}/${subcategoryId}/setup`
+                `/dashboard/practice/${categoryId}/${subcategoryId}/setup`,
               )
             }
             className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors group"
@@ -144,16 +163,14 @@ export default function PracticeConfirm() {
           <EditableRow
             label="Topic"
             value={subcategory.name}
-            onEdit={() =>
-              setLocation(`/dashboard/practice/${categoryId}`)
-            }
+            onEdit={() => setLocation(`/dashboard/practice/${categoryId}`)}
           />
           <EditableRow
             label="Timing"
             value={timingLabel}
             onEdit={() =>
               setLocation(
-                `/dashboard/practice/${categoryId}/${subcategoryId}/setup`
+                `/dashboard/practice/${categoryId}/${subcategoryId}/setup`,
               )
             }
           />
