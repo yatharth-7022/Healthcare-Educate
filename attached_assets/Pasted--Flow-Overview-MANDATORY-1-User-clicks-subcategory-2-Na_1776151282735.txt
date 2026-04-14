@@ -1,0 +1,110 @@
+🔁 Flow Overview (MANDATORY)
+1. User clicks subcategory
+2. Navigate to: 👉 /dashboard/practice/[category]/[subcategory]/setup
+3. Step 1 → Choose number of question sets
+4. Step 2 → Confirm practice settings
+
+🧩 STEP 1 — QUESTION SET SELECTION PAGE
+🎯 Purpose
+Let the user choose how many question sets they want.
+
+🖼️ UI (MATCH REFERENCE IMAGE EXACTLY)
+This page should look like:
+* Dark/light theme (same as dashboard)
+* Clean vertical list of selectable options
+
+🧠 Section Title
+Untimed practice
+Subtext
+“Question numbers per set will vary by section and topic.”
+
+📋 Options List (MANDATORY)
+Display selectable rows:
+* 1 question set
+* 2 question sets
+* 3 question sets
+* 4 question sets
+* 5 question sets
+* 6 question sets
+* 7 question sets
+* 8 question sets
+* 9 question sets
+* 10 question sets
+⚠️ Maximum = 10 only
+
+🎨 Row Design
+Each row must include:
+* Small icon on left (subtle)
+* Text label (e.g. “4 question sets”)
+* Full row clickable
+
+🧩 Interaction
+* Only one selection allowed
+* Selected row:
+    * Highlighted background
+    * Slight elevation or glow
+* Hover state:
+    * Subtle highlight
+
+📌 Behavior
+* When user selects an option → store value in state
+* Then show Continue / Next button
+
+🧾 STEP 2 — CONFIRM PRACTICE SETTINGS PAGE
+🎯 Purpose
+Summarise user’s selected configuration before starting
+
+🖼️ UI (MATCH REFERENCE IMAGE EXACTLY)
+Card-based layout with 3 rows
+
+🔝 Header
+* Back button (top left)
+* Title: Confirm practice settings
+
+📦 Summary Card
+Row 1 — Subject
+Section III: General Chemistry (example)
+* Right side: Edit
+
+Row 2 — Topic
+Kinetics (example)
+* Right side: Edit
+
+Row 3 — Timing
+Untimed (X question sets) (e.g. Untimed (4 question sets))
+* Right side: Edit
+
+🎯 CTA Button
+* Primary button: Start practice
+* Prominent but clean
+* Same styling as rest of app
+
+🧠 Behavior
+* Edit buttons take user back to relevant step:
+    * Subject → category page
+    * Topic → subcategory page
+    * Timing → question selection page
+
+🎨 Design Rules (IMPORTANT)
+* Match existing SmashMed dashboard UI exactly
+* Same:
+    * Typography
+    * Spacing
+    * Card styles
+    * Colors
+* Minimal, academic, structured
+* No bright colors or flashy elements
+
+
+Suggested Routes
+* /practice/[category]/[subcategory]/setup
+* /practice/[category]/[subcategory]/confirm
+
+Components
+* QuestionSetSelector
+* SelectionRow
+* SummaryCard
+* EditableRow
+
+🧠 UX Intent (IMPORTANT)
+This flow should feel focused and frictionless — like preparing for a real exam session. No distractions. Clear decisions. Clean transitions.

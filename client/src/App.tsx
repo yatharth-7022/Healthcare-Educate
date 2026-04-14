@@ -21,6 +21,8 @@ import SubscriptionSuccess from "@/pages/SubscriptionSuccess";
 import Account from "@/pages/Account";
 import Practice from "@/pages/Practice";
 import PracticeCategory from "@/pages/PracticeCategory";
+import PracticeSetup from "@/pages/PracticeSetup";
+import PracticeConfirm from "@/pages/PracticeConfirm";
 
 function Router() {
   return (
@@ -49,6 +51,20 @@ function Router() {
         <ProtectedRoute>
           <ThemeProvider defaultTheme="light" storageKey="dashboard-theme">
             <PracticeCategory />
+          </ThemeProvider>
+        </ProtectedRoute>
+      </Route>
+      <Route path="/dashboard/practice/:category/:subcategory/setup">
+        <ProtectedRoute>
+          <ThemeProvider defaultTheme="light" storageKey="dashboard-theme">
+            <PracticeSetup />
+          </ThemeProvider>
+        </ProtectedRoute>
+      </Route>
+      <Route path="/dashboard/practice/:category/:subcategory/confirm">
+        <ProtectedRoute>
+          <ThemeProvider defaultTheme="light" storageKey="dashboard-theme">
+            <PracticeConfirm />
           </ThemeProvider>
         </ProtectedRoute>
       </Route>

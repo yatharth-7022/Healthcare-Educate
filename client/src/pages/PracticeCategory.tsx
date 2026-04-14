@@ -172,6 +172,14 @@ export default function PracticeCategory() {
               >
                 <div
                   data-testid={`subcategory-row-${i}`}
+                  onClick={
+                    isComingSoon
+                      ? undefined
+                      : () =>
+                          setLocation(
+                            `/dashboard/practice/${categoryId}/${sub.id}/setup`
+                          )
+                  }
                   className={`w-full text-left flex items-center gap-5 px-5 py-4 rounded-xl border border-transparent transition-colors duration-150 ${
                     isComingSoon
                       ? "opacity-50 cursor-not-allowed"

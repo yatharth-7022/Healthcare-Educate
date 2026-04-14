@@ -1,4 +1,5 @@
 export type Subcategory = {
+  id: string;
   name: string;
   completed: number;
   total: number;
@@ -13,6 +14,22 @@ export type Category = {
   subcategories: Subcategory[];
 };
 
+export function toSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+function sub(
+  name: string,
+  completed: number,
+  total: number,
+  comingSoon?: boolean
+): Subcategory {
+  return { id: toSlug(name), name, completed, total, comingSoon };
+}
+
 export const categories: Category[] = [
   {
     id: "humanities",
@@ -20,15 +37,15 @@ export const categories: Category[] = [
     completed: 65,
     total: 834,
     subcategories: [
-      { name: "Academic Texts", completed: 18, total: 96 },
-      { name: "Populist Social Science", completed: 12, total: 88 },
-      { name: "Classical/Antiquated Texts", completed: 8, total: 72 },
-      { name: "Fiction", completed: 15, total: 104 },
-      { name: "Cartoons", completed: 5, total: 48 },
-      { name: "Diagrams and Data", completed: 4, total: 64 },
-      { name: "Journalism", completed: 3, total: 80 },
-      { name: "Miscellaneous", completed: 0, total: 112 },
-      { name: "Poetry", completed: 0, total: 170 },
+      sub("Academic Texts", 18, 96),
+      sub("Populist Social Science", 12, 88),
+      sub("Classical/Antiquated Texts", 8, 72),
+      sub("Fiction", 15, 104),
+      sub("Cartoons", 5, 48),
+      sub("Diagrams and Data", 4, 64),
+      sub("Journalism", 3, 80),
+      sub("Miscellaneous", 0, 112),
+      sub("Poetry", 0, 170),
     ],
   },
   {
@@ -37,20 +54,20 @@ export const categories: Category[] = [
     completed: 42,
     total: 728,
     subcategories: [
-      { name: "Acids and Bases", completed: 10, total: 56 },
-      { name: "Emulsions and Phase Equilibria", completed: 8, total: 48 },
-      { name: "Equilibrium", completed: 6, total: 64 },
-      { name: "Kinetics", completed: 5, total: 52 },
-      { name: "Methods of Analysis and Detection", completed: 4, total: 60 },
-      { name: "Mole Calculations and Gases", completed: 9, total: 56 },
-      { name: "Redox and Electrochemistry", completed: 0, total: 72 },
-      { name: "Thermodynamics", completed: 0, total: 64 },
-      { name: "Structure and Bonding", completed: 0, total: 56 },
-      { name: "The Periodic Table", completed: 0, total: 48 },
-      { name: "Atoms and Reactions", completed: 0, total: 52 },
-      { name: "Materials Chemistry", completed: 0, total: 44 },
-      { name: "Medicinal Chemistry", completed: 0, total: 36 },
-      { name: "Organometallic Chemistry", completed: 0, total: 20 },
+      sub("Acids and Bases", 10, 56),
+      sub("Emulsions and Phase Equilibria", 8, 48),
+      sub("Equilibrium", 6, 64),
+      sub("Kinetics", 5, 52),
+      sub("Methods of Analysis and Detection", 4, 60),
+      sub("Mole Calculations and Gases", 9, 56),
+      sub("Redox and Electrochemistry", 0, 72),
+      sub("Thermodynamics", 0, 64),
+      sub("Structure and Bonding", 0, 56),
+      sub("The Periodic Table", 0, 48),
+      sub("Atoms and Reactions", 0, 52),
+      sub("Materials Chemistry", 0, 44),
+      sub("Medicinal Chemistry", 0, 36),
+      sub("Organometallic Chemistry", 0, 20),
     ],
   },
   {
@@ -59,21 +76,21 @@ export const categories: Category[] = [
     completed: 28,
     total: 612,
     subcategories: [
-      { name: "Structure and Bonding in Organic Chemistry", completed: 8, total: 48 },
-      { name: "Organic Nomenclature", completed: 6, total: 40 },
-      { name: "The Alkanes", completed: 5, total: 36 },
-      { name: "Alkenes", completed: 4, total: 44 },
-      { name: "Alkynes", completed: 5, total: 36 },
-      { name: "Stereochemistry and Stereoisomers", completed: 0, total: 52 },
-      { name: "The Haloalkanes", completed: 0, total: 40 },
-      { name: "The Oxygen Family", completed: 0, total: 48 },
-      { name: "Aromatic Chemistry", completed: 0, total: 56 },
-      { name: "Nitrogen Heterogroups", completed: 0, total: 44 },
-      { name: "Electrocyclic Reactions and Sigmatropic Rearrangements", completed: 0, total: 48 },
-      { name: "Spectroscopy", completed: 0, total: 60 },
-      { name: "Intermolecular Forces in Organic Chemistry", completed: 0, total: 36 },
-      { name: "Modern Research Based Organic Chemistry", completed: 0, total: 44 },
-      { name: "Polymer Chemistry", completed: 0, total: 30 },
+      sub("Structure and Bonding in Organic Chemistry", 8, 48),
+      sub("Organic Nomenclature", 6, 40),
+      sub("The Alkanes", 5, 36),
+      sub("Alkenes", 4, 44),
+      sub("Alkynes", 5, 36),
+      sub("Stereochemistry and Stereoisomers", 0, 52),
+      sub("The Haloalkanes", 0, 40),
+      sub("The Oxygen Family", 0, 48),
+      sub("Aromatic Chemistry", 0, 56),
+      sub("Nitrogen Heterogroups", 0, 44),
+      sub("Electrocyclic Reactions and Sigmatropic Rearrangements", 0, 48),
+      sub("Spectroscopy", 0, 60),
+      sub("Intermolecular Forces in Organic Chemistry", 0, 36),
+      sub("Modern Research Based Organic Chemistry", 0, 44),
+      sub("Polymer Chemistry", 0, 30),
     ],
   },
   {
@@ -82,18 +99,18 @@ export const categories: Category[] = [
     completed: 55,
     total: 880,
     subcategories: [
-      { name: "Bioenergetics", completed: 12, total: 80 },
-      { name: "Cellular Biology and Enzymes", completed: 14, total: 96 },
-      { name: "Digestive System and Renal System", completed: 10, total: 80 },
-      { name: "Embryology", completed: 8, total: 64 },
-      { name: "Exchange Surfaces", completed: 6, total: 72 },
-      { name: "Genetics and Evolution", completed: 5, total: 88 },
-      { name: "Homeostasis and Endocrinology", completed: 0, total: 80 },
-      { name: "Immunology", completed: 0, total: 72 },
-      { name: "Musculoskeletal System", completed: 0, total: 64 },
-      { name: "Nervous System", completed: 0, total: 80 },
-      { name: "Thermoregulation", completed: 0, total: 48 },
-      { name: "Transport in Animals", completed: 0, total: 56 },
+      sub("Bioenergetics", 12, 80),
+      sub("Cellular Biology and Enzymes", 14, 96),
+      sub("Digestive System and Renal System", 10, 80),
+      sub("Embryology", 8, 64),
+      sub("Exchange Surfaces", 6, 72),
+      sub("Genetics and Evolution", 5, 88),
+      sub("Homeostasis and Endocrinology", 0, 80),
+      sub("Immunology", 0, 72),
+      sub("Musculoskeletal System", 0, 64),
+      sub("Nervous System", 0, 80),
+      sub("Thermoregulation", 0, 48),
+      sub("Transport in Animals", 0, 56),
     ],
   },
   {
@@ -102,23 +119,32 @@ export const categories: Category[] = [
     completed: 18,
     total: 556,
     subcategories: [
-      { name: "Acoustics", completed: 5, total: 40 },
-      { name: "Astrophysics", completed: 4, total: 36 },
-      { name: "Classical Mechanics", completed: 9, total: 64 },
-      { name: "Electricity: Electrostatics and Electric Circuits", completed: 0, total: 72 },
-      { name: "Magnetism", completed: 0, total: 48 },
-      { name: "Fluid Mechanics", completed: 0, total: 56 },
-      { name: "Medical Physics", completed: 0, total: 48 },
-      { name: "Nuclear Physics", completed: 0, total: 44 },
-      { name: "Optics", completed: 0, total: 52 },
-      { name: "Thermal Physics", completed: 0, total: 52 },
-      { name: "Wave Properties", completed: 0, total: 44, comingSoon: true },
-      { name: "Modern Research Based Physics", completed: 0, total: 0, comingSoon: true },
-      { name: "Materials Engineering", completed: 0, total: 0, comingSoon: true },
+      sub("Acoustics", 5, 40),
+      sub("Astrophysics", 4, 36),
+      sub("Classical Mechanics", 9, 64),
+      sub("Electricity: Electrostatics and Electric Circuits", 0, 72),
+      sub("Magnetism", 0, 48),
+      sub("Fluid Mechanics", 0, 56),
+      sub("Medical Physics", 0, 48),
+      sub("Nuclear Physics", 0, 44),
+      sub("Optics", 0, 52),
+      sub("Thermal Physics", 0, 52),
+      sub("Wave Properties", 0, 44, true),
+      sub("Modern Research Based Physics", 0, 0, true),
+      sub("Materials Engineering", 0, 0, true),
     ],
   },
 ];
 
 export function getCategoryById(id: string): Category | undefined {
   return categories.find((c) => c.id === id);
+}
+
+export function getSubcategoryById(
+  categoryId: string,
+  subcategoryId: string
+): Subcategory | undefined {
+  return getCategoryById(categoryId)?.subcategories.find(
+    (s) => s.id === subcategoryId
+  );
 }
