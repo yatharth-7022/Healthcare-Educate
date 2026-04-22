@@ -120,7 +120,9 @@ export default function PracticeSession() {
             </Button>
             <Button
               variant="outline"
-              onClick={() => setCurrentQuestionIndex(Math.max(questions.length - 1, 0))}
+              onClick={() =>
+                setCurrentQuestionIndex(Math.max(questions.length - 1, 0))
+              }
             >
               Review Questions
             </Button>
@@ -166,12 +168,12 @@ export default function PracticeSession() {
             <StemBlockRenderer blocks={questionSet.stem} />
           </section>
 
-          <aside className="bg-card border border-border/60 rounded-lg p-4 sticky top-6">
-            <div className="flex items-start justify-between gap-2">
-              <p className="text-base font-medium leading-6">
+          <aside className="bg-card border border-border/60 rounded-lg p-4 sticky top-6 self-start">
+            <div className="flex items-start justify-between gap-2 rounded-lg border border-border/50 bg-muted/40 px-3 py-3">
+              <p className="text-base font-medium leading-6 text-foreground/95">
                 {currentQuestion.prompt}
               </p>
-              <Bookmark className="w-5 h-5 text-primary/70" />
+              <Bookmark className="w-5 h-5 text-primary/70 flex-shrink-0" />
             </div>
 
             {currentQuestion.contentBlocks &&
@@ -184,50 +186,68 @@ export default function PracticeSession() {
                 </div>
               )}
 
-            <div className="mt-4 space-y-2">
-              {currentQuestion.options.map((option, optionIndex) => {
-                const isSelected = selectedOptionIndex === optionIndex;
+            <div className="mt-4 lg:sticky lg:top-4 bg-card/95 backdrop-blur-sm">
+              <div className="space-y-2">
+                {currentQuestion.options.map((option, optionIndex) => {
+                  const isSelected = selectedOptionIndex === optionIndex;
 
-                return (
-                  <button
-                    key={`${currentQuestion.id}-option-${optionIndex}`}
-                    onClick={() =>
-                      setSelectedByQuestionId((prev) => ({
-                        ...prev,
-                        [currentQuestion.id]: optionIndex,
-                      }))
-                    }
-                    className={`w-full text-left border rounded-lg px-3 py-2 transition-colors ${
-                      isSelected
-                        ? "border-primary bg-primary/10"
-                        : "border-border/60 hover:border-primary/40"
-                    }`}
-                  >
-                    <span className="text-sm">{option}</span>
-                  </button>
-                );
-              })}
-            </div>
+                  return (
+                    <button
+                      key={`${currentQuestion.id}-option-${optionIndex}`}
+                      onClick={() =>
+                        setSelectedByQuestionId((prev) => ({
+                          ...prev,
+                          [currentQuestion.id]: optionIndex,
+                        }))
+                      }
+                      className={`w-full text-left border rounded-lg px-3 py-2 transition-colors ${
+                        isSelected
+                          ? "border-primary bg-primary/10"
+                          : "border-border/60 hover:border-primary/40"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <span
+                          aria-hidden="true"
+                          className={`h-5 w-5 rounded-full border-2 flex items-center justify-center transition-colors ${
+                            isSelected
+                              ? "border-primary"
+                              : "border-muted-foreground/50"
+                          }`}
+                        >
+                          {isSelected && (
+                            <span className="h-2.5 w-2.5 rounded-full bg-primary" />
+                          )}
+                        </span>
+                        <span className="text-sm">{option}</span>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
 
-            <div className="mt-5 flex justify-end">
-              <Button
-                variant="outline"
-                disabled={currentQuestionIndex === 0 || recordAnswerMutation.isPending}
-                onClick={handlePrevious}
-                className="mr-2"
-              >
-                Previous
-              </Button>
-              <Button
-                disabled={
-                  selectedOptionIndex === undefined ||
-                  recordAnswerMutation.isPending
-                }
-                onClick={handleNext}
-                className="bg-primary hover:bg-primary/90"
-              >
-                {recordAnswerMutation.isPending ? "Saving..." : "Next"}
-              </Button>
+              <div className="mt-5 flex justify-end">
+                <Button
+                  variant="outline"
+                  disabled={
+                    currentQuestionIndex === 0 || recordAnswerMutation.isPending
+                  }
+                  onClick={handlePrevious}
+                  className="mr-2"
+                >
+                  Previous
+                </Button>
+                <Button
+                  disabled={
+                    selectedOptionIndex === undefined ||
+                    recordAnswerMutation.isPending
+                  }
+                  onClick={handleNext}
+                  className="bg-primary hover:bg-primary/90"
+                >
+                  {recordAnswerMutation.isPending ? "Saving..." : "Next"}
+                </Button>
+              </div>
             </div>
           </aside>
         </div>

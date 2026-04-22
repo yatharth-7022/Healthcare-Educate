@@ -6,6 +6,62 @@ type StemBlockRendererProps = {
   compact?: boolean;
 };
 
+const COMMON_LATEX_COMMANDS = [
+  "frac",
+  "sqrt",
+  "cdot",
+  "times",
+  "leq",
+  "geq",
+  "neq",
+  "approx",
+  "pm",
+  "mp",
+  "left",
+  "right",
+  "sum",
+  "int",
+  "lim",
+  "sin",
+  "cos",
+  "tan",
+  "log",
+  "ln",
+  "alpha",
+  "beta",
+  "gamma",
+  "delta",
+  "theta",
+  "lambda",
+  "mu",
+  "pi",
+  "sigma",
+  "omega",
+  "text",
+  "mathrm",
+  "operatorname",
+].join("|");
+
+function normalizeMathExpression(value: string): string {
+  let normalized = value.trim();
+
+  normalized = normalized.replace(/^\$\$?\s*/, "").replace(/\s*\$\$?$/, "");
+
+  // Convert over-escaped commands from persisted JSON strings (e.g. \\frac -> \frac).
+  normalized = normalized.replace(/\\\\([a-zA-Z]+)/g, "\\$1");
+
+  // Repair common LaTeX commands when the leading slash is missing (e.g. frac -> \frac).
+  normalized = normalized.replace(
+    new RegExp(
+      `(^|[^\\\\a-zA-Z])(${COMMON_LATEX_COMMANDS})(?=[^a-zA-Z]|$)`,
+      "g",
+    ),
+    "$1\\$2",
+  );
+
+  return normalized;
+}
+
 function optimizeCloudinaryImageUrl(url: string): string {
   if (!url.includes("res.cloudinary.com") || !url.includes("/upload/")) {
     return url;
@@ -48,12 +104,14 @@ export function StemBlockRenderer({
         }
 
         if (block.type === "equation") {
+          const normalizedMath = normalizeMathExpression(block.value);
+
           return (
             <div key={key} className="overflow-x-auto py-1">
               {block.mode === "inline" ? (
-                <InlineMath math={block.value} />
+                <InlineMath math={normalizedMath} />
               ) : (
-                <BlockMath math={block.value} />
+                <BlockMath math={normalizedMath} />
               )}
             </div>
           );
