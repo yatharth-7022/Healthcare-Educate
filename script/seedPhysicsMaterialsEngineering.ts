@@ -63,13 +63,8 @@ const input: CreatePracticeQuestionSetInput = {
     {
       id: "q3",
       prompt:
-        "Determine which of the following values is the drum width used in an experiment when the particle radius is [Formula pending] and silicone oil is used as the liquid.",
-      options: [
-        "[Formula pending]",
-        "[Formula pending]",
-        "[Formula pending]",
-        "[Formula pending]",
-      ],
+        "Determine which of the following values is the drum width used in an experiment when the particle radius is r = 0.5 mm and silicone oil is used as the liquid.",
+      options: ["3 cm", "5 cm", "8 cm", "12 cm"],
       correctOptionIndex: 0,
     },
     {
@@ -87,19 +82,14 @@ const input: CreatePracticeQuestionSetInput = {
     {
       id: "q5",
       prompt:
-        "Based on the trend shown in Figure 1, which of the following values is most consistent with the expected maximum angle of stability if the drum width were increased beyond the range shown to [Formula pending]?",
-      options: [
-        "[Formula pending]",
-        "[Formula pending]",
-        "[Formula pending]",
-        "[Formula pending]",
-      ],
+        "Based on the trend shown in Figure 1, which of the following values is most consistent with the expected maximum angle of stability if the drum width were increased beyond the range shown to W = 20 cm?",
+      options: ["20°", "25°", "30°", "38°"],
       correctOptionIndex: 0,
     },
     {
       id: "q6",
       prompt:
-        "Suppose the same data in Figure 1 were replotted as a transformed graph. Which of the following best describes the expected appearance of the transformed graph?",
+        "Suppose the same data in Figure 1 were replotted as ln(θ_m) vs W. Which of the following best describes the expected appearance of the transformed graph?",
       contentBlocks: [
         {
           type: "image",

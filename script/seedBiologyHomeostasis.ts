@@ -190,7 +190,7 @@ const stems: CreatePracticeQuestionSetInput[] = [
       {
         id: "q4",
         prompt:
-          "During the 30–60 day period, Figure 3 shows that food-deprived sardines at 20°C have an average oxygen consumption of approximately 0.30 mg O₂·g⁻¹·h⁻¹, whereas food-deprived sardines at 12°C have an average oxygen consumption of approximately 0.20 mg O₂·g⁻¹·h⁻¹. Energy expenditure is related to oxygen consumption by [Formula pending], where [Formula pending]. Assume that food-deprived sardines have no energy intake, and that body mass loss during this period is primarily due to lipid catabolism, with an energy density of 23 kJ·g⁻¹. Body mass change can be estimated by [Formula pending]. What is the approximate difference in daily body mass loss between food-deprived sardines at 20°C and those at 12°C?",
+          "During the 30–60 day period, Figure 2 shows that food-deprived sardines at 20°C have an average oxygen consumption of approximately 0.30 mg O₂·g⁻¹·h⁻¹, whereas food-deprived sardines at 12°C have an average oxygen consumption of approximately 0.20 mg O₂·g⁻¹·h⁻¹. Energy expenditure is estimated using E = MO₂ × ε × 24, where ε = 0.014 kJ per mg O₂ consumed and the factor of 24 converts hourly to daily values. Assume body mass loss is due entirely to lipid catabolism with an energy density of 23 kJ·g⁻¹, so that Δm = E / 23. What is the approximate difference in daily body mass loss (g·g⁻¹·day⁻¹) between food-deprived sardines at 20°C and those at 12°C?",
         options: [
           "0.0005 g g⁻¹ day⁻¹",
           "0.002 g g⁻¹ day⁻¹",

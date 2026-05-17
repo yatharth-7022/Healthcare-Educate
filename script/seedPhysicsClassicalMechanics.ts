@@ -68,12 +68,7 @@ const input: CreatePracticeQuestionSetInput = {
       id: "q1",
       prompt:
         "In the capstan experiment, a nylon cord is tested on a brass cylinder covered with masking tape. At a wrap angle of 55°, the cord is observed to be slipping at constant speed. In this scenario, what is the closest value of the tension ratio T₂/T₁?",
-      options: [
-        "[Formula pending]",
-        "[Formula pending]",
-        "[Formula pending]",
-        "[Formula pending]",
-      ],
+      options: ["$e^{0.10}$", "$e^{0.25}$", "$e^{0.50}$", "$e^{0.75}$"],
       correctOptionIndex: 0,
     },
     {
@@ -87,12 +82,7 @@ const input: CreatePracticeQuestionSetInput = {
       id: "q3",
       prompt:
         "In the capstan experiment, the maximum tension ratio that can be supported without slipping is modelled by the capstan equation: T₂/T₁ = e^(μₛθ). Suppose for a particular cord–surface combination, a wrap angle θ allows a maximum tension ratio R without slipping. If the wrap angle is doubled (from θ to 2θ) while μₛ remains unchanged, what is the new maximum tension ratio in terms of R?",
-      options: [
-        "[Formula pending]",
-        "[Formula pending]",
-        "[Formula pending]",
-        "[Formula pending]",
-      ],
+      options: ["$2R$", "$R^2$", "$\\frac{R}{2}$", "$R$"],
       correctOptionIndex: 0,
     },
     {

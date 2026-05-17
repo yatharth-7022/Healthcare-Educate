@@ -8,6 +8,14 @@ import {
 import { StemBlockRenderer } from "@/components/practice/StemBlockRenderer";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Bookmark, X } from "lucide-react";
+import { InlineMath } from "react-katex";
+
+function renderOptionContent(option: string) {
+  if (option.startsWith("$") && option.endsWith("$") && option.length > 2) {
+    return <InlineMath math={option.slice(1, -1)} />;
+  }
+  return <span>{option}</span>;
+}
 
 export default function PracticeSession() {
   const { category: categoryId, subcategory: subcategoryId } = useParams<{
@@ -187,14 +195,6 @@ export default function PracticeSession() {
               )}
 
             <div className="mt-4 lg:sticky lg:top-4 bg-card/95 backdrop-blur-sm">
-              {(currentQuestion.options.some((opt) =>
-                opt.startsWith("[Formula")) ||
-                currentQuestion.prompt.includes("[Formula")) && (
-                <div className="text-sm text-yellow-700 bg-yellow-50 border border-yellow-200 rounded px-3 py-2 mb-3">
-                  ⚠ Some parts of this question contain mathematical formulas
-                  that are being formatted. Check back soon.
-                </div>
-              )}
               <div className="space-y-2">
                 {currentQuestion.options.map((option, optionIndex) => {
                   const isSelected = selectedOptionIndex === optionIndex;
@@ -227,7 +227,7 @@ export default function PracticeSession() {
                             <span className="h-2.5 w-2.5 rounded-full bg-primary" />
                           )}
                         </span>
-                        <span className="text-sm">{option}</span>
+                        <span className="text-sm">{renderOptionContent(option)}</span>
                       </div>
                     </button>
                   );

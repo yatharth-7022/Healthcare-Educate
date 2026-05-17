@@ -77,13 +77,8 @@ const input: CreatePracticeQuestionSetInput = {
     {
       id: "q1",
       prompt:
-        "A conducting spherical cap is held at a fixed electrical potential. The cap is connected to a voltage source of [Formula pending]. For an aperture angle of [Formula pending], determine the total charge on the spherical cap.",
-      options: [
-        "[Formula pending]",
-        "[Formula pending]",
-        "[Formula pending]",
-        "[Formula pending]",
-      ],
+        "A conducting spherical cap is held at a fixed electrical potential. The cap is connected to a voltage source of 10 V. Using the capacitance values from Table I and the relationship C = Q/V, determine the total charge on the spherical cap.",
+      options: ["7.68 C", "7.88 C", "8.08 C", "8.28 C"],
       correctOptionIndex: 0,
     },
     {
