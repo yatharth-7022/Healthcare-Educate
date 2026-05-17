@@ -40,6 +40,15 @@ export default function PracticeSession() {
   const [selectedByQuestionId, setSelectedByQuestionId] = useState<
     Record<string, number>
   >({});
+  const [bookmarkedIds, setBookmarkedIds] = useState<Set<string>>(new Set());
+
+  function toggleBookmark(questionId: string) {
+    setBookmarkedIds((prev) => {
+      const next = new Set(prev);
+      next.has(questionId) ? next.delete(questionId) : next.add(questionId);
+      return next;
+    });
+  }
 
   const currentQuestion = questions[currentQuestionIndex];
 
@@ -177,11 +186,51 @@ export default function PracticeSession() {
           </section>
 
           <aside className="bg-card border border-border/60 rounded-lg p-4 sticky top-6 self-start">
+            <div className="flex gap-1.5 overflow-x-auto pb-1 mb-3 scrollbar-none">
+              {questions.map((q, idx) => {
+                const isCurrent = idx === currentQuestionIndex;
+                const isAnswered = selectedByQuestionId[q.id] !== undefined;
+                const isBookmarked = bookmarkedIds.has(q.id);
+                return (
+                  <button
+                    key={q.id}
+                    onClick={() => setCurrentQuestionIndex(idx)}
+                    className={`relative flex-shrink-0 w-8 h-8 rounded-full text-xs font-medium border-2 transition-colors flex items-center justify-center ${
+                      isCurrent
+                        ? "bg-primary border-primary text-white"
+                        : isAnswered
+                        ? "border-primary/40 bg-primary/10 text-primary"
+                        : "border-border/60 text-muted-foreground hover:border-primary/40"
+                    }`}
+                  >
+                    {idx + 1}
+                    {isBookmarked && (
+                      <span className="absolute -top-1 -right-1">
+                        <Bookmark className="w-3 h-3 fill-amber-500 text-amber-500" />
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+
             <div className="flex items-start justify-between gap-2 rounded-lg border border-border/50 bg-muted/40 px-3 py-3">
               <p className="text-base font-medium leading-6 text-foreground/95">
                 {currentQuestion.prompt}
               </p>
-              <Bookmark className="w-5 h-5 text-primary/70 flex-shrink-0" />
+              <button
+                onClick={() => toggleBookmark(currentQuestion.id)}
+                className="flex-shrink-0 p-0.5 rounded hover:bg-muted/60 transition-colors"
+                aria-label={bookmarkedIds.has(currentQuestion.id) ? "Remove bookmark" : "Bookmark question"}
+              >
+                <Bookmark
+                  className={`w-5 h-5 transition-colors ${
+                    bookmarkedIds.has(currentQuestion.id)
+                      ? "fill-amber-500 text-amber-500"
+                      : "text-primary/70"
+                  }`}
+                />
+              </button>
             </div>
 
             {currentQuestion.contentBlocks &&
