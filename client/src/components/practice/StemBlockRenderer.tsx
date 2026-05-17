@@ -63,11 +63,7 @@ function normalizeMathExpression(value: string): string {
 }
 
 function optimizeCloudinaryImageUrl(url: string): string {
-  if (!url.includes("res.cloudinary.com") || !url.includes("/upload/")) {
-    return url;
-  }
-
-  return url.replace("/upload/", "/upload/f_auto,q_auto:best,dpr_auto/");
+  return url;
 }
 
 export function StemBlockRenderer({
@@ -127,7 +123,6 @@ export function StemBlockRenderer({
             >
               <img
                 src={optimizedUrl}
-                srcSet={`${optimizedUrl} 1x, ${optimizedUrl} 2x`}
                 alt={block.alt || "Stem figure"}
                 className={`w-full ${compact ? "max-h-[180px]" : "max-h-[300px]"} object-contain rounded-md mx-auto`}
                 loading="lazy"
