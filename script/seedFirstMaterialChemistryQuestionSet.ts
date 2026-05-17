@@ -35,9 +35,27 @@ const input: CreatePracticeQuestionSetInput = {
     },
     {
       type: "image",
-      url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1775294155/image008_zdjfme.png",
-      alt: "Rheological curves and storage/loss moduli for conjugated polymers",
-      caption: "Figure 2(a) and (b)",
+      url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1779004864/question-bank/image29.png",
+      alt: "Rheological curves and storage moduli for group 1 conjugated polymers",
+      caption: "Figure 2a (i)",
+    },
+    {
+      type: "image",
+      url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1779004866/question-bank/image23.png",
+      alt: "Loss moduli for group 1 conjugated polymers",
+      caption: "Figure 2a (ii)",
+    },
+    {
+      type: "image",
+      url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1779004868/question-bank/image30.png",
+      alt: "Rheological curves and storage moduli for group 2 conjugated polymers",
+      caption: "Figure 2b (i)",
+    },
+    {
+      type: "image",
+      url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1779004869/question-bank/image26.png",
+      alt: "Loss moduli for group 2 conjugated polymers",
+      caption: "Figure 2b (ii)",
     },
     {
       type: "text",
@@ -52,7 +70,7 @@ const input: CreatePracticeQuestionSetInput = {
     },
     {
       type: "image",
-      url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1775294255/image013_qczz83.png",
+      url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1779004870/question-bank/image28.png",
       alt: "Correlation between side chain mass fraction and glass transition temperature",
       caption: "Figure 3",
     },
@@ -141,19 +159,19 @@ const input: CreatePracticeQuestionSetInput = {
       contentBlocks: [
         {
           type: "image",
-          url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1775294345/image015_jndh8e.jpg",
+          url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1779004871/question-bank/image34.png",
           alt: "Parent chain A",
           caption: "Parent chain A",
         },
         {
           type: "image",
-          url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1775294343/image016_fs9gsp.jpg",
+          url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1779004872/question-bank/image32.png",
           alt: "Parent chain B",
           caption: "Parent chain B",
         },
         {
           type: "image",
-          url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1775294344/image014_vqel9h.jpg",
+          url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1779004873/question-bank/image35.png",
           alt: "Parent chain C",
           caption: "Parent chain C",
         },
@@ -162,6 +180,13 @@ const input: CreatePracticeQuestionSetInput = {
       correctOptionIndex: 0,
       explanation:
         "Tentative key set for first pass. Confirm against your source answer key and adjust if needed.",
+    },
+    {
+      id: "q10",
+      prompt:
+        "From Figure 3, read the Group 2 (phenyl-rich) trendline at w = 0.55. Using this graph-derived Tg value, predict what side-chain mass fraction would be required for a Group 1 (thiophene-rich) polymer to achieve the same Tg. (Use Group 1 parameters: Tg,sc = 204 K, Tg,bb = 491 K.)",
+      options: ["0.10", "0.30", "0.50", "0.70"],
+      correctOptionIndex: 0,
     },
   ],
 };

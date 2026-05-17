@@ -187,6 +187,14 @@ export default function PracticeSession() {
               )}
 
             <div className="mt-4 lg:sticky lg:top-4 bg-card/95 backdrop-blur-sm">
+              {(currentQuestion.options.some((opt) =>
+                opt.startsWith("[Formula")) ||
+                currentQuestion.prompt.includes("[Formula")) && (
+                <div className="text-sm text-yellow-700 bg-yellow-50 border border-yellow-200 rounded px-3 py-2 mb-3">
+                  ⚠ Some parts of this question contain mathematical formulas
+                  that are being formatted. Check back soon.
+                </div>
+              )}
               <div className="space-y-2">
                 {currentQuestion.options.map((option, optionIndex) => {
                   const isSelected = selectedOptionIndex === optionIndex;
