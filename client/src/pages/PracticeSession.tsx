@@ -7,7 +7,7 @@ import {
 } from "@/hooks/use-practice-progress";
 import { StemBlockRenderer } from "@/components/practice/StemBlockRenderer";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Bookmark, X } from "lucide-react";
+import { ArrowLeft, Bookmark, ChevronDown, X } from "lucide-react";
 import { InlineMath } from "react-katex";
 
 function renderOptionContent(option: string) {
@@ -41,6 +41,7 @@ export default function PracticeSession() {
     Record<string, number>
   >({});
   const [bookmarkedIds, setBookmarkedIds] = useState<Set<string>>(new Set());
+  const [showNavigator, setShowNavigator] = useState(false);
 
   function toggleBookmark(questionId: string) {
     setBookmarkedIds((prev) => {
@@ -179,41 +180,58 @@ export default function PracticeSession() {
 
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px] gap-6 items-start">
           <section className="bg-card border border-border/60 rounded-lg p-5 min-h-[70vh]">
-            <h2 className="text-2xl font-semibold mb-4">
-              Question {currentQuestionIndex + 1}
-            </h2>
+            <div className="relative mb-4">
+              <button
+                onClick={() => setShowNavigator((prev) => !prev)}
+                className="flex items-center gap-1.5 text-2xl font-semibold hover:text-primary/80 transition-colors"
+              >
+                Question {currentQuestionIndex + 1}
+                <ChevronDown
+                  className={`w-5 h-5 transition-transform ${showNavigator ? "rotate-180" : ""}`}
+                />
+              </button>
+              {showNavigator && (
+                <div className="absolute top-full left-0 mt-1 bg-card border border-border rounded-lg shadow-lg p-3 z-20 min-w-[300px]">
+                  <p className="text-xs text-muted-foreground mb-2 font-medium">
+                    {questionSet.title}
+                  </p>
+                  <div className="flex gap-1.5 flex-wrap">
+                    {questions.map((q, idx) => {
+                      const isCurrent = idx === currentQuestionIndex;
+                      const isAnswered = selectedByQuestionId[q.id] !== undefined;
+                      const isBookmarked = bookmarkedIds.has(q.id);
+                      return (
+                        <button
+                          key={q.id}
+                          onClick={() => {
+                            setCurrentQuestionIndex(idx);
+                            setShowNavigator(false);
+                          }}
+                          className={`relative flex-shrink-0 w-8 h-8 rounded-full text-xs font-medium border-2 transition-colors flex items-center justify-center ${
+                            isCurrent
+                              ? "bg-primary border-primary text-white"
+                              : isAnswered
+                              ? "border-primary/40 bg-primary/10 text-primary"
+                              : "border-border/60 text-muted-foreground hover:border-primary/40"
+                          }`}
+                        >
+                          {idx + 1}
+                          {isBookmarked && (
+                            <span className="absolute -top-1 -right-1">
+                              <Bookmark className="w-3 h-3 fill-amber-500 text-amber-500" />
+                            </span>
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
             <StemBlockRenderer blocks={questionSet.stem} />
           </section>
 
           <aside className="bg-card border border-border/60 rounded-lg p-4 sticky top-6 self-start">
-            <div className="flex gap-1.5 overflow-x-auto pb-1 mb-3 scrollbar-none">
-              {questions.map((q, idx) => {
-                const isCurrent = idx === currentQuestionIndex;
-                const isAnswered = selectedByQuestionId[q.id] !== undefined;
-                const isBookmarked = bookmarkedIds.has(q.id);
-                return (
-                  <button
-                    key={q.id}
-                    onClick={() => setCurrentQuestionIndex(idx)}
-                    className={`relative flex-shrink-0 w-8 h-8 rounded-full text-xs font-medium border-2 transition-colors flex items-center justify-center ${
-                      isCurrent
-                        ? "bg-primary border-primary text-white"
-                        : isAnswered
-                        ? "border-primary/40 bg-primary/10 text-primary"
-                        : "border-border/60 text-muted-foreground hover:border-primary/40"
-                    }`}
-                  >
-                    {idx + 1}
-                    {isBookmarked && (
-                      <span className="absolute -top-1 -right-1">
-                        <Bookmark className="w-3 h-3 fill-amber-500 text-amber-500" />
-                      </span>
-                    )}
-                  </button>
-                );
-              })}
-            </div>
-
             <div className="flex items-start justify-between gap-2 rounded-lg border border-border/50 bg-muted/40 px-3 py-3">
               <p className="text-base font-medium leading-6 text-foreground/95">
                 {currentQuestion.prompt}
