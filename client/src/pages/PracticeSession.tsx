@@ -8,14 +8,7 @@ import {
 import { StemBlockRenderer } from "@/components/practice/StemBlockRenderer";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Bookmark, ChevronDown, X } from "lucide-react";
-import { InlineMath } from "react-katex";
-
-function renderOptionContent(option: string) {
-  if (option.startsWith("$") && option.endsWith("$") && option.length > 2) {
-    return <InlineMath math={option.slice(1, -1)} />;
-  }
-  return <span>{option}</span>;
-}
+import { MathText } from "@/components/practice/MathText";
 
 export default function PracticeSession() {
   const { category: categoryId, subcategory: subcategoryId } = useParams<{
@@ -234,7 +227,7 @@ export default function PracticeSession() {
           <aside className="bg-card border border-border/60 rounded-lg p-4 sticky top-6 self-start">
             <div className="flex items-start justify-between gap-2 rounded-lg border border-border/50 bg-muted/40 px-3 py-3">
               <p className="text-base font-medium leading-6 text-foreground/95">
-                {currentQuestion.prompt}
+                <MathText text={currentQuestion.prompt} />
               </p>
               <button
                 onClick={() => toggleBookmark(currentQuestion.id)}
@@ -284,7 +277,7 @@ export default function PracticeSession() {
                       <div className="flex items-center gap-3">
                         <span
                           aria-hidden="true"
-                          className={`h-5 w-5 rounded-full border-2 flex items-center justify-center transition-colors ${
+                          className={`h-5 w-5 flex-shrink-0 aspect-square rounded-full border-2 flex items-center justify-center transition-colors ${
                             isSelected
                               ? "border-primary"
                               : "border-muted-foreground/50"
@@ -294,7 +287,7 @@ export default function PracticeSession() {
                             <span className="h-2.5 w-2.5 rounded-full bg-primary" />
                           )}
                         </span>
-                        <span className="text-sm">{renderOptionContent(option)}</span>
+                        <span className="text-sm"><MathText text={option} /></span>
                       </div>
                     </button>
                   );

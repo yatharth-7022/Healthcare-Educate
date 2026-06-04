@@ -1,0 +1,1066 @@
+[
+  {
+    "type": "text",
+    "value": "Question bank"
+  },
+  {
+    "type": "text",
+    "value": "TECHNICAL NOTES FOR YATHAARTH:"
+  },
+  {
+    "type": "text",
+    "value": "When additional information appears you can create a page 1 for the original stem and page 2 for the additional information to be seen on the lhs. On the RHS the question asked will always remain – i will show a screenshot below."
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554156/question-bank/qb_img_1780554153435_0.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554157/question-bank/qb_img_1780554156892_1.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "General Chemistry:"
+  },
+  {
+    "type": "text",
+    "value": "Materials Chemistry:"
+  },
+  {
+    "type": "text",
+    "value": "Stem 1:"
+  },
+  {
+    "type": "text",
+    "value": "Glass transition temperature from the chemical structure of conjugated polymers | Nature Communications"
+  },
+  {
+    "type": "text",
+    "value": "In polymer science, the glass transition temperature (Tg) is a critical thermal property that marks the transition of a polymer from a hard, glassy state to a soft, rubbery state. Tg is influenced by both the polymer backbone and the flexible alkyl side chains attached to it. A study of conjugated polymers categorized them into two main groups: Group 1 (thiophene-rich) and Group 2 (phenyl-rich). These backbones differ in rigidity, affecting thermal behavior. The study showed that polymers with longer or higher-mass side chains tend to have lower Tg, due to a phenomenon called internal plasticization, where the flexible side chains increase segmental mobility."
+  },
+  {
+    "type": "text",
+    "value": "Tg can be identified using rheological techniques, specifically by analyzing the loss modulus"
+  },
+  {
+    "type": "text",
+    "value": "(G″) curve, where the peak of G″ corresponds to the glass transition temperature. In another analysis, Tg was plotted against side chain mass fraction (w), with the trend modeled using the Fox equation given below:"
+  },
+  {
+    "type": "text",
+    "value": "Fox equation:"
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554158/question-bank/qb_img_1780554157849_2.jpg",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "Here, Tg,sc and Tg,bb represent the glass transition temperatures of the side chain and backbone components, respectively. Group 1 polymers had values of Tg,sc= −69C and Tg,bb=218C, while Group 2 polymers had Tg,sc= −14C and Tg,bb=287C. These values illustrate the impact of both the chemical structure and the proportion of flexible side chains on thermal properties."
+  },
+  {
+    "type": "text",
+    "value": "Figure 2(a) and (b) represent the rheological curves and Storage (G′) and loss (G″) moduli for various group 1 and 2 molecules with varying side chain lengths."
+  },
+  {
+    "type": "text",
+    "value": "Figure 2a:"
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554159/question-bank/qb_img_1780554159032_7.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554160/question-bank/qb_img_1780554159789_8.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "Figure 2b:"
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554161/question-bank/qb_img_1780554160601_9.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554163/question-bank/qb_img_1780554161769_10.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "The following questions are based on figures and calculations related to the graphs, including rheological curves, Tg trends, and the Fox equation."
+  },
+  {
+    "type": "text",
+    "value": "(Tg,sc=−69C, Tg,bb=218C), what is the approximate Tg (in °C) when the side chain mass fraction w=0.3?"
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554164/question-bank/qb_img_1780554164680_11.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554165/question-bank/qb_img_1780554165457_12.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "(Use: Tg,sc= −14C =259K, Tg,bb=287C =560K, Tg = 150°C = 423K)"
+  },
+  {
+    "type": "text",
+    "value": "D. P3BT"
+  },
+  {
+    "type": "text",
+    "value": "ADDITIONAL INFORMATION:",
+    "variant": "additional-info"
+  },
+  {
+    "type": "text",
+    "value": "Figure 3 attached below depicts the correlation between the side chain mass fraction (w) and the glass transition temperature (Tg) for conjugated polymers in this work."
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554166/question-bank/qb_img_1780554166207_15.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "D. PCDTBT"
+  },
+  {
+    "type": "text",
+    "value": "Molecule 1"
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554167/question-bank/qb_img_1780554167171_16.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "Molecule 2"
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554168/question-bank/qb_img_1780554167849_17.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "Molecule 3"
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554168/question-bank/qb_img_1780554168456_18.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "D. A=B>C"
+  },
+  {
+    "type": "text",
+    "value": "Question 10:"
+  },
+  {
+    "type": "text",
+    "value": "From Figure 3, read the Group 2 (phenyl-rich) trendline at w = 0.55. Using this graph-derived Tg value, predict what side-chain mass fraction would be required for a Group 1 (thiophene-rich) polymer to achieve the same Tg. (Use Group 1 parameters: Tg,sc= 204 K, Tg,bb= 491 K.)"
+  },
+  {
+    "type": "text",
+    "value": "A. 0.10"
+  },
+  {
+    "type": "text",
+    "value": "B. 0.30"
+  },
+  {
+    "type": "text",
+    "value": "C. 0.50"
+  },
+  {
+    "type": "text",
+    "value": "D. 0.70"
+  },
+  {
+    "type": "text",
+    "value": "Organic Chemistry:"
+  },
+  {
+    "type": "text",
+    "value": "Biology:"
+  },
+  {
+    "type": "text",
+    "value": "Homeostasis and endocrinology:"
+  },
+  {
+    "type": "text",
+    "value": "Stem 1: PPARα"
+  },
+  {
+    "type": "text",
+    "value": "Cardiac specific knock-down of peroxisome proliferator activated receptor α prevents fasting-induced cardiac lipid accumulation and reduces perilipin 2 | PLOS One"
+  },
+  {
+    "type": "text",
+    "value": "During fasting, adipose tissue releases free fatty acids (FFAs) into the circulation. These may be oxidised for energy or stored as triglycerides (TG) within lipid droplets in the heart. The transcription factor peroxisome proliferator-activated receptor-alpha (PPARα) regulates cardiac fatty acid metabolism."
+  },
+  {
+    "type": "text",
+    "value": "Plin2 is a lipid droplet–associated protein that coats lipid droplets and stabilises triglyceride storage. Changes in Plin2 expression are thought to influence how the heart stores fatty acids as TG."
+  },
+  {
+    "type": "text",
+    "value": "Researchers compared Control and cardiac-specific PPARα knockout (cPPARα⁻/⁻) mice. They measured:"
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554169/question-bank/qb_img_1780554169455_19.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554171/question-bank/qb_img_1780554170724_20.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "A. Fasting increases both Plin2 and TG in Controls, but not in knockouts.B. Fasting decreases Plin2 but increases TG in Controls.C. Knockouts show higher Plin2 but lower TG during fasting.D. TG accumulation occurs independently of Plin2 in all groups."
+  },
+  {
+    "type": "text",
+    "value": "A. Reduced Plin2 expression prevents stable storage of triglycerides in lipid droplets.B. Knockout mice cannot mobilise fatty acids from adipose tissue.C. Knockout mice increase Plin5 levels to divert lipids into alternate pathways.D. PPARα deficiency blocks fatty acid release into the blood."
+  },
+  {
+    "type": "text",
+    "value": "A. Cardiac TG accumulation would increase in knockouts.B. Serum FFAs would remain low in knockouts.C. Cardiac TG levels would decrease further in knockouts.D. Plin5 levels would rise to compensate for low Plin2."
+  },
+  {
+    "type": "text",
+    "value": "A. PPARα is required for FFA mobilisation from adipose tissue.B. PPARα controls Plin2 expression, which is linked to TG storage in the heart.C. PPARα decreases Plin5 expression to reduce TG accumulation.D. PPARα directly regulates serum FFA concentration."
+  },
+  {
+    "type": "text",
+    "value": "In biochemical assays, such as Western blotting, researchers often measure a “reference” or housekeeping protein that is expected to remain relatively constant across samples. The amount of the target protein is then interpreted relative to this reference."
+  },
+  {
+    "type": "text",
+    "value": "For example, if a given sample typically contains a certain amount of GAPDH, then other proteins within the same sample are expected to appear in a consistent proportion to that amount."
+  },
+  {
+    "type": "text",
+    "value": "What implication would this have for the reported Plin2 expression values?"
+  },
+  {
+    "type": "text",
+    "value": "A. Plin2 would appear artificially higher in the Chinese population compared to Europeans, even if actual Plin2 levels were the same.B. Plin2 would appear artificially lower in the Chinese population compared to Europeans, even if actual Plin2 levels were the same.C. There would be no effect on the reported Plin2 values because housekeeping proteins always control for variability.D. GAPDH would increase Plin2 expression in Chinese participants."
+  },
+  {
+    "type": "text",
+    "value": "Stem 2: Sardine metabolism"
+  },
+  {
+    "type": "text",
+    "value": "Temperature-dependent metabolic consequences of food deprivation in the European sardine | Journal of Experimental Biology | The Company of Biologists"
+  },
+  {
+    "type": "text",
+    "value": "Small pelagic fish experience natural fluctuations in both food availability and environmental temperature. In temperate marine ecosystems, winter is typically associated with reduced plankton abundance and lower water temperatures, whereas summer conditions are characterised by higher temperatures and greater metabolic demands. To investigate how temperature and food availability interact to influence energy balance and survival, researchers conducted a controlled laboratory experiment using European sardines (Sardina pilchardus)."
+  },
+  {
+    "type": "text",
+    "value": "Groups of sardines were maintained for 60 days under one of four experimental conditions that combined feeding status (fed or food-deprived) with temperature (12 °C or 20 °C). Throughout the experiment, survival was monitored daily. The figures below demonstrate various outcomes measured by the experiment:"
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554171/question-bank/qb_img_1780554171464_21.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "Figure 1: Survival probability of sardines over 60 days under fed or food-deprived conditions at 12°C and 20°C"
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554172/question-bank/qb_img_1780554172363_22.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "Figure 2: “Median sardine oxygen consumption measured under different temperatures, feeding conditions, and experimental periods.”"
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554173/question-bank/qb_img_1780554173125_23.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "Figure 3: Relative daily body mass change in sardines under different feeding and temperature conditions."
+  },
+  {
+    "type": "text",
+    "value": "Question 1:"
+  },
+  {
+    "type": "text",
+    "value": "Which explanation best accounts for why food-deprived sardines at 20°C show substantially lower survival over 60 days than food-deprived sardines at 12°C?"
+  },
+  {
+    "type": "text",
+    "value": "A. Food-deprived sardines at 20°C reduce oxygen consumption so strongly that aerobic ATP production becomes insufficient to sustain lifeB. Higher temperature increases the baseline rate of oxygen consumption, so during food deprivation energy expenditure remains high relative to energy intake, accelerating exhaustion of internal reservesC. At 12°C, sardines maintain a higher oxygen consumption rate, which protects survival by sustaining ATP synthesisD. The lower survival at 20°C must be due to reduced dissolved oxygen in water at higher temperatures, independently of metabolic rate"
+  },
+  {
+    "type": "text",
+    "value": "Question 2:"
+  },
+  {
+    "type": "text",
+    "value": "Which conclusion is best supported about the relationship between metabolic rate and body mass change across treatments?"
+  },
+  {
+    "type": "text",
+    "value": "A. The group with the highest oxygen consumption necessarily gains body mass over time due to higher ATP productionB. Food deprivation causes similar rates of body mass loss at 12°C and 20°C because intake is zero in both conditionsC. Higher oxygen consumption at 20°C is associated with a more negative daily change in body mass during food deprivationD. Differences in body mass change are independent of temperature and are explained only by feeding status"
+  },
+  {
+    "type": "text",
+    "value": "Additional information:",
+    "variant": "additional-info"
+  },
+  {
+    "type": "text",
+    "value": "Mitochondrial respiration comprises ATP-linked and non-ATP-linked components. OXPHOS reflects ATP-producing respiration, whereas LEAK represents uncoupled oxygen consumption. Both were measured in red muscle tissue under different experimental conditions."
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554174/question-bank/qb_img_1780554173764_24.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "Figure 4: LEAK and OXPHOS mitochondrial respiration in sardine red muscle across temperatures, feeding conditions, and time."
+  },
+  {
+    "type": "text",
+    "value": "Question 3:"
+  },
+  {
+    "type": "text",
+    "value": "Which conclusion is most strongly supported regarding energy regulation in food-deprived sardines maintained at 20°C between days 30 and 60?"
+  },
+  {
+    "type": "text",
+    "value": "A. Reduced mitochondrial ATP-producing capacity directly lowers whole-animal oxygen consumptionB. Decreased LEAK respiration fully compensates for increased metabolic demand at higher temperatureC. Whole-animal metabolic demand remains elevated despite a reduction in mitochondrial ATP-producing capacityD. Increased mitochondrial coupling efficiency results in improved survival during prolonged starvation"
+  },
+  {
+    "type": "text",
+    "value": "Question 4:"
+  },
+  {
+    "type": "text",
+    "value": "During the 30–60 day period, Figure 3 shows that food-deprived sardines at 20°C have an average oxygen consumption of approximately 0.30 mg O₂·g⁻¹·h⁻¹, whereas food-deprived sardines at 12°C have an average oxygen consumption of approximately 0.20 mg O₂·g⁻¹·h⁻¹."
+  },
+  {
+    "type": "text",
+    "value": "Energy expenditure is related to oxygen consumption by:"
+  },
+  {
+    "type": "text",
+    "value": "where ."
+  },
+  {
+    "type": "text",
+    "value": "Assume that food-deprived sardines have no energy intake, and that body mass loss during this period is primarily due to lipid catabolism, with an energy density of 23 kJ·g⁻¹. Body mass change can be estimated by:"
+  },
+  {
+    "type": "text",
+    "value": "What is the approximate difference in daily body mass loss between food-deprived sardines at 20°C and those at 12°C?"
+  },
+  {
+    "type": "text",
+    "value": "A. 0.0005 g g⁻¹ day⁻¹"
+  },
+  {
+    "type": "text",
+    "value": "B. 0.002 g g⁻¹ day⁻¹"
+  },
+  {
+    "type": "text",
+    "value": "C. 0.006 g g⁻¹ day⁻¹"
+  },
+  {
+    "type": "text",
+    "value": "D. 0.020 g g⁻¹ day⁻¹"
+  },
+  {
+    "type": "text",
+    "value": "Physics:"
+  },
+  {
+    "type": "text",
+    "value": "Materials engineering:"
+  },
+  {
+    "type": "text",
+    "value": "Maximum angle of stability of a wet granular pile | Nature Physics"
+  },
+  {
+    "type": "text",
+    "value": "Stem 1:"
+  },
+  {
+    "type": "text",
+    "value": "Everyday experiences, such as building sandcastles, suggest that adding small amounts of liquid can enhance the stability of granular materials. Granular materials such as sand, grains, and powders are common in both natural environments and industrial processes, where their stability can determine whether systems remain intact or fail. These materials can form piles whose stability depends on particle interactions and external constraints. This study investigated how liquid-induced cohesion, particle size, and system size influence the maximum angle of stability of a pile formed from granular particles."
+  },
+  {
+    "type": "text",
+    "value": "Glass spheres (idealised sand grains) partially mixed with a small volume fraction of liquid were placed inside a cylindrical drum that rotated slowly about a horizontal axis. As the drum rotated, the inclination angle of the pile’s free surface was measured at the moment just before avalanching occurred, while particle radius, liquid surface tension, and drum width were systematically varied."
+  },
+  {
+    "type": "text",
+    "value": "At sufficiently slow rotation rates, the pile undergoes intermittent avalanches once a maximum surface angle is reached. Liquid bridges between neighbouring particles generate cohesive forces that can oppose gravitational motion. The relevant figures below demonstrate the results of the experiment:"
+  },
+  {
+    "type": "text",
+    "value": "Figure 1: Maximum angle of stability θₘ plotted against r (mm)"
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554175/question-bank/qb_img_1780554174677_25.jpg",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "Figure 2: Maximum angle of stability θₘ plotted against drum width W"
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554175/question-bank/qb_img_1780554175418_26.jpg",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "Additionally, here are relevant equations that pertain to wet granular pile stability"
+  },
+  {
+    "type": "text",
+    "value": "Equations:"
+  },
+  {
+    "type": "text",
+    "value": "The capillary force arising from a liquid bridge between two particles is given by:"
+  },
+  {
+    "type": "text",
+    "value": "Where:"
+  },
+  {
+    "type": "text",
+    "value": "The downslope gravitational force acting on material within the pile can be approximated by:"
+  },
+  {
+    "type": "text",
+    "value": "Where:"
+  },
+  {
+    "type": "text",
+    "value": "Balancing cohesive and gravitational effects yields the following relationship:"
+  },
+  {
+    "type": "text",
+    "value": "Where:"
+  },
+  {
+    "type": "text",
+    "value": "Question 1:"
+  },
+  {
+    "type": "text",
+    "value": "Based on Figure 2, which conclusion is most strongly supported regarding the effect of particle radius on the maximum angle of stability when all other variables are held constant?"
+  },
+  {
+    "type": "text",
+    "value": "A. Smaller particles exhibit higher because the ratio of capillary force to gravitational force increases as particle radius decreasesB. Smaller particles exhibit higher because capillary force increases more rapidly than gravitational force as particle radius decreasesC. Smaller particles exhibit higher because both capillary and gravitational forces decrease proportionally with particle radiusD. Smaller particles exhibit higher because reduced particle mass suppresses internal shear stresses independently of cohesion"
+  },
+  {
+    "type": "text",
+    "value": "Question 2:Consider two experiments performed using the same liquid, same drum width, and same packing fraction, but with particle radii of and  and assuming all parameters except particle radius remain constant, what is the approximate ratio"
+  },
+  {
+    "type": "text",
+    "value": "A. 1.1B. 1.4C. 2.0D. 2.8"
+  },
+  {
+    "type": "text",
+    "value": "Question 3:"
+  },
+  {
+    "type": "text",
+    "value": "Determine which of the following values is the drum width used in an experiment when the particle radius is , and silicone oil is used as the liquid."
+  },
+  {
+    "type": "text",
+    "value": "A. B. C. D."
+  },
+  {
+    "type": "text",
+    "value": "Question 4:"
+  },
+  {
+    "type": "text",
+    "value": "Suppose that during one set of experiments, the drum width was systematically overestimated due to an error in measuring the internal width of the drum."
+  },
+  {
+    "type": "text",
+    "value": "Which of the following changes would this error most likely produce in the experimental data shown in Figure 1?"
+  },
+  {
+    "type": "text",
+    "value": "A. The data points would shift to the right, causing the curve to appear to decay more slowly with increasing B. The data points would shift upward, increasing at all values of C. The data points would shift to the left, causing the curve to decay more rapidly with increasing D. The data points would collapse onto a horizontal line at large"
+  },
+  {
+    "type": "text",
+    "value": "Question 5:"
+  },
+  {
+    "type": "text",
+    "value": "Based on the trend shown in Figure 1, which of the following values is most consistent with the expected maximum angle of stability if the drum width were increased beyond the range shown to ?"
+  },
+  {
+    "type": "text",
+    "value": "A. B. C. D."
+  },
+  {
+    "type": "text",
+    "value": "Question 6:"
+  },
+  {
+    "type": "text",
+    "value": "Suppose the same data in Figure 1 were replotted as a graph of"
+  },
+  {
+    "type": "text",
+    "value": "where  is the asymptotic value of  at large W."
+  },
+  {
+    "type": "text",
+    "value": "Which of the following best describes the expected appearance of the transformed graph?"
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554176/question-bank/qb_img_1780554176177_27.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554177/question-bank/qb_img_1780554177167_28.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554178/question-bank/qb_img_1780554178044_29.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554179/question-bank/qb_img_1780554178723_30.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "Electricity: Electrostatics and Electric circuits"
+  },
+  {
+    "type": "text",
+    "value": "Stem 1:"
+  },
+  {
+    "type": "text",
+    "value": "A simple numerical method for solving problems in electrostatics Pedro W. Lamberti and Domingo P. Prato Citation: Am. J. Phys. 59, 68 (1991); doi: 10.1119/1.16690"
+  },
+  {
+    "type": "text",
+    "value": "When a metal object is held at a fixed voltage, electric charge redistributes across its surface, producing electric forces in the surrounding space. While these effects can be calculated exactly for simple shapes, complex geometries require approximate methods."
+  },
+  {
+    "type": "text",
+    "value": "This study examines how electric potential and surface charge distribute on a conducting spherical cap, a metal surface shaped like part of a hollow sphere and held at a constant voltage (shown below)."
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554179/question-bank/qb_img_1780554179420_31.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "The left diagram shows how a spherical cap is formed by cutting a sphere; the aperture angle determines the size of the opening and hence the shape of the cap. The right diagram illustrates the corresponding three-dimensional hollow metal cap."
+  },
+  {
+    "type": "text",
+    "value": "To analyse this system, the cap was treated as a conducting surface connected to a voltage source, with no free charge in the surrounding space. The surface was divided into small angular segments, and the electric potential was determined numerically by enforcing the fixed-voltage condition. By varying the aperture angle, the study explored how electric potential and surface charge depend on position along the cap’s surface."
+  },
+  {
+    "type": "text",
+    "value": "The relevant figures below demonstrate the results of the experiment."
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554180/question-bank/qb_img_1780554180304_32.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554181/question-bank/qb_img_1780554181224_33.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "Additionally, here are relevant equations that pertain to electrostatic systems involving conductors."
+  },
+  {
+    "type": "text",
+    "value": "Electric potential expansion"
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554182/question-bank/qb_img_1780554181992_34.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "  : electric potential at a point in space (V)"
+  },
+  {
+    "type": "text",
+    "value": "  : radial distance from the centre of the spherical conductor (m)"
+  },
+  {
+    "type": "text",
+    "value": "  : angular position around the conductor (rad)"
+  },
+  {
+    "type": "text",
+    "value": "  : constants determined by the geometry of the conductor and applied voltage (units chosen so each term is in volts)"
+  },
+  {
+    "type": "text",
+    "value": "  : angular functions describing how the potential varies with direction; dimensionless"
+  },
+  {
+    "type": "text",
+    "value": "Surface charge density"
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554183/question-bank/qb_img_1780554182719_35.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "  σ (θ): surface charge density on the conductor at angular position ()"
+  },
+  {
+    "type": "text",
+    "value": "  : vacuum permittivity, a constant relating electric fields to charge ()"
+  },
+  {
+    "type": "text",
+    "value": "  : electric potential (V)"
+  },
+  {
+    "type": "text",
+    "value": "  : change in electric potential over a small radial distance (V)"
+  },
+  {
+    "type": "text",
+    "value": "  : change in radial distance measured outward from the conductor surface (m)"
+  },
+  {
+    "type": "text",
+    "value": "Capacitance"
+  },
+  {
+    "type": "text",
+    "value": "Question 1:"
+  },
+  {
+    "type": "text",
+    "value": "A conducting spherical cap is held at a fixed electrical potential. The cap is connected to a voltage source of . For an aperture angle of , determine the total charge on the spherical cap."
+  },
+  {
+    "type": "text",
+    "value": "A. B. C. D."
+  },
+  {
+    "type": "text",
+    "value": "Question 2:"
+  },
+  {
+    "type": "text",
+    "value": "At a fixed angular position , the electric potential is:"
+  },
+  {
+    "type": "text",
+    "value": "Measurements show that:"
+  },
+  {
+    "type": "text",
+    "value": "If the constant term , what is the value ofat ?"
+  },
+  {
+    "type": "text",
+    "value": "A. 28 VB. 30 VC. 34 VD. 40 V"
+  },
+  {
+    "type": "text",
+    "value": "Question 3:"
+  },
+  {
+    "type": "text",
+    "value": "At a fixed angular position , the electric potential is given by:"
+  },
+  {
+    "type": "text",
+    "value": "(Assume and are constant at this angle.)"
+  },
+  {
+    "type": "text",
+    "value": "Measurements show that at a particular radial distance :"
+  },
+  {
+    "type": "text",
+    "value": "If the radial distance is increased from to , what is the factor change in the electric potential ?"
+  },
+  {
+    "type": "text",
+    "value": "A.  increases by a factor of 2.25B.  increases by a factor of 3"
+  },
+  {
+    "type": "text",
+    "value": "C. increases by a factor of 4D. increases by a factor of 5"
+  },
+  {
+    "type": "text",
+    "value": "Question 4:"
+  },
+  {
+    "type": "text",
+    "value": "At an angular position , the magnitude of the surface charge density is twice that at another angular position ."
+  },
+  {
+    "type": "text",
+    "value": "Assuming the radial distance over which the potential is measured is the same at both angles, which of the following statements is most consistent with the data?"
+  },
+  {
+    "type": "text",
+    "value": "A. The change in electric potential with distance at is twice that at B. The electric potential at is twice that at C. The angular variation of electric potential is greater at D. The electric field is zero at"
+  },
+  {
+    "type": "text",
+    "value": "Question 5:"
+  },
+  {
+    "type": "text",
+    "value": "Based on both Figure 1 and Table I, which of the following explanations is most consistent with the data?"
+  },
+  {
+    "type": "text",
+    "value": "A. Increasing the aperture angle concentrates charge near the rim, increasing the total stored charge and hence the capacitanceB. Increasing the aperture angle reduces the electric field near the rim, lowering the surface charge densityC. The capacitance depends only on the applied voltage and is independent of the charge distributionD. The increase in capacitance with aperture angle occurs despite a uniform surface charge density"
+  },
+  {
+    "type": "text",
+    "value": "Classical mechanics:"
+  },
+  {
+    "type": "text",
+    "value": "Stem 1:"
+  },
+  {
+    "type": "text",
+    "value": "Source: Levin E. (1991) Friction experiments with a capstan. American Journal of Physics 59(1), 80–84."
+  },
+  {
+    "type": "text",
+    "value": "Friction between flexible cords and curved surfaces underpins how anchors are held by mooring lines, how belt drives transmit power, and how braking systems convert motion into heat. The capstan effect, where a small applied tension can resist a much larger opposing load thanks to friction built up over a wrapped contact arc, is a long-established principle but its quantitative behaviour for sliding (kinetic) friction had been less thoroughly characterised than the static case."
+  },
+  {
+    "type": "text",
+    "value": "This study tested whether the well-known static capstan relationship also describes a cord sliding at constant speed around a fixed cylinder, and how this behaviour depends on cord material, surface treatment, wrap angle, and applied load."
+  },
+  {
+    "type": "text",
+    "value": "A flexible cord was draped over a stationary horizontal cylinder, with masses suspended from each free end producing tensions T₁ and T₂. The wrap angle θ (the angular extent of cord–cylinder contact) was varied by repositioning an auxiliary pulley. For each configuration, mass was added to the heavier side until the cord slid at constant speed, at which point T₁, T₂, and θ were recorded. The experiments were repeated for different cord materials (braided nylon, polyethylene medical tubing) and different cylinder surfaces (bare brass, brass covered with masking tape, paper label)."
+  },
+  {
+    "type": "text",
+    "value": "The relevant figures below demonstrate the results of the experiment."
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554183/question-bank/qb_img_1780554183622_36.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554184/question-bank/qb_img_1780554184330_37.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554185/question-bank/qb_img_1780554185272_38.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554186/question-bank/qb_img_1780554186538_39.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "image",
+    "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554187/question-bank/qb_img_1780554187248_40.png",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "type": "text",
+    "value": "Relevant equations"
+  },
+  {
+    "type": "text",
+    "value": "Additionally, here are relevant equations that pertain to capstan friction:"
+  },
+  {
+    "type": "text",
+    "value": "Useful exponential values"
+  },
+  {
+    "type": "text",
+    "value": "xex0.11.110.21.220.31.350.41.490.51.650.61.820.72.010.82.231.02.72"
+  },
+  {
+    "type": "text",
+    "value": "x"
+  },
+  {
+    "type": "text",
+    "value": "ex"
+  },
+  {
+    "type": "text",
+    "value": "0.1"
+  },
+  {
+    "type": "text",
+    "value": "1.11"
+  },
+  {
+    "type": "text",
+    "value": "0.2"
+  },
+  {
+    "type": "text",
+    "value": "1.22"
+  },
+  {
+    "type": "text",
+    "value": "0.3"
+  },
+  {
+    "type": "text",
+    "value": "1.35"
+  },
+  {
+    "type": "text",
+    "value": "0.4"
+  },
+  {
+    "type": "text",
+    "value": "1.49"
+  },
+  {
+    "type": "text",
+    "value": "0.5"
+  },
+  {
+    "type": "text",
+    "value": "1.65"
+  },
+  {
+    "type": "text",
+    "value": "0.6"
+  },
+  {
+    "type": "text",
+    "value": "1.82"
+  },
+  {
+    "type": "text",
+    "value": "0.7"
+  },
+  {
+    "type": "text",
+    "value": "2.01"
+  },
+  {
+    "type": "text",
+    "value": "0.8"
+  },
+  {
+    "type": "text",
+    "value": "2.23"
+  },
+  {
+    "type": "text",
+    "value": "1.0"
+  },
+  {
+    "type": "text",
+    "value": "2.72"
+  },
+  {
+    "type": "text",
+    "value": "Question 1:"
+  },
+  {
+    "type": "text",
+    "value": "In the capstan experiment, a nylon cord is tested on a brass cylinder covered with masking tape. At a wrap angle of 55°, the cord is observed to be slipping at constant speed."
+  },
+  {
+    "type": "text",
+    "value": "In this scenario, what is the closest value of the tension ratio ?"
+  },
+  {
+    "type": "text",
+    "value": "A. B. C. D."
+  },
+  {
+    "type": "text",
+    "value": "Question 2:"
+  },
+  {
+    "type": "text",
+    "value": "A nylon cord wraps in a half-turn around a bare brass cylinder, with masses suspended from each free end. The cord slides at constant speed, and the combined weight of the two suspended masses is 200 N. What is the closest value of the tension in the lighter mass, T₁?"
+  },
+  {
+    "type": "text",
+    "value": "A. 50 N"
+  },
+  {
+    "type": "text",
+    "value": "B. 80 N"
+  },
+  {
+    "type": "text",
+    "value": "C. 100 N"
+  },
+  {
+    "type": "text",
+    "value": "D. 120 N"
+  },
+  {
+    "type": "text",
+    "value": "Question 3:"
+  },
+  {
+    "type": "text",
+    "value": "In the capstan experiment, the maximum tension ratio that can be supported without slipping is modelled by the capstan equation (static friction):"
+  },
+  {
+    "type": "text",
+    "value": "Suppose for a particular cord–surface combination, a wrap angle allows a maximum tension ratio"
+  },
+  {
+    "type": "text",
+    "value": "without slipping."
+  },
+  {
+    "type": "text",
+    "value": "If the wrap angle is doubled (from to ) while remains unchanged, what is the new maximum tension ratio in terms of ?"
+  },
+  {
+    "type": "text",
+    "value": "A. B. C. D."
+  },
+  {
+    "type": "text",
+    "value": "Question 4:"
+  },
+  {
+    "type": "text",
+    "value": "Which statement is best supported by Figure 4?"
+  },
+  {
+    "type": "text",
+    "value": "A. For polyethylene tubing, decreases as increases for both curve a and curve b over the full range –.B. At , polyethylene tubing on bare brass has a lower than on masking tape over brass.C. For wrap angles where both curves are shown, masking tape over brass produces a higher than bare brass, and tends to decrease as increases.D. Above , becomes independent of for both surface conditions."
+  },
+  {
+    "type": "text",
+    "value": "Question 5:"
+  },
+  {
+    "type": "text",
+    "value": "Figure 4 shows how the coefficient of kinetic friction, , varies with wrap angle for polyethylene medical tubing."
+  },
+  {
+    "type": "text",
+    "value": "Suppose the sliding cord is modelled using"
+  },
+  {
+    "type": "text",
+    "value": "and a single value of is chosen by averaging the values of over the rangeto ."
+  },
+  {
+    "type": "text",
+    "value": "Based on Figure 4, which prediction is most likely when this averaged value of is used to estimate at large wrap angles?"
+  },
+  {
+    "type": "text",
+    "value": "A. The predicted tension ratio will be approximately correct across all .B. The predicted tension ratio will be overestimated at large .C. The predicted tension ratio will be underestimated at large .D. The prediction error will be independent of ."
+  }
+]

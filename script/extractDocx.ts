@@ -18,8 +18,10 @@ type StemBlock =
 const MIN_IMAGE_B64_LEN = 550;
 
 async function uploadBase64(b64: string, contentType: string, idx: number): Promise<string> {
-  const dataUri = `data:${contentType};base64,${b64}`;
-  const ext = contentType.split("/")[1]?.replace("jpeg", "jpg") || "png";
+  // octet-stream = unknown binary, treat as png
+  const mime = contentType === "application/octet-stream" ? "image/png" : contentType;
+  const ext = mime.split("/")[1]?.replace("jpeg", "jpg") || "png";
+  const dataUri = `data:${mime};base64,${b64}`;
   const result = await cloudinary.uploader.upload(dataUri, {
     public_id: `question-bank/qb_img_${Date.now()}_${idx}`,
     resource_type: "image",
@@ -155,7 +157,7 @@ async function main() {
     blocks.push(block);
   }
 
-  const outDir = path.resolve(__dirname, "extracted");
+  const outDir = path.resolve(process.cwd(), "script", "extracted");
   fs.mkdirSync(outDir, { recursive: true });
   const baseName = path.basename(resolvedPath, ".docx");
   const outPath = path.join(outDir, `${baseName}.json`);

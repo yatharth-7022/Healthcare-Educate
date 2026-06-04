@@ -1,5 +1,6 @@
 import type { StemBlock } from "@shared/models/practice";
 import { BlockMath, InlineMath } from "react-katex";
+import { MathText } from "./MathText";
 
 type StemBlockRendererProps = {
   blocks: StemBlock[];
@@ -83,7 +84,7 @@ export function StemBlockRenderer({
                 className="rounded-lg border border-primary/30 bg-primary/5 px-4 py-3"
               >
                 <p className="text-base font-semibold leading-7 text-foreground whitespace-pre-line">
-                  {block.value}
+                  <MathText text={block.value} />
                 </p>
               </div>
             );
@@ -94,7 +95,7 @@ export function StemBlockRenderer({
               key={key}
               className="text-sm leading-7 text-foreground/90 whitespace-pre-line"
             >
-              {block.value}
+              <MathText text={block.value} />
             </p>
           );
         }
@@ -129,7 +130,7 @@ export function StemBlockRenderer({
               />
               {block.caption && (
                 <figcaption className="text-xs text-muted-foreground mt-2">
-                  {block.caption}
+                  <MathText text={block.caption} />
                 </figcaption>
               )}
             </figure>
