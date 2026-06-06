@@ -19,33 +19,39 @@ const stemBlockSchema = z.discriminatedUnion("type", [
     type: z.literal("text"),
     value: z.string().min(1),
     variant: z.enum(["default", "additional-info"]).optional(),
+    revealAtQuestion: z.number().int().positive().optional(),
   }),
   z.object({
     type: z.literal("equation"),
     value: z.string().min(1),
     mode: z.enum(["inline", "block"]).optional(),
+    revealAtQuestion: z.number().int().positive().optional(),
   }),
   z.object({
     type: z.literal("image"),
     url: z.string().url(),
     alt: z.string().optional(),
     caption: z.string().optional(),
+    revealAtQuestion: z.number().int().positive().optional(),
   }),
   z.object({
     type: z.literal("table"),
     columns: z.array(z.string()).min(1),
     rows: z.array(z.array(z.string())).min(1),
     caption: z.string().optional(),
+    revealAtQuestion: z.number().int().positive().optional(),
   }),
   z.object({
     type: z.literal("code"),
     value: z.string().min(1),
     language: z.string().optional(),
+    revealAtQuestion: z.number().int().positive().optional(),
   }),
   z.object({
     type: z.literal("video"),
     url: z.string().url(),
     title: z.string().optional(),
+    revealAtQuestion: z.number().int().positive().optional(),
   }),
 ]);
 

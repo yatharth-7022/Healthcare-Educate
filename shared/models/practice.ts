@@ -33,12 +33,14 @@ export type StemTextBlock = {
   type: "text";
   value: string;
   variant?: "default" | "additional-info";
+  revealAtQuestion?: number;
 };
 
 export type StemEquationBlock = {
   type: "equation";
   value: string;
   mode?: "inline" | "block";
+  revealAtQuestion?: number;
 };
 
 export type StemImageBlock = {
@@ -46,6 +48,7 @@ export type StemImageBlock = {
   url: string;
   alt?: string;
   caption?: string;
+  revealAtQuestion?: number;
 };
 
 export type StemTableBlock = {
@@ -53,18 +56,21 @@ export type StemTableBlock = {
   columns: string[];
   rows: string[][];
   caption?: string;
+  revealAtQuestion?: number;
 };
 
 export type StemCodeBlock = {
   type: "code";
   value: string;
   language?: string;
+  revealAtQuestion?: number;
 };
 
 export type StemVideoBlock = {
   type: "video";
   url: string;
   title?: string;
+  revealAtQuestion?: number;
 };
 
 export type StemBlock =

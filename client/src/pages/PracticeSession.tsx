@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLocation, useParams, useSearch } from "wouter";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import {
@@ -7,7 +7,7 @@ import {
 } from "@/hooks/use-practice-progress";
 import { StemBlockRenderer } from "@/components/practice/StemBlockRenderer";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Bookmark, ChevronDown, X } from "lucide-react";
+import { ArrowLeft, Bookmark, ChevronDown, Info, X } from "lucide-react";
 import { MathText } from "@/components/practice/MathText";
 
 export default function PracticeSession() {
@@ -35,6 +35,24 @@ export default function PracticeSession() {
   >({});
   const [bookmarkedIds, setBookmarkedIds] = useState<Set<string>>(new Set());
   const [showNavigator, setShowNavigator] = useState(false);
+  const [additionalInfoBanner, setAdditionalInfoBanner] = useState(false);
+
+  const currentQuestionNumber = currentQuestionIndex + 1;
+
+  const visibleStemBlocks = useMemo(() => {
+    if (!questionSet) return [];
+    return questionSet.stem.filter(
+      (block) => !block.revealAtQuestion || block.revealAtQuestion <= currentQuestionNumber,
+    );
+  }, [questionSet, currentQuestionNumber]);
+
+  useEffect(() => {
+    if (!questionSet) return;
+    const unlocks = questionSet.stem.some(
+      (block) => block.revealAtQuestion === currentQuestionNumber,
+    );
+    if (unlocks) setAdditionalInfoBanner(true);
+  }, [currentQuestionIndex, questionSet, currentQuestionNumber]);
 
   function toggleBookmark(questionId: string) {
     setBookmarkedIds((prev) => {
@@ -230,7 +248,20 @@ export default function PracticeSession() {
                 </div>
               )}
             </div>
-            <StemBlockRenderer blocks={questionSet.stem} />
+            {additionalInfoBanner && (
+              <div className="flex items-center gap-2 rounded-lg border border-blue-400/50 bg-blue-50 dark:bg-blue-950/30 px-3 py-2 mb-4 text-sm text-blue-700 dark:text-blue-300">
+                <Info className="w-4 h-4 flex-shrink-0" />
+                <span className="flex-1">Additional information is now available in the passage below.</span>
+                <button
+                  onClick={() => setAdditionalInfoBanner(false)}
+                  className="flex-shrink-0 hover:opacity-70 transition-opacity"
+                  aria-label="Dismiss"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            )}
+            <StemBlockRenderer blocks={visibleStemBlocks} />
           </section>
 
           <aside className="bg-card border border-border/60 rounded-lg p-4 sticky top-6 self-start">

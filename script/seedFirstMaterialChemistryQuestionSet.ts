@@ -90,22 +90,26 @@ const input: CreatePracticeQuestionSetInput = {
       type: "text",
       value: "ADDITIONAL INFORMATION:",
       variant: "additional-info",
+      revealAtQuestion: 8,
     },
     {
       type: "text",
       value:
         "Figure 3 depicts the correlation between the side chain mass fraction ($w$) and the glass transition temperature ($T_g$) for conjugated polymers in this work.",
+      revealAtQuestion: 8,
     },
     {
       type: "image",
       url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554166/question-bank/qb_img_1780554166207_15.png",
       alt: "Figure 3: Correlation between side chain mass fraction w and glass transition temperature Tg",
       caption: "Figure 3",
+      revealAtQuestion: 8,
     },
     {
       type: "text",
       value:
         "Figure 3: Correlation between side chain mass fraction ($w$) and glass transition temperature ($T_g$) for conjugated polymers. Group 1 (thiophene-rich) and Group 2 (phenyl-rich) trendlines are fitted using the Fox equation.",
+      revealAtQuestion: 8,
     },
   ],
   questions: [
