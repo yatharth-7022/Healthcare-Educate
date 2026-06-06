@@ -184,11 +184,11 @@ export default function PracticeSession() {
                 />
               </button>
               {showNavigator && (
-                <div className="absolute top-full left-0 mt-1 bg-card border border-border rounded-lg shadow-lg p-3 z-20 min-w-[300px]">
+                <div className="absolute top-full left-0 mt-1 bg-card border border-border rounded-lg shadow-lg p-3 z-20 min-w-fit">
                   <p className="text-xs text-muted-foreground mb-2 font-medium">
                     {questionSet.title}
                   </p>
-                  <div className="flex gap-1.5 flex-wrap">
+                  <div className="flex gap-2 flex-wrap">
                     {questions.map((q, idx) => {
                       const isCurrent = idx === currentQuestionIndex;
                       const isAnswered = selectedByQuestionId[q.id] !== undefined;
@@ -200,12 +200,12 @@ export default function PracticeSession() {
                             setCurrentQuestionIndex(idx);
                             setShowNavigator(false);
                           }}
-                          className={`relative flex-shrink-0 w-8 h-8 rounded-full text-xs font-medium border-2 transition-colors flex items-center justify-center ${
+                          className={`relative flex-shrink-0 w-11 h-11 rounded text-sm font-medium border transition-colors flex items-center justify-center ${
                             isCurrent
                               ? "bg-primary border-primary text-white"
                               : isAnswered
                               ? "border-primary/40 bg-primary/10 text-primary"
-                              : "border-border/60 text-muted-foreground hover:border-primary/40"
+                              : "border-border text-foreground hover:border-primary/40"
                           }`}
                         >
                           {idx + 1}
@@ -217,6 +217,15 @@ export default function PracticeSession() {
                         </button>
                       );
                     })}
+                    <button
+                      onClick={() => {
+                        setCurrentQuestionIndex(questions.length - 1);
+                        setShowNavigator(false);
+                      }}
+                      className="flex-shrink-0 h-11 px-4 rounded text-sm font-medium border border-border text-foreground hover:border-primary/40 transition-colors flex items-center justify-center"
+                    >
+                      End
+                    </button>
                   </div>
                 </div>
               )}

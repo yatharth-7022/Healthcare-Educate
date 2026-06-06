@@ -23,10 +23,9 @@ const input: CreatePracticeQuestionSetInput = {
         "$T_g$ can be identified using rheological techniques, specifically by analyzing the loss modulus ($G''$) curve, where the peak of $G''$ corresponds to the glass transition temperature. In another analysis, $T_g$ was plotted against side chain mass fraction ($w$), with the trend modeled using the Fox equation given below:",
     },
     {
-      type: "image",
-      url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554158/question-bank/qb_img_1780554157849_2.jpg",
-      alt: "Fox equation for glass transition temperature",
-      caption: "Fox equation",
+      type: "equation",
+      value: "\\frac{1}{T_g} = \\frac{w}{T_{g,\\text{sc}}} + \\frac{1-w}{T_{g,\\text{bb}}}",
+      mode: "block",
     },
     {
       type: "text",
@@ -40,7 +39,7 @@ const input: CreatePracticeQuestionSetInput = {
     },
     {
       type: "image",
-      url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554159/question-bank/qb_img_1780554159032_7.png",
+      url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1778912465/02_figure_2a_structures_P3DDT_P3OT_P3HT_P3BT_r9nvgm.png",
       alt: "Figure 2a: Rheological curves for Group 1 (thiophene-rich) conjugated polymers",
       caption: "Figure 2a (i)",
     },
