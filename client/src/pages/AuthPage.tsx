@@ -89,9 +89,9 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row bg-white font-body selection:bg-primary/20">
+    <div className="min-h-screen flex flex-col lg:flex-row bg-white dark:bg-gray-950 font-body selection:bg-primary/20">
       {/* Left Column: Branding & Visuals */}
-      <div className="hidden lg:flex lg:w-1/2 bg-[#FAF8F4] relative flex-col items-center justify-center p-12 overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 bg-[#FAF8F4] dark:bg-gray-900 relative flex-col items-center justify-center p-12 overflow-hidden">
         {/* Topographic Background */}
         <div
           className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
@@ -107,19 +107,19 @@ export default function AuthPage() {
             <img
               src={logoImg}
               alt="SmashMed Logo"
-              className="h-20 w-auto mb-12 mix-blend-multiply hover:opacity-80 transition-opacity"
+              className="h-20 w-auto mb-12 mix-blend-multiply dark:mix-blend-normal dark:brightness-90 hover:opacity-80 transition-opacity"
             />
           </Link>
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-3xl font-heading font-bold text-gray-900 leading-tight mb-4"
+            className="text-3xl font-heading font-bold text-gray-900 dark:text-gray-100 leading-tight mb-4"
           >
             Prepare with clarity. <br />
             Perform with confidence.
           </motion.h2>
-          <p className="text-gray-500 font-medium">
+          <p className="text-gray-500 dark:text-gray-400 font-medium">
             Join the community of future doctors preparing with SmashMed.
           </p>
         </div>
@@ -130,14 +130,14 @@ export default function AuthPage() {
       </div>
 
       {/* Right Column: Auth Form */}
-      <div className="flex-1 flex flex-col items-center justify-center p-6 lg:p-12 relative min-h-screen lg:min-h-0">
+      <div className="flex-1 flex flex-col items-center justify-center p-6 lg:p-12 relative min-h-screen lg:min-h-0 bg-white dark:bg-gray-950">
         {/* Mobile Logo */}
         <div className="lg:hidden absolute top-8 left-8">
           <Link href="/">
             <img
               src={logoImg}
               alt="SmashMed"
-              className="h-8 w-auto mix-blend-multiply"
+              className="h-8 w-auto mix-blend-multiply dark:mix-blend-normal dark:brightness-90"
             />
           </Link>
         </div>
@@ -148,31 +148,31 @@ export default function AuthPage() {
           transition={{ duration: 0.4 }}
           className="w-full max-w-[440px] my-auto"
         >
-          <Card className="border-gray-100 shadow-xl shadow-gray-200/50 rounded-2xl overflow-hidden">
+          <Card className="border-gray-100 dark:border-gray-700 shadow-xl shadow-gray-200/50 dark:shadow-black/40 rounded-2xl overflow-hidden bg-white dark:bg-gray-900">
             <CardContent className="p-0">
               <Tabs defaultValue="login" className="w-full">
-                <TabsList className="w-full h-14 bg-gray-50/50 rounded-none border-b border-gray-100 p-0">
+                <TabsList className="w-full h-14 bg-gray-50/50 dark:bg-gray-800/50 rounded-none border-b border-gray-100 dark:border-gray-700 p-0">
                   <TabsTrigger
                     value="login"
-                    className="flex-1 h-full rounded-none data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-none border-r border-gray-100 font-bold text-gray-500 transition-all"
+                    className="flex-1 h-full rounded-none data-[state=active]:bg-white dark:data-[state=active]:bg-gray-900 data-[state=active]:text-primary data-[state=active]:shadow-none border-r border-gray-100 dark:border-gray-700 font-bold text-gray-500 dark:text-gray-400 transition-all"
                   >
                     Login
                   </TabsTrigger>
                   <TabsTrigger
                     value="register"
-                    className="flex-1 h-full rounded-none data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-none font-bold text-gray-500 transition-all"
+                    className="flex-1 h-full rounded-none data-[state=active]:bg-white dark:data-[state=active]:bg-gray-900 data-[state=active]:text-primary data-[state=active]:shadow-none font-bold text-gray-500 dark:text-gray-400 transition-all"
                   >
                     Create account
                   </TabsTrigger>
                 </TabsList>
 
-                <div className="p-8 bg-white">
+                <div className="p-8 bg-white dark:bg-gray-900">
                   <TabsContent value="login" className="mt-0 space-y-6">
                     <div className="space-y-2">
-                      <h3 className="text-2xl font-heading font-bold text-gray-900">
+                      <h3 className="text-2xl font-heading font-bold text-gray-900 dark:text-gray-100">
                         Welcome back
                       </h3>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
                         Enter your credentials to access your dashboard
                       </p>
                     </div>
@@ -187,7 +187,7 @@ export default function AuthPage() {
                           id="email"
                           type="email"
                           placeholder="name@example.com"
-                          className="h-11 rounded-xl border-gray-200 focus:ring-primary/20"
+                          className="h-11 rounded-xl border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:ring-primary/20"
                           {...loginForm.register("email")}
                         />
                         {loginForm.formState.errors.email && (
@@ -209,7 +209,7 @@ export default function AuthPage() {
                         <Input
                           id="password"
                           type="password"
-                          className="h-11 rounded-xl border-gray-200 focus:ring-primary/20"
+                          className="h-11 rounded-xl border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:ring-primary/20"
                           {...loginForm.register("password")}
                         />
                         {loginForm.formState.errors.password && (
@@ -251,10 +251,10 @@ export default function AuthPage() {
 
                   <TabsContent value="register" className="mt-0 space-y-6">
                     <div className="space-y-2">
-                      <h3 className="text-2xl font-heading font-bold text-gray-900">
+                      <h3 className="text-2xl font-heading font-bold text-gray-900 dark:text-gray-100">
                         Get started
                       </h3>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
                         Create your account to begin your journey
                       </p>
                     </div>
@@ -268,7 +268,7 @@ export default function AuthPage() {
                         <Input
                           id="reg-name"
                           placeholder="johndoe"
-                          className="h-11 rounded-xl border-gray-200 focus:ring-primary/20"
+                          className="h-11 rounded-xl border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:ring-primary/20"
                           {...registerForm.register("username")}
                         />
                         {registerForm.formState.errors.username && (
@@ -283,7 +283,7 @@ export default function AuthPage() {
                           id="reg-email"
                           type="email"
                           placeholder="name@example.com"
-                          className="h-11 rounded-xl border-gray-200 focus:ring-primary/20"
+                          className="h-11 rounded-xl border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:ring-primary/20"
                           {...registerForm.register("email")}
                         />
                         {registerForm.formState.errors.email && (
@@ -298,7 +298,7 @@ export default function AuthPage() {
                           <Input
                             id="reg-password"
                             type="password"
-                            className="h-11 rounded-xl border-gray-200 focus:ring-primary/20"
+                            className="h-11 rounded-xl border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:ring-primary/20"
                             {...registerForm.register("password")}
                           />
                           {registerForm.formState.errors.password && (
@@ -312,7 +312,7 @@ export default function AuthPage() {
                           <Input
                             id="confirm-password"
                             type="password"
-                            className="h-11 rounded-xl border-gray-200 focus:ring-primary/20"
+                            className="h-11 rounded-xl border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:ring-primary/20"
                             {...registerForm.register("confirmPassword")}
                           />
                           {registerForm.formState.errors.confirmPassword && (
@@ -338,7 +338,7 @@ export default function AuthPage() {
                       </Button>
                     </form>
 
-                    <p className="text-center text-xs text-gray-400 leading-relaxed px-4">
+                    <p className="text-center text-xs text-gray-400 dark:text-gray-500 leading-relaxed px-4">
                       By creating an account, you agree to our Terms of Service
                       and Privacy Policy.
                     </p>
@@ -348,7 +348,7 @@ export default function AuthPage() {
             </CardContent>
           </Card>
 
-          <p className="text-center mt-8 text-sm text-gray-400">
+          <p className="text-center mt-8 text-sm text-gray-400 dark:text-gray-500">
             © 2025 SmashMed Education. All rights reserved.
           </p>
         </motion.div>

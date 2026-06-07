@@ -1,4 +1,5 @@
 import { Switch, Route, useLocation } from "wouter";
+import { useEffect } from "react";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -25,53 +26,61 @@ import PracticeSetup from "@/pages/PracticeSetup";
 import PracticeConfirm from "@/pages/PracticeConfirm";
 import PracticeSession from "@/pages/PracticeSession";
 
+const LANDING_PATHS = ["/", "/about", "/courses", "/pricing", "/honour-roll"];
+
+function isLandingPath(path: string) {
+  return LANDING_PATHS.includes(path);
+}
+
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/auth">
         <PublicRoute>
-          <AuthPage />
+          <ThemeProvider defaultTheme="dark" storageKey="dashboard-theme">
+            <AuthPage />
+          </ThemeProvider>
         </PublicRoute>
       </Route>
       <Route path="/dashboard">
         <ProtectedRoute>
-          <ThemeProvider defaultTheme="light" storageKey="dashboard-theme">
+          <ThemeProvider defaultTheme="dark" storageKey="dashboard-theme">
             <Dashboard />
           </ThemeProvider>
         </ProtectedRoute>
       </Route>
       <Route path="/dashboard/practice">
         <ProtectedRoute>
-          <ThemeProvider defaultTheme="light" storageKey="dashboard-theme">
+          <ThemeProvider defaultTheme="dark" storageKey="dashboard-theme">
             <Practice />
           </ThemeProvider>
         </ProtectedRoute>
       </Route>
       <Route path="/dashboard/practice/:category">
         <ProtectedRoute>
-          <ThemeProvider defaultTheme="light" storageKey="dashboard-theme">
+          <ThemeProvider defaultTheme="dark" storageKey="dashboard-theme">
             <PracticeCategory />
           </ThemeProvider>
         </ProtectedRoute>
       </Route>
       <Route path="/dashboard/practice/:category/:subcategory/setup">
         <ProtectedRoute>
-          <ThemeProvider defaultTheme="light" storageKey="dashboard-theme">
+          <ThemeProvider defaultTheme="dark" storageKey="dashboard-theme">
             <PracticeSetup />
           </ThemeProvider>
         </ProtectedRoute>
       </Route>
       <Route path="/dashboard/practice/:category/:subcategory/confirm">
         <ProtectedRoute>
-          <ThemeProvider defaultTheme="light" storageKey="dashboard-theme">
+          <ThemeProvider defaultTheme="dark" storageKey="dashboard-theme">
             <PracticeConfirm />
           </ThemeProvider>
         </ProtectedRoute>
       </Route>
       <Route path="/dashboard/practice/:category/:subcategory/session">
         <ProtectedRoute>
-          <ThemeProvider defaultTheme="light" storageKey="dashboard-theme">
+          <ThemeProvider defaultTheme="dark" storageKey="dashboard-theme">
             <PracticeSession />
           </ThemeProvider>
         </ProtectedRoute>
@@ -98,6 +107,14 @@ function Router() {
 function App() {
   const [location] = useLocation();
   const isDashboard = location.startsWith("/dashboard");
+
+  // Force light mode on landing pages so dark CSS variables don't bleed in
+  useEffect(() => {
+    if (isLandingPath(location)) {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+    }
+  }, [location]);
 
   return (
     <QueryClientProvider client={queryClient}>

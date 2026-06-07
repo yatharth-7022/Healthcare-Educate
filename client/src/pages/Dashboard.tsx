@@ -4,32 +4,23 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import { motion } from "framer-motion";
 import {
   BookOpen,
   Calendar,
-  Clock,
   TrendingUp,
-  PlayCircle,
   FileText,
-  Users,
-  ChevronRight,
   ArrowRight,
   LogOut,
   User,
   Settings,
-  Award,
   Target,
   Zap,
-  BarChart3,
   MessageSquare,
-  Video,
   CheckCircle2,
   Timer,
   Flame,
@@ -55,157 +46,101 @@ export default function Dashboard() {
   const [, setLocation] = useLocation();
   const { theme, setTheme } = useTheme();
 
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.5, ease: "easeOut" },
-  };
-
-  const stagger = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const stats = [
-    {
-      label: "Study Streak",
-      value: "12 days",
-      icon: Flame,
-      trend: "+3 from last week",
-    },
-    {
-      label: "Total Hours",
-      value: "48.5",
-      icon: Timer,
-      trend: "+12% this month",
-    },
-    {
-      label: "Mock Tests",
-      value: "8/12",
-      icon: Target,
-      trend: "4 remaining",
-    },
-    {
-      label: "Avg Score",
-      value: "78%",
-      icon: Trophy,
-      trend: "+5% improvement",
-    },
+  const sections = [
+    { code: "S1", name: "Humanities & Social Sciences", progress: 60, done: 8, total: 12 },
+    { code: "S2", name: "Written Communication", progress: 45, done: 2, total: 5 },
+    { code: "S3", name: "Biological & Physical Sciences", progress: 30, done: 2, total: 7 },
   ];
 
-  const quickActions = [
-    { icon: PlayCircle, label: "Continue Course" },
-    { icon: Video, label: "Live Classes" },
-    { icon: FileText, label: "Practice Tests" },
-    { icon: BarChart3, label: "My Progress" },
+  const recentActivity = [
+    { icon: FileText, title: "Section II Essay submitted", meta: "Pending review", time: "2h ago" },
+    { icon: TrendingUp, title: "Biology Mock Test completed", meta: "Score: 78%", time: "Yesterday" },
+    { icon: CheckCircle2, title: "Chemistry module finished", meta: "Unit complete", time: "2 days ago" },
+    { icon: MessageSquare, title: "Tutor feedback received", meta: "4 new comments", time: "3 days ago" },
+  ];
+
+  const upcomingSessions = [
+    { title: "S3 Physics Workshop", day: "12", month: "Feb", time: "7:00 PM AEDT" },
+    { title: "S2 Critical Thinking", day: "15", month: "Feb", time: "6:30 PM AEDT" },
+    { title: "S1 Essay Techniques", day: "18", month: "Feb", time: "8:00 PM AEDT" },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 dark:from-background dark:via-background dark:to-muted/10">
-      {/* Enhanced Dashboard Header */}
-      <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-xl border-b border-border/40 shadow-sm dark:bg-background/98 dark:border-border">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-8">
-            <Link
-              href="/dashboard"
-              className="cursor-pointer flex items-center"
-            >
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="sticky top-0 z-50 border-b border-border bg-background">
+        <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+          <div className="flex items-center gap-6">
+            <Link href="/dashboard" className="flex items-center">
               <img
                 src={logoImg}
-                alt="SmashMed Logo"
-                className="h-16 w-auto object-contain dark:brightness-110"
+                alt="SmashMed"
+                className="h-14 w-auto object-contain dark:brightness-110"
               />
             </Link>
-
-            <nav className="hidden md:flex items-center gap-1">
-              <Button variant="ghost" size="sm" className="text-sm font-medium">
-                <LayoutDashboard className="mr-2 h-4 w-4" />
+            <nav className="hidden md:flex items-center gap-0.5">
+              <Button variant="ghost" size="sm" className="text-sm font-medium h-8">
+                <LayoutDashboard className="mr-1.5 h-3.5 w-3.5" />
                 Dashboard
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground"
+                className="text-sm font-medium text-muted-foreground h-8"
+                onClick={() => setLocation("/dashboard/practice")}
               >
-                <BookOpen className="mr-2 h-4 w-4" />
-                Courses
+                <BookOpen className="mr-1.5 h-3.5 w-3.5" />
+                Practice
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground"
+                className="text-sm font-medium text-muted-foreground h-8"
               >
-                <Calendar className="mr-2 h-4 w-4" />
+                <Calendar className="mr-1.5 h-3.5 w-3.5" />
                 Schedule
               </Button>
             </nav>
           </div>
 
-          <div className="flex items-center gap-3">
-            {/* Theme Toggle Button */}
+          <div className="flex items-center gap-1">
             <Button
               variant="ghost"
               size="sm"
+              className="h-8 w-8 p-0"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="h-9 w-9 rounded-full hover:bg-accent"
             >
-              <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               <span className="sr-only">Toggle theme</span>
             </Button>
-            
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button
-                  variant="ghost"
-                  className="relative h-9 w-9 rounded-full ring-2 ring-primary/10 hover:ring-primary/30 transition-all"
-                >
-                  <Avatar className="h-9 w-9">
-                    <AvatarFallback className="bg-primary text-white font-bold text-sm">
+                <Button variant="ghost" className="h-8 gap-2 px-2 ml-1">
+                  <Avatar className="h-6 w-6">
+                    <AvatarFallback className="bg-primary text-primary-foreground text-xs font-bold">
                       {user?.username?.charAt(0).toUpperCase()}
                     </AvatarFallback>
                   </Avatar>
+                  <span className="text-sm font-medium hidden sm:inline">
+                    {user?.username}
+                  </span>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-64" align="end" forceMount>
-                <DropdownMenuLabel className="font-normal">
-                  <div className="flex items-center gap-3 py-2">
-                    <Avatar className="h-12 w-12">
-                      <AvatarFallback className="bg-primary text-white font-bold">
-                        {user?.username?.charAt(0).toUpperCase()}
-                      </AvatarFallback>
-                    </Avatar>
-                    <div className="flex flex-col space-y-1">
-                      <p className="text-sm font-semibold leading-none">
-                        {user?.username}
-                      </p>
-                      <p className="text-xs leading-none text-muted-foreground">
-                        {user?.email}
-                      </p>
-                      <Badge
-                        variant="secondary"
-                        className="w-fit text-[10px] mt-1"
-                      >
-                        Premium Student
-                      </Badge>
-                    </div>
-                  </div>
+              <DropdownMenuContent align="end" className="w-56">
+                <DropdownMenuLabel>
+                  <p className="text-sm font-medium">{user?.username}</p>
+                  <p className="text-xs text-muted-foreground font-normal">{user?.email}</p>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem className="cursor-pointer">
                   <User className="mr-2 h-4 w-4" />
-                  <span>Profile Settings</span>
+                  Profile
                 </DropdownMenuItem>
                 <DropdownMenuItem className="cursor-pointer">
                   <Settings className="mr-2 h-4 w-4" />
-                  <span>Preferences</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  <Award className="mr-2 h-4 w-4" />
-                  <span>Achievements</span>
+                  Settings
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem
@@ -216,7 +151,7 @@ export default function Dashboard() {
                   }}
                 >
                   <LogOut className="mr-2 h-4 w-4" />
-                  <span>Log out</span>
+                  Log out
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -224,349 +159,193 @@ export default function Dashboard() {
         </div>
       </header>
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Welcome Section with Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-8"
-        >
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
-            <div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent mb-2">
-                Welcome back, {user?.username || "Scholar"}!
-              </h1>
-              <p className="text-muted-foreground text-lg">
-                Let's continue your GAMSAT journey today 🚀
-              </p>
-            </div>
-            <div className="flex items-center gap-2">
-              <Badge variant="outline" className="text-xs px-3 py-1">
-                <CheckCircle2 className="w-3 h-3 mr-1" />
-                45% Complete
-              </Badge>
-            </div>
+      <div className="max-w-7xl mx-auto px-6 py-8">
+        {/* Page title */}
+        <div className="flex items-end justify-between mb-7">
+          <div>
+            <p className="text-sm text-muted-foreground mb-0.5">Welcome back</p>
+            <h1 className="text-2xl font-bold">{user?.username || "Scholar"}</h1>
           </div>
+          <Badge variant="outline" className="text-xs gap-1.5 h-7 px-3">
+            <CheckCircle2 className="w-3 h-3 text-primary" />
+            GAMSAT — 45% complete
+          </Badge>
+        </div>
 
-          {/* Stats Cards */}
-          {/* <motion.div
-            variants={stagger}
-            initial="initial"
-            animate="animate"
-            className="grid grid-cols-2 lg:grid-cols-4 gap-4"
-          >
-            {stats.map((stat, i) => (
-              <motion.div key={i} variants={fadeInUp}>
-                <Card className="border-border/50 hover:border-border transition-all hover:shadow-lg">
-                  <CardContent className="p-6">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="p-2.5 rounded-xl bg-primary/10">
-                        <stat.icon className="w-5 h-5 text-primary" />
-                      </div>
-                    </div>
-                    <div className="space-y-1">
-                      <p className="text-2xl font-bold">{stat.value}</p>
-                      <p className="text-sm text-muted-foreground">
-                        {stat.label}
-                      </p>
-                      <p className="text-xs text-primary font-medium">
-                        {stat.trend}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div> */}
-        </motion.div>
-
-        {/* Quick Actions */}
-        {/* <motion.div
-          variants={stagger}
-          initial="initial"
-          animate="animate"
-          className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8"
-        >
-          {quickActions.map((action, i) => (
-            <motion.div key={i} variants={fadeInUp}>
-              <Button
-                className="w-full h-24 bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl transition-all group"
-                variant="default"
-              >
-                <div className="flex flex-col items-center gap-2">
-                  <action.icon className="w-6 h-6 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm font-semibold">{action.label}</span> dark:from-card dark:to-card/30 dark:shadow-2xl
-                </div>
-              </Button>
-            </motion.div>
+        {/* Stats strip */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 border border-border rounded-xl mb-7 divide-y lg:divide-y-0 lg:divide-x divide-border overflow-hidden">
+          {[
+            { label: "Study streak", value: "12 days", icon: Flame, sub: "Personal best: 18 days" },
+            { label: "Hours studied", value: "48.5 hrs", icon: Timer, sub: "+12% this month" },
+            { label: "Questions done", value: "840", icon: Target, sub: "of 2,400 total" },
+            { label: "Average score", value: "78%", icon: Trophy, sub: "+5% from last month" },
+          ].map((stat, i) => (
+            <div key={i} className="px-6 py-5">
+              <div className="flex items-center justify-between mb-3">
+                <p className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wide">
+                  {stat.label}
+                </p>
+                <stat.icon className="w-3.5 h-3.5 text-muted-foreground" />
+              </div>
+              <p className="text-2xl font-bold tracking-tight mb-0.5">{stat.value}</p>
+              <p className="text-xs text-muted-foreground">{stat.sub}</p>
+            </div>
           ))}
-        </motion.div> */}
+        </div>
 
+        {/* Main content grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Main Content Area */}
+          {/* Left — 2 cols */}
           <div className="lg:col-span-2 space-y-6">
-            {/* Primary Course Card */}
-            <motion.div variants={fadeInUp} initial="initial" animate="animate">
-              <Card className="overflow-hidden border-border/50 shadow-xl bg-gradient-to-br from-card to-card/50">
-                <div className="h-1.5 bg-primary w-full" />
-                <CardHeader className="pb-4">
-                  <div className="flex justify-between items-start">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="p-2 bg-primary/10 rounded-lg">
-                          <BookOpen className="w-5 h-5 text-primary" />
+            {/* Course progress */}
+            <Card className="border-border shadow-none">
+              <CardHeader className="pb-4 border-b border-border">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-sm font-semibold">
+                    GAMSAT Preparation Course
+                  </CardTitle>
+                  <Button
+                    size="sm"
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 h-7 text-xs font-semibold px-3"
+                    onClick={() => setLocation("/dashboard/practice")}
+                  >
+                    Continue studying
+                    <ArrowRight className="ml-1.5 w-3 h-3" />
+                  </Button>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-5 space-y-5">
+                {/* Overall */}
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs text-muted-foreground font-medium">Overall progress</span>
+                    <span className="text-xs font-bold text-primary">45%</span>
+                  </div>
+                  <Progress value={45} className="h-2" />
+                </div>
+
+                {/* Per section */}
+                <div className="space-y-4 pt-1">
+                  {sections.map((s) => (
+                    <div key={s.code}>
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <span className="text-[10px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded shrink-0">
+                            {s.code}
+                          </span>
+                          <span className="text-sm font-medium">{s.name}</span>
                         </div>
-                        <CardTitle className="text-2xl font-bold">
-                          GAMSAT Preparation Course
-                        </CardTitle>
+                        <span className="text-xs text-muted-foreground shrink-0 ml-3">
+                          {s.done}/{s.total}
+                        </span>
                       </div>
-                      <CardDescription className="text-base">
-                        Comprehensive curriculum covering all sections with
-                        expert guidance
-                      </CardDescription>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-semibold">
-                        Overall Progress dark:bg-muted/50
-                      </span>
-                      <span className="text-2xl font-bold text-primary">
-                        45%
-                      </span>
-                    </div>
-                    <Progress value={45} className="h-3" />
-                    <p className="text-xs text-muted-foreground">
-                      11 of 24 modules completed
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-3 gap-4 p-4 bg-muted/30 rounded-xl">
-                    <div className="text-center">
-                      <div className="flex items-center justify-center mb-1">
-                        <BookOpen className="w-4 h-4 text-primary mr-1" />
-                      </div>
-                      <p className="text-2xl font-bold">12/24</p>
-                      <p className="text-xs text-muted-foreground mt-1">
-                        Modules
-                      </p>
-                    </div>
-                    <div className="text-center border-x border-border/50">
-                      <div className="flex items-center justify-center mb-1">
-                        <CheckCircle2 className="w-4 h-4 text-primary mr-1" />
-                      </div>
-                      <p className="text-2xl font-bold">840</p>
-                      <p className="text-xs text-muted-foreground mt-1">
-                        Questions
-                      </p>
-                    </div>
-                    <div className="text-center">
-                      <div className="flex items-center justify-center mb-1">
-                        <Target className="w-4 h-4 text-primary mr-1" />
-                      </div>
-                      <p className="text-2xl font-bold text-primary">
-                        Physics II
-                      </p>
-                      <p className="text-xs text-muted-foreground mt-1">
-                        Next Goal
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <Button
-                      className="flex-1 h-12 bg-primary hover:bg-primary/90 text-white font-semibold shadow-lg hover:shadow-xl transition-all group"
-                      onClick={() => setLocation("/dashboard/practice")}
-                      data-testid="button-continue-learning"
-                    >
-                      Continue Learning
-                      <PlayCircle className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform" />
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="flex-1 h-12 border-border hover:bg-accent font-semibold"
-                    >
-                      View Syllabus
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Recent Activity */}
-            <motion.div
-              variants={stagger}
-              initial="initial"
-              animate="animate"
-              className="space-y-4"
-            >
-              <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-bold">Recent Activity</h2>
-                <Button variant="ghost" size="sm" className="text-primary">
-                  View All
-                  <ChevronRight className="w-4 h-4 ml-1" />
-                </Button>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {[
-                  {
-                    icon: FileText,
-                    title: "Section II Essay Submitted",
-                    time: "2 hours ago",
-                    status: "Pending Review",
-                  },
-                  {
-                    icon: TrendingUp,
-                    title: "Biology Mock Completed",
-                    time: "Yesterday",
-                    status: "Score: 78%",
-                  },
-                  {
-                    icon: Award,
-                    title: "Chemistry Module Finished",
-                    time: "2 days ago",
-                    status: "Achievement Unlocked",
-                  },
-                  {
-                    icon: MessageSquare,
-                    title: "Tutor Feedback Received",
-                    time: "3 days ago",
-                    status: "4 new comments",
-                  },
-                ].map((item, i) => (
-                  <motion.div key={i} variants={fadeInUp}>
-                    <Card className="hover:shadow-lg transition-all border-border/40 group cursor-pointer">
-                      <CardContent className="p-5">
-                        <div className="flex items-start gap-4">
-                          <div className="p-3 rounded-xl bg-primary/10">
-                            <item.icon className="w-5 h-5 text-primary" />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <p className="font-semibold text-sm mb-1 group-hover:text-primary transition-colors">
-                              {item.title}
-                            </p>
-                            <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                              <Clock className="w-3 h-3" />
-                              <span>{item.time}</span>
-                              <span>•</span>
-                              <span className="font-medium">{item.status}</span>
-                            </div>
-                          </div>
-                          <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Sidebar Area */}
-          <div className="space-y-6">
-            {/* Upcoming Live Classes */}
-            <motion.div variants={fadeInUp} initial="initial" animate="animate">
-              <Card className="border-border/50 shadow-lg dark:shadow-2xl">
-                <CardHeader className="pb-3">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="p-2 bg-primary/10 rounded-lg">
-                        <Calendar className="w-5 h-5 text-primary" />
-                      </div>
-                      <CardTitle className="text-lg">Live Classes</CardTitle>
-                    </div>
-                    <Badge variant="secondary" className="text-xs">
-                      Upcoming
-                    </Badge>
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  {[
-                    {
-                      title: "S3 Physics Workshop",
-                      date: "FEB",
-                      day: "12",
-                      time: "7:00 PM AEDT",
-                    },
-                    {
-                      title: "S2 Critical Thinking",
-                      date: "FEB",
-                      day: "15",
-                      time: "6:30 PM AEDT",
-                    },
-                    {
-                      title: "S1 Essay Techniques",
-                      date: "FEB",
-                      day: "18",
-                      time: "8:00 PM AEDT",
-                    },
-                  ].map((session, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center gap-3 p-3 hover:bg-accent/50 rounded-xl transition-all group cursor-pointer"
-                    >
-                      <div className="bg-primary text-white p-3 rounded-lg min-w-[60px] text-center shadow-md">
-                        <p className="text-[10px] font-bold opacity-90">
-                          {session.date}
-                        </p>
-                        <p className="text-xl font-bold">{session.day}</p>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm font-bold mb-1 group-hover:text-primary transition-colors">
-                          {session.title}
-                        </p>
-                        <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                          <Clock className="w-3 h-3" />
-                          {session.time}
-                        </div>
-                      </div>
-                      <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                      <Progress value={s.progress} className="h-1.5" />
                     </div>
                   ))}
+                </div>
+
+                {/* Footer stats */}
+                <div className="flex items-center gap-6 pt-4 border-t border-border text-xs text-muted-foreground">
+                  <span>
+                    <span className="font-semibold text-foreground">11</span> of 24 modules done
+                  </span>
+                  <span>
+                    <span className="font-semibold text-foreground">840</span> questions answered
+                  </span>
+                  <span className="ml-auto">Next: Physics II</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Recent activity */}
+            <Card className="border-border shadow-none">
+              <CardHeader className="pb-4 border-b border-border">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-sm font-semibold">Recent Activity</CardTitle>
+                  <Button variant="ghost" size="sm" className="text-xs text-primary h-7 px-2">
+                    View all
+                  </Button>
+                </div>
+              </CardHeader>
+              <CardContent className="p-0">
+                {recentActivity.map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-4 px-6 py-4 border-b border-border last:border-0 hover:bg-muted/30 transition-colors cursor-pointer group"
+                  >
+                    <div className="w-8 h-8 rounded-lg border border-border flex items-center justify-center shrink-0 group-hover:border-primary/40 transition-colors">
+                      <item.icon className="w-3.5 h-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-medium">{item.title}</p>
+                      <p className="text-xs text-muted-foreground mt-0.5">{item.meta}</p>
+                    </div>
+                    <span className="text-xs text-muted-foreground shrink-0">{item.time}</span>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Right — 1 col */}
+          <div className="space-y-6">
+            {/* Upcoming sessions */}
+            <Card className="border-border shadow-none">
+              <CardHeader className="pb-4 border-b border-border">
+                <CardTitle className="text-sm font-semibold">Upcoming Sessions</CardTitle>
+              </CardHeader>
+              <CardContent className="p-0">
+                {upcomingSessions.map((s, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-4 px-5 py-4 border-b border-border last:border-0 hover:bg-muted/30 transition-colors cursor-pointer group"
+                  >
+                    <div className="text-center w-9 shrink-0">
+                      <p className="text-[10px] font-semibold text-muted-foreground uppercase leading-none mb-1">
+                        {s.month}
+                      </p>
+                      <p className="text-xl font-bold leading-none">{s.day}</p>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-medium group-hover:text-primary transition-colors">
+                        {s.title}
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-0.5">{s.time}</p>
+                    </div>
+                  </div>
+                ))}
+                <div className="p-4">
                   <Button
                     variant="ghost"
-                    className="w-full text-primary font-semibold mt-2 hover:bg-primary/10"
+                    size="sm"
+                    className="w-full text-xs text-muted-foreground border border-border h-8 hover:text-foreground"
                   >
-                    View Full Schedule
-                    <Calendar className="ml-2 w-4 h-4" />
+                    View full schedule
+                    <Calendar className="ml-1.5 w-3.5 h-3.5" />
                   </Button>
-                </CardContent>
-              </Card>
-            </motion.div>
+                </div>
+              </CardContent>
+            </Card>
 
-            {/* Study Support */}
-            <motion.div variants={fadeInUp} initial="initial" animate="animate">
-              <Card className="bg-primary/5 border-primary/20 shadow-lg dark:bg-primary/10 dark:border-primary/30 dark:shadow-2xl">
-                <CardHeader className="pb-3">
-                  <div className="flex items-center gap-2">
-                    <div className="p-2 bg-primary/20 rounded-lg">
-                      <Users className="w-5 h-5 text-primary" />
-                    </div>
-                    <CardTitle className="text-lg">Study Support</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-sm text-muted-foreground">
-                    Join our community of 500+ students and expert tutors
-                  </p>
-                  <div className="space-y-2">
-                    <Button className="w-full bg-primary hover:bg-primary/90 text-white font-semibold shadow-md hover:shadow-lg transition-all">
-                      <MessageSquare className="mr-2 w-4 h-4" />
-                      Join Discord
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="w-full border-border hover:bg-accent font-semibold"
-                    >
-                      <Zap className="mr-2 w-4 h-4" />
-                      Book 1-on-1 Session
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
+            {/* Community */}
+            <Card className="border-border shadow-none">
+              <CardHeader className="pb-4 border-b border-border">
+                <CardTitle className="text-sm font-semibold">Study Community</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-4 space-y-3">
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  500+ students and expert tutors ready to help you prepare for GAMSAT.
+                </p>
+                <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-8 text-xs font-semibold">
+                  <MessageSquare className="mr-1.5 w-3.5 h-3.5" />
+                  Join Discord
+                </Button>
+                <Button variant="outline" className="w-full h-8 text-xs font-semibold border-border">
+                  <Zap className="mr-1.5 w-3.5 h-3.5" />
+                  Book 1-on-1 session
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
