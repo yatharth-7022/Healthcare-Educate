@@ -63,6 +63,8 @@ const stems: CreatePracticeQuestionSetInput[] = [
           "TG accumulation occurs independently of Plin2 in all groups.",
         ],
         correctOptionIndex: 0,
+        explanation:
+          "Walking through both graphs in parallel: Controls fed→fasted show Plin2 ↑ and TG ↑ together. Knockouts fed→fasted show Plin2 stays low and TG stays low — both fail together. Plin2 and TG move in the same direction in both groups, suggesting PPARα-dependent induction of Plin2 gates TG storage. Option B inverts the Plin2 direction in Controls (Plin2 actually goes UP). Option C is the opposite of the data. Option D ignores the co-movement.",
       },
       {
         id: "q2",
@@ -75,6 +77,8 @@ const stems: CreatePracticeQuestionSetInput[] = [
           "$\\text{PPAR}\\alpha$ deficiency blocks fatty acid release into the blood.",
         ],
         correctOptionIndex: 0,
+        explanation:
+          "Serum FFAs rise normally in knockouts during fasting — adipose mobilisation is intact. However, knockouts have low Plin2 even when fasted. Without Plin2 to coat and stabilise lipid droplets, fatty acids that reach the heart cannot be packaged into stable TG stores. Option B is directly contradicted by the elevated serum FFAs. Option C invents a Plin5 rise the data do not show. Option D is contradicted by the FFA graph.",
       },
       {
         id: "q3",
@@ -87,6 +91,8 @@ const stems: CreatePracticeQuestionSetInput[] = [
           "Plin5 levels would rise to compensate for low Plin2.",
         ],
         correctOptionIndex: 0,
+        explanation:
+          "The bottleneck in knockouts is low Plin2 — PPARα normally induces Plin2, and without PPARα the droplets cannot be stabilised. FFAs already arrive at the heart normally (shown in the data). If Plin2 is pharmacologically restored, the storage machinery is repaired and cardiac TG accumulation should be rescued. Option B is about serum FFAs, which are regulated upstream by adipose and are unaffected by cardiac Plin2. Options C and D are opposite or irrelevant.",
       },
       {
         id: "q4",
@@ -99,6 +105,8 @@ const stems: CreatePracticeQuestionSetInput[] = [
           "$\\text{PPAR}\\alpha$ directly regulates serum FFA concentration.",
         ],
         correctOptionIndex: 1,
+        explanation:
+          "The chain of evidence: FFA mobilisation is intact without cardiac PPARα → PPARα doesn't control adipose release. Plin2 expression tracks PPARα status → PPARα controls cardiac Plin2. Plin2 expression tracks cardiac TG → Plin2 enables storage. Therefore: PPARα → Plin2 → TG storage. Option A is contradicted by normal serum FFAs in knockouts. Option C invents an inverse Plin5 relationship not in the data. Option D is also contradicted by the FFA data.",
       },
       {
         id: "q5",
@@ -111,6 +119,8 @@ const stems: CreatePracticeQuestionSetInput[] = [
           "GAPDH would increase Plin2 expression in Chinese participants.",
         ],
         correctOptionIndex: 0,
+        explanation:
+          "Reported Plin2 = Plin2 signal / GAPDH signal. If GAPDH is genuinely lower in the Chinese population (smaller denominator), the same absolute Plin2 protein content (same numerator) produces a LARGER ratio — so Plin2 appears artificially elevated. Option B reverses the algebra. Option C is the assumption being challenged — GAPDH only controls for variability if it is actually constant across groups. Option D nonsensically suggests GAPDH regulates Plin2 expression.",
       },
     ],
   },
@@ -198,7 +208,9 @@ const stems: CreatePracticeQuestionSetInput[] = [
           "At 12 °C, sardines maintain a higher oxygen consumption rate, which protects survival by sustaining ATP synthesis.",
           "The lower survival at 20 °C must be due to reduced dissolved oxygen in water at higher temperatures, independently of metabolic rate.",
         ],
-        correctOptionIndex: 0,
+        correctOptionIndex: 1,
+        explanation:
+          "Sardines are ectotherms — metabolic rate rises with temperature. At 20 °C, even food-deprived sardines maintain a high oxygen consumption rate (Figure 2). With no food intake, this elevated expenditure burns through internal lipid reserves faster. Figure 1 shows FAS20 survival dropping steeply while FAS12 stays high. Option A gets the direction wrong (O2 consumption stays high at 20 °C, not reduced). Option C is backwards — 12 °C fish have LOWER O2 consumption. Option D invokes dissolved O2 which was not measured or mentioned.",
       },
       {
         id: "q2",
@@ -210,7 +222,9 @@ const stems: CreatePracticeQuestionSetInput[] = [
           "Higher oxygen consumption at 20 °C is associated with a more negative daily change in body mass during food deprivation.",
           "Differences in body mass change are independent of temperature and are explained only by feeding status.",
         ],
-        correctOptionIndex: 0,
+        correctOptionIndex: 2,
+        explanation:
+          "Figure 2 shows food-deprived sardines at 20 °C have higher O2 consumption than at 12 °C. Figure 3 shows food-deprived sardines at 20 °C have a more negative relative body mass change (greater mass loss). Higher metabolic expenditure with zero food intake leads to faster depletion of internal reserves and greater mass loss. Option A confuses cause and effect — higher O2 consumption during starvation means burning MORE reserves, not gaining mass. Option B is wrong because temperature affects the rate of mass loss significantly. Option D is contradicted by the 20 vs 12 °C difference in fasted groups.",
       },
       {
         id: "q3",
@@ -222,7 +236,9 @@ const stems: CreatePracticeQuestionSetInput[] = [
           "Whole-animal metabolic demand remains elevated despite a reduction in mitochondrial ATP-producing capacity.",
           "Increased mitochondrial coupling efficiency results in improved survival during prolonged starvation.",
         ],
-        correctOptionIndex: 0,
+        correctOptionIndex: 2,
+        explanation:
+          "Figure 4 (additional information) shows OXPHOS (mitochondrial ATP-producing capacity) falls in food-deprived sardines at 20 °C between days 30–60. However, Figure 2 shows whole-animal O2 consumption remains elevated throughout. These two observations together indicate that whole-animal metabolic demand stays high even as cellular ATP-producing capacity is reduced — the fish are burning reserves unsustainably. Option A incorrectly infers that reduced OXPHOS lowers whole-animal O2. Option B is unsupported — LEAK does not compensate sufficiently. Option D is contradicted by the continued poor survival.",
       },
       {
         id: "q4",
@@ -234,7 +250,9 @@ const stems: CreatePracticeQuestionSetInput[] = [
           "$0.006\\ \\text{g} \\cdot \\text{g}^{-1} \\cdot \\text{day}^{-1}$",
           "$0.020\\ \\text{g} \\cdot \\text{g}^{-1} \\cdot \\text{day}^{-1}$",
         ],
-        correctOptionIndex: 0,
+        correctOptionIndex: 1,
+        explanation:
+          "Difference in O2 consumption = 0.30 − 0.20 = 0.10 mg O2 · g⁻¹ · h⁻¹. Daily: 0.10 × 24 = 2.4 mg O2 · g⁻¹ · day⁻¹. Energy difference: 2.4 × 14.1 J/mg = 33.84 J/g/day ≈ 0.0338 kJ/g/day. Mass loss difference = 0.0338 / 23 ≈ 0.00147 g · g⁻¹ · day⁻¹ ≈ 0.002. Option A (0.0005) is off by a factor of ~3. Option C (0.006) would require 4× the actual energy difference. Option D (0.020) is an order of magnitude too large.",
       },
     ],
   },

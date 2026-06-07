@@ -1,6 +1,9 @@
-import type { StemBlock } from "@shared/models/practice";
+import type { StemBlock, StemImageBlock } from "@shared/models/practice";
 import { BlockMath, InlineMath } from "react-katex";
 import { MathText } from "./MathText";
+import { useState } from "react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { ZoomIn } from "lucide-react";
 
 type StemBlockRendererProps = {
   blocks: StemBlock[];
@@ -67,6 +70,49 @@ function optimizeCloudinaryImageUrl(url: string): string {
   return url;
 }
 
+function ImageBlock({ block, compact }: { block: StemImageBlock; compact: boolean }) {
+  const [open, setOpen] = useState(false);
+  const optimizedUrl = optimizeCloudinaryImageUrl(block.url);
+  return (
+    <>
+      <figure
+        className="rounded-lg border border-border/60 bg-muted/20 p-3 cursor-zoom-in group relative"
+        onClick={() => setOpen(true)}
+      >
+        <img
+          src={optimizedUrl}
+          alt={block.alt || "Stem figure"}
+          className={`w-full ${compact ? "max-h-[180px]" : "max-h-[300px]"} object-contain rounded-md mx-auto`}
+          loading="lazy"
+        />
+        <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-background/80 rounded p-1">
+          <ZoomIn className="w-4 h-4 text-muted-foreground" />
+        </div>
+        {block.caption && (
+          <figcaption className="text-xs text-muted-foreground mt-2">
+            <MathText text={block.caption} />
+          </figcaption>
+        )}
+      </figure>
+
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="max-w-4xl w-full p-4">
+          <img
+            src={optimizedUrl}
+            alt={block.alt || "Stem figure"}
+            className="w-full max-h-[80vh] object-contain"
+          />
+          {block.caption && (
+            <p className="text-sm text-muted-foreground text-center mt-2">
+              <MathText text={block.caption} />
+            </p>
+          )}
+        </DialogContent>
+      </Dialog>
+    </>
+  );
+}
+
 export function StemBlockRenderer({
   blocks,
   compact = false,
@@ -115,26 +161,7 @@ export function StemBlockRenderer({
         }
 
         if (block.type === "image") {
-          const optimizedUrl = optimizeCloudinaryImageUrl(block.url);
-
-          return (
-            <figure
-              key={key}
-              className="rounded-lg border border-border/60 bg-muted/20 p-3"
-            >
-              <img
-                src={optimizedUrl}
-                alt={block.alt || "Stem figure"}
-                className={`w-full ${compact ? "max-h-[180px]" : "max-h-[300px]"} object-contain rounded-md mx-auto`}
-                loading="lazy"
-              />
-              {block.caption && (
-                <figcaption className="text-xs text-muted-foreground mt-2">
-                  <MathText text={block.caption} />
-                </figcaption>
-              )}
-            </figure>
-          );
+          return <ImageBlock key={key} block={block} compact={compact} />;
         }
 
         if (block.type === "table") {

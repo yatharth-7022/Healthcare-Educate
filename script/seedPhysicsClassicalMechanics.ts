@@ -113,13 +113,17 @@ const input: CreatePracticeQuestionSetInput = {
         "$e^{0.75}$",
       ],
       correctOptionIndex: 1,
+      explanation:
+        "Read $\\mu_k \\approx 0.28$ from Figure 3a at $\\theta = 55°$ for nylon on masking tape (curve B). Convert: $\\theta = 55 \\times \\pi/180 \\approx 0.96$ rad. Then $\\ln(T_2/T_1) = 0.28 \\times 0.96 \\approx 0.27$, closest to $e^{0.25}$. Options C and D would require much higher $\\mu_k$ values (0.52 and 0.78 respectively) than Figure 3a shows for this surface.",
     },
     {
       id: "q2",
       prompt:
         "A nylon cord wraps in a half-turn ($\\theta = \\pi$ rad) around a bare brass cylinder, with masses suspended from each free end. The cord slides at constant speed, and the combined weight of the two suspended masses is 200 N. What is the closest value of the tension in the lighter side, $T_1$?",
       options: ["$50$ N", "$80$ N", "$100$ N", "$120$ N"],
-      correctOptionIndex: 0,
+      correctOptionIndex: 1,
+      explanation:
+        "From Figure 3b, curve B (bare brass) at $T_1 + T_2 = 200$ N: $\\mu_k \\approx 0.12$. Apply capstan: $T_2/T_1 = e^{0.12 \\times \\pi} = e^{0.38} \\approx 1.46$. With $T_1 + T_2 = 200$: $T_1(1 + 1.46) = 200 \\Rightarrow T_1 = 200/2.46 \\approx 81$ N, closest to 80 N. Option C (100 N) is the naive bisection ignoring the capstan effect. Option D (120 N) is actually $T_2$ (the heavier side).",
     },
     {
       id: "q3",
@@ -132,6 +136,8 @@ const input: CreatePracticeQuestionSetInput = {
         "$R + 1$",
       ],
       correctOptionIndex: 0,
+      explanation:
+        "With $R = e^{\\mu_s \\theta_0}$, doubling the angle gives $e^{\\mu_s \\cdot 2\\theta_0} = [e^{\\mu_s \\theta_0}]^2 = R^2$. Wrap angle enters exponentially — doubling $\\theta$ squares the holding ratio. This is the physical principle behind bollard wraps: two extra turns can hold a ship with finger pressure. Option B (2R) treats the relationship as linear. Option C ($\\sqrt{R}$) would correspond to halving $\\theta$.",
     },
     {
       id: "q4",
@@ -143,7 +149,9 @@ const input: CreatePracticeQuestionSetInput = {
         "For wrap angles where both curves are shown, masking tape over brass produces a higher $\\mu_k$ than bare brass, and $\\mu_k$ tends to decrease as $\\theta$ increases.",
         "Above $\\theta = 3\\pi$, $\\mu_k$ becomes independent of $\\theta$ for both surface conditions.",
       ],
-      correctOptionIndex: 0,
+      correctOptionIndex: 2,
+      explanation:
+        "In Figure 4, curve A (masking tape) runs from ~30° to ~450° and curve B (bare brass) runs only from ~30° to ~100°. In the overlap range, curve A sits above curve B and both decrease as $\\theta$ increases — exactly what option C describes. Option A overstates curve B's range (it doesn't extend to 450°). Option B says bare brass has a lower $\\mu_k$ at $\\theta = \\pi$ — but curve B doesn't extend that far. Option D makes a claim about $\\theta > 3\\pi$ that the data don't support.",
     },
     {
       id: "q5",
@@ -155,7 +163,9 @@ const input: CreatePracticeQuestionSetInput = {
         "The predicted tension ratio will be underestimated at large $\\theta$.",
         "The prediction error will be independent of $\\theta$.",
       ],
-      correctOptionIndex: 0,
+      correctOptionIndex: 1,
+      explanation:
+        "Figure 4 shows $\\mu_k$ decreasing with $\\theta$. Averaging over the full range gives $\\bar{\\mu}_k$ that is larger than the true $\\mu_k$ at large $\\theta$ (the average is pulled up by the high values at small $\\theta$). Since $T_2/T_1 = e^{\\bar{\\mu}_k \\theta}$, an overstated $\\mu_k$ at large $\\theta$ gets amplified exponentially — even a small fractional error in $\\mu_k$ produces a large error in $T_2/T_1$ at large $\\theta$. Options A and D ignore the exponential sensitivity. Option C has the direction wrong.",
     },
   ],
 };

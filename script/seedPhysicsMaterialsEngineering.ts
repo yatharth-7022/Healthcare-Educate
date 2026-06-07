@@ -82,13 +82,17 @@ const input: CreatePracticeQuestionSetInput = {
         "Smaller particles exhibit higher $\\theta_m$ because reduced particle mass suppresses internal shear stresses independently of cohesion.",
       ],
       correctOptionIndex: 0,
+      explanation:
+        "Capillary force $F_c \\propto r^1$ and gravitational force $F_g \\propto r^3$. The ratio $F_c/F_g \\propto r/r^3 = 1/r^2$. As $r$ decreases, cohesion becomes relatively more dominant, allowing the pile to sit at a steeper angle. Option B states capillary force increases FASTER as r decreases — wrong in absolute terms; both decrease, but gravity decreases faster (key distinction). Option C claims proportional scaling — wrong, r vs r³ are not proportional. Option D invokes shear stresses with no connection to the cohesion model.",
     },
     {
       id: "q2",
       prompt:
         "Consider two experiments performed using the same liquid, same drum width $W$, and same packing fraction $\\phi$, but with particle radii $r_1$ and $r_2$ ($r_1 < r_2$). Assuming all parameters except particle radius remain constant, what is the approximate ratio $\\theta_m(r_1)/\\theta_m(r_2)$?",
       options: ["$1.1$", "$1.4$", "$2.0$", "$2.8$"],
-      correctOptionIndex: 0,
+      correctOptionIndex: 1,
+      explanation:
+        "With all variables fixed except $r$, the stability equation gives $\\theta_m - \\theta_e \\propto 1/\\sqrt{r}$. For $r_1 = 0.5$ mm and $r_2 = 1.0$ mm: ratio $= \\sqrt{r_2/r_1} = \\sqrt{1.0/0.5} = \\sqrt{2} \\approx 1.41 \\approx 1.4$. A common error is forgetting the square root and using $r_2/r_1 = 2$ directly (option C), or using the wrong ratio direction giving 0.7.",
     },
     {
       id: "q3",
@@ -101,6 +105,8 @@ const input: CreatePracticeQuestionSetInput = {
         "$W \\approx 12$ cm",
       ],
       correctOptionIndex: 0,
+      explanation:
+        "Reading Figure 2 at $r = 0.5$ mm for silicone oil gives $\\theta_m \\approx 38°$. Cross-referencing with Figure 1 (or the $\\theta_m$ vs $W$ exponential fit), a value of $\\theta_m \\approx 38°$ corresponds to $W \\approx 3$ cm — the steep part of the decay curve. At $W \\approx 5$ cm, $\\theta_m \\approx 35$–36°. At $W \\approx 8$ cm, $\\theta_m \\approx 31$–32°. At $W \\approx 12$ cm, $\\theta_m \\approx 30°$ (near the asymptote).",
     },
     {
       id: "q4",
@@ -113,6 +119,8 @@ const input: CreatePracticeQuestionSetInput = {
         "The data points would collapse onto a horizontal line at large $W$.",
       ],
       correctOptionIndex: 0,
+      explanation:
+        "If $W$ is systematically overestimated, each data point is plotted at an x-coordinate larger than its true value. The y-coordinate ($\\theta_m$) is unaffected. Every point shifts horizontally to the right. The data still trace out a decay, but now a given $\\Delta\\theta_m$ spans a larger apparent $\\Delta W$ — the curve looks like it decays more slowly. Option B would require a y-axis error. Option C is the wrong direction (that would be underestimation of $W$). Option D requires a different kind of systematic error.",
     },
     {
       id: "q5",
@@ -124,7 +132,9 @@ const input: CreatePracticeQuestionSetInput = {
         "$\\theta_m \\approx 30°$",
         "$\\theta_m \\approx 38°$",
       ],
-      correctOptionIndex: 0,
+      correctOptionIndex: 2,
+      explanation:
+        "The fit form in Figure 2 is $\\theta_m = a_0 \\exp(-b_0 W) + c_0$. This decays exponentially toward a plateau value $c_0 \\approx 30°$. By $W \\approx 13$–15 cm, $\\theta_m$ is already essentially at the asymptote. Increasing $W$ beyond the range shown produces little further change — $\\theta_m$ stays at approximately 30°. Option A (20°) and B (25°) would require $\\theta_m$ to keep dropping past the plateau. Option D (38°) corresponds to small $W$ values, not large ones.",
     },
     {
       id: "q6",
@@ -163,6 +173,8 @@ const input: CreatePracticeQuestionSetInput = {
         "Option D (see graph above)",
       ],
       correctOptionIndex: 0,
+      explanation:
+        "The fit is $\\theta_m = a_0 \\exp(-b_0 W) + c_0$. Subtracting $c_0$: $\\theta_m - c_0 = a_0 \\exp(-b_0 W)$. Taking $\\ln$: $\\ln(\\theta_m - c_0) = \\ln(a_0) - b_0 W$ — a straight line with negative slope. When replotted against $1/W$ instead, the result is still a straight line with positive slope (since $1/W$ decreases as $W$ increases). Option A correctly shows a straight-line relationship. Option B (positive correlation) corresponds to an increasing function. Option C (horizontal) would require $\\theta_m - c_0$ to be constant. Option D (curve with plateau) is what you get if you plot $\\ln(\\theta_m)$ WITHOUT subtracting $c_0$.",
     },
   ],
 };
