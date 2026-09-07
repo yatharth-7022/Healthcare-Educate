@@ -7,8 +7,12 @@ import {
 } from "@/hooks/use-practice-progress";
 import { StemBlockRenderer } from "@/components/practice/StemBlockRenderer";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Bookmark, ChevronDown, ChevronLeft, ChevronRight, CircleCheck, CircleX, Flag, FlaskConical, Info, Navigation, ThumbsDown, ThumbsUp, X } from "lucide-react";
+import { ArrowLeft, Bookmark, ChevronDown, ChevronLeft, ChevronRight, CircleCheck, CircleX, Flag, FlaskConical, Lock, LogOut, Navigation, ThumbsDown, ThumbsUp, X } from "lucide-react";
 import { MathText } from "@/components/practice/MathText";
+
+function answerKey(setId: number, questionId: string) {
+  return `${setId}:${questionId}`;
+}
 
 export default function PracticeSession() {
   const { category: categoryId, subcategory: subcategoryId } = useParams<{
@@ -23,11 +27,29 @@ export default function PracticeSession() {
   const { data, isLoading, error } = usePracticeSessionQuestionSet(
     categoryId,
     subcategoryId,
+    requestedSets,
   );
   const recordAnswerMutation = useRecordPracticeAnswer(categoryId);
 
-  const questionSet = data?.questionSet;
-  const questions = questionSet?.questions ?? [];
+  const questionSets = useMemo(() => data?.questionSets ?? [], [data]);
+  const savedAnswers = useMemo(() => data?.savedAnswers ?? {}, [data]);
+
+  const sessionQuestions = useMemo(
+    () =>
+      questionSets.flatMap((set, setIndex) =>
+        set.questions.map((question, localIndex) => ({
+          setIndex,
+          localNumber: localIndex + 1,
+          question,
+        })),
+      ),
+    [questionSets],
+  );
+
+  const questions = useMemo(
+    () => sessionQuestions.map((entry) => entry.question),
+    [sessionQuestions],
+  );
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedByQuestionId, setSelectedByQuestionId] = useState<
@@ -35,29 +57,106 @@ export default function PracticeSession() {
   >({});
   const [bookmarkedIds, setBookmarkedIds] = useState<Set<string>>(new Set());
   const [showNavigator, setShowNavigator] = useState(false);
-  const [additionalInfoBanner, setAdditionalInfoBanner] = useState(false);
+  const [activeStemTab, setActiveStemTab] = useState<"passage" | "additional">("passage");
+  const [seenAdditionalInfoSetIds, setSeenAdditionalInfoSetIds] = useState<Set<number>>(new Set());
   const [showPreFinish, setShowPreFinish] = useState(false);
   const [completedAt, setCompletedAt] = useState<Date | null>(null);
   const [isReviewMode, setIsReviewMode] = useState(false);
   const [showExplanation, setShowExplanation] = useState(true);
   const [showFullStem, setShowFullStem] = useState(false);
+  const [hasHydrated, setHasHydrated] = useState(false);
 
+  const currentEntry = sessionQuestions[currentQuestionIndex];
+  const currentQuestion = currentEntry?.question;
+  const questionSet = currentEntry
+    ? questionSets[currentEntry.setIndex]
+    : undefined;
+  const currentLocalQuestionNumber = currentEntry?.localNumber ?? 1;
   const currentQuestionNumber = currentQuestionIndex + 1;
 
-  const visibleStemBlocks = useMemo(() => {
-    if (!questionSet) return [];
-    return questionSet.stem.filter(
-      (block) => !block.revealAtQuestion || block.revealAtQuestion <= currentQuestionNumber,
-    );
-  }, [questionSet, currentQuestionNumber]);
-
+  // Restore any previously saved answers and resume at the first unanswered
+  // question ("Save & Exit" resume behaviour).
   useEffect(() => {
-    if (!questionSet) return;
-    const unlocks = questionSet.stem.some(
-      (block) => block.revealAtQuestion === currentQuestionNumber,
+    if (hasHydrated || sessionQuestions.length === 0) return;
+
+    const restored: Record<string, number> = {};
+    let resumeIndex = 0;
+    let foundUnanswered = false;
+
+    sessionQuestions.forEach((entry, idx) => {
+      const set = questionSets[entry.setIndex];
+      const key = answerKey(set.id, entry.question.id);
+      const saved = savedAnswers[key];
+
+      if (saved) {
+        restored[key] = saved.selectedOptionIndex;
+      } else if (!foundUnanswered) {
+        resumeIndex = idx;
+        foundUnanswered = true;
+      }
+    });
+
+    setSelectedByQuestionId(restored);
+    setCurrentQuestionIndex(foundUnanswered ? resumeIndex : 0);
+    setHasHydrated(true);
+  }, [hasHydrated, sessionQuestions, questionSets, savedAnswers]);
+
+  // Additional information is authored as the tail of the stem array,
+  // starting at the block marked variant "additional-info" (Medify-style:
+  // shown in its own tab rather than inline in the passage).
+  const additionalInfoStartIndex = useMemo(() => {
+    if (!questionSet) return -1;
+    return questionSet.stem.findIndex(
+      (block) => block.type === "text" && block.variant === "additional-info",
     );
-    if (unlocks) setAdditionalInfoBanner(true);
-  }, [currentQuestionIndex, questionSet, currentQuestionNumber]);
+  }, [questionSet]);
+
+  const hasAdditionalInfo = additionalInfoStartIndex !== -1;
+
+  const additionalInfoUnlockQuestion = useMemo(() => {
+    if (!questionSet || !hasAdditionalInfo) return 1;
+    return questionSet.stem[additionalInfoStartIndex].revealAtQuestion ?? 1;
+  }, [questionSet, hasAdditionalInfo, additionalInfoStartIndex]);
+
+  const isAdditionalInfoUnlocked =
+    hasAdditionalInfo && currentLocalQuestionNumber >= additionalInfoUnlockQuestion;
+
+  const visiblePassageBlocks = useMemo(() => {
+    if (!questionSet) return [];
+    const blocks = hasAdditionalInfo
+      ? questionSet.stem.slice(0, additionalInfoStartIndex)
+      : questionSet.stem;
+    return blocks.filter(
+      (block) =>
+        !block.revealAtQuestion ||
+        block.revealAtQuestion <= currentLocalQuestionNumber,
+    );
+  }, [questionSet, hasAdditionalInfo, additionalInfoStartIndex, currentLocalQuestionNumber]);
+
+  const visibleAdditionalInfoBlocks = useMemo(() => {
+    if (!questionSet || !hasAdditionalInfo) return [];
+    return questionSet.stem
+      .slice(additionalInfoStartIndex)
+      .filter(
+        (block) =>
+          !block.revealAtQuestion ||
+          block.revealAtQuestion <= currentLocalQuestionNumber,
+      );
+  }, [questionSet, hasAdditionalInfo, additionalInfoStartIndex, currentLocalQuestionNumber]);
+
+  const visibleStemBlocks =
+    activeStemTab === "additional" ? visibleAdditionalInfoBlocks : visiblePassageBlocks;
+
+  // Reset to the passage tab whenever a new question set comes into view.
+  useEffect(() => {
+    setActiveStemTab("passage");
+  }, [questionSet?.id]);
+
+  function handleSelectAdditionalInfoTab() {
+    if (!isAdditionalInfoUnlocked || !questionSet) return;
+    setActiveStemTab("additional");
+    setSeenAdditionalInfoSetIds((prev) => new Set(prev).add(questionSet.id));
+  }
 
   function toggleBookmark(questionId: string) {
     setBookmarkedIds((prev) => {
@@ -67,15 +166,13 @@ export default function PracticeSession() {
     });
   }
 
-  const currentQuestion = questions[currentQuestionIndex];
-
   const selectedOptionIndex = useMemo(() => {
-    if (!currentQuestion) {
+    if (!currentQuestion || !questionSet) {
       return undefined;
     }
 
-    return selectedByQuestionId[currentQuestion.id];
-  }, [currentQuestion, selectedByQuestionId]);
+    return selectedByQuestionId[answerKey(questionSet.id, currentQuestion.id)];
+  }, [currentQuestion, questionSet, selectedByQuestionId]);
 
   const isComplete =
     questions.length > 0 && currentQuestionIndex >= questions.length;
@@ -114,29 +211,37 @@ export default function PracticeSession() {
     );
   }
 
-  async function handleNext() {
-    if (!questionSet || !currentQuestion || selectedOptionIndex === undefined) {
-      return;
-    }
+  function handleSelectOption(optionIndex: number) {
+    if (!currentQuestion || !questionSet) return;
 
-    try {
-      await recordAnswerMutation.mutateAsync({
-        categoryId: String(categoryId),
-        subcategoryId: String(subcategoryId),
-        questionKey: `${questionSet.id}:${currentQuestion.id}`,
-        isCorrect: selectedOptionIndex === currentQuestion.correctOptionIndex,
-      });
-    } finally {
-      if (currentQuestionIndex >= questions.length - 1) {
-        setShowPreFinish(true);
-      } else {
-        setCurrentQuestionIndex((prev) => prev + 1);
-      }
+    setSelectedByQuestionId((prev) => ({
+      ...prev,
+      [answerKey(questionSet.id, currentQuestion.id)]: optionIndex,
+    }));
+
+    recordAnswerMutation.mutate({
+      categoryId: String(categoryId),
+      subcategoryId: String(subcategoryId),
+      questionKey: `${questionSet.id}:${currentQuestion.id}`,
+      isCorrect: optionIndex === currentQuestion.correctOptionIndex,
+      selectedOptionIndex: optionIndex,
+    });
+  }
+
+  function handleNext() {
+    if (currentQuestionIndex >= questions.length - 1) {
+      setShowPreFinish(true);
+    } else {
+      setCurrentQuestionIndex((prev) => prev + 1);
     }
   }
 
   function handlePrevious() {
     setCurrentQuestionIndex((prev) => Math.max(prev - 1, 0));
+  }
+
+  function handleSaveAndExit() {
+    setLocation(`/dashboard/practice/${categoryId}`);
   }
 
   if (showPreFinish) {
@@ -188,9 +293,13 @@ export default function PracticeSession() {
 
   if (isComplete) {
     const answeredCount = Object.keys(selectedByQuestionId).length;
-    const correctCount = questions.filter(
-      (q) => selectedByQuestionId[q.id] === q.correctOptionIndex,
-    ).length;
+    const correctCount = sessionQuestions.filter((entry) => {
+      const set = questionSets[entry.setIndex];
+      return (
+        selectedByQuestionId[answerKey(set.id, entry.question.id)] ===
+        entry.question.correctOptionIndex
+      );
+    }).length;
     const categoryLabel = (categoryId ?? "")
       .split("-")
       .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
@@ -239,13 +348,14 @@ export default function PracticeSession() {
               </Button>
 
               <div className="flex flex-wrap gap-2">
-                {questions.map((q, idx) => {
-                  const sel = selectedByQuestionId[q.id];
-                  const isCorrect = sel === q.correctOptionIndex;
+                {sessionQuestions.map((entry, idx) => {
+                  const set = questionSets[entry.setIndex];
+                  const sel = selectedByQuestionId[answerKey(set.id, entry.question.id)];
+                  const isCorrect = sel === entry.question.correctOptionIndex;
                   const isWrong = sel !== undefined && !isCorrect;
                   return (
                     <button
-                      key={q.id}
+                      key={idx}
                       onClick={() => {
                         setCurrentQuestionIndex(idx);
                         setShowFullStem(false);
@@ -300,8 +410,14 @@ export default function PracticeSession() {
   }
 
   if (isReviewMode) {
-    const reviewQuestion = questions[currentQuestionIndex];
-    const reviewSelected = reviewQuestion ? selectedByQuestionId[reviewQuestion.id] : undefined;
+    const reviewEntry = sessionQuestions[currentQuestionIndex];
+    const reviewSet = reviewEntry ? questionSets[reviewEntry.setIndex] : undefined;
+    const reviewQuestion = reviewEntry?.question;
+    const reviewKey =
+      reviewSet && reviewQuestion
+        ? answerKey(reviewSet.id, reviewQuestion.id)
+        : undefined;
+    const reviewSelected = reviewKey ? selectedByQuestionId[reviewKey] : undefined;
     const reviewCorrect = reviewQuestion ? reviewQuestion.correctOptionIndex : -1;
     const optionLabels = ["A", "B", "C", "D", "E"];
     const isCurrentCorrect = reviewSelected === reviewCorrect;
@@ -313,7 +429,7 @@ export default function PracticeSession() {
 
     return (
       <DashboardLayout>
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-3">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-3 practice-protected">
           {/* Top bar */}
           <div className="flex items-center justify-between py-1">
             <div className="flex items-center gap-2.5">
@@ -337,14 +453,15 @@ export default function PracticeSession() {
 
           {/* Question navigator row */}
           <div className="flex flex-wrap gap-1.5 pb-1 border-b border-border">
-            {questions.map((q, idx) => {
-              const sel = selectedByQuestionId[q.id];
-              const correct = sel === q.correctOptionIndex;
+            {sessionQuestions.map((entry, idx) => {
+              const set = questionSets[entry.setIndex];
+              const sel = selectedByQuestionId[answerKey(set.id, entry.question.id)];
+              const correct = sel === entry.question.correctOptionIndex;
               const wrong = sel !== undefined && !correct;
               const isCurrent = idx === currentQuestionIndex;
               return (
                 <button
-                  key={q.id}
+                  key={idx}
                   onClick={() => { setCurrentQuestionIndex(idx); setShowFullStem(false); }}
                   className={`w-10 h-10 rounded text-sm font-medium transition-colors flex items-center justify-center outline-none ${
                     isCurrent ? "ring-2 ring-offset-1 ring-primary ring-offset-background" : ""
@@ -373,13 +490,13 @@ export default function PracticeSession() {
                     Question {currentQuestionIndex + 1} of {questions.length}
                   </span>
                   <button
-                    onClick={() => reviewQuestion && toggleBookmark(reviewQuestion.id)}
+                    onClick={() => reviewKey && toggleBookmark(reviewKey)}
                     className="p-0.5 rounded hover:bg-muted transition-colors"
                     aria-label="Bookmark"
                   >
                     <Bookmark
                       className={`w-4 h-4 transition-colors ${
-                        reviewQuestion && bookmarkedIds.has(reviewQuestion.id)
+                        reviewKey && bookmarkedIds.has(reviewKey)
                           ? "fill-amber-500 text-amber-500"
                           : "text-muted-foreground"
                       }`}
@@ -420,20 +537,22 @@ export default function PracticeSession() {
               </div>
 
               {/* Stem (collapsible) */}
-              <div className="text-sm text-foreground/90 leading-relaxed">
-                <div className={`${showFullStem ? "" : "max-h-72 overflow-hidden relative"}`}>
-                  <StemBlockRenderer blocks={questionSet.stem} />
-                  {!showFullStem && (
-                    <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-background to-transparent pointer-events-none" />
-                  )}
+              {reviewSet && (
+                <div className="text-sm text-foreground/90 leading-relaxed">
+                  <div className={`${showFullStem ? "" : "max-h-72 overflow-hidden relative"}`}>
+                    <StemBlockRenderer blocks={reviewSet.stem} />
+                    {!showFullStem && (
+                      <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+                    )}
+                  </div>
+                  <button
+                    onClick={() => setShowFullStem((prev) => !prev)}
+                    className="mt-1 text-sm text-primary hover:underline"
+                  >
+                    {showFullStem ? "Show less" : "Show more"}
+                  </button>
                 </div>
-                <button
-                  onClick={() => setShowFullStem((prev) => !prev)}
-                  className="mt-1 text-sm text-primary hover:underline"
-                >
-                  {showFullStem ? "Show less" : "Show more"}
-                </button>
-              </div>
+              )}
 
               {/* Question prompt */}
               {reviewQuestion && (
@@ -527,7 +646,7 @@ export default function PracticeSession() {
 
   return (
     <DashboardLayout>
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-4">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-4 practice-protected">
         <div className="bg-green-600 text-white rounded-md px-4 py-2 flex items-center justify-between">
           <div className="flex items-center gap-3 text-sm font-medium">
             <button
@@ -539,9 +658,18 @@ export default function PracticeSession() {
             </button>
             <span>Practice Session - {questionSet.title}</span>
           </div>
-          <span className="text-xs opacity-90">
-            Requested sets: {requestedSets}
-          </span>
+          <div className="flex items-center gap-3">
+            <span className="text-xs opacity-90">
+              Question set {(currentEntry?.setIndex ?? 0) + 1} of {questionSets.length}
+            </span>
+            <button
+              onClick={handleSaveAndExit}
+              className="flex items-center gap-1.5 text-xs font-medium bg-white/20 hover:bg-white/30 rounded px-2.5 py-1.5 transition-colors"
+            >
+              <LogOut className="w-3.5 h-3.5" />
+              Save &amp; Exit
+            </button>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px] gap-6 items-start">
@@ -562,13 +690,15 @@ export default function PracticeSession() {
                     {questionSet.title}
                   </p>
                   <div className="flex gap-2 flex-wrap">
-                    {questions.map((q, idx) => {
+                    {sessionQuestions.map((entry, idx) => {
+                      const set = questionSets[entry.setIndex];
+                      const key = answerKey(set.id, entry.question.id);
                       const isCurrent = idx === currentQuestionIndex;
-                      const isAnswered = selectedByQuestionId[q.id] !== undefined;
-                      const isBookmarked = bookmarkedIds.has(q.id);
+                      const isAnswered = selectedByQuestionId[key] !== undefined;
+                      const isBookmarked = bookmarkedIds.has(key);
                       return (
                         <button
-                          key={q.id}
+                          key={idx}
                           onClick={() => {
                             setCurrentQuestionIndex(idx);
                             setShowNavigator(false);
@@ -603,16 +733,41 @@ export default function PracticeSession() {
                 </div>
               )}
             </div>
-            {additionalInfoBanner && (
-              <div className="flex items-center gap-2 rounded-lg border border-blue-400/50 bg-blue-50 dark:bg-blue-950/30 px-3 py-2 mb-4 text-sm text-blue-700 dark:text-blue-300">
-                <Info className="w-4 h-4 flex-shrink-0" />
-                <span className="flex-1">Additional information is now available in the passage below.</span>
+            {hasAdditionalInfo && (
+              <div className="flex items-center gap-1 mb-4 border-b border-border">
                 <button
-                  onClick={() => setAdditionalInfoBanner(false)}
-                  className="flex-shrink-0 hover:opacity-70 transition-opacity"
-                  aria-label="Dismiss"
+                  onClick={() => setActiveStemTab("passage")}
+                  className={`px-3 py-2 text-sm font-medium border-b-2 -mb-px transition-colors ${
+                    activeStemTab === "passage"
+                      ? "border-primary text-primary"
+                      : "border-transparent text-muted-foreground hover:text-foreground"
+                  }`}
                 >
-                  <X className="w-3.5 h-3.5" />
+                  Passage
+                </button>
+                <button
+                  onClick={handleSelectAdditionalInfoTab}
+                  disabled={!isAdditionalInfoUnlocked}
+                  className={`relative flex items-center gap-1.5 px-3 py-2 text-sm font-medium border-b-2 -mb-px transition-colors ${
+                    !isAdditionalInfoUnlocked
+                      ? "border-transparent text-muted-foreground/40 cursor-not-allowed"
+                      : activeStemTab === "additional"
+                      ? "border-primary text-primary"
+                      : "border-transparent text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {!isAdditionalInfoUnlocked && <Lock className="w-3 h-3" />}
+                  Additional Information
+                  {!isAdditionalInfoUnlocked ? (
+                    <span className="text-[10px] text-muted-foreground/70">
+                      (unlocks at Q{additionalInfoUnlockQuestion})
+                    </span>
+                  ) : (
+                    questionSet &&
+                    !seenAdditionalInfoSetIds.has(questionSet.id) && (
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                    )
+                  )}
                 </button>
               </div>
             )}
@@ -625,13 +780,19 @@ export default function PracticeSession() {
                 <MathText text={currentQuestion.prompt} />
               </p>
               <button
-                onClick={() => toggleBookmark(currentQuestion.id)}
+                onClick={() =>
+                  toggleBookmark(answerKey(questionSet.id, currentQuestion.id))
+                }
                 className="flex-shrink-0 p-0.5 rounded hover:bg-muted/60 transition-colors"
-                aria-label={bookmarkedIds.has(currentQuestion.id) ? "Remove bookmark" : "Bookmark question"}
+                aria-label={
+                  bookmarkedIds.has(answerKey(questionSet.id, currentQuestion.id))
+                    ? "Remove bookmark"
+                    : "Bookmark question"
+                }
               >
                 <Bookmark
                   className={`w-5 h-5 transition-colors ${
-                    bookmarkedIds.has(currentQuestion.id)
+                    bookmarkedIds.has(answerKey(questionSet.id, currentQuestion.id))
                       ? "fill-amber-500 text-amber-500"
                       : "text-primary/70"
                   }`}
@@ -657,12 +818,7 @@ export default function PracticeSession() {
                   return (
                     <button
                       key={`${currentQuestion.id}-option-${optionIndex}`}
-                      onClick={() =>
-                        setSelectedByQuestionId((prev) => ({
-                          ...prev,
-                          [currentQuestion.id]: optionIndex,
-                        }))
-                      }
+                      onClick={() => handleSelectOption(optionIndex)}
                       className={`w-full text-left border rounded-lg px-3 py-2 transition-colors ${
                         isSelected
                           ? "border-primary bg-primary/10"
@@ -692,23 +848,18 @@ export default function PracticeSession() {
               <div className="mt-5 flex justify-end">
                 <Button
                   variant="outline"
-                  disabled={
-                    currentQuestionIndex === 0 || recordAnswerMutation.isPending
-                  }
+                  disabled={currentQuestionIndex === 0}
                   onClick={handlePrevious}
                   className="mr-2"
                 >
                   Previous
                 </Button>
                 <Button
-                  disabled={
-                    selectedOptionIndex === undefined ||
-                    recordAnswerMutation.isPending
-                  }
+                  disabled={selectedOptionIndex === undefined}
                   onClick={handleNext}
                   className="bg-primary hover:bg-primary/90"
                 >
-                  {recordAnswerMutation.isPending ? "Saving..." : "Next"}
+                  Next
                 </Button>
               </div>
             </div>

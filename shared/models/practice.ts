@@ -27,6 +27,12 @@ export type RecordPracticeAnswerInput = {
   subcategoryId: string;
   questionKey: string;
   isCorrect: boolean;
+  selectedOptionIndex: number;
+};
+
+export type PracticeSavedAnswer = {
+  selectedOptionIndex: number;
+  isCorrect: boolean;
 };
 
 export type StemTextBlock = {
@@ -120,5 +126,6 @@ export type PracticeQuestionSetListResponse = {
 };
 
 export type PracticeSessionResponse = {
-  questionSet: PracticeQuestionSet;
+  questionSets: PracticeQuestionSet[];
+  savedAnswers: Record<string, PracticeSavedAnswer>;
 };

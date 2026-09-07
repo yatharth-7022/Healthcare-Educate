@@ -109,4 +109,24 @@
       rgba(240, 235, 250, 0.5) 100%
     );
   }
+
+  .practice-protected {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  .practice-protected img {
+    -webkit-user-drag: none;
+    user-drag: none;
+    pointer-events: none;
+  }
+
+  .practice-protected input,
+  .practice-protected textarea,
+  .practice-protected button {
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    user-select: auto;
+  }
 }

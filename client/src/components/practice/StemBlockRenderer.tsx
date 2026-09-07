@@ -78,12 +78,15 @@ function ImageBlock({ block, compact }: { block: StemImageBlock; compact: boolea
       <figure
         className="rounded-lg border border-border/60 bg-muted/20 p-3 cursor-zoom-in group relative"
         onClick={() => setOpen(true)}
+        onContextMenu={(event) => event.preventDefault()}
       >
         <img
           src={optimizedUrl}
           alt={block.alt || "Stem figure"}
           className={`w-full ${compact ? "max-h-[180px]" : "max-h-[300px]"} object-contain rounded-md mx-auto`}
           loading="lazy"
+          draggable={false}
+          onContextMenu={(event) => event.preventDefault()}
         />
         <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-background/80 rounded p-1">
           <ZoomIn className="w-4 h-4 text-muted-foreground" />
@@ -101,6 +104,8 @@ function ImageBlock({ block, compact }: { block: StemImageBlock; compact: boolea
             src={optimizedUrl}
             alt={block.alt || "Stem figure"}
             className="w-full max-h-[80vh] object-contain"
+            draggable={false}
+            onContextMenu={(event) => event.preventDefault()}
           />
           {block.caption && (
             <p className="text-sm text-muted-foreground text-center mt-2">

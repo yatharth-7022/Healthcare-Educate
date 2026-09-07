@@ -227,6 +227,7 @@ export default function PracticeCategory() {
                                   subcategoryId: sub.id,
                                   questionKey: `${sub.id}-${Date.now()}`,
                                   isCorrect: true,
+                                  selectedOptionIndex: 0,
                                 });
                               } catch (recordError) {
                                 toast({

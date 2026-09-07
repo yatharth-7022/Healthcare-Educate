@@ -246,13 +246,14 @@ export class PracticeService {
     return questionSets.map(mapQuestionSet);
   }
 
-  async getSessionQuestionSet(
+  async getSessionQuestionSets(
     categoryId: string,
     subcategoryId: string,
-  ): Promise<PracticeQuestionSet> {
+    count: number,
+  ): Promise<PracticeQuestionSet[]> {
     await ensurePracticeCatalogSeeded();
 
-    const questionSet = await prisma.practiceQuestionSet.findFirst({
+    const questionSets = await prisma.practiceQuestionSet.findMany({
       where: {
         categoryId,
         subcategoryId,
@@ -261,13 +262,40 @@ export class PracticeService {
       orderBy: {
         createdAt: "asc",
       },
+      take: count,
     });
 
-    if (!questionSet) {
+    if (questionSets.length === 0) {
       throw new NotFoundError("No published question set found for this topic");
     }
 
-    return mapQuestionSet(questionSet);
+    return questionSets.map(mapQuestionSet);
+  }
+
+  async getSavedAnswers(
+    userId: number,
+    subcategoryId: string,
+  ): Promise<Record<string, { selectedOptionIndex: number; isCorrect: boolean }>> {
+    const rows = await prisma.practiceQuestionProgress.findMany({
+      where: { userId, subcategoryId },
+      select: { questionKey: true, selectedOptionIndex: true, isCorrect: true },
+    });
+
+    const savedAnswers: Record<
+      string,
+      { selectedOptionIndex: number; isCorrect: boolean }
+    > = {};
+
+    for (const row of rows) {
+      if (row.selectedOptionIndex !== null) {
+        savedAnswers[row.questionKey] = {
+          selectedOptionIndex: row.selectedOptionIndex,
+          isCorrect: row.isCorrect,
+        };
+      }
+    }
+
+    return savedAnswers;
   }
 
   async getProgressSummary(
@@ -382,6 +410,7 @@ export class PracticeService {
       },
       update: {
         isCorrect: input.isCorrect,
+        selectedOptionIndex: input.selectedOptionIndex,
         attemptCount: {
           increment: 1,
         },
@@ -391,6 +420,7 @@ export class PracticeService {
         subcategoryId,
         questionKey,
         isCorrect: input.isCorrect,
+        selectedOptionIndex: input.selectedOptionIndex,
       },
     });
 

@@ -145,8 +145,13 @@ export async function getPracticeQuestionSetById(questionSetId: number) {
 export async function getPracticeSessionQuestionSet(
   categoryId: string,
   subcategoryId: string,
+  sets: number = 1,
 ) {
-  const query = new URLSearchParams({ categoryId, subcategoryId }).toString();
+  const query = new URLSearchParams({
+    categoryId,
+    subcategoryId,
+    sets: String(sets),
+  }).toString();
 
   return authenticatedRequest<PracticeSessionResponse>(
     `/api/practice/session?${query}`,

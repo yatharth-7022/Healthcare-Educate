@@ -131,6 +131,7 @@ model PracticeQuestionProgress {
   subcategoryId  String
   questionKey    String
   isCorrect      Boolean
+  selectedOptionIndex Int?
   attemptCount   Int      @default(1)
   firstAnsweredAt DateTime @default(now())
   lastAnsweredAt DateTime @updatedAt

@@ -81,13 +81,15 @@ export function useCreatePracticeQuestionSet() {
 export function usePracticeSessionQuestionSet(
   categoryId?: string,
   subcategoryId?: string,
+  sets: number = 1,
 ) {
   return useQuery({
-    queryKey: ["/api/practice/session", categoryId, subcategoryId],
+    queryKey: ["/api/practice/session", categoryId, subcategoryId, sets],
     queryFn: () =>
       getPracticeSessionQuestionSet(
         categoryId as string,
         subcategoryId as string,
+        sets,
       ),
     enabled: Boolean(categoryId && subcategoryId),
     staleTime: 1000 * 10,

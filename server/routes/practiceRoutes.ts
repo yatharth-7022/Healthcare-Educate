@@ -12,6 +12,7 @@ const recordAnswerSchema = z.object({
   subcategoryId: z.string().min(1),
   questionKey: z.string().min(1),
   isCorrect: z.boolean(),
+  selectedOptionIndex: z.number().int().nonnegative(),
 });
 
 const stemBlockSchema = z.discriminatedUnion("type", [
@@ -264,15 +265,26 @@ router.get(
       "subcategoryId",
     );
 
-    const questionSet = await practiceService.getSessionQuestionSet(
+    const requestedSets = Number.parseInt(String(req.query.sets ?? "1"), 10);
+    const setsCount = Number.isFinite(requestedSets)
+      ? Math.min(Math.max(requestedSets, 1), 10)
+      : 1;
+
+    const questionSets = await practiceService.getSessionQuestionSets(
       categoryId,
+      subcategoryId,
+      setsCount,
+    );
+    const savedAnswers = await practiceService.getSavedAnswers(
+      userId,
       subcategoryId,
     );
 
     return res.status(200).json({
       status: "success",
       data: {
-        questionSet,
+        questionSets,
+        savedAnswers,
       },
     });
   }),
