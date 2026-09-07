@@ -6,6 +6,7 @@ import type {
   PracticeQuestionSetResponse,
   PracticeSessionResponse,
   RecordPracticeAnswerInput,
+  ReportPracticeQuestionInput,
 } from "@shared/models/practice";
 import { refreshToken } from "@/lib/api";
 import { getAccessToken, setAccessToken } from "@/hooks/use-auth";
@@ -140,6 +141,15 @@ export async function getPracticeQuestionSetById(questionSetId: number) {
       method: "GET",
     },
   );
+}
+
+export async function reportPracticeQuestion(
+  input: ReportPracticeQuestionInput,
+) {
+  return authenticatedRequest<Record<string, never>>("/api/practice/report", {
+    method: "POST",
+    body: JSON.stringify(input),
+  });
 }
 
 export async function getPracticeSessionQuestionSet(

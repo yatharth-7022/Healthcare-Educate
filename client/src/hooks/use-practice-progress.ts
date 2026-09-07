@@ -2,6 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import type {
   CreatePracticeQuestionSetInput,
   RecordPracticeAnswerInput,
+  ReportPracticeQuestionInput,
 } from "@shared/models/practice";
 import {
   createPracticeQuestionSet,
@@ -10,6 +11,7 @@ import {
   getPracticeSessionQuestionSet,
   listPracticeQuestionSets,
   recordPracticeAnswer,
+  reportPracticeQuestion,
 } from "@/lib/practice-api";
 
 export function usePracticeProgressSummary() {
@@ -44,6 +46,13 @@ export function useRecordPracticeAnswer(categoryId?: string) {
         });
       }
     },
+  });
+}
+
+export function useReportPracticeQuestion() {
+  return useMutation({
+    mutationFn: (input: ReportPracticeQuestionInput) =>
+      reportPracticeQuestion(input),
   });
 }
 

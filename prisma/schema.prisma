@@ -26,6 +26,7 @@ model User {
 
   // Practice progress relationships
   questionProgressEntries PracticeQuestionProgress[]
+  questionReports         PracticeQuestionReport[]
 }
 
 model Subscriber {
@@ -141,6 +142,22 @@ model PracticeQuestionProgress {
 
   @@unique([userId, subcategoryId, questionKey])
   @@index([userId, subcategoryId])
+}
+
+model PracticeQuestionReport {
+  id            Int      @id @default(autoincrement())
+  userId        Int
+  categoryId    String
+  subcategoryId String
+  questionSetId Int
+  questionId    String
+  message       String
+  createdAt     DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([questionSetId, questionId])
+  @@index([userId])
 }
 
 model PracticeQuestionSet {

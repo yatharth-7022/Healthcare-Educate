@@ -4,9 +4,19 @@ import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import {
   usePracticeSessionQuestionSet,
   useRecordPracticeAnswer,
+  useReportPracticeQuestion,
 } from "@/hooks/use-practice-progress";
 import { StemBlockRenderer } from "@/components/practice/StemBlockRenderer";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 import { ArrowLeft, Bookmark, ChevronDown, ChevronLeft, ChevronRight, CircleCheck, CircleX, Flag, FlaskConical, Lock, LogOut, Navigation, ThumbsDown, ThumbsUp, X } from "lucide-react";
 import { MathText } from "@/components/practice/MathText";
 
@@ -30,6 +40,10 @@ export default function PracticeSession() {
     requestedSets,
   );
   const recordAnswerMutation = useRecordPracticeAnswer(categoryId);
+  const reportQuestionMutation = useReportPracticeQuestion();
+  const { toast } = useToast();
+  const [reportDialogOpen, setReportDialogOpen] = useState(false);
+  const [reportMessage, setReportMessage] = useState("");
 
   const questionSets = useMemo(() => data?.questionSets ?? [], [data]);
   const savedAnswers = useMemo(() => data?.savedAnswers ?? {}, [data]);
@@ -187,7 +201,7 @@ export default function PracticeSession() {
     );
   }
 
-  if (!questionSet) {
+  if (questionSets.length === 0) {
     return (
       <DashboardLayout>
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -242,6 +256,37 @@ export default function PracticeSession() {
 
   function handleSaveAndExit() {
     setLocation(`/dashboard/practice/${categoryId}`);
+  }
+
+  function handleSubmitReport(
+    targetSet: { id: number } | undefined,
+    targetQuestionId: string | undefined,
+  ) {
+    if (!targetSet || !targetQuestionId || !reportMessage.trim()) return;
+
+    reportQuestionMutation.mutate(
+      {
+        categoryId: String(categoryId),
+        subcategoryId: String(subcategoryId),
+        questionSetId: targetSet.id,
+        questionId: targetQuestionId,
+        message: reportMessage.trim(),
+      },
+      {
+        onSuccess: () => {
+          toast({ title: "Thanks — we'll review this question." });
+          setReportDialogOpen(false);
+          setReportMessage("");
+        },
+        onError: (err) => {
+          toast({
+            title: "Could not submit report",
+            description: err instanceof Error ? err.message : "Please try again.",
+            variant: "destructive",
+          });
+        },
+      },
+    );
   }
 
   if (showPreFinish) {
@@ -606,14 +651,67 @@ export default function PracticeSession() {
                     <button className="p-1 rounded hover:bg-muted transition-colors" aria-label="Not helpful">
                       <ThumbsDown className="w-4 h-4 text-muted-foreground" />
                     </button>
-                    <button className="flex items-center gap-1 text-xs text-muted-foreground border border-border rounded px-2 py-1 hover:bg-muted transition-colors">
+                    <button
+                      onClick={() => setReportDialogOpen(true)}
+                      className="flex items-center gap-1 text-xs text-muted-foreground border border-border rounded px-2 py-1 hover:bg-muted transition-colors"
+                    >
                       <Flag className="w-3.5 h-3.5" />
                       Report problem
                     </button>
                   </div>
                 </div>
                 {showExplanation && (
-                  reviewQuestion?.explanation ? (
+                  reviewQuestion?.workedSolution ? (
+                    <div className="space-y-4 mb-4">
+                      {reviewQuestion.workedSolution.strategy && (
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-1">
+                            Strategy
+                          </p>
+                          <p className="text-sm text-foreground/85 leading-relaxed whitespace-pre-line">
+                            <MathText text={reviewQuestion.workedSolution.strategy} />
+                          </p>
+                        </div>
+                      )}
+                      {reviewQuestion.workedSolution.steps.map((step, stepIndex) => (
+                        <div key={stepIndex}>
+                          <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-1">
+                            {step.heading}
+                          </p>
+                          <p className="text-sm text-foreground/85 leading-relaxed whitespace-pre-line">
+                            <MathText text={step.body} />
+                          </p>
+                        </div>
+                      ))}
+                      {reviewQuestion.workedSolution.eliminations &&
+                        reviewQuestion.workedSolution.eliminations.length > 0 && (
+                          <div>
+                            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-1.5">
+                              Eliminations
+                            </p>
+                            <ul className="space-y-1.5">
+                              {reviewQuestion.workedSolution.eliminations.map(
+                                (elimination, elimIndex) => (
+                                  <li
+                                    key={elimIndex}
+                                    className="text-sm text-foreground/85 leading-relaxed"
+                                  >
+                                    <span className="font-medium">{elimination.option}</span>
+                                    {" — "}
+                                    <MathText text={elimination.reason} />
+                                  </li>
+                                ),
+                              )}
+                            </ul>
+                          </div>
+                        )}
+                      <div className="rounded-md bg-primary/5 border border-primary/20 px-3 py-2">
+                        <p className="text-sm font-semibold text-foreground">
+                          <MathText text={`Answer: ${reviewQuestion.workedSolution.answer}`} />
+                        </p>
+                      </div>
+                    </div>
+                  ) : reviewQuestion?.explanation ? (
                     <p className="text-sm text-foreground/85 leading-relaxed mb-4">
                       <MathText text={reviewQuestion.explanation} />
                     </p>
@@ -640,8 +738,41 @@ export default function PracticeSession() {
             </aside>
           </div>
         </div>
+
+        <Dialog open={reportDialogOpen} onOpenChange={setReportDialogOpen}>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Report a problem with this question</DialogTitle>
+            </DialogHeader>
+            <Textarea
+              value={reportMessage}
+              onChange={(event) => setReportMessage(event.target.value)}
+              placeholder="What's wrong with this question? (e.g. wrong answer, unclear stem, broken image)"
+              rows={4}
+            />
+            <DialogFooter>
+              <Button
+                variant="outline"
+                onClick={() => setReportDialogOpen(false)}
+                disabled={reportQuestionMutation.isPending}
+              >
+                Cancel
+              </Button>
+              <Button
+                onClick={() => handleSubmitReport(reviewSet, reviewQuestion?.id)}
+                disabled={!reportMessage.trim() || reportQuestionMutation.isPending}
+              >
+                {reportQuestionMutation.isPending ? "Submitting..." : "Submit report"}
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </DashboardLayout>
     );
+  }
+
+  if (!questionSet || !currentQuestion) {
+    return null;
   }
 
   return (

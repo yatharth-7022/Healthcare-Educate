@@ -7,6 +7,14 @@ import { practiceService } from "../services/practiceService";
 
 const router = Router();
 
+const reportQuestionSchema = z.object({
+  categoryId: z.string().min(1),
+  subcategoryId: z.string().min(1),
+  questionSetId: z.number().int().positive(),
+  questionId: z.string().min(1),
+  message: z.string().min(1).max(2000),
+});
+
 const recordAnswerSchema = z.object({
   categoryId: z.string().min(1),
   subcategoryId: z.string().min(1),
@@ -56,6 +64,25 @@ const stemBlockSchema = z.discriminatedUnion("type", [
   }),
 ]);
 
+const workedSolutionSchema = z.object({
+  strategy: z.string().optional(),
+  steps: z.array(
+    z.object({
+      heading: z.string().min(1),
+      body: z.string().min(1),
+    }),
+  ),
+  eliminations: z
+    .array(
+      z.object({
+        option: z.string().min(1),
+        reason: z.string().min(1),
+      }),
+    )
+    .optional(),
+  answer: z.string().min(1),
+});
+
 const mcqQuestionSchema = z
   .object({
     id: z.string().min(1),
@@ -64,6 +91,7 @@ const mcqQuestionSchema = z
     options: z.array(z.string().min(1)).min(2),
     correctOptionIndex: z.number().int().nonnegative(),
     explanation: z.string().optional(),
+    workedSolution: workedSolutionSchema.optional(),
   })
   .refine((question) => question.correctOptionIndex < question.options.length, {
     message: "correctOptionIndex must be within options bounds",
@@ -322,6 +350,37 @@ router.post(
       data: {
         category,
       },
+    });
+  }),
+);
+
+router.post(
+  "/report",
+  authenticate,
+  asyncHandler(async (req: Request, res: Response) => {
+    const userId = req.user?.userId;
+
+    if (!userId) {
+      return res.status(401).json({
+        status: "error",
+        message: "Unauthorized",
+      });
+    }
+
+    const parseResult = reportQuestionSchema.safeParse(req.body);
+
+    if (!parseResult.success) {
+      throw new ValidationError(
+        parseResult.error.errors[0]?.message || "Invalid payload",
+      );
+    }
+
+    await practiceService.reportQuestion(userId, parseResult.data);
+
+    return res.status(201).json({
+      status: "success",
+      message: "Report submitted successfully",
+      data: {},
     });
   }),
 );

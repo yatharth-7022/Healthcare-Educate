@@ -84,6 +84,33 @@ const input: CreatePracticeQuestionSetInput = {
       correctOptionIndex: 0,
       explanation:
         "Capillary force $F_c \\propto r^1$ and gravitational force $F_g \\propto r^3$. The ratio $F_c/F_g \\propto r/r^3 = 1/r^2$. As $r$ decreases, cohesion becomes relatively more dominant, allowing the pile to sit at a steeper angle. Option B states capillary force increases FASTER as r decreases — wrong in absolute terms; both decrease, but gravity decreases faster (key distinction). Option C claims proportional scaling — wrong, r vs r³ are not proportional. Option D invokes shear stresses with no connection to the cohesion model.",
+      workedSolution: {
+        strategy:
+          "Compare the SCALING of cohesion vs gravity with radius. The maximum angle depends on the ratio $F_c/F_g$.",
+        steps: [
+          {
+            heading: "Step 1 — Scaling laws",
+            body:
+              "Capillary force: $F_c = \\alpha \\pi \\Gamma r$ (scales as $r^1$). Gravity on a particle: $F_g = mg = \\rho (4\\pi r^3/3) g$ (scales as $r^3$).",
+          },
+          {
+            heading: "Step 2 — Build the ratio",
+            body:
+              "$F_c/F_g \\propto r/r^3 = 1/r^2$. As $r$ decreases, the ratio of cohesion to gravity GROWS as $1/r^2$ — cohesion becomes relatively dominant. The pile can therefore sit at a steeper angle before failing.",
+          },
+        ],
+        eliminations: [
+          {
+            option: "B",
+            reason:
+              "Says capillary grows faster than gravity as $r$ decreases — wrong direction in absolute terms; both DECREASE with smaller $r$, but gravity decreases FASTER, which is the ratio argument in option A.",
+          },
+          { option: "C", reason: "Says they both scale identically — wrong; $r$ vs $r^3$ are not identical." },
+          { option: "D", reason: "Invokes shear stresses with no connection to the cohesion model in the stem." },
+        ],
+        answer:
+          "A — Smaller particles exhibit higher θm because the ratio of capillary force to gravitational force increases as particle radius decreases",
+      },
     },
     {
       id: "q2",
@@ -93,6 +120,30 @@ const input: CreatePracticeQuestionSetInput = {
       correctOptionIndex: 1,
       explanation:
         "With all variables fixed except $r$, the stability equation gives $\\theta_m - \\theta_e \\propto 1/\\sqrt{r}$. For $r_1 = 0.5$ mm and $r_2 = 1.0$ mm: ratio $= \\sqrt{r_2/r_1} = \\sqrt{1.0/0.5} = \\sqrt{2} \\approx 1.41 \\approx 1.4$. A common error is forgetting the square root and using $r_2/r_1 = 2$ directly (option C), or using the wrong ratio direction giving 0.7.",
+      workedSolution: {
+        steps: [
+          {
+            heading: "Step 1 — Isolate the r dependence",
+            body:
+              "With $L$, $\\Gamma$, $\\rho$, packing fraction, etc. all fixed, the stability equation gives $\\theta_m - \\theta_e \\propto 1/\\sqrt{r}$.",
+          },
+          {
+            heading: "Step 2 — Form the ratio",
+            body:
+              "$(\\theta_m(r_1) - \\theta_e)/(\\theta_m(r_2) - \\theta_e) = \\sqrt{r_2/r_1} = \\sqrt{1.0/0.5} = \\sqrt{2}$.",
+          },
+          {
+            heading: "Step 3 — Numerical value",
+            body: "$\\sqrt{2} \\approx 1.41$. Closest option: B (1.4).",
+          },
+          {
+            heading: "Trap watch",
+            body:
+              "A common error is to forget the SQUARE ROOT and use $r_2/r_1 = 2$ directly → option C. Another is to use $r_1/r_2$ (wrong direction) → 0.7.",
+          },
+        ],
+        answer: "B — 1.4",
+      },
     },
     {
       id: "q3",
@@ -107,6 +158,25 @@ const input: CreatePracticeQuestionSetInput = {
       correctOptionIndex: 0,
       explanation:
         "Reading Figure 2 at $r = 0.5$ mm for silicone oil gives $\\theta_m \\approx 38°$. Cross-referencing with Figure 1 (or the $\\theta_m$ vs $W$ exponential fit), a value of $\\theta_m \\approx 38°$ corresponds to $W \\approx 3$ cm — the steep part of the decay curve. At $W \\approx 5$ cm, $\\theta_m \\approx 35$–36°. At $W \\approx 8$ cm, $\\theta_m \\approx 31$–32°. At $W \\approx 12$ cm, $\\theta_m \\approx 30°$ (near the asymptote).",
+      workedSolution: {
+        steps: [
+          {
+            heading: "Step 1 — Read Figure 2 at r = 0.5 mm",
+            body: "Figure 2 shows the curve passing through approximately $\\theta_m \\approx 38°$ at $r = 0.5$ mm.",
+          },
+          {
+            heading: "Step 2 — Cross-reference with Figure 1",
+            body:
+              "Figure 1 shows $\\theta_m$ vs $W$. Locate $\\theta_m \\approx 38°$ on the y-axis and read off the corresponding $W$ — the curve is steep in this region: at $W \\approx 2$ cm, $\\theta_m \\approx 42°$; at $W \\approx 3$ cm, $\\theta_m \\approx 38$–39° ← best match; at $W \\approx 4$ cm, $\\theta_m \\approx 36°$. So $W \\approx 3$ cm.",
+          },
+          {
+            heading: "Why not the others",
+            body:
+              "5 cm gives $\\theta_m \\approx 35$–36°, too low. 8 cm gives $\\theta_m \\approx 31$–32°, well below 38°. 12 cm gives $\\theta_m \\approx 30°$, on the plateau.",
+          },
+        ],
+        answer: "A — W ≈ 3 cm",
+      },
     },
     {
       id: "q4",
@@ -121,6 +191,23 @@ const input: CreatePracticeQuestionSetInput = {
       correctOptionIndex: 0,
       explanation:
         "If $W$ is systematically overestimated, each data point is plotted at an x-coordinate larger than its true value. The y-coordinate ($\\theta_m$) is unaffected. Every point shifts horizontally to the right. The data still trace out a decay, but now a given $\\Delta\\theta_m$ spans a larger apparent $\\Delta W$ — the curve looks like it decays more slowly. Option B would require a y-axis error. Option C is the wrong direction (that would be underestimation of $W$). Option D requires a different kind of systematic error.",
+      workedSolution: {
+        strategy:
+          "If $W$ is OVERESTIMATED, each measured $\\theta_m$ value gets PLOTTED at a $W$ larger than the true one. The y-coordinate ($\\theta_m$) is correct; only x shifts.",
+        steps: [
+          {
+            heading: "Reasoning",
+            body:
+              "Every point shifts horizontally to the right. The data still trace out a decay, but stretched along the $W$-axis. A given $\\Delta\\theta$ now spans a larger $\\Delta W$ → the curve looks like it decays more slowly.",
+          },
+        ],
+        eliminations: [
+          { option: "B", reason: "Shift upward would require a y-axis error, not an x-axis error." },
+          { option: "C", reason: "Shift left (faster decay) is the wrong direction for an OVERestimate of W." },
+          { option: "D", reason: "Collapse onto a horizontal line would require a different kind of corruption entirely." },
+        ],
+        answer: "A — Data points shift right; the curve appears to decay more slowly with W",
+      },
     },
     {
       id: "q5",
@@ -135,6 +222,21 @@ const input: CreatePracticeQuestionSetInput = {
       correctOptionIndex: 2,
       explanation:
         "The fit form in Figure 2 is $\\theta_m = a_0 \\exp(-b_0 W) + c_0$. This decays exponentially toward a plateau value $c_0 \\approx 30°$. By $W \\approx 13$–15 cm, $\\theta_m$ is already essentially at the asymptote. Increasing $W$ beyond the range shown produces little further change — $\\theta_m$ stays at approximately 30°. Option A (20°) and B (25°) would require $\\theta_m$ to keep dropping past the plateau. Option D (38°) corresponds to small $W$ values, not large ones.",
+      workedSolution: {
+        steps: [
+          {
+            heading: "Reasoning",
+            body:
+              "Figure 2's fit form is $\\theta_m = a_0 \\exp(-b_0 W) + c_0$. This decays exponentially towards a PLATEAU value $c_0 \\approx 30°$. At $W \\approx 13$–15 cm, $\\theta_m$ is already essentially at the asymptote. Extending $W$ to 20 cm produces little further change.",
+          },
+        ],
+        eliminations: [
+          { option: "A (≈20°)", reason: "Would imply θm keeps dropping past the plateau, contradicting the fit." },
+          { option: "B (≈25°)", reason: "Same issue." },
+          { option: "D (≈38°)", reason: "Corresponds to small W, not extrapolation beyond 15 cm." },
+        ],
+        answer: "C — θm ≈ 30°",
+      },
     },
     {
       id: "q6",

@@ -87,6 +87,23 @@ export type StemBlock =
   | StemCodeBlock
   | StemVideoBlock;
 
+export type WorkedSolutionStep = {
+  heading: string;
+  body: string;
+};
+
+export type WorkedSolutionElimination = {
+  option: string;
+  reason: string;
+};
+
+export type WorkedSolution = {
+  strategy?: string;
+  steps: WorkedSolutionStep[];
+  eliminations?: WorkedSolutionElimination[];
+  answer: string;
+};
+
 export type PracticeMcqQuestion = {
   id: string;
   prompt: string;
@@ -94,6 +111,15 @@ export type PracticeMcqQuestion = {
   options: string[];
   correctOptionIndex: number;
   explanation?: string;
+  workedSolution?: WorkedSolution;
+};
+
+export type ReportPracticeQuestionInput = {
+  categoryId: string;
+  subcategoryId: string;
+  questionSetId: number;
+  questionId: string;
+  message: string;
 };
 
 export type CreatePracticeQuestionSetInput = {

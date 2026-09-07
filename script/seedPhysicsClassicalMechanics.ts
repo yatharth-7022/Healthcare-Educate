@@ -115,6 +115,29 @@ const input: CreatePracticeQuestionSetInput = {
       correctOptionIndex: 1,
       explanation:
         "Read $\\mu_k \\approx 0.28$ from Figure 3a at $\\theta = 55°$ for nylon on masking tape (curve B). Convert: $\\theta = 55 \\times \\pi/180 \\approx 0.96$ rad. Then $\\ln(T_2/T_1) = 0.28 \\times 0.96 \\approx 0.27$, closest to $e^{0.25}$. Options C and D would require much higher $\\mu_k$ values (0.52 and 0.78 respectively) than Figure 3a shows for this surface.",
+      workedSolution: {
+        steps: [
+          {
+            heading: "Step 1 — Read μk from Figure 3a",
+            body:
+              "Cord = nylon; surface = masking tape over brass → use curve B on Figure 3a. At $\\theta = 55°$: $\\mu_k \\approx 0.23$.",
+          },
+          {
+            heading: "Step 2 — Convert θ to radians",
+            body: "$\\theta = 55 \\times \\pi/180 \\approx 55 \\times 3.14/180 \\approx 0.96$ rad.",
+          },
+          {
+            heading: "Step 3 — Apply the kinetic capstan equation",
+            body:
+              "$\\ln(T_2/T_1) = \\mu_k \\cdot \\theta = 0.23 \\times 0.96 \\approx 0.23$, so $T_2/T_1 \\approx e^{0.23}$.",
+          },
+          {
+            heading: "Step 4 — Match to the exponential options",
+            body: "This answer is closest to option B, $e^{0.25}$.",
+          },
+        ],
+        answer: "B — $T_2/T_1 \\approx e^{0.25}$",
+      },
     },
     {
       id: "q2",
@@ -124,6 +147,40 @@ const input: CreatePracticeQuestionSetInput = {
       correctOptionIndex: 1,
       explanation:
         "From Figure 3b, curve B (bare brass) at $T_1 + T_2 = 200$ N: $\\mu_k \\approx 0.12$. Apply capstan: $T_2/T_1 = e^{0.12 \\times \\pi} = e^{0.38} \\approx 1.46$. With $T_1 + T_2 = 200$: $T_1(1 + 1.46) = 200 \\Rightarrow T_1 = 200/2.46 \\approx 81$ N, closest to 80 N. Option C (100 N) is the naive bisection ignoring the capstan effect. Option D (120 N) is actually $T_2$ (the heavier side).",
+      workedSolution: {
+        steps: [
+          {
+            heading: "Step 1 — Decode the conditions to find the right figure",
+            body:
+              "The cues are: \"Nylon cord\" → rules out Figure 4 (polyethylene only). \"Half-turn\" → $\\theta = 180°$. \"Bare brass cylinder\" → selects a specific curve. \"Combined weight = 200 N\" → the x-axis variable on Figure 3b is $T_1+T_2$. These cues funnel us to Figure 3b, curve B (bare brass).",
+          },
+          {
+            heading: "Step 2 — Justify T1 + T2 = total weight",
+            body:
+              "At $\\theta = 180°$ the cord drapes vertically off both sides. Both masses are in equilibrium (constant speed), so the cord tensions balance the weights: $T_1 = m_1 g$, $T_2 = m_2 g$ → $T_1 + T_2 = (m_1+m_2)g = 200$ N. This identity only holds because the wrap is 180°.",
+          },
+          {
+            heading: "Step 3 — Read μk from Figure 3b",
+            body: "On curve B (bare brass) at $T_1 + T_2 = 200$ N: $\\mu_k \\approx 0.12$.",
+          },
+          {
+            heading: "Step 4 — Apply the capstan equation",
+            body:
+              "Using the exponential value table ($e^{0.3} \\approx 1.35$, $e^{0.4} \\approx 1.49$), $e^{\\mu_k \\pi} = e^{0.12 \\times \\pi} \\approx e^{0.38}$ interpolates to $T_2/T_1 \\approx 1.46$.",
+          },
+          {
+            heading: "Step 5 — Solve the simultaneous equations",
+            body:
+              "$T_1 + T_2 = 200$, $T_2 = 1.46\\,T_1$. So $T_1(1 + 1.46) = 200 \\Rightarrow T_1 = 200/2.46 \\approx 81$ N.",
+          },
+          {
+            heading: "Understanding the stem — why T1+T2 rather than T2−T1",
+            body:
+              "Before doing the algebra, it's worth building the right physical picture, because a rope wrapped around a fixed post behaves very differently from a rope over an ordinary pulley. Imagine a ship pulling on a mooring rope with 10,000 N of force. The rope is looped around a fixed metal post (a bollard) on the dock a few times, and a dockworker holds the loose end with just 50 N — about the effort of holding a shopping bag. The ship doesn't slip away, and the dockworker isn't superhuman. The answer is friction: wherever the rope touches the post, friction grabs it and holds it in place, and friction on a wrapped rope doesn't just add up as you add more wraps — it multiplies. Each extra wrap boosts the holding power by another factor, not another fixed amount. That's exactly what the capstan equation says: $T_2 = T_1 e^{\\mu_k \\theta}$. The wrap angle $\\theta$ sits inside the exponent, so $T_2/T_1$ grows exponentially with $\\theta$. With a typical rope on metal at $\\mu_k \\approx 0.3$: one full turn ($\\theta = 2\\pi \\approx 6.28$ rad) gives $T_2/T_1 = e^{0.3 \\times 6.28} = e^{1.88} \\approx 6.6$ — a 50 N grip could hold back $50 \\times 6.6 \\approx 330$ N. Two full turns ($\\theta = 4\\pi \\approx 12.57$ rad) gives $e^{3.77} \\approx 43$ — a 50 N grip now holds $50 \\times 43 \\approx 2{,}150$ N, over 200 kg. Three full turns ($\\theta = 6\\pi \\approx 18.85$ rad) gives $e^{5.65} \\approx 285$ — that same 50 N grip now holds back $50 \\times 285 \\approx 14{,}250$ N. Each extra wrap doesn't add a fixed amount of holding power, it multiplies what you already had by another factor of $e^{2\\pi \\times 0.3} \\approx 6.6$ — the same reason compound interest snowballs so quickly. So why isn't this just $T_2 - T_1$, like a pulley problem? In an ordinary pulley, the wheel spins freely with almost no friction, so $T_1 = T_2$ everywhere, and only a difference in the weights hanging off it can make the rope move. A capstan is not this: the post doesn't spin, the rope drags against it, and the more you wrap it around, the more of the rope's surface is squeezed against the post. Friction along that contact acts like a series of tiny grips distributed along the wrap, each supporting a little more tension than the next — that's why the tension on one side can be enormous while the tension on the other is tiny. So the pulley rule (motion driven by $T_2-T_1$) doesn't apply. Instead, each mass hangs freely on its own end of the rope, held up by its own local tension: $T_1 = m_1 g$, $T_2 = m_2 g$. Adding these together: $T_1+T_2 = (m_1+m_2)g = 200$ N — the total downward pull on the post, not the difference between the two sides (that quantity is what friction is absorbing). The harder the rope is pressed against the post, the more friction is available — which is why the paper plots $\\mu_k$ against $T_1+T_2$, not $T_2-T_1$.",
+          },
+        ],
+        answer: "B — 80 N",
+      },
     },
     {
       id: "q3",
@@ -138,6 +195,26 @@ const input: CreatePracticeQuestionSetInput = {
       correctOptionIndex: 0,
       explanation:
         "With $R = e^{\\mu_s \\theta_0}$, doubling the angle gives $e^{\\mu_s \\cdot 2\\theta_0} = [e^{\\mu_s \\theta_0}]^2 = R^2$. Wrap angle enters exponentially — doubling $\\theta$ squares the holding ratio. This is the physical principle behind bollard wraps: two extra turns can hold a ship with finger pressure. Option B (2R) treats the relationship as linear. Option C ($\\sqrt{R}$) would correspond to halving $\\theta$.",
+      workedSolution: {
+        steps: [
+          {
+            heading: "Step 1 — Write down the capstan equation",
+            body:
+              "The capstan equation links the two tensions on either side of the wrap to the wrap angle: $T_2/T_1 = e^{\\mu_k \\theta}$.",
+          },
+          {
+            heading: "Step 2 — Recall the generalised exponent law",
+            body:
+              "When an exponential expression is raised to a power, the general rule is $(e^a)^b = e^{ab}$. Equivalently, multiplying the exponent by a factor $b$ is the same as raising the whole exponential to the power $b$ — this is what lets us \"pull\" a constant factor out of the exponent as a power outside the bracket.",
+          },
+          {
+            heading: "Step 3 — Replace θ with 2θ and apply the law",
+            body:
+              "If we double the wrap angle ($\\theta \\to 2\\theta$) while $\\mu_k$ stays fixed, the new holding factor is $e^{\\mu_k \\cdot 2\\theta}$. Applying the exponent law with $a = \\mu_k\\theta$ and $b = 2$: $e^{2a} = (e^a)^2 = R^2$.",
+          },
+        ],
+        answer: "A — R²",
+      },
     },
     {
       id: "q4",
@@ -152,6 +229,34 @@ const input: CreatePracticeQuestionSetInput = {
       correctOptionIndex: 2,
       explanation:
         "In Figure 4, curve A (masking tape) runs from ~30° to ~450° and curve B (bare brass) runs only from ~30° to ~100°. In the overlap range, curve A sits above curve B and both decrease as $\\theta$ increases — exactly what option C describes. Option A overstates curve B's range (it doesn't extend to 450°). Option B says bare brass has a lower $\\mu_k$ at $\\theta = \\pi$ — but curve B doesn't extend that far. Option D makes a claim about $\\theta > 3\\pi$ that the data don't support.",
+      workedSolution: {
+        steps: [
+          {
+            heading: "Step 1 — Reading Figure 4",
+            body:
+              "Curve A (masking tape over brass) runs from $\\theta \\approx 30°$ to $\\approx 450°$; $\\mu_k$ starts at $\\approx 0.42$ and decays to $\\approx 0.275$. Curve B (bare brass) runs only from $\\theta \\approx 30°$ to $\\approx 100°$; $\\mu_k$ starts at $\\approx 0.35$ and decays to $\\approx 0.245$. Where both curves are shown (the small $\\theta$ range where they overlap), curve A sits above curve B, and both decrease as $\\theta$ increases.",
+          },
+        ],
+        eliminations: [
+          {
+            option: "A",
+            reason:
+              "Gets the θ-trend right (both curves decrease), but reverses the surface ranking — Figure 4 shows masking tape (curve A) sitting above bare brass (curve B), so masking tape gives the higher $\\mu_k$, not bare brass.",
+          },
+          {
+            option: "B",
+            reason:
+              "Claims a comparison at $\\theta = 400°$, but curve B (bare brass) doesn't extend that far — no comparison can be made there.",
+          },
+          {
+            option: "D",
+            reason:
+              "Beyond $\\theta \\approx 200°$, $\\mu_k$ still slowly declines on curve A — it is not independent of $\\theta$.",
+          },
+        ],
+        answer:
+          "C — For overlapping wrap angles, masking tape over brass gives higher μk than bare brass, and μk tends to decrease as θ increases",
+      },
     },
     {
       id: "q5",
@@ -166,6 +271,16 @@ const input: CreatePracticeQuestionSetInput = {
       correctOptionIndex: 1,
       explanation:
         "Figure 4 shows $\\mu_k$ decreasing with $\\theta$. Averaging over the full range gives $\\bar{\\mu}_k$ that is larger than the true $\\mu_k$ at large $\\theta$ (the average is pulled up by the high values at small $\\theta$). Since $T_2/T_1 = e^{\\bar{\\mu}_k \\theta}$, an overstated $\\mu_k$ at large $\\theta$ gets amplified exponentially — even a small fractional error in $\\mu_k$ produces a large error in $T_2/T_1$ at large $\\theta$. Options A and D ignore the exponential sensitivity. Option C has the direction wrong.",
+      workedSolution: {
+        steps: [
+          {
+            heading: "Step 1 — What does averaging do?",
+            body:
+              "Figure 4 shows $\\mu_k$ falls as $\\theta$ grows. Averaging $\\mu_k$ over the range $50°$–$300°$ pulls the average up toward the higher values seen at small $\\theta$: on curve A (masking tape), averaging from $\\theta = 50°$ ($\\mu_k \\approx 0.40$) to $\\theta = 300°$ ($\\mu_k \\approx 0.29$) gives $\\bar\\mu_k \\approx 0.35$. At a large $\\theta$, say $300° \\approx 5.24$ rad, the true $\\mu_k$ is 0.29. Averaged prediction: $T_2/T_1 = e^{0.35 \\times 5.24} \\approx e^{1.83} \\approx 6.24$. True prediction: $T_2/T_1 = e^{0.29 \\times 5.24} \\approx e^{1.52} \\approx 4.57$. The averaged value overstates $\\mu_k$ at large $\\theta$.",
+          },
+        ],
+        answer: "B — The predicted tension ratio will be overestimated at large θ",
+      },
     },
   ],
 };

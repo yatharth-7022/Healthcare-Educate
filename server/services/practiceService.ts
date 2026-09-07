@@ -3,6 +3,7 @@ import type {
   PracticeCategoryProgress,
   PracticeQuestionSet,
   RecordPracticeAnswerInput,
+  ReportPracticeQuestionInput,
 } from "@shared/models/practice";
 import { Prisma } from "@prisma/client";
 import { prisma } from "../db";
@@ -425,6 +426,28 @@ export class PracticeService {
     });
 
     return this.getCategoryProgress(userId, categoryId);
+  }
+
+  async reportQuestion(userId: number, input: ReportPracticeQuestionInput) {
+    const questionSet = await prisma.practiceQuestionSet.findUnique({
+      where: { id: input.questionSetId },
+      select: { id: true },
+    });
+
+    if (!questionSet) {
+      throw new NotFoundError("Question set not found");
+    }
+
+    await prisma.practiceQuestionReport.create({
+      data: {
+        userId,
+        categoryId: input.categoryId.trim(),
+        subcategoryId: input.subcategoryId.trim(),
+        questionSetId: input.questionSetId,
+        questionId: input.questionId.trim(),
+        message: input.message.trim(),
+      },
+    });
   }
 }
 
