@@ -474,7 +474,10 @@ export default function PracticeSession() {
 
     return (
       <DashboardLayout>
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-3 practice-protected">
+        <div
+          className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-3 practice-protected"
+          onContextMenu={(event) => event.preventDefault()}
+        >
           {/* Top bar */}
           <div className="flex items-center justify-between py-1">
             <div className="flex items-center gap-2.5">
@@ -777,7 +780,10 @@ export default function PracticeSession() {
 
   return (
     <DashboardLayout>
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-4 practice-protected">
+      <div
+        className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-4 practice-protected"
+        onContextMenu={(event) => event.preventDefault()}
+      >
         <div className="bg-green-600 text-white rounded-md px-4 py-2 flex items-center justify-between">
           <div className="flex items-center gap-3 text-sm font-medium">
             <button
