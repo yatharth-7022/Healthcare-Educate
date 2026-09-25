@@ -5,7 +5,6 @@ import {
   ArrowLeft,
   ArrowRight,
   BookOpen,
-  CircleCheck,
   History as HistoryIcon,
   PlayCircle,
   RefreshCw,
@@ -71,12 +70,7 @@ function AttemptCard({
               <h3 className="truncate text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
                 {attempt.subcategoryName}
               </h3>
-              {isCompleted ? (
-                <span className="inline-flex items-center gap-1 rounded-full border border-green-600/30 bg-green-600/10 px-2 py-0.5 text-[11px] font-medium text-green-600">
-                  <CircleCheck className="h-3 w-3" />
-                  Completed
-                </span>
-              ) : (
+              {!isCompleted && (
                 <span className="inline-flex items-center gap-1 rounded-full border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[11px] font-medium text-amber-600 dark:text-amber-400">
                   <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
                   In progress
