@@ -27,6 +27,7 @@ model User {
   // Practice progress relationships
   questionProgressEntries PracticeQuestionProgress[]
   questionReports         PracticeQuestionReport[]
+  practiceAttempts        PracticeAttempt[]
 }
 
 model Subscriber {
@@ -122,6 +123,7 @@ model PracticeSubcategory {
   category        PracticeCategory         @relation(fields: [categoryId], references: [id], onDelete: Cascade)
   questionProgress PracticeQuestionProgress[]
   questionSets     PracticeQuestionSet[]
+  attempts         PracticeAttempt[]
 
   @@index([categoryId, displayOrder])
 }
@@ -142,6 +144,49 @@ model PracticeQuestionProgress {
 
   @@unique([userId, subcategoryId, questionKey])
   @@index([userId, subcategoryId])
+}
+
+enum PracticeAttemptStatus {
+  IN_PROGRESS
+  COMPLETED
+}
+
+// One run through a practice session. Question sets are frozen at start so the
+// attempt can be resumed/reviewed even if new sets are published later.
+model PracticeAttempt {
+  id                   Int                   @id @default(autoincrement())
+  userId               Int
+  categoryId           String
+  subcategoryId        String
+  questionSetIds       Int[]
+  totalQuestions       Int
+  status               PracticeAttemptStatus @default(IN_PROGRESS)
+  currentQuestionIndex Int                   @default(0)
+  bookmarkedKeys       String[]
+  startedAt            DateTime              @default(now())
+  updatedAt            DateTime              @updatedAt
+  completedAt          DateTime?
+
+  user        User                    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  subcategory PracticeSubcategory     @relation(fields: [subcategoryId], references: [id], onDelete: Cascade)
+  answers     PracticeAttemptAnswer[]
+
+  @@index([userId, updatedAt])
+  @@index([userId, subcategoryId, status])
+}
+
+model PracticeAttemptAnswer {
+  id                  Int      @id @default(autoincrement())
+  attemptId           Int
+  questionKey         String
+  selectedOptionIndex Int
+  isCorrect           Boolean
+  answeredAt          DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  attempt PracticeAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+
+  @@unique([attemptId, questionKey])
 }
 
 model PracticeQuestionReport {

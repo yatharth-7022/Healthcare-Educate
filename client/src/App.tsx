@@ -25,6 +25,7 @@ import PracticeCategory from "@/pages/PracticeCategory";
 import PracticeSetup from "@/pages/PracticeSetup";
 import PracticeConfirm from "@/pages/PracticeConfirm";
 import PracticeSession from "@/pages/PracticeSession";
+import PracticeHistory from "@/pages/PracticeHistory";
 
 const LANDING_PATHS = ["/", "/about", "/courses", "/pricing", "/honour-roll"];
 
@@ -47,6 +48,13 @@ function Router() {
         <ProtectedRoute>
           <ThemeProvider defaultTheme="dark" storageKey="dashboard-theme">
             <Dashboard />
+          </ThemeProvider>
+        </ProtectedRoute>
+      </Route>
+      <Route path="/dashboard/history">
+        <ProtectedRoute>
+          <ThemeProvider defaultTheme="dark" storageKey="dashboard-theme">
+            <PracticeHistory />
           </ThemeProvider>
         </ProtectedRoute>
       </Route>

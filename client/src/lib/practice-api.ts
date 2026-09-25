@@ -1,5 +1,11 @@
 import type {
+  CreatePracticeAttemptInput,
   CreatePracticeQuestionSetInput,
+  PracticeAttemptDetail,
+  PracticeAttemptListResponse,
+  PracticeAttemptResponse,
+  PracticeAttemptStatus,
+  UpdatePracticeAttemptInput,
   PracticeCategoryProgressResponse,
   PracticeProgressSummaryResponse,
   PracticeQuestionSetListResponse,
@@ -167,6 +173,49 @@ export async function getPracticeSessionQuestionSet(
     `/api/practice/session?${query}`,
     {
       method: "GET",
+    },
+  );
+}
+
+export async function listPracticeAttempts(status?: PracticeAttemptStatus) {
+  const query = status ? `?${new URLSearchParams({ status })}` : "";
+
+  return authenticatedRequest<PracticeAttemptListResponse>(
+    `/api/practice/attempts${query}`,
+    {
+      method: "GET",
+    },
+  );
+}
+
+export async function createPracticeAttempt(input: CreatePracticeAttemptInput) {
+  return authenticatedRequest<PracticeAttemptResponse>(
+    "/api/practice/attempts",
+    {
+      method: "POST",
+      body: JSON.stringify(input),
+    },
+  );
+}
+
+export async function getPracticeAttempt(attemptId: number) {
+  return authenticatedRequest<PracticeAttemptDetail>(
+    `/api/practice/attempts/${attemptId}`,
+    {
+      method: "GET",
+    },
+  );
+}
+
+export async function updatePracticeAttempt(
+  attemptId: number,
+  input: UpdatePracticeAttemptInput,
+) {
+  return authenticatedRequest<PracticeAttemptResponse>(
+    `/api/practice/attempts/${attemptId}`,
+    {
+      method: "PATCH",
+      body: JSON.stringify(input),
     },
   );
 }

@@ -8,24 +8,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
-import {
-  BookOpen,
-  FlaskConical,
-  Atom,
-  Dna,
-  Zap,
-  ChevronRight,
-  ArrowLeft,
-  Lock,
-} from "lucide-react";
-
-const categoryIcons: Record<string, React.ElementType> = {
-  humanities: BookOpen,
-  "general-chemistry": FlaskConical,
-  "organic-chemistry": Atom,
-  biology: Dna,
-  physics: Zap,
-};
+import { BookOpen, ChevronRight, ArrowLeft, Lock } from "lucide-react";
+import { categoryIcons } from "@/components/practice/categoryIcons";
 
 function ProgressBar({
   value,

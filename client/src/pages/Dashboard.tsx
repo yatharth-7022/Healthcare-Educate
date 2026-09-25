@@ -26,9 +26,11 @@ import {
   Flame,
   Trophy,
   LayoutDashboard,
+  History,
   Moon,
   Sun,
 } from "lucide-react";
+import { PRACTICE_HISTORY_PATH } from "@/lib/practice-routes";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -96,6 +98,16 @@ export default function Dashboard() {
                 variant="ghost"
                 size="sm"
                 className="text-sm font-medium text-muted-foreground h-8"
+                onClick={() => setLocation(PRACTICE_HISTORY_PATH)}
+                data-testid="nav-history"
+              >
+                <History className="mr-1.5 h-3.5 w-3.5" />
+                History
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-sm font-medium text-muted-foreground h-8"
               >
                 <Calendar className="mr-1.5 h-3.5 w-3.5" />
                 Schedule
@@ -134,6 +146,13 @@ export default function Dashboard() {
                   <p className="text-xs text-muted-foreground font-normal">{user?.email}</p>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
+                <DropdownMenuItem
+                  className="cursor-pointer md:hidden"
+                  onClick={() => setLocation(PRACTICE_HISTORY_PATH)}
+                >
+                  <History className="mr-2 h-4 w-4" />
+                  Practice History
+                </DropdownMenuItem>
                 <DropdownMenuItem className="cursor-pointer">
                   <User className="mr-2 h-4 w-4" />
                   Profile

@@ -1,9 +1,14 @@
 import type {
+  CreatePracticeAttemptInput,
   CreatePracticeQuestionSetInput,
+  PracticeAttemptDetail,
+  PracticeAttemptSummary,
   PracticeCategoryProgress,
   PracticeQuestionSet,
+  PracticeSavedAnswer,
   RecordPracticeAnswerInput,
   ReportPracticeQuestionInput,
+  UpdatePracticeAttemptInput,
 } from "@shared/models/practice";
 import { Prisma } from "@prisma/client";
 import { prisma } from "../db";
@@ -173,6 +178,44 @@ function mapQuestionSet(questionSet: {
     createdAt: questionSet.createdAt.toISOString(),
     updatedAt: questionSet.updatedAt.toISOString(),
   };
+}
+
+
+const attemptSummaryInclude = {
+  subcategory: {
+    select: { name: true, category: { select: { name: true } } },
+  },
+  answers: { select: { isCorrect: true } },
+} satisfies Prisma.PracticeAttemptInclude;
+
+type AttemptWithSummaryRelations = Prisma.PracticeAttemptGetPayload<{
+  include: typeof attemptSummaryInclude;
+}>;
+
+function mapAttemptSummary(
+  attempt: AttemptWithSummaryRelations,
+): PracticeAttemptSummary {
+  return {
+    id: attempt.id,
+    categoryId: attempt.categoryId,
+    categoryName: attempt.subcategory.category.name,
+    subcategoryId: attempt.subcategoryId,
+    subcategoryName: attempt.subcategory.name,
+    status: attempt.status,
+    setsCount: attempt.questionSetIds.length,
+    totalQuestions: attempt.totalQuestions,
+    answeredQuestions: attempt.answers.length,
+    correctQuestions: attempt.answers.filter((answer) => answer.isCorrect)
+      .length,
+    currentQuestionIndex: attempt.currentQuestionIndex,
+    startedAt: attempt.startedAt.toISOString(),
+    updatedAt: attempt.updatedAt.toISOString(),
+    completedAt: attempt.completedAt?.toISOString() ?? null,
+  };
+}
+
+function clampQuestionIndex(index: number, totalQuestions: number): number {
+  return Math.min(Math.max(index, 0), Math.max(totalQuestions - 1, 0));
 }
 
 export class PracticeService {
@@ -401,7 +444,81 @@ export class PracticeService {
       );
     }
 
-    await prisma.practiceQuestionProgress.upsert({
+    let isCorrect = input.isCorrect;
+
+    if (input.attemptId === undefined) {
+      await this.upsertQuestionProgress(userId, subcategoryId, questionKey, {
+        isCorrect,
+        selectedOptionIndex: input.selectedOptionIndex,
+      });
+
+      return this.getCategoryProgress(userId, categoryId);
+    }
+
+    const attempt = await this.getOwnedAttempt(userId, input.attemptId);
+
+    if (attempt.status === "COMPLETED") {
+      throw new BadRequestError("This attempt is already completed");
+    }
+
+    if (
+      attempt.subcategoryId !== subcategoryId ||
+      attempt.categoryId !== categoryId
+    ) {
+      throw new BadRequestError("Attempt does not belong to this topic");
+    }
+
+    // Correctness for attempts is decided server-side from the stored question.
+    isCorrect = await this.resolveAnswerCorrectness(
+      attempt.questionSetIds,
+      questionKey,
+      input.selectedOptionIndex,
+    );
+
+    await prisma.$transaction([
+      this.buildQuestionProgressUpsert(userId, subcategoryId, questionKey, {
+        isCorrect,
+        selectedOptionIndex: input.selectedOptionIndex,
+      }),
+      prisma.practiceAttemptAnswer.upsert({
+        where: {
+          attemptId_questionKey: { attemptId: attempt.id, questionKey },
+        },
+        update: {
+          selectedOptionIndex: input.selectedOptionIndex,
+          isCorrect,
+        },
+        create: {
+          attemptId: attempt.id,
+          questionKey,
+          selectedOptionIndex: input.selectedOptionIndex,
+          isCorrect,
+        },
+      }),
+      prisma.practiceAttempt.update({
+        where: { id: attempt.id },
+        data: {
+          updatedAt: new Date(),
+          ...(input.currentQuestionIndex !== undefined && {
+            currentQuestionIndex: clampQuestionIndex(
+              input.currentQuestionIndex,
+              attempt.totalQuestions,
+            ),
+          }),
+        },
+      }),
+    ]);
+
+    return this.getCategoryProgress(userId, categoryId);
+  }
+
+  private buildQuestionProgressUpsert(
+    userId: number,
+    subcategoryId: string,
+    questionKey: string,
+    answer: { isCorrect: boolean; selectedOptionIndex: number },
+  ) {
+    return prisma.practiceQuestionProgress.upsert({
       where: {
         userId_subcategoryId_questionKey: {
           userId,
@@ -410,8 +527,8 @@ export class PracticeService {
         },
       },
       update: {
-        isCorrect: input.isCorrect,
-        selectedOptionIndex: input.selectedOptionIndex,
+        isCorrect: answer.isCorrect,
+        selectedOptionIndex: answer.selectedOptionIndex,
         attemptCount: {
           increment: 1,
         },
@@ -420,12 +537,248 @@ export class PracticeService {
         userId,
         subcategoryId,
         questionKey,
-        isCorrect: input.isCorrect,
-        selectedOptionIndex: input.selectedOptionIndex,
+        isCorrect: answer.isCorrect,
+        selectedOptionIndex: answer.selectedOptionIndex,
+      },
+    });
+  }
+
+  private async upsertQuestionProgress(
+    userId: number,
+    subcategoryId: string,
+    questionKey: string,
+    answer: { isCorrect: boolean; selectedOptionIndex: number },
+  ) {
+    await this.buildQuestionProgressUpsert(
+      userId,
+      subcategoryId,
+      questionKey,
+      answer,
+    );
+  }
+
+  private async getOwnedAttempt(userId: number, attemptId: number) {
+    // Not found (rather than forbidden) so attempt ids of other users are not revealed.
+    const attempt = await prisma.practiceAttempt.findFirst({
+      where: { id: attemptId, userId },
+    });
+
+    if (!attempt) {
+      throw new NotFoundError("Attempt not found");
+    }
+
+    return attempt;
+  }
+
+  private async resolveAnswerCorrectness(
+    questionSetIds: number[],
+    questionKey: string,
+    selectedOptionIndex: number,
+  ): Promise<boolean> {
+    const separatorIndex = questionKey.indexOf(":");
+    const setId = Number.parseInt(questionKey.slice(0, separatorIndex), 10);
+    const questionId = questionKey.slice(separatorIndex + 1);
+
+    if (
+      separatorIndex === -1 ||
+      !Number.isFinite(setId) ||
+      !questionSetIds.includes(setId)
+    ) {
+      throw new BadRequestError("Question does not belong to this attempt");
+    }
+
+    const questionSet = await prisma.practiceQuestionSet.findUnique({
+      where: { id: setId },
+      select: { questions: true },
+    });
+    const questions = (questionSet?.questions ??
+      []) as PracticeQuestionSet["questions"];
+    const question = questions.find((item) => item.id === questionId);
+
+    if (!question) {
+      throw new BadRequestError("Question does not belong to this attempt");
+    }
+
+    if (selectedOptionIndex >= question.options.length) {
+      throw new BadRequestError("selectedOptionIndex is out of range");
+    }
+
+    return selectedOptionIndex === question.correctOptionIndex;
+  }
+
+  async createAttempt(
+    userId: number,
+    input: CreatePracticeAttemptInput,
+  ): Promise<PracticeAttemptSummary> {
+    await ensurePracticeCatalogSeeded();
+
+    const categoryId = input.categoryId.trim();
+    const subcategoryId = input.subcategoryId.trim();
+
+    const subcategory = await prisma.practiceSubcategory.findUnique({
+      where: { id: subcategoryId },
+      select: { categoryId: true, comingSoon: true },
+    });
+
+    if (!subcategory) {
+      throw new NotFoundError("Subcategory not found");
+    }
+
+    if (subcategory.categoryId !== categoryId) {
+      throw new BadRequestError("Subcategory does not belong to category");
+    }
+
+    if (subcategory.comingSoon) {
+      throw new BadRequestError(
+        "Cannot start practice for a coming soon subcategory",
+      );
+    }
+
+    if (input.resumeExisting) {
+      const existing = await prisma.practiceAttempt.findFirst({
+        where: {
+          userId,
+          subcategoryId,
+          status: "IN_PROGRESS",
+        },
+        orderBy: { updatedAt: "desc" },
+        include: attemptSummaryInclude,
+      });
+
+      if (existing && existing.questionSetIds.length === input.sets) {
+        return mapAttemptSummary(existing);
+      }
+    }
+
+    const questionSets = await this.getSessionQuestionSets(
+      categoryId,
+      subcategoryId,
+      input.sets,
+    );
+
+    const created = await prisma.practiceAttempt.create({
+      data: {
+        userId,
+        categoryId,
+        subcategoryId,
+        questionSetIds: questionSets.map((set) => set.id),
+        totalQuestions: questionSets.reduce(
+          (sum, set) => sum + set.questions.length,
+          0,
+        ),
+      },
+      include: attemptSummaryInclude,
+    });
+
+    return mapAttemptSummary(created);
+  }
+
+  async listAttempts(
+    userId: number,
+    options: { status?: "IN_PROGRESS" | "COMPLETED"; limit?: number } = {},
+  ): Promise<PracticeAttemptSummary[]> {
+    const attempts = await prisma.practiceAttempt.findMany({
+      where: { userId, ...(options.status && { status: options.status }) },
+      orderBy: { updatedAt: "desc" },
+      take: options.limit ?? 100,
+      include: attemptSummaryInclude,
+    });
+
+    return attempts.map(mapAttemptSummary);
+  }
+
+  async getAttempt(
+    userId: number,
+    attemptId: number,
+  ): Promise<PracticeAttemptDetail> {
+    const attempt = await prisma.practiceAttempt.findFirst({
+      where: { id: attemptId, userId },
+      include: {
+        ...attemptSummaryInclude,
+        answers: {
+          select: {
+            questionKey: true,
+            selectedOptionIndex: true,
+            isCorrect: true,
+          },
+        },
       },
     });
 
-    return this.getCategoryProgress(userId, categoryId);
+    if (!attempt) {
+      throw new NotFoundError("Attempt not found");
+    }
+
+    const questionSetRows = await prisma.practiceQuestionSet.findMany({
+      where: { id: { in: attempt.questionSetIds } },
+    });
+    const questionSets = attempt.questionSetIds
+      .map((id) => questionSetRows.find((row) => row.id === id))
+      .filter((row): row is NonNullable<typeof row> => Boolean(row))
+      .map(mapQuestionSet);
+
+    const savedAnswers: Record<string, PracticeSavedAnswer> = {};
+    for (const answer of attempt.answers) {
+      savedAnswers[answer.questionKey] = {
+        selectedOptionIndex: answer.selectedOptionIndex,
+        isCorrect: answer.isCorrect,
+      };
+    }
+
+    return {
+      attempt: mapAttemptSummary(attempt),
+      questionSets,
+      savedAnswers,
+      bookmarkedKeys: attempt.bookmarkedKeys,
+    };
+  }
+
+  async updateAttempt(
+    userId: number,
+    attemptId: number,
+    input: UpdatePracticeAttemptInput,
+  ): Promise<PracticeAttemptSummary> {
+    const attempt = await prisma.practiceAttempt.findFirst({
+      where: { id: attemptId, userId },
+      include: attemptSummaryInclude,
+    });
+
+    if (!attempt) {
+      throw new NotFoundError("Attempt not found");
+    }
+
+    // Completed attempts are read-only; leaving a review is a no-op.
+    if (attempt.status === "COMPLETED") {
+      return mapAttemptSummary(attempt);
+    }
+
+    const shouldComplete =
+      input.action === "finish" ||
+      (input.action === "save" &&
+        attempt.totalQuestions > 0 &&
+        attempt.answers.length >= attempt.totalQuestions);
+
+    const updated = await prisma.practiceAttempt.update({
+      where: { id: attempt.id },
+      data: {
+        ...(input.currentQuestionIndex !== undefined && {
+          currentQuestionIndex: clampQuestionIndex(
+            input.currentQuestionIndex,
+            attempt.totalQuestions,
+          ),
+        }),
+        ...(input.bookmarkedKeys !== undefined && {
+          bookmarkedKeys: input.bookmarkedKeys,
+        }),
+        ...(shouldComplete && {
+          status: "COMPLETED" as const,
+          completedAt: new Date(),
+        }),
+      },
+      include: attemptSummaryInclude,
+    });
+
+    return mapAttemptSummary(updated);
   }
 
   async reportQuestion(userId: number, input: ReportPracticeQuestionInput) {

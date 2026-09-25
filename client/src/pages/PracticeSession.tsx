@@ -1,11 +1,17 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocation, useParams, useSearch } from "wouter";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import {
-  usePracticeSessionQuestionSet,
+  useCreatePracticeAttempt,
+  usePracticeAttempt,
   useRecordPracticeAnswer,
   useReportPracticeQuestion,
+  useUpdatePracticeAttempt,
 } from "@/hooks/use-practice-progress";
+import {
+  getPracticeSessionPath,
+  PRACTICE_HISTORY_PATH,
+} from "@/lib/practice-routes";
 import { StemBlockRenderer } from "@/components/practice/StemBlockRenderer";
 import { Button } from "@/components/ui/button";
 import {
@@ -33,13 +39,30 @@ export default function PracticeSession() {
   const [, setLocation] = useLocation();
   const search = useSearch();
   const params = new URLSearchParams(search);
-  const requestedSets = Number.parseInt(params.get("sets") || "1", 10);
+  const parsedSets = Number.parseInt(params.get("sets") || "1", 10);
+  const requestedSets = Number.isFinite(parsedSets)
+    ? Math.min(Math.max(parsedSets, 1), 10)
+    : 1;
+  const attemptParam = params.get("attempt");
+  const attemptId =
+    attemptParam && /^\d+$/.test(attemptParam)
+      ? Number.parseInt(attemptParam, 10)
+      : undefined;
 
-  const { data, isLoading, error } = usePracticeSessionQuestionSet(
-    categoryId,
-    subcategoryId,
-    requestedSets,
-  );
+  const createAttemptMutation = useCreatePracticeAttempt();
+  const startAttempt = createAttemptMutation.mutate;
+  const attemptQuery = usePracticeAttempt(attemptId);
+  const updateAttemptMutation = useUpdatePracticeAttempt(attemptId);
+  const saveSnapshot = updateAttemptMutation.mutate;
+  const data = attemptQuery.data;
+  // Without an attempt id (old links / direct navigation) we resume the newest
+  // in-progress attempt for this topic, or start a new one, then re-route to it.
+  const isLoading =
+    attemptId === undefined
+      ? !createAttemptMutation.isError
+      : attemptQuery.isLoading;
+  const error =
+    attemptId === undefined ? createAttemptMutation.error : attemptQuery.error;
   const recordAnswerMutation = useRecordPracticeAnswer(categoryId);
   const reportQuestionMutation = useReportPracticeQuestion();
   const { toast } = useToast();
@@ -80,6 +103,8 @@ export default function PracticeSession() {
   const [showExplanation, setShowExplanation] = useState(true);
   const [showFullStem, setShowFullStem] = useState(false);
   const [hasHydrated, setHasHydrated] = useState(false);
+  const lastSyncedSnapshot = useRef<string>("");
+  const bootstrapStarted = useRef(false);
 
   const currentEntry = sessionQuestions[currentQuestionIndex];
   const currentQuestion = currentEntry?.question;
@@ -89,32 +114,130 @@ export default function PracticeSession() {
   const currentLocalQuestionNumber = currentEntry?.localNumber ?? 1;
   const currentQuestionNumber = currentQuestionIndex + 1;
 
-  // Restore any previously saved answers and resume at the first unanswered
-  // question ("Save & Exit" resume behaviour).
+  // Start (or resume) an attempt when the URL does not name one.
   useEffect(() => {
-    if (hasHydrated || sessionQuestions.length === 0) return;
+    if (
+      attemptId !== undefined ||
+      bootstrapStarted.current ||
+      !categoryId ||
+      !subcategoryId
+    ) {
+      return;
+    }
+    bootstrapStarted.current = true;
+
+    startAttempt(
+      {
+        categoryId,
+        subcategoryId,
+        sets: requestedSets,
+        resumeExisting: true,
+      },
+      {
+        onSuccess: ({ attempt }) =>
+          setLocation(
+            getPracticeSessionPath(
+              attempt.categoryId,
+              attempt.subcategoryId,
+              attempt.setsCount,
+              attempt.id,
+            ),
+            { replace: true },
+          ),
+      },
+    );
+  }, [attemptId, categoryId, subcategoryId, requestedSets, startAttempt, setLocation]);
+
+  // Keep the URL in sync with the attempt's real topic (e.g. hand-edited links).
+  const routeMismatch =
+    data !== undefined &&
+    (data.attempt.categoryId !== categoryId ||
+      data.attempt.subcategoryId !== subcategoryId);
+
+  useEffect(() => {
+    if (!data || !routeMismatch) return;
+    setLocation(
+      getPracticeSessionPath(
+        data.attempt.categoryId,
+        data.attempt.subcategoryId,
+        data.attempt.setsCount,
+        data.attempt.id,
+      ),
+      { replace: true },
+    );
+  }, [data, routeMismatch, setLocation]);
+
+  // Restore the attempt exactly as it was left: answers, bookmarks and the
+  // current question. Completed attempts open straight on the results page.
+  useEffect(() => {
+    if (hasHydrated || !data || routeMismatch || sessionQuestions.length === 0) {
+      return;
+    }
 
     const restored: Record<string, number> = {};
-    let resumeIndex = 0;
-    let foundUnanswered = false;
-
-    sessionQuestions.forEach((entry, idx) => {
+    sessionQuestions.forEach((entry) => {
       const set = questionSets[entry.setIndex];
       const key = answerKey(set.id, entry.question.id);
       const saved = savedAnswers[key];
-
-      if (saved) {
-        restored[key] = saved.selectedOptionIndex;
-      } else if (!foundUnanswered) {
-        resumeIndex = idx;
-        foundUnanswered = true;
-      }
+      if (saved) restored[key] = saved.selectedOptionIndex;
     });
 
+    const bookmarks = new Set(data.bookmarkedKeys);
+    let startIndex = Math.min(
+      data.attempt.currentQuestionIndex,
+      sessionQuestions.length - 1,
+    );
+
+    if (data.attempt.status === "COMPLETED") {
+      startIndex = sessionQuestions.length;
+      setCompletedAt(
+        new Date(data.attempt.completedAt ?? data.attempt.updatedAt),
+      );
+    }
+
+    lastSyncedSnapshot.current = JSON.stringify([
+      startIndex,
+      Array.from(bookmarks).sort(),
+    ]);
     setSelectedByQuestionId(restored);
-    setCurrentQuestionIndex(foundUnanswered ? resumeIndex : 0);
+    setBookmarkedIds(bookmarks);
+    setCurrentQuestionIndex(startIndex);
     setHasHydrated(true);
-  }, [hasHydrated, sessionQuestions, questionSets, savedAnswers]);
+  }, [hasHydrated, data, routeMismatch, sessionQuestions, questionSets, savedAnswers]);
+
+  const isFinished = completedAt !== null;
+
+  // Snapshot the position/bookmarks shortly after they change so a refresh or
+  // closed tab resumes in the right place, not only after "Save & Exit".
+  useEffect(() => {
+    if (
+      !hasHydrated ||
+      !attemptId ||
+      isFinished ||
+      currentQuestionIndex >= sessionQuestions.length
+    ) {
+      return;
+    }
+
+    const bookmarkedKeys = Array.from(bookmarkedIds).sort();
+    const snapshot = JSON.stringify([currentQuestionIndex, bookmarkedKeys]);
+    if (snapshot === lastSyncedSnapshot.current) return;
+
+    const handle = setTimeout(() => {
+      lastSyncedSnapshot.current = snapshot;
+      saveSnapshot({ currentQuestionIndex, bookmarkedKeys });
+    }, 800);
+
+    return () => clearTimeout(handle);
+  }, [
+    hasHydrated,
+    attemptId,
+    isFinished,
+    currentQuestionIndex,
+    bookmarkedIds,
+    sessionQuestions.length,
+    saveSnapshot,
+  ]);
 
   // Additional information is authored as the tail of the stem array,
   // starting at the block marked variant "additional-info" (Medify-style:
@@ -192,7 +315,7 @@ export default function PracticeSession() {
   const isComplete =
     questions.length > 0 && currentQuestionIndex >= questions.length;
 
-  if (isLoading) {
+  if (isLoading || routeMismatch || (questionSets.length > 0 && !hasHydrated)) {
     return (
       <DashboardLayout>
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -207,27 +330,37 @@ export default function PracticeSession() {
       <DashboardLayout>
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <h1 className="text-2xl font-semibold text-foreground mb-3">
-            No question set is available for this topic yet
+            {error
+              ? "We couldn't open this attempt"
+              : "No question set is available for this topic yet"}
           </h1>
           <p className="text-sm text-muted-foreground mb-5">
             {error instanceof Error
               ? error.message
               : "Add one question set using POST /api/practice/content, then start practice again."}
           </p>
-          <Button
-            variant="outline"
-            onClick={() => setLocation(`/dashboard/practice/${categoryId}`)}
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Topic
-          </Button>
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              onClick={() => setLocation(PRACTICE_HISTORY_PATH)}
+            >
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to History
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => setLocation(`/dashboard/practice/${categoryId}`)}
+            >
+              Back to Topic
+            </Button>
+          </div>
         </div>
       </DashboardLayout>
     );
   }
 
   function handleSelectOption(optionIndex: number) {
-    if (!currentQuestion || !questionSet) return;
+    if (!currentQuestion || !questionSet || isFinished) return;
 
     setSelectedByQuestionId((prev) => ({
       ...prev,
@@ -240,6 +373,8 @@ export default function PracticeSession() {
       questionKey: `${questionSet.id}:${currentQuestion.id}`,
       isCorrect: optionIndex === currentQuestion.correctOptionIndex,
       selectedOptionIndex: optionIndex,
+      attemptId,
+      currentQuestionIndex,
     });
   }
 
@@ -256,7 +391,51 @@ export default function PracticeSession() {
   }
 
   function handleSaveAndExit() {
-    setLocation(`/dashboard/practice/${categoryId}`);
+    if (!attemptId || isFinished) {
+      setLocation(PRACTICE_HISTORY_PATH, { replace: true });
+      return;
+    }
+
+    // The server marks the attempt completed only if every question is answered.
+    updateAttemptMutation.mutate(
+      {
+        action: "save",
+        currentQuestionIndex,
+        bookmarkedKeys: Array.from(bookmarkedIds),
+      },
+      {
+        onSuccess: () => setLocation(PRACTICE_HISTORY_PATH, { replace: true }),
+        onError: (err) =>
+          toast({
+            title: "Could not save your progress",
+            description: err instanceof Error ? err.message : "Please try again.",
+            variant: "destructive",
+          }),
+      },
+    );
+  }
+
+  function handleFinish() {
+    updateAttemptMutation.mutate(
+      {
+        action: "finish",
+        currentQuestionIndex: Math.min(currentQuestionIndex, questions.length - 1),
+        bookmarkedKeys: Array.from(bookmarkedIds),
+      },
+      {
+        onSuccess: ({ attempt }) => {
+          setCompletedAt(new Date(attempt.completedAt ?? Date.now()));
+          setShowPreFinish(false);
+          setCurrentQuestionIndex(questions.length);
+        },
+        onError: (err) =>
+          toast({
+            title: "Could not finish the session",
+            description: err instanceof Error ? err.message : "Please try again.",
+            variant: "destructive",
+          }),
+      },
+    );
   }
 
   function handleSubmitReport(
@@ -322,14 +501,11 @@ export default function PracticeSession() {
               Go Back
             </Button>
             <Button
-              onClick={() => {
-                setCompletedAt(new Date());
-                setShowPreFinish(false);
-                setCurrentQuestionIndex(questions.length);
-              }}
+              onClick={handleFinish}
+              disabled={updateAttemptMutation.isPending}
               className="bg-green-700 hover:bg-green-800 text-white"
             >
-              Finish
+              {updateAttemptMutation.isPending ? "Finishing..." : "Finish"}
             </Button>
           </div>
         </div>
@@ -367,7 +543,7 @@ export default function PracticeSession() {
             {/* Main */}
             <div>
               <button
-                onClick={() => setLocation(`/dashboard/practice/${categoryId}`)}
+                onClick={() => setLocation(PRACTICE_HISTORY_PATH)}
                 className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-3"
               >
                 <ArrowLeft className="w-4 h-4" />
@@ -764,7 +940,8 @@ export default function PracticeSession() {
             </span>
             <button
               onClick={handleSaveAndExit}
-              className="flex items-center gap-1.5 text-xs font-medium bg-white/20 hover:bg-white/30 rounded px-2.5 py-1.5 transition-colors"
+              disabled={updateAttemptMutation.isPending}
+              className="flex items-center gap-1.5 text-xs font-medium bg-white/20 hover:bg-white/30 rounded px-2.5 py-1.5 transition-colors disabled:opacity-60"
             >
               <LogOut className="w-3.5 h-3.5" />
               Save &amp; Exit

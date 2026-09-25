@@ -21,6 +21,21 @@ const recordAnswerSchema = z.object({
   questionKey: z.string().min(1),
   isCorrect: z.boolean(),
   selectedOptionIndex: z.number().int().nonnegative(),
+  attemptId: z.number().int().positive().optional(),
+  currentQuestionIndex: z.number().int().nonnegative().optional(),
+});
+
+const createAttemptSchema = z.object({
+  categoryId: z.string().min(1),
+  subcategoryId: z.string().min(1),
+  sets: z.number().int().min(1).max(10).default(1),
+  resumeExisting: z.boolean().optional(),
+});
+
+const updateAttemptSchema = z.object({
+  currentQuestionIndex: z.number().int().nonnegative().optional(),
+  bookmarkedKeys: z.array(z.string().min(1).max(200)).max(500).optional(),
+  action: z.enum(["save", "finish"]).optional(),
 });
 
 const stemBlockSchema = z.discriminatedUnion("type", [
@@ -314,6 +329,142 @@ router.get(
       data: {
         questionSets,
         savedAnswers,
+      },
+    });
+  }),
+);
+
+router.get(
+  "/attempts",
+  authenticate,
+  asyncHandler(async (req: Request, res: Response) => {
+    const userId = req.user?.userId;
+
+    if (!userId) {
+      return res.status(401).json({
+        status: "error",
+        message: "Unauthorized",
+      });
+    }
+
+    const statusParam = req.query.status;
+    const status =
+      statusParam === "IN_PROGRESS" || statusParam === "COMPLETED"
+        ? statusParam
+        : undefined;
+
+    const attempts = await practiceService.listAttempts(userId, { status });
+
+    return res.status(200).json({
+      status: "success",
+      data: {
+        attempts,
+      },
+    });
+  }),
+);
+
+router.post(
+  "/attempts",
+  authenticate,
+  asyncHandler(async (req: Request, res: Response) => {
+    const userId = req.user?.userId;
+
+    if (!userId) {
+      return res.status(401).json({
+        status: "error",
+        message: "Unauthorized",
+      });
+    }
+
+    const parseResult = createAttemptSchema.safeParse(req.body);
+
+    if (!parseResult.success) {
+      throw new ValidationError(
+        parseResult.error.errors[0]?.message || "Invalid payload",
+      );
+    }
+
+    const attempt = await practiceService.createAttempt(
+      userId,
+      parseResult.data,
+    );
+
+    return res.status(201).json({
+      status: "success",
+      data: {
+        attempt,
+      },
+    });
+  }),
+);
+
+function readAttemptId(value: string | string[] | undefined): number {
+  const attemptId = Number.parseInt(String(value), 10);
+
+  if (!Number.isFinite(attemptId) || attemptId <= 0) {
+    throw new ValidationError("attemptId must be a number");
+  }
+
+  return attemptId;
+}
+
+router.get(
+  "/attempts/:attemptId",
+  authenticate,
+  asyncHandler(async (req: Request, res: Response) => {
+    const userId = req.user?.userId;
+
+    if (!userId) {
+      return res.status(401).json({
+        status: "error",
+        message: "Unauthorized",
+      });
+    }
+
+    const detail = await practiceService.getAttempt(
+      userId,
+      readAttemptId(req.params.attemptId),
+    );
+
+    return res.status(200).json({
+      status: "success",
+      data: detail,
+    });
+  }),
+);
+
+router.patch(
+  "/attempts/:attemptId",
+  authenticate,
+  asyncHandler(async (req: Request, res: Response) => {
+    const userId = req.user?.userId;
+
+    if (!userId) {
+      return res.status(401).json({
+        status: "error",
+        message: "Unauthorized",
+      });
+    }
+
+    const parseResult = updateAttemptSchema.safeParse(req.body);
+
+    if (!parseResult.success) {
+      throw new ValidationError(
+        parseResult.error.errors[0]?.message || "Invalid payload",
+      );
+    }
+
+    const attempt = await practiceService.updateAttempt(
+      userId,
+      readAttemptId(req.params.attemptId),
+      parseResult.data,
+    );
+
+    return res.status(200).json({
+      status: "success",
+      data: {
+        attempt,
       },
     });
   }),

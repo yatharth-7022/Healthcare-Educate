@@ -2,23 +2,8 @@ import { useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import { usePracticeProgressSummary } from "@/hooks/use-practice-progress";
-import {
-  BookOpen,
-  FlaskConical,
-  Atom,
-  Dna,
-  Zap,
-  ChevronRight,
-  ArrowLeft,
-} from "lucide-react";
-
-const categoryIcons: Record<string, React.ElementType> = {
-  humanities: BookOpen,
-  "general-chemistry": FlaskConical,
-  "organic-chemistry": Atom,
-  biology: Dna,
-  physics: Zap,
-};
+import { BookOpen, ChevronRight, ArrowLeft } from "lucide-react";
+import { categoryIcons } from "@/components/practice/categoryIcons";
 
 function ProgressBar({ value }: { value: number }) {
   return (

@@ -1,5 +1,6 @@
 import { useAuth } from "@/hooks/use-auth";
 import { useLocation, Link } from "wouter";
+import { PRACTICE_HISTORY_PATH } from "@/lib/practice-routes";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -19,6 +20,7 @@ import {
   LayoutDashboard,
   BookOpen,
   Calendar,
+  History,
 } from "lucide-react";
 import logoImg from "@assets/final_logo.png";
 
@@ -28,7 +30,7 @@ interface DashboardLayoutProps {
 
 export function DashboardLayout({ children }: DashboardLayoutProps) {
   const { user, logout } = useAuth();
-  const [, setLocation] = useLocation();
+  const [location, setLocation] = useLocation();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
@@ -52,6 +54,20 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
               >
                 <LayoutDashboard className="mr-2 h-4 w-4" />
                 Dashboard
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                className={`text-sm font-medium hover:text-foreground ${
+                  location === PRACTICE_HISTORY_PATH
+                    ? "text-foreground bg-accent/60"
+                    : "text-muted-foreground"
+                }`}
+                onClick={() => setLocation(PRACTICE_HISTORY_PATH)}
+                data-testid="nav-history"
+              >
+                <History className="mr-2 h-4 w-4" />
+                History
               </Button>
               <Button
                 variant="ghost"
@@ -108,6 +124,13 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                   </div>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
+                <DropdownMenuItem
+                  className="cursor-pointer md:hidden"
+                  onClick={() => setLocation(PRACTICE_HISTORY_PATH)}
+                >
+                  <History className="mr-2 h-4 w-4" />
+                  <span>Practice History</span>
+                </DropdownMenuItem>
                 <DropdownMenuItem className="cursor-pointer">
                   <User className="mr-2 h-4 w-4" />
                   <span>Profile Settings</span>

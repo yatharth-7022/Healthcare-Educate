@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import { usePracticeCategoryProgress } from "@/hooks/use-practice-progress";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
+import { useCreatePracticeAttempt } from "@/hooks/use-practice-progress";
+import { getPracticeSessionPath } from "@/lib/practice-routes";
 import { ArrowLeft, ChevronRight } from "lucide-react";
 
 function EditableRow({
@@ -43,6 +46,8 @@ export default function PracticeConfirm() {
   const params = new URLSearchParams(search);
   const sets = parseInt(params.get("sets") ?? "1", 10);
   const { data, isLoading, error } = usePracticeCategoryProgress(categoryId);
+  const createAttemptMutation = useCreatePracticeAttempt();
+  const { toast } = useToast();
 
   const category = data?.category;
   const subcategory = category?.subcategories.find(
@@ -185,13 +190,38 @@ export default function PracticeConfirm() {
           <Button
             className="h-11 px-8 bg-primary hover:bg-primary/90 text-white font-semibold shadow-md hover:shadow-lg transition-all"
             data-testid="button-start-practice"
+            disabled={createAttemptMutation.isPending}
             onClick={() =>
-              setLocation(
-                `/dashboard/practice/${categoryId}/${subcategoryId}/session?sets=${sets}`,
+              createAttemptMutation.mutate(
+                {
+                  categoryId: String(categoryId),
+                  subcategoryId: String(subcategoryId),
+                  sets,
+                },
+                {
+                  onSuccess: ({ attempt }) =>
+                    setLocation(
+                      getPracticeSessionPath(
+                        attempt.categoryId,
+                        attempt.subcategoryId,
+                        attempt.setsCount,
+                        attempt.id,
+                      ),
+                    ),
+                  onError: (err) =>
+                    toast({
+                      title: "Could not start practice",
+                      description:
+                        err instanceof Error
+                          ? err.message
+                          : "Please try again.",
+                      variant: "destructive",
+                    }),
+                },
               )
             }
           >
-            Start practice
+            {createAttemptMutation.isPending ? "Starting..." : "Start practice"}
           </Button>
         </motion.div>
       </div>

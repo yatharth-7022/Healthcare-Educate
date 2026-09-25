@@ -28,6 +28,10 @@ export type RecordPracticeAnswerInput = {
   questionKey: string;
   isCorrect: boolean;
   selectedOptionIndex: number;
+  /** When set, the answer is also stored against this attempt. */
+  attemptId?: number;
+  /** Position to restore when the attempt is resumed. */
+  currentQuestionIndex?: number;
 };
 
 export type PracticeSavedAnswer = {
@@ -156,4 +160,58 @@ export type PracticeQuestionSetListResponse = {
 export type PracticeSessionResponse = {
   questionSets: PracticeQuestionSet[];
   savedAnswers: Record<string, PracticeSavedAnswer>;
+};
+
+export type PracticeAttemptStatus = "IN_PROGRESS" | "COMPLETED";
+
+export type PracticeAttemptSummary = {
+  id: number;
+  categoryId: string;
+  categoryName: string;
+  subcategoryId: string;
+  subcategoryName: string;
+  status: PracticeAttemptStatus;
+  setsCount: number;
+  totalQuestions: number;
+  answeredQuestions: number;
+  correctQuestions: number;
+  currentQuestionIndex: number;
+  startedAt: string;
+  updatedAt: string;
+  completedAt: string | null;
+};
+
+export type PracticeAttemptDetail = {
+  attempt: PracticeAttemptSummary;
+  questionSets: PracticeQuestionSet[];
+  /** Keyed by `${questionSetId}:${questionId}`. */
+  savedAnswers: Record<string, PracticeSavedAnswer>;
+  bookmarkedKeys: string[];
+};
+
+export type PracticeAttemptListResponse = {
+  attempts: PracticeAttemptSummary[];
+};
+
+export type PracticeAttemptResponse = {
+  attempt: PracticeAttemptSummary;
+};
+
+export type CreatePracticeAttemptInput = {
+  categoryId: string;
+  subcategoryId: string;
+  sets: number;
+  /** Reuse the newest in-progress attempt for this topic instead of starting a new one. */
+  resumeExisting?: boolean;
+};
+
+export type UpdatePracticeAttemptInput = {
+  currentQuestionIndex?: number;
+  bookmarkedKeys?: string[];
+  /**
+   * "save": Save & Exit — completes the attempt only if every question is answered.
+   * "finish": the user finished the session — always completes it.
+   * Omitted: progress snapshot only (index / bookmarks).
+   */
+  action?: "save" | "finish";
 };
