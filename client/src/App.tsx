@@ -114,7 +114,9 @@ function Router() {
 
 function App() {
   const [location] = useLocation();
+  // The dashboard and the auth screen are standalone: no marketing navbar/footer.
   const isDashboard = location.startsWith("/dashboard");
+  const hideSiteChrome = isDashboard || location === "/auth";
 
   // Force light mode on landing pages so dark CSS variables don't bleed in
   useEffect(() => {
@@ -128,11 +130,11 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <div className="flex flex-col min-h-screen">
-          {!isDashboard && <Navbar />}
+          {!hideSiteChrome && <Navbar />}
           <main className="flex-grow">
             <Router />
           </main>
-          {!isDashboard && <Footer />}
+          {!hideSiteChrome && <Footer />}
         </div>
         <Toaster />
       </TooltipProvider>
