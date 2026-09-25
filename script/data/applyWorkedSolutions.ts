@@ -1,10 +1,10 @@
 import * as fs from "fs";
-import * as path from "path";
+import { fileURLToPath } from "url";
 import type { PracticeMcqQuestion, WorkedSolution } from "@shared/models/practice";
 
 type WorkedSolutionSource = Record<string, Record<string, Partial<WorkedSolution>>>;
 
-const SOURCE_PATH = path.join(__dirname, "workedSolutions.json");
+const SOURCE_PATH = fileURLToPath(new URL("./workedSolutions.json", import.meta.url));
 const OPTION_LETTERS = ["A", "B", "C", "D", "E", "F"];
 
 let cached: WorkedSolutionSource | null = null;
