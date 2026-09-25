@@ -15,6 +15,8 @@ app.use((req, res, next) => {
     process.env.FRONTEND_URL || "http://localhost:5173",
     "http://localhost:5173",
     "https://healthcare-educate.vercel.app",
+    "https://smashmed.vercel.app",
+    "https://app.smashmedgamsat.com",
   ];
 
   const origin = req.headers.origin;
