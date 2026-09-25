@@ -102,6 +102,8 @@ export type WorkedSolution = {
   steps: WorkedSolutionStep[];
   eliminations?: WorkedSolutionElimination[];
   answer: string;
+  /** Render the answer callout before steps[answerIndex]; defaults to after the last step. */
+  answerIndex?: number;
 };
 
 export type PracticeMcqQuestion = {

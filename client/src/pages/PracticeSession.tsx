@@ -19,6 +19,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowLeft, Bookmark, ChevronDown, ChevronLeft, ChevronRight, CircleCheck, CircleX, Flag, FlaskConical, Lock, LogOut, Navigation, ThumbsDown, ThumbsUp, X } from "lucide-react";
 import { MathText } from "@/components/practice/MathText";
+import { WorkedSolutionView } from "@/components/practice/WorkedSolutionView";
 
 function answerKey(setId: number, questionId: string) {
   return `${setId}:${questionId}`;
@@ -639,6 +640,14 @@ export default function PracticeSession() {
                   })}
                 </div>
               )}
+
+              {/* Worked solution */}
+              {showExplanation && reviewQuestion?.workedSolution && (
+                <div className="rounded-lg border border-border bg-card p-5 space-y-4">
+                  <h3 className="text-base font-semibold text-foreground">Worked solution</h3>
+                  <WorkedSolutionView solution={reviewQuestion.workedSolution} />
+                </div>
+              )}
             </div>
 
             {/* Right sidebar */}
@@ -665,55 +674,9 @@ export default function PracticeSession() {
                 </div>
                 {showExplanation && (
                   reviewQuestion?.workedSolution ? (
-                    <div className="space-y-4 mb-4">
-                      {reviewQuestion.workedSolution.strategy && (
-                        <div>
-                          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-1">
-                            Strategy
-                          </p>
-                          <p className="text-sm text-foreground/85 leading-relaxed whitespace-pre-line">
-                            <MathText text={reviewQuestion.workedSolution.strategy} />
-                          </p>
-                        </div>
-                      )}
-                      {reviewQuestion.workedSolution.steps.map((step, stepIndex) => (
-                        <div key={stepIndex}>
-                          <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-1">
-                            {step.heading}
-                          </p>
-                          <p className="text-sm text-foreground/85 leading-relaxed whitespace-pre-line">
-                            <MathText text={step.body} />
-                          </p>
-                        </div>
-                      ))}
-                      {reviewQuestion.workedSolution.eliminations &&
-                        reviewQuestion.workedSolution.eliminations.length > 0 && (
-                          <div>
-                            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-1.5">
-                              Eliminations
-                            </p>
-                            <ul className="space-y-1.5">
-                              {reviewQuestion.workedSolution.eliminations.map(
-                                (elimination, elimIndex) => (
-                                  <li
-                                    key={elimIndex}
-                                    className="text-sm text-foreground/85 leading-relaxed"
-                                  >
-                                    <span className="font-medium">{elimination.option}</span>
-                                    {" — "}
-                                    <MathText text={elimination.reason} />
-                                  </li>
-                                ),
-                              )}
-                            </ul>
-                          </div>
-                        )}
-                      <div className="rounded-md bg-primary/5 border border-primary/20 px-3 py-2">
-                        <p className="text-sm font-semibold text-foreground">
-                          <MathText text={`Answer: ${reviewQuestion.workedSolution.answer}`} />
-                        </p>
-                      </div>
-                    </div>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Step-by-step worked solution is shown below the question.
+                    </p>
                   ) : reviewQuestion?.explanation ? (
                     <p className="text-sm text-foreground/85 leading-relaxed mb-4">
                       <MathText text={reviewQuestion.explanation} />

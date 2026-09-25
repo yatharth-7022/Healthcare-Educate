@@ -1,6 +1,7 @@
 import { Prisma } from "@prisma/client";
 import type { CreatePracticeQuestionSetInput } from "@shared/models/practice";
 import { prisma } from "../server/db";
+import { applyWorkedSolutions } from "./data/applyWorkedSolutions";
 
 const CATEGORY_ID = "physics";
 const SUBCATEGORY_ID = "physics-classical-mechanics";
@@ -286,6 +287,7 @@ const input: CreatePracticeQuestionSetInput = {
 };
 
 async function main() {
+  applyWorkedSolutions(input.questions, "physics-capstan");
   const category = await prisma.practiceCategory.findUnique({ where: { id: CATEGORY_ID } });
   const subcategory = await prisma.practiceSubcategory.findUnique({ where: { id: SUBCATEGORY_ID } });
   if (!category || !subcategory) {

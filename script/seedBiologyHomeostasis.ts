@@ -1,6 +1,7 @@
 import { Prisma } from "@prisma/client";
 import type { CreatePracticeQuestionSetInput } from "@shared/models/practice";
 import { prisma } from "../server/db";
+import { applyWorkedSolutions } from "./data/applyWorkedSolutions";
 
 const CATEGORY_ID = "biology";
 const SUBCATEGORY_ID = "biology-homeostasis-and-endocrinology";
@@ -543,6 +544,8 @@ async function main() {
   if (!category || !subcategory) {
     throw new Error("Category/Subcategory not found. Run npm run db:seed:practice first.");
   }
+  applyWorkedSolutions(stems[0].questions, "biology-ppara");
+  applyWorkedSolutions(stems[1].questions, "biology-sardine");
   for (const stem of stems) {
     await seedQuestionSet(stem);
   }

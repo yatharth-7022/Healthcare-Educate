@@ -1,6 +1,7 @@
 import { Prisma } from "@prisma/client";
 import type { CreatePracticeQuestionSetInput } from "@shared/models/practice";
 import { prisma } from "../server/db";
+import { applyWorkedSolutions } from "./data/applyWorkedSolutions";
 
 const CATEGORY_ID = "general-chemistry";
 const SUBCATEGORY_ID = "general-chemistry-materials-chemistry";
@@ -503,6 +504,7 @@ const input: CreatePracticeQuestionSetInput = {
 };
 
 async function main() {
+  applyWorkedSolutions(input.questions, "material-chem");
   const category = await prisma.practiceCategory.findUnique({ where: { id: CATEGORY_ID } });
   const subcategory = await prisma.practiceSubcategory.findUnique({ where: { id: SUBCATEGORY_ID } });
   if (!category || !subcategory) {

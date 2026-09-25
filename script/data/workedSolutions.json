@@ -1,0 +1,724 @@
+{
+  "material-chem": {
+    "q1": {
+      "steps": [
+        {
+          "heading": "Strategy",
+          "body": "The stem gives us numbers, structural diagrams, and a direct explanation of the mechanism. We can answer this by starting with the numerical values, confirming with what we see in the physical structures, and closing with the stem's own words."
+        },
+        {
+          "heading": "Step 1 — Read the numbers from the stem",
+          "body": "The stem gives explicit backbone Tg values:\n\n- Group 1 backbone: Tg,bb = 218 °C\n- Group 2 backbone: Tg,bb = 287 °C\n\nGroup 2's backbone Tg is ~70 °C higher. That directly answers the \"which group\" part of the question — Group 2. Now we need the \"why\"."
+        },
+        {
+          "heading": "Step 2 — Look at the physical structures",
+          "body": "Compare the polymer backbones drawn in Figure 2a and the additional structures for Group 2:\n\n- Group 1 polymers (P3DDT, P3OT, P3HT, P3BT): each repeat unit contains a single thiophene ring with a flexible alkyl side chain attached.\n- Group 2 polymers (PCT6BT, PCDTBT): each repeat unit contains multiple aromatic ring systems — a carbazole unit (three fused rings), a benzothiadiazole ring, and one or two thiophenes. Four to five aromatic ring systems per repeat unit.\n\nSo Group 2 is packed with aromatic rings; Group 1 has just one aromatic ring per repeat unit."
+        },
+        {
+          "heading": "Step 3 — Connect to the stem's own explanation",
+          "body": "The stem tells us directly:\n\n*\"These backbones differ in rigidity, affecting thermal behavior. The study showed that polymers with longer or higher-mass side chains tend to have lower Tg, due to a phenomenon called internal plasticization, where the flexible side chains increase segmental mobility.\"*\n\nTwo things follow from this quote:\n\n- Backbone **rigidity** is what sets the difference in thermal behaviour (i.e. Tg). More aromatic rings → stiffer backbone → less segmental mobility → higher Tg.\n- Flexible side chains **lower** Tg by increasing segmental mobility (internal plasticization). So the side chains work in the opposite direction to backbone rigidity.\n\nApplying this to our two groups: Group 2 has far more aromatic rings in its backbone (Step 2), which makes it more rigid, which sets its backbone Tg above Group 1's (Step 1). The observation from Step 2 explains the numbers from Step 1 — and both align with the stem's stated mechanism."
+        },
+        {
+          "heading": "Eliminations",
+          "body": "- **A and C** — Both claim Group 1 has the higher Tg. The stem's numbers directly disprove this: Group 1 backbone Tg = 218 °C vs Group 2 backbone Tg = 287 °C. Group 2 wins.\n- **D (Group 2, because their side chains contain aromatic rings)** — Right group, wrong reason. Look at the side chains drawn in the structures — C₈H₁₇ and C₆H₁₃ are alkyl (single-bonded carbon chains), not aromatic. The aromatic content in Group 2 is in the *backbone*, not the side chains. Picking D means missing where the rigidity actually comes from."
+        }
+      ],
+      "answer": "B — Group 2, due to their phenyl-rich backbones which are more rigid.",
+      "answerIndex": 4
+    },
+    "q2": {
+      "steps": [
+        {
+          "heading": "Step 1 — Identify what we know and what we need",
+          "body": "The polymer is a Group 1 polymer. From the stem:\n\n$${T}_{g,sc}=- {69}^{\\circ}\\mathrm{C}, {T}_{g,bb}= {218}^{\\circ}\\mathrm{C}, w=0.30$$\n\nWe need to find ${T}_{g}$.\n\nFox equation from the stem:\n\n$$\\frac{1}{{T}_{g}}=\\frac{w}{{T}_{g,sc}}+\\frac{1-w}{{T}_{g,bb}}$$"
+        },
+        {
+          "heading": "Step 2 — Convert all temperatures to Kelvin",
+          "body": "The Fox equation involves reciprocals of temperatures, so the zero point of the scale matters. Celsius won't work — we need Kelvin. Add 273 to each °C value:\n\n$${T}_{g,sc}=-69+273=204\\,\\mathrm{K}$$\n\n$${T}_{g,bb}=218+273=491\\,\\mathrm{K}$$"
+        },
+        {
+          "heading": "Step 3 — Substitute the Kelvin values and $w$ into the Fox equation",
+          "body": "$$\\frac{1}{{T}_{g}}=\\frac{0.30}{204}+\\frac{1-0.30}{491}$$\n\n$$\\frac{1}{{T}_{g}}=\\frac{0.30}{204}+\\frac{0.70}{491}$$"
+        },
+        {
+          "heading": "Step 4 — Solving  $\\frac{1}{{T}_{g}}=\\frac{0.30}{204}+\\frac{0.70}{491}$  without a calculator",
+          "body": "Once you have this equation set up, the calculator-free path is much faster than computing each decimal reciprocal separately.\n\n**Trick 1: multiply top and bottom by 100 to clear the decimals**\n\n$$\\frac{0.30}{204}=\\frac{30}{20,400} \\frac{0.70}{491}=\\frac{70}{49,100}$$\n\n**Trick 2: cancel a factor of 10 in each fraction**\n\n$$\\frac{30}{20,400}=\\frac{3}{2,040} \\frac{70}{49,100}=\\frac{7}{4,910}$$\n\n**Trick 3: simplify each fraction to  $\\frac{1}{\\text{something}}$**\n\nFor the first term, notice $\\frac{3}{2,040}=\\frac{1}{680}$ (since $2,040=3\\times 680$).\n\nFor the second term, round $4,910\\approx 4,900$, and simplify: $\\frac{7}{4,900}=\\frac{1}{700}$.\n\nSo the equation becomes:\n\n$$\\frac{1}{{T}_{g}}\\approx \\frac{1}{680}+\\frac{1}{700}$$\n\n**Trick 4: approximate both denominators as equal**\n\nSince 680 and 700 are close, treat them both as 700:\n\n$$\\frac{1}{{T}_{g}}\\approx \\frac{1}{700}+\\frac{1}{700}=\\frac{2}{700}$$\n\n**Trick 5: invert to get ${T}_{g}$**\n\n$${T}_{g}\\approx \\frac{700}{2}=350\\,\\mathrm{K}$$\n\nSubtract 273 to convert to °C:\n\n$${T}_{g}\\approx 350-273={77}^{\\circ}\\mathrm{C}$$\n\nClose enough to Option C (72 °C)"
+        }
+      ]
+    },
+    "q3": {
+      "steps": [
+        {
+          "heading": "Step 1 — Identify what we know and what we need",
+          "body": "The polymer is phenyl-rich, so it belongs to Group 2. From the stem, Group 2 backbone and side-chain values are:\n\n$${T}_{g,sc}=- {14}^{\\circ}\\mathrm{C}, {T}_{g,bb}={287}^{\\circ}\\mathrm{C}, {T}_{g}= {150}^{\\circ}\\mathrm{C}$$\n\nWe need to find $w$.\n\nFox equation from the stem:\n\n$$\\frac{1}{{T}_{g}}=\\frac{w}{{T}_{g,sc}}+\\frac{1-w}{{T}_{g,bb}}$$"
+        },
+        {
+          "heading": "Step 2 — Convert all three temperatures to Kelvin",
+          "body": "The Fox equation involves reciprocals of temperatures, so the zero point of the scale matters. Celsius won't work — we need Kelvin. Add 273 to each:\n\n$${T}_{g,sc}=-14+273=259\\,\\mathrm{K}$$\n\n$${T}_{g,bb}=287+273=560\\,\\mathrm{K}$$\n\n$${T}_{g}=150+273=423\\,\\mathrm{K}$$"
+        },
+        {
+          "heading": "Step 3 — Substitute the Kelvin values into the Fox equation",
+          "body": "$$\\frac{1}{423}=\\frac{w}{259}+\\frac{1-w}{560}$$"
+        },
+        {
+          "heading": "Step 4 — Solving for $w$ without a calculator",
+          "body": "Rather than converting each term to a decimal reciprocal, we can keep everything as whole-number fractions by finding a common denominator upfront. This avoids the awkward 0.00xxx-range decimals entirely.\n\n**Starting point:**\n\n$$\\frac{1}{423}=\\frac{w}{259}+\\frac{1-w}{560}$$\n\n**Trick 1: get a common denominator on the right-hand side**\n\nMultiply the first term by $\\frac{560}{560}$ and the second by $\\frac{259}{259}$:\n\n$$\\frac{1}{423}=\\frac{560 w}{259\\times 560}+\\frac{259 \\left( 1-w \\right)}{259\\times 560}$$\n\nCombine the two fractions:\n\n$$\\frac{1}{423}=\\frac{560 w+259 \\left( 1-w \\right)}{259\\times 560}$$\n\n**Trick 2: cross-multiply to eliminate all denominators**\n\nMultiply both sides by $259\\times 560$:\n\n$$\\frac{259\\times 560}{423}=560 w+259 \\left( 1-w \\right)$$\n\n**Trick 3: expand the bracket on the right**\n\n$$\\frac{259\\times 560}{423}=560 w+259-259 w$$\n\nGroup the $w$ terms:\n\n$$\\frac{259\\times 560}{423}=\\left( 560-259 \\right) w+259$$\n\n$$\\frac{259\\times 560}{423}=301 w+259$$\n\nAt this point we can approximate $301\\approx 300$ for easier arithmetic:\n\n$$\\frac{259\\times 560}{423}\\approx 300 w+259$$\n\n**Trick 4: approximate the left-hand side using round-number tricks**\n\nWe need to compute $\\frac{259\\times 560}{423}$. Round each number to something friendlier:\n\n- $259\\approx 260$\n- $423\\approx 420$\n- $560$ stays as $560$\n\n$$\\frac{260\\times 560}{420}$$\n\nCancel a factor of 10 from 260 and 420:\n\n$$\\frac{26\\times 560}{42}$$\n\nBoth 26 and 42 divide by 2:\n\n$$\\frac{13\\times 560}{21}$$\n\nBoth 13 and 21 don't share a common factor, but we can simplify $\\frac{560}{21}$: since $21\\times 26=546$ and $21\\times 27=567$, we get $\\frac{560}{21}\\approx 26.7$.\n\nSo:\n\n$$\\frac{13\\times 560}{21}\\approx 13\\times 26.7\\approx 347$$\n\n**Trick 5: substitute back and solve for $w$**\n\n$$347\\approx 300 w+259$$\n\n$$347-259\\approx 300 w$$\n\n$$88\\approx 300 w$$\n\n$$w\\approx \\frac{88}{300}$$\n\nRound the numerator: $\\frac{88}{300}\\approx \\frac{90}{300}=0.30$\n\nMore precisely, $\\frac{88}{300}\\approx 0.29$.\n\nEither estimate lands on option B (0.28). ✓"
+        }
+      ]
+    },
+    "q4": {
+      "steps": [
+        {
+          "heading": "Strategy",
+          "body": "The question asks us to design a polymer that meets two constraints: it must **remain flexible**, and its Tg must be **at least 80 °C**. We can answer this entirely by reading the G″ (dashed) curves in Figures 2a and 2b — the G″ peak marks the Tg of each polymer — and applying the two constraints in sequence to eliminate options."
+        },
+        {
+          "heading": "Step 1 — Identify the two constraints",
+          "body": "- Constraint 1: **flexibility.** From the stem, flexibility comes from side chains — longer side chains give more segmental mobility. So we need a polymer with meaningful side-chain content, not bare backbone.\n- Constraint 2: **Tg ≥ 80 °C.** The polymer must not soften below 80 °C, so its glass transition has to occur at or above that temperature."
+        },
+        {
+          "heading": "Step 2 — Read Tg for each candidate group off the G″ peaks (Figures 2a and 2b)",
+          "body": "The G″ (loss modulus, dashed lines) peak position gives Tg for each polymer.\n\n**Group 1 polymers (Figure 2a):** all four G″ peaks sit below room temperature.\n\n- P3DDT G″ peak ≈ −30 °C\n- P3OT G″ peak ≈ −20 °C\n- P3HT G″ peak ≈ +10 °C\n- P3BT G″ peak ≈ +45 °C (highest in the group)\n\nEven the best Group 1 polymer (P3BT) has Tg ≈ 45 °C — well below 80 °C. So no Group 1 polymer can satisfy constraint 2, no matter what side chain length you pick.\n\n**Group 2 polymers (Figure 2b):**\n\n- PCT6BT G″ peak ≈ 75 °C (borderline, just below 80 °C)\n- PCDTBT G″ peak ≈ 120 °C (comfortably above 80 °C)\n\nOnly Group 2 has polymers with Tg near or above 80 °C."
+        },
+        {
+          "heading": "Step 3 — Constraint 2 forces us to pick a Group 2 backbone",
+          "body": "Since all Group 1 polymers fail the Tg ≥ 80 °C requirement, the correct answer must involve a Group 2 backbone.\n\nThat immediately eliminates **B** (Group 1 backbone) and **D** (Group 1 backbone)."
+        },
+        {
+          "heading": "Step 4 — Choose between the two remaining Group 2 options using constraint 1",
+          "body": "The two Group 2 options are:\n\n- **A.** Group 2 backbone with **no side chains**\n- **C.** Group 2 backbone with **long alkyl side chains**\n\nTake PCDTBT as a concrete reference point. Reading its G″ peak in Figure 2b, its Tg ≈ 120 °C — comfortably above the 80 °C threshold. So a Group 2 polymer with its existing alkyl side chains already satisfies constraint 2 with headroom to spare.\n\nNow think about what changes if we add longer or more side chains. The stem tells us:\n\n*\"polymers with longer or higher-mass side chains tend to have lower Tg, due to a phenomenon called internal plasticization, where the flexible side chains increase segmental mobility.\"*\n\nSo adding more/longer alkyl side chains reduces Tg — say from 120 °C down to around 100 °C. That's still comfortably above 80 °C, but the polymer now has significantly more segmental flexibility. **Both constraints satisfied.** That's option C.\n\nOption A goes in the opposite direction: no side chains at all. Without any side chains, we lose the source of segmental mobility entirely, and the polymer becomes rigid rather than flexible — violating constraint 1."
+        },
+        {
+          "heading": "Eliminations",
+          "body": "- **A** — Right group, wrong side-chain choice. No side chains means no flexibility, which violates constraint 1.\n- **B and D** — Both use Group 1 backbones. Reading Figure 2a, even the highest Tg in Group 1 (P3BT at ~45 °C) falls well below the 80 °C requirement. Group 1 fails constraint 2 regardless of side-chain length."
+        }
+      ],
+      "answer": "C — Use a Group 2 backbone with long alkyl side chains",
+      "answerIndex": 5
+    },
+    "q5": {
+      "steps": [
+        {
+          "heading": "Read Tg from Figure 2a",
+          "body": "Tg = peak of the G″ (loss modulus) dashed curve. Ordering by side-chain length:\n\n- P3DDT (C12H25, longest):  G″ peak ≈ −30 °C\n- P3OT (C8H17):  G″ peak ≈ −20 °C\n- P3HT (C6H13):  G″ peak ≈ +10 °C\n- P3BT (C4H9, shortest):  G″ peak ≈ +45 °C\n\nLonger side chain → larger w → lower Tg. The stem names the mechanism: internal plasticization — flexible alkyl chains increase segmental mobility."
+        },
+        {
+          "heading": "Eliminations",
+          "body": "- A is backwards.\n- C contradicts the clear ~75 °C shift across the series.\n- D is wrong — these polymers were compared at controlled molecular weight; the variable is side-chain mass fraction, not MW."
+        }
+      ],
+      "answer": "B — Tg decreases as side chain mass fraction increases"
+    },
+    "q6": {
+      "steps": [
+        {
+          "heading": "Strategy",
+          "body": "Same physical principle as Q5, asked as a mechanism question. The stem states the answer directly:\n\n*\"polymers with longer or higher-mass side chains tend to have lower Tg, due to … internal plasticization, where the flexible side chains increase segmental mobility.\"*"
+        },
+        {
+          "heading": "Eliminations",
+          "body": "- A inverts the mechanism.\n- C contradicts the entire stem.\n- D invents chemical degradation that is not described anywhere."
+        }
+      ],
+      "answer": "B — Tg decreases because longer side chains increase internal flexibility"
+    },
+    "q7": {
+      "steps": [
+        {
+          "heading": "Strategy",
+          "body": "Tg corresponds to the peak of the G″ (loss modulus) curve — the dashed lines in Figure 2a. Read off the peak temperature for each polymer:\n\n- P3DDT G″ (purple dashed):  peak ≈ −30 °C\n- P3OT G″ (teal dashed):  peak ≈ −20 °C\n- P3HT G″ (orange dashed):  peak ≈ +10 °C\n- P3BT G″ (yellow dashed):  peak ≈ +45 °C **← highest**\n\nP3BT has the shortest side chain (C4H9) of the set, so by the trend established in Q5/Q6 we expect it to have the highest Tg — and it does."
+        }
+      ],
+      "answer": "D — P3BT"
+    },
+    "q8": {
+      "steps": [
+        {
+          "heading": "Strategy",
+          "body": "We need to work out which polymer has w = 0.52. To do that, we first need a working definition of w from the stem, then compute w for each of the four candidate polymers using their molecular structures."
+        },
+        {
+          "heading": "Step 0 — Recognise the assumption you need to make",
+          "body": "The stem calls w the \"side chain mass fraction\" but never writes an equation for it. Students need to translate the term into a working definition. By convention, a mass fraction is:\n\n$$w=\\frac{\\text{mass of the part}}{\\text{mass of the whole}}$$\n\nFor a polymer, this means:\n\n$$w=\\frac{\\text{mass of side chain} (\\text{per repeat unit})}{\\text{mass of full repeat unit}}$$\n\nThat's the assumption we'll use throughout. It's a fair GAMSAT-style deduction from the word \"fraction\" plus knowing what \"mass fraction\" means in physical chemistry."
+        },
+        {
+          "heading": "Step 1 — Set up atomic masses",
+          "body": "Using standard atomic masses:\n\n- C = 12\n- H = 1\n- S = 32"
+        },
+        {
+          "heading": "Step 2 — All four polymers share the same backbone",
+          "body": "All four P3AT polymers (P3HT, P3OT, P3DDT, P3BT) have identical thiophene backbones — they differ only in the length of the alkyl side chain. So we can calculate the backbone mass once and reuse it for all four.\n\n**Backbone (thiophene ring, C₄H₂S per repeat unit):**\n\n$$\\text{Backbone mass}=4\\left( 12 \\right)+2\\left( 1 \\right)+32=48+2+32=82\\,\\text{g/mol}$$"
+        },
+        {
+          "heading": "Step 3 — Compute w for P3HT (Option A, C₆H₁₃ side chain)",
+          "body": "$$\\text{Side chain mass}=6\\left( 12 \\right)+13\\left( 1 \\right)=72+13=85\\,\\text{g/mol}$$\n\n$$\\text{Total repeat unit}=82+85=167\\,\\text{g/mol}$$\n\n$${w}_{P3HT}=\\frac{85}{167}\\approx 0.51$$\n\nRounds cleanly to 0.52. ✓"
+        },
+        {
+          "heading": "Step 4 — Compute w for P3OT (Option B, C₈H₁₇ side chain)",
+          "body": "$$\\text{Side chain mass}=8\\left( 12 \\right)+17\\left( 1 \\right)=96+17=113\\,\\text{g/mol}$$\n\n$$\\text{Total repeat unit}=82+113=195\\,\\text{g/mol}$$\n\n$${w}_{P3OT}=\\frac{113}{195}\\approx 0.58$$\n\nToo high — the C₈ side chain is heavier relative to the small thiophene backbone."
+        },
+        {
+          "heading": "Step 5 — Compute w for P3DDT (Option C, C₁₂H₂₅ side chain)",
+          "body": "$$\\text{Side chain mass}=12\\left( 12 \\right)+25\\left( 1 \\right)=144+25=169\\,\\text{g/mol}$$\n\n$$\\text{Total repeat unit}=82+169=251\\,\\text{g/mol}$$\n\n$${w}_{P3\\text{DDT}}=\\frac{169}{251}\\approx 0.67$$\n\nWay too high — the long C₁₂ side chain dominates the small thiophene backbone."
+        },
+        {
+          "heading": "Step 6 — Compute w for P3BT (Option D, C₄H₉ side chain)",
+          "body": "$$\\text{Side chain mass}=4\\left( 12 \\right)+9\\left( 1 \\right)=48+9=57\\,\\text{g/mol}$$\n\n$$\\text{Total repeat unit}=82+57=139\\,\\text{g/mol}$$\n\n$${w}_{P3BT}=\\frac{57}{139}\\approx 0.41$$\n\nToo low — the short C₄ side chain isn't heavy enough relative to the backbone."
+        },
+        {
+          "heading": "Step 7 — Compare all four",
+          "body": "| **Polymer** | **Side chain** | **w** |\n| --- | --- | --- |\n| **P3HT** | C₆H₁₃ | **≈ 0.51** ✓ |\n| P3OT | C₈H₁₇ | ≈ 0.58 ✗ |\n| P3DDT | C₁₂H₂₅ | ≈ 0.67 ✗ |\n| P3BT | C₄H₉ | ≈ 0.41 ✗ |\n\nOnly P3HT gives w ≈ 0.52."
+        }
+      ],
+      "answer": "A — P3HT"
+    },
+    "q9": {
+      "steps": [
+        {
+          "heading": "Strategy",
+          "body": "Apply the same principle used throughout this stem: **backbone rigidity sets Tg**, and rigidity comes from aromatic rings in the backbone. The more aromatic rings packed into the backbone, the stiffer the polymer, and the higher its Tg. Rank the three molecules by counting aromatic rings in their backbones."
+        },
+        {
+          "heading": "Step 1 — Recall the principle from the stem",
+          "body": "The stem tells us:\n\n*\"These backbones differ in rigidity, affecting thermal behavior.\"*\n\nWe've already seen this play out in the Group 1 vs Group 2 comparison: Group 2 polymers with dense aromatic backbones sit at Tg ≈ 75–120 °C, while Group 1 polymers with a single thiophene ring per repeat unit sit at Tg ≈ −30 to +45 °C. The structural difference between the two groups is the number of aromatic rings per repeat unit.\n\nSo we can rank Molecules 1, 2, and 3 by applying the same reasoning."
+        },
+        {
+          "heading": "Step 2 — Rank the three molecules by aromatic ring content",
+          "body": "- **Molecule B** — backbone packed with multiple aromatic rings (fused ring systems). Structurally similar to Group 2 polymers. **Most rings → highest Tg.**\n- **Molecule A** — backbone contains a single aromatic ring per repeat unit. Some rigidity, but far less than Molecule 2. **Intermediate Tg.**\n- **Molecule C** — backbone is entirely aliphatic (–CH₂–CH₂–), no aromatic rings at all. **No ring-based rigidity → lowest Tg.**\n\nRanking: **Molecule B > Molecule A > Molecule C**"
+        }
+      ],
+      "answer": "B — B > A > C\n\n"
+    },
+    "q10": {
+      "steps": [
+        {
+          "heading": "Strategy",
+          "body": "The question gives us a Group 2 polymer at $w=0.55$ and asks us to find the Group 1 mass fraction that would give the same ${T}_{g}$. This is a two-part problem:\n\n- Read ${T}_{g}$ off Figure 3 for the Group 2 polymer at $w=0.55$.\n- Substitute that ${T}_{g}$ into the Fox equation with Group 1 parameters, and solve algebraically for $w$."
+        },
+        {
+          "heading": "Step 1 — Read ${T}_{g}$ from Figure 3",
+          "body": "Locate $w=0.55$ on the x-axis and trace up to the upper (Group 2) trendline. Reading off the y-axis:\n\n$${T}_{g}\\approx {75}^{\\circ}\\mathrm{C}$$\n\nReading tolerance: anywhere between 70 °C and 80 °C is acceptable — all give the same multiple-choice answer."
+        },
+        {
+          "heading": "Step 2 — Convert all temperatures to Kelvin",
+          "body": "The Fox equation only works in Kelvin, so we need to convert every temperature before substituting. From the stem, Group 1 backbone and side-chain values are:\n\n$${T}_{g,sc}= {-69}^{\\circ}\\mathrm{C}, {T}_{g,bb}= {218}^{\\circ}\\mathrm{C}$$\n\nAdding 273 to each:\n\n$${T}_{g,sc}=-69+273=204\\,\\mathrm{K}$$\n\n$${T}_{g,bb}=218+273=491\\,\\mathrm{K}$$\n\n$${T}_{g}=75+273=348\\,\\mathrm{K}$$"
+        },
+        {
+          "heading": "Step 3 — Set up the Fox equation for Group 1",
+          "body": "Substitute the Group 1 Kelvin values into the Fox equation:\n\n$$\\frac{1}{{T}_{g}}=\\frac{w}{{T}_{g,sc}}+\\frac{1-w}{{T}_{g,bb}}$$\n\n$$\\frac{1}{348}=\\frac{w}{204}+\\frac{1-w}{491}$$"
+        },
+        {
+          "heading": "Step 4 — Solving for $w$  without a calculator",
+          "body": "Instead of computing each awkward decimal reciprocal (0.002874, 0.004902, 0.002037), we can keep everything as whole-number fractions by cross-multiplying at the start.\n\n**Starting point:**\n\n$$\\frac{1}{348}=\\frac{w}{204}+\\frac{1-w}{491}$$\n\n**Trick 1: get a common denominator on the right-hand side**\n\nMultiply the first term by $\\frac{491}{491}$ and the second by $\\frac{204}{204}$:\n\n$$\\frac{1}{348}=\\frac{491 w}{204\\times 491}+\\frac{204 \\left( 1-w \\right)}{204\\times 491}$$\n\nCombine the two fractions:\n\n$$\\frac{1}{348}=\\frac{491 w+204 \\left( 1-w \\right)}{204\\times 491}$$\n\n**Trick 2: cross-multiply to eliminate all denominators**\n\nMultiply both sides by $204\\times 491$:\n\n$$\\frac{204\\times 491}{348}=491 w+204 \\left( 1-w \\right)$$\n\n**Trick 3: expand the bracket on the right**\n\n$$\\frac{204\\times 491}{348}=491 w+204-204 w$$\n\nGroup the $w$ terms:\n\n$$\\frac{204\\times 491}{348}=\\left( 491-204 \\right) w+204$$\n\n$$\\frac{204\\times 491}{348}=287 w+204$$\n\nRound $287\\approx 290$ or even $300$ for easier arithmetic. Let's use $290$:\n\n$$\\frac{204\\times 491}{348}\\approx 290 w+204$$\n\n**Trick 4: approximate the left-hand side using round-number tricks**\n\nWe need to compute $\\frac{204\\times 491}{348}$. Round each number to something friendlier:\n\n- $204\\approx 200$\n- $491\\approx 490$\n- $348\\approx 350$\n\n$$\\frac{200\\times 490}{350}$$\n\nCancel a factor of 10 from 200 and 350: $\\frac{200}{350}=\\frac{20}{35}=\\frac{4}{7}$\n\nSo:\n\n$$\\frac{200\\times 490}{350}=\\frac{4}{7}\\times 490=\\frac{4\\times 490}{7}=\\frac{1960}{7}=280$$\n\n**Trick 5: substitute back and solve for $w$**\n\n$$280\\approx 290 w+204$$\n\n$$280-204\\approx 290 w$$\n\n$$76\\approx 290 w$$\n\n$$w\\approx \\frac{76}{290}$$\n\nRound: $\\frac{76}{290}\\approx \\frac{75}{300}=\\frac{1}{4}=0.25$\n\nOr slightly more precisely, $\\frac{76}{290}\\approx 0.26$.\n\nAnswer is closest to B."
+        }
+      ]
+    }
+  },
+  "biology-ppara": {
+    "q1": {
+      "steps": [
+        {
+          "heading": "Strategy",
+          "body": "Look at both graphs side by side and identify the dominant signal in each. Then check whether Plin2 and TG behave in a coupled or uncoupled way across the four experimental conditions (Control vs knockout × fed vs fasted)."
+        },
+        {
+          "heading": "Reasoning",
+          "body": "Look at the four Plin2 bars carefully. In Controls, Plin2 is ~0.92 when fed and ~1.00 when fasted — a very small change, well within the error bars. In knockouts, Plin2 is ~0.45 in both states. The * > significance markers point to the difference between genotypes (Controls vs knockouts), not between fed and fasted.\n\nSo the dominant signal in the Plin2 graph is: **cPPARα knockout roughly halves Plin2 across both feeding states.** Fasting barely moves Plin2 in either genotype.\n\nNow compare that to the TG graph. In Controls, cardiac TG doubles with fasting (~2.0 → ~4.2), a clear fasting-induced storage response. In knockouts, TG doesn't accumulate on fasting — it stays low or even drops slightly (~1.9 → ~1.3), despite serum FFAs rising normally (Figure A).\n\nPutting these together: TG accumulation during fasting requires the fatty acid supply *and* the storage machinery. Controls have both — FFAs arrive from adipose lipolysis, and adequate Plin2 stabilises the lipid droplets. Knockouts have the fatty acid supply (FFA rises normally) but lack sufficient Plin2 to coat the droplets, so the arriving lipid can't be stored as TG.\n\nSo the honest reading is: **Plin2 acts as a permissive factor for TG storage in the heart — its baseline level (set by PPARα) determines whether fasting-induced TG accumulation can occur.**"
+        },
+        {
+          "heading": "Eliminations",
+          "body": "- **A** — Overstates the Plin2 response to fasting in Controls. The Plin2 bar rises only from ~0.92 to ~1.00 with fasting — a small change within the error bars, not the \"large increase\" this option claims. The real Plin2 signal is genotype-based (Control ~2× knockout), not fasting-based.\n- **B** — Inverts the pattern. Plin2 doesn't rise with fasting in knockouts — it stays flat at ~0.45 in both fed and fasted states. And Plin2 in Controls is higher, not lower, than in knockouts.\n- **D** — Contradicted by the coupling seen across genotypes. Knockouts show *both* reduced Plin2 *and* failure to accumulate TG. If the two were independent, you'd expect to see cases where one moves without the other — but they don't. The two figures point in the same direction, driven by the shared upstream regulator PPARα."
+        }
+      ],
+      "answer": "C — Plin2 is consistently lower in cPPARα⁻/⁻ mice than in Controls in both fed and fasted states, and this reduced Plin2 tracks with the failure of knockouts to accumulate cardiac TG on fasting."
+    },
+    "q2": {
+      "steps": [
+        {
+          "heading": "Reasoning",
+          "body": "Anchor the question around what the data actually exclude:\n\n- Serum FFAs rise in BOTH genotypes with fasting → adipose mobilisation works in knockouts.\n- Knockouts have low Plin2, even when fasted → lipid droplets can’t be properly coated/stabilised.\n- Plin5 is not elevated in knockouts → no compensatory pathway.\n\nWithout Plin2, fatty acids that reach the heart can’t be packaged into stable droplets. The lipid simply doesn’t accumulate as TG."
+        },
+        {
+          "heading": "Eliminations",
+          "body": "- B is directly contradicted by the elevated serum FFAs in knockouts.\n- C invents a Plin5 rise that the data don’t show.\n- D is contradicted by the FFA graph — release is normal."
+        }
+      ],
+      "answer": "A — Reduced Plin2 expression prevents stable storage of triglycerides in lipid droplets"
+    },
+    "q3": {
+      "steps": [
+        {
+          "heading": "Strategy",
+          "body": "This is a \"what if we fixed the broken piece?\" question. To predict what happens when Plin2 is artificially restored in knockouts, we need to figure out exactly why knockouts currently fail to accumulate TG. If the answer is \"not enough Plin2\", then restoring Plin2 should rescue the phenotype. If the answer is something else — no fatty acid supply, alternate lipid handling, etc. — then restoring Plin2 wouldn't help.\n\nWork through the causal chain step by step, checking each link against text and graph evidence."
+        },
+        {
+          "heading": "Step 1 — Is the fatty acid supply intact in knockouts?",
+          "body": "From the text: *\"During fasting, adipose tissue releases free fatty acids (FFAs) into the circulation.\"* This describes the upstream lipolysis step — happens in adipose tissue, not the heart.\n\nFrom Figure A (serum FFAs): both Controls and knockouts show FFA rising from ~0.35 mmol/L (fed) to ~0.7–0.9 mmol/L (fasted). Both are marked significant (*#).\n\n**Conclusion of Step 1:** Adipose mobilisation of FFA is intact in knockouts. So the fatty acid supply arriving at the heart during fasting is not the problem. **The bottleneck must be downstream, inside the heart.**"
+        },
+        {
+          "heading": "Step 2 — What normally happens to the FFA arriving at the heart?",
+          "body": "From the text: *\"These [FFAs] may be oxidised for energy or stored as triglycerides (TG) within lipid droplets in the heart.\"*\n\nTwo possible fates: oxidation (burn for energy) or storage (pack into droplets as TG). This question is specifically about storage, so we focus on that pathway.\n\nFrom the text: *\"Plin2 is a lipid droplet–associated protein that coats lipid droplets and stabilises triglyceride storage.\"*\n\nSo the storage pathway explicitly depends on Plin2. Without adequate Plin2, lipid droplets can't be properly coated, so TG storage should fail."
+        },
+        {
+          "heading": "Step 3 — Why is Plin2 low in knockouts? The PPARα link.",
+          "body": "From the text: *\"The transcription factor peroxisome proliferator-activated receptor-alpha (PPARα) regulates cardiac fatty acid metabolism.\"*\n\nPPARα is a transcription factor — it controls which genes get expressed in the heart, including genes involved in fatty acid metabolism. Cardiac-specific knockout (cPPARα⁻/⁻) removes PPARα specifically from cardiomyocytes.\n\nFrom the Plin2 graph: knockouts sit at ~0.45 (arbitrary units) in both fed and fasted states — roughly half the Control level (~0.92–1.00). The * > markers confirm this genotype difference is significant. Note that this deficit is **chronic** — present in both fed and fasted states — which is the pattern you'd expect from losing an upstream transcription factor that keeps Plin2 baseline elevated.\n\n**Putting the chain together so far:**\n\nPPARα (transcription factor) → drives Plin2 expression → Plin2 (droplet coat) → enables TG storage\n\nLosing PPARα in the cardiomyocytes removes the upstream signal that maintains Plin2 baseline. The Plin2 deficit is a *downstream consequence* of the PPARα knockout, not a coincidence."
+        },
+        {
+          "heading": "Step 4 — Does the TG graph confirm the prediction?",
+          "body": "From the TG graph: Controls double their cardiac TG on fasting (~2.0 → ~4.2 µg/g), a clear storage response. Knockouts fail to accumulate — they stay flat or drop slightly (~1.9 → ~1.3 µg/g), despite FFA arriving normally (Step 1).\n\n**Conclusion of Step 4:** The TG data is consistent with the PPARα → Plin2 → TG chain being broken at the PPARα step. FFA arrives, but the storage machinery downstream is missing because its transcriptional driver has been knocked out."
+        },
+        {
+          "heading": "Step 5 — What if we artificially restore Plin2 in knockouts?",
+          "body": "The pharmacological agent in this question is smart in a specific way: it doesn't try to restore PPARα (which is impossible in a knockout — the gene is gone). Instead, it **bypasses the PPARα → Plin2 step entirely** by directly raising Plin2 through some independent route. The chain looks like:\n\n- Original (broken): PPARα → low Plin2 → no TG storage\n- With drug: PPARα absent, but Plin2 restored artificially → TG storage rescued\n\nSo evaluating the pieces after the drug intervention:\n\n- FFA supply: still intact (Step 1 — this never needed PPARα in the heart, since adipose lipolysis is regulated elsewhere)\n- Plin2: now restored (drug bypasses the missing PPARα)\n- Storage machinery: functional again\n\nBoth prerequisites for TG storage — fatty acid substrate AND droplet-stabilising protein — are now present. **Cardiac TG accumulation would increase in knockouts.**"
+        },
+        {
+          "heading": "Eliminations",
+          "body": "- **B** (Serum FFAs would remain low) — Serum FFAs are regulated upstream by adipose lipolysis, not by cardiac Plin2 or cardiac PPARα. The Plin2 fix acts inside the heart and has no reason to affect FFA release from adipose. From Figure A we already know FFA rises normally in knockouts, so \"remain low\" is contradicted by the existing data.\n- **C** (Cardiac TG would decrease further) — This gets the direction wrong. Adding storage capacity to a system that has fatty acid supply should increase storage, not decrease it. There's no mechanism given in the stem by which more Plin2 would suppress TG.\n- **D** (Plin5 would rise to compensate) — Plin5 already looks essentially flat across all four conditions in the current data. Nothing in the stem suggests Plin5 responds to Plin2 changes, so predicting a compensatory rise is unsupported. Also, the question asks about the direct effect of the Plin2 drug, not about hypothetical downstream compensations."
+        }
+      ],
+      "answer": "A — Cardiac TG accumulation would increase in knockouts."
+    },
+    "q4": {
+      "steps": [
+        {
+          "heading": "Reasoning",
+          "body": "Synthesise the dataset into one statement:\n\n- FFA mobilisation is intact without cardiac PPARα → PPARα doesn’t control adipose release.\n- Plin2 expression tracks PPARα status → PPARα controls cardiac Plin2.\n- Plin2 expression tracks cardiac TG → Plin2 enables storage.\n\nSo the chain is: PPARα → Plin2 → TG storage. That is exactly what option B states."
+        },
+        {
+          "heading": "Eliminations",
+          "body": "- A confuses cardiac PPARα with adipose lipolysis — FFAs rise normally in knockouts.\n- C invents an inverse relationship with Plin5 not present in the data.\n- D overreaches — knockouts had normal serum FFA mobilisation, so cardiac PPARα doesn’t set serum levels."
+        }
+      ],
+      "answer": "B — PPARα controls Plin2 expression, which is linked to TG storage in the heart"
+    },
+    "q5": {
+      "steps": [
+        {
+          "heading": "Step 1 — Extract the formula from the additional information",
+          "body": "The additional information tells us that when Western blot results are reported, the raw signal is divided by a housekeeping protein signal:\n\n**Reported Plin2 = Raw Plin2 signal ÷ Raw GAPDH signal**\n\nThe reason for dividing: the raw signal is confounded by how much sample was loaded onto the gel. Dividing by GAPDH — assumed to be constant across cells — corrects for that, so the ratio isolates the \"true\" Plin2 amount. This assumption is what makes the technique work."
+        },
+        {
+          "heading": "Step 2 — Identify what the question tells us",
+          "body": "The question anchors two facts:\n\n- **Raw Plin2 signal is identical** across all lanes — so the numerator of the ratio is the same in both populations.\n- **GAPDH is lower in the Chinese population** than in the European population — so the denominator differs.\n\nIf the numerator is fixed and the denominator differs, the ratio must differ. The question is: in which direction?"
+        },
+        {
+          "heading": "Step 3 — Work it out with sample numbers",
+          "body": "Assign arbitrary units to make the arithmetic concrete. Say the raw Plin2 signal is 100 units in both populations. Let GAPDH be 100 units in the European group and 50 units in the Chinese group (naturally lower).\n\nFor the European population:\n\n- Raw Plin2 = 100\n- GAPDH = 100\n- **Reported Plin2 = 100 / 100 = 1.0**\n\nFor the Chinese population:\n\n- Raw Plin2 = 100 (same as European — this is stated in the question)\n- GAPDH = 50 (lower per the question)\n- **Reported Plin2 = 100 / 50 = 2.0**\n\nEven though the actual raw Plin2 is identical, the reported values differ by 2×. The Chinese group *appears* to have twice as much Plin2 — but this is purely a mathematical artefact of the smaller denominator, not a biological difference."
+        },
+        {
+          "heading": "Step 4 — Why smaller denominator inflates the ratio",
+          "body": "This is basic arithmetic. Dividing the same numerator by a smaller number gives a bigger result:\n\n- 100 / 100 = 1.0\n- 100 / 50 = 2.0\n- 100 / 25 = 4.0\n\nThe numerator (raw Plin2) hasn't changed. The denominator (raw GAPDH) has shrunk. So the reported value grows — even though the underlying Plin2 hasn't. That inflation looks like a biological signal when it's actually a normalisation artefact."
+        },
+        {
+          "heading": "Step 5 — Apply to the question",
+          "body": "Given:\n\n- Raw Plin2 is identical across populations (numerator fixed)\n- GAPDH is smaller in the Chinese group (smaller denominator)\n- Smaller denominator → larger reported value\n\nSo reported Plin2 will look **artificially higher** in the Chinese population — even though the actual Plin2 levels are the same. That matches option A."
+        },
+        {
+          "heading": "Eliminations",
+          "body": "- **B (Plin2 would appear artificially lower in the Chinese population)** — Reverses the trend explained above.\n- **C (No effect, because housekeeping proteins always control for variability)** — This is wrong - see above\n- **D (GAPDH would biologically increase Plin2 expression)** — Nowhere does it suggest GAPDH affects Plin2 levels."
+        }
+      ]
+    }
+  },
+  "biology-sardine": {
+    "q1": {
+      "steps": [
+        {
+          "heading": "Strategy",
+          "body": "Pair Figure 1 (survival) with Figure 2 (oxygen consumption) and explain the gap using ectotherm thermal physiology."
+        },
+        {
+          "heading": "Step 1 — Read Figure 1",
+          "body": "- FAS20 survival drops steeply across 60 days, ending near ~0.5–0.6.\n- FAS12 stays high (~0.85–0.95) throughout. Big survival gap."
+        },
+        {
+          "heading": "Step 2 — Read Figure 2",
+          "body": "- At both time-windows, 20 °C groups sit ABOVE the 12 °C groups in ṀO₂.\n- Even when fasted, FAS20 consumes more O₂ than FAS12."
+        },
+        {
+          "heading": "Step 3 — Apply ectotherm physiology",
+          "body": "Higher temperature → faster enzymatic rates → higher baseline energy demand. With zero intake during fasting, energy must come from internal reserves. Higher expenditure at 20 °C means reserves deplete faster → starvation arrives sooner → mortality rises."
+        },
+        {
+          "heading": "Eliminations",
+          "body": "- A claims O₂ consumption is suppressed; Figure 2 shows the opposite.\n- C inverts the temperature direction (12 °C is lower, not higher).\n- D blames dissolved-oxygen solubility; the figures point to metabolic demand, not hypoxia."
+        }
+      ],
+      "answer": "B — Higher temperature raises baseline O₂ consumption, so fasted reserves deplete faster, accelerating mortality"
+    },
+    "q2": {
+      "steps": [
+        {
+          "heading": "Strategy",
+          "body": "Look at Figure 3 (relative daily body mass change) across all four treatment groups and identify the dominant pattern. Then cross-check with Figure 2 (oxygen consumption) to make sure the answer is consistent with the metabolic picture."
+        },
+        {
+          "heading": "Reasoning",
+          "body": "Read Figure 3 across all four groups in the 0–30 day window:\n\n- FED12: daily mass change ≈ −0.05 %/day (essentially maintaining mass)\n- FED20: daily mass change ≈ −0.10 %/day (slightly below zero but small)\n- FAS12: daily mass change ≈ −0.30 %/day\n- FAS20: daily mass change ≈ −0.55 %/day\n\nSo the primary driver of substantial mass loss is **feeding status** — no intake means the sardine has to burn internal reserves, which shows up as strongly negative daily mass change. Temperature is a secondary modifier that becomes visible mainly within the fasted category, where higher metabolic rate at 20 °C accelerates the loss.\n\nNote the qualifier \"**predominantly**\" in option C: it correctly acknowledges that fed sardines aren't perfectly flat (there's a small negative drift, especially at 20 °C), but the *substantial* mass loss is confined to the fasted groups."
+        },
+        {
+          "heading": "Eliminations",
+          "body": "- **A** — Wrong direction. Fasted sardines at 20 °C have the highest M˙O₂ (Figure 2) but *lose* the most mass, not gain it. Higher ATP production doesn't build body mass; food intake does. Without intake, higher metabolic rate accelerates loss, not gain.\n- **B** — Directly contradicted by Figure 3. Fasted sardines lose mass roughly twice as fast at 20 °C (≈ −0.55 %/day) as at 12 °C (≈ −0.30 %/day). Temperature clearly matters even when intake is zero, because ectotherm metabolic rate rises with temperature, and higher expenditure with zero intake means faster depletion of reserves.\n- **D** — Overstates the point. Temperature does affect mass change — FAS20 loses mass much faster than FAS12, and there's also a small dip in FED20 vs FED12. Feeding status is the dominant driver, but temperature is not irrelevant."
+        }
+      ],
+      "answer": "C — Across all four treatments, predominantly the fasted sardines show substantial body mass loss, while fed sardines maintain their mass roughly constant regardless of whether they are held at 12 °C or 20 °C."
+    },
+    "q3": {
+      "steps": [
+        {
+          "heading": "Strategy",
+          "body": "Cross-reference WHOLE-ANIMAL metabolism (Figure 2) with CELLULAR/MITOCHONDRIAL respiration (Figure 4)."
+        },
+        {
+          "heading": "Step 1 — Whole animal (Figure 2)",
+          "body": "In the 30–60 day window, FAS20 still shows elevated ṀO₂ relative to FAS12 → systemic metabolic demand stays high."
+        },
+        {
+          "heading": "Step 2 — Mitochondrial (Figure 4)",
+          "body": "At day 60, FAS20 red muscle shows:\n\n- OXPHOS (Panel B) markedly reduced compared with earlier and with other groups.\n- LEAK (Panel A) also reduced.\n\nSo the mitochondria are NOT just tightening coupling — they’re downshifting overall capacity, including ATP-producing capacity."
+        },
+        {
+          "heading": "Step 3 — Synthesise",
+          "body": "We have a mismatch:\n\n- Whole-animal demand stays HIGH (Fig 2).\n- Cellular ATP-producing capacity falls (Fig 4).\n\nThat mismatch is precisely option C’s wording."
+        },
+        {
+          "heading": "Eliminations",
+          "body": "- A asserts mitochondria DRIVE whole-animal O₂ down — Fig 2 shows the opposite (whole-animal O₂ stays high).\n- B claims LEAK compensates fully — OXPHOS also drops and survival still collapses, so this option is incorrect\n- D claims survival improves with coupling efficiency — survival actually worsens at 20 °C (Fig 1)."
+        }
+      ],
+      "answer": "C — Whole-animal metabolic demand remains elevated despite a reduction in mitochondrial ATP-producing capacity"
+    },
+    "q4": {
+      "steps": [
+        {
+          "heading": "Step 1 — Set up the daily energy expenditure",
+          "body": "Given:\n\nE  =  ṀO₂  ×  ε  ×  24,    ε = 0.014 kJ per mg O₂\n\nPer fish, per day, per gram:\n\nE₂₀  =  0.30 × 0.014 × 24  =  0.1008 kJ g⁻¹ day⁻¹\n\nE₁₂  =  0.20 × 0.014 × 24  =  0.0672 kJ g⁻¹ day⁻¹"
+        },
+        {
+          "heading": "Step 2 — Convert energy to mass loss using lipid energy density",
+          "body": "Food intake is zero, so all expenditure comes from internal lipid (ρ = 23 kJ g⁻¹):\n\nΔm  =  (Eᵢₙ − Eₒᵤₜ) / ρ  =  − Eₒᵤₜ / 23\n\nΔm₂₀  =  0.1008 / 23  ≈  0.00438 g g⁻¹ day⁻¹\n\nΔm₁₂  =  0.0672 / 23  ≈  0.00292 g g⁻¹ day⁻¹"
+        },
+        {
+          "heading": "Step 3 — Take the difference",
+          "body": "Δm₂₀ − Δm₁₂  =  0.00438 − 0.00292  ≈  0.00146 g g⁻¹ day⁻¹\n\nClosest option:\n\n- A. 0.0005 — too small (factor of 3 off).\n- B. 0.002 — closest match (within 30%). **✓**\n- C. 0.006 — too large.\n- D. 0.020 — wildly too large."
+        },
+        {
+          "heading": "Special note",
+          "body": "**Why don't the two \"grams\" cancel?** They measure different things: g (lets call it body) is the total sardine mass (from the M˙O₂ normalisation), while the other g (lets call it lipid) is the mass of lipid being burned (from ρ). Same SI unit, but different physical quantities — so they stay separate. The final answer means \"grams of lipid burned, per gram of body mass, per day\" — i.e. the fraction of body mass lost daily."
+        }
+      ],
+      "answer": "B — 0.002 g g⁻¹ day⁻¹"
+    }
+  },
+  "physics-granular": {
+    "q1": {
+      "steps": [
+        {
+          "heading": "Strategy",
+          "body": "Compare the SCALING of cohesion vs gravity with radius. The maximum angle depends on the ratio Fᶜ / Fᵍ."
+        },
+        {
+          "heading": "Step 1 — Scaling laws",
+          "body": "Capillary force: Fᶜ  =  απΓr       (scales as r¹)\n\nGravity on a particle: Fᵍ  =  mg  =  ρ(4πr³/3)g       (scales as r³)"
+        },
+        {
+          "heading": "Step 2 — Build the ratio",
+          "body": "Fᶜ / Fᵍ  ∝  r / r³  =  1 / r²\n\nAs r decreases, the ratio of cohesion to gravity GROWS as 1/r² — cohesion becomes relatively dominant. The pile can therefore sit at a steeper angle before failing."
+        },
+        {
+          "heading": "Eliminations",
+          "body": "- B says capillary grows faster than gravity as r decreases — wrong direction in absolute terms; both DECREASE with smaller r, but gravity decreases FASTER, which is the ratio argument in A.\n- C says they both scale identically— wrong; r vs r³ are not identical.\n- D invokes shear stresses with no connection to the cohesion model in the stem."
+        }
+      ],
+      "answer": "A — Smaller particles exhibit higher θₘ because the ratio of capillary force to gravitational force increases as particle radius decreases"
+    },
+    "q2": {
+      "steps": [
+        {
+          "heading": "Step 1 — Isolate the r dependence",
+          "body": "With L, Γ, ρ, packing fraction, etc. all fixed, the stem equation gives:\n\nθₘ − θₑ  ∝  1 / √r"
+        },
+        {
+          "heading": "Step 2 — Form the ratio",
+          "body": "(θₘ(r₁) − θₑ) / (θₘ(r₂) − θₑ)  =  √(r₂/r₁)  =  √(1.0 / 0.5)  =  √2"
+        },
+        {
+          "heading": "Step 3 — Numerical value",
+          "body": "√2  ≈  1.41\n\nClosest option: B (1.4)."
+        },
+        {
+          "heading": "Trap watch",
+          "body": "A common error is to forget the SQUARE ROOT and use r₂/r₁ = 2 directly → option C. Another is to use r₁/r₂ (wrong direction) → 0.7."
+        }
+      ],
+      "answer": "B — 1.4"
+    },
+    "q3": {
+      "steps": [
+        {
+          "heading": "Step 1 — Read Figure 2 at r = 0.5 mm",
+          "body": "Figure 2 shows the curve passing through approximately:\n\nθₘ  ≈  38°  at  r = 0.5 mm"
+        },
+        {
+          "heading": "Step 2 — Cross-reference with Figure 1",
+          "body": "Figure 1 shows θₘ vs W. Locate θₘ ≈ 38° on the y-axis and read off the corresponding W. The curve is steep in this region:\n\n- At W ≈ 2 cm → θₘ ≈ 42°\n- At W ≈ 3 cm → θₘ ≈ 38–39°  ← best match\n- At W ≈ 4 cm → θₘ ≈ 36°\n\n→ W ≈ 3 cm."
+        },
+        {
+          "heading": "Why not the others",
+          "body": "- B (5 cm) gives θₘ ≈ 35–36°, too low.\n- C (8 cm) gives θₘ ≈ 31–32°, well below 38°.\n- D (12 cm) gives θₘ ≈ 30°, on the plateau."
+        }
+      ],
+      "answer": "A — W ≈ 3 cm"
+    },
+    "q4": {
+      "steps": [
+        {
+          "heading": "Reasoning",
+          "body": "If W is OVERESTIMATED, each measured θₘ value gets PLOTTED at a W larger than the true one. The y-coordinate (θₘ) is correct; only x shifts.\n\n- Every point shifts horizontally to the right.\n- The data still trace out a decay, but stretched along the W-axis.\n- A given Δθ now spans a larger ΔW → the curve looks like it decays more slowly."
+        },
+        {
+          "heading": "Eliminations",
+          "body": "- B (shift upward) would require a y-axis error, not an x-axis error.\n- C (shift left, faster decay) is the wrong direction for an OVERestimate of W.\n- D (collapse onto a horizontal line) would require a different kind of corruption entirely."
+        }
+      ],
+      "answer": "A — Data points shift right; the curve appears to decay more slowly with W"
+    },
+    "q5": {
+      "steps": [
+        {
+          "heading": "Reasoning",
+          "body": "Figure 1’s fit form is:\n\nθₘ  =  a₀ exp(−b₀ W) + c₀\n\nThis decays exponentially towards a PLATEAU value c₀ ≈ 30°. At W ≈ 13–15 cm, θₘ is already essentially at the asymptote (~30°). Extending W to 20 cm produces little further change."
+        },
+        {
+          "heading": "Eliminations",
+          "body": "- A (≈ 20°) — would imply θₘ keeps dropping past the plateau, contradicting the fit.\n- B (≈ 25°) — same issue.\n- D (≈ 38°) — corresponds to small W, not extrapolation beyond 15 cm."
+        }
+      ],
+      "answer": "C — θₘ ≈ 30°"
+    },
+    "q6": {
+      "steps": [
+        {
+          "heading": "Step 1 — Isolate the exponential part",
+          "body": "The fit on Figure 1 is:\n\nθₘ  =  a₀ exp(−b₀ W)  +  c₀\n\nSubtract c₀ from both sides:\n\nθₘ − c₀  =  a₀ exp(−b₀ W)\n\nWe now have a pure exponential — no additive baggage."
+        },
+        {
+          "heading": "Step 2 — Take ln of both sides",
+          "body": "Unlike ln of a SUM, ln of a PRODUCT splits cleanly:\n\nln(θₘ − c₀)  =  ln(a₀)  +  ln[ exp(−b₀ W) ]  =  ln(a₀)  −  b₀ W"
+        },
+        {
+          "heading": "Step 3 — Read off the shape",
+          "body": "This is the equation of a straight line in W:\n\n- y-intercept = ln(a₀)   (a constant, shifts the line up or down)\n- slope = −b₀   (negative, so the line falls left-to-right)\n\n→ straight line, negative slope, all the way across the plot."
+        },
+        {
+          "heading": "Why subtract c₀ first?",
+          "body": "Two algebraic identities are doing all the work here:\n\n- **ln(A + B)** *≠* ln(A) + ln(B)        (ln does NOT split over addition)\n- **ln(A · B)** =  ln(A) + ln(B)        (ln DOES split over multiplication)\n\nThe original fit θₘ = a₀ exp(−b₀W) + c₀ mixes a product (a₀ × exp) with a sum (+ c₀), so ln gets stuck on the addition. Subtracting c₀ removes the sum, leaving a pure product — which ln handles in one line."
+        },
+        {
+          "heading": "Eliminations",
+          "body": "- B (positive slope) — wrong would be correct if it was instead +  b₀ W\n- C (horizontal line) — wrong as here we have linear relationship with a negative slope\n- D (curve with plateau) — wrong as here we have linear relationship"
+        }
+      ],
+      "answer": "A — Straight line with negative slope"
+    }
+  },
+  "physics-electricity": {
+    "q1": {
+      "steps": [
+        {
+          "heading": "Step 1 — Identify what we know and what we need",
+          "body": "The question asks for the total charge Q on the cap. Let’s take stock of what’s given and what needs to be found:\n\n•       Known: applied voltage V = 10 V\n\n•       Known: aperture angle θ = 1.439\n\n•       Unknown: capacitance C\n\n•       Target: total charge Q\n\nThe capacitance equation from the stem links all three quantities:\n\nC  =  Q / V   \t→   \tQ  =  C · V\n\nSo if we can find C, the problem is essentially done — we just multiply by V."
+        },
+        {
+          "heading": "Step 2 — Get C from Table I",
+          "body": "Table I gives the capacitance for each aperture angle in two columns:\n\n•       Cₐₚ — the value from the paper’s numerical (approximate) method\n\n•       Cₑₓ — the value from the exact analytical solution\n\nReading across the row where θ = 1.439:\n\n•       Cₐₚ = 0.788\n\n•       Cₑₓ = 0.774\n\nSince the paper is presenting the numerical method as its main result (and testing its accuracy against the exact solution), we use Cₐₚ = 0.788 as the value the question is pointing at."
+        },
+        {
+          "heading": "Step 3 — Multiply C by V to get Q",
+          "body": "Now that we have both C and V, plug them into Q = C · V:\n\nQ  =  Cₐₚ × V  =  0.788 × 10  =  7.88 C"
+        }
+      ],
+      "answer": "B — 7.88 C"
+    },
+    "q2": {
+      "steps": [
+        {
+          "heading": "Setup",
+          "body": "At fixed θ, drop the angular factors so we work with effective coefficients only:\n\nΦ(r)  =  A₀ + A₁ r + A₂ r²  =  4 + A₁ r + A₂ r²\n\nLet X = A₁ r₁ and Y = A₂ r₁². These substitutions remove explicit r₁ from the algebra and make scaling at 2r₁ and 3r₁ trivial."
+        },
+        {
+          "heading": "Step 1 — Write the two known equations",
+          "body": "At r = r₁, the potential is 10 V:\n\n4 + X + Y  =  10        →   X + Y  =  6\n\nAt r = 2r₁, the potential is 20 V. Each term scales by the appropriate power of 2:\n\n4 + A₁(2r₁) + A₂(2r₁)²  =  4 + 2X + 4Y  =  20\n\n→   2X + 4Y  =  16    →   X + 2Y  =  8"
+        },
+        {
+          "heading": "Step 2 — Solve the simultaneous equations",
+          "body": "(X + 2Y) − (X + Y)  =  8 − 6        →   Y  =  2\n\nX  =  6 − Y  =  4\n\nSo A₁ r₁ = 4 V and A₂ r₁² = 2 V."
+        },
+        {
+          "heading": "Step 3 — Evaluate at r = 3r₁",
+          "body": "Each term scales by the appropriate power of 3:\n\nΦ(3r₁)  =  4 + A₁(3r₁) + A₂(3r₁)²  =  4 + 3X + 9Y\n\n=  4 + 3(4) + 9(2)  =  4 + 12 + 18  =  34 V"
+        },
+        {
+          "heading": "Sanity check",
+          "body": "Verify against both given measurements:\n\n- At r₁:    4 + 4 + 2  =  10 ✓\n- At 2r₁:   4 + 8 + 8  =  20 ✓\n\nBoth anchor measurements are satisfied, so Φ(3r₁) = 34 V is consistent with the data."
+        }
+      ],
+      "answer": "C — 34 V"
+    },
+    "q3": {
+      "steps": [
+        {
+          "heading": "Strategy",
+          "body": "Express each term as a multiple of A₀, then track how each power of r scales when r doubles. The constant stays put, the linear term doubles, and the quadratic term quadruples."
+        },
+        {
+          "heading": "Step 1 — Translate the question into algebra",
+          "body": "Let A₀ = K (the constant term).\n\n- Linear term contributes twice as much as A₀  →  A₁ r₀  =  2K\n- Quadratic term contributes the same as A₀  →  A₂ r₀²  =  K"
+        },
+        {
+          "heading": "Step 2 — Compute Φ(r₀)",
+          "body": "Φ(r₀)  =  A₀ + A₁ r₀ + A₂ r₀²  =  K + 2K + K  =  4K"
+        },
+        {
+          "heading": "Step 3 — Compute Φ(2r₀)",
+          "body": "Scale each term by the appropriate power of 2:\n\n- Constant: A₀ = K (unchanged)\n- Linear: A₁(2r₀) = 2 × (A₁ r₀) = 2(2K) = 4K\n- Quadratic: A₂(2r₀)² = 4 × (A₂ r₀²) = 4(K) = 4K\n\nΦ(2r₀)  =  K + 4K + 4K  =  9K"
+        },
+        {
+          "heading": "Step 4 — Form the ratio",
+          "body": "Φ(2r₀) / Φ(r₀)  =  9K / 4K  =  9/4  =  2.25\n\nExactly matches Option A."
+        }
+      ],
+      "answer": "A — Φ increases by a factor of 2.25"
+    },
+    "q4": {
+      "steps": [
+        {
+          "heading": "Setup",
+          "body": "From the stem:\n\nσ(θ)  =  −ε₀ ΔΦ / Δr\n\nAssuming Δr is the same at both angles, σ is proportional to ΔΦ/Δr — the radial gradient of the potential at that angular position."
+        },
+        {
+          "heading": "Reasoning",
+          "body": "If σ(θ₁) = 2 σ(θ₂), then (ΔΦ/Δr)₁ = 2 (ΔΦ/Δr)₂. That is exactly what option A asserts."
+        },
+        {
+          "heading": "Eliminations",
+          "body": "- B confuses the VALUE of Φ with the RATE of change of Φ — σ depends on the gradient, not the absolute potential.\n- C invokes angular variation, but the surface charge equation contains only the RADIAL derivative ie. There is no angular variation mentioned in the stem.\n- D asserts E = 0 at θ₂, which would mean σ = 0 there — contradicting \"twice that of a non-zero quantity\"."
+        }
+      ],
+      "answer": "A — The change in electric potential with distance at θ₁ is twice that at θ₂"
+    },
+    "q5": {
+      "steps": [
+        {
+          "heading": "Step 1 — What Figure 1 shows (and how to read θ)",
+          "body": "Figure 1 plots the surface charge density σ against the aperture angle θ. Before reading the trend, it's worth pausing on what θ actually represents geometrically, because \"aperture\" suggests \"opening\" but the symbol θ measures the opposite.\n\nLook at the geometry diagram in the stem. The aperture angle θ is measured from the vertical axis outward to the edge of the cut in the sphere. So:\n\n- **Small θ** (e.g. θ = 0.5 rad): the angle from the axis is small, meaning only a tiny piece of the sphere sits above the cut. The cap is a shallow bowl. Most of the sphere is missing.\n- **θ = π/2 ≈ 1.57 rad**: the angle sweeps a right angle from the axis, so you have exactly a hemisphere — half the sphere is present.\n- **θ approaching π ≈ 3.14 rad**: the angle almost reaches the opposite pole of the sphere. Nearly the entire sphere is present, with only a tiny hole left.\n- **θ = π exactly**: the \"hole\" closes to a single point — a complete sphere.\n\nSo **as θ increases, more of the sphere is present**, not less. Larger θ = bigger conducting cap.\n\nNow reading Figure 1:\n\n- For small θ (from 0 to about 1.8 rad), σ is essentially flat around ~10.\n- Between θ ≈ 1.8 and θ ≈ 2.3 rad, σ rises gradually to ~12.\n- As θ approaches ~2.5 rad (getting close to a fully closed sphere at θ = π), σ shoots up sharply, reaching over 22.\n\nCombined with the geometry above, Figure 1 is telling us: **as the cap grows in size (θ increases), more charge sits on each unit of its surface.**"
+        },
+        {
+          "heading": "Step 2 — What Table I shows",
+          "body": "Table I lists the capacitance C at increasing aperture angles:\n\n- θ = 0.785 (small cap): C ≈ 0.50\n- θ = 1.571 (hemisphere): C ≈ 0.83\n- θ ≈ π (nearly full sphere): C ≈ 1.0\n\nSo the capacitance grows monotonically with θ — roughly doubling across the range shown. No plateaus, no reversals, no noise."
+        },
+        {
+          "heading": "Step 3 — Tie the two figures together with C = Q/V",
+          "body": "From the stem, C = Q/V. In this experiment V is held fixed (the cap is connected to a voltage source at constant potential), so any change in C must come from a change in Q — the total charge on the conductor.\n\nNow trace the logic across the two figures:\n\n- Figure 1: as θ grows, σ (charge per unit area) rises.\n- Geometrically: as θ grows, the cap's surface area also grows (more sphere present).\n- Combined: more σ over more area = more total Q on the conductor.\n- With V fixed: more Q → higher C = Q/V.\n\nThat matches Table I exactly. **Both figures are telling the same story from different angles**: Figure 1 shows the charge density rising, Table I shows the resulting capacitance rising. Option A captures this directly."
+        },
+        {
+          "heading": "Step 4 — Why the other options fail",
+          "body": "**B — \"Capacitance depends only on the applied voltage; σ has no bearing on C.\"**\n\nThis gets the physics of capacitance backwards. Capacitance is a *geometric* property of a conductor — it's set by the shape and size of the conductor, not by V. In fact C = Q/V is defined precisely so that when you change V, Q scales with it and the ratio C stays the same. The link between σ and C is direct: total charge Q = ∫σ dA (surface charge summed over area), and C = Q/V, so σ absolutely bears on C.\n\n**Understanding σ (surface charge density)**\n\nσ tells us how much charge sits on each square metre of the conductor's surface. Think of it like population density on a map — if a city has 500 people per km² over 20 km², its total population is 500 × 20 = 10,000. Charge works the same way: if σ is uniform, then Q = σ × A.\n\n**What if σ isn't uniform?**\n\nOn real conductors, charge sometimes crowds more in some places than others (like people crowding in city centres and thinning out in suburbs). In that case you split the surface into small patches, work out σ × A for each patch, and add them all up. That's what the calculus symbol ∫σ dA means — \"add up σ × area, patch by patch, across the whole surface.\"\n\n**Why this matters for capacitance**\n\nEither way, total Q comes from adding up σ across the surface, so higher σ → more Q. Since C = Q/V and V is held fixed here, higher Q means higher C. That's the direct link: σ affects C through Q.\n\nTip for understanding capacitance formula:\n\nThink of a bucket sitting under a tap.\n\n- The **size of the bucket** = capacitance C. Fixed. You can't change it by turning the tap harder.\n- The **water pressure** you turn the tap to = voltage V.\n- The **amount of water** that ends up in the bucket = charge Q.\n\nIf you turn the tap up to twice the pressure, twice as much water flows into the bucket. The bucket didn't change size — it just filled up more because you were pushing harder. The \"bigness\" of the bucket (its capacity) is set by the bucket's shape. That's C.\n\n**C — \"σ rises with θ, so capacitance decreases with θ, since higher charge density means less voltage is needed.\"**\n\nThis inverts the direction of the trend. Table I plainly shows C *rising* with θ, not falling. The reasoning error is confusing σ (charge per unit area) with a voltage-to-charge relationship — but C = Q/V, so if V is fixed and Q rises (which is what higher σ implies), then C must rise, not fall.\n\n**D — \"Both figures suggest capacitance is roughly constant, with small variations reflecting numerical noise.\"**\n\nNeither trend is noise-like. Table I: C runs from 0.50 → 1.00, a factor of 2 increase. Figure 1: σ runs from ~10 → over 22, more than doubling. These are large, monotonic, systematic changes with clear physical meaning — not measurement scatter. The gap between Cₐₚ and Cₑₓ in each row (the numerical method's error) is only about 1–3%, so any \"noise\" is far smaller than the actual signal."
+        }
+      ],
+      "answer": "A\n\nAs the aperture angle increases, the surface charge density rises (Figure 1). More σ across a growing conducting surface means more total Q. With V fixed, more Q means higher C = Q/V, which is exactly the trend shown in Table I."
+    }
+  },
+  "physics-capstan": {
+    "q1": {
+      "steps": [
+        {
+          "heading": "Step 1 — Read μₖ from Figure 3a",
+          "body": "Cord = nylon; surface = masking tape over brass → use curve b on Figure 3a. At θ = 55°:\n\nμₖ  ≈  0.23"
+        },
+        {
+          "heading": "Step 2 — Convert θ to radians",
+          "body": "θ  =  55 × π/180  ≈  55 × 3.14 / 180  ≈  0.96 rad"
+        },
+        {
+          "heading": "Step 3 — Apply the kinetic capstan equation",
+          "body": "ln(T₂/T₁)  =  μₖ · θ  =  0.23 × 0.96  ≈  0.23 × 1\n\nT₂/T₁  ≈   ${e}^{0.23}$"
+        },
+        {
+          "heading": "Step 4 — Match to the exponential options",
+          "body": "This answer is closest to option B, ${e}^{0.25}$"
+        }
+      ],
+      "answer": "B — T₂/T₁ ≈ e⁰˙²⁵"
+    },
+    "q2": {
+      "steps": [
+        {
+          "heading": "Step 1 — Decode the conditions to find the right figure",
+          "body": "The cues are:\n\n- \"Nylon cord\" → rules out Figure 4 (polyethylene only).\n- \"Half-turn\" → θ = 180°\n- \"Bare brass cylinder\" → selects a specific curve.\n- \"Combined weight = 200 N\" → the x-axis variable on Figure 3b is T₁+T₂.\n\nThese cues funnel us to Figure 3b, curve b (bare brass = lower red line)."
+        },
+        {
+          "heading": "Step 2 — Justify T₁ + T₂ = total weight",
+          "body": "At θ = 180° the cord drapes vertically off both sides. Both masses are in equilibrium (constant speed), so the cord tensions balance the weights:\n\nT₁  =  m₁ g,\tT₂  =  m₂ g \t→     T₁ + T₂  =  (m₁ + m₂) g  =  200 N\n\nThis identity only holds because the wrap is 180°."
+        },
+        {
+          "heading": "Step 3 — Read μₖ from Figure 3b",
+          "body": "On curve b (bare brass) at T₁ + T₂ = 200 N:\n\nμₖ  ≈  0.12"
+        },
+        {
+          "heading": "Step 4 — Apply the capstan equation",
+          "body": "$$\\frac{T_2}{T_1} = e^{\\mu_k \\theta} = e^{0.12\\times 3.14} \\approx e^{0.38}$$\n\nUsing the table: $e^{0.4}$ = 1.49, $e^{0.3}$ = 1.35, so $e^{0.38}$ ≈ 1.46."
+        },
+        {
+          "heading": "Step 5 — Solve the simultaneous equations",
+          "body": "T₁ + T₂  =  200, \tT₂ = 1.46 T₁\n\nT₁ (1 + 1.46)  =  200 \t→ \tT₁  =  200 / 2.46  ≈  81 N"
+        },
+        {
+          "heading": "Understanding the stem",
+          "body": "**Physical intuition — why ${T}_{1}+{T}_{2}$ rather than ${T}_{2}-{T}_{1}$**\n\nBefore doing the algebra, it's worth building the right physical picture, because a rope wrapped around a fixed post behaves very differently from a rope over an ordinary pulley.\n\nImagine a ship pulling on a mooring rope with 10,000 N of force. The rope is looped around a fixed metal post (a bollard) on the dock a few times, and a dockworker holds the loose end with just 50 N — about the effort of holding a shopping bag. The ship doesn't slip away, and the dockworker isn't superhuman. What's going on?\n\nThe answer is friction. Wherever the rope touches the post, friction grabs it and holds it in place. The more of the rope that touches the post — i.e. the more times you wrap it around — the more friction you get. But here's the key: friction on a wrapped rope doesn't just *add up* as you add more wraps, it *multiplies*. Each extra wrap boosts the holding power by another factor (not another fixed amount).\n\nThat's exactly what the capstan equation is saying:\n\n$${T}_{2}={T}_{1} {e}^{{\\mu }_{k}\\theta }$$\n\nThe wrap angle $\\theta$ sits inside the exponent, so as $\\theta$ grows, the tension ratio ${T}_{2}/{T}_{1}$ grows *exponentially*. Let's see what that means in numbers, assuming a typical rope on metal with ${\\mu }_{k}\\approx 0.3$.\n\n**One full turn** ($\\theta =2\\pi \\approx 6.28$ rad):\n\n$$\\frac{{T}_{2}}{{T}_{1}}={e}^{0.3\\times 6.28}={e}^{1.88}\\approx 6.6$$\n\nSo with just one loop around the post, the tension on one side can be about 6.6× the tension on the other. A dockworker pulling with 50 N could hold back $50\\times 6.6\\approx 330$ N — about the weight of a heavy suitcase.\n\n**Two full turns** ($\\theta =4\\pi \\approx 12.57$ rad):\n\n$$\\frac{{T}_{2}}{{T}_{1}}={e}^{0.3\\times 12.57}={e}^{3.77}\\approx 43$$\n\nTwo wraps and the ratio jumps from 6.6× to about 43×. A 50 N grip can now hold $50\\times 43\\approx 2,150$ N — over 200 kg of pull, roughly the weight of a large motorbike.\n\n**Three full turns** ($\\theta =6\\pi \\approx 18.85$ rad):\n\n$$\\frac{{T}_{2}}{{T}_{1}}={e}^{0.3\\times 18.85}={e}^{5.65}\\approx 285$$\n\nThree wraps and we're up to 285×. That 50 N grip now holds back $50\\times 285\\approx 14,250$ N — enough to secure a small boat.\n\nNotice how the numbers explode: $6.6\\to 43\\to 285$. Each extra wrap doesn't add a fixed amount of holding power, it *multiplies* what you already had by another factor of ${e}^{2\\pi \\times 0.3}\\approx 6.6$. Same reason bacteria multiplying in a Petri dish or compound interest in a bank account snowballs so quickly — the *rate* of growth depends on how much you already have.\n\n**So why isn't this just ${T}_{2}-{T}_{1}$, like in a pulley problem?**\n\nThis is the key mental shift, and it's worth taking a moment to get right. In an ordinary pulley, the rope doesn't press hard against the pulley wheel — the wheel just spins freely with the rope, so there's almost no friction. That means the tension is the same everywhere along the rope: ${T}_{1}={T}_{2}$. Because the tensions on both sides are equal, the *only* thing that can make the rope move is a difference in the weights hanging off it — the heavier side falls, and we describe that with something like \"net force $={m}_{2}g-{m}_{1}g$\". The *difference* between the two sides is what matters, because everything else is balanced.\n\n**A capstan is not this.** The post here doesn't spin. The rope drags against it, and the more you wrap the rope around the post, the more of the rope's surface is being squeezed against the post. Friction along all of that contact acts like a series of tiny grips distributed along the wrap, and each grip supports a little bit more tension than the next. That's why the tension on one side can be enormous while the tension on the other side is tiny — friction along the wrap \"holds up\" the difference. Nothing is trying to balance out; the friction is actively taking on the load.\n\nSo the pulley rule (motion driven by ${T}_{2}-{T}_{1}$) simply doesn't apply. Instead, each mass hangs freely on its own end of the rope, held up by its own local tension:\n\n$${T}_{1}={m}_{1}g{T}_{2}={m}_{2}g$$\n\nAdd these together:\n\n$${T}_{1}+{T}_{2}=({m}_{1}+{m}_{2})g=200\\,\\mathrm{N}$$\n\nThat's the total downward pull on the post — the combined weight of both masses. It's not the *difference* between the two sides (that quantity is what friction is absorbing); it's the *total load* the post has to hold up. The harder the rope is pressed against the post, the more friction is available — which is why the paper plots ${\\mu }_{k}$ against ${T}_{1}+{T}_{2}$, not ${T}_{2}-{T}_{1}$."
+        }
+      ],
+      "answer": "B — 80 N",
+      "answerIndex": 5
+    },
+    "q3": {
+      "steps": [
+        {
+          "heading": "Step 1 — Write down the capstan equation",
+          "body": "The capstan equation (from the stem’s Equation 1) links the two tensions on either side of the wrap to the wrap angle. Rearranged as a ratio it becomes:\n\n$$R = \\frac{T_2}{T_1} = e^{\\mu_k \\theta}$$"
+        },
+        {
+          "heading": "Step 2 — Recall the generalised exponent law",
+          "body": "When an exponential expression is raised to a power, the general rule is:\n\n$$R_{\\text{new}} = e^{\\mu_k \\cdot 2\\theta}$$\n\nEquivalently, if we multiply the exponent by a factor *b*, that is the same as raising the whole exponential to the power *b*. This is what lets us \"pull\" a constant factor out of the exponent as a power outside the bracket."
+        },
+        {
+          "heading": "Step 3 — Replace θ with 2θ and apply the law",
+          "body": "If we double the wrap angle (θ → 2θ) while μₖ stays fixed, the new holding factor is:\n\n$$(e^{a})^{b} = e^{ab}$$\n\nNow apply the exponent law from Step 2. Take the factor of 2 out of the exponent by treating it as an outside power:\n\n$$e^{\\mu_k \\cdot 2\\theta} = e^{(\\mu_k \\theta)\\cdot 2} = \\left(e^{\\mu_k \\theta}\\right)^{2} = R^{2}$$\n\nThe middle step is where the law kicks in: *a* = μₖθ and *b* = 2, so e²ᵃ becomes (eᵃ)² = (*R*)² = *R*²."
+        }
+      ],
+      "answer": "B — R²"
+    },
+    "q4": {
+      "steps": [
+        {
+          "heading": "Step 1: Reading Figure 4",
+          "body": "Two curves:\n\n- Curve a (purple): masking tape over brass, runs from θ ≈ 30° to ≈ 450°. μₖ starts at ≈ 0.42 and decays to ≈ 0.275.\n- Curve b (teal): bare brass, runs from θ ≈ 30° to ≈ 100°. μₖ starts at ≈ 0.35 and decays to ≈ 0.245.\n\nWhere both curves are shown (the small θ range where they overlap), curve a sits ABOVE curve b. Both decrease as θ increases."
+        },
+        {
+          "heading": "Step 2: Evaluate options",
+          "body": "- A — Gets the θ-trend right (both curves decrease), but reverses the surface ranking. Figure 4 shows curve a (masking tape) sitting above curve b (bare brass), so masking tape gives the higher μₖ — not bare brass.\n- B — at θ = 400°, polyethylene on bare brass... but curve b doesn’t extend to 400°, so no comparison can be made there.\n- C — over the overlap range, masking tape > bare brass and both decrease. ✓ Matches exactly.\n- D — beyond θ ≈ 200°, μₖ still slowly declines on curve a; not independent of θ."
+        }
+      ],
+      "answer": "C — For overlapping wrap angles, masking tape over brass gives higher μₖ than bare brass, and μₖ tends to decrease as θ increases"
+    },
+    "q5": {
+      "steps": [
+        {
+          "heading": "Step 1 — What does averaging do?",
+          "body": "Figure 4 shows μₖ falls as θ grows. So in the range 50°–300°:\n\n- At large θ: true μₖ is LOW (bottom of the curve).\n\n**Quick example from Figure 4 (curve a, masking tape):**\n\nAveraging μₖ from θ = 50° (μₖ ≈ 0.40) to θ = 300° (μₖ ≈ 0.29) gives μₖ,avg ≈ 0.35. At a large θ, say θ = 300° ≈ 5.24 rad, the *true* μₖ is 0.29.\n\n- $\\text{Averaged prediction}:\\frac{{T}_{2}}{{T}_{1}}= {e}^{0.35 \\times 5.24}\\approx {e}^{1.83}\\approx 6.24$\n- $\\text{True prediction}:\\frac{{T}_{2}}{{T}_{1}}= {e}^{0.29 \\times 5.24}\\approx {e}^{1.52}\\approx 4.57$\n\nThe average OVERSTATES μₖ at large θ"
+        }
+      ],
+      "answer": "B — The predicted tension ratio will be overestimated at large θ"
+    }
+  }
+}

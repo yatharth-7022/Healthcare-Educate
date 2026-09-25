@@ -81,6 +81,7 @@ const workedSolutionSchema = z.object({
     )
     .optional(),
   answer: z.string().min(1),
+  answerIndex: z.number().int().nonnegative().optional(),
 });
 
 const mcqQuestionSchema = z
