@@ -24,6 +24,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowLeft, Bookmark, ChevronDown, ChevronLeft, ChevronRight, CircleCheck, CircleX, Flag, FlaskConical, Lock, LogOut, Navigation, ThumbsDown, ThumbsUp, X } from "lucide-react";
+import { Watermark } from "@/components/practice/Watermark";
 import { MathText } from "@/components/practice/MathText";
 import { WorkedSolutionView } from "@/components/practice/WorkedSolutionView";
 
@@ -651,7 +652,7 @@ export default function PracticeSession() {
 
     return (
       <DashboardLayout>
-        <div
+        <Watermark
           className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-3 practice-protected"
           onContextMenu={(event) => event.preventDefault()}
         >
@@ -879,7 +880,7 @@ export default function PracticeSession() {
               </div>
             </aside>
           </div>
-        </div>
+        </Watermark>
 
         <Dialog open={reportDialogOpen} onOpenChange={setReportDialogOpen}>
           <DialogContent>
@@ -919,7 +920,7 @@ export default function PracticeSession() {
 
   return (
     <DashboardLayout>
-      <div
+      <Watermark
         className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-4 practice-protected"
         onContextMenu={(event) => event.preventDefault()}
       >
@@ -1142,7 +1143,7 @@ export default function PracticeSession() {
             </div>
           </aside>
         </div>
-      </div>
+      </Watermark>
     </DashboardLayout>
   );
 }

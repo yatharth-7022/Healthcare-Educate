@@ -133,5 +133,15 @@
   },
   "optionalDependencies": {
     "bufferutil": "^4.0.8"
+  },
+  "allowScripts": {
+    "@prisma/client@5.22.0": true,
+    "@prisma/engines@5.22.0": true,
+    "bufferutil@4.1.0": true,
+    "es5-ext@0.10.64": true,
+    "esbuild@0.25.12": true,
+    "esbuild@0.27.2": true,
+    "fsevents@2.3.3": true,
+    "prisma@5.22.0": true
   }
 }
