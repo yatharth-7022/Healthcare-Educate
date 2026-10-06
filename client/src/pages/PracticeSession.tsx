@@ -705,8 +705,8 @@ export default function PracticeSession() {
             })}
           </div>
 
-          {/* Main two-column layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px] gap-6 items-start">
+          {/* Main content */}
+          <div>
             {/* Left column */}
             <div className="space-y-4">
               {/* Question header */}
@@ -825,14 +825,30 @@ export default function PracticeSession() {
                   <WorkedSolutionView solution={reviewQuestion.workedSolution} />
                 </div>
               )}
-            </div>
 
-            {/* Right sidebar */}
-            <aside className="space-y-4 sticky top-6 self-start">
-              {/* Explanation card */}
-              <div className="bg-card border border-border rounded-lg p-4">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-sm font-semibold text-foreground">Explanation</h3>
+              {/* Explanation, subject and report */}
+              <div className="rounded-lg border border-border bg-card p-4 space-y-3">
+                {showExplanation && !reviewQuestion?.workedSolution && (
+                  reviewQuestion?.explanation ? (
+                    <p className="text-sm text-foreground/85 leading-relaxed">
+                      <MathText text={reviewQuestion.explanation} />
+                    </p>
+                  ) : (
+                    <p className="text-sm text-muted-foreground italic">No explanation available.</p>
+                  )
+                )}
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+                    <button
+                      onClick={() => setShowExplanation((prev) => !prev)}
+                      className="border border-border rounded px-3 py-1.5 text-foreground hover:bg-muted transition-colors"
+                    >
+                      {showExplanation ? "Hide" : "Show"} answers &amp; explanations
+                    </button>
+                    <span className="text-muted-foreground">
+                      Subject: <span className="text-foreground font-medium">{categoryLabel}</span>
+                    </span>
+                  </div>
                   <div className="flex items-center gap-2">
                     <button className="p-1 rounded hover:bg-muted transition-colors" aria-label="Helpful">
                       <ThumbsUp className="w-4 h-4 text-muted-foreground" />
@@ -849,36 +865,8 @@ export default function PracticeSession() {
                     </button>
                   </div>
                 </div>
-                {showExplanation && (
-                  reviewQuestion?.workedSolution ? (
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Step-by-step worked solution is shown below the question.
-                    </p>
-                  ) : reviewQuestion?.explanation ? (
-                    <p className="text-sm text-foreground/85 leading-relaxed mb-4">
-                      <MathText text={reviewQuestion.explanation} />
-                    </p>
-                  ) : (
-                    <p className="text-sm text-muted-foreground italic mb-4">No explanation available.</p>
-                  )
-                )}
-                <button
-                  onClick={() => setShowExplanation((prev) => !prev)}
-                  className="w-full border border-border rounded py-2 text-sm text-foreground hover:bg-muted transition-colors"
-                >
-                  {showExplanation ? "Hide" : "Show"} answers &amp; explanations
-                </button>
               </div>
-
-              {/* Question details */}
-              <div className="bg-card border border-border rounded-lg p-4">
-                <h3 className="text-sm font-semibold text-foreground mb-3">Question details</h3>
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-muted-foreground">Subject</span>
-                  <span className="text-foreground font-medium">{categoryLabel}</span>
-                </div>
-              </div>
-            </aside>
+            </div>
           </div>
         </Watermark>
 
@@ -950,7 +938,7 @@ export default function PracticeSession() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px] gap-6 items-start">
+        <div>
           <section className="bg-card border border-border/60 rounded-lg p-5 min-h-[70vh]">
             <div className="relative mb-4">
               <button
