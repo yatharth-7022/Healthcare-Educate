@@ -11,27 +11,31 @@ function escapeXml(value: string) {
     .replace(/"/g, "&quot;");
 }
 
-function buildTile(lines: string[]) {
-  const width = 460;
-  const height = 240;
+function buildMark(lines: string[]) {
+  const width = 1000;
+  const height = 700;
+  const sizes = [96, 44, 36, 28];
+  const weights = [800, 600, 500, 500];
+  const gap = [0, 70, 50, 56];
+  let y = 0;
   const text = lines
-    .map(
-      (line, i) =>
-        `<text x="0" y="${i * 20}" font-size="${i === 0 ? 15 : 13}" font-weight="${
-          i === 0 ? 700 : 500
-        }" letter-spacing="${i === 0 ? 2 : 0.3}">${escapeXml(line)}</text>`,
-    )
+    .map((line, i) => {
+      y += gap[i] ?? 50;
+      return `<text x="0" y="${y}" font-size="${sizes[i] ?? 28}" font-weight="${
+        weights[i] ?? 500
+      }" letter-spacing="${i === 0 ? 14 : 1}">${escapeXml(line)}</text>`;
+    })
     .join("");
   const svg =
-    `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
-    `<g transform="translate(${width / 2} ${height / 2}) rotate(-25)" text-anchor="middle" ` +
-    `font-family="Inter, Arial, sans-serif" fill="rgb(120,120,120)" fill-opacity="0.2">` +
-    `<g transform="translate(0 -${((lines.length - 1) * 20) / 2})">${text}</g></g></svg>`;
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">` +
+    `<g transform="translate(${width / 2} ${height / 2}) rotate(-30)" text-anchor="middle" ` +
+    `font-family="Inter, Arial, sans-serif" fill="rgb(120,120,120)" fill-opacity="0.22">` +
+    `<g transform="translate(0 -${y / 2})">${text}</g></g></svg>`;
   return `url("data:image/svg+xml;utf8,${encodeURIComponent(svg)}")`;
 }
 
 /**
- * Wraps protected content with a tiled, non-interactive watermark showing the
+ * Wraps protected content with one large diagonal, non-interactive watermark showing the
  * company name plus the signed-in student's name, email and date, so any
  * screenshot or photo of a question is traceable to the account.
  */
@@ -54,7 +58,7 @@ export function Watermark({
       month: "short",
       year: "numeric",
     });
-    return buildTile([
+    return buildMark([
       BRAND.toUpperCase(),
       user?.username ?? "Student",
       user?.email ?? "",
@@ -90,8 +94,13 @@ export function Watermark({
         ref={overlayRef}
         aria-hidden="true"
         data-watermark=""
-        className="pointer-events-none select-none absolute inset-0 z-40 overflow-hidden"
-        style={{ backgroundImage, backgroundRepeat: "repeat" }}
+        className="pointer-events-none select-none fixed inset-0 z-40 overflow-hidden"
+        style={{
+          backgroundImage,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "min(92vw, 1100px) auto",
+        }}
       />
     </div>
   );
