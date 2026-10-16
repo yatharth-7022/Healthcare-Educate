@@ -1,0 +1,310 @@
+{
+  "categoryId": "general-chemistry",
+  "subcategoryId": "general-chemistry-redox-and-electrochemistry",
+  "title": "Potential–pH (Pourbaix) Diagram of Metal Z - Stem 2",
+  "isPublished": true,
+  "stem": [
+    {
+      "type": "text",
+      "value": "Whether a metal corrodes depends on the solution it sits in — how acidic it is (pH), and how strongly oxidising it is. A potential–pH diagram, or Pourbaix diagram, maps which form of a metal is most stable under each combination of these two conditions."
+    },
+    {
+      "type": "text",
+      "value": "In such a diagram, the vertical axis, E, is the reduction potential of the surrounding solution in which the metal is contained."
+    },
+    {
+      "type": "text",
+      "value": "Figure 1 is the potential–pH diagram for a metal, Z, in water at 25 °C. Each region is labelled with the form of Z that predominates there. Along each solid line, the two forms on either side are present in equal amounts. Three types of boundary appear:"
+    },
+    {
+      "type": "text",
+      "value": "• Horizontal lines separate two oxidation states of Z in a half-reaction that involves electrons but not H⁺, so their position does not depend on pH."
+    },
+    {
+      "type": "text",
+      "value": "• Vertical lines separate two forms of Z with the same oxidation state, linked by an acid–base reaction that involves H⁺ but no electrons."
+    },
+    {
+      "type": "text",
+      "value": "• Sloped lines separate two oxidation states in a half-reaction that involves both electrons and H⁺."
+    },
+    {
+      "type": "text",
+      "value": "Each line separating two oxidation states gives the reduction potential of that Z couple at that pH. If the solution's E lies above such a line, the solution has the higher reduction potential, so it is reduced and Z is oxidised — the higher oxidation state of Z predominates. If E lies below the line, the opposite is true."
+    },
+    {
+      "type": "text",
+      "value": "The two dashed lines show the reduction potentials of the two half-reactions available to the water itself — through any dissolved O₂, and through the H⁺ ions it contains:"
+    },
+    {
+      "type": "text",
+      "value": "• Line (a): O₂(g) + 4H⁺ + 4e⁻ → 2H₂O"
+    },
+    {
+      "type": "text",
+      "value": "• Line (b): 2H⁺ + 2e⁻ → H₂(g)"
+    },
+    {
+      "type": "text",
+      "value": "Water always contains some H⁺, because it ionises slightly: H₂O ⇌ H⁺ + OH⁻. Line (b) therefore represents the reduction of water itself, through the H⁺ it contains."
+    },
+    {
+      "type": "text",
+      "value": "For acid–base equilibria between two dissolved species, the Henderson–Hasselbalch equation applies:"
+    },
+    {
+      "type": "text",
+      "value": "pH = pKₐ + log₁₀([base] / [acid])"
+    },
+    {
+      "type": "image",
+      "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1792150104/question-bank/qb_img_1792150101366_0.png",
+      "alt": "",
+      "caption": ""
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "A piece of Z metal is placed in a deaerated (oxygen-free) solution at pH 2. Based on Figure 1, which of the following best describes what happens?",
+      "options": [
+        "No reaction occurs, because Z(s) is a stable form of Z at pH 2.",
+        "Z is oxidised to Z²⁺, and H₂ gas is produced.",
+        "Z is oxidised to Z³⁺, and H₂ gas is produced.",
+        "Z is oxidised to Z²⁺, and O₂ gas is produced."
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Unpack the question",
+            "body": "Underline the key phrases in the question, and link each one back to the stem:\n\n- ***\"A piece of Z metal\"*** — Z starts as Z(s), its lowest oxidation state (0). It can either stay as Z(s), or be oxidised by losing electrons — it cannot be reduced any further. Which of these happens is what we need to find out.\n- ***\"placed in a … solution\"*** — the stem says whether a metal corrodes *\"depends on the solution it sits in\"*, and that E is *\"the reduction potential of the surrounding solution in which the metal is contained\"*. So this is a contest between two reduction potentials: the solution's and Z's. We need to find both, then compare them like any two couples.\n- ***\"deaerated (oxygen-free)\"*** — this tells us what the solution contains, which tells us which line is the solution's (Step 2).\n- ***\"pH 2\"*** — tells us where on Figure 1 to read both values."
+          },
+          {
+            "heading": "Step 2 — The solution's reduction potential",
+            "body": "For Z to be oxidised, something in the solution would have to be reduced. The solution is water, and its two half-reactions are the dashed lines (the solid lines are all Z):\n\n- Line (a) needs O₂ — but the solution is deaerated, so there is no O₂. Line (a) is out.\n- Line (b) is the other half-reaction of water: its H⁺ being reduced to H₂. So line (b) is the solution's line.\n\nRead line (b) at pH 2: about −0.12 V (anything between −0.1 and −0.15 V is fine).\n\n**Reduction potential of H⁺ / H₂ (the solution) ≈ −0.12 V**"
+          },
+          {
+            "heading": "Step 3 — Z's reduction potential",
+            "body": "The stem tells us that *each line separating two oxidation states gives the reduction potential of that Z couple at that pH*. The line between Z(s) and Z²⁺ sits at −0.45 V — that is the reduction potential of the Z²⁺ / Z half-reaction:\n\n**Reduction potential of Z²⁺ / Z ≈ −0.45 V**\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1792150105/question-bank/qb_img_1792150104789_1.png)\n\n*Red: the Z²⁺ region. Blue: the Z(s) region. Yellow: the Z²⁺ / Z line — Z's own couple. The navy dot on line (b) is where the solution sits at pH 2; it lies above the yellow line, in the red region.*\n\n** ZOH²⁺, Z(OH)₂ and Z(OH)₃ can be ignored here: none of the options involve them, and their regions only begin at pH 3 and above, so at pH 2 the only forms of Z in play are Z(s), Z²⁺ and Z³⁺.*"
+          },
+          {
+            "heading": "Step 4 — Compare the two",
+            "body": "Now it is just like any two reduction potentials. The higher one gets reduced; the lower one gets oxidised.\n\n- H⁺ / H₂ is higher (−0.12 V), so H⁺ is reduced:  2H⁺ + 2e⁻ → H₂\n- Z²⁺ / Z is lower (−0.45 V), so Z is oxidised:  Z → Z²⁺ + 2e⁻\n\nOverall:\n\n**Z + 2H⁺ → Z²⁺ + H₂**\n\n$${E}_{\\text{cell}}\\text{ = E(reduced) − E(oxidised)}$$\n\n$${E}_{\\text{cell}} = -0.12 - (-0.45)$$\n\n$${E}_{\\text{cell}}\\text{ = +0.33\\,\\text{V}}$$\n\nPositive, so it happens: Z dissolves as Z²⁺ and H₂ bubbles off."
+          },
+          {
+            "heading": "Step 5 — Does it stop at Z²⁺?",
+            "body": "The options offer both Z²⁺ and Z³⁺, so check whether the H⁺ could go on to oxidise Z²⁺ into Z³⁺. Use the same comparison. The line between Z²⁺ and Z³⁺ sits at +0.70 V — that is the reduction potential of the Z³⁺ / Z²⁺ half-reaction.\n\n- Z³⁺ / Z²⁺ is higher (+0.70 V). H⁺ / H₂ is lower (−0.12 V).\n- The higher one gets reduced. So if anything, Z³⁺ would be reduced to Z²⁺ — not the other way round. H⁺ is far too weak to pull another electron off Z²⁺.\n\n$${E}_{\\text{cell}} = -0.12 - (+0.70)$$\n\n$${E}_{\\text{cell}}\\text{ = −0.82\\,\\text{V}}$$\n\nNegative, so it does not happen. Z stops at Z²⁺."
+          }
+        ],
+        "answer": "B — Z is oxidised to Z²⁺, and H₂ gas is produced.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "Z(s) is only stable below −0.45 V, but line (b) sits above it at pH 2 — so H⁺ in the water can oxidise it. A region on the diagram is not \"safe\" unless water can't push the metal out of it."
+          },
+          {
+            "option": "C",
+            "reason": "Overshoots — H⁺ (−0.12 V) is far too weak to oxidise Z²⁺ to Z³⁺ (+0.70 V), giving E$_{cell}$ = −0.82 V."
+          },
+          {
+            "option": "D",
+            "reason": "Has two oxidations and no reduction — producing O₂ means oxidising water, but Z is already being oxidised, so nothing would accept the electrons."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "prompt": "A piece of Z metal is placed in deaerated (oxygen-free) water. Over which pH range would the Z metal remain unreacted?",
+      "options": [
+        "Below about pH 7.6",
+        "Above about pH 7.6",
+        "Above about pH 8.5",
+        "At no pH — Z always reacts with water"
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Unpack the question",
+            "body": "Underline the key phrases in the question, and link each one back to the stem:\n\n- ***\"A piece of Z metal\"*** — Z starts as Z(s). It can either stay as Z(s), or be oxidised.\n- ***\"remain unreacted\"*** — we are looking for the pH values where Z stays as Z(s).\n- ***\"placed in … water\"*** — E is *\"the reduction potential of the surrounding solution in which the metal is contained\"*. So we compare the water's line with Z's line, as in Q1.\n- ***\"deaerated (oxygen-free)\"*** — no O₂, so line (a) is out. The water's line is the blue dashed line (b), as in Q1."
+          },
+          {
+            "heading": "Step 2 — Compare the blue line with the black Z line",
+            "body": "The black line along the top of the Z(s) region is Z's own reduction potential. The blue dashed line (b) is the water's, H⁺ / H₂.\n\n**While the blue line is above the black line**\n\n- H⁺ / H₂ has the higher reduction potential, so H⁺ is reduced:  2H⁺ + 2e⁻ → H₂\n- Z has the lower one, so Z is oxidised:  Z → Z²⁺ + 2e⁻\n- Z reacts — just as it did at pH 2 in Q1.\n\n**Once the blue line drops below the black line**\n\n- Now Z's couple has the higher reduction potential, so Z prefers to stay in its reduced form, Z(s).\n- H⁺ cannot take Z's electrons to form H₂.\n- Z remains unreacted."
+          },
+          {
+            "heading": "Step 3 — Find the crossover",
+            "body": "The blue line crosses the flat black line (−0.45 V) at about pH 7.6 — just past the 7.5 gridline. Beyond pH 8.5 the black line starts to slope (it becomes the Z(OH)₂ / Z line), but it runs parallel to the blue line, so the blue line stays below it all the way to pH 14.\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1792150106/question-bank/qb_img_1792150105950_2.png)\n\n*Blue: the Z(s) region. Yellow: Z's own line. The red dot marks where the blue line crosses it, at about pH 7.6. To the left, the blue line is above the yellow line and Z reacts; to the right, it is below and Z stays unreacted.*"
+          }
+        ],
+        "answer": "B — Above about pH 7.6",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "Gets the direction backwards — below pH 7.6 the blue line is above the black line, so that is where Z reacts."
+          },
+          {
+            "option": "C",
+            "reason": "Reads the vertical line at pH 8.5, but that line separates Z²⁺ from Z(OH)₂(s) — it is not where the water's line crosses Z's line."
+          },
+          {
+            "option": "D",
+            "reason": "Misses the crossover — the blue line slopes down across the flat black line, so the two must cross."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "prompt": "A piece of Z metal is placed in water saturated with dissolved O₂ at pH 10. What is the final form of Z?",
+      "options": [
+        "Z(s)",
+        "Z(OH)₂(s)",
+        "Z(OH)₃(s)",
+        "Z³⁺"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Unpack the question",
+            "body": "Underline the key phrases in the question, and link each one back to the stem:\n\n- ***\"A piece of Z metal\"*** — Z starts as Z(s). It can either stay as Z(s), or be oxidised.\n- ***\"placed in water\"*** — as in Q1 and Q2, compare the water's line with Z's lines.\n- ***\"saturated with dissolved O₂\"*** — this time there *is* O₂, so the water's line is line (a): O₂ + 4H⁺ + 4e⁻ → 2H₂O.\n- ***\"pH 10\"*** — where to read every line.\n- ***\"final form\"*** — Z might be oxidised more than once, so keep checking until the water can go no further."
+          },
+          {
+            "heading": "Step 2 — The solution's reduction potential",
+            "body": "Read line (a) at pH 10: about +0.64 V.\n\n**Reduction potential of O₂ / H₂O (the solution) ≈ +0.64 V**"
+          },
+          {
+            "heading": "Step 3 — First Z line: Z(OH)₂ / Z",
+            "body": "At pH 10, the line above the Z(s) region separates Z(s) from Z(OH)₂(s). It sits at about −0.54 V — the reduction potential of the Z(OH)₂ / Z half-reaction.\n\n- +0.64 V is greater than −0.54 V, so O₂ / H₂O has the higher reduction potential. O₂ is reduced to water.\n- Z / Z(OH)₂ has the lower one, so Z is oxidised: Z → Z(OH)₂ (oxidation state 0 → +2)."
+          },
+          {
+            "heading": "Step 4 — Next Z line up: Z(OH)₃ / Z(OH)₂",
+            "body": "Now Z is Z(OH)₂. The next line up separates Z(OH)₂(s) from Z(OH)₃(s). It sits at about −0.01 V — the reduction potential of the Z(OH)₃ / Z(OH)₂ half-reaction.\n\n- +0.64 V is still greater than −0.01 V, so O₂ / H₂O still has the higher reduction potential. O₂ is still reduced to water.\n- Z(OH)₃ / Z(OH)₂ has the lower one, so Z(OH)₂ is oxidised: Z(OH)₂ → Z(OH)₃ (oxidation state +2 → +3)."
+          },
+          {
+            "heading": "Step 5 — Does it stop at Z(OH)₃?",
+            "body": "Above Z(OH)₃(s) at pH 10 there are no more lines — Z(OH)₃ is Z's highest oxidation state here, and line (a) sits inside the Z(OH)₃(s) region. There is nothing further for O₂ to oxidise, so Z stops at Z(OH)₃(s).\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1792150107/question-bank/qb_img_1792150106881_3.png)\n\n*Green: the Z(OH)₃(s) region. Yellow: the two Z lines at pH 10. The navy dot (line a, +0.64 V) sits above both yellow lines, so O₂ oxidises Z past both — all the way into the green region.*"
+          }
+        ],
+        "answer": "C — Z(OH)₃(s)",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "Carries over Q2's answer, but that was for deaerated water — with O₂ present, line (a) (+0.64 V) is far above Z's line (−0.54 V)."
+          },
+          {
+            "option": "B",
+            "reason": "Stops after the first step — +0.64 V is also greater than −0.01 V, so O₂ oxidises Z(OH)₂ further."
+          },
+          {
+            "option": "D",
+            "reason": "Right oxidation state (+3), but at pH 10 the +3 form is Z(OH)₃(s) — the Z³⁺ region only exists below pH 3."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "prompt": "A solution of Z(III) is held at pH 3.3 and E = +1.0 V. What is the ratio [ZOH²⁺] : [Z³⁺] in the solution?\n\n(log₁₀ 2 ≈ 0.30; log₁₀ 3 ≈ 0.48)",
+      "options": [
+        "1 : 2",
+        "1.3 : 1",
+        "2 : 1",
+        "3 : 1"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Unpack the question",
+            "body": "Underline the key phrases in the question, and link each one back to the stem:\n\n- ***\"pH 3.3 and E = +1.0 V\"*** — go across to pH 3.3 and up to +1.0 V on Figure 1. That point sits in the ZOH²⁺ region, just to the right of the vertical line at pH 3.\n- ***\"ratio [ZOH²⁺] : [Z³⁺]\"*** — a ratio of two dissolved species. The stem says that for acid–base equilibria between two dissolved species, the Henderson–Hasselbalch equation applies. So we need to know which is the acid, which is the base, and the pKₐ.\n- ***\"log₁₀ 2 ≈ 0.30; log₁₀ 3 ≈ 0.48\"*** — a hint that we will need to undo a log at the end."
+          },
+          {
+            "heading": "Step 2 — Get a feel from the graph first",
+            "body": "![](https://res.cloudinary.com/dn2hfglba/image/upload/v1792150107/question-bank/qb_img_1792150107673_4.png)\n\n*Green: the vertical line at pH 3, where [Z³⁺] = [ZOH²⁺] (50 : 50). The red dot is the solution at pH 3.3 and +1.0 V.*\n\nThe red dot sits just to the right of the green line, inside the ZOH²⁺ region. On the line the two are 50 : 50, so past it there must be more ZOH²⁺ than Z³⁺. That already rules out option A (1 : 2). To choose between B, C and D, we need to calculate."
+          },
+          {
+            "heading": "Step 3 — Which is the acid and which is the base?",
+            "body": "The line between Z³⁺ and ZOH²⁺ is vertical, so the stem tells us they are linked by an acid–base reaction. Henderson–Hasselbalch only needs to know which one is the acid and which is the base:\n\n- ZOH²⁺ contains hydroxide (OH) — anything with hydroxide is typically the base.\n- So Z³⁺ is the acid."
+          },
+          {
+            "heading": "Step 4 — Find the pKₐ from the line",
+            "body": "The stem says that along each solid line, the two forms on either side are present in equal amounts. So on the pH 3 line, [ZOH²⁺] = [Z³⁺]:\n\n$$\\text{pH = p}{K}_{a}\\text{ + log}\\frac{\\text{[ZOH^{2+}]}}{[Z^{3+}]}$$\n\n** When \"log\" is written with no base, it is assumed to be log base 10 (log₁₀) — as in the Henderson–Hasselbalch equation in the stem.*\n\n$$3 = p{K}_{a}\\text{ + log 1}$$\n\n$$3 = p{K}_{a} + 0$$\n\n$$p{K}_{a} = 3$$"
+          },
+          {
+            "heading": "Step 5 — Apply Henderson–Hasselbalch at pH 3.3",
+            "body": "$$\\text{pH = p}{K}_{a}\\text{ + log}\\frac{\\text{[ZOH^{2+}]}}{[Z^{3+}]}$$\n\n$$\\text{3.3 = 3 + log}\\frac{\\text{[ZOH^{2+}]}}{[Z^{3+}]}$$\n\n$$\\text{3.3 − 3 = log}\\frac{\\text{[ZOH^{2+}]}}{[Z^{3+}]}$$\n\n$$0.3\\text{ = log}\\frac{[ZOH^{2+}]}{[Z^{3+}]}$$\n\nNow undo the log, using the general log law:\n\n$$\\text{if  }{\\text{log}}_{a} M = b\\text{,  then  }{a}^{b} = M$$\n\nReading it: take the **base (a)**, raise it to the power of **whatever is on the other side of the equals sign (b)**, and you get **what was inside the log (M)**.\n\nHere **a = 10** (no base written, so base 10), **b = 0.3**, and **M = the ratio**. So:\n\n$$\\frac{[ZOH^{2+}]}{[Z^{3+}]} = {10}^{0.3}$$\n\nWe are told log₁₀ 2 ≈ 0.30. Using the same log law (**a = 10**, **b = 0.30**, **M = 2**), that means **10**$^{0.3}$ ≈ **2**:\n\n$$\\frac{[ZOH^{2+}]}{[Z^{3+}]} \\approx  2$$\n\nSo [ZOH²⁺] : [Z³⁺] = 2 : 1."
+          }
+        ],
+        "answer": "C — 2 : 1",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "Flips the acid and base — puts Z³⁺ on top of the fraction, giving 1 : 2. The graph alone rules this out: past the green line, ZOH²⁺ must be the larger."
+          },
+          {
+            "option": "B",
+            "reason": "Treats the ratio as linear (1 + 0.3 = 1.3) instead of undoing the log: 10$^{0.3}$ is 2, not 1.3."
+          },
+          {
+            "option": "D",
+            "reason": "Reads the 0.3 as \"3\", or reaches for log₁₀ 3 — but log₁₀ 3 ≈ 0.48, which would need a pH of about 3.5, not 3.3."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "prompt": "For a sloped line on a potential–pH diagram, the steepness of the line is proportional to the number of H⁺ ions per electron in its half-reaction.\n\nWhich half-reaction does the sloped line between Z²⁺ and Z(OH)₃(s) represent?",
+      "options": [
+        "Z(OH)₃ + 3H⁺ + e⁻ → Z²⁺ + 3H₂O",
+        "Z(OH)₃ + H⁺ + e⁻ → Z²⁺ + H₂O + 2OH⁻",
+        "Z(OH)₃ + 3H⁺ + 3e⁻ → Z²⁺ + 3H₂O",
+        "Z(OH)₃ + 3H⁺ + 2e⁻ → Z²⁺ + 3H₂O"
+      ],
+      "correctOptionIndex": 0,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Unpack the question",
+            "body": "Underline the key phrases in the question, and link each one back to the stem:\n\n- ***\"steepness … is proportional to the number of H⁺ ions per electron\"*** — steepness only tells us something if we compare it with a line whose H⁺-per-electron we already know. The stem gives us the equations for the two water lines, so they can be our reference.\n- ***\"the sloped line between Z²⁺ and Z(OH)₃(s)\"*** — the line we are measuring. On Figure 1, it runs from pH 6 to pH 8.5.\n- **The options are half-reactions** — once we know H⁺ per electron, we also need the number of electrons (from oxidation states), and the equation has to balance."
+          },
+          {
+            "heading": "Step 2 — Get a feel from the graph first",
+            "body": "![](https://res.cloudinary.com/dn2hfglba/image/upload/v1792150108/question-bank/qb_img_1792150108452_5.png)\n\n*Red: the Z²⁺ / Z(OH)₃ line. Blue: line (b), the reference.*\n\nThe red line is clearly steeper than line (b), so it must have more than 1 H⁺ per electron. That already rules out B and C, which both have H⁺ and e⁻ in a 1 : 1 ratio (1 : 1 and 3 : 3). To choose between A (3 : 1) and D (3 : 2), we need to measure."
+          },
+          {
+            "heading": "Step 3 — The reference: line (b)",
+            "body": "Line (b) is 2H⁺ + 2e⁻ → H₂: 2 H⁺ for 2 electrons, which is 1 H⁺ per electron. (Line (a), O₂ + 4H⁺ + 4e⁻ → 2H₂O, is also 1 : 1 — which is why the two water lines are parallel.)"
+          },
+          {
+            "heading": "Step 4 — Compare the steepness",
+            "body": "**Method 1: using exact values**\n\nLine (b): 0 V at pH 0, down to −0.59 V at pH 10.\n\n$$\\text{slope = }\\frac{\\text{rise}}{\\text{run}}$$\n\n$$\\text{slope = }\\frac{-0.59 - 0}{10 - 0}$$\n\n$$\\text{slope = −0.059}$$\n\n$$\\text{slope ≈ −0.06\\,\\text{V} per pH unit}$$\n\nZ²⁺ / Z(OH)₃ line: +0.52 V at pH 6, down to +0.08 V at pH 8.5.\n\n$$\\text{slope = }\\frac{0.08 - 0.52}{8.5 - 6}$$\n\n$$\\text{slope = }\\frac{-0.44}{2.5}$$\n\nDividing by 2.5 is awkward, so multiply the top and bottom by 4 to make the bottom 10:\n\n$$\\text{slope = }\\frac{-0.44 \\times  4}{2.5 \\times  4}$$\n\n$$\\text{slope = }\\frac{-1.76}{10}$$\n\n$$\\text{slope = −0.176}$$\n\n$$\\text{slope ≈ −0.18\\,\\text{V} per pH unit}$$\n\nNow compare the two slopes:\n\n$$\\frac{0.18}{0.06} = \\frac{18}{6} = 3$$\n\n**Method 2: the triangle approximation**\n\nDraw a triangle under each line using the **same run** — pH 6 to pH 8.5. With the same run, there is no need to divide by it: just compare the rises.\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1792150110/question-bank/qb_img_1792150109243_6.png)\n\n- Red triangle (Z²⁺ / Z(OH)₃ line): about 0.5 V down to about 0.1 V — a rise of about 0.4 V.\n- Blue triangle (line b): about −0.35 V down to about −0.5 V — a rise of about 0.15 V.\n\n$$\\frac{0.4}{0.15} \\approx  2.7 \\approx  3$$\n\nRough readings give about 2.7, but the only choices left are 3 (A) and 1.5 (D) — so it is clearly 3.\n\n**Either way, the red line is 3 times as steep as line (b), so it has 3 H⁺ per electron.**"
+          },
+          {
+            "heading": "Step 5 — Match to the options",
+            "body": "3 H⁺ per electron. Checking the H⁺ : e⁻ ratio in each option:\n\n- A: 3 H⁺ : 1 e⁻ = 3 : 1 ✓\n- B: 1 H⁺ : 1 e⁻ = 1 : 1\n- C: 3 H⁺ : 3 e⁻ = 1 : 1\n- D: 3 H⁺ : 2 e⁻ = 1.5 : 1\n\nOnly A has 3 H⁺ per electron."
+          }
+        ],
+        "answer": "A — Z(OH)₃ + 3H⁺ + e⁻ → Z²⁺ + 3H₂O",
+        "eliminations": [
+          {
+            "option": "B",
+            "reason": "Treats every sloped line as 1 H⁺ per electron, like water — but the line is 3 times as steep as line (b)."
+          },
+          {
+            "option": "C",
+            "reason": "3 H⁺ with 3 electrons is 1 : 1 again — the same ratio as water, not 3 times it."
+          },
+          {
+            "option": "D",
+            "reason": "3 H⁺ with 2 electrons is only 1.5 H⁺ per electron — not steep enough for a line 3 times as steep as line (b)."
+          }
+        ]
+      }
+    }
+  ]
+}

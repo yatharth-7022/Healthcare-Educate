@@ -8,11 +8,13 @@ import { MathText } from "@/components/practice/MathText";
  *   blank line   -> new paragraph        "- item"   -> bullet list
  *   $$ ... $$    -> display equation     $ ... $    -> inline math
  *   **bold** / *italic*                  | a | b |  -> table (2nd row is the separator)
+ *   ![alt](https://...)                  -> image (must be its own paragraph)
  * Single newlines inside a paragraph are kept as line breaks.
  */
 
 const EMPHASIS_RE = /(\*\*\*[^*]+\*\*\*|\*\*[^*]+\*\*|\*[^*\n]+\*)/g;
 const DISPLAY_MATH_RE = /^\$\$([\s\S]+)\$\$$/;
+const IMAGE_RE = /^!\[([^\]]*)\]\((https?:\/\/[^)\s]+)\)$/;
 
 function Inline({ text }: { text: string }) {
   return (
@@ -108,6 +110,19 @@ export function SolutionText({ text }: { text: string }) {
                 </li>
               ))}
             </ul>
+          );
+        }
+
+        const image = block.trim().match(IMAGE_RE);
+        if (image) {
+          return (
+            <img
+              key={i}
+              src={image[2]}
+              alt={image[1]}
+              loading="lazy"
+              className="mx-auto max-h-[28rem] max-w-full rounded-md border border-border bg-white object-contain"
+            />
           );
         }
 

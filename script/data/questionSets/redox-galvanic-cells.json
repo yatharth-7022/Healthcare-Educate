@@ -1,0 +1,288 @@
+{
+  "categoryId": "general-chemistry",
+  "subcategoryId": "general-chemistry-redox-and-electrochemistry",
+  "title": "Galvanic Cells of Metals J–N - Stem 1",
+  "isPublished": true,
+  "stem": [
+    {
+      "type": "text",
+      "value": "Galvanic cells were constructed by connecting pairs of standard half-cells of five metals, J, K, L, M and N, through a salt bridge and a high-resistance voltmeter. Metals J, K, L and M form singly charged ions (X⁺ + e⁻ ⇌ X), whereas metal N forms doubly charged ions (N²⁺ + 2e⁻ ⇌ N). All measurements were made under standard conditions at 25 °C."
+    },
+    {
+      "type": "text",
+      "value": "The standard reduction potential of only one half-cell is known: E°(J⁺/J) = +0.20 V. For each cell, the voltmeter reading (E$_{cell}$) and the direction of electron flow through the external wire were recorded (Table 1). In each case, the voltmeter reading equals the difference between the standard reduction potentials of the two half-cells. The J/K cell is shown in Figure 1."
+    },
+    {
+      "type": "table",
+      "columns": [
+        "Cell",
+        "Direction of electron flow in external wire",
+        "Voltmeter reading (V)"
+      ],
+      "rows": [
+        [
+          "J / K",
+          "K → J",
+          "0.45"
+        ],
+        [
+          "K / L",
+          "K → L",
+          "0.90"
+        ],
+        [
+          "L / M",
+          "M → L",
+          "0.30"
+        ],
+        [
+          "K / N",
+          "N → K",
+          "0.35"
+        ]
+      ],
+      "caption": "Table 1"
+    },
+    {
+      "type": "image",
+      "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1792150098/question-bank/qb_img_1792150095498_0.png",
+      "alt": "",
+      "caption": ""
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "What is the standard reduction potential of the M⁺/M half-cell?",
+      "options": [
+        "+0.30 V",
+        "+0.35 V",
+        "+0.95 V",
+        "+1.25 V"
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — The key idea",
+            "body": "Two ideas help here. GAMSAT won't always give them, but you're expected to be familiar with them:\n\n- Electrons flow **from** the metal being oxidised (it loses electrons) **towards** the half-cell where reduction happens (its ions gain electrons). The half-cell being reduced has the higher reduction potential — it has the stronger pull on electrons.\n- E$_{cell}$ = E°(reduced) − E°(oxidised).\n\nSo for every row of Table 1: read the arrow, decide what is oxidised and what is reduced, then set up the equation and solve."
+          },
+          {
+            "heading": "Step 2 — Find E°(K) from the J / K cell",
+            "body": "Electrons flow K → J (Table 1 and Figure 1). So K is being oxidised and J⁺ is being reduced — J has the higher reduction potential, and K must sit below +0.20 V.\n\n$${E}_{\\text{cell}} = E^\\circ (J) - E^\\circ (K)$$\n\n$$0.45 = 0.20 - E^\\circ (K)$$\n\n$$E^\\circ (K) = 0.20 - 0.45$$\n\n$$E^\\circ (K)\\text{ = −0.25\\,\\text{V}}$$"
+          },
+          {
+            "heading": "Step 3 — Find E°(L) from the K / L cell",
+            "body": "Electrons flow K → L. So K is being oxidised and L⁺ is being reduced — L has the higher reduction potential, so L must sit above −0.25 V.\n\n$${E}_{\\text{cell}} = E^\\circ (L) - E^\\circ (K)$$\n\n$$0.90 = E^\\circ (L) - (-0.25)$$\n\n$$E^\\circ (L) = 0.90 + (-0.25)$$\n\n$$E^\\circ (L)\\text{ = +0.65\\,\\text{V}}$$"
+          },
+          {
+            "heading": "Step 4 — Find E°(M) from the L / M cell",
+            "body": "Electrons flow M → L. So M is being oxidised and L⁺ is being reduced — L has the higher reduction potential, so M must sit below +0.65 V.\n\n$${E}_{\\text{cell}} = E^\\circ (L) - E^\\circ (M)$$\n\n$$0.30 = 0.65 - E^\\circ (M)$$\n\n$$E^\\circ (M) = 0.65 - 0.30$$\n\n$$E^\\circ (M)\\text{ = +0.35\\,\\text{V}}$$"
+          },
+          {
+            "heading": "Picture it as a ladder",
+            "body": "Put every potential on a vertical E° scale. Electrons always flow *up* the ladder, towards the higher E°, and each voltmeter reading is the gap between two rungs. K sits 0.45 V below J; L sits 0.90 V above K; M sits 0.30 V below L. Laid out like this, M lands between J and L — which also fits the direction of every arrow.\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1792150099/question-bank/qb_img_1792150098664_1.png)"
+          },
+          {
+            "heading": "Terminology note",
+            "body": "If you prefer electrode names: oxidation happens at the anode and reduction at the cathode. So electrons always flow from anode to cathode, and E$_{cell}$ = E°(cathode) − E°(anode) is the same equation as above."
+          }
+        ],
+        "answer": "B — +0.35 V",
+        "strategy": "Only J's potential is known, so M has to be reached by a chain: J → K → L → M, using the first three rows of Table 1 (the K/N row is not needed). The stem only says the voltmeter reading is the *difference* between the two potentials — not which one is higher. The direction of electron flow tells you that: it shows which metal is being oxidised and which half-cell is being reduced.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "Reads the L / M voltmeter reading (0.30 V) as M's own potential, skipping the chain from J entirely."
+          },
+          {
+            "option": "C",
+            "reason": "Adds at the last step, 0.65 + 0.30 = 0.95 V, putting M above L — but electrons flow M → L, so M must be lower."
+          },
+          {
+            "option": "D",
+            "reason": "Gets the first step backwards: E°(K) = 0.20 + 0.45 = +0.65 V, then E°(L) = 0.65 + 0.90 = +1.55 V and E°(M) = 1.55 − 0.30 = +1.25 V."
+          }
+        ],
+        "answerIndex": 4
+      }
+    },
+    {
+      "id": "q2",
+      "prompt": "Of all possible pairings of the five half-cells, which pair would give the largest voltmeter reading, and what would that reading be?",
+      "options": [
+        "J and N;  0.80 V",
+        "L and N;  1.25 V",
+        "L and N;  1.85 V",
+        "K and L;  0.90 V"
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Find E°(N) from the K / N cell",
+            "body": "From the J / K row (as in Q1): 0.45 = 0.20 − E°(K), so E°(K) = −0.25 V.\n\nElectrons flow N → K. So N is being oxidised and K⁺ is being reduced — K has the higher reduction potential, and N must sit below −0.25 V.\n\n$${E}_{\\text{cell}} = E^\\circ (K) - E^\\circ (N)$$\n\n$$0.35 = -0.25 - E^\\circ (N)$$\n\n$$E^\\circ (N) = -0.25 - 0.35$$\n\n$$E^\\circ (N)\\text{ = −0.60\\,\\text{V}}$$"
+          },
+          {
+            "heading": "Step 2 — Put all five metals in order",
+            "body": "With L (+0.65 V) and M (+0.35 V) from the same chain as Q1, the full order from highest to lowest is:\n\n- L +0.65 V   M +0.35 V   J +0.20 V   K −0.25 V   N −0.60 V\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1792150099/question-bank/qb_img_1792150099692_2.png)"
+          },
+          {
+            "heading": "Step 3 — Pair the top with the bottom",
+            "body": "L has the highest reduction potential, so it is the one reduced; N has the lowest, so it is the one oxidised:\n\n$${E}_{\\text{cell}} = E^\\circ (L) - E^\\circ (N)$$\n\n$${E}_{\\text{cell}} = 0.65 - (-0.60)$$\n\n$${E}_{\\text{cell}}\\text{ = 1.25\\,\\text{V}}$$"
+          },
+          {
+            "heading": "Step 4 — Check the other pairs in the options",
+            "body": "$$\\text{J and N:  }{E}_{\\text{cell}}\\text{ = 0.20 − (−0.60) = 0.80\\,\\text{V}}$$\n\n$$\\text{K and L:  }{E}_{\\text{cell}}\\text{ = 0.65 − (−0.25) = 0.90\\,\\text{V}}$$\n\nBoth are smaller than 1.25 V, so L and N is the largest."
+          },
+          {
+            "heading": "Mental arithmetic tip",
+            "body": "- Largest reading = top minus bottom. Subtracting a negative is adding: 0.65 + 0.60 = 1.25."
+          }
+        ],
+        "answer": "B — L and N;  1.25 V",
+        "strategy": "The biggest voltmeter reading comes from the two half-cells whose reduction potentials are **furthest apart** — the highest one being reduced and the lowest one being oxidised. So every metal needs a potential, including N, which Q1 never needed. Then compare the top and bottom of the list.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "Treats J as the top because it is the one given value, but L sits 0.45 V higher — J and N give only 0.80 V."
+          },
+          {
+            "option": "C",
+            "reason": "Doubles N's potential because N²⁺ takes two electrons, 0.65 − (−1.20) = 1.85 V — reduction potentials do not scale with electrons."
+          },
+          {
+            "option": "D",
+            "reason": "Picks the largest reading measured in Table 1 (0.90 V), missing that the unmeasured L / N pair is bigger."
+          }
+        ],
+        "answerIndex": 4
+      }
+    },
+    {
+      "id": "q3",
+      "prompt": "Which of the following reactions would occur spontaneously as written?",
+      "options": [
+        "M + J⁺ → M⁺ + J",
+        "N + 2L⁺ → N²⁺ + 2L",
+        "N²⁺ + 2K → N + 2K⁺",
+        "N + L⁺ → N²⁺ + L"
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — The potentials (from Q1 and Q2)",
+            "body": "- L +0.65 V   M +0.35 V   J +0.20 V   K −0.25 V   N −0.60 V"
+          },
+          {
+            "heading": "Step 2 — The rule for checking the story",
+            "body": "This one helps here. GAMSAT won't always give it, but you're expected to be familiar with it: of any two half-cells, the one with the **higher** reduction potential is preferentially reduced, and the one with the **lower** reduction potential is preferentially oxidised. A reaction runs spontaneously only if the equation has them the right way round."
+          },
+          {
+            "heading": "Step 3 — Check every option",
+            "body": "**A.  M + J⁺ → M⁺ + J**\n\nM → M⁺ means M is being oxidised; J⁺ → J means J⁺ is being reduced. But M has the higher reduction potential (+0.35 V), so it would prefer to be reduced, and J has the lower one (+0.20 V), so it would prefer to be oxidised. The story is backwards — not spontaneous.\n\n**B.  N + 2L⁺ → N²⁺ + 2L**\n\nN → N²⁺ means N is being oxidised; L⁺ → L means L⁺ is being reduced. N has the lowest reduction potential of all (−0.60 V), so it prefers to be oxidised, and L has the highest (+0.65 V), so it prefers to be reduced. The story matches.\n\nElectrons: each N gives away 2; each L⁺ takes 1, and there are 2 L⁺, so 2 are taken. Charges: 2+ on the left, 2+ on the right. Balanced — spontaneous as written.\n\n**C.  N²⁺ + 2K → N + 2K⁺**\n\nK → K⁺ means K is being oxidised; N²⁺ → N means N²⁺ is being reduced. But N has the lower reduction potential (−0.60 V vs −0.25 V), so N would prefer to be oxidised, not reduced. The story is backwards — not spontaneous.\n\n**D.  N + L⁺ → N²⁺ + L**\n\nSame story as B — N oxidised, L⁺ reduced — and it matches the potentials. But each N gives away 2 electrons while the single L⁺ takes only 1. Charges don't match either: 1+ on the left, 2+ on the right. It is not a valid equation, so it cannot occur as written.\n\n| Option | Oxidised (E°) | Reduced (E°) | Story matches? | Electrons balance? |\n|---|---|---|---|---|\n| A | M (+0.35) | J⁺ (+0.20) | No | — |\n| B | N (−0.60) | L⁺ (+0.65) | Yes | Yes (2 = 2) |\n| C | K (−0.25) | N²⁺ (−0.60) | No | — |\n| D | N (−0.60) | L⁺ (+0.65) | Yes | No (2 ≠ 1) |"
+          }
+        ],
+        "answer": "B — N + 2L⁺ → N²⁺ + 2L",
+        "strategy": "Each equation tells a story: one species loses electrons (oxidised) and one gains them (reduced). Read that story off the equation, then check whether the reduction potentials match it. The species being reduced must be the one with the higher reduction potential. Finally, check the electrons given away equal the electrons taken.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "Has M (+0.35 V) oxidised and J⁺ (+0.20 V) reduced — the higher potential is on the wrong side."
+          },
+          {
+            "option": "C",
+            "reason": "Has N²⁺ (−0.60 V) reduced and K (−0.25 V) oxidised — again the wrong way round."
+          },
+          {
+            "option": "D",
+            "reason": "Right pair, right direction, but N gives 2 electrons and one L⁺ takes 1 — the equation does not balance."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "prompt": "A sixth metal, P, forms singly charged ions (P⁺ + e⁻ ⇌ P). A cell made from the P and K half-cells gives a voltmeter reading of 0.50 V, and a cell made from the P and L half-cells gives a reading of 0.40 V. The direction of electron flow was not recorded for either cell.\n\nWhat is the standard reduction potential of the P⁺/P half-cell?",
+      "options": [
+        "−0.75 V",
+        "+0.10 V",
+        "+0.25 V",
+        "+1.05 V"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — The P / K cell (K = −0.25 V)",
+            "body": "**Case 1: P⁺ is reduced, K is oxidised (P sits above K)**\n\n$${E}_{\\text{cell}} = E^\\circ (P) - E^\\circ (K)$$\n\n$$0.50 = E^\\circ (P) - (-0.25)$$\n\n$$E^\\circ (P) = 0.50 + (-0.25)$$\n\n$$E^\\circ (P)\\text{ = +0.25\\,\\text{V}}$$\n\n**Case 2: P is oxidised, K⁺ is reduced (P sits below K)**\n\n$${E}_{\\text{cell}} = E^\\circ (K) - E^\\circ (P)$$\n\n$$0.50 = -0.25 - E^\\circ (P)$$\n\n$$E^\\circ (P) = -0.25 - 0.50$$\n\n$$E^\\circ (P)\\text{ = −0.75\\,\\text{V}}$$"
+          },
+          {
+            "heading": "Step 2 — The P / L cell (L = +0.65 V)",
+            "body": "**Case 1: P⁺ is reduced, L is oxidised (P sits above L)**\n\n$${E}_{\\text{cell}} = E^\\circ (P) - E^\\circ (L)$$\n\n$$0.40 = E^\\circ (P) - 0.65$$\n\n$$E^\\circ (P) = 0.40 + 0.65$$\n\n$$E^\\circ (P)\\text{ = +1.05\\,\\text{V}}$$\n\n**Case 2: P is oxidised, L⁺ is reduced (P sits below L)**\n\n$${E}_{\\text{cell}} = E^\\circ (L) - E^\\circ (P)$$\n\n$$0.40 = 0.65 - E^\\circ (P)$$\n\n$$E^\\circ (P) = 0.65 - 0.40$$\n\n$$E^\\circ (P)\\text{ = +0.25\\,\\text{V}}$$"
+          },
+          {
+            "heading": "Step 3 — Find the value that fits both cells",
+            "body": "| Cell | If P⁺ is reduced (P higher) | If P is oxidised (P lower) |\n|---|---|---|\n| P / K | +0.25 V ✓ | −0.75 V |\n| P / L | +1.05 V | +0.25 V ✓ |\n\nOnly +0.25 V appears for both cells. So in the P / K cell, P⁺ is reduced (electrons flow K → P), and in the P / L cell, P is oxidised (electrons flow P → L). P slots into the ladder between J (+0.20 V) and M (+0.35 V)."
+          }
+        ],
+        "answer": "C — +0.25 V",
+        "strategy": "Without the arrow, a single reading cannot tell you whether P is being oxidised or reduced — so each cell gives **two** possible values for E°(P). Work out both cases for each cell. The real value of E°(P) is the one that fits both cells at once.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "Takes Case 2 from the K cell only; with P at −0.75 V, the P / L cell would read 0.65 − (−0.75) = 1.40 V, not 0.40 V."
+          },
+          {
+            "option": "B",
+            "reason": "Subtracts the two readings (0.50 − 0.40); with P at +0.10 V, the P / K cell would read 0.10 − (−0.25) = 0.35 V, not 0.50 V."
+          },
+          {
+            "option": "D",
+            "reason": "Takes Case 1 from the L cell only; with P at +1.05 V, the P / K cell would read 1.05 − (−0.25) = 1.30 V, not 0.50 V."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "prompt": "A seventh metal, R, forms singly charged ions (R⁺ + e⁻ ⇌ R). A clean strip of R is placed in a solution of K⁺ ions, and K metal is deposited on the strip. A second strip of R is placed in a solution of N²⁺ ions, and no reaction occurs.\n\nWhich of the following could be the standard reduction potential of the R⁺/R half-cell?",
+      "options": [
+        "−0.70 V",
+        "−0.40 V",
+        "−0.10 V",
+        "+0.30 V"
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — R in K⁺ solution: K is deposited",
+            "body": "K⁺ → K means K⁺ is being reduced; so R → R⁺ means R is being oxidised:\n\n**R + K⁺ → R⁺ + K**\n\nThis reaction really happens, so the story must match the potentials: the species reduced (K⁺) must have the higher reduction potential. So R sits below K:\n\n$$E^\\circ (R) < E^\\circ (K)$$\n\n$$E^\\circ (R)\\text{ < −0.25\\,\\text{V}}$$"
+          },
+          {
+            "heading": "Step 2 — R in N²⁺ solution: no reaction",
+            "body": "Imagine the reaction *did* happen. N²⁺ → N would mean N²⁺ is being reduced, and R → R⁺ would mean R is being oxidised:\n\n**2R + N²⁺ → 2R⁺ + N**\n\nFor that story to work, N would need the higher reduction potential — R would have to sit below N, at E°(R) < −0.60 V.\n\nBut no reaction occurs, so that story is false. R does **not** sit below N:\n\n$$E^\\circ (R) > E^\\circ (N)$$\n\n$$E^\\circ (R)\\text{ > −0.60\\,\\text{V}}$$\n\nIn other words, N has the lower reduction potential, so N prefers to stay oxidised as N²⁺ — and R prefers to stay as the metal. Neither wants to swap."
+          },
+          {
+            "heading": "Step 3 — Combine the two limits",
+            "body": "$$\\text{−0.60\\,\\text{V} < }E^\\circ (R)\\text{ < −0.25\\,\\text{V}}$$\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1792150100/question-bank/qb_img_1792150100361_3.png)\n\nChecking each option against this range: −0.70 V is below it, −0.10 V and +0.30 V are above it, and only −0.40 V falls inside."
+          }
+        ],
+        "answer": "B — −0.40 V",
+        "strategy": "There are no voltages this time — just two observations. Each one tells a redox story, and checking that story against the potentials (as in Q3) puts a limit on E°(R). The first observation gives an upper limit, the second a lower limit. For the \"no reaction\" observation, imagine the reaction *did* happen, see what that would require, then flip it.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "−0.70 V is below N (−0.60 V) — then R would be oxidised by N²⁺ and N would be deposited, but the stem says no reaction occurs."
+          },
+          {
+            "option": "C and D",
+            "reason": "−0.10 V and +0.30 V are both above K (−0.25 V) — then K would have the lower reduction potential, so K⁺ would stay as ions and no K would be deposited, contradicting the first observation."
+          }
+        ]
+      }
+    }
+  ]
+}

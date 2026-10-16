@@ -16,6 +16,7 @@
     "db:seed:question:physics-materials": "tsx script/seedPhysicsMaterialsEngineering.ts",
     "db:seed:question:physics-electricity": "tsx script/seedPhysicsElectricity.ts",
     "db:seed:question:physics-classical-mechanics": "tsx script/seedPhysicsClassicalMechanics.ts",
+    "db:seed:question:json": "tsx script/seedQuestionSetsFromJson.ts",
     "db:setup:practice": "npm run db:push && npm run db:seed:practice",
     "db:studio": "prisma studio",
     "db:generate": "prisma generate",

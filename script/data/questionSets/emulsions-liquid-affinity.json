@@ -1,0 +1,512 @@
+{
+  "categoryId": "general-chemistry",
+  "subcategoryId": "general-chemistry-emulsions-and-phase-equilibria",
+  "title": "Emulsions and Liquid Affinity - Stem 1",
+  "isPublished": true,
+  "stem": [
+    {
+      "type": "text",
+      "value": "An emulsion is a mixture in which droplets of one liquid are dispersed within another liquid with which it is normally immiscible. An emulsifier can stabilise the dispersed droplets by interacting with both liquid phases."
+    },
+    {
+      "type": "text",
+      "value": "Four possible systems involving liquids U and V, with or without emulsifier W, are illustrated in Figure 1. System II represents dispersion after shaking; System III includes an emulsifier at the droplet interface."
+    },
+    {
+      "type": "image",
+      "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1792150094/question-bank/qb_img_1792150091539_0.png",
+      "alt": "Figure 1. Separated phases, dispersed droplets, stabilised droplets and a homogeneous mixture.",
+      "caption": "Figure 1. Separated phases, dispersed droplets, stabilised droplets and a homogeneous mixture."
+    },
+    {
+      "type": "text",
+      "value": "Five liquids, labelled F–J, have the following order of increasing polarity:"
+    },
+    {
+      "type": "text",
+      "value": "Liquid F < Liquid G < Liquid H < Liquid I < Liquid J"
+    },
+    {
+      "type": "text",
+      "value": "Liquid F is the least polar and Liquid J is the most polar. Pairs of liquids were mixed in equal volumes, shaken and allowed to stand."
+    },
+    {
+      "type": "table",
+      "columns": [
+        "",
+        "Liquid F",
+        "Liquid G",
+        "Liquid H",
+        "Liquid I",
+        "Liquid J"
+      ],
+      "rows": [
+        [
+          "Liquid F",
+          "—",
+          "✓",
+          "✓",
+          "×",
+          "×"
+        ],
+        [
+          "Liquid G",
+          "✓",
+          "—",
+          "✓",
+          "✓",
+          "×"
+        ],
+        [
+          "Liquid H",
+          "✓",
+          "✓",
+          "—",
+          "✓",
+          "×"
+        ],
+        [
+          "Liquid I",
+          "×",
+          "✓",
+          "✓",
+          "—",
+          "✓"
+        ],
+        [
+          "Liquid J",
+          "×",
+          "×",
+          "×",
+          "✓",
+          "—"
+        ]
+      ],
+      "caption": "Table 1. Behaviour of pairs of liquids after standing."
+    },
+    {
+      "type": "text",
+      "value": "✓: a single homogeneous phase formed.  ×: two phases remained after standing."
+    },
+    {
+      "type": "text",
+      "value": "Four substances, K, L, M and N, were investigated as potential emulsifiers. Each was separately mixed with each of Liquids F–J."
+    },
+    {
+      "type": "text",
+      "value": "For this assay, affinity is assumed to depend on similarity in overall polarity: each substance interacts appreciably with liquids within the same fixed range of polarity difference. Other influences on affinity are neglected."
+    },
+    {
+      "type": "table",
+      "columns": [
+        "",
+        "K",
+        "L",
+        "M",
+        "N"
+      ],
+      "rows": [
+        [
+          "Liquid F",
+          "✓",
+          "✓",
+          "×",
+          "×"
+        ],
+        [
+          "Liquid G",
+          "✓",
+          "✓",
+          "✓",
+          "×"
+        ],
+        [
+          "Liquid H",
+          "×",
+          "✓",
+          "✓",
+          "✓"
+        ],
+        [
+          "Liquid I",
+          "×",
+          "×",
+          "✓",
+          "✓"
+        ],
+        [
+          "Liquid J",
+          "×",
+          "×",
+          "×",
+          "✓"
+        ]
+      ],
+      "caption": "Table 2. Affinity between each liquid and each potential emulsifier."
+    },
+    {
+      "type": "text",
+      "value": "✓: appreciable affinity under the conditions used.  ×: little affinity."
+    },
+    {
+      "type": "text",
+      "value": "An emulsifier capable of interacting with both liquids can accumulate at their interface and reduce the tendency of dispersed droplets to merge."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "The relative polarity of the four emulsifiers is unknown. Based on Table 2, which of the following gives the emulsifiers in order of decreasing polarity?",
+      "options": [
+        "K > L > M > N",
+        "N > M > L > K",
+        "N > L > M > K",
+        "M > N > K > L"
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Underline the question clues",
+            "body": "Underline “Table 2” and “decreasing polarity”. Table 2 gives the affinity patterns; “decreasing” requires the most polar emulsifier first. In the stem, locate the liquid polarity order and the fixed-range affinity assumption."
+          },
+          {
+            "heading": "Step 2 — Map affinity onto the polarity scale",
+            "body": "| Emulsifier | Liquids with appreciable affinity | Location on polarity scale |\n|---|---|---|\n| K | F, G | Low-polarity end |\n| L | F, G, H | Extends further towards higher polarity |\n| M | G, H, I | Shifted towards higher polarity |\n| N | H, I, J | High-polarity end |\n\nL interacts with Liquid H whereas K does not. Because both interact with Liquid F and share the same affinity range, L must lie further towards the polar end than K.\n\nM interacts with Liquid I but not Liquid F; L shows the reverse pattern. This places M above L in polarity. Similarly, N interacts with Liquid J but not Liquid G, while M shows the reverse pattern. Therefore N is more polar than M.\n\n**Increasing polarity:  K < L < M < N**\n\n**Decreasing polarity:  N > M > L > K**"
+          }
+        ],
+        "answer": "B — N > M > L > K",
+        "strategy": "Combine the known liquid polarity order with the positions of the ticks in Table 2. Use the assay’s polarity-matching rule to compare the emulsifiers, then write the order from most polar to least polar.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "Reverses the required direction. K has affinity for the least-polar liquids, so it cannot be first in decreasing polarity."
+          },
+          {
+            "option": "C",
+            "reason": "Places L above M. M’s affinity shifts towards Liquids H and I, whereas L retains affinity for Liquid F and lacks affinity for Liquid I."
+          },
+          {
+            "option": "D",
+            "reason": "Reverses both N/M and L/K. Affinity for Liquid J places N above M; affinity for Liquid H places L above K under the stated assay model.\n\n**Key idea: compare where the ticks occur, rather than how many ticks occur. Table 1 and Figure 1 are not needed for this question.**"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "prompt": "Which of the following combinations best satisfies the conditions for forming System III in Figure 1?",
+      "options": [
+        "Liquid U: Liquid G; Liquid V: Liquid I; Emulsifier W: M",
+        "Liquid U: Liquid H; Liquid V: Liquid J; Emulsifier W: N",
+        "Liquid U: Liquid F; Liquid V: Liquid H; Emulsifier W: L",
+        "Liquid U: Liquid F; Liquid V: Liquid J; Emulsifier W: N"
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Underline the question clues",
+            "body": "Underline “forming System III”. Figure 1 shows U droplets in V, surrounded by W. This points to Table 1 to check whether U and V are immiscible, and Table 2 to check whether W interacts with both liquids.\n\nA × between U and V in Table 1 indicates two separate phases. A ✓ for both U–W and V–W in Table 2 indicates appreciable affinity for both phases."
+          },
+          {
+            "heading": "Step 2 — Combine the two tables",
+            "body": "| Option | U and V immiscible? | W has affinity for both? | Meets both conditions? |\n|---|---|---|---|\n| A | No | Yes | No |\n| B | Yes | Yes | Yes |\n| C | No | Yes | No |\n| D | Yes | No | No |\n\nLiquids H and J have a × in Table 1, so they remain as separate phases. N has a ✓ for both liquids in Table 2, so it can interact with both phases. This combination satisfies both stated conditions for System III."
+          }
+        ],
+        "answer": "B — Liquid H, Liquid J and N",
+        "strategy": "System III contains droplets of one liquid dispersed within another, with an emulsifier at the interface. Check both requirements: immiscible liquids and an emulsifier with affinity for both.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "M has affinity for both liquids, but Liquids G and I are miscible. They form a homogeneous mixture, corresponding to System IV, rather than the droplets shown in System III."
+          },
+          {
+            "option": "C",
+            "reason": "L has affinity for both liquids, but Liquids F and H are also miscible. They form System IV rather than an emulsion."
+          },
+          {
+            "option": "D",
+            "reason": "Liquids F and J are immiscible, but N has little affinity for Liquid F. It fails the stated requirement for interacting with both phases.\n\n**Key idea: an appropriate emulsifier alone is insufficient—the liquids must also form separate phases. Check both tables before selecting an answer.**"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "prompt": "Three bottles, labelled P, Q and R, each contain a different liquid selected from Liquids G, H, I and J. One of these four liquids was not used.\n\nSamples from the bottles were tested under the same conditions used to obtain Tables 1 and 2.",
+      "options": [
+        "Liquid G",
+        "Liquid H",
+        "Liquid I",
+        "Liquid J"
+      ],
+      "contentBlocks": [
+        {
+          "type": "table",
+          "columns": [
+            "Test",
+            "Observation"
+          ],
+          "rows": [
+            [
+              "P mixed with R",
+              "Two phases remained after standing"
+            ],
+            [
+              "Q mixed with R",
+              "A single homogeneous phase formed"
+            ],
+            [
+              "P tested with L",
+              "Appreciable affinity"
+            ],
+            [
+              "P tested with N",
+              "Appreciable affinity"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "value": "Which liquid was not used?"
+        }
+      ],
+      "correctOptionIndex": 0,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Underline the question clues",
+            "body": "Underline “each contain a different liquid”, “Liquids G, H, I and J” and “not used”. The bottles cannot contain the same liquid, and Liquid F is excluded. Identify the missing liquid, rather than simply identify P."
+          },
+          {
+            "heading": "Step 2 — Find the liquid that satisfies both affinity results",
+            "body": "From Table 2:\n\n| Observation | Possible identity of P |\n|---|---|\n| Appreciable affinity for L | Liquid G or Liquid H |\n| Appreciable affinity for N | Liquid H, Liquid I or Liquid J |\n| Both observations | Liquid H only |\n\n**Therefore: P = Liquid H.**"
+          },
+          {
+            "heading": "Step 3 — Use P to identify R",
+            "body": "P and R remain as two phases. Since P is Liquid H, inspect the Liquid H row of Table 1. Liquid H is miscible with Liquids G and I, but immiscible with Liquid J.\n\n**Therefore: R = Liquid J.**"
+          },
+          {
+            "heading": "Step 4 — Use R to identify Q",
+            "body": "Q and R form a homogeneous phase. Since R is Liquid J, Q must be a liquid miscible with Liquid J. Of the permitted liquids, only Liquid I satisfies this condition.\n\n**Therefore: Q = Liquid I.**\n\n| Bottle | Identity |\n|---|---|\n| P | Liquid H |\n| Q | Liquid I |\n| R | Liquid J |"
+          },
+          {
+            "heading": "Key idea",
+            "body": "each identification unlocks the next clue. No single observation gives the final answer."
+          }
+        ],
+        "answer": "A — Liquid G was not used",
+        "strategy": "Identify P using its affinity for two emulsifiers. Then use P to identify R, and R to identify Q. The remaining liquid is the answer.",
+        "eliminations": [
+          {
+            "option": "B",
+            "reason": "Liquid H must be in P because it is the only permitted liquid with appreciable affinity for both L and N."
+          },
+          {
+            "option": "C",
+            "reason": "Liquid I must be in Q because Q forms a homogeneous phase with R, identified as Liquid J."
+          },
+          {
+            "option": "D",
+            "reason": "Liquid J must be in R because it is the only permitted liquid immiscible with P, identified as Liquid H."
+          }
+        ],
+        "answerIndex": 4
+      }
+    },
+    {
+      "id": "q4",
+      "prompt": "In a separate experiment, three bottles P, Q and R each contain a different liquid selected from Liquids G, H, I and J. Samples were tested under the same conditions used to obtain Tables 1 and 2. The following results were obtained:",
+      "options": [
+        "Mix P with Liquid F.",
+        "Mix P with Liquid I.",
+        "Test P for affinity with M.",
+        "Test P for affinity with K."
+      ],
+      "contentBlocks": [
+        {
+          "type": "table",
+          "columns": [
+            "Test",
+            "Observation"
+          ],
+          "rows": [
+            [
+              "P mixed with R",
+              "Two phases remained after standing"
+            ],
+            [
+              "Q mixed with R",
+              "A single homogeneous phase formed"
+            ],
+            [
+              "P tested with L",
+              "Appreciable affinity"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "value": "Which one additional test would allow the identities of all three bottles to be determined, whichever result it produces?"
+        }
+      ],
+      "correctOptionIndex": 3,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Underline the question clues",
+            "body": "Underline “separate experiment”, “each contain a different liquid”, “one additional test” and “whichever result it produces”. Do not carry the bottle identities from Question 3 into this experiment. The selected test must resolve the uncertainty for either outcome, not merely confirm one possible identity."
+          },
+          {
+            "heading": "Step 2 — Narrow the identity of P",
+            "body": "P has appreciable affinity for L. Table 2 shows that L has affinity for Liquids F, G and H. Liquid F is excluded from the bottles, leaving:\n\n**P = Liquid G or Liquid H.**"
+          },
+          {
+            "heading": "Step 3 — Identify R under both possibilities for P",
+            "body": "P and R remain as two phases, so their pair must have a × in Table 1. Check both possible identities of P, restricting R to the permitted liquids and excluding the liquid already in P:\n\n| Possible P | Possible R | Table 1 result |\n|---|---|---|\n| Liquid G | Liquid H | ✓ — homogeneous |\n| Liquid G | Liquid I | ✓ — homogeneous |\n| Liquid G | Liquid J | × — two phases |\n| Liquid H | Liquid G | ✓ — homogeneous |\n| Liquid H | Liquid I | ✓ — homogeneous |\n| Liquid H | Liquid J | × — two phases |\n\nWhether P is Liquid G or Liquid H, only Liquid J gives the observed two-phase result. Therefore:\n\n**R = Liquid J.**"
+          },
+          {
+            "heading": "Step 4 — Identify Q",
+            "body": "Q and R form a single homogeneous phase. Since R is Liquid J, inspect the Liquid J row of Table 1. Liquid J is immiscible with Liquids G and H, but miscible with Liquid I. Q cannot also contain Liquid J because the three bottles contain different liquids. Therefore:\n\n**Q = Liquid I.**\n\nThe only remaining uncertainty is P = Liquid G or Liquid H. The complete possibilities are:\n\n| Possibility | P | Q | R |\n|---|---|---|---|\n| 1 | Liquid G | Liquid I | Liquid J |\n| 2 | Liquid H | Liquid I | Liquid J |"
+          },
+          {
+            "heading": "Step 5 — Compare the outcomes of each proposed test",
+            "body": "A useful test must give different outcomes for the two possible identities of P. Use Table 1 for mixing tests and Table 2 for affinity tests:\n\n| Option / additional test | If P is Liquid G | If P is Liquid H | Distinguishes them? |\n|---|---|---|---|\n| A: Mix with Liquid F | Homogeneous | Homogeneous | No |\n| B: Mix with Liquid I | Homogeneous | Homogeneous | No |\n| C: Test with M | Appreciable affinity | Appreciable affinity | No |\n| D: Test with K | Appreciable affinity | Little affinity | Yes |\n\nFor test D, appreciable affinity identifies P as Liquid G; little affinity identifies P as Liquid H. Either outcome resolves P, while Q and R are already known."
+          },
+          {
+            "heading": "Shortcut",
+            "body": "After Step 2, P is already narrowed to Liquid G or Liquid H. Go straight to Table 2: K has appreciable affinity for Liquid G but little affinity for Liquid H. Therefore testing P with K distinguishes the two possibilities immediately, giving answer D.\n\nFor selecting the answer, there is no need to finish identifying Q and R first: any test that gives the same result for Liquids G and H cannot determine all three bottle identities. The full working above confirms that Q and R are already fixed as Liquids I and J, respectively."
+          }
+        ],
+        "answer": "D — Test P for affinity with K",
+        "strategy": "First determine which identities are already fixed and which remain possible. Then choose a test that gives different results for the remaining candidates.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "Both Liquids G and H form a homogeneous phase with Liquid F. The same result occurs under both possible identities, so P remains unknown."
+          },
+          {
+            "option": "B",
+            "reason": "Both Liquids G and H form a homogeneous phase with Liquid I. This test also leaves both possibilities open."
+          },
+          {
+            "option": "C",
+            "reason": "M has appreciable affinity for both Liquids G and H. A positive affinity result therefore cannot distinguish them.\n\n**Key idea: a test resolves an ambiguity only when the remaining candidates predict different results. First narrow the possibilities, then compare the tests.**"
+          }
+        ],
+        "answerIndex": 5
+      }
+    },
+    {
+      "id": "q5",
+      "prompt": "Five bottles P, Q, R, S and T contain Liquids F–J, each used exactly once. A technician tested samples under the conditions used in Tables 1 and 2 and recorded the following observations.",
+      "options": [
+        "Necessary correction: Record 7: a single homogeneous phase; Emulsifier for Q and T: M",
+        "Necessary correction: Record 4: a single homogeneous phase; Emulsifier for Q and T: N",
+        "Necessary correction: Record 7: a single homogeneous phase; Emulsifier for Q and T: N",
+        "Necessary correction: Record 6: appreciable affinity; Emulsifier for Q and T: L"
+      ],
+      "contentBlocks": [
+        {
+          "type": "table",
+          "columns": [
+            "Record",
+            "Test",
+            "Recorded observation"
+          ],
+          "rows": [
+            [
+              "1",
+              "Q with M",
+              "Little affinity"
+            ],
+            [
+              "2",
+              "R with K",
+              "Appreciable affinity"
+            ],
+            [
+              "3",
+              "R mixed with S",
+              "Two phases"
+            ],
+            [
+              "4",
+              "Q mixed with T",
+              "Two phases"
+            ],
+            [
+              "5",
+              "Q with N",
+              "Appreciable affinity"
+            ],
+            [
+              "6",
+              "T with K",
+              "Little affinity"
+            ],
+            [
+              "7",
+              "S mixed with T",
+              "Two phases"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "value": "Exactly one recorded observation was reversed during transcription: “appreciable affinity” was entered instead of “little affinity”, or “two phases” instead of “a single homogeneous phase”, or vice versa. All other records are correct, and the actual results agree with Tables 1 and 2."
+        },
+        {
+          "type": "text",
+          "value": "Which option gives both the necessary correction and an emulsifier with appreciable affinity for both liquids in Q and T, satisfying the stated affinity condition for System III?"
+        }
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Underline the clues and inspect the options",
+            "body": "Underline “each used exactly once”, “exactly one recorded observation was reversed” and “both the necessary correction and an emulsifier”. The answer options propose corrections only to Records 4, 6 and 7. Therefore, when evaluating these options, Records 1, 2, 3 and 5 stay unchanged. Use them as the starting clues. This shortcut uses the multiple-choice options; the record table alone does not initially tell us which entries are reliable."
+          },
+          {
+            "heading": "Step 2 — Start with Q using Records 1 and 5",
+            "body": "Q appears in three records: 1, 4 and 5. It is a useful starting point because several clues involve the same bottle. Use Records 1 and 5 first: neither is proposed for correction, whereas Record 4 could be wrong.\n\n| Reliable observation | Possible liquid in Q |\n|---|---|\n| Record 1: little affinity for M | Liquid F or Liquid J |\n| Record 5: appreciable affinity for N | Liquid H, Liquid I or Liquid J |\n| Common to both | Liquid J only |\n\n**Q = Liquid J.**"
+          },
+          {
+            "heading": "Step 3 — Identify S and R using Records 2 and 3",
+            "body": "Record 2 says R has appreciable affinity for K. From Table 2, R must be Liquid F or Liquid G. Record 3 says R and S form two phases, so use Table 1 to find the liquids immiscible with each possible R:\n\n| Possible R | Liquids immiscible with R | After excluding Liquid J already in Q |\n|---|---|---|\n| Liquid F | Liquids I and J | S must be Liquid I |\n| Liquid G | Liquid J only | Impossible: Liquid J is already in Q |\n\nLiquids F and G are miscible with each other and with Liquid H. They cannot give the observed two-phase result with those liquids. Liquid J is unavailable because each liquid is used once. The only remaining immiscible pair is Liquid F with Liquid I.\n\n**S = Liquid I, and R = Liquid F.**"
+          },
+          {
+            "heading": "Step 4 — Provisionally use Record 6 to identify T",
+            "body": "Record 6 is the easiest of the three remaining records to use first: it tests one unknown bottle, T, with the known emulsifier K, so we can read the possible liquids directly from Table 2. Records 4 and 7 involve mixing two bottles, which makes them harder to interpret before T is identified. Record 6 could be faulty, so treat it as a provisional assumption and verify it afterwards.\n\nAssuming Record 6 is correct, T has little affinity for K. Table 2 therefore gives T = Liquid H, I or J. Liquid I is already in S and Liquid J is already in Q, leaving:\n\n**T = Liquid H.**\n\nThe only unused liquid is Liquid G, so P = Liquid G. This is the provisional complete assignment:\n\n| Bottle | P | Q | R | S | T |\n|---|---|---|---|---|---|\n| Liquid | G | J | F | I | H |"
+          },
+          {
+            "heading": "Step 5 — Check Records 4 and 7",
+            "body": "| Record | Substitute the bottle identities | Result from Table 1 | Verdict |\n|---|---|---|---|\n| 4: Q mixed with T gives two phases | Liquid J with Liquid H | ×: two phases | Correct |\n| 7: S mixed with T gives two phases | Liquid I with Liquid H | ✓: a single homogeneous phase | Must be corrected |\n\nThe assumed Record 6 leads to an assignment that satisfies Records 1–6 and requires only Record 7 to be reversed. This matches the instruction that exactly one observation is wrong. Therefore the assumption is consistent: Record 6 is correct, and Record 7 should read “a single homogeneous phase”."
+          },
+          {
+            "heading": "Step 6 — Choose the emulsifier for Q and T",
+            "body": "Q contains Liquid J and T contains Liquid H. In Table 2, only N has appreciable affinity for Liquid J; it also has appreciable affinity for Liquid H. It therefore satisfies the required affinity condition for both phases."
+          }
+        ],
+        "answer": "C — Correct Record 7 to a single homogeneous phase; choose N",
+        "strategy": "Use the answer options to identify which records remain unchanged in every proposed correction. Start with the reliable affinity results involving Q, then use the distinct-liquid rule to identify R and S. Provisionally accept the simpler affinity test for T, and check whether it leaves exactly one incorrect observation.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "Record 7 is the correct repair, but M has little affinity for Liquid J in Q. It cannot satisfy the affinity condition for both liquids."
+          },
+          {
+            "option": "B",
+            "reason": "Record 4 is consistent with the assignment: Liquids J and H do form two phases. Changing it while leaving Record 7 unchanged would not repair the data."
+          },
+          {
+            "option": "D",
+            "reason": "Records 1, 2, 3 and 5 fix Q = Liquid J, R = Liquid F and S = Liquid I. If Record 6 were reversed, T would need appreciable affinity for K and hence be Liquid F or G. Liquid F is already in R, leaving T = Liquid G. But S–T would then be Liquids I and G, which are homogeneous, still contradicting unchanged Record 7. Also, L has little affinity for Liquid J in Q.\n\n**Key idea: use the options to find unchanged clues, begin with a bottle appearing in several records, and solve the easy affinity constraints first. A provisional assumption becomes useful when checking the remaining results confirms exactly one error.**"
+          }
+        ]
+      }
+    }
+  ]
+}

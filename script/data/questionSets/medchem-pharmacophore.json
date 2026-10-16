@@ -1,0 +1,602 @@
+{
+  "categoryId": "general-chemistry",
+  "subcategoryId": "general-chemistry-medicinal-chemistry",
+  "title": "Pharmacophore Mapping - Stem 2",
+  "isPublished": true,
+  "stem": [
+    {
+      "type": "text",
+      "value": "A pharmacophore is a combination of chemical features, arranged in space, that allows a molecule to interact with a biological target. Researchers investigate compounds containing different combinations of four features."
+    },
+    {
+      "type": "table",
+      "columns": [
+        "Symbol",
+        "Chemical feature"
+      ],
+      "rows": [
+        [
+          "D",
+          "Hydrogen-bond donor"
+        ],
+        [
+          "A",
+          "Hydrogen-bond acceptor"
+        ],
+        [
+          "R",
+          "Aromatic ring"
+        ],
+        [
+          "P",
+          "Positively charged group"
+        ]
+      ]
+    },
+    {
+      "type": "text",
+      "value": "The compounds are tested against receptors T and U. Activity is measured using IC₅₀, the concentration required to reduce receptor activity by 50%. A lower IC₅₀ indicates greater potency."
+    },
+    {
+      "type": "text",
+      "value": "A compound is classified as active at a receptor when its IC₅₀ is ≤ 100 nM."
+    },
+    {
+      "type": "text",
+      "value": "Use the following simplified model:"
+    },
+    {
+      "type": "text",
+      "value": "Each receptor requires a particular combination of features for activity."
+    },
+    {
+      "type": "text",
+      "value": "A compound is active if it contains all features required by that receptor. Additional features do not prevent activity."
+    },
+    {
+      "type": "text",
+      "value": "Where features are present, their spacing is suitable. All other molecular differences are ignored."
+    },
+    {
+      "type": "table",
+      "columns": [
+        "Compound",
+        "D",
+        "A",
+        "R",
+        "P",
+        "IC₅₀ at T (nM)",
+        "IC₅₀ at U (nM)"
+      ],
+      "rows": [
+        [
+          "M",
+          "✓",
+          "✓",
+          "✓",
+          "✓",
+          "25",
+          "30"
+        ],
+        [
+          "N",
+          "✓",
+          "✓",
+          "✓",
+          "—",
+          "45",
+          "320"
+        ],
+        [
+          "O",
+          "—",
+          "✓",
+          "✓",
+          "✓",
+          "400",
+          "55"
+        ],
+        [
+          "P",
+          "✓",
+          "—",
+          "✓",
+          "✓",
+          "280",
+          "240"
+        ],
+        [
+          "Q",
+          "✓",
+          "✓",
+          "—",
+          "✓",
+          "350",
+          "70"
+        ]
+      ],
+      "caption": "Table 1"
+    },
+    {
+      "type": "text",
+      "value": "✓ indicates that a feature is present; — indicates that it is absent."
+    },
+    {
+      "type": "text",
+      "value": "ADDITIONAL INFORMATION:",
+      "variant": "additional-info",
+      "revealAtQuestion": 3
+    },
+    {
+      "type": "text",
+      "value": "Researchers investigate the spacing required for activity at receptor T. All compounds below contain one hydrogen-bond donor, one hydrogen-bond acceptor and one aromatic ring.",
+      "revealAtQuestion": 3
+    },
+    {
+      "type": "text",
+      "value": "A compound is active only when both its D–A and A–R distances fall within their respective acceptable intervals. All other molecular differences are ignored.",
+      "revealAtQuestion": 3
+    },
+    {
+      "type": "text",
+      "value": "Previous experiments established that:",
+      "revealAtQuestion": 3
+    },
+    {
+      "type": "text",
+      "value": "Each acceptable interval spans 3 Å.",
+      "revealAtQuestion": 3
+    },
+    {
+      "type": "text",
+      "value": "The interval endpoints are whole numbers, and both endpoints are included.",
+      "revealAtQuestion": 3
+    },
+    {
+      "type": "text",
+      "value": "Any distance within an acceptable interval is suitable, including non-whole-number distances.",
+      "revealAtQuestion": 3
+    },
+    {
+      "type": "text",
+      "value": "For example, an interval from 2 to 5 Å spans 3 Å.",
+      "revealAtQuestion": 3
+    },
+    {
+      "type": "table",
+      "columns": [
+        "Compound",
+        "D–A distance (Å)",
+        "A–R distance (Å)",
+        "IC₅₀ at T (nM)"
+      ],
+      "rows": [
+        [
+          "V",
+          "3",
+          "6",
+          "35"
+        ],
+        [
+          "W",
+          "4",
+          "7",
+          "55"
+        ],
+        [
+          "X",
+          "2",
+          "7",
+          "240"
+        ],
+        [
+          "Y",
+          "4",
+          "8",
+          "310"
+        ]
+      ],
+      "caption": "Table 2",
+      "revealAtQuestion": 3
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "A researcher wants to modify compound M so that it remains active at receptor T but becomes inactive at receptor U. Which single feature should be removed, while leaving the remaining features and their positions unchanged?",
+      "options": [
+        "Hydrogen-bond donor",
+        "Hydrogen-bond acceptor",
+        "Aromatic ring",
+        "Positively charged group"
+      ],
+      "correctOptionIndex": 3,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Convert the IC₅₀ values into activity classifications",
+            "body": "An IC₅₀ of 100 nM or less means active; a value greater than 100 nM means inactive. For example, N is active at T because 45 nM is below the threshold, but inactive at U because 320 nM is above it. Replacing both IC₅₀ columns with ticks and crosses gives:\n\n| Compound | D | A | R | P | Active at T | Active at U |\n|---|---|---|---|---|---|---|\n| M | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |\n| N | ✓ | ✓ | ✓ | — | ✓ | ✗ |\n| O | — | ✓ | ✓ | ✓ | ✗ | ✓ |\n| P | ✓ | — | ✓ | ✓ | ✗ | ✗ |\n| Q | ✓ | ✓ | — | ✓ | ✗ | ✓ |\n\nIn the feature columns, ✓ means present and — means absent. In the activity columns, ✓ means active and ✗ means inactive."
+          },
+          {
+            "heading": "Step 2 — Deduce the features required by each receptor",
+            "body": "**Receptor T**\n\nM and N are both active at T. The features common to both are D, A and R. N lacks P but remains active, so P is not required for activity at T.\n\n**Therefore, activity at T requires D, A and R.**\n\n**Receptor U**\n\nO and Q are both active at U. Their common features are A and P.\n\n**Therefore, activity at U requires A and P.**"
+          },
+          {
+            "heading": "Step 3 — Apply these requirements to compound M",
+            "body": "M contains D, A, R and P. Removing the positively charged group P leaves D, A and R, so the compound retains everything required for activity at T. However, it no longer contains P, which is required for activity at U, so it becomes inactive at U.\n\nThis is the feature combination in compound N, consistent with its measured activity at the two receptors."
+          }
+        ],
+        "answer": "D — Positively charged group"
+      }
+    },
+    {
+      "id": "q2",
+      "prompt": "Researchers prepare three new compounds by removing features from compound M.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "contentBlocks": [
+        {
+          "type": "table",
+          "columns": [
+            "New compound",
+            "Features removed from M"
+          ],
+          "rows": [
+            [
+              "R",
+              "Hydrogen-bond donor and aromatic ring"
+            ],
+            [
+              "S",
+              "Aromatic ring and positively charged group"
+            ],
+            [
+              "T",
+              "Hydrogen-bond donor and hydrogen-bond acceptor"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "value": "The remaining features retain their original positions. Apply the same simplified model used in Table 1."
+        },
+        {
+          "type": "text",
+          "value": "Which table correctly predicts the activity of all three new compounds?"
+        },
+        {
+          "type": "text",
+          "value": "Option A"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Compound",
+            "Receptor T",
+            "Receptor U"
+          ],
+          "rows": [
+            [
+              "R",
+              "Inactive",
+              "Active"
+            ],
+            [
+              "S",
+              "Active",
+              "Inactive"
+            ],
+            [
+              "T",
+              "Inactive",
+              "Inactive"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "value": "Option B"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Compound",
+            "Receptor T",
+            "Receptor U"
+          ],
+          "rows": [
+            [
+              "R",
+              "Inactive",
+              "Inactive"
+            ],
+            [
+              "S",
+              "Inactive",
+              "Inactive"
+            ],
+            [
+              "T",
+              "Inactive",
+              "Active"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "value": "Option C"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Compound",
+            "Receptor T",
+            "Receptor U"
+          ],
+          "rows": [
+            [
+              "R",
+              "Inactive",
+              "Active"
+            ],
+            [
+              "S",
+              "Inactive",
+              "Inactive"
+            ],
+            [
+              "T",
+              "Inactive",
+              "Inactive"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "value": "Option D"
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Compound",
+            "Receptor T",
+            "Receptor U"
+          ],
+          "rows": [
+            [
+              "R",
+              "Inactive",
+              "Active"
+            ],
+            [
+              "S",
+              "Inactive",
+              "Inactive"
+            ],
+            [
+              "T",
+              "Inactive",
+              "Active"
+            ]
+          ]
+        }
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Recall the receptor requirements",
+            "body": "Receptor T requires D, A and R. Receptor U requires A and P."
+          },
+          {
+            "heading": "Step 2 — Determine which features remain",
+            "body": "Compound M initially contains D, A, R and P. Removing the specified features gives:\n\n| Compound | D | A | R | P |\n|---|---|---|---|---|\n| R | — | ✓ | — | ✓ |\n| S | ✓ | ✓ | — | — |\n| T | — | — | ✓ | ✓ |"
+          },
+          {
+            "heading": "Step 3 — Predict activity at each receptor",
+            "body": "Compound R retains A and P. It is active at U, but inactive at receptor T because it lacks D and R.\n\nCompound S retains D and A. It is inactive at receptor T because it lacks R, and inactive at U because it lacks P.\n\nCompound T retains R and P. It is inactive at both receptors because it lacks A, which both require."
+          }
+        ],
+        "answer": "C — Option C"
+      }
+    },
+    {
+      "id": "q3",
+      "prompt": "Which compound is predicted to be active at receptor T?",
+      "options": [
+        "Compound A",
+        "Compound B",
+        "Compound C",
+        "Compound D"
+      ],
+      "contentBlocks": [
+        {
+          "type": "table",
+          "columns": [
+            "Compound",
+            "D–A distance (Å)",
+            "A–R distance (Å)"
+          ],
+          "rows": [
+            [
+              "A",
+              "2.5",
+              "6.5"
+            ],
+            [
+              "B",
+              "5.5",
+              "7.5"
+            ],
+            [
+              "C",
+              "5.5",
+              "4.5"
+            ],
+            [
+              "D",
+              "6.5",
+              "3.5"
+            ]
+          ]
+        }
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Identify distances known to be acceptable",
+            "body": "V and W have IC₅₀ values below 100 nM, so both are active. Therefore:\n\nD–A distances of 3 and 4 Å are acceptable.\n\nA–R distances of 6 and 7 Å are acceptable.\n\nThese observations do not yet establish the complete intervals."
+          },
+          {
+            "heading": "Step 2 — Establish the D–A interval",
+            "body": "From Step 1, we know that D–A distances from 3 to 4 Å are acceptable. However, this spans only 1 Å, whereas the full acceptable interval must span 3 Å. We therefore need to determine whether it extends below 3 Å or above 4 Å.\n\nLook at compound X, where when its D–A = 2 Å, it becomes inactive.\n\nSince 2 Å fails but 3 Å works, and the endpoints are whole numbers, the lower endpoint must be 3 Å.\n\nThe interval must therefore extend upwards:\n\nFrom 3 to 4 Å is a difference of 1 Å.\n\nFrom 3 to 5 Å is a difference of 2 Å.\n\nFrom 3 to 6 Å is a difference of 3 Å.\n\n**Therefore, the acceptable D–A interval is 3–6 Å.**\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1792150117/question-bank/qb_img_1792150114926_0.png)"
+          },
+          {
+            "heading": "Step 3 — Establish the A–R interval",
+            "body": "From Step 1, we know that A–R distances from 6 to 7 Å are acceptable. Again, we need to establish how this extends to an interval spanning 3 Å. We therefore need to determine whether it extends below 6 Å or above 7 Å.\n\nLook at compound Y, where when its A–R = 8 Å it becomes inactive.\n\nSince 7 Å works but 8 Å fails, and the endpoints are whole numbers, the upper endpoint must be 7 Å.\n\nThe interval must therefore extend downwards:\n\nFrom 6 to 7 Å is a difference of 1 Å.\n\nFrom 5 to 7 Å is a difference of 2 Å.\n\nFrom 4 to 7 Å is a difference of 3 Å.\n\n**Therefore, the acceptable A–R interval is 4–7 Å.**\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1792150118/question-bank/qb_img_1792150118019_1.png)"
+          },
+          {
+            "heading": "Step 4 — Test the new compounds against both intervals",
+            "body": "The acceptable intervals are D–A = 3–6 Å and A–R = 4–7 Å.\n\n| Compound | D–A suitable? | A–R suitable? | Predicted activity |\n|---|---|---|---|\n| A | No 2.5 is below 3 | Yes | Inactive |\n| B | Yes | No 7.5 is above 7 | Inactive |\n| C | Yes | Yes | Active |\n| D | No 6.5 is above 6 | No 3.5 is below 4 | Inactive |"
+          }
+        ],
+        "answer": "C — Both distances fall within their respective acceptable intervals"
+      }
+    },
+    {
+      "id": "q4",
+      "prompt": "Researchers investigate four new compounds, each containing one hydrogen-bond donor, one aromatic ring and two acceptors, labelled A₁ and A₂. Their feature positions are fixed.\n\nEither acceptor can support activity at receptor T, provided that the same acceptor satisfies both the D–A and A–R distance requirements established from Table 2. The additional acceptor does not prevent activity.\n\nWhich compound is predicted to be active at receptor T?",
+      "options": [
+        "Compound A",
+        "Compound B",
+        "Compound C",
+        "Compound D"
+      ],
+      "contentBlocks": [
+        {
+          "type": "table",
+          "columns": [
+            "Compound",
+            "D–A₁ (Å)",
+            "A₁–R (Å)",
+            "D–A₂ (Å)",
+            "A₂–R (Å)"
+          ],
+          "rows": [
+            [
+              "A",
+              "3.5",
+              "7.5",
+              "6.5",
+              "4.5"
+            ],
+            [
+              "B",
+              "2.5",
+              "6.5",
+              "5.5",
+              "7.5"
+            ],
+            [
+              "C",
+              "4.5",
+              "3.5",
+              "5.5",
+              "4.5"
+            ],
+            [
+              "D",
+              "6.5",
+              "6.5",
+              "3.5",
+              "3.5"
+            ]
+          ]
+        }
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Recall the acceptable intervals",
+            "body": "From Question 3:\n\nD–A must be 3–6 Å.\n\nA–R must be 4–7 Å.\n\nWe must check both distances for each acceptor separately."
+          },
+          {
+            "heading": "Step 2 — Assess each compound",
+            "body": "**Compound A**\n\nFor A₁, D–A₁ = 3.5 Å is suitable, but A₁–R = 7.5 Å is too large.\n\nFor A₂, A₂–R = 4.5 Å is suitable, but D–A₂ = 6.5 Å is too large.\n\nAlthough the compound has a suitable distance of each type, these involve different acceptors. Neither acceptor satisfies both requirements, so A is inactive.\n\n**Compound B**\n\nA₁ fails because D–A₁ = 2.5 Å is too small.\n\nA₂ fails because A₂–R = 7.5 Å is too large.\n\nNeither acceptor satisfies both requirements, so B is inactive.\n\n**Compound C**\n\nA₁ fails because A₁–R = 3.5 Å is too small.\n\nHowever, A₂ has:\n\nD–A₂ = 5.5 Å, within 3–6 Å.\n\nA₂–R = 4.5 Å, within 4–7 Å.\n\nThe same acceptor satisfies both requirements, so C is active.\n\n**Compound D**\n\nA₁ fails because D–A₁ = 6.5 Å is too large.\n\nA₂ fails because A₂–R = 3.5 Å is too small.\n\nNeither acceptor satisfies both requirements, so D is inactive."
+          }
+        ],
+        "answer": "C — Compound C"
+      }
+    },
+    {
+      "id": "q5",
+      "prompt": "A second researcher proposes retaining both distance requirements from the original model and adding a third requirement: the sum of the D–A and A–R distances must not exceed 11 Å. A compound is active only if all three requirements are satisfied.\n\nBoth the original model and this proposed model are consistent with all results in Table 2.\n\nResearchers can test one additional compound. Each candidate contains one donor, one acceptor and one aromatic ring.\n\nWhich compound would provide the most useful test for distinguishing between the two models?",
+      "options": [
+        "Compound A",
+        "Compound B",
+        "Compound C",
+        "Compound D"
+      ],
+      "contentBlocks": [
+        {
+          "type": "table",
+          "columns": [
+            "Compound",
+            "D–A distance (Å)",
+            "A–R distance (Å)"
+          ],
+          "rows": [
+            [
+              "A",
+              "3.5",
+              "6.5"
+            ],
+            [
+              "B",
+              "2.5",
+              "6.0"
+            ],
+            [
+              "C",
+              "5.5",
+              "6.5"
+            ],
+            [
+              "D",
+              "6.5",
+              "7.5"
+            ]
+          ]
+        }
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Compare the two models",
+            "body": "| Original model | Proposed model |\n|---|---|\n| D–A must be 3–6 Å | D–A must be 3–6 Å |\n| A–R must be 4–7 Å | A–R must be 4–7 Å |\n| No additional sum requirement | D–A + A–R must be ≤ 11 Å |\n\nEvery starred requirement is compulsory. All requirements within a model must be satisfied for it to predict activity."
+          },
+          {
+            "heading": "Step 2 — Check the individual distances and calculate their sum",
+            "body": "| Compound | D–A within 3–6 Å? | A–R within 4–7 Å? | Sum (Å) |\n|---|---|---|---|\n| A | ✓ | ✓ | 10 |\n| B | ✗ | ✓ | 8.5 |\n| C | ✓ | ✓ | 12 |\n| D | ✗ | ✗ | 14 |"
+          },
+          {
+            "heading": "Step 3 — Eliminate compounds that fail requirements shared by both models",
+            "body": "Compound B fails the D–A requirement. Compound D fails both individual distance requirements.\n\nThese requirements are compulsory in both models, so both models predict that B and D will be inactive. Testing either compound would therefore not distinguish between the models.\n\nThis leaves A and C, which satisfy both individual distance requirements."
+          },
+          {
+            "heading": "Step 4 — Identify which compound tests the additional restriction",
+            "body": "Compound A satisfies both individual distance requirements and has a distance sum of 10 Å. It therefore satisfies all requirements of the proposed model, as well as those of the original model. Both models predict activity.\n\nIf A is active, that result would support the proposed model, just as the active compounds V and W—with sums of 9 and 11 Å—already do. However, it would also support the original model. Because A stays below the proposed limit, it does not test whether activity is possible above 11 Å. It therefore does not challenge whether the additional restriction is necessary.\n\nCompound C also satisfies both individual distance requirements, but its distance sum is 12 Å. It therefore directly tests whether a compound can remain active when it exceeds the proposed 11 Å limit:\n\nThe original model predicts activity, because both individual distances are suitable.\n\nThe proposed model predicts inactivity, because the sum exceeds 11 Å.\n\nTesting C therefore challenges the additional restriction: the two models predict different outcomes for this compound. This makes C the most useful compound to test.\n\nIf C is active, the proposed ≤ 11 Å restriction cannot hold as stated. If C is inactive, the result supports the proposed restriction over the original model. Further experiments would be needed to establish an exact threshold."
+          }
+        ],
+        "answer": "C — Compound C"
+      }
+    }
+  ]
+}

@@ -1,0 +1,362 @@
+{
+  "categoryId": "general-chemistry",
+  "subcategoryId": "general-chemistry-medicinal-chemistry",
+  "title": "Quantitative Structure–Activity Relationships (QSAR) - Stem 1",
+  "isPublished": true,
+  "stem": [
+    {
+      "type": "text",
+      "value": "Researchers investigate eight enzyme inhibitors with the same molecular core and different substituents, R. They compare how two substituent properties relate to inhibitory potency."
+    },
+    {
+      "type": "text",
+      "value": "Potency is measured by IC₅₀, the concentration that reduces enzyme activity by 50% under the assay conditions. A lower IC₅₀ indicates greater potency. Two dimensionless substituent parameters are considered:"
+    },
+    {
+      "type": "text",
+      "value": "Hydrophobicity H: larger values indicate a more hydrophobic substituent."
+    },
+    {
+      "type": "text",
+      "value": "Electronic parameter E: positive values indicate electron withdrawal from the core; negative values indicate electron donation."
+    },
+    {
+      "type": "table",
+      "columns": [
+        "Compound",
+        "Substituent",
+        "H",
+        "E",
+        "IC₅₀ (nM)"
+      ],
+      "rows": [
+        [
+          "A",
+          "R₁",
+          "0.0",
+          "0.0",
+          "640"
+        ],
+        [
+          "B",
+          "R₂",
+          "0.5",
+          "0.0",
+          "80"
+        ],
+        [
+          "C",
+          "R₃",
+          "1.0",
+          "0.0",
+          "40"
+        ],
+        [
+          "D",
+          "R₄",
+          "1.5",
+          "0.0",
+          "80"
+        ],
+        [
+          "E",
+          "R₅",
+          "2.0",
+          "0.0",
+          "640"
+        ],
+        [
+          "F",
+          "R₆",
+          "1.0",
+          "+0.5",
+          "20"
+        ],
+        [
+          "G",
+          "R₇",
+          "1.0",
+          "+1.0",
+          "10"
+        ],
+        [
+          "H",
+          "R₈",
+          "1.0",
+          "−0.5",
+          "80"
+        ]
+      ],
+      "caption": "Table 1. Properties and inhibitory potency"
+    },
+    {
+      "type": "text",
+      "value": "Note: Assume that H and E affect IC₅₀ independently."
+    },
+    {
+      "type": "text",
+      "value": "ADDITIONAL INFORMATION:",
+      "variant": "additional-info",
+      "revealAtQuestion": 4
+    },
+    {
+      "type": "text",
+      "value": "Researchers describe the relationship in Table 1 using the following quantitative structure–activity relationship (QSAR). The model fits these idealised data exactly:",
+      "revealAtQuestion": 4
+    },
+    {
+      "type": "equation",
+      "value": "{log}_{10}(\\frac{1\\,\\text{nM}}{{IC}_{50}}) = aH - b{H}^{2} + cE + d",
+      "mode": "block",
+      "revealAtQuestion": 4
+    },
+    {
+      "type": "text",
+      "value": "Here a, b, c and d are constants, with b > 0; log₁₀ denotes a base-10 logarithm. IC₅₀ is expressed relative to 1 nM, as shown. Assume the model applies to new analogues within the H and E ranges in Table 1. It describes an empirical relationship, rather than establishing a molecular mechanism.",
+      "revealAtQuestion": 4
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Four new analogues each have E = +0.5. Using Table 1 and the note above, which value of H would give the lowest IC₅₀?",
+      "options": [
+        "0.5",
+        "1.0",
+        "1.5",
+        "2.0"
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Find the effect of changing E",
+            "body": "Compare compounds C and F. Both have H = 1.0, so H is held constant. E increases from 0 to +0.5, while IC₅₀ falls from 40 to 20 nM. Therefore this change in E multiplies IC₅₀ by 20 ÷ 40 = ½."
+          },
+          {
+            "heading": "Step 2 — Apply the halving to each H value",
+            "body": "As established in Step 1, increasing E from 0 to +0.5 multiplies IC₅₀ by ½. For each H value, take the IC₅₀ at E = 0 from Table 1 and multiply it by ½:\n\n| H | IC₅₀ at E = 0 (nM) | Multiplier for E = +0.5 | Predicted IC₅₀ (nM) |\n|---|---|---|---|\n| 0.5 | 80 | × ½ | 40 |\n| 1.0 | 40 | × ½ | 20 |\n| 1.5 | 80 | × ½ | 40 |\n| 2.0 | 640 | × ½ | 320 |\n\nH = 1.0 gives the lowest predicted IC₅₀, 20 nM. Therefore the answer is B."
+          },
+          {
+            "heading": "Shortcut",
+            "body": "All four candidates have the same change in E, so all four starting IC₅₀ values are multiplied by ½. Their ranking stays the same. Choose the H with the lowest IC₅₀ in the E = 0 series: H = 1.0."
+          }
+        ],
+        "answer": "B — 1.0",
+        "eliminations": [
+          {
+            "option": "A and C",
+            "reason": "H = 0.5 and H = 1.5 both give 40 nM, compared with 20 nM at H = 1.0."
+          },
+          {
+            "option": "D",
+            "reason": "H = 2.0 gives 320 nM. Increasing hydrophobicity does not always increase potency."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "prompt": "A new analogue X has H = 1.5 and an IC₅₀ of 20 nM. Using Table 1 and the note above, what is its electronic parameter E?",
+      "options": [
+        "−0.5",
+        "+0.5",
+        "+1.0",
+        "+1.5"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Choose a comparison with the same H",
+            "body": "Compound D has H = 1.5, E = 0 and an IC₅₀ of 80 nM. D and X have the same H, so compare their E values to explain the change in IC₅₀. X has one-quarter of the IC₅₀ of D: 20 ÷ 80 = ¼."
+          },
+          {
+            "heading": "Step 2 — Connect back to Question 1",
+            "body": "As established in Question 1, increasing E by 0.5 halves IC₅₀. X has one-quarter of the reference IC₅₀, so it must have halved twice. Starting from E = 0, two increases of 0.5 give E = 0.5 × 2. Therefore E = +1.0, which is option C."
+          }
+        ],
+        "answer": "C — +1.0"
+      }
+    },
+    {
+      "id": "q3",
+      "prompt": "Three new inhibitors, J, K and L, have hydrophobicity values H = 0.0, 1.0 and 1.5, used once each. Their electronic parameters are E = −0.5, +0.5 and +1.0, also used once each.\n\nTheir measured IC₅₀ values satisfy both of the following relationships:\n\nJ has four times the IC₅₀ of K.\n\nK has four times the IC₅₀ of L.\n\nUsing Table 1 and the note about independent effects, which assignment is consistent with both IC₅₀ relationships? Each pair below is written as (H, E).\n\nThe compounds, data and question are original teaching material. The idealised data are constructed to fit the stated model exactly; they are not measurements of real inhibitors.",
+      "options": [
+        "J: (0.0, +1.0); K: (1.5, +0.5); L: (1.0, −0.5)",
+        "J: (0.0, +0.5); K: (1.0, −0.5); L: (1.5, +1.0)",
+        "J: (1.5, −0.5); K: (0.0, +1.0); L: (1.0, +0.5)",
+        "J: (0.0, −0.5); K: (1.5, +0.5); L: (1.0, +1.0)"
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Start with a blank table and fill the H equals 0 row",
+            "body": "Build the possible IC₅₀ values one row at a time. All values are in nM. Include E = 0 as a reference column; it is not one of the E values available for J, K and L.\n\n| H | E = −0.5 | E = 0 Reference | E = +0.5 | E = +1.0 |\n|---|---|---|---|---|\n| 0 |  |  |  |  |\n| 1 |  |  |  |  |\n| 1.5 |  |  |  |  |\n\nFor H = 0, Table 1 gives compound A: E = 0 and IC₅₀ = 640 nM. Enter that known reference first:\n\n| H | E = −0.5 | E = 0 Reference | E = +0.5 | E = +1.0 |\n|---|---|---|---|---|\n| 0 |  | 640 |  |  |\n| 1 |  |  |  |  |\n| 1.5 |  |  |  |  |\n\nIncreasing E from 0 to +0.5 halves IC₅₀, so 640 ÷ 2 gives 320 nM. Increasing E by another 0.5 to +1.0 halves it again, so 320 ÷ 2 gives 160 nM. Going backwards from E = 0 to −0.5 reverses a halving: double 640 to obtain 1280 nM. The first row is now complete:\n\n| H | E = −0.5 | E = 0 Reference | E = +0.5 | E = +1.0 |\n|---|---|---|---|---|\n| 0 | 1280 | 640 | 320 | 160 |\n| 1 |  |  |  |  |\n| 1.5 |  |  |  |  |"
+          },
+          {
+            "heading": "Step 2 — Fill the H equals 1 row",
+            "body": "For H = 1, use compound C as the E = 0 reference: IC₅₀ = 40 nM. Increasing E to +0.5 halves 40 to 20 nM; increasing E to +1.0 halves 20 again to 10 nM. Decreasing E from 0 to −0.5 doubles 40 to 80 nM. Add these values while keeping the first row:\n\n| H | E = −0.5 | E = 0 Reference | E = +0.5 | E = +1.0 |\n|---|---|---|---|---|\n| 0 | 1280 | 640 | 320 | 160 |\n| 1 | 80 | 40 | 20 | 10 |\n| 1.5 |  |  |  |  |"
+          },
+          {
+            "heading": "Step 3 — Fill the H equals 1.5 row",
+            "body": "For H = 1.5, use compound D as the E = 0 reference: IC₅₀ = 80 nM. Increasing E to +0.5 halves 80 to 40 nM; increasing E to +1.0 halves 40 again to 20 nM. Decreasing E from 0 to −0.5 doubles 80 to 160 nM. The table is now complete:\n\n| H | E = −0.5 | E = 0 Reference | E = +0.5 | E = +1.0 |\n|---|---|---|---|---|\n| 0 | 1280 | 640 | 320 | 160 |\n| 1 | 80 | 40 | 20 | 10 |\n| 1.5 | 160 | 80 | 40 | 20 |\n\nNow use only the E = −0.5, +0.5 and +1.0 columns. Select one entry from each H row and each of those three E columns; the E = 0 column was only used to build the table."
+          },
+          {
+            "heading": "Step 4 — Use both IC50 ratios",
+            "body": "The two relationships require J : K : L = 16 : 4 : 1 in IC₅₀. J therefore has the largest IC₅₀, sixteen times that of L."
+          },
+          {
+            "heading": "Step 5 — Test options A to D",
+            "body": "Use the completed table to find J, K and L for each option. Both J ÷ K and K ÷ L must equal 4; satisfying only one relationship is not enough.\n\nOption A Incorrect\n\nJ is (0.0, +1.0), giving 160 nM. K is (1.5, +0.5), giving 40 nM. L is (1.0, −0.5), giving 80 nM. Check the two ratios separately:\n\n$$J ÷ K = 160 ÷ 40$$\n\n$$J ÷ K = 4$$\n\n$$K ÷ L = 40 ÷ 80$$\n\n$$K ÷ L = 0.5$$\n\nThe first relationship holds, but the second fails: K has half the IC₅₀ of L, rather than four times it. Reject A.\n\nOption B Correct\n\nJ is (0.0, +0.5), giving 320 nM. K is (1.0, −0.5), giving 80 nM. L is (1.5, +1.0), giving 20 nM.\n\n$$J ÷ K = 320 ÷ 80$$\n\n$$J ÷ K = 4$$\n\n$$K ÷ L = 80 ÷ 20$$\n\n$$K ÷ L = 4$$\n\nBoth relationships hold, and each H and E value is used once. B is correct.\n\nOption C Incorrect\n\nJ is (1.5, −0.5), giving 160 nM. K is (0.0, +1.0), also giving 160 nM. L is (1.0, +0.5), giving 20 nM.\n\n$$J ÷ K = 160 ÷ 160$$\n\n$$J ÷ K = 1$$\n\n$$K ÷ L = 160 ÷ 20$$\n\n$$K ÷ L = 8$$\n\nJ and K have equal IC₅₀ values, and K has eight times the IC₅₀ of L. Neither required fourfold relationship holds. Reject C.\n\nOption D Incorrect\n\nJ is (0.0, −0.5), giving 1280 nM. K is (1.5, +0.5), giving 40 nM. L is (1.0, +1.0), giving 10 nM.\n\n$$J ÷ K = 1280 ÷ 40$$\n\n$$J ÷ K = 32$$\n\n$$K ÷ L = 40 ÷ 10$$\n\n$$K ÷ L = 4$$\n\nThe second relationship holds, but the first fails: J has 32 times the IC₅₀ of K, rather than four times it. Reject D. Only B satisfies both relationships."
+          },
+          {
+            "heading": "Shortcut",
+            "body": "Test J ÷ K first. The ratios for A, B, C and D are 4, 4, 1 and 32, eliminating C and D. Then test K ÷ L for A and B: the ratios are 0.5 and 4. Only B satisfies both conditions. A valid answer must satisfy both ratios and use each H and E once."
+          }
+        ],
+        "answer": "B — J: (0.0, +0.5); K: (1.0, −0.5); L: (1.5, +1.0)"
+      }
+    },
+    {
+      "id": "q4",
+      "prompt": "Using the equation and Table 1, which expression gives the value of the coefficient c?",
+      "options": [
+        "log₁₀(0.25)",
+        "log₁₀(0.5)",
+        "log₁₀(2)",
+        "log₁₀(4)"
+      ],
+      "correctOptionIndex": 3,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Substitute a compound that includes c",
+            "body": "Choose compound G because H = 1 and E = 1 make the substitution simplest: H² is also 1, there are no 0.5 factors, and all four terms a, b, c and d remain in the expression. G has IC₅₀ = 10 nM, so:\n\n$$log_{10}(\\frac{1}{10}) = a - b + c + d$$\n\nUse the logarithm rule to write the same relationship in exponential form:\n\n$${log}_{A}(M) = N$$\n\nis equivalent to:\n\n$${A}^{N} = M$$\n\n$$\\frac{1}{10} = {10}^{a - b + c + d}$$\n\nSince 1/10 = 10⁻¹, the exponent must be −1:\n\n$$-1 = a - b + c + d$$\n\nWe want c, but a, b and d are unknown. We do not need to find them separately. Instead, look for another compound with the same H and E = 0: this keeps a − b + d unchanged and removes cE."
+          },
+          {
+            "heading": "Step 2 — Finding a − b + d",
+            "body": "To find a − b + d without the cE term, choose H = 1 and E = 0. H = 1 makes aH − bH² become a − b, while E = 0 removes cE. Compound C has these values and an IC₅₀ of 40 nM. Substituting into the equation gives:\n\n$$log_{10}(\\frac{1}{40}) = a - b + d$$\n\nRecall the general logarithm rule:\n\n$${log}_{A}(M) = N$$\n\nis equivalent to:\n\n$${A}^{N} = M$$\n\nHere the base is 10, M = 1/40 and N = a − b + d. Applying the same rule gives:\n\n$$\\frac{1}{40} = {10}^{a - b + d}$$"
+          },
+          {
+            "heading": "Step 3 — Separate and replace the shared contribution",
+            "body": "Compare the exponential forms from Steps 1 and 2:\n\n$$\\frac{1}{10} = {10}^{a - b + c + d}$$\n\n$$\\frac{1}{40} = {10}^{a - b + d}$$\n\nBoth contain the same a − b + d contribution. The exponent in the first equation also includes c. Using the exponent rule:\n\n$${10}^{x + y} = {10}^{x} \\times  {10}^{y}$$\n\nSeparate a − b + d from c in the first equation:\n\n$$\\frac{1}{10} = {10}^{a - b + d} \\times  {10}^{c}$$\n\nStep 2 tells us that 10ᵃ⁻ᵇ⁺ᵈ is 1/40. Substitute that known value:\n\n$$\\frac{1}{10} = \\frac{1}{40} \\times  {10}^{c}$$\n\nMultiply both sides by 40:\n\n$$\\frac{40}{10} = {10}^{c}$$\n\n$$4 = {10}^{c}$$\n\nA base-10 logarithm tells us the power to which 10 must be raised. Since 10ᶜ = 4, c = log₁₀(4). No decimal logarithm calculation is needed."
+          },
+          {
+            "heading": "Shortcut",
+            "body": "At the same H, C → G increases E by 1 and reduces IC₅₀ from 40 to 10 nM. The reciprocal quantity therefore increases fourfold. In the equation this corresponds to adding c, so 10ᶜ = 4 and c = log₁₀(4)."
+          }
+        ],
+        "answer": "D — log₁₀(4)",
+        "eliminations": [
+          {
+            "option": "Other options",
+            "reason": "A and B give negative c values, which would make increasing E increase IC₅₀, contrary to C → G. C gives 10ᶜ = 2: this would predict 20 nM at E = 1, rather than G’s 10 nM. It confuses the factor for a 0.5 increase in E with the factor for a 1.0 increase."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "prompt": "Let L = log₁₀(2). Which pair gives the values of a and b?",
+      "options": [
+        "a: 4L; b: 4L",
+        "a: 8L; b: 4L",
+        "a: 4L; b: 8L",
+        "a: 16L; b: 8L"
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Choose compounds that remove cE and isolate d",
+            "body": "We want a and b, so use compounds with E = 0: the cE term disappears. Compound A is especially useful because H = 0 also removes both aH and bH², leaving only d. Its IC₅₀ is 640 nM.\n\n$$log_{10}(\\frac{1}{640}) = d$$\n\nUsing the logarithm–exponential conversion rule from Question 4, write this as:\n\n$$\\frac{1}{640} = {10}^{d}$$\n\nNext choose C and E. Their H values are 1 and 2, so substituting gives different combinations of a and b. All three compounds have E = 0:\n\n| Compound | H | IC₅₀ (nM) | Resulting equation |\n|---|---|---|---|\n| A | 0 | 640 | $\\frac{1}{640} = {10}^{d}$ |\n| C | 1 | 40 | $\\frac{1}{40} = {10}^{a - b + d}$ |\n| E | 2 | 640 | $\\frac{1}{640} = {10}^{2a - 4b + d}$ |"
+          },
+          {
+            "heading": "Step 2 — Make two equations containing only a and b",
+            "body": "Compare A and E first. They have the same IC₅₀, so they have the same logarithm and therefore the same exponent:\n\n$$2a - 4b + d = d$$\n\nSubtract d, then divide by 2:\n\n$$2a - 4b = 0$$\n\n$$a - 2b = 0$$\n\nNow compare A and C. C gives:\n\n$$\\frac{1}{40} = {10}^{a - b + d}$$\n\nSeparate out d and replace its factor using Step 1:\n\n$$\\frac{1}{40} = {10}^{a - b} \\times  {10}^{d}$$\n\n$$\\frac{1}{40} = {10}^{a - b} \\times  \\frac{1}{640}$$\n\nMultiply both sides by 640, then use the logarithm rule:\n\n$$16 = {10}^{a - b}$$\n\n$$a - b = log_{10}(16)$$\n\nSince 16 is 2⁴, first write the logarithm as:\n\n$$a - b = {log}_{10}({2}^{4})$$\n\nThe logarithm power rule states:\n\n$${log}_{10}({x}^{n}) = n {log}_{10}(x)$$\n\nApply this rule with x = 2 and n = 4:\n\n$$a - b = 4 {log}_{10}(2)$$\n\nL was defined as log₁₀(2), so substitute L:\n\n$$a - b = 4L$$"
+          },
+          {
+            "heading": "Step 3 — Solve the two linear simultaneous equations",
+            "body": "Start with the first equation and rearrange it to express a in terms of b:\n\n$$a - 2b = 0$$\n\n$$a = 2b$$\n\nSubstitute a = 2b into a − b = 4L:\n\n$$2b - b = 4L$$\n\n$$b = 4L$$\n\nNow use a = 2b again and substitute b = 4L:\n\n$$a = 2 \\times  4L$$\n\n$$a = 8L$$\n\nTherefore the answer is B."
+          },
+          {
+            "heading": "Shortcut",
+            "body": "Equal IC₅₀ values at H = 0 and H = 2 require a = 2b, leaving B and D. The sixteenfold reciprocal change from A to C requires a − b = 4L. Only B satisfies both conditions."
+          }
+        ],
+        "answer": "B — a: 8L; b: 4L",
+        "eliminations": [
+          {
+            "option": "Other options",
+            "reason": "A makes a − b zero, predicting equal IC₅₀ values for A and C. C makes a − b negative, predicting that C has a higher IC₅₀ than A. D satisfies a = 2b, but its a − b is 8L: it predicts a 256-fold reciprocal change, rather than the observed sixteenfold change."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q6",
+      "prompt": "Researchers use a modified QSAR model:",
+      "options": [
+        "Graph A",
+        "Graph B",
+        "Graph C",
+        "Graph D"
+      ],
+      "contentBlocks": [
+        {
+          "type": "equation",
+          "value": "{log}_{10}(\\frac{1}{IC_{50}}) = aH - b{H}^{2} + 2cE + d",
+          "mode": "block"
+        },
+        {
+          "type": "text",
+          "value": "Here IC₅₀ is entered as its numerical value in nM. The coefficients a, b, c and d are constants, with c > 0. In this question, zero hydrophobic contribution refers to zero hydrophobicity."
+        },
+        {
+          "type": "text",
+          "value": "For a series of compounds with zero hydrophobic contribution, which graph best represents how IC₅₀ changes as E increases?"
+        },
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1792150114/question-bank/qb_img_1792150111167_0.png",
+          "alt": "",
+          "caption": ""
+        }
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Remove the hydrophobic contribution",
+            "body": "Zero hydrophobic contribution here means H = 0. Therefore aH − bH² = 0, so these terms drop out, leaving:\n\n$${log}_{10}(\\frac{1}{IC_{50}}) = 2cE + d$$"
+          },
+          {
+            "heading": "Step 2 — Express IC50 directly",
+            "body": "Use the general logarithm rule:\n\n$${log}_{A}(M) = N$$\n\nThis is equivalent to:\n\n$${A}^{N} = M$$\n\nApply this rule with base 10:\n\n$$\\frac{1}{IC_{50}} = {10}^{2cE + d}$$\n\nTaking the reciprocal gives:\n\n$$IC_{50} = \\frac{1}{{10}^{2cE + d}}$$"
+          },
+          {
+            "heading": "Step 3 — Follow what happens as E changes",
+            "body": "c and d are fixed numbers; E is the variable. Because c > 0, increasing E increases the exponent 2cE + d. The denominator therefore becomes larger, so IC₅₀ becomes smaller.\n\nFor very large positive E, the denominator is very large. Dividing 1 by that large number gives a value close to zero. Thus IC₅₀ decreases towards zero as E increases. Conversely, decreasing E makes the exponent and denominator smaller. When we divide 1 by a very small positive number, the resulting IC₅₀ is larger.\n\nAt E = 0 (the y-intercept of the graph), the value is as below:\n\n$$IC_{50} = \\frac{1}{{10}^{d}}$$\n\nThis is a positive number and hence the y intercept is a positive number along the y-axis.\n\nA power of 10 is always positive, even when the exponent is negative. For example, if the exponent 2cE + d is −1:\n\n$${10}^{-1} = 0.1$$\n\n$$IC_{50} = \\frac{1}{0.1}$$\n\n$$IC_{50} = 10$$\n\nIf the exponent is +1 instead:\n\n$${10}^{1} = 10$$\n\n$$IC_{50} = \\frac{1}{10}$$\n\n$$IC_{50} = 0.1$$\n\nBoth examples give positive IC₅₀ values at E=0. Hence the y intercept is a positive number along the y-axis."
+          },
+          {
+            "heading": "Step 4 — Select the graph",
+            "body": "Graph B decreases smoothly and flattens towards zero, matching the equation. Therefore the answer is B."
+          },
+          {
+            "heading": "Shortcut",
+            "body": "Increasing E makes 10²ᶜᴱ⁺ᵈ larger. Its reciprocal becomes smaller and approaches zero. Choose the decreasing curve that flattens towards zero: B."
+          }
+        ],
+        "answer": "B — Graph B",
+        "eliminations": [
+          {
+            "option": "Other options",
+            "reason": "A increases as E increases, reversing the predicted direction. C turns upwards after decreasing, and D turns downwards after increasing. With c > 0 and d constant, the exponent increases throughout, so neither turning behaviour is possible."
+          }
+        ]
+      }
+    }
+  ]
+}
