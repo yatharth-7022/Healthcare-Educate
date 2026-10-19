@@ -1,0 +1,301 @@
+{
+  "categoryId": "general-chemistry",
+  "subcategoryId": "general-chemistry-emulsions-and-phase-equilibria",
+  "title": "Multiple Liquid–Liquid Extraction - Stem 2",
+  "isPublished": true,
+  "stem": [
+    {
+      "type": "text",
+      "value": "Liquid–liquid extraction transfers a dissolved substance between two liquids that form separate layers. After the liquids are shaken and allowed to separate, the substance distributes between them."
+    },
+    {
+      "type": "text",
+      "value": "A researcher investigates the extraction of compound R from water using an organic solvent F. Water and F are immiscible. Under the conditions used, the concentration ratio below is constant, regardless of the volumes used or the amount of R present:"
+    },
+    {
+      "type": "equation",
+      "value": "\\frac{{c}_{F}}{{c}_{{H}_{2}O}}=\\text{constant}",
+      "mode": "block"
+    },
+    {
+      "type": "text",
+      "value": "Concentration is related to mass and volume by:"
+    },
+    {
+      "type": "equation",
+      "value": "c=\\frac{m}{\\,\\text{V}}",
+      "mode": "block"
+    },
+    {
+      "type": "text",
+      "value": "Here c is concentration in mg mL⁻¹, m is mass in mg and V is volume in mL."
+    },
+    {
+      "type": "image",
+      "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1792405660/question-bank/qb_img_1792405658520_0.png",
+      "alt": "Figure 1. Layer separation and solvent replacement during successive extractions. Schematic; not to scale.",
+      "caption": "Figure 1. Layer separation and solvent replacement during successive extractions. Schematic; not to scale."
+    },
+    {
+      "type": "text",
+      "value": "The preliminary experiment begins with 60 mL of an aqueous solution containing 48 mg of R. The researcher adds 20 mL of F, shakes the mixture and allows the layers to separate."
+    },
+    {
+      "type": "table",
+      "columns": [
+        "Observation",
+        "Upper layer",
+        "Lower layer"
+      ],
+      "rows": [
+        [
+          "Volume (mL)",
+          "60",
+          "20"
+        ],
+        [
+          "Concentration of R (mg mL⁻¹)",
+          "0.40",
+          "1.20"
+        ],
+        [
+          "Water-soluble marker",
+          "Present",
+          "Absent"
+        ]
+      ],
+      "caption": "Table 1. Results of the preliminary experiment."
+    },
+    {
+      "type": "text",
+      "value": "The marker dissolves only in water and does not affect the distribution of R."
+    },
+    {
+      "type": "text",
+      "value": "Every subsequent experiment starts with a new 60 mL aqueous sample containing 48 mg of R. Fresh F contains no R. Equilibrium is reached after each shaking step; liquid volumes remain unchanged and no material is lost during separation. R is recovered by collecting the F layers and evaporating F."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "The researcher has 40 mL of F available for each procedure. Which procedure would recover at least 36 mg of R?",
+      "options": [
+        "Add all 40 mL of F, shake and separate. Collect the lower layer.",
+        "Add 20 mL of F, shake and separate. Collect the lower layer. Add a fresh 20 mL portion of F to the retained upper layer, shake and separate, then collect the new lower layer.",
+        "Follow the procedure in B, using 10 mL of F first and a fresh 30 mL portion second.",
+        "Add 20 mL of F and shake. Without removing either layer, add another 20 mL of F, shake again and separate. Collect the lower layer."
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Underline the question clues",
+            "body": "Underline “at least 36 mg” and “40 mL of F”. Each sample starts with 48 mg of R, so recovering at least 36 mg means leaving no more than 12 mg in water:\n\n$$48-36=12\\,\\text{mg}$$"
+          },
+          {
+            "heading": "Step 2 — Identify the layers and establish the concentration ratio",
+            "body": "Table 1 places the water-soluble marker in the upper layer. The upper layer is therefore water, and the lower layer is F. Use their measured concentrations:\n\n$$\\frac{{c}_{F}}{{c}_{{H}_{2}O}}=\\frac{1.20}{0.40}=3$$"
+          },
+          {
+            "heading": "Step 3 — Relate the masses in the two layers",
+            "body": "We start with 48 mg of R and need at least 36 mg to be extracted into F. That means no more than 12 mg can remain in water. We therefore need to work with the masses in the two layers, rather than their concentrations alone. For repeated extractions, the 36 mg target refers to the total R collected in all the F extracts, not just the final portion.\n\nWe already know the concentration ratio from Table 1:\n\n$$\\frac{{c}_{F}}{{c}_{{H}_{2}O}}=\\frac{1.20}{0.40}=3$$\n\nConcentration is mass divided by volume. Substitute this into both the numerator and denominator. In the equations below, m denotes the mass of R in a layer and V denotes its volume; the subscripts identify F or water. These masses refer to one extraction at equilibrium:\n\n$$3=\\frac{\\frac{{m}_{F}}{{\\,\\text{V}}_{F}}}{\\frac{{m}_{{H}_{2}O}}{{\\,\\text{V}}_{{H}_{2}O}}}$$\n\nDividing by a fraction means multiplying by its reciprocal:\n\n$$3=\\frac{{m}_{F}}{{\\,\\text{V}}_{F}}\\times \\frac{{\\,\\text{V}}_{{H}_{2}O}}{{m}_{{H}_{2}O}}$$\n\nNow multiply the numerators and denominators:\n\n$$3=\\frac{{m}_{F}\\times {\\,\\text{V}}_{{H}_{2}O}}{{m}_{{H}_{2}O}\\times {\\,\\text{V}}_{F}}$$\n\nRearrange to make the mass ratio the subject:\n\n$$\\frac{{m}_{F}}{{m}_{{H}_{2}O}}=3\\times \\frac{{\\,\\text{V}}_{F}}{{\\,\\text{V}}_{{H}_{2}O}}$$"
+          },
+          {
+            "heading": "Step 4 — Work through each procedure",
+            "body": "Use the mass ratio to count the total number of shares, then calculate the fraction of R in each layer. These fractions describe the compound R, not the volumes of the layers. In these procedures, “collect the lower layer” means remove the lower F layer from the vessel and keep it aside as an extract. It is not discarded. If another extraction follows, fresh F is added to the upper water layer left in the vessel; the kept-aside extract does not take part in that next extraction.\n\nA One extraction with 40 mL\n\n“Add all 40 mL of F” gives an F volume of 40 mL. The starting aqueous sample contains 60 mL of water, so the water volume is 60 mL. Substitute these volumes into the general equation from Step 3:\n\n$$\\frac{{m}_{F}}{{m}_{{H}_{2}O}}=3\\times \\frac{40}{60}=2=\\frac{2}{1}$$\n\nWrite this as a ratio:\n\n$${m}_{F}:{m}_{{H}_{2}O}=2:1$$\n\nThere are three mass shares in total: two in F and one in water. Therefore two-thirds of R is dissolved in F and one-third is dissolved in water:\n\n$${m}_{F}=\\frac{2}{3}\\times 48=32\\,\\text{mg}$$\n\n$${m}_{{H}_{2}O}=\\frac{1}{3}\\times 48=16\\,\\text{mg}$$\n\nTable 1 shows the water-soluble marker in the upper layer, so the upper layer is water and contains 16 mg of R. The lower layer has no marker, so it is F and contains 32 mg of R. “Collect the lower layer” means remove this F layer and keep it aside. The kept-aside extract contains 32 mg of R, below the 36 mg target. Reject A.\n\nB Two separate extractions with 20 mL each\n\nFirst extraction: “Add 20 mL of F” gives an F volume of 20 mL. It contacts the original 60 mL water layer. Substitute both volumes into the general equation:\n\n$$\\frac{{m}_{F}}{{m}_{{H}_{2}O}}=3\\times \\frac{20}{60}=1=\\frac{1}{1}$$\n\n$${m}_{F}:{m}_{{H}_{2}O}=1:1$$\n\nThere are two equal mass shares: one in F and one in water. Each layer receives half of the original 48 mg:\n\n$${m}_{F}=\\frac{1}{2}\\times 48=24\\,\\text{mg}$$\n\n$${m}_{{H}_{2}O}=\\frac{1}{2}\\times 48=24\\,\\text{mg}$$\n\n“Collect the lower layer” means remove the lower F layer and keep it aside as the first extract. Its 24 mg of R is now outside the extraction vessel and is saved for recovery. The upper water layer stays in the vessel: its volume remains 60 mL, but it contains only the other 24 mg of R.\n\nSecond extraction: “Add a fresh 20 mL portion of F to the retained upper layer” means add new F to the water still in the vessel. The first F extract remains kept aside and is not returned. The original 60 mL water layer remains because only the lower F layer was removed. The stem specifies unchanged liquid volumes and no material lost during separation. Use 20 mL of fresh F and 60 mL of retained water:\n\n$$\\frac{{m}_{F}}{{m}_{{H}_{2}O}}=3\\times \\frac{20}{60}=1=\\frac{1}{1}$$\n\n$${m}_{F}:{m}_{{H}_{2}O}=1:1$$\n\nAgain, half goes into each layer, but this time the available mass is the remaining 24 mg:\n\n$${m}_{F}=\\frac{1}{2}\\times 24=12\\,\\text{mg}$$\n\n$${m}_{{H}_{2}O}=\\frac{1}{2}\\times 24=12\\,\\text{mg}$$\n\nRemove the new lower F layer and keep it aside as the second extract, containing 12 mg of R. The first extract, already kept aside, contains 24 mg. Add the R in these two saved extracts to find the total recovery:\n\n$$\\text{Total recovered}=24+12=36\\,\\text{mg}$$\n\n**B meets the target exactly.**\n\nC Separate extractions with 10 mL then 30 mL\n\nFirst extraction: the first F portion is 10 mL, and the original aqueous sample contains 60 mL of water. Use these volumes in the general equation:\n\n$$\\frac{{m}_{F}}{{m}_{{H}_{2}O}}=3\\times \\frac{10}{60}=\\frac{1}{2}$$\n\n$${m}_{F}:{m}_{{H}_{2}O}=1:2$$\n\nThere are three mass shares: one in F and two in water. Thus one-third of R goes into F and two-thirds remains in water:\n\n$${m}_{F}=\\frac{1}{3}\\times 48=16\\,\\text{mg}$$\n\n$${m}_{{H}_{2}O}=\\frac{2}{3}\\times 48=32\\,\\text{mg}$$\n\nRemove the lower F layer containing 16 mg of R and keep it aside as the first extract. Leave the upper 60 mL water layer, containing 32 mg of R, in the vessel for the second extraction.\n\nSecond extraction: add a fresh 30 mL portion of F to the water left in the vessel. The first F extract remains kept aside, so it is not included in this new mixture. Use 30 mL of fresh F and the retained 60 mL of water:\n\n$$\\frac{{m}_{F}}{{m}_{{H}_{2}O}}=3\\times \\frac{30}{60}=\\frac{3}{2}$$\n\n$${m}_{F}:{m}_{{H}_{2}O}=3:2$$\n\nThere are five mass shares: three in F and two in water. Apply these fractions to the 32 mg remaining after the first extraction:\n\n$${m}_{F}=\\frac{3}{5}\\times 32=19.2\\,\\text{mg}$$\n\n$${m}_{{H}_{2}O}=\\frac{2}{5}\\times 32=12.8\\,\\text{mg}$$\n\nRemove the second lower F layer, containing 19.2 mg of R, and keep it aside. The first extract saved earlier contains 16 mg. Add the R in both kept-aside extracts:\n\n$$\\text{Total recovered}=16+19.2=35.2\\,\\text{mg}$$\n\nThis is below 36 mg. Reject C.\n\nD Two additions without separating the layers\n\n**Stage 1 Add the first 20 mL of F**\n\nThe first 20 mL portion of F contacts the original 60 mL water layer containing 48 mg of R. Use an F volume of 20 mL and a water volume of 60 mL:\n\n$$\\frac{{m}_{F}}{{m}_{{H}_{2}O}}=3\\times \\frac{20}{60}=1=\\frac{1}{1}$$\n\n$${m}_{F}:{m}_{{H}_{2}O}=1:1$$\n\nThere are two equal mass shares, so half of R is in each layer:\n\n$${m}_{F}=\\frac{1}{2}\\times 48=24\\,\\text{mg}$$\n\n$${m}_{{H}_{2}O}=\\frac{1}{2}\\times 48=24\\,\\text{mg}$$\n\nAt this point, the lower F layer contains 24 mg and the upper water layer contains 24 mg. Neither layer is removed or kept aside: both remain in the vessel for Stage 2.\n\n**Stage 2 Add another 20 mL of F and shake again**\n\nThe new F joins the F already in the vessel, giving:\n\n$${\\,\\text{V}}_{F}=20+20=40\\,\\text{mL}$$\n\nThe 24 mg already dissolved in F is still present, as is the 24 mg in water:\n\n$$\\text{Total R still present}=24+24=48\\,\\text{mg}$$\n\nNeither layer was removed. The added F joins the first portion, so the F volume is now 40 mL. The original water layer remains at 60 mL. Apply these volumes to the general equation:\n\n$$\\frac{{m}_{F}}{{m}_{{H}_{2}O}}=3\\times \\frac{40}{60}=2=\\frac{2}{1}$$\n\n$${m}_{F}:{m}_{{H}_{2}O}=2:1$$\n\nThere are now three mass shares: two in F and one in water. Apply these fractions to all 48 mg still present:\n\n$${m}_{F}=\\frac{2}{3}\\times 48=32\\,\\text{mg}$$\n\n$${m}_{{H}_{2}O}=\\frac{1}{3}\\times 48=16\\,\\text{mg}$$\n\nF therefore gains a further 8 mg during Stage 2:\n\n$$\\text{Additional R transferred into F}=32-24=8\\,\\text{mg}$$\n\nOnly after Stage 2 is the lower F layer removed and kept aside. This single saved extract contains 32 mg of R in total, below the 36 mg target. Reject D."
+          }
+        ],
+        "answer": "B — The two collected F extracts contain 24 mg and 12 mg, giving 36 mg in total"
+      }
+    },
+    {
+      "id": "q2",
+      "prompt": "A researcher starts with a new 60 mL aqueous sample containing 48 mg of R and performs two successive extractions with fresh F. After each extraction, the lower layer is collected and the upper layer is retained.\n\nThe two portions of F have a combined volume of 40 mL. Their individual volumes were not recorded.\n\nThe second collected F layer contains 19.2 mg of R, and 12.8 mg remains in the final water layer.\n\nWhat volume of F was used in the first extraction?",
+      "options": [
+        "10 mL",
+        "15 mL",
+        "20 mL",
+        "30 mL"
+      ],
+      "correctOptionIndex": 0,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Start with the second extraction",
+            "body": "We want the first volume, but the supplied masses describe the second extraction. Start there because we know the mass in both layers at that equilibrium:\n\n$$\\frac{{m}_{F}}{{m}_{{H}_{2}O}}=\\frac{19.2}{12.8}=\\frac{3}{2}$$\n\nUse the general relationship established in Question 1, keeping both layer volumes as variables:\n\n$$\\frac{{m}_{F}}{{m}_{{H}_{2}O}}=3\\times \\frac{{\\,\\text{V}}_{F}}{{\\,\\text{V}}_{{H}_{2}O}}$$\n\nNow identify the volumes present during the second extraction. The first lower F layer is removed and kept aside, while the upper water layer remains in the vessel. Removing F does not remove the water: its volume remains 60 mL under the unchanged-volume conditions in the stem. The second extraction therefore uses the unknown fresh F volume and 60 mL of retained water. Substitute these volumes and the observed 3:2 mass ratio:\n\n$$\\frac{3}{2}=3\\times \\frac{{\\,\\text{V}}_{F,2}}{60}$$\n\n$${\\,\\text{V}}_{F,2}=\\frac{3}{2}\\times \\frac{60}{3}=30\\,\\text{mL}$$"
+          },
+          {
+            "heading": "Step 2 — Use the total solvent volume",
+            "body": "The question states that the two fresh portions total 40 mL:\n\n$${\\,\\text{V}}_{F,1}+{\\,\\text{V}}_{F,2}=40\\,\\text{mL}$$\n\n$${\\,\\text{V}}_{F,1}=40-30=10\\,\\text{mL}$$"
+          }
+        ],
+        "answer": "A — 10 mL",
+        "eliminations": [
+          {
+            "option": "B",
+            "reason": "This leaves 25 mL for the second extraction, which does not produce the observed 3:2 mass ratio."
+          },
+          {
+            "option": "C",
+            "reason": "This leaves 20 mL for the second extraction, which would give equal masses in its two layers."
+          },
+          {
+            "option": "D",
+            "reason": "This is the volume of the second portion. The question asks for the first."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "prompt": "Two separate samples each contain 48 mg of R dissolved in 60 mL of water.\n\nA researcher extracts the first sample with 20 mL of fresh F. After separation, the lower layer is transferred into the second aqueous sample. This mixture is shaken and allowed to separate.\n\nNo additional F is used.\n\nWhat mass of R is present in the final lower layer?",
+      "options": [
+        "12 mg",
+        "24 mg",
+        "36 mg",
+        "48 mg"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Calculate the R in the first F extract",
+            "body": "Begin with the general relationship from Question 1:\n\n$$\\frac{{m}_{F}}{{m}_{{H}_{2}O}}=3\\times \\frac{{\\,\\text{V}}_{F}}{{\\,\\text{V}}_{{H}_{2}O}}$$\n\nFor the first extraction, the question specifies 20 mL of fresh F and a sample containing 60 mL of water. These are the two layer volumes present, so substitute them now:\n\n$$\\frac{{m}_{F}}{{m}_{{H}_{2}O}}=3\\times \\frac{20}{60}=1$$\n\n$${m}_{F}:{m}_{{H}_{2}O}=1:1$$\n\nHalf of the first sample’s R enters F:\n\n$${m}_{F}=\\frac{1}{2}\\times 48=24\\,\\text{mg}$$"
+          },
+          {
+            "heading": "Step 2 — Count all the R present in the second mixture",
+            "body": "The transferred F already contains 24 mg. The second aqueous sample contributes another 48 mg:\n\n$${m}_{total}=24+48=72\\,\\text{mg}$$\n\nThe second mixture contains the transferred 20 mL F layer and the second sample’s 60 mL water layer. Only the lower F layer was transferred; the first sample’s water was left behind, so its volume is not added. The unchanged-volume condition means the transferred F still occupies 20 mL."
+          },
+          {
+            "heading": "Step 3 — Apply the ratio to the second equilibrium",
+            "body": "Start again with the general relationship, using the volumes in this second mixture:\n\n$$\\frac{{m}_{F}}{{m}_{{H}_{2}O}}=3\\times \\frac{{\\,\\text{V}}_{F}}{{\\,\\text{V}}_{{H}_{2}O}}$$\n\nHere the F volume is 20 mL and the water volume is 60 mL. Substitute these volumes:\n\n$$\\frac{{m}_{F}}{{m}_{{H}_{2}O}}=3\\times \\frac{20}{60}=1$$\n\nAgain, the mass ratio is 1:1. Half of the **72 mg now present** is in F:\n\n$${m}_{F}=\\frac{1}{2}\\times 72=36\\,\\text{mg}$$"
+          }
+        ],
+        "answer": "C — 36 mg",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "12 mg is the additional mass transferred into F during the second contact: 36 − 24. It is not the final mass in F."
+          },
+          {
+            "option": "B",
+            "reason": "24 mg is the mass in F before it contacts the second sample."
+          },
+          {
+            "option": "D",
+            "reason": "This would incorrectly assume that the loaded F extracts another 24 mg, as though it were fresh solvent."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "prompt": "A new 60 mL aqueous sample containing 48 mg of R is extracted with 20 mL of fresh F.\n\nThe lower layer is collected. It is then shaken with 20 mL of fresh water containing no R. After separation, the upper layer is discarded.\n\nThe retained lower layer is shaken with another 20 mL portion of fresh water, and the upper layer is again discarded.\n\nWhat mass of R remains in the final lower layer?",
+      "options": [
+        "6.0 mg",
+        "12.0 mg",
+        "13.5 mg",
+        "18.0 mg"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Find the mass entering the washing stages",
+            "body": "The initial extraction uses 20 mL of F and 60 mL of water:\n\n$$\\frac{{m}_{F}}{{m}_{{H}_{2}O}}=3\\times \\frac{20}{60}=1$$\n\nThe 1:1 ratio puts half of the original R into the collected lower F layer:\n\n$${m}_{F}=\\frac{1}{2}\\times 48=24\\,\\text{mg}$$\n\nWe start the first wash with **24 mg of R in 20 mL of F**."
+          },
+          {
+            "heading": "Step 2 — Use the volumes actually present in the first wash",
+            "body": "Underline **“20 mL of fresh water”**.\n\nThe original 60 mL water layer was separated from the collected F. The wash therefore contains **20 mL of F and 20 mL of water**. Use the general relationship:\n\n$$\\frac{{m}_{F}}{{m}_{{H}_{2}O}}=3\\times \\frac{{\\,\\text{V}}_{F}}{{\\,\\text{V}}_{{H}_{2}O}}=3\\times \\frac{20}{20}=3$$\n\n$${m}_{F}:{m}_{{H}_{2}O}=3:1$$\n\nThere are four mass shares: three in F and one in water.\n\n$${m}_{F}=\\frac{3}{4}\\times 24=18\\,\\text{mg}$$\n\n$${m}_{{H}_{2}O}=\\frac{1}{4}\\times 24=6\\,\\text{mg}$$\n\nDiscarding the upper water layer removes 6 mg. The retained F contains 18 mg."
+          },
+          {
+            "heading": "Step 3 — Apply the second fresh water wash",
+            "body": "The second wash again contains 20 mL of F and 20 mL of fresh water. The ratio remains 3:1, but only **18 mg** is now available:\n\n$${m}_{F}=\\frac{3}{4}\\times 18=13.5\\,\\text{mg}$$"
+          }
+        ],
+        "answer": "C — 13.5 mg",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "6 mg is the R discarded in the first water wash."
+          },
+          {
+            "option": "B",
+            "reason": "This follows from incorrectly using a 1:1 mass ratio during washing and retaining half of 24 mg."
+          },
+          {
+            "option": "D",
+            "reason": "18 mg remains after the first wash; a second wash still has to occur."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "prompt": "A new aqueous sample contains 48 mg of R and 48 mg of impurity S in 60 mL of water.\n\nBoth compounds obey the same constant concentration-ratio model, with:",
+      "options": [
+        "Combine both extracts without washing.",
+        "Combine both extracts, then wash once with 40 mL of fresh water.",
+        "Keep only the first extract, without washing.",
+        "Combine both extracts, then wash once with 20 mL of fresh water."
+      ],
+      "contentBlocks": [
+        {
+          "type": "equation",
+          "value": "\\frac{{c}_{F,R}}{{c}_{{H}_{2}O,R}}=3,  \\frac{{c}_{F,S}}{{c}_{{H}_{2}O,S}}=1",
+          "mode": "block"
+        },
+        {
+          "type": "text",
+          "value": "The compounds distribute independently and do not react."
+        },
+        {
+          "type": "text",
+          "value": "The sample undergoes two successive extractions with fresh 20 mL portions of F. After each extraction, the lower F layer is collected and the upper water layer is retained."
+        },
+        {
+          "type": "text",
+          "value": "The researcher requires a final F product containing:"
+        },
+        {
+          "type": "text",
+          "value": "• At least 30 mg of R, and"
+        },
+        {
+          "type": "text",
+          "value": "• At least twice as much R as S by mass."
+        },
+        {
+          "type": "text",
+          "value": "For any subsequent water wash, fresh water contains neither compound. After shaking and separation, the upper water layer is discarded and the lower F layer is retained."
+        },
+        {
+          "type": "text",
+          "value": "Which procedure meets both requirements?"
+        }
+      ],
+      "correctOptionIndex": 3,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Establish what each extract contains",
+            "body": "Start with the two extractions because every option uses either the first extract or both extracts.\n\nFor R, each extraction has:\n\n$$\\frac{{m}_{F,R}}{{m}_{{H}_{2}O,R}}=3\\times \\frac{20}{60}=1$$\n\n$${m}_{F,R}:{m}_{{H}_{2}O,R}=1:1$$\n\nHalf of the R present enters each fresh F portion. For S:\n\n$$\\frac{{m}_{F,S}}{{m}_{{H}_{2}O,S}}=1\\times \\frac{20}{60}=\\frac{1}{3}$$\n\n$${m}_{F,S}:{m}_{{H}_{2}O,S}=1:3$$\n\nOne-quarter of the S present enters F; three-quarters remains in water.\n\nFirst extraction for R\n\nThe ratio calculated above is 1:1. There are two equal mass shares, so half of the initial 48 mg of R enters F and half stays in water.\n\n$${m}_{F,R}:{m}_{{H}_{2}O,R}=1:1$$\n\nMass of R in the first lower F extract:\n\n$${m}_{F,R}=\\frac{1}{2}\\times 48=24\\,\\text{mg}$$\n\nMass of R remaining in the upper water layer:\n\n$${m}_{{H}_{2}O,R}=\\frac{1}{2}\\times 48=24\\,\\text{mg}$$\n\nThe first F extract is collected, carrying away 24 mg of R. The retained 60 mL water layer contains 24 mg of R for the next extraction.\n\nSecond extraction for R\n\nA fresh 20 mL portion of F is added to the retained 60 mL water layer. These are the same layer volumes as before, so the mass ratio remains 1:1. This time divide the remaining 24 mg of R, not the original 48 mg.\n\n$${m}_{F,R}:{m}_{{H}_{2}O,R}=1:1$$\n\nMass of R in the second lower F extract:\n\n$${m}_{F,R}=\\frac{1}{2}\\times 24=12\\,\\text{mg}$$\n\nMass of R remaining in the final upper water layer:\n\n$${m}_{{H}_{2}O,R}=\\frac{1}{2}\\times 24=12\\,\\text{mg}$$\n\nThe two collected F extracts therefore contain 24 mg and 12 mg of R, respectively, giving a total of 36 mg of R.\n\nFirst extraction for S\n\nNow track S through the same two extractions. Its ratio calculated above is 1:3, giving four mass shares: one in F and three in water. Apply those shares to the initial 48 mg of S.\n\n$${m}_{F,S}:{m}_{{H}_{2}O,S}=1:3$$\n\nMass of S in the first lower F extract:\n\n$${m}_{F,S}=\\frac{1}{4}\\times 48=12\\,\\text{mg}$$\n\nMass of S remaining in the upper water layer:\n\n$${m}_{{H}_{2}O,S}=\\frac{3}{4}\\times 48=36\\,\\text{mg}$$\n\nCollecting the first F extract removes 12 mg of S. The retained 60 mL water layer contains 36 mg of S for the next extraction.\n\nSecond extraction for S\n\nThe fresh 20 mL portion of F again contacts 60 mL of retained water, so the ratio remains 1:3. Apply it to the remaining 36 mg of S.\n\n$${m}_{F,S}:{m}_{{H}_{2}O,S}=1:3$$\n\nMass of S in the second lower F extract:\n\n$${m}_{F,S}=\\frac{1}{4}\\times 36=9\\,\\text{mg}$$\n\nMass of S remaining in the final upper water layer:\n\n$${m}_{{H}_{2}O,S}=\\frac{3}{4}\\times 36=27\\,\\text{mg}$$\n\nThe two collected F extracts therefore contain 12 mg and 9 mg of S, respectively, giving a total of 21 mg of S.\n\nCombining the two extracts gives **40 mL of F** containing:\n\n$${m}_{R}=24+12=36\\,\\text{mg}$$\n\n$${m}_{S}=12+9=21\\,\\text{mg}$$"
+          },
+          {
+            "heading": "Step 2 — Check the options without washing",
+            "body": "**A:** The combined extracts contain 36 mg of R, so they meet the requirement for at least 30 mg of R. However:\n\n$$36<2\\times 21$$\n\nThere is less than twice as much R as S, so A fails the composition requirement.\n\n**C:** The first extract contains 24 mg of R and 12 mg of S. Since 24 = 2 × 12, it meets the requirement for at least twice as much R as S. However:\n\n$$24<30$$\n\nIt contains only **24 mg of R**, so it **does not contain at least 30 mg of R**. It therefore fails the recovery requirement. Reject C."
+          },
+          {
+            "heading": "Step 3 — Check B using the wash volumes",
+            "body": "B washes **40 mL of combined F with 40 mL of water**. For R:\n\n$$\\frac{{m}_{F,R}}{{m}_{{H}_{2}O,R}}=3\\times \\frac{40}{40}=3$$\n\nThe ratio is 3:1, so three-quarters of R remains in F:\n\n$${m}_{F,R}=\\frac{3}{4}\\times 36=27\\,\\text{mg}$$\n\nThis does not meet the requirement for **at least 30 mg of R**. Reject B; there is no need to calculate its S content because both requirements must be satisfied."
+          },
+          {
+            "heading": "Step 4 — Check D",
+            "body": "D washes **40 mL of combined F with 20 mL of water**. For R:\n\n$$\\frac{{m}_{F,R}}{{m}_{{H}_{2}O,R}}=3\\times \\frac{40}{20}=6$$\n\nThe ratio is 6:1, so six-sevenths remains in F:\n\n$${m}_{F,R}=\\frac{6}{7}\\times 36=\\frac{216}{7}\\,\\text{mg}$$\n\nThis exceeds 30 mg because:\n\n$$\\frac{216}{7}>\\frac{210}{7}=30$$\n\nFor S:\n\n$$\\frac{{m}_{F,S}}{{m}_{{H}_{2}O,S}}=1\\times \\frac{40}{20}=2$$\n\nThe ratio is 2:1, so two-thirds remains in F:\n\n$${m}_{F,S}=\\frac{2}{3}\\times 21=14\\,\\text{mg}$$\n\nTwice the S mass is:\n\n$$2\\times 14=28\\,\\text{mg}$$\n\nThe R mass exceeds 30 mg, so it also exceeds 28 mg. D therefore satisfies both requirements: **at least 30 mg of R** and **at least twice as much R as S**."
+          }
+        ],
+        "answer": "D — Combine both extracts, then wash once with 20 mL of fresh water."
+      }
+    }
+  ]
+}
