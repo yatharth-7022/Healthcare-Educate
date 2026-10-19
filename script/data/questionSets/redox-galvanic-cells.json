@@ -69,15 +69,15 @@
           },
           {
             "heading": "Step 2 — Find E°(K) from the J / K cell",
-            "body": "Electrons flow K → J (Table 1 and Figure 1). So K is being oxidised and J⁺ is being reduced — J has the higher reduction potential, and K must sit below +0.20 V.\n\n$${E}_{\\text{cell}} = E^\\circ (J) - E^\\circ (K)$$\n\n$$0.45 = 0.20 - E^\\circ (K)$$\n\n$$E^\\circ (K) = 0.20 - 0.45$$\n\n$$E^\\circ (K)\\text{ = −0.25\\,\\text{V}}$$"
+            "body": "Electrons flow K → J (Table 1 and Figure 1). So K is being oxidised and J⁺ is being reduced — J has the higher reduction potential, and K must sit below +0.20 V.\n\n$${E}_{\\text{cell}} = E^\\circ (J) - E^\\circ (K)$$\n\n$$0.45 = 0.20 - E^\\circ (K)$$\n\n$$E^\\circ (K) = 0.20 - 0.45$$\n\n$$E^\\circ (K) = -0.25\\,\\text{V}$$"
           },
           {
             "heading": "Step 3 — Find E°(L) from the K / L cell",
-            "body": "Electrons flow K → L. So K is being oxidised and L⁺ is being reduced — L has the higher reduction potential, so L must sit above −0.25 V.\n\n$${E}_{\\text{cell}} = E^\\circ (L) - E^\\circ (K)$$\n\n$$0.90 = E^\\circ (L) - (-0.25)$$\n\n$$E^\\circ (L) = 0.90 + (-0.25)$$\n\n$$E^\\circ (L)\\text{ = +0.65\\,\\text{V}}$$"
+            "body": "Electrons flow K → L. So K is being oxidised and L⁺ is being reduced — L has the higher reduction potential, so L must sit above −0.25 V.\n\n$${E}_{\\text{cell}} = E^\\circ (L) - E^\\circ (K)$$\n\n$$0.90 = E^\\circ (L) - (-0.25)$$\n\n$$E^\\circ (L) = 0.90 + (-0.25)$$\n\n$$E^\\circ (L) = +0.65\\,\\text{V}$$"
           },
           {
             "heading": "Step 4 — Find E°(M) from the L / M cell",
-            "body": "Electrons flow M → L. So M is being oxidised and L⁺ is being reduced — L has the higher reduction potential, so M must sit below +0.65 V.\n\n$${E}_{\\text{cell}} = E^\\circ (L) - E^\\circ (M)$$\n\n$$0.30 = 0.65 - E^\\circ (M)$$\n\n$$E^\\circ (M) = 0.65 - 0.30$$\n\n$$E^\\circ (M)\\text{ = +0.35\\,\\text{V}}$$"
+            "body": "Electrons flow M → L. So M is being oxidised and L⁺ is being reduced — L has the higher reduction potential, so M must sit below +0.65 V.\n\n$${E}_{\\text{cell}} = E^\\circ (L) - E^\\circ (M)$$\n\n$$0.30 = 0.65 - E^\\circ (M)$$\n\n$$E^\\circ (M) = 0.65 - 0.30$$\n\n$$E^\\circ (M) = +0.35\\,\\text{V}$$"
           },
           {
             "heading": "Picture it as a ladder",
@@ -121,7 +121,7 @@
         "steps": [
           {
             "heading": "Step 1 — Find E°(N) from the K / N cell",
-            "body": "From the J / K row (as in Q1): 0.45 = 0.20 − E°(K), so E°(K) = −0.25 V.\n\nElectrons flow N → K. So N is being oxidised and K⁺ is being reduced — K has the higher reduction potential, and N must sit below −0.25 V.\n\n$${E}_{\\text{cell}} = E^\\circ (K) - E^\\circ (N)$$\n\n$$0.35 = -0.25 - E^\\circ (N)$$\n\n$$E^\\circ (N) = -0.25 - 0.35$$\n\n$$E^\\circ (N)\\text{ = −0.60\\,\\text{V}}$$"
+            "body": "From the J / K row (as in Q1): 0.45 = 0.20 − E°(K), so E°(K) = −0.25 V.\n\nElectrons flow N → K. So N is being oxidised and K⁺ is being reduced — K has the higher reduction potential, and N must sit below −0.25 V.\n\n$${E}_{\\text{cell}} = E^\\circ (K) - E^\\circ (N)$$\n\n$$0.35 = -0.25 - E^\\circ (N)$$\n\n$$E^\\circ (N) = -0.25 - 0.35$$\n\n$$E^\\circ (N) = -0.60\\,\\text{V}$$"
           },
           {
             "heading": "Step 2 — Put all five metals in order",
@@ -129,11 +129,11 @@
           },
           {
             "heading": "Step 3 — Pair the top with the bottom",
-            "body": "L has the highest reduction potential, so it is the one reduced; N has the lowest, so it is the one oxidised:\n\n$${E}_{\\text{cell}} = E^\\circ (L) - E^\\circ (N)$$\n\n$${E}_{\\text{cell}} = 0.65 - (-0.60)$$\n\n$${E}_{\\text{cell}}\\text{ = 1.25\\,\\text{V}}$$"
+            "body": "L has the highest reduction potential, so it is the one reduced; N has the lowest, so it is the one oxidised:\n\n$${E}_{\\text{cell}} = E^\\circ (L) - E^\\circ (N)$$\n\n$${E}_{\\text{cell}} = 0.65 - (-0.60)$$\n\n$${E}_{\\text{cell}} = 1.25\\,\\text{V}$$"
           },
           {
             "heading": "Step 4 — Check the other pairs in the options",
-            "body": "$$\\text{J and N:  }{E}_{\\text{cell}}\\text{ = 0.20 − (−0.60) = 0.80\\,\\text{V}}$$\n\n$$\\text{K and L:  }{E}_{\\text{cell}}\\text{ = 0.65 − (−0.25) = 0.90\\,\\text{V}}$$\n\nBoth are smaller than 1.25 V, so L and N is the largest."
+            "body": "$$\\text{J and N:  }{E}_{\\text{cell}} = 0.20 - (-0.60) = 0.80\\,\\text{V}$$\n\n$$\\text{K and L:  }{E}_{\\text{cell}} = 0.65 - (-0.25) = 0.90\\,\\text{V}$$\n\nBoth are smaller than 1.25 V, so L and N is the largest."
           },
           {
             "heading": "Mental arithmetic tip",
@@ -216,11 +216,11 @@
         "steps": [
           {
             "heading": "Step 1 — The P / K cell (K = −0.25 V)",
-            "body": "**Case 1: P⁺ is reduced, K is oxidised (P sits above K)**\n\n$${E}_{\\text{cell}} = E^\\circ (P) - E^\\circ (K)$$\n\n$$0.50 = E^\\circ (P) - (-0.25)$$\n\n$$E^\\circ (P) = 0.50 + (-0.25)$$\n\n$$E^\\circ (P)\\text{ = +0.25\\,\\text{V}}$$\n\n**Case 2: P is oxidised, K⁺ is reduced (P sits below K)**\n\n$${E}_{\\text{cell}} = E^\\circ (K) - E^\\circ (P)$$\n\n$$0.50 = -0.25 - E^\\circ (P)$$\n\n$$E^\\circ (P) = -0.25 - 0.50$$\n\n$$E^\\circ (P)\\text{ = −0.75\\,\\text{V}}$$"
+            "body": "**Case 1: P⁺ is reduced, K is oxidised (P sits above K)**\n\n$${E}_{\\text{cell}} = E^\\circ (P) - E^\\circ (K)$$\n\n$$0.50 = E^\\circ (P) - (-0.25)$$\n\n$$E^\\circ (P) = 0.50 + (-0.25)$$\n\n$$E^\\circ (P) = +0.25\\,\\text{V}$$\n\n**Case 2: P is oxidised, K⁺ is reduced (P sits below K)**\n\n$${E}_{\\text{cell}} = E^\\circ (K) - E^\\circ (P)$$\n\n$$0.50 = -0.25 - E^\\circ (P)$$\n\n$$E^\\circ (P) = -0.25 - 0.50$$\n\n$$E^\\circ (P) = -0.75\\,\\text{V}$$"
           },
           {
             "heading": "Step 2 — The P / L cell (L = +0.65 V)",
-            "body": "**Case 1: P⁺ is reduced, L is oxidised (P sits above L)**\n\n$${E}_{\\text{cell}} = E^\\circ (P) - E^\\circ (L)$$\n\n$$0.40 = E^\\circ (P) - 0.65$$\n\n$$E^\\circ (P) = 0.40 + 0.65$$\n\n$$E^\\circ (P)\\text{ = +1.05\\,\\text{V}}$$\n\n**Case 2: P is oxidised, L⁺ is reduced (P sits below L)**\n\n$${E}_{\\text{cell}} = E^\\circ (L) - E^\\circ (P)$$\n\n$$0.40 = 0.65 - E^\\circ (P)$$\n\n$$E^\\circ (P) = 0.65 - 0.40$$\n\n$$E^\\circ (P)\\text{ = +0.25\\,\\text{V}}$$"
+            "body": "**Case 1: P⁺ is reduced, L is oxidised (P sits above L)**\n\n$${E}_{\\text{cell}} = E^\\circ (P) - E^\\circ (L)$$\n\n$$0.40 = E^\\circ (P) - 0.65$$\n\n$$E^\\circ (P) = 0.40 + 0.65$$\n\n$$E^\\circ (P) = +1.05\\,\\text{V}$$\n\n**Case 2: P is oxidised, L⁺ is reduced (P sits below L)**\n\n$${E}_{\\text{cell}} = E^\\circ (L) - E^\\circ (P)$$\n\n$$0.40 = 0.65 - E^\\circ (P)$$\n\n$$E^\\circ (P) = 0.65 - 0.40$$\n\n$$E^\\circ (P) = +0.25\\,\\text{V}$$"
           },
           {
             "heading": "Step 3 — Find the value that fits both cells",
@@ -259,15 +259,15 @@
         "steps": [
           {
             "heading": "Step 1 — R in K⁺ solution: K is deposited",
-            "body": "K⁺ → K means K⁺ is being reduced; so R → R⁺ means R is being oxidised:\n\n**R + K⁺ → R⁺ + K**\n\nThis reaction really happens, so the story must match the potentials: the species reduced (K⁺) must have the higher reduction potential. So R sits below K:\n\n$$E^\\circ (R) < E^\\circ (K)$$\n\n$$E^\\circ (R)\\text{ < −0.25\\,\\text{V}}$$"
+            "body": "K⁺ → K means K⁺ is being reduced; so R → R⁺ means R is being oxidised:\n\n**R + K⁺ → R⁺ + K**\n\nThis reaction really happens, so the story must match the potentials: the species reduced (K⁺) must have the higher reduction potential. So R sits below K:\n\n$$E^\\circ (R) < E^\\circ (K)$$\n\n$$E^\\circ (R) < -0.25\\,\\text{V}$$"
           },
           {
             "heading": "Step 2 — R in N²⁺ solution: no reaction",
-            "body": "Imagine the reaction *did* happen. N²⁺ → N would mean N²⁺ is being reduced, and R → R⁺ would mean R is being oxidised:\n\n**2R + N²⁺ → 2R⁺ + N**\n\nFor that story to work, N would need the higher reduction potential — R would have to sit below N, at E°(R) < −0.60 V.\n\nBut no reaction occurs, so that story is false. R does **not** sit below N:\n\n$$E^\\circ (R) > E^\\circ (N)$$\n\n$$E^\\circ (R)\\text{ > −0.60\\,\\text{V}}$$\n\nIn other words, N has the lower reduction potential, so N prefers to stay oxidised as N²⁺ — and R prefers to stay as the metal. Neither wants to swap."
+            "body": "Imagine the reaction *did* happen. N²⁺ → N would mean N²⁺ is being reduced, and R → R⁺ would mean R is being oxidised:\n\n**2R + N²⁺ → 2R⁺ + N**\n\nFor that story to work, N would need the higher reduction potential — R would have to sit below N, at E°(R) < −0.60 V.\n\nBut no reaction occurs, so that story is false. R does **not** sit below N:\n\n$$E^\\circ (R) > E^\\circ (N)$$\n\n$$E^\\circ (R) > -0.60\\,\\text{V}$$\n\nIn other words, N has the lower reduction potential, so N prefers to stay oxidised as N²⁺ — and R prefers to stay as the metal. Neither wants to swap."
           },
           {
             "heading": "Step 3 — Combine the two limits",
-            "body": "$$\\text{−0.60\\,\\text{V} < }E^\\circ (R)\\text{ < −0.25\\,\\text{V}}$$\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1792150100/question-bank/qb_img_1792150100361_3.png)\n\nChecking each option against this range: −0.70 V is below it, −0.10 V and +0.30 V are above it, and only −0.40 V falls inside."
+            "body": "$$-0.60\\,\\text{V} < E^\\circ (R) < -0.25\\,\\text{V}$$\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1792150100/question-bank/qb_img_1792150100361_3.png)\n\nChecking each option against this range: −0.70 V is below it, −0.10 V and +0.30 V are above it, and only −0.40 V falls inside."
           }
         ],
         "answer": "B — −0.40 V",
