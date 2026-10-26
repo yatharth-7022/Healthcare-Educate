@@ -104,7 +104,7 @@ export class AuthController {
   refreshToken = asyncHandler(
     async (req: Request, res: Response, next: NextFunction) => {
       // Get refresh token from cookie or body
-      const refreshToken = req.cookies?.refreshToken || req.body.refreshToken;
+      const refreshToken = req.cookies?.refreshToken || req.body?.refreshToken;
 
       const tokens = await authService.refreshToken(refreshToken);
 
