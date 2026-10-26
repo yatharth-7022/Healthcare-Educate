@@ -26,6 +26,7 @@ import PracticeSetup from "@/pages/PracticeSetup";
 import PracticeConfirm from "@/pages/PracticeConfirm";
 import PracticeSession from "@/pages/PracticeSession";
 import PracticeHistory from "@/pages/PracticeHistory";
+import { PracticeAccessGate } from "@/components/practice/PracticeAccessGate";
 
 const LANDING_PATHS = ["/", "/about", "/courses", "/pricing", "/honour-roll"];
 
@@ -54,7 +55,9 @@ function Router() {
       <Route path="/dashboard/history">
         <ProtectedRoute>
           <ThemeProvider defaultTheme="dark" storageKey="dashboard-theme">
-            <PracticeHistory />
+            <PracticeAccessGate>
+              <PracticeHistory />
+            </PracticeAccessGate>
           </ThemeProvider>
         </ProtectedRoute>
       </Route>
@@ -75,21 +78,27 @@ function Router() {
       <Route path="/dashboard/practice/:category/:subcategory/setup">
         <ProtectedRoute>
           <ThemeProvider defaultTheme="dark" storageKey="dashboard-theme">
-            <PracticeSetup />
+            <PracticeAccessGate>
+              <PracticeSetup />
+            </PracticeAccessGate>
           </ThemeProvider>
         </ProtectedRoute>
       </Route>
       <Route path="/dashboard/practice/:category/:subcategory/confirm">
         <ProtectedRoute>
           <ThemeProvider defaultTheme="dark" storageKey="dashboard-theme">
-            <PracticeConfirm />
+            <PracticeAccessGate>
+              <PracticeConfirm />
+            </PracticeAccessGate>
           </ThemeProvider>
         </ProtectedRoute>
       </Route>
       <Route path="/dashboard/practice/:category/:subcategory/session">
         <ProtectedRoute>
           <ThemeProvider defaultTheme="dark" storageKey="dashboard-theme">
-            <PracticeSession />
+            <PracticeAccessGate>
+              <PracticeSession />
+            </PracticeAccessGate>
           </ThemeProvider>
         </ProtectedRoute>
       </Route>

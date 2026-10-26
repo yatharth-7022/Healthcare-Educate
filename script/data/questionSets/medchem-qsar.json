@@ -317,12 +317,6 @@
         {
           "type": "text",
           "value": "For a series of compounds with zero hydrophobic contribution, which graph best represents how IC₅₀ changes as E increases?"
-        },
-        {
-          "type": "image",
-          "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1792150114/question-bank/qb_img_1792150111167_0.png",
-          "alt": "",
-          "caption": ""
         }
       ],
       "correctOptionIndex": 1,
@@ -356,7 +350,42 @@
             "reason": "A increases as E increases, reversing the predicted direction. C turns upwards after decreasing, and D turns downwards after increasing. With c > 0 and d constant, the exponent increases throughout, so neither turning behaviour is possible."
           }
         ]
-      }
+      },
+      "optionBlocks": [
+        [
+          {
+            "type": "image",
+            "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1793014080/question-bank/qsar_q6_graph_a.png",
+            "alt": "Graph A",
+            "caption": ""
+          }
+        ],
+        [
+          {
+            "type": "image",
+            "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1793014081/question-bank/qsar_q6_graph_b.png",
+            "alt": "Graph B",
+            "caption": ""
+          }
+        ],
+        [
+          {
+            "type": "image",
+            "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1793014081/question-bank/qsar_q6_graph_c.png",
+            "alt": "Graph C",
+            "caption": ""
+          }
+        ],
+        [
+          {
+            "type": "image",
+            "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1793014082/question-bank/qsar_q6_graph_d.png",
+            "alt": "Graph D",
+            "caption": ""
+          }
+        ]
+      ],
+      "optionColumns": 2
     }
   ]
 }

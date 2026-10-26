@@ -506,6 +506,35 @@
             "reason": "Records 1, 2, 3 and 5 fix Q = Liquid J, R = Liquid F and S = Liquid I. If Record 6 were reversed, T would need appreciable affinity for K and hence be Liquid F or G. Liquid F is already in R, leaving T = Liquid G. But S–T would then be Liquids I and G, which are homogeneous, still contradicting unchanged Record 7. Also, L has little affinity for Liquid J in Q.\n\n**Key idea: use the options to find unchanged clues, begin with a bottle appearing in several records, and solve the easy affinity constraints first. A provisional assumption becomes useful when checking the remaining results confirms exactly one error.**"
           }
         ]
+      },
+      "optionTable": {
+        "columns": [
+          "Option",
+          "Necessary correction",
+          "Emulsifier for Q and T"
+        ],
+        "rows": [
+          [
+            "A",
+            "Record 7: a single homogeneous phase",
+            "M"
+          ],
+          [
+            "B",
+            "Record 4: a single homogeneous phase",
+            "N"
+          ],
+          [
+            "C",
+            "Record 7: a single homogeneous phase",
+            "N"
+          ],
+          [
+            "D",
+            "Record 6: appreciable affinity",
+            "L"
+          ]
+        ]
       }
     }
   ]

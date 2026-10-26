@@ -110,11 +110,26 @@ export type WorkedSolution = {
   answerIndex?: number;
 };
 
+/**
+ * Options laid out as the rows of a table. Row i is option i, and the first cell of each
+ * row (e.g. "A") is the option label that the selection radio sits next to.
+ */
+export type PracticeOptionTable = {
+  columns: string[];
+  rows: string[][];
+};
+
 export type PracticeMcqQuestion = {
   id: string;
   prompt: string;
   contentBlocks?: StemBlock[];
   options: string[];
+  /** Render the options as table rows (radio in the first cell) instead of text buttons. */
+  optionTable?: PracticeOptionTable;
+  /** Per-option content (tables, images) shown inside the selectable option, aligned with `options`. */
+  optionBlocks?: StemBlock[][];
+  /** Number of columns for `optionBlocks` options on wide screens (default 1). */
+  optionColumns?: 1 | 2;
   correctOptionIndex: number;
   explanation?: string;
   workedSolution?: WorkedSolution;

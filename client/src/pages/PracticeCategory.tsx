@@ -8,6 +8,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "@/hooks/use-auth";
+import { hasPracticeAccess } from "@/lib/practiceAccess";
 import { BookOpen, ChevronRight, ArrowLeft, Lock } from "lucide-react";
 import { categoryIcons } from "@/components/practice/categoryIcons";
 
@@ -38,6 +40,8 @@ export default function PracticeCategory() {
   const { data, isLoading, error } = usePracticeCategoryProgress(categoryId);
   const recordAnswerMutation = useRecordPracticeAnswer(categoryId);
   const { toast } = useToast();
+  const { user } = useAuth();
+  const isLocked = !hasPracticeAccess(user);
   const showManualRecordButton = import.meta.env.DEV;
 
   const category = data?.category;
@@ -188,6 +192,15 @@ export default function PracticeCategory() {
                             className="text-[10px] px-1.5 py-0"
                           >
                             Coming soon
+                          </Badge>
+                        )}
+                        {!isComingSoon && isLocked && (
+                          <Badge
+                            variant="secondary"
+                            className="text-[10px] px-1.5 py-0 gap-1"
+                          >
+                            <Lock className="h-2.5 w-2.5" />
+                            Locked
                           </Badge>
                         )}
                       </div>

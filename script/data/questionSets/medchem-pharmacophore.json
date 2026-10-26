@@ -267,122 +267,6 @@
         {
           "type": "text",
           "value": "Which table correctly predicts the activity of all three new compounds?"
-        },
-        {
-          "type": "text",
-          "value": "Option A"
-        },
-        {
-          "type": "table",
-          "columns": [
-            "Compound",
-            "Receptor T",
-            "Receptor U"
-          ],
-          "rows": [
-            [
-              "R",
-              "Inactive",
-              "Active"
-            ],
-            [
-              "S",
-              "Active",
-              "Inactive"
-            ],
-            [
-              "T",
-              "Inactive",
-              "Inactive"
-            ]
-          ]
-        },
-        {
-          "type": "text",
-          "value": "Option B"
-        },
-        {
-          "type": "table",
-          "columns": [
-            "Compound",
-            "Receptor T",
-            "Receptor U"
-          ],
-          "rows": [
-            [
-              "R",
-              "Inactive",
-              "Inactive"
-            ],
-            [
-              "S",
-              "Inactive",
-              "Inactive"
-            ],
-            [
-              "T",
-              "Inactive",
-              "Active"
-            ]
-          ]
-        },
-        {
-          "type": "text",
-          "value": "Option C"
-        },
-        {
-          "type": "table",
-          "columns": [
-            "Compound",
-            "Receptor T",
-            "Receptor U"
-          ],
-          "rows": [
-            [
-              "R",
-              "Inactive",
-              "Active"
-            ],
-            [
-              "S",
-              "Inactive",
-              "Inactive"
-            ],
-            [
-              "T",
-              "Inactive",
-              "Inactive"
-            ]
-          ]
-        },
-        {
-          "type": "text",
-          "value": "Option D"
-        },
-        {
-          "type": "table",
-          "columns": [
-            "Compound",
-            "Receptor T",
-            "Receptor U"
-          ],
-          "rows": [
-            [
-              "R",
-              "Inactive",
-              "Active"
-            ],
-            [
-              "S",
-              "Inactive",
-              "Inactive"
-            ],
-            [
-              "T",
-              "Inactive",
-              "Active"
-            ]
-          ]
         }
       ],
       "correctOptionIndex": 2,
@@ -402,7 +286,117 @@
           }
         ],
         "answer": "C — Option C"
-      }
+      },
+      "optionBlocks": [
+        [
+          {
+            "type": "table",
+            "columns": [
+              "Compound",
+              "Receptor T",
+              "Receptor U"
+            ],
+            "rows": [
+              [
+                "R",
+                "Inactive",
+                "Active"
+              ],
+              [
+                "S",
+                "Active",
+                "Inactive"
+              ],
+              [
+                "T",
+                "Inactive",
+                "Inactive"
+              ]
+            ]
+          }
+        ],
+        [
+          {
+            "type": "table",
+            "columns": [
+              "Compound",
+              "Receptor T",
+              "Receptor U"
+            ],
+            "rows": [
+              [
+                "R",
+                "Inactive",
+                "Inactive"
+              ],
+              [
+                "S",
+                "Inactive",
+                "Inactive"
+              ],
+              [
+                "T",
+                "Inactive",
+                "Active"
+              ]
+            ]
+          }
+        ],
+        [
+          {
+            "type": "table",
+            "columns": [
+              "Compound",
+              "Receptor T",
+              "Receptor U"
+            ],
+            "rows": [
+              [
+                "R",
+                "Inactive",
+                "Active"
+              ],
+              [
+                "S",
+                "Inactive",
+                "Inactive"
+              ],
+              [
+                "T",
+                "Inactive",
+                "Inactive"
+              ]
+            ]
+          }
+        ],
+        [
+          {
+            "type": "table",
+            "columns": [
+              "Compound",
+              "Receptor T",
+              "Receptor U"
+            ],
+            "rows": [
+              [
+                "R",
+                "Inactive",
+                "Active"
+              ],
+              [
+                "S",
+                "Inactive",
+                "Inactive"
+              ],
+              [
+                "T",
+                "Inactive",
+                "Active"
+              ]
+            ]
+          }
+        ]
+      ]
     },
     {
       "id": "q3",
@@ -412,38 +406,6 @@
         "Compound B",
         "Compound C",
         "Compound D"
-      ],
-      "contentBlocks": [
-        {
-          "type": "table",
-          "columns": [
-            "Compound",
-            "D–A distance (Å)",
-            "A–R distance (Å)"
-          ],
-          "rows": [
-            [
-              "A",
-              "2.5",
-              "6.5"
-            ],
-            [
-              "B",
-              "5.5",
-              "7.5"
-            ],
-            [
-              "C",
-              "5.5",
-              "4.5"
-            ],
-            [
-              "D",
-              "6.5",
-              "3.5"
-            ]
-          ]
-        }
       ],
       "correctOptionIndex": 2,
       "workedSolution": {
@@ -466,6 +428,35 @@
           }
         ],
         "answer": "C — Both distances fall within their respective acceptable intervals"
+      },
+      "optionTable": {
+        "columns": [
+          "Compound",
+          "D–A distance (Å)",
+          "A–R distance (Å)"
+        ],
+        "rows": [
+          [
+            "A",
+            "2.5",
+            "6.5"
+          ],
+          [
+            "B",
+            "5.5",
+            "7.5"
+          ],
+          [
+            "C",
+            "5.5",
+            "4.5"
+          ],
+          [
+            "D",
+            "6.5",
+            "3.5"
+          ]
+        ]
       }
     },
     {
@@ -476,48 +467,6 @@
         "Compound B",
         "Compound C",
         "Compound D"
-      ],
-      "contentBlocks": [
-        {
-          "type": "table",
-          "columns": [
-            "Compound",
-            "D–A₁ (Å)",
-            "A₁–R (Å)",
-            "D–A₂ (Å)",
-            "A₂–R (Å)"
-          ],
-          "rows": [
-            [
-              "A",
-              "3.5",
-              "7.5",
-              "6.5",
-              "4.5"
-            ],
-            [
-              "B",
-              "2.5",
-              "6.5",
-              "5.5",
-              "7.5"
-            ],
-            [
-              "C",
-              "4.5",
-              "3.5",
-              "5.5",
-              "4.5"
-            ],
-            [
-              "D",
-              "6.5",
-              "6.5",
-              "3.5",
-              "3.5"
-            ]
-          ]
-        }
       ],
       "correctOptionIndex": 2,
       "workedSolution": {
@@ -532,6 +481,45 @@
           }
         ],
         "answer": "C — Compound C"
+      },
+      "optionTable": {
+        "columns": [
+          "Compound",
+          "D–A₁ (Å)",
+          "A₁–R (Å)",
+          "D–A₂ (Å)",
+          "A₂–R (Å)"
+        ],
+        "rows": [
+          [
+            "A",
+            "3.5",
+            "7.5",
+            "6.5",
+            "4.5"
+          ],
+          [
+            "B",
+            "2.5",
+            "6.5",
+            "5.5",
+            "7.5"
+          ],
+          [
+            "C",
+            "4.5",
+            "3.5",
+            "5.5",
+            "4.5"
+          ],
+          [
+            "D",
+            "6.5",
+            "6.5",
+            "3.5",
+            "3.5"
+          ]
+        ]
       }
     },
     {
@@ -542,38 +530,6 @@
         "Compound B",
         "Compound C",
         "Compound D"
-      ],
-      "contentBlocks": [
-        {
-          "type": "table",
-          "columns": [
-            "Compound",
-            "D–A distance (Å)",
-            "A–R distance (Å)"
-          ],
-          "rows": [
-            [
-              "A",
-              "3.5",
-              "6.5"
-            ],
-            [
-              "B",
-              "2.5",
-              "6.0"
-            ],
-            [
-              "C",
-              "5.5",
-              "6.5"
-            ],
-            [
-              "D",
-              "6.5",
-              "7.5"
-            ]
-          ]
-        }
       ],
       "correctOptionIndex": 2,
       "workedSolution": {
@@ -596,6 +552,35 @@
           }
         ],
         "answer": "C — Compound C"
+      },
+      "optionTable": {
+        "columns": [
+          "Compound",
+          "D–A distance (Å)",
+          "A–R distance (Å)"
+        ],
+        "rows": [
+          [
+            "A",
+            "3.5",
+            "6.5"
+          ],
+          [
+            "B",
+            "2.5",
+            "6.0"
+          ],
+          [
+            "C",
+            "5.5",
+            "6.5"
+          ],
+          [
+            "D",
+            "6.5",
+            "7.5"
+          ]
+        ]
       }
     }
   ]

@@ -13,6 +13,7 @@ import {
   PRACTICE_HISTORY_PATH,
 } from "@/lib/practice-routes";
 import { StemBlockRenderer } from "@/components/practice/StemBlockRenderer";
+import { QuestionOptions, hasRichOptions } from "@/components/practice/QuestionOptions";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -27,6 +28,8 @@ import { ArrowLeft, Bookmark, ChevronDown, ChevronLeft, ChevronRight, CircleChec
 import { Watermark } from "@/components/practice/Watermark";
 import { MathText } from "@/components/practice/MathText";
 import { WorkedSolutionView } from "@/components/practice/WorkedSolutionView";
+
+const OPTION_LABELS = ["A", "B", "C", "D", "E"];
 
 function answerKey(setId: number, questionId: string) {
   return `${setId}:${questionId}`;
@@ -642,7 +645,7 @@ export default function PracticeSession() {
         : undefined;
     const reviewSelected = reviewKey ? selectedByQuestionId[reviewKey] : undefined;
     const reviewCorrect = reviewQuestion ? reviewQuestion.correctOptionIndex : -1;
-    const optionLabels = ["A", "B", "C", "D", "E"];
+    const optionLabels = OPTION_LABELS;
     const isCurrentCorrect = reviewSelected === reviewCorrect;
     const isCurrentWrong = reviewSelected !== undefined && !isCurrentCorrect;
     const categoryLabel = (categoryId ?? "")
@@ -780,20 +783,29 @@ export default function PracticeSession() {
                 </div>
               )}
 
-              {/* Question prompt */}
+              {/* Question prompt and per-question content blocks */}
               {reviewQuestion && (
-                <div className="rounded border border-border/50 bg-muted/30 px-4 py-3 text-sm text-foreground">
-                  <MathText text={reviewQuestion.prompt} />
+                <div className="rounded border border-border/50 bg-muted/30 px-4 py-3 text-sm text-foreground space-y-4">
+                  <div>
+                    <MathText text={reviewQuestion.prompt} />
+                  </div>
+                  {reviewQuestion.contentBlocks && reviewQuestion.contentBlocks.length > 0 && (
+                    <StemBlockRenderer blocks={reviewQuestion.contentBlocks} compact />
+                  )}
                 </div>
               )}
 
-              {/* Per-question content blocks */}
-              {reviewQuestion?.contentBlocks && reviewQuestion.contentBlocks.length > 0 && (
-                <StemBlockRenderer blocks={reviewQuestion.contentBlocks} compact />
-              )}
-
               {/* Options */}
-              {reviewQuestion && (
+              {reviewQuestion && hasRichOptions(reviewQuestion) && (
+                <QuestionOptions
+                  mode="review"
+                  question={reviewQuestion}
+                  optionLabels={optionLabels}
+                  selectedIndex={reviewSelected}
+                  correctIndex={reviewCorrect}
+                />
+              )}
+              {reviewQuestion && !hasRichOptions(reviewQuestion) && (
                 <div className="space-y-1.5">
                   {reviewQuestion.options.map((option, optionIndex) => {
                     const isCorrectOpt = optionIndex === reviewCorrect;
@@ -1041,7 +1053,8 @@ export default function PracticeSession() {
           </section>
 
           <aside className="bg-card border border-border/60 rounded-lg p-4 sticky top-6 self-start">
-            <div className="flex items-start justify-between gap-2 rounded-lg border border-border/50 bg-muted/40 px-3 py-3">
+            <div className="rounded-lg border border-border/50 bg-muted/40 px-3 py-3">
+            <div className="flex items-start justify-between gap-2">
               <p className="text-base font-medium leading-6 text-foreground/95">
                 <MathText text={currentQuestion.prompt} />
               </p>
@@ -1075,8 +1088,18 @@ export default function PracticeSession() {
                   />
                 </div>
               )}
+            </div>
 
             <div className="mt-4 lg:sticky lg:top-4 bg-card/95 backdrop-blur-sm">
+              {hasRichOptions(currentQuestion) ? (
+                <QuestionOptions
+                  mode="answer"
+                  question={currentQuestion}
+                  optionLabels={OPTION_LABELS}
+                  selectedIndex={selectedOptionIndex}
+                  onSelect={handleSelectOption}
+                />
+              ) : (
               <div className="space-y-2">
                 {currentQuestion.options.map((option, optionIndex) => {
                   const isSelected = selectedOptionIndex === optionIndex;
@@ -1110,6 +1133,7 @@ export default function PracticeSession() {
                   );
                 })}
               </div>
+              )}
 
               <div className="mt-5 flex justify-end">
                 <Button

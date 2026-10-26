@@ -1,6 +1,10 @@
 import { Request, Response, Router } from "express";
 import { z } from "zod";
 import { authenticate } from "../middleware/authMiddleware";
+import {
+  requireAdmin,
+  requirePracticeAccess,
+} from "../middleware/practiceAccess";
 import { asyncHandler } from "../middleware/errorHandler";
 import { ValidationError } from "../utils/AppError";
 import { practiceService } from "../services/practiceService";
@@ -190,6 +194,7 @@ router.get(
 router.post(
   "/content",
   authenticate,
+  requireAdmin,
   asyncHandler(async (req: Request, res: Response) => {
     const userId = req.user?.userId;
 
@@ -224,6 +229,7 @@ router.post(
 router.get(
   "/content",
   authenticate,
+  requirePracticeAccess,
   asyncHandler(async (req: Request, res: Response) => {
     const userId = req.user?.userId;
 
@@ -260,6 +266,7 @@ router.get(
 router.get(
   "/content/:questionSetId",
   authenticate,
+  requirePracticeAccess,
   asyncHandler(async (req: Request, res: Response) => {
     const userId = req.user?.userId;
 
@@ -290,6 +297,7 @@ router.get(
 router.get(
   "/session",
   authenticate,
+  requirePracticeAccess,
   asyncHandler(async (req: Request, res: Response) => {
     const userId = req.user?.userId;
 
@@ -337,6 +345,7 @@ router.get(
 router.get(
   "/attempts",
   authenticate,
+  requirePracticeAccess,
   asyncHandler(async (req: Request, res: Response) => {
     const userId = req.user?.userId;
 
@@ -367,6 +376,7 @@ router.get(
 router.post(
   "/attempts",
   authenticate,
+  requirePracticeAccess,
   asyncHandler(async (req: Request, res: Response) => {
     const userId = req.user?.userId;
 
@@ -412,6 +422,7 @@ function readAttemptId(value: string | string[] | undefined): number {
 router.get(
   "/attempts/:attemptId",
   authenticate,
+  requirePracticeAccess,
   asyncHandler(async (req: Request, res: Response) => {
     const userId = req.user?.userId;
 
@@ -437,6 +448,7 @@ router.get(
 router.patch(
   "/attempts/:attemptId",
   authenticate,
+  requirePracticeAccess,
   asyncHandler(async (req: Request, res: Response) => {
     const userId = req.user?.userId;
 
@@ -473,6 +485,7 @@ router.patch(
 router.post(
   "/answers",
   authenticate,
+  requirePracticeAccess,
   asyncHandler(async (req: Request, res: Response) => {
     const userId = req.user?.userId;
 
@@ -509,6 +522,7 @@ router.post(
 router.post(
   "/report",
   authenticate,
+  requirePracticeAccess,
   asyncHandler(async (req: Request, res: Response) => {
     const userId = req.user?.userId;
 
