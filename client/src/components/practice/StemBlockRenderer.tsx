@@ -8,6 +8,8 @@ import { ZoomIn } from "lucide-react";
 type StemBlockRendererProps = {
   blocks: StemBlock[];
   compact?: boolean;
+  /** Render text blocks in the same bold style as a question prompt (used inside the question card). */
+  emphasizeText?: boolean;
 };
 
 const COMMON_LATEX_COMMANDS = [
@@ -121,6 +123,7 @@ function ImageBlock({ block, compact }: { block: StemImageBlock; compact: boolea
 export function StemBlockRenderer({
   blocks,
   compact = false,
+  emphasizeText = false,
 }: StemBlockRendererProps) {
   return (
     <div className="space-y-4">
@@ -144,7 +147,11 @@ export function StemBlockRenderer({
           return (
             <p
               key={key}
-              className="text-sm leading-7 text-foreground/90 whitespace-pre-line"
+              className={
+                emphasizeText
+                  ? "text-base font-medium leading-6 text-foreground/95 whitespace-pre-line"
+                  : "text-sm leading-7 text-foreground/90 whitespace-pre-line"
+              }
             >
               <MathText text={block.value} />
             </p>

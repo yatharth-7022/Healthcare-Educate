@@ -172,7 +172,9 @@ export function QuestionOptions(props: QuestionOptionsProps) {
   return (
     <div
       role={mode === "answer" ? "radiogroup" : undefined}
-      className={`grid gap-3 ${twoColumns ? "md:grid-cols-2" : ""}`}
+      // Two columns only while the question is full width (below lg); in the side-by-side layout
+      // the panel is narrow, so one per row keeps each graph large and legible.
+      className={`grid gap-3 ${twoColumns ? "md:max-lg:grid-cols-2" : ""}`}
     >
       {question.options.map((option, optionIndex) => {
         const { isSelected, isCorrect, isWrong } = stateFor(optionIndex);

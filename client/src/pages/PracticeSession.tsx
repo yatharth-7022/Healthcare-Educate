@@ -950,7 +950,7 @@ export default function PracticeSession() {
           </div>
         </div>
 
-        <div>
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(380px,44%)] gap-6 items-start">
           <section className="bg-card border border-border/60 rounded-lg p-5 min-h-[70vh]">
             <div className="relative mb-4">
               <button
@@ -1052,7 +1052,7 @@ export default function PracticeSession() {
             <StemBlockRenderer blocks={visibleStemBlocks} />
           </section>
 
-          <aside className="bg-card border border-border/60 rounded-lg p-4 sticky top-6 self-start">
+          <aside className="bg-card border border-border/60 rounded-lg p-4 lg:sticky lg:top-6 lg:max-h-[calc(100vh-3rem)] lg:overflow-y-auto self-start">
             <div className="rounded-lg border border-border/50 bg-muted/40 px-3 py-3">
             <div className="flex items-start justify-between gap-2">
               <p className="text-base font-medium leading-6 text-foreground/95">
@@ -1085,12 +1085,13 @@ export default function PracticeSession() {
                   <StemBlockRenderer
                     blocks={currentQuestion.contentBlocks}
                     compact
+                    emphasizeText
                   />
                 </div>
               )}
             </div>
 
-            <div className="mt-4 lg:sticky lg:top-4 bg-card/95 backdrop-blur-sm">
+            <div className="mt-4">
               {hasRichOptions(currentQuestion) ? (
                 <QuestionOptions
                   mode="answer"
