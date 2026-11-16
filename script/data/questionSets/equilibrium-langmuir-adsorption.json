@@ -1,0 +1,311 @@
+{
+  "categoryId": "general-chemistry",
+  "subcategoryId": "general-chemistry-equilibrium",
+  "title": "Langmuir Adsorption - Stem 1",
+  "isPublished": true,
+  "stem": [
+    {
+      "type": "text",
+      "value": "A solid surface is covered in a fixed number of identical binding sites. Gas molecules can stick to an empty site and can also come off again, so binding is an equilibrium. Each site holds at most one molecule, so once every site is filled the surface is saturated. Throughout, the “concentration” of a gas is just its partial pressure $p$, and an equilibrium constant is written the usual way — products ÷ reactants."
+    },
+    {
+      "type": "text",
+      "value": "A gas molecule A binds an empty site S to give an occupied site AS,"
+    },
+    {
+      "type": "equation",
+      "value": "A+S\\rightleftharpoons A S",
+      "mode": "block"
+    },
+    {
+      "type": "text",
+      "value": "so, treating the partial pressure as the gas’s concentration, its equilibrium constant is"
+    },
+    {
+      "type": "equation",
+      "value": "{K}_{A}=\\frac{\\left[A S\\right]}{{p}_{A}\\,\\left[S\\right]}.",
+      "mode": "block"
+    },
+    {
+      "type": "text",
+      "value": "If a second gas B competes for the same sites, it binds in exactly the same way, with its own equilibrium constant:"
+    },
+    {
+      "type": "equation",
+      "value": "B+S\\rightleftharpoons B S\\ \\ \\ \\ {K}_{B}=\\frac{\\left[B S\\right]}{{p}_{B}\\,\\left[S\\right]}.",
+      "mode": "block"
+    },
+    {
+      "type": "text",
+      "value": "Some molecules split into two halves as they bind, with each half taking its own site. For such a molecule ${D}_{2}$, two sites are used at once, so the equilibrium constant carries the corresponding squares:"
+    },
+    {
+      "type": "equation",
+      "value": "{D}_{2}+2S\\rightleftharpoons 2\\,D S\\ \\ \\ \\ {K}_{D}=\\frac{{\\left[D S\\right]}^{2}}{{p}_{{D}_{2}}\\,{\\left[S\\right]}^{2}}.",
+      "mode": "block"
+    },
+    {
+      "type": "text",
+      "value": "Whatever species are present, the empty and occupied sites always add up to the fixed total ${S}_{0}$,"
+    },
+    {
+      "type": "equation",
+      "value": "{S}_{0}=\\left[S\\right]+\\left[A S\\right]+\\left[B S\\right]+\\left[D S\\right],",
+      "mode": "block"
+    },
+    {
+      "type": "text",
+      "value": "and the fractional coverage of any species is the fraction of all sites that it occupies:"
+    },
+    {
+      "type": "equation",
+      "value": "{\\theta }_{X}=\\frac{\\text{sites}\\ \\text{occupied}\\ \\text{by}\\ X}{{S}_{0}}.",
+      "mode": "block"
+    },
+    {
+      "type": "text",
+      "value": "**Note:** Throughout, take R = 0.083 L atm mol⁻¹ K⁻¹ and T = 300 K."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Gases A and B compete for the same surface sites. A has $p_{A}$ = 2.0 and $K_{A}$ = 1.5; B has $p_{B}$ = 1.0 and $K_{B}$ = 2.0. What fraction of the sites are occupied by A ($\\theta_{A}$)?",
+      "options": [
+        "0.50",
+        "0.75",
+        "0.33",
+        "0.83"
+      ],
+      "correctOptionIndex": 0,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Occupied sites for each gas (from the K’s)",
+            "body": "[AS] = $K_{A}$ × $p_{A}$ × [S] = 1.5 × 2.0 × [S] = 3.0[S]\n\n[BS] = $K_{B}$ × $p_{B}$ × [S] = 2.0 × 1.0 × [S] = 2.0[S]"
+          },
+          {
+            "heading": "Step 2 — Total sites (site balance with both gases)",
+            "body": "$S_{0}$ = [S] + [AS] + [BS]\n\n$S_{0}$ = [S] + 3.0[S] + 2.0[S]\n\n$S_{0}$ = 6.0[S]"
+          },
+          {
+            "heading": "Step 3 — Fraction occupied by A",
+            "body": "$\\theta_{A}$ = [AS] ÷ $S_{0}$\n\n$\\theta_{A}$ = 3.0[S] ÷ 6.0[S]\n\n$\\theta_{A}$ = 0.50"
+          }
+        ],
+        "answer": "A — 0.50",
+        "strategy": "First, the background you bring to this: an equilibrium constant is just products ÷ reactants — here the “product” is the occupied site AS, and the “reactants” are the gas A and the empty site S. So the occupied sites go on top, and the gas and the empty sites sit underneath, exactly as the stem’s equilibrium constant shows.\n\nWith that in mind: both gases take sites, so both appear in the site balance. Use each equilibrium constant to write its occupied sites in terms of the empty sites [S], add everything for the total, then take the fraction that is A. The key is not to forget B — it competes for the same sites.",
+        "eliminations": [
+          {
+            "option": "B",
+            "reason": "forgot the competitor: this is the single-gas result $K_{A}p_{A}$/(1 + $K_{A}p_{A}$) = 3/4. With B also taking sites, A’s share drops."
+          },
+          {
+            "option": "C",
+            "reason": "that is $\\theta_{B}$, the coverage by B ([BS]/$S_{0}$ = 2/6), not by A."
+          },
+          {
+            "option": "D",
+            "reason": "that is the total coverage $\\theta_{A}$ + $\\theta_{B}$ = 5/6 (all occupied sites), not the fraction that is A."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "prompt": "A sample of gas A contains n = 0.40 mol in a volume V = 5.0 L, and the binding equilibrium constant is $K_{A}$ = 1.5 $\\text{atm}^{-1}$. What fraction of the sites are occupied by A ($\\theta_{A}$)?",
+      "options": [
+        "0.75",
+        "0.25",
+        "3.0",
+        "0.11"
+      ],
+      "correctOptionIndex": 0,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Get the partial pressure from the ideal gas law",
+            "body": "pV = nRT\n\n$p_{A}$ = nRT ÷ V\n\n$p_{A}$ = (0.40 × 0.083 × 300) ÷ 5.0\n\n$p_{A}$ = 9.96 ÷ 5.0\n\n$p_{A}$ ≈ 2.0 atm"
+          },
+          {
+            "heading": "Step 2 — Occupied vs empty sites (from K)",
+            "body": "[AS] = $K_{A}$ × $p_{A}$ × [S] = 1.5 × 2.0 × [S] = 3.0[S]"
+          },
+          {
+            "heading": "Step 3 — Site balance",
+            "body": "$S_{0}$ = [S] + [AS] = [S] + 3.0[S] = 4.0[S]"
+          },
+          {
+            "heading": "Step 4 — Fraction occupied",
+            "body": "$\\theta_{A}$ = [AS] ÷ $S_{0}$ = 3.0[S] ÷ 4.0[S] = 0.75"
+          }
+        ],
+        "answer": "A — 0.75",
+        "strategy": "The equilibrium constant needs a partial pressure, but you are handed n, V, R and T for a gas. Ask: which equation ties all of those together? The ideal gas law, pV = nRT — and it is exactly what you want, because it contains the pressure you are after. Rearrange it for p, then run the usual Langmuir chain: relate occupied sites to empty sites, do the site balance, then take the fraction occupied.",
+        "eliminations": [
+          {
+            "option": "B",
+            "reason": "the fraction of empty sites (1 − $\\theta_{A}$), not the fraction occupied."
+          },
+          {
+            "option": "C",
+            "reason": "the occupied : empty ratio ($K_{A}p_{A}$); you must divide by the total sites, not just the empty ones."
+          },
+          {
+            "option": "D",
+            "reason": "the key trap: used n/V (= 0.08) as the pressure instead of solving pV = nRT for p. The ideal gas law is what turns n and V into a pressure (0.08 vs 2.0 is a 25× difference)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "prompt": "A gas ${D}_{2}$ binds the surface dissociatively with each molecule splits into two D atoms as it binds, and each atom takes its own site. At a partial pressure ${p}_{{D}_{2}}=2.0$ atm, with dissociative binding constant ${K}_{D}=2.0\\ \\text{atm}^{-1}$, what fraction of the sites are occupied ($\\theta$)?",
+      "options": [
+        "0.67",
+        "0.80",
+        "0.33",
+        "2.0"
+      ],
+      "correctOptionIndex": 0,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — List what you’re given, and put it in the matching equation",
+            "body": "You’re told ${p}_{{D}_{2}}=2.0$ atm and a dissociative binding constant ${K}_{D}=2.0\\ \\text{atm}^{-1}$. “Dissociative binding constant” together with a pressure is the signpost — those are exactly the ingredients of the dissociative equilibrium, so write it out and substitute the numbers as they are:\n\n$${K}_{D}=\\frac{{\\left[D S\\right]}^{2}}{{p}_{{D}_{2}}\\,{\\left[S\\right]}^{2}}\\ \\ \\Rightarrow \\ \\ 2.0=\\frac{{\\left[D S\\right]}^{2}}{2.0\\,{\\left[S\\right]}^{2}}$$\n\nTidy it (multiply both sides by 2.0):\n\n$$4.0=\\frac{{\\left[D S\\right]}^{2}}{{\\left[S\\right]}^{2}}.$$\n\nLeave it there for now — you don’t yet know which quantity you’re chasing."
+          },
+          {
+            "heading": "Step 2 — What is the question asking, and which equation gives it?",
+            "body": "It asks for the fraction of sites occupied, $\\theta$:\n\n$$\\theta =\\frac{\\left[D S\\right]}{{S}_{0}}.$$\n\nNow you can see what you need — $\\left[D S\\right]$ and ${S}_{0}$. So go back to Step 1 and make $\\left[D S\\right]$ the subject; the target has told you why:\n\n$${\\left[D S\\right]}^{2}=4.0\\,{\\left[S\\right]}^{2}\\ \\ \\Rightarrow \\ \\ \\left[D S\\right]=\\sqrt{4.0}\\,\\left[S\\right]=2.0\\,\\left[S\\right].$$\n\nThe square root appears because $\\left[D S\\right]$ was squared — the signature of one molecule splitting across two sites."
+          },
+          {
+            "heading": "Step 3 — Find ${S}_{0}$ from the site balance",
+            "body": "The general site balance is ${S}_{0}=\\left[S\\right]+\\left[A S\\right]+\\left[B S\\right]+\\left[D S\\right]$. Here only ${D}_{2}$ is present — no A or B is bound to anything — so the $\\left[A S\\right]$ and $\\left[B S\\right]$ terms are zero, and it collapses to\n\n$${S}_{0}=\\left[S\\right]+\\left[D S\\right]=\\left[S\\right]+2.0\\,\\left[S\\right]=3.0\\,\\left[S\\right].$$"
+          },
+          {
+            "heading": "Step 4 — Put it together",
+            "body": "$$\\theta =\\frac{\\left[D S\\right]}{{S}_{0}}=\\frac{2.0\\,\\left[S\\right]}{3.0\\,\\left[S\\right]}=0.67.$$"
+          }
+        ],
+        "answer": "A — 0.67",
+        "strategy": "Don’t rearrange anything yet — first write down what the question gives you, drop it into the matching equation, and only manipulate later, once you’ve seen what the question is actually asking for.",
+        "eliminations": [
+          {
+            "option": "B",
+            "reason": "the key trap: skipped the square root and treated it like ordinary binding, $\\left[D S\\right]={K}_{D}\\,p\\,\\left[S\\right]=4\\left[S\\right]$, giving 4/5. The squares in ${K}_{D}$ are there because the molecule takes two sites, so the root cannot be dropped."
+          },
+          {
+            "option": "C",
+            "reason": "the fraction of empty sites $\\left(1-\\theta \\right)$, not the fraction occupied."
+          },
+          {
+            "option": "D",
+            "reason": "the occupied-to-empty ratio $\\left[D S\\right]/\\left[S\\right]=\\sqrt{{K}_{D}\\,p}$, not a fraction; you must divide by the total sites."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "prompt": "A single gas binds the surface. Which expression correctly represents the fraction of sites the gas occupies, $\\theta$, in terms of $K$ and $p$ — where $p$ is the partial pressure of the gas and $K$ is its binding equilibrium constant.",
+      "options": [
+        "$\\theta =\\frac{K p}{1+K p}$",
+        "$\\theta =\\frac{\\sqrt{K p}}{1+\\sqrt{K p}}$",
+        "$\\theta =\\frac{2K p}{1+4K p}$",
+        "$\\theta =\\frac{{\\left(K p\\right)}^{2}}{1+{\\left(K p\\right)}^{2}}$"
+      ],
+      "correctOptionIndex": 0,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Start from what $\\theta$ means",
+            "body": "$$\\theta =\\frac{\\left[A S\\right]}{{S}_{0}}$$\n\nSo you need the occupied sites $\\left[A S\\right]$ and the total sites ${S}_{0}$."
+          },
+          {
+            "heading": "Step 2 — Express the occupied sites",
+            "body": "The binding equilibrium relates occupied to empty sites:\n\n$$K=\\frac{\\left[A S\\right]}{p\\,\\left[S\\right]}\\ \\ \\Rightarrow \\ \\ \\left[A S\\right]=K\\,p\\,\\left[S\\right]$$"
+          },
+          {
+            "heading": "Step 3 — Express the total sites",
+            "body": "The sites must add up to the total:\n\n$${S}_{0}=\\left[S\\right]+\\left[A S\\right]=\\left[S\\right]+K\\,p\\,\\left[S\\right]=\\left[S\\right]\\,\\left(1+K\\,p\\right)$$"
+          },
+          {
+            "heading": "Step 4 — Substitute both in, and cancel the empty sites",
+            "body": "$$\\theta =\\frac{\\left[A S\\right]}{{S}_{0}}=\\frac{K\\,p\\,\\left[S\\right]}{\\left[S\\right]\\,\\left(1+K\\,p\\right)}=\\frac{K\\,p}{1+K\\,p}$$\n\nThe empty sites $\\left[S\\right]$ cancel top and bottom."
+          }
+        ],
+        "answer": "A — $\\theta =\\frac{K p}{1+K p}$",
+        "strategy": "You’re asked for $\\theta$, so begin with what $\\theta$ actually means — the fraction of sites occupied, i.e. the occupied sites over the total sites. You don’t have those as numbers, so express each one using what the stem tells you: how the gas binds (that gives the occupied sites) and how the sites add up (that gives the total). Substitute both in, in terms of the empty sites, and watch for them to cancel.",
+        "eliminations": [
+          {
+            "option": "B",
+            "reason": "the square root is the signature of a molecule that splits into two on binding (two sites at once). A single-unit gas takes one site, so no root appears."
+          },
+          {
+            "option": "C",
+            "reason": "those numbers come from nowhere; every coefficient in the derivation is 1. They are there only to look busy."
+          },
+          {
+            "option": "D",
+            "reason": "squaring $K p$ has no basis for single-unit binding; squares only arise in the dissociative case, and not in this form."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "prompt": "Figure 1 shows single-gas coverage data re-plotted as $1/\\theta$ against $1/p$, giving a straight line. Determine the binding constant $K$.",
+      "contentBlocks": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1794813724/question-bank/qb_img_1794813723073_520689.png",
+          "alt": "",
+          "caption": ""
+        }
+      ],
+      "options": [
+        "0.5 atm⁻¹",
+        "2.0 atm⁻¹",
+        "1.0 atm⁻¹",
+        "0.25 atm⁻¹"
+      ],
+      "correctOptionIndex": 0,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Get the relationship between $\\theta$ and $p$",
+            "body": "This is the expression you derived in **Question 4**:\n\n$$\\theta =\\frac{K\\,p}{1+K\\,p}.$$\n\n(Worth noting: the GAMSAT often chains questions like this — a result you work out in one part is the tool you need for the next, so keep your earlier answers handy rather than starting each part from scratch.)"
+          },
+          {
+            "heading": "Step 2 — Reshape it to match the graph’s axes",
+            "body": "The graph uses $1/\\theta$ and $1/p$, so invert and split:\n\n$$\\frac{1}{\\theta }=\\frac{1+K\\,p}{K\\,p}$$\n\n$$\\frac{1}{\\theta }=\\frac{1}{K}\\cdot \\frac{1}{p}+1$$"
+          },
+          {
+            "heading": "Step 3 — Match to $y=m x+c$",
+            "body": "With $y=1/\\theta$ and $x=1/p$:\n\n$$\\text{slope}\\ m=\\frac{1}{K},\\ \\ \\text{intercept}\\ c=1.$$\n\nThe line does cross the vertical axis at 1 — consistent — and the slope carries $K$."
+          },
+          {
+            "heading": "Step 4 — Read the slope and solve for $K$",
+            "body": "$$\\text{slope}=\\frac{\\text{rise}}{\\text{run}}=\\frac{5-1}{2-0}=2.0$$\n\n$$\\frac{1}{K}=2.0\\ \\ \\Rightarrow \\ \\ K=\\frac{1}{2.0}=0.5\\ \\text{atm}^{-1}.$$"
+          }
+        ],
+        "answer": "A — 0.5 atm⁻¹",
+        "strategy": "The plot is a straight line in $1/\\theta$ and $1/p$, so a straight-line law — $y=m x+c$ — must connect them, and $K$ will be hiding in the slope or intercept. To find it, you first need how $\\theta$ depends on $p$; then reshape that relationship into $1/\\theta$ against $1/p$ and compare with the graph.",
+        "eliminations": [
+          {
+            "option": "B",
+            "reason": "the slope read straight off as $K$; but the slope is $1/K$, so it must be inverted: $K=1/\\text{slope}=0.5$."
+          },
+          {
+            "option": "C",
+            "reason": "the $y$-intercept, which is always 1 here (it does not depend on $K$), so it cannot be $K$."
+          },
+          {
+            "option": "D",
+            "reason": "over-inverted, using $1/{\\text{slope}}^{2}$; the slope is $1/K$, so $K=1/\\text{slope}=0.5$."
+          }
+        ]
+      }
+    }
+  ]
+}

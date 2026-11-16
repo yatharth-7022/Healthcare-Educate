@@ -35,6 +35,7 @@ export const PRACTICE_CATALOG_SEED: PracticeCatalogSeedCategory[] = [
       { name: "Equilibrium", totalQuestions: 64 },
       { name: "Kinetics", totalQuestions: 52 },
       { name: "Methods of Analysis and Detection", totalQuestions: 60 },
+      { name: "Mixtures", totalQuestions: 48 },
       { name: "Mole Calculations and Gases", totalQuestions: 56 },
       { name: "Redox and Electrochemistry", totalQuestions: 72 },
       { name: "Thermodynamics", totalQuestions: 64 },

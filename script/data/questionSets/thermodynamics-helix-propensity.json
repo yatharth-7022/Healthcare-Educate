@@ -1,0 +1,334 @@
+{
+  "categoryId": "general-chemistry",
+  "subcategoryId": "general-chemistry-thermodynamics",
+  "title": "Helix Propensity of Amino Acids - Stem 2",
+  "isPublished": true,
+  "stem": [
+    {
+      "type": "text",
+      "value": "The α-helix is one of the most common structures in proteins. The polypeptide backbone winds into a right-handed coil, held in shape by hydrogen bonds between the C=O group of each residue and the N–H group of the residue four places further along the chain."
+    },
+    {
+      "type": "text",
+      "value": "Amino acids differ in how readily they fit into this structure. The table below gives each amino acid’s **ΔΔG**: the free energy change, per residue, of placing that amino acid in an α-helix minus that of placing alanine there — so alanine’s value is zero. These are average values; the actual effect of a residue can vary depending on the residues around it."
+    },
+    {
+      "type": "text",
+      "value": "ΔΔG values of the standard amino acids, relative to alanine."
+    },
+    {
+      "type": "table",
+      "columns": [
+        "Amino acid",
+        "Code",
+        "ΔΔG (kcal/mol)",
+        "Amino acid",
+        "Code",
+        "ΔΔG (kcal/mol)"
+      ],
+      "rows": [
+        [
+          "Alanine",
+          "Ala, A",
+          "0.00",
+          "Leucine",
+          "Leu, L",
+          "0.21"
+        ],
+        [
+          "Arginine",
+          "Arg, R",
+          "0.21",
+          "Lysine",
+          "Lys, K",
+          "0.26"
+        ],
+        [
+          "Asparagine",
+          "Asn, N",
+          "0.65",
+          "Methionine",
+          "Met, M",
+          "0.24"
+        ],
+        [
+          "Aspartic acid",
+          "Asp, D",
+          "0.69",
+          "Phenylalanine",
+          "Phe, F",
+          "0.54"
+        ],
+        [
+          "Cysteine",
+          "Cys, C",
+          "0.68",
+          "Proline",
+          "Pro, P",
+          "3.16"
+        ],
+        [
+          "Glutamic acid",
+          "Glu, E",
+          "0.40",
+          "Serine",
+          "Ser, S",
+          "0.50"
+        ],
+        [
+          "Glutamine",
+          "Gln, Q",
+          "0.39",
+          "Threonine",
+          "Thr, T",
+          "0.66"
+        ],
+        [
+          "Glycine",
+          "Gly, G",
+          "1.00",
+          "Tryptophan",
+          "Trp, W",
+          "0.49"
+        ],
+        [
+          "Histidine",
+          "His, H",
+          "0.61",
+          "Tyrosine",
+          "Tyr, Y",
+          "0.53"
+        ],
+        [
+          "Isoleucine",
+          "Ile, I",
+          "0.41",
+          "Valine",
+          "Val, V",
+          "0.61"
+        ]
+      ]
+    },
+    {
+      "type": "text",
+      "value": "Two amino acids stand out. **Proline** has no N–H group to donate a hydrogen bond, and its ring-shaped side chain clashes with the backbone of the preceding turn, so inside a helix it breaks or kinks the chain; it is, however, often found as the first residue of a helix. **Glycine**, with only a hydrogen atom as its side chain, is highly flexible, so holding it in the constrained helical shape is entropically costly."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Which of the following sequences is predicted to be most favourable in an α-helix?",
+      "options": [
+        "AAPAKA",
+        "TNDVHC",
+        "LKGELR",
+        "EQYMST"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Decode each sequence and look up the ΔΔG values",
+            "body": "Round each value to one decimal place to keep the adding easy:\n\n- **A — AAPAKA:** Ala, Ala, Pro, Ala, Lys, Ala → 0 + 0 + 3.2 + 0 + 0.3 + 0\n- **B — TNDVHC:** Thr, Asn, Asp, Val, His, Cys → 0.7 + 0.7 + 0.7 + 0.6 + 0.6 + 0.7\n- **C — LKGELR:** Leu, Lys, Gly, Glu, Leu, Arg → 0.2 + 0.3 + 1.0 + 0.4 + 0.2 + 0.2\n- **D — EQYMST:** Glu, Gln, Tyr, Met, Ser, Thr → 0.4 + 0.4 + 0.5 + 0.2 + 0.5 + 0.7\n\nWatch the codes that don’t match the first letter of the name: K is lysine, E is glutamic acid, Q is glutamine, D is aspartic acid, N is asparagine, R is arginine, Y is tyrosine."
+          },
+          {
+            "heading": "Step 2 — Add up each total",
+            "body": "$$A:\\ 3.2+0.3=3.5\\ \\text{kcal}/\\text{mol}$$\n\n$$B:\\ 0.7+0.7+0.7+0.6+0.6+0.7=4.0\\ \\text{kcal}/\\text{mol}$$\n\n$$C:\\ 0.2+0.3+1.0+0.4+0.2+0.2=2.3\\ \\text{kcal}/\\text{mol}$$\n\n$$D:\\ 0.4+0.4+0.5+0.2+0.5+0.7=2.7\\ \\text{kcal}/\\text{mol}$$"
+          },
+          {
+            "heading": "Step 3 — Compare",
+            "body": "Sequence C has the smallest total ΔΔG, so it is the most favourable in an α-helix. (With the unrounded values the totals are 3.42, 3.90, 2.29 and 2.72 kcal/mol — the same order.)\n\nNotice that C is the only sequence containing **glycine**, one of the two residues the stem singles out as helix-disrupting. Glycine’s ΔΔG (1.00 kcal/mol) is large for a single residue, but the other five residues in C are among the most helix-friendly in the table. The totals in B and D build up from many medium-sized values instead, and end up higher."
+          }
+        ],
+        "answer": "C — LKGELR",
+        "strategy": "Underline **most favourable** and **α-helix**, and notice that each option is written in one-letter codes. The stem defines ΔΔG as the free energy change of placing an amino acid in a helix minus that of placing alanine there:\n\n$$\\Delta \\Delta G=\\Delta G\\left(\\text{amino}\\ \\text{acid}\\right)-\\Delta G\\left(\\text{alanine}\\right)$$\n\nEvery value in the table is zero or above, so every amino acid’s ΔG is at least as high as alanine’s, and the bigger the ΔΔG, the higher that amino acid’s ΔG. A higher ΔG means a less favourable change, so the bigger the ΔΔG, the less favourable that amino acid is in a helix — ΔΔG acts as a penalty. For example, glycine (1.00) has a higher ΔΔG than leucine (0.21), so glycine is less favourable in a helix than leucine.\n\nThe table gives ΔΔG per residue, so the cost of a whole sequence is found by adding up each residue’s value, treating each residue independently. The stem notes these are average values, so the total is an estimate — but it is good enough to compare sequences. So the most favourable sequence is the one with the **smallest total ΔΔG**. That means decoding each letter with the table, looking up its ΔΔG, and adding them up — rather than judging by which amino acids “look” helix-friendly or helix-breaking.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "the “mostly alanine, so most favourable” idea. Four alanines contribute nothing, but the single proline has a ΔΔG of 3.16 kcal/mol — more than three glycines’ worth — which outweighs everything else."
+          },
+          {
+            "option": "B",
+            "reason": "contains neither proline nor glycine, so it looks safe, but every one of its residues has a medium ΔΔG (0.61–0.69 kcal/mol). Six of these add up to the largest total of all."
+          },
+          {
+            "option": "D",
+            "reason": "also avoids proline and glycine and is a reasonable choice, but its serine, tyrosine and threonine push its total (≈ 2.7 kcal/mol) above C’s."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "prompt": "A peptide forms an α-helix with a free energy change of −0.50 kcal/mol. Which single mutation within the helix would prevent it from forming?",
+      "options": [
+        "Thr → Gly",
+        "Lys → Glu",
+        "Ala → Asp",
+        "Leu → Ser"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — How much does a mutation change ΔG?",
+            "body": "As in Question 1, the cost of a helix is found by adding up the ΔΔG of every residue in it. A mutation swaps one residue for another, so the old residue’s ΔΔG leaves that total and the new residue’s ΔΔG joins it. Everything else stays the same, so the change in ΔG is:\n\n$$\\text{change}=\\Delta \\Delta G\\left(\\text{new}\\ \\text{residue}\\right)-\\Delta \\Delta G\\left(\\text{old}\\ \\text{residue}\\right)$$\n\nFor example, replacing a threonine with a glycine doesn’t add glycine’s full 1.00 kcal/mol — it adds 1.00 but removes threonine’s 0.66, so ΔG rises by only 0.34."
+          },
+          {
+            "heading": "Step 2 — Work out the change for each mutation",
+            "body": "Rounding each ΔΔG to one decimal place:\n\n$$A:\\ \\text{Thr}\\rightarrow \\text{Gly}:\\ 1.0-0.7=+0.3$$\n\n$$B:\\ \\text{Lys}\\rightarrow \\text{Glu}:\\ 0.4-0.3=+0.1$$\n\n$$C:\\ \\text{Ala}\\rightarrow \\text{Asp}:\\ 0.7-0=+0.7$$\n\n$$D:\\ \\text{Leu}\\rightarrow \\text{Ser}:\\ 0.5-0.2=+0.3$$"
+          },
+          {
+            "heading": "Step 3 — Find the new ΔG for each",
+            "body": "Add each change to the original −0.50 kcal/mol:\n\n$$A:\\ -0.5+0.3=-0.2\\ \\text{kcal}/\\text{mol}\\ \\left(\\text{still}\\ \\text{forms}\\right)$$\n\n$$B:\\ -0.5+0.1=-0.4\\ \\text{kcal}/\\text{mol}\\ \\left(\\text{still}\\ \\text{forms}\\right)$$\n\n$$C:\\ -0.5+0.7=+0.2\\ \\text{kcal}/\\text{mol}\\ \\left(\\text{no}\\ \\text{longer}\\ \\text{forms}\\right)$$\n\n$$D:\\ -0.5+0.3=-0.2\\ \\text{kcal}/\\text{mol}\\ \\left(\\text{still}\\ \\text{forms}\\right)$$\n\nOnly mutation C makes ΔG positive, so only C prevents the helix from forming. (With the unrounded values the new ΔG values are −0.16, −0.36, +0.19 and −0.21 kcal/mol — the same conclusion.)\n\nIt’s worth noticing why C wins even though aspartic acid (0.69) has a smaller ΔΔG than glycine (1.00). The residue being removed matters just as much as the one being added. Alanine has a ΔΔG of zero, so swapping it out loses nothing and the full 0.69 is added; threonine already costs 0.66, so swapping it for glycine adds only the difference."
+          }
+        ],
+        "answer": "C — Ala → Asp",
+        "strategy": "Underline **−0.50 kcal/mol**, **single mutation** and **prevent it from forming**. A change is spontaneous only when ΔG is negative, so the helix forms now (ΔG = −0.50) and would stop forming once a mutation pushes ΔG to zero or above. So the question is really: which mutation raises ΔG by more than 0.50 kcal/mol? To answer that, you need to work out exactly how much each mutation changes ΔG — and a mutation doesn’t just add a new residue, it also takes an old one away.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "the “glycine is a helix-breaker” instinct, or adding glycine’s full 1.00 kcal/mol (which would give −0.50 + 1.00 = +0.50). But the threonine being removed already costs 0.66, so the helix only loses 0.34 kcal/mol and still forms."
+          },
+          {
+            "option": "B",
+            "reason": "swapping a positive side chain for a negative one looks drastic, but both residues have small ΔΔG values; the change is only about +0.14 kcal/mol."
+          },
+          {
+            "option": "D",
+            "reason": "serine costs more than leucine, but only by about 0.29 kcal/mol, which isn’t enough to push ΔG above zero."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "prompt": "A 10-residue peptide made entirely of alanine forms an α-helix with a free energy change of −1.20 kcal/mol. Positions are numbered from the start of the helix. Which of the following modified peptides would still form a helix?",
+      "options": [
+        "Proline at position 7",
+        "Glycine at positions 3 and 8",
+        "Proline at position 1 and glycine at position 6",
+        "Aspartic acid at positions 2 and 9"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Add up the table values for each option",
+            "body": "Rounding to one decimal place:\n\n$$A:\\ \\text{Pro}=3.2$$\n\n$$B:\\ \\text{Gly}+\\text{Gly}=1.0+1.0=2.0$$\n\n$$C:\\ \\text{Pro}+\\text{Gly}=3.2+1.0=4.2$$\n\n$$D:\\ \\text{Asp}+\\text{Asp}=0.7+0.7=1.4$$\n\nEvery one of these is bigger than 1.20 — taken at face value, none of the peptides would form a helix. Since one of them must, something in the question hasn’t been used yet: the positions."
+          },
+          {
+            "heading": "Step 2 — A proline at position 1 adds essentially no cost",
+            "body": "That is the missing piece — and it fits the stem’s remark that proline “is often found as the first residue of a helix”. A proline at position 7, by contrast, sits inside the helix and carries its full cost.\n\nWhy? The stem gives two reasons proline is costly: its side chain “clashes with the backbone of the preceding turn”, and it “has no N–H group to donate a hydrogen bond”. At position 1, neither applies. You can use either reason on its own, or both — each leads to the same conclusion.\n\nReason 1 — the clash (the quicker check). Position 1 is the very start of the helix, so there is no preceding turn for proline’s side chain to clash with.\n\nReason 2 — the missing N–H. First, why doesn’t proline have one? As a free amino acid it does: its nitrogen is bonded to two ring carbons and one hydrogen. But once proline is joined into a peptide chain, its nitrogen also forms the peptide bond to the previous residue’s C=O carbon — and nitrogen only makes three bonds, so that bond takes the place of the hydrogen. Every other amino acid keeps its N–H in the chain; proline is the exception:\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1794813785/question-bank/qb_img_1794813784290_ff46a5.png)\n\nNow check where that matters. The stem says each hydrogen bond runs from the C=O of one residue to the N–H of the residue four places further along. So the first N–H that is ever used belongs to residue 5 (bonded to residue 1’s C=O). The N–H groups of residues 1 to 4 are never used — so at position 1, proline’s lack of an N–H costs nothing."
+          },
+          {
+            "heading": "Step 3 — Recalculate, then compare with 1.20",
+            "body": "Only option C has a proline at position 1, so its cost drops to just the glycine:\n\n$$A:\\ 3.2\\ \\Rightarrow \\ \\Delta G\\approx -1.2+3.2=+2.0\\ \\text{kcal}/\\text{mol}$$\n\n$$B:\\ 2.0\\ \\Rightarrow \\ \\Delta G\\approx -1.2+2.0=+0.8\\ \\text{kcal}/\\text{mol}$$\n\n$$C:\\ 0+1.0=1.0\\ \\Rightarrow \\ \\Delta G\\approx -1.2+1.0=-0.2\\ \\text{kcal}/\\text{mol}$$\n\n$$D:\\ 1.4\\ \\Rightarrow \\ \\Delta G\\approx -1.2+1.4=+0.2\\ \\text{kcal}/\\text{mol}$$\n\nOnly C keeps ΔG negative, so only C still forms a helix. (With the unrounded values: +1.96, +0.80, −0.20 and +0.18 kcal/mol.)"
+          }
+        ],
+        "answer": "C — Proline at position 1 and glycine at position 6",
+        "strategy": "Underline **−1.20 kcal/mol**, **entirely of alanine**, **positions numbered from the start**, and **still form a helix**. The helix forms because ΔG is negative, so a modified peptide still forms a helix only if its replacements add less than 1.20 kcal/mol. Because every original residue is alanine (ΔΔG = 0), nothing is taken away when a residue is swapped — each replacement simply adds its own ΔΔG. Notice too that the question bothers to give positions; keep that in mind in case it matters.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "position 7 is inside the helix, where proline’s missing N–H and its clash with the preceding turn both apply, so it carries its full 3.16 kcal/mol."
+          },
+          {
+            "option": "B",
+            "reason": "glycine’s cost is about its flexibility, which the stem gives no reason to depend on position, so both glycines count in full (2.00 kcal/mol)."
+          },
+          {
+            "option": "D",
+            "reason": "no proline or glycine, so it looks the safest, but two medium penalties still add 1.38 kcal/mol — just enough to tip ΔG above zero."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "prompt": "Holding a residue in its helical position costs +0.8 kcal/mol, and each backbone hydrogen bond formed in the helix contributes −1.0 kcal/mol. What is the shortest peptide, made entirely of alanine, that would form a stable α-helix?",
+      "options": [
+        "16 residues",
+        "20 residues",
+        "21 residues",
+        "A peptide of any length would form a stable helix"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — An n-residue helix has n − 4 hydrogen bonds, not n",
+            "body": "The stem says each hydrogen bond runs from the C=O of one residue to the N–H of the residue four places further along. So the first N–H that receives a hydrogen bond belongs to residue 5, and every residue from 5 to n receives exactly one — the N–H groups of residues 1 to 4 are never used (the same point as in Question 3). For a 10-residue helix:\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1794813787/question-bank/qb_img_1794813786500_c61390.png)\n\nTen residues give six hydrogen bonds — residues 5 to 10 — which is 10 − 4. In general:\n\n$$\\text{number}\\ \\text{of}\\ \\text{hydrogen}\\ \\text{bonds}=n-4$$"
+          },
+          {
+            "heading": "Step 2 — Build the overall ΔG",
+            "body": "Add the cost of holding every residue in place to the gain from every hydrogen bond:\n\n$$\\Delta G=0.8n+\\left(-1.0\\right)\\left(n-4\\right)$$\n\n$$\\Delta G=0.8n-n+4$$\n\n$$\\Delta G=4-0.2n$$"
+          },
+          {
+            "heading": "Step 3 — Find the shortest stable helix",
+            "body": "The helix is stable when ΔG is negative:\n\n$$4-0.2n<0$$\n\n$$0.2n>4$$\n\n$$n>20$$\n\nAt exactly 20 residues, ΔG = 4 − 4 = 0 — the helix is no more favourable than the unfolded chain, so it isn’t stable. The next length up is 21 residues:\n\n$$\\Delta G=4-0.2\\times 21=4-4.2=-0.2\\ \\text{kcal}/\\text{mol}$$\n\nThat is negative, so 21 residues is the shortest stable helix."
+          }
+        ],
+        "answer": "C — 21 residues",
+        "strategy": "Underline **+0.8 kcal/mol** per residue, **−1.0 kcal/mol** per hydrogen bond, **shortest** and **stable**. A helix is stable when its overall ΔG is negative, so you need to find the smallest number of residues, n, for which the gains from hydrogen bonds outweigh the cost of holding every residue in place. Every residue costs 0.8, so that part is easy — the key question is how many hydrogen bonds a helix of n residues actually has.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "counted n − 3 hydrogen bonds instead of n − 4. That gives ΔG = 3 − 0.2n, which turns negative after 15 residues. The first four N–H groups are unused, not the first three."
+          },
+          {
+            "option": "B",
+            "reason": "found the boundary but stopped there. At 20 residues ΔG is exactly zero, which is not negative, so the helix is not stable."
+          },
+          {
+            "option": "D",
+            "reason": "counted one hydrogen bond per residue (n bonds). Then ΔG = 0.8n − 1.0n = −0.2n, which is negative for every length. But the first four residues’ N–H groups have nothing to bond to, so a short helix doesn’t have enough hydrogen bonds to pay for itself."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "prompt": "Holding a residue in its helical position costs +0.8 kcal/mol, and each backbone hydrogen bond formed in the helix contributes −1.0 kcal/mol. A peptide is made entirely of alanine except for a single glycine at position 1. What is the shortest such peptide that would form a stable α-helix?",
+      "options": [
+        "21 residues",
+        "22 residues",
+        "26 residues",
+        "25 residues"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — A glycine at position 1 still costs its full ΔΔG of 1.00 kcal/mol",
+            "body": "It’s tempting to think position 1 is “free”, because a proline there costs nothing (Question 3). But that was true only because of why proline is costly: its clash with the preceding turn and its missing N–H both vanish at position 1. The stem gives a different reason for glycine’s cost — it is highly flexible, so holding it in the helical shape is entropically costly. A glycine at position 1 still has to be held in place like every other residue, so nothing about that cost goes away. Glycine therefore adds its full 1.00 kcal/mol."
+          },
+          {
+            "heading": "Step 2 — Build the overall ΔG",
+            "body": "The 0.8 kcal/mol per residue is the cost of holding each residue in place. The table’s ΔΔG is the extra cost of an amino acid compared with alanine, so a glycine costs the usual amount plus 1.00. The number of hydrogen bonds is unchanged: it is still n − 4, because the N–H groups of residues 1 to 4 are never used (Question 4). So:\n\n$$\\Delta G=0.8n+\\left(-1.0\\right)\\left(n-4\\right)+1.00$$\n\n$$\\Delta G=0.8n-n+4+1$$\n\n$$\\Delta G=5-0.2n$$"
+          },
+          {
+            "heading": "Step 3 — Find the shortest stable helix",
+            "body": "The helix is stable when ΔG is negative:\n\n$$5-0.2n<0$$\n\n$$0.2n>5$$\n\n$$n>25$$\n\nAt exactly 25 residues, ΔG = 5 − 5 = 0, which is not negative, so the helix isn’t stable. The next length up is 26 residues:\n\n$$\\Delta G=5-0.2\\times 26=5-5.2=-0.2\\ \\text{kcal}/\\text{mol}$$\n\nThat is negative, so 26 residues is the shortest stable helix.\n\nA quicker way, if you’ve done Question 4: each residue added to a helix costs 0.8 but brings one more hydrogen bond worth 1.0, so it improves ΔG by a net 0.2 kcal/mol. Paying off glycine’s extra 1.00 kcal/mol therefore takes 1.00 ÷ 0.2 = 5 more residues than the all-alanine helix: 21 + 5 = 26."
+          }
+        ],
+        "answer": "C — 26 residues",
+        "strategy": "Underline **+0.8 kcal/mol** per residue, **−1.0 kcal/mol** per hydrogen bond, **a single glycine at position 1**, **shortest** and **stable**. This is the same kind of helix-length problem as Question 4, but with one glycine added. Two things need settling: does a glycine at position 1 cost anything at all, and if so, how does its cost fit into the overall ΔG?",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "the all-alanine answer from Question 4. It treats a glycine at position 1 as free, like a proline there. But glycine’s cost comes from its flexibility, not from a clash or a missing N–H, so it still applies at position 1."
+          },
+          {
+            "option": "B",
+            "reason": "assumes one extra residue makes up for the glycine. Each extra residue only improves ΔG by a net 0.2 kcal/mol (0.8 cost, 1.0 gained), so it takes five to cover 1.00 kcal/mol."
+          },
+          {
+            "option": "D",
+            "reason": "found the boundary but stopped there. At 25 residues ΔG is exactly zero, which is not negative, so the helix is not stable."
+          }
+        ]
+      }
+    }
+  ]
+}

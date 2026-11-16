@@ -1,0 +1,308 @@
+{
+  "categoryId": "general-chemistry",
+  "subcategoryId": "general-chemistry-mixtures",
+  "title": "Absorbance in mixture - Stem 1",
+  "isPublished": true,
+  "stem": [
+    {
+      "type": "text",
+      "value": "Five coloured compounds, P, Q, R, S and T, absorb light differently depending on wavelength. The absorbance of a solution is proportional to the concentration of the absorbing compound, provided all other experimental conditions remain constant."
+    },
+    {
+      "type": "text",
+      "value": "The absorbances shown below were measured using solutions containing 2.0 mmol L⁻¹ of each compound in identical cuvettes."
+    },
+    {
+      "type": "text",
+      "value": "Absorbance of 2.0 mmol L⁻¹ solutions of each compound."
+    },
+    {
+      "type": "table",
+      "columns": [
+        "Wavelength (nm)",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T"
+      ],
+      "rows": [
+        [
+          "400",
+          "0.80",
+          "0.10",
+          "0.20",
+          "0.50",
+          "0.00"
+        ],
+        [
+          "450",
+          "0.60",
+          "0.30",
+          "0.10",
+          "0.20",
+          "0.40"
+        ],
+        [
+          "500",
+          "0.20",
+          "0.70",
+          "0.40",
+          "0.10",
+          "0.30"
+        ],
+        [
+          "550",
+          "0.10",
+          "0.40",
+          "0.80",
+          "0.20",
+          "0.10"
+        ],
+        [
+          "600",
+          "0.00",
+          "0.20",
+          "0.30",
+          "0.70",
+          "0.50"
+        ]
+      ]
+    },
+    {
+      "type": "text",
+      "value": "When several compounds are present in the same solution, their absorbances at a given wavelength are additive:"
+    },
+    {
+      "type": "equation",
+      "value": "{A}_{\\text{total}}={A}_{P}+{A}_{Q}+{A}_{R}+{A}_{S}+{A}_{T}",
+      "mode": "block"
+    },
+    {
+      "type": "text",
+      "value": "Assume that the compounds do not chemically interact when mixed."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "A mixture contains 1.0 mmol L⁻¹ of compound P and 3.0 mmol L⁻¹ of compound R. What is the expected absorbance of the mixture at 550 nm?",
+      "options": [
+        "0.73",
+        "0.90",
+        "1.25",
+        "2.50"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Read the table at 550 nm",
+            "body": "At 2.0 mmol L⁻¹:\n\n$${A}_{P}=0.10\\ \\ {A}_{R}=0.80$$"
+          },
+          {
+            "heading": "Step 2 — Scale each to the concentration in the mixture",
+            "body": "Absorbance is proportional to concentration, so multiply each table value by (concentration present ÷ 2.0).\n\nP is at 1.0 mmol L⁻¹, half the table’s concentration:\n\n$${A}_{P}=0.10\\times \\frac{1.0}{2.0}$$\n\n$${A}_{P}=0.10\\times \\frac{1}{2}=0.05$$\n\nR is at 3.0 mmol L⁻¹, one and a half times the table’s concentration:\n\n$${A}_{R}=0.80\\times \\frac{3.0}{2.0}$$\n\n$${A}_{R}=0.80\\times \\frac{3}{2}=1.20$$"
+          },
+          {
+            "heading": "Step 3 — Add the two absorbances",
+            "body": "The stem says absorbances in a mixture are additive:\n\n$${A}_{\\text{mixture}}={A}_{P}+{A}_{R}$$\n\n$${A}_{\\text{mixture}}=0.05+1.20$$\n\n$${A}_{\\text{mixture}}=1.25$$"
+          }
+        ],
+        "answer": "C — 1.25",
+        "strategy": "Underline **1.0 mmol L⁻¹ of P**, **3.0 mmol L⁻¹ of R** and **550 nm**. The table gives each compound’s absorbance at 550 nm — but the stem says those values were measured at **2.0 mmol L⁻¹**, and this mixture uses different concentrations. The stem also says absorbance is proportional to concentration, so each table value has to be scaled to the concentration actually present. Finally, the stem says absorbances in a mixture are additive, so the two scaled values add to give the total.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "scaled the wrong way round, by (2.0 ÷ concentration) instead of (concentration ÷ 2.0): 0.10 × 2 + 0.80 × ⅔ ≈ 0.73. A higher concentration means more absorbance, not less."
+          },
+          {
+            "option": "B",
+            "reason": "added the table values straight away (0.10 + 0.80) without scaling them. Those values are for 2.0 mmol L⁻¹, not the concentrations in this mixture."
+          },
+          {
+            "option": "D",
+            "reason": "multiplied each table value by its concentration (0.10 × 1 + 0.80 × 3) without dividing by 2.0. The table values already correspond to 2.0 mmol L⁻¹, so it’s the ratio to 2.0 that matters."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "prompt": "A solution contains two of the compounds. Its absorbance is 0.50 at 400 nm, 0.60 at 450 nm and 0.45 at 550 nm. Which of the following could the solution be?",
+      "options": [
+        "2.0 mmol L⁻¹ of S and 2.0 mmol L⁻¹ of T",
+        "1.0 mmol L⁻¹ of P and 1.0 mmol L⁻¹ of R",
+        "1.0 mmol L⁻¹ of P and 2.0 mmol L⁻¹ of Q",
+        "4.0 mmol L⁻¹ of S and 1.0 mmol L⁻¹ of T"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Work out the scaling factors",
+            "body": "Each table value is multiplied by (concentration ÷ 2.0):\n\n- 1.0 mmol L⁻¹ → × ½\n- 2.0 mmol L⁻¹ → × 1 (use the table value as it is)\n- 4.0 mmol L⁻¹ → × 2"
+          },
+          {
+            "heading": "Step 2 — Check 400 nm (measured: 0.50)",
+            "body": "$$A:\\ S+T=0.50+0.00=0.50\\ \\checkmark$$\n\n$$B:\\ \\frac{1}{2}P+\\frac{1}{2}R=0.40+0.10=0.50\\ \\checkmark$$\n\n$$C:\\ \\frac{1}{2}P+Q=0.40+0.10=0.50\\ \\checkmark$$\n\n$$D:\\ 2S+\\frac{1}{2}T=1.00+0.00=1.00\\ \\times$$\n\nD is out. Three options still fit."
+          },
+          {
+            "heading": "Step 3 — Check 450 nm (measured: 0.60) for the three that remain",
+            "body": "$$A:\\ S+T=0.20+0.40=0.60\\ \\checkmark$$\n\n$$B:\\ \\frac{1}{2}P+\\frac{1}{2}R=0.30+0.05=0.35\\ \\times$$\n\n$$C:\\ \\frac{1}{2}P+Q=0.30+0.30=0.60\\ \\checkmark$$\n\nB is out. Two options still fit."
+          },
+          {
+            "heading": "Step 4 — Check 550 nm (measured: 0.45) for the two that remain",
+            "body": "$$A:\\ S+T=0.20+0.10=0.30\\ \\times$$\n\n$$C:\\ \\frac{1}{2}P+Q=0.05+0.40=0.45\\ \\checkmark$$\n\nOnly C matches all three readings."
+          },
+          {
+            "heading": "Why the other options fail",
+            "body": "Every wrong option matches two of the three readings, and fails at a different wavelength — which is why all three have to be checked."
+          }
+        ],
+        "answer": "C — 1.0 mmol L⁻¹ of P and 2.0 mmol L⁻¹ of Q",
+        "strategy": "Underline **two of the compounds**, the three readings (**0.50 at 400 nm**, **0.60 at 450 nm**, **0.45 at 550 nm**), and **could the solution be**. Each option names two compounds and their concentrations. As in Question 1, the stem’s table values are for 2.0 mmol L⁻¹, absorbance is proportional to concentration, and absorbances add. So for each option you can predict what it would read at each wavelength and compare with the measured values. The correct option has to match **all three** readings — one match isn’t enough.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "matches at 400 nm and 450 nm, but gives only 0.30 at 550 nm."
+          },
+          {
+            "option": "B",
+            "reason": "matches at 400 nm and 550 nm (0.05 + 0.40 = 0.45), but gives only 0.35 at 450 nm."
+          },
+          {
+            "option": "D",
+            "reason": "matches at 450 nm (0.40 + 0.20 = 0.60) and 550 nm (0.40 + 0.05 = 0.45), but gives 1.00 at 400 nm."
+          }
+        ],
+        "answerIndex": 4
+      }
+    },
+    {
+      "id": "q3",
+      "prompt": "A solution initially containing 2.0 mmol L⁻¹ of P is gradually converted into Q, with each molecule of P forming one molecule of Q. At a certain time, the absorbance of the solution at 500 nm is 0.55. What fraction of the P has been converted into Q at that time?",
+      "options": [
+        "30%",
+        "50%",
+        "70%",
+        "79%"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — The two end points",
+            "body": "Because each P forms exactly one Q, the total stays at 2.0 mmol L⁻¹ — the same concentration as the table — so the table values can be read off directly at 500 nm:\n\n- **Start (0% converted):** the solution is 2.0 mmol L⁻¹ of P, which reads **0.20**.\n- **End (100% converted):** the solution is 2.0 mmol L⁻¹ of Q, which reads **0.70**.\n\nIn between, the solution is a mixture of the P that is left and the Q that has formed. The stem says absorbances add and each is proportional to concentration, so every P that turns into Q shifts the reading by the same small amount. The reading therefore moves steadily from 0.20 towards 0.70 as the reaction goes."
+          },
+          {
+            "heading": "Step 2 — See how far along the reading is",
+            "body": "![](https://res.cloudinary.com/dn2hfglba/image/upload/v1794813772/question-bank/qb_img_1794813771153_e2d857.png)\n\nThe whole range from start to finish is\n\n$$0.70-0.20=0.50$$\n\nand the reading has moved\n\n$$0.55-0.20=0.35$$\n\nof the way along it. So the fraction converted is\n\n$$\\frac{0.35}{0.50}=0.70=70\\%$$\n\n(Equivalently, 0.15 of the range is still to go, so 30% of the P is left.)\n\nIf you prefer algebra: call the fraction converted x. The remaining P reads 0.20(1 − x) and the Q formed reads 0.70x, so 0.20(1 − x) + 0.70x = 0.55, which gives 0.20 + 0.50x = 0.55 and x = 0.70 — the same answer."
+          }
+        ],
+        "answer": "C — 70%",
+        "strategy": "Underline **initially 2.0 mmol L⁻¹ of P**, **each molecule of P forming one molecule of Q**, **0.55 at 500 nm** and **what fraction … converted**. Work out what the solution would read at the two extremes — before any P has reacted, and once it has all turned into Q — and then see where 0.55 sits between them.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "mixed up which compound is which, or found the fraction of P remaining rather than converted. Writing 0.70(1 − x) + 0.20x = 0.55 gives x = 0.30."
+          },
+          {
+            "option": "B",
+            "reason": "forgot that P is used up, keeping its full 0.20 while adding the Q that forms: 0.20 + 0.70x = 0.55. But every molecule of Q formed means one less molecule of P."
+          },
+          {
+            "option": "D",
+            "reason": "ignored the remaining P altogether and assumed all of the absorbance comes from Q: 0.70x = 0.55. The P that hasn’t reacted yet still absorbs at 500 nm."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "prompt": "A solution initially containing 2.0 mmol L⁻¹ of S is gradually converted into T, with each molecule of S forming **two** molecules of T. At a certain time, the absorbance of the solution at 450 nm is 0.35. What fraction of the S has been converted into T at that time?",
+      "options": [
+        "44%",
+        "75%",
+        "25%",
+        "38%"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — The start is easy; the end is where the “two” matters",
+            "body": "- **Start (0% converted):** the solution is 2.0 mmol L⁻¹ of S. At 450 nm the table gives **0.20**.\n- **End (100% converted):** every molecule of S has become two molecules of T, so 2.0 mmol L⁻¹ of S becomes **4.0 mmol L⁻¹ of T** — twice the table’s concentration. The table gives T as 0.40 at 450 nm for 2.0 mmol L⁻¹, and absorbance is proportional to concentration, so:\n\n$${A}_{\\text{end}}=0.40\\times \\frac{4.0}{2.0}=0.40\\times 2=0.80$$\n\nSo the “all T” end point is **0.80**, not 0.40. As before, every S that reacts shifts the reading by the same amount, so the reading moves steadily from 0.20 towards 0.80 as the reaction goes."
+          },
+          {
+            "heading": "Step 2 — See how far along the reading is",
+            "body": "![](https://res.cloudinary.com/dn2hfglba/image/upload/v1794813773/question-bank/qb_img_1794813773308_eb31d8.png)\n\nThe whole range from start to finish is\n\n$$0.80-0.20=0.60$$\n\nand the reading has moved\n\n$$0.35-0.20=0.15$$\n\nof the way along it. So the fraction converted is\n\n$$\\frac{0.15}{0.60}=0.25=25\\%$$\n\nIf you prefer algebra: call the fraction converted x. The S that is left contributes 0.20(1 − x). Each S makes two T, so T contributes twice its table value — 0.80x rather than 0.40x. Then:\n\n$$0.20\\,\\left(1-x\\right)+0.80\\,x=0.35$$\n\n$$0.20+0.60\\,x=0.35$$\n\n$$x=0.25$$"
+          },
+          {
+            "heading": "What changed from Question 3?",
+            "body": "The method is identical — find the two end points, then see how far along the reading is. Only the “all converted” end point moved, because making two molecules of T per S doubles the concentration of T at the end."
+          }
+        ],
+        "answer": "C — 25%",
+        "strategy": "Underline **initially 2.0 mmol L⁻¹ of S**, **each molecule of S forming two molecules of T**, **0.35 at 450 nm** and **what fraction … converted**. As in Question 3, work out what the solution would read at the two extremes — before any S has reacted, and once it has all been converted — and see where 0.35 sits between them. The difference this time is the word **two**: it changes how much T there is at the end, and so it changes one of the end points.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "measured the reading from zero instead of from the starting value: 0.35 ÷ 0.80. But the solution already reads 0.20 before any S has reacted, because S itself absorbs at 450 nm."
+          },
+          {
+            "option": "B",
+            "reason": "used 0.40 as the end point, as if each S formed only one T: 0.15 ÷ 0.20. With two T per S, there is 4.0 mmol L⁻¹ of T at the end, which reads 0.80."
+          },
+          {
+            "option": "D",
+            "reason": "took the one-to-one answer (75%) and halved it, on the idea that “two T per S means half as much conversion”. But the doubling changes the end point, not the answer by a simple factor of two — the range grows from 0.20 to 0.60, three times as wide."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "prompt": "A solution initially containing 2.0 mmol L⁻¹ of S is gradually converted into T, with each molecule of S forming two molecules of T. At which wavelength would measuring absorbance be least useful for following the progress of this reaction?",
+      "options": [
+        "400 nm",
+        "500 nm",
+        "550 nm",
+        "600 nm"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Start and end readings at each wavelength",
+            "body": "At the start the solution is 2.0 mmol L⁻¹ of S, so the start reading is S’s table value. At the end it is 4.0 mmol L⁻¹ of T — twice the table’s concentration — so the end reading is **twice** T’s table value.\n\n400 nm:\n\n$$\\text{start}=0.50\\ \\ \\text{end}=2\\times 0.00=0.00\\ \\ \\text{change}=-0.50$$\n\n500 nm:\n\n$$\\text{start}=0.10\\ \\ \\text{end}=2\\times 0.30=0.60\\ \\ \\text{change}=+0.50$$\n\n550 nm:\n\n$$\\text{start}=0.20\\ \\ \\text{end}=2\\times 0.10=0.20\\ \\ \\text{change}=0$$\n\n600 nm:\n\n$$\\text{start}=0.70\\ \\ \\text{end}=2\\times 0.50=1.00\\ \\ \\text{change}=+0.30$$"
+          },
+          {
+            "heading": "Step 2 — Find the wavelength where nothing changes",
+            "body": "At 550 nm the reading starts at 0.20 and ends at 0.20. Since it moves steadily between the two, it stays at 0.20 for the whole reaction — so it can’t tell you how far the reaction has got. At every other wavelength the reading changes clearly.\n\nThis is easy to miss, because in the table S and T look different at 550 nm (0.20 against 0.10). But each molecule of T absorbs half as much as each molecule of S, and there are twice as many molecules of T at the end — so the two effects cancel exactly."
+          },
+          {
+            "heading": "Step 3 — Check that the reading stays flat the whole way through",
+            "body": "The reading at 550 nm isn’t just back to 0.20 at the end — it is 0.20 at every stage. Check two points along the way.\n\nHalfway (50% converted):\n\n- Half the S has reacted, so 1.0 mmol L⁻¹ of S is left. That is half the table’s concentration, so it reads 0.20 × ½ = **0.10**.\n- The 1.0 mmol L⁻¹ of S that reacted made two molecules of T each, so 2 × 1.0 = **2.0 mmol L⁻¹ of T** has formed. This is where the “two” goes — into the concentration of T. The table value for T (0.10) is for exactly 2.0 mmol L⁻¹, so the T reads **0.10**.\n- Total: 0.10 + 0.10 = **0.20** — the same as at the start.\n\nThree-quarters of the way (75% converted):\n\n- A quarter of the S is left: 0.5 mmol L⁻¹, which reads 0.20 × ¼ = **0.05**.\n- The 1.5 mmol L⁻¹ of S that reacted made 2 × 1.5 = **3.0 mmol L⁻¹ of T**, one and a half times the table’s concentration, which reads 0.10 × 1.5 = **0.15**.\n- Total: 0.05 + 0.15 = **0.20** — still the same.\n\nEvery molecule of S used up takes away some absorbance, and the two molecules of T it forms add back exactly the same amount. So at 550 nm the reading never moves, however far the reaction has gone."
+          }
+        ],
+        "answer": "C — 550 nm",
+        "strategy": "Underline **least useful for following the progress** and **each molecule of S forming two molecules of T**. Absorbance can only track a reaction if the reading changes as S turns into T. As in Questions 3 and 4, the reading moves steadily from its starting value (all S) to its final value (all T) — so a wavelength is useless if those two values are the same, because then the reading never moves. So find the start and end readings at each wavelength, remembering that “two molecules of T” doubles the end point, just as in Question 4.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "the “T doesn’t absorb here, so you can’t see it” idea. But that makes 400 nm very useful: the reading falls all the way from 0.50 to 0 as the S is used up. A wavelength doesn’t need the product to absorb — it only needs the reading to change."
+          },
+          {
+            "option": "B",
+            "reason": "S barely absorbs here (0.10), but T does, so the reading rises by 0.50 as T forms — a large, easily measured change."
+          },
+          {
+            "option": "D",
+            "reason": "the change here (+0.30) is smaller than at some other wavelengths, but it is still a clear change, so the reaction can still be followed."
+          }
+        ]
+      }
+    }
+  ]
+}

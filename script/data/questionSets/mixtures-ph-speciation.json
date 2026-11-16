@@ -1,0 +1,318 @@
+{
+  "categoryId": "general-chemistry",
+  "subcategoryId": "general-chemistry-mixtures",
+  "title": "pH-dependent stability and speciation of compound X - Stem 2",
+  "isPublished": true,
+  "stem": [
+    {
+      "type": "text",
+      "value": "Compound X (molar mass 250 g mol⁻¹) exists in aqueous solution as four interconverting forms, A, B, C and D. The relative amounts of the four forms depend on pH, and together they account for all of the X present in a solution."
+    },
+    {
+      "type": "text",
+      "value": "In a stability study, 2.50 g of X was dissolved in buffer and made up to 1.00 L at each of a range of pH values. Each solution was held at 37 °C for 24 hours. During this time some X decomposed into products that are not any of forms A–D, and the extent of decomposition depended on pH."
+    },
+    {
+      "type": "text",
+      "value": "After 24 hours, the total concentration of X remaining in each solution (all four forms combined) was measured (Figure 1). The proportion of the remaining X present as each form was also determined (Figure 2). Four pH values of particular interest are marked on both figures."
+    },
+    {
+      "type": "image",
+      "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1794813776/question-bank/qb_img_1794813774317_ddfa84.png",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1794813777/question-bank/qb_img_1794813776689_bbbfb6.png",
+      "alt": "",
+      "caption": ""
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Of the four marked pH values, at which is the concentration of form C highest after 24 hours, and what is that concentration?",
+      "options": [
+        "pH 13;  5.5 × 10⁻³ mol L⁻¹",
+        "pH 10;  1.2 × 10⁻³ mol L⁻¹",
+        "pH 13;  8.3 × 10⁻⁴ mol L⁻¹",
+        "pH 10;  4.0 × 10⁻³ mol L⁻¹"
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Work out what \"concentration of form C\" needs",
+            "body": "Start from the stem. Figure 2 shows \"the proportion of the remaining X present as each form\". Figure 1 shows \"the total concentration of X remaining … (all four forms combined)\". So Figure 2 tells you what fraction of the remaining X is C, and Figure 1 tells you how much remaining X there is. The amount of C is that fraction of that total:\n\n$$[C]\\ =\\ (\\text{proportion}\\ \\text{of}\\ C)\\ \\times \\ (\\text{total}\\ X\\ \\text{remaining})$$\n\nThis is the same idea as a class: 30% of a class of 40 is 12 students, but 55% of a class of 15 is only about 8. A bigger share of a smaller group can still be fewer people."
+          },
+          {
+            "heading": "Step 2 — Read the total from Figure 1",
+            "body": "Read the black curve where it crosses each dashed line (gridlines every 0.5 × 10⁻³ mol L⁻¹):\n\n- pH 7: 2.0 × 10⁻³ mol L⁻¹ (the curve is near its trough)\n- pH 10: 4.0 × 10⁻³ mol L⁻¹ (top of the second, smaller peak)\n- pH 13: 1.5 × 10⁻³ mol L⁻¹\n- pH 14: 1.0 × 10⁻³ mol L⁻¹\n\nNotice how much smaller the pool of X is at pH 13 than at pH 10 — less than half."
+          },
+          {
+            "heading": "Step 3 — Read the proportion of C from Figure 2",
+            "body": "Read the pink curve (Form C) at each dashed line (gridlines every 0.05):\n\n- pH 7: 0.10    pH 10: 0.30    pH 13: 0.55 (the pink peak)    pH 14: 0.40"
+          },
+          {
+            "heading": "Step 4 — Multiply and compare",
+            "body": "Do the same multiplication at every marked pH, reading each total from Step 2 and each proportion from Step 3.\n\n$$\\text{pH}\\ 7:\\ [C]\\ =\\ 0.10\\ \\times \\ 2.0\\ \\times \\ {10}^{-3}\\text{mol}\\ \\text{L}^{-1}$$\n\n$$=\\ 0.20\\ \\times \\ {10}^{-3}\\text{mol}\\ \\text{L}^{-1}$$\n\n$$\\text{pH}\\ 10:\\ [C]\\ =\\ 0.30\\ \\times \\ 4.0\\ \\times \\ {10}^{-3}\\text{mol}\\ \\text{L}^{-1}$$\n\n$$=\\ 1.2\\ \\times \\ {10}^{-3}\\text{mol}\\ \\text{L}^{-1}$$\n\n$$\\text{pH}\\ 13:\\ [C]\\ =\\ 0.55\\ \\times \\ 1.5\\ \\times \\ {10}^{-3}\\text{mol}\\ \\text{L}^{-1}$$\n\n$$=\\ 0.825\\ \\times \\ {10}^{-3}\\text{mol}\\ \\text{L}^{-1}$$\n\n$$\\text{pH}\\ 14:\\ [C]\\ =\\ 0.40\\ \\times \\ 1.0\\ \\times \\ {10}^{-3}\\text{mol}\\ \\text{L}^{-1}$$\n\n$$=\\ 0.40\\ \\times \\ {10}^{-3}\\text{mol}\\ \\text{L}^{-1}$$\n\npH 7 loses on both counts: the pink curve is only 0.10 there, and Figure 1 is near its trough (2.0). pH 14 gives C a big share (0.40), but the pool of X is the smallest of all four (1.0). Lining the four results up — 0.20, 1.2, 0.83 and 0.40 (× 10⁻³ mol L⁻¹) — the highest [C] is at pH 10.\n\n| **pH** | **Total X, Figure 1 (×10⁻³ mol L⁻¹)** | **Proportion of C, Figure 2 (pink)** | **[C] = proportion × total (×10⁻³ mol L⁻¹)** |\n| --- | --- | --- | --- |\n| 7 | 2.0 | 0.10 | 0.20 |\n| **10** | **4.0** | **0.30** | **1.2** |\n| 13 | 1.5 | 0.55 | 0.83 |\n| 14 | 1.0 | 0.40 | 0.40 |"
+          },
+          {
+            "heading": "Common trap",
+            "body": "The question says \"form C\" and \"highest\", and the pink curve in Figure 2 has an obvious peak at pH 13 — so it feels finished. That is a reasonable instinct: in most speciation graphs the total is fixed, so the biggest share really is the biggest amount. Here it breaks, because the stem says X decomposed by different amounts at different pH, so the total is not fixed. C being 55% of a small pool (1.5) loses to C being 30% of a pool more than twice as big (4.0)."
+          },
+          {
+            "heading": "Mental arithmetic tip",
+            "body": "- Factor out 10⁻³ first and only put it back on at the end — you are then just multiplying small decimals.\n- pH 7: 0.1 × 2 = 0.2. pH 14: 0.4 × 1 = 0.4. Both are well under 1, so they drop out straight away.\n- pH 10: 0.3 × 4 = 1.2. Easy.\n- pH 13: round 0.55 down to 0.5 → 0.5 × 1.5 = 0.75. Even rounding 0.55 up to 0.6 gives 0.6 × 1.5 = 0.9. Either way it is under 1.2, so pH 10 wins without needing the exact value."
+          }
+        ],
+        "answer": "B — pH 10;  1.2 × 10⁻³ mol L⁻¹",
+        "strategy": "The question asks for the **concentration** of form C — an actual amount per litre. That word is the pointer. Figure 2 has the pink curve for C, but its y-axis is Proportion of total X — a share, not an amount. Figure 1 gives the amount, but for all of X, not just C. So neither figure answers on its own: you need both, combined at each marked pH, and then compare.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "Multiplies 0.55 by the starting concentration (2.50 g ÷ 250 g mol⁻¹ = 1.00 × 10⁻² mol in 1.00 L), ignoring that Figure 1 shows most of X has decomposed by 24 hours — and still picks pH from Figure 2 alone."
+          },
+          {
+            "option": "C",
+            "reason": "The multiplication at pH 13 is correct, but the pH was chosen from the pink peak alone; the much smaller total at pH 13 more than cancels C's bigger share."
+          },
+          {
+            "option": "D",
+            "reason": "Reads Figure 1's total as if it were [C], forgetting that only 0.30 of the X at pH 10 is in form C."
+          }
+        ],
+        "answerIndex": 4
+      }
+    },
+    {
+      "id": "q2",
+      "prompt": "At pH 7, form B is present at a certain concentration. At pH 10, which form is present at the same concentration?",
+      "options": [
+        "Form A",
+        "Form B",
+        "Form C",
+        "Form D"
+      ],
+      "correctOptionIndex": 0,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Find [B] at pH 7",
+            "body": "Figure 2, green curve (Form B) at the pH 7 line: 0.30. Figure 1, black curve at pH 7: 2.0 × 10⁻³ mol L⁻¹.\n\n$$[B]\\ \\text{at}\\ \\text{pH}\\ 7\\ =\\ 0.30\\ \\times \\ 2.0\\ \\times \\ {10}^{-3}\\text{mol}\\ \\text{L}^{-1}$$\n\n$$=\\ 0.60\\ \\times \\ {10}^{-3}\\text{mol}\\ \\text{L}^{-1}$$\n\nThis 0.60 × 10⁻³ mol L⁻¹ is the target to match. From here there are two paths — either is fine.\n\n**Path A — Solve for the proportion you need**"
+          },
+          {
+            "heading": "Step 2A — Set up the equation",
+            "body": "At pH 10, the matching form must also be at 0.60 × 10⁻³ mol L⁻¹. The total there is 4.0 × 10⁻³ mol L⁻¹ (Figure 1). Call the matching form's proportion x:\n\n$$0.60\\ \\times \\ {10}^{-3}=\\ 4.0\\ \\times \\ {10}^{-3}\\times \\ x$$"
+          },
+          {
+            "heading": "Step 3A — Solve for x",
+            "body": "$$x\\ =\\ \\frac{0.60\\ \\times \\ {10}^{-3}}{4.0\\ \\times \\ {10}^{-3}}$$\n\n$$x\\ =\\ \\frac{0.60}{4.0}$$\n\n$$x\\ =\\ 0.15$$\n\nThe 10⁻³ cancels top and bottom, so it's just 0.60 ÷ 4.0."
+          },
+          {
+            "heading": "Step 4A — Find the curve at 0.15",
+            "body": "Go to the pH 10 line in Figure 2 and look for the curve sitting at 0.15. Blue (A) is at 0.15. The others are green 0.45, pink 0.30 and yellow 0.10 — none of them is 0.15. So the form is A.\n\n**Path B — Check every form**"
+          },
+          {
+            "heading": "Step 2B — Read every form at pH 10",
+            "body": "Figure 1 at pH 10: 4.0 × 10⁻³ mol L⁻¹ — double the pH 7 total. Figure 2 at the pH 10 line:\n\n- Blue (A): 0.15 — near the bottom of its dip\n- Green (B): 0.45 — just past its peak\n- Pink (C): 0.30 — on its way up\n- Yellow (D): 0.10 — flat and low"
+          },
+          {
+            "heading": "Step 3B — Multiply each form at pH 10",
+            "body": "$$[A]\\ =\\ 0.15\\ \\times \\ 4.0\\ \\times \\ {10}^{-3}=\\ 0.60\\ \\times \\ {10}^{-3}\\text{mol}\\ \\text{L}^{-1}$$\n\n$$[B]\\ =\\ 0.45\\ \\times \\ 4.0\\ \\times \\ {10}^{-3}=\\ 1.8\\ \\times \\ {10}^{-3}\\text{mol}\\ \\text{L}^{-1}$$\n\n$$[C]\\ =\\ 0.30\\ \\times \\ 4.0\\ \\times \\ {10}^{-3}=\\ 1.2\\ \\times \\ {10}^{-3}\\text{mol}\\ \\text{L}^{-1}$$\n\n$$[D]\\ =\\ 0.10\\ \\times \\ 4.0\\ \\times \\ {10}^{-3}=\\ 0.40\\ \\times \\ {10}^{-3}\\text{mol}\\ \\text{L}^{-1}$$"
+          },
+          {
+            "heading": "Step 4B — Match to the target",
+            "body": "Only form A gives 0.60 × 10⁻³ mol L⁻¹ at pH 10 — an exact match with [B] at pH 7. Every other form is clearly off: B (1.8) and C (1.2) are too high, D (0.40) is too low.\n\n| **Form (pH 10)** | **Proportion, Figure 2** | **× total (4.0 × 10⁻³)** | **Concentration (×10⁻³ mol L⁻¹)** |\n| --- | --- | --- | --- |\n| **A** | **0.15** | **0.15 × 4.0** | **0.60 ✓** |\n| B | 0.45 | 0.45 × 4.0 | 1.8 |\n| C | 0.30 | 0.30 × 4.0 | 1.2 |\n| D | 0.10 | 0.10 × 4.0 | 0.40 |"
+          },
+          {
+            "heading": "Which path?",
+            "body": "Both land on A. Path A is faster — one division and one read of Figure 2 — and is the one to use under exam pressure. Path B checks every form, so it doubles as its own elimination."
+          },
+          {
+            "heading": "Mental arithmetic tip",
+            "body": "- Path A can be done without writing anything: the total doubles from pH 7 to pH 10 (2.0 → 4.0), so the matching form needs half of B's share — 0.30 ÷ 2 = 0.15."
+          }
+        ],
+        "answer": "A — Form A",
+        "strategy": "The key words are **same concentration** — an amount, not a share. Just like Q1, an amount of any form is its proportion (Figure 2) multiplied by the total X remaining (Figure 1). So work out [B] at pH 7, then work out the concentration of every form at pH 10, and find the match.",
+        "eliminations": [
+          {
+            "option": "B",
+            "reason": "Assumes the same form keeps the same concentration; B's share rises to 0.45 and the pool doubles, giving 1.8 × 10⁻³."
+          },
+          {
+            "option": "C",
+            "reason": "Matches the proportion (0.30) instead of the concentration, ignoring that the total of X doubled."
+          },
+          {
+            "option": "D",
+            "reason": "0.10 × 4.0 gives only 0.40 × 10⁻³ — lower than the target."
+          }
+        ],
+        "answerIndex": 8
+      }
+    },
+    {
+      "id": "q3",
+      "prompt": "At pH 10, what percentage of the X originally added is present as form B after 24 hours?",
+      "options": [
+        "18%",
+        "40%",
+        "45%",
+        "60%"
+      ],
+      "correctOptionIndex": 0,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Starting concentration of X (stem)",
+            "body": "The stem says \"2.50 g of X was dissolved … and made up to 1.00 L\", with a molar mass of 250 g mol⁻¹.\n\n$$n\\ =\\ \\frac{m}{M}$$\n\n$$n\\ =\\ \\frac{2.50\\ g}{250\\ g\\ \\text{mol}{}^{-1}}$$\n\n$$n\\ =\\ 1.00\\ \\times \\ {10}^{-2}\\text{mol}$$\n\n$$c\\ =\\ \\frac{n}{V}=\\ \\frac{1.00\\ \\times \\ {10}^{-2}\\text{mol}}{1.00\\ L}$$\n\n$$c\\ =\\ 1.00\\ \\times \\ {10}^{-2}\\text{mol}\\ \\text{L}^{-1}$$"
+          },
+          {
+            "heading": "Step 2 — Read the two figures at pH 10",
+            "body": "- Figure 1 (black curve): 4.0 × 10⁻³ mol L⁻¹ of X remains — the top of the second peak.\n- Figure 2 (green curve, Form B): 0.45 — just past its peak."
+          },
+          {
+            "heading": "Step 3 — Concentration of B at pH 10",
+            "body": "Figure 2 says 0.45 of the remaining X is B, so multiply by the total remaining:\n\n$$[B]\\ =\\ 0.45\\ \\times \\ 4.0\\ \\times \\ {10}^{-3}\\text{mol}\\ \\text{L}^{-1}$$\n\n$$[B]\\ =\\ 1.8\\ \\times \\ {10}^{-3}\\text{mol}\\ \\text{L}^{-1}$$"
+          },
+          {
+            "heading": "Step 4 — Compare with the starting concentration",
+            "body": "$$\\%\\ \\text{as}\\ B\\ =\\ \\frac{1.8\\ \\times \\ {10}^{-3}}{1.00\\ \\times \\ {10}^{-2}}\\times \\ 100$$\n\n$$\\%\\ \\text{as}\\ B\\ =\\ 1.8\\ \\times \\ {10}^{-1}\\times \\ 100$$\n\n$$\\%\\ \\text{as}\\ B\\ =\\ 0.18\\ \\times \\ 100$$\n\n$$\\%\\ \\text{as}\\ B\\ =\\ 18\\%$$"
+          },
+          {
+            "heading": "Mental arithmetic tip",
+            "body": "- Step 1 in your head: 250 goes into 2.50 exactly 0.01 times → 1.00 × 10⁻².\n- Step 3: drop the decimals — 45 × 4 = 180 — then put them back → 1.8.\n- Step 4: 10⁻³ ÷ 10⁻² just leaves 10⁻¹, so it's 1.8 ÷ 10 = 0.18 → 18%."
+          }
+        ],
+        "answer": "A — 18%",
+        "strategy": "Two phrases do the pointing. **\"Present as form B\"** is an amount of B — proportion (Figure 2) × total remaining (Figure 1), as in Q1 and Q2. **\"Of the X originally added\"** sets the denominator: not what is left after 24 hours, but what went in at the start — and only the stem tells you that. So this question needs all three sources: the stem, Figure 1 and Figure 2.",
+        "eliminations": [
+          {
+            "option": "B",
+            "reason": "Uses Figure 1 alone — 4.0 × 10⁻³ ÷ 1.00 × 10⁻² = 40% is the share of the original X still present in all four forms, not just B."
+          },
+          {
+            "option": "C",
+            "reason": "Uses Figure 2 alone — 45% is B's share of the remaining X, not of the X originally added."
+          },
+          {
+            "option": "D",
+            "reason": "Works out the percentage decomposed, 100% − 40% = 60%, which answers a different question."
+          }
+        ],
+        "answerIndex": 4
+      }
+    },
+    {
+      "id": "q4",
+      "prompt": "At which of the marked pH values is the concentration of form C twice that of form A?",
+      "options": [
+        "pH 10 only",
+        "pH 13 only",
+        "pH 10 and pH 14",
+        "pH 14 only"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Set up the ratio",
+            "body": "Each concentration is its proportion × the total X remaining, T* (Figure 1). At the same pH, both use the same T:\n\n$$\\frac{[C]}{[A]}=\\ \\frac{\\text{proportion}\\ \\text{of}\\ C\\ \\times \\ T}{\\text{proportion}\\ \\text{of}\\ A\\ \\times \\ T}$$\n\n$$\\frac{[C]}{[A]}=\\ \\frac{\\text{proportion}\\ \\text{of}\\ C}{\\text{proportion}\\ \\text{of}\\ A}$$\n\n* For reference: at pH 7, for example, T = 2.0 × 10⁻³ mol L⁻¹ (Figure 1), so [C] ÷ [A] = (0.10 × 2.0 × 10⁻³) ÷ (0.50 × 2.0 × 10⁻³). The 2.0 × 10⁻³ appears top and bottom and cancels — the value of T never affects the ratio.\n\nSo we need the pH values where the pink curve is exactly double the blue curve. Compare Q2: there, the two concentrations were at different pH values with different totals, so Figure 1 was essential. Here it drops out."
+          },
+          {
+            "heading": "Step 2 — Read Figure 2 at every marked pH",
+            "body": "Pink (C) and blue (A) at each dashed line — all values sit on the 0.05 gridlines:\n\n- pH 7: C = 0.10, A = 0.50\n- pH 10: C = 0.30, A = 0.15\n- pH 13: C = 0.55, A = 0.30\n- pH 14: C = 0.40, A = 0.20"
+          },
+          {
+            "heading": "Step 3 — Calculate the ratio at every marked pH",
+            "body": "$$\\text{pH}\\ 7:\\ \\frac{0.10}{0.50}=\\ 0.20$$\n\n$$\\text{pH}\\ 10:\\ \\frac{0.30}{0.15}=\\ 2.0$$\n\n$$\\text{pH}\\ 13:\\ \\frac{0.55}{0.30}\\approx \\ 1.83$$\n\n$$\\text{pH}\\ 14:\\ \\frac{0.40}{0.20}=\\ 2.0$$\n\nThe ratio is exactly 2 at pH 10 and pH 14, and at no other marked pH.\n\n| **pH** | **Proportion of C (pink)** | **Proportion of A (blue)** | **Ratio C : A** |\n| --- | --- | --- | --- |\n| 7 | 0.10 | 0.50 | 0.20 |\n| **10** | **0.30** | **0.15** | **2.0 ✓** |\n| 13 | 0.55 | 0.30 | ≈ 1.83 |\n| **14** | **0.40** | **0.20** | **2.0 ✓** |"
+          },
+          {
+            "heading": "Common trap",
+            "body": "Two traps work together here. First, pH 10 comes first and checks out, so it is tempting to stop there — the \"only\" in options A, B and D is the warning to keep going. Second, at pH 13 form C is at its peak and A is also high, so C looks \"about double\" A. It is not: 0.55 is less than 2 × 0.30 = 0.60. Eyeballing is not enough when the question asks for an exact ratio."
+          },
+          {
+            "heading": "Mental arithmetic tip",
+            "body": "- Skip the division: double A and see if it hits C.\n- pH 7: 2 × 0.50 = 1.0, not 0.10. pH 10: 2 × 0.15 = 0.30 = C ✓. pH 13: 2 × 0.30 = 0.60, not 0.55. pH 14: 2 × 0.20 = 0.40 = C ✓."
+          }
+        ],
+        "answer": "C — pH 10 and pH 14",
+        "strategy": "\"Twice\" is a **ratio** of two concentrations — and both are at the **same pH**. That changes things from Q1–Q3: at one pH, forms C and A share the same total of X, so the total cancels out of the ratio and only Figure 2 matters. The options also allow more than one pH, so every marked pH has to be checked — no stopping at the first hit.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "Stops at the first match (pH 10) and misses pH 14, where 0.40 ÷ 0.20 is also 2."
+          },
+          {
+            "option": "B",
+            "reason": "Eyeballs pH 13 — 0.55 ÷ 0.30 ≈ 1.83, not 2 — and misses both real matches."
+          },
+          {
+            "option": "D",
+            "reason": "Finds pH 14 but skips pH 10, where 0.30 ÷ 0.15 is also 2."
+          }
+        ],
+        "answerIndex": 3
+      }
+    },
+    {
+      "id": "q5",
+      "prompt": "What mass of the dominant form at pH 7 is present in the 1.00 L solution after 24 hours? Assume all four forms have the same molar mass as X.",
+      "options": [
+        "4.0 × 10⁻⁶ g",
+        "0.25 g",
+        "0.50 g",
+        "1.25 g"
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Identify the dominant form at pH 7",
+            "body": "Figure 2 at the pH 7 line:\n\n- Blue (A): 0.50    Green (B): 0.30    Pink (C): 0.10    Yellow (D): 0.10\n\nForm A is dominant."
+          },
+          {
+            "heading": "Step 2 — Concentration of A at pH 7",
+            "body": "Figure 1 at pH 7: T = 2.0 × 10⁻³ mol L⁻¹.\n\n$$[A]\\ =\\ 0.50\\ \\times \\ 2.0\\ \\times \\ {10}^{-3}\\text{mol}\\ \\text{L}^{-1}$$\n\n$$[A]\\ =\\ 1.0\\ \\times \\ {10}^{-3}\\text{mol}\\ \\text{L}^{-1}$$"
+          },
+          {
+            "heading": "Step 3 — Moles of A in the 1.00 L solution",
+            "body": "Two formulas help here. GAMSAT won't always give them, but you're expected to be familiar with them — and even if they slip your mind, following the units (mol L⁻¹ × L = mol, then mol × g mol⁻¹ = g) gets you to the same place:\n\n- c = n / V  (concentration = moles ÷ volume)\n- n = m / M  (moles = mass ÷ molar mass)\n\nStart from c = n / V and rearrange for n by multiplying both sides by V:\n\n$$c\\ =\\ \\frac{n}{V}$$\n\n$$c\\ \\times \\ V\\ =\\ n$$\n\n$$n\\ =\\ c\\ \\times \\ V$$\n\n$$n\\ =\\ 1.0\\ \\times \\ {10}^{-3}\\text{mol}\\ \\text{L}^{-1}\\times \\ 1.00\\ L$$\n\n$$n\\ =\\ 1.0\\ \\times \\ {10}^{-3}\\text{mol}$$"
+          },
+          {
+            "heading": "Step 4 — Mass of A",
+            "body": "Start from n = m / M and rearrange for m by multiplying both sides by M:\n\n$$n\\ =\\ \\frac{m}{M}$$\n\n$$n\\ \\times \\ M\\ =\\ m$$\n\n$$m\\ =\\ n\\ \\times \\ M$$\n\n$$m\\ =\\ 1.0\\ \\times \\ {10}^{-3}\\text{mol}\\ \\times \\ 250\\ g\\ \\text{mol}{}^{-1}$$\n\n$$m\\ =\\ 0.25\\ g$$"
+          },
+          {
+            "heading": "Common trap",
+            "body": "The stem hands you 2.50 g, and A is 0.50 of X at pH 7 — so 0.50 × 2.50 g = 1.25 g feels natural. But 2.50 g is what went in. By pH 7, Figure 1 shows only 2.0 × 10⁻³ of the original 1.00 × 10⁻² mol L⁻¹ is left — one fifth of it. The 0.50 share applies to what remains, not to what was added."
+          },
+          {
+            "heading": "Mental arithmetic tip",
+            "body": "- Step 4: 10⁻³ × 250 is just 250 ÷ 1000 = 0.25.\n- Sanity check: all the X left at pH 7 weighs 2.0 × 10⁻³ × 250 = 0.50 g. A is half of it → 0.25 g."
+          }
+        ],
+        "answer": "B — 0.25 g",
+        "strategy": "Two jobs. First, **\"dominant form\"** — find which form has the biggest share at pH 7 (Figure 2). At a single pH every form shares the same total, so the biggest share is also the biggest concentration. Second, **\"what mass\"** — turn that form's concentration into grams: concentration → moles (n = cV) → mass (m = nM). The question tells you to use X's molar mass (250 g mol⁻¹) for every form.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "Divides instead of multiplies — 1.0 × 10⁻³ ÷ 250 = 4.0 × 10⁻⁶ — which does not even come out in grams."
+          },
+          {
+            "option": "C",
+            "reason": "Uses Figure 1's total alone — 2.0 × 10⁻³ × 250 = 0.50 g is the mass of all four forms, not just A."
+          },
+          {
+            "option": "D",
+            "reason": "Applies the proportion to the original mass — 0.50 × 2.50 g = 1.25 g — ignoring that most of X has decomposed."
+          }
+        ],
+        "answerIndex": 4
+      }
+    }
+  ]
+}

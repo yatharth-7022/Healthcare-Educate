@@ -1,0 +1,465 @@
+{
+  "categoryId": "general-chemistry",
+  "subcategoryId": "general-chemistry-thermodynamics",
+  "title": "Bond energies and Heat of Combustion - Stem 1",
+  "isPublished": true,
+  "stem": [
+    {
+      "type": "text",
+      "value": "The bond energy of a bond is the energy needed to break one mole of that bond in the gas phase; the same amount of energy is released when the bond forms. The exact value varies from molecule to molecule, so tables list average bond energies."
+    },
+    {
+      "type": "text",
+      "value": "Average bond energies."
+    },
+    {
+      "type": "table",
+      "columns": [
+        "Bond",
+        "Energy (kJ/mol)",
+        "Bond",
+        "Energy (kJ/mol)",
+        "Bond",
+        "Energy (kJ/mol)"
+      ],
+      "rows": [
+        [
+          "H–H",
+          "432",
+          "C=C",
+          "614",
+          "O–H",
+          "467"
+        ],
+        [
+          "C–H",
+          "413",
+          "C≡C",
+          "839",
+          "O–O",
+          "146"
+        ],
+        [
+          "C–C",
+          "347",
+          "C=O",
+          "745",
+          "O=O",
+          "495"
+        ],
+        [
+          "C–O",
+          "358",
+          "C≡O",
+          "1072",
+          "N–H",
+          "391"
+        ],
+        [
+          "C–N",
+          "305",
+          "C≡N",
+          "891",
+          "N≡N",
+          "941"
+        ],
+        [
+          "C–Cl",
+          "339",
+          "H–Cl",
+          "427",
+          "Cl–Cl",
+          "239"
+        ]
+      ]
+    },
+    {
+      "type": "text",
+      "value": "**Note:** The C=O bond in CO₂ has an energy of **799 kJ/mol**. The value of 745 kJ/mol applies to C=O bonds in other molecules."
+    },
+    {
+      "type": "text",
+      "value": "In a chemical reaction, the bonds in the reactants are broken and the bonds in the products are formed. The heat of combustion of a substance is the enthalpy change, ΔH, when one mole of it burns completely in oxygen. The heat of formation of a substance is the enthalpy change, ΔH, when one mole of it is formed from its elements in their standard states. By convention, the enthalpy change, ΔH, is negative when heat is released to the surroundings and positive when heat is absorbed from them; this applies equally to heats of combustion and formation.",
+      "variant": "additional-info",
+      "revealAtQuestion": 3
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "What is the total bond energy of NCCH₂CH(NH₂)COOH?",
+      "options": [
+        "5229 kJ/mol",
+        "5437 kJ/mol",
+        "5828 kJ/mol",
+        "6175 kJ/mol"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Draw the full structure from the condensed formula",
+            "body": "Work along the formula, making sure every carbon ends up with four bonds, every nitrogen with three, every oxygen with two and every hydrogen with one:\n\n- **NC** at the start: this carbon’s only other neighbour is the next carbon, so to reach four bonds it must be joined to the nitrogen by a **triple bond**, C≡N.\n- **CH₂**: a carbon with two hydrogens.\n- **CH(NH₂)**: a carbon carrying one hydrogen and an NH₂ group — so there are **two N–H bonds** here, as well as the C–N bond.\n- **COOH**: a carboxylic acid group, so one **C=O**, one **C–O** and one **O–H**. It is not C–O–O–H: the carbon needs four bonds, and the double bond to one oxygen supplies them.\n\nThe full structure is shown below:\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1794813779/question-bank/qb_img_1794813777953_e86344.png)"
+          },
+          {
+            "heading": "Step 2 — Count each type of bond",
+            "body": "Reading off the structure:\n\n- C–C: 3\n- C–H: 3\n- C–N: 1\n- C≡N: 1\n- N–H: 2\n- C=O: 1\n- C–O: 1\n- O–H: 1\n\nFor the C=O bond, use **745 kJ/mol**, not 799. The note under the table says 799 applies only to the C=O bonds in carbon dioxide; this molecule isn’t CO₂."
+          },
+          {
+            "heading": "Step 3 — Add up the bond energies, without a calculator",
+            "body": "You only need to get close enough to pick an option, so round every bond energy to an easy number — the nearest 50 or 100:\n\n$$C-C:\\ 347\\approx 350\\ \\ C-H:\\ 413\\approx 400\\ \\ C-N:\\ 305\\approx 300\\ \\ C\\equiv N:\\ 891\\approx 900$$\n\n$$N-H:\\ 391\\approx 400\\ \\ C=O:\\ 745\\approx 750\\ \\ C-O:\\ 358\\approx 350\\ \\ O-H:\\ 467\\approx 450$$\n\nMultiply by the number of each bond:\n\n$$C-C:\\ 3\\times 350=1050$$\n\n$$C-H:\\ 3\\times 400=1200$$\n\n$$C-N:\\ 1\\times 300=300$$\n\n$$C\\equiv N:\\ 1\\times 900=900$$\n\n$$N-H:\\ 2\\times 400=800$$\n\n$$C=O:\\ 1\\times 750=750$$\n\n$$C-O:\\ 1\\times 350=350$$\n\n$$O-H:\\ 1\\times 450=450$$\n\nAdd them in pairs:\n\n$$1050+1200=2250$$\n\n$$300+900=1200$$\n\n$$800+750=1550$$\n\n$$350+450=800$$\n\n$$2250+1200=3450$$\n\n$$1550+800=2350$$\n\n$$3450+2350=5800\\ \\text{kJ}/\\text{mol}$$"
+          },
+          {
+            "heading": "Step 4 — Pick the nearest option",
+            "body": "Rounding makes the estimate slightly off, so choose the option closest to 5800 kJ/mol. That is 5828 kJ/mol, only about 30 away — every other option is more than 350 kJ/mol away, so the rounding can’t change the answer. (Adding the exact values gives 5828 kJ/mol, confirming it.)"
+          }
+        ],
+        "answer": "C — 5828 kJ/mol",
+        "strategy": "Underline **total bond energy** and the formula **NCCH₂CH(NH₂)COOH**. The stem defines bond energy as the energy needed to break one mole of a particular bond, so a compound’s total bond energy must be the sum over every bond it contains. The formula is written in condensed form, which hides several of the bonds — so the first job is to draw the full structure, with every bond shown, and only then count and add.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "read COOH as C–O–O–H, swapping the C=O (745) for an O–O bond (146). The acid’s carbon needs a double bond to one oxygen to make four bonds."
+          },
+          {
+            "option": "B",
+            "reason": "counted NH₂ as a single N–H bond. The nitrogen carries two hydrogens, so there are two N–H bonds."
+          },
+          {
+            "option": "D",
+            "reason": "counted four C–C bonds, one for each carbon. Four carbons in a chain are joined by only three C–C bonds — the links between them — so this adds an extra 347 kJ/mol."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "prompt": "Which of the following has the greatest total bond energy?",
+      "options": [
+        "Benzene",
+        "Hex-1-ene",
+        "Cyclohexane",
+        "Hex-1-yne"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Draw each compound and count its bonds",
+            "body": "All four have six carbons. A chain of six carbons is held together by five carbon–carbon bonds; closing it into a ring adds a sixth. Then count the hydrogens each carbon carries. For benzene, the table only gives values for C–C and C=C bonds, so draw it with alternating single and double bonds — there’s no table value for anything in between. The full structures, with every bond shown, are drawn below for reference:\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1794813780/question-bank/qb_img_1794813779795_ff3b8a.png)\n\nCounting from the structures:\n\n- **Hex-1-yne:** 1 C≡C, 4 C–C, 10 C–H\n- **Cyclohexane:** 6 C–C, 12 C–H\n- **Hex-1-ene:** 1 C=C, 4 C–C, 12 C–H\n- **Benzene:** 3 C=C, 3 C–C, 6 C–H"
+          },
+          {
+            "heading": "Step 2 — Add up the bond energies, without a calculator",
+            "body": "You only need to know which total is biggest, so round every bond energy to an easy number — the nearest 50:\n\n$$C-H:\\ 413\\approx 400\\ \\ C-C:\\ 347\\approx 350\\ \\ C=C:\\ 614\\approx 600\\ \\ C\\equiv C:\\ 839\\approx 850$$\n\nNow add up each compound:\n\nHex-1-yne:\n\n$$850+4\\times 350+10\\times 400$$\n\n$$=850+1400+4000$$\n\n$$=6250\\ \\text{kJ}$$\n\nCyclohexane:\n\n$$6\\times 350+12\\times 400$$\n\n$$=2100+4800$$\n\n$$=6900\\ \\text{kJ}$$\n\nHex-1-ene:\n\n$$600+4\\times 350+12\\times 400$$\n\n$$=600+1400+4800$$\n\n$$=6800\\ \\text{kJ}$$\n\nBenzene:\n\n$$3\\times 600+3\\times 350+6\\times 400$$\n\n$$=1800+1050+2400$$\n\n$$=5250\\ \\text{kJ}$$"
+          },
+          {
+            "heading": "Step 3 — Compare, and check the close call",
+            "body": "Cyclohexane (≈ 6900 kJ) comes out on top. Benzene and hex-1-yne are clearly behind, but hex-1-ene (≈ 6800 kJ) is close enough that it’s worth making sure the rounding hasn’t decided it.\n\nThe quick way to check is to cancel what the two molecules share. Cyclohexane and hex-1-ene have the same formula (C₆H₁₂), the same 12 C–H bonds and 4 C–C bonds in common. The only difference is that cyclohexane has two C–C single bonds where hex-1-ene has one C=C double bond:\n\n$$\\text{cyclohexane}:\\ 2\\times 350=700$$\n\n$$\\text{hex}-1-\\text{ene}:\\ 1\\times 600=600$$\n\nUsing the exact values instead (2 × 347 = 694 against 614) still gives cyclohexane the edge, by about 80 kJ, so the rounding hasn’t changed the order. So even though a double bond is stronger than a single bond, it isn’t twice as strong — two single bonds beat one double bond."
+          }
+        ],
+        "answer": "C — Cyclohexane",
+        "strategy": "Underline **total bond energy** and **greatest**. The stem defines bond energy as the energy needed to break one mole of a particular bond, so a compound’s total bond energy must be the sum over every bond it contains. So for each compound, draw its structure from its name, count its bonds, multiply each by its bond energy from the table, and add them up. All four have six carbons, but they differ in how many hydrogens they carry and in whether their carbons are joined by single, double or triple bonds — so there’s no way to tell which wins without adding them up.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "the “most multiple bonds wins” idea. Each C=C is strong, but benzene has far fewer bonds overall — only six C–H — so its total is the smallest of the four."
+          },
+          {
+            "option": "B",
+            "reason": "very close, but its one C=C (614 kJ) is worth less than the two C–C bonds (694 kJ) that cyclohexane has in its place."
+          },
+          {
+            "option": "D",
+            "reason": "the “strongest bond wins” idea. Its C≡C (839 kJ) is the strongest bond on the list, but compared with cyclohexane it has that one C≡C in place of two C–C bonds and two C–H bonds (694 + 826 = 1520 kJ). Losing 1520 kJ of bonds to gain 839 kJ leaves its total well behind."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "prompt": "Estimate the heat released when 8.0 g of methane burns completely in oxygen",
+      "options": [
+        "358 kJ",
+        "824 kJ",
+        "412 kJ",
+        "1648 kJ"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Write and balance the reaction",
+            "body": "Complete combustion of methane gives carbon dioxide and water:\n\n$$C{H}_{4}+{O}_{2}\\rightarrow C{O}_{2}+{H}_{2}O\\ \\ \\left(\\text{unbalanced}\\right)$$\n\nBalance hydrogen first: CH₄ has 4 H, and each H₂O has 2 H, so 2 H₂O are needed. Then balance oxygen: the products now contain 2 O (in CO₂) + 2 O (in 2 H₂O) = 4 O, which needs 2 O₂:\n\n$$C{H}_{4}+2\\,{O}_{2}\\rightarrow C{O}_{2}+2\\,{H}_{2}O$$"
+          },
+          {
+            "heading": "Step 2 — Draw each molecule and count its bonds",
+            "body": "The structures are shown below for reference:\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1794813781/question-bank/qb_img_1794813780649_e76705.png)\n\n- **Broken (reactants):** CH₄ has four C–H bonds, and each O₂ has one O=O bond, with two O₂ molecules — so 4 C–H and 2 O=O.\n- **Formed (products):** CO₂ is O=C=O, so it has two C=O bonds. Each H₂O has two O–H bonds, and there are two water molecules — so 2 C=O and 4 O–H.\n\nFor the C=O bonds, use **799 kJ/mol**, not 745: the note under the table says 799 is the value for C=O bonds in carbon dioxide, which is exactly what forms here."
+          },
+          {
+            "heading": "Step 3 — Energy absorbed and released, without a calculator",
+            "body": "Round each bond energy to an easy number — the nearest 50 or 100:\n\n$$C-H:\\ 413\\approx 400\\ \\ O=O:\\ 495\\approx 500\\ \\ {C=O\\ (\\text{in}\\ C O}_{2}):\\ 799\\approx 800\\ \\ O-H:\\ 467\\approx 450$$\n\nEnergy absorbed breaking the reactant bonds:\n\n$$4\\times 400+2\\times 500$$\n\n$$=1600+1000$$\n\n$$=2600\\ \\text{kJ}$$\n\nEnergy released forming the product bonds:\n\n$$2\\times 800+4\\times 450$$\n\n$$=1600+1800$$\n\n$$=3400\\ \\text{kJ}$$"
+          },
+          {
+            "heading": "Step 4 — Compare the two, and find the net heat per mole",
+            "body": "Breaking the reactant bonds takes in about 2600 kJ, while forming the product bonds gives out about 3400 kJ. More energy is given out than taken in, so the difference is left over and released as heat:\n\n$$\\text{net}\\ \\text{heat}\\ \\text{released}\\approx 3400-2600$$\n\n$$\\approx 800\\ \\text{kJ}\\ \\text{per}\\ \\text{mole}\\ \\text{of}\\ C{H}_{4}$$\n\n(If breaking the bonds had cost more than forming them gave back, the shortfall would have to be taken in from the surroundings instead.)\n\nIn the stem’s terms, this means the heat of combustion of methane is about −800 kJ/mol — negative, because heat is released to the surroundings. The question only asks how much heat is released, so the sign doesn’t affect the answer here."
+          },
+          {
+            "heading": "Step 5 — Scale to 8.0 g",
+            "body": "Convert the mass to moles:\n\n$$M\\left(C{H}_{4}\\right)=12+\\left(4\\times 1\\right)=16\\ g/\\text{mol}$$\n\n$$n=\\frac{8.0}{16}=0.50\\ \\text{mol}$$\n\n$$\\text{Heat}\\ \\text{released}\\approx 0.50\\times 800=400\\ \\text{kJ}$$"
+          },
+          {
+            "heading": "Step 6 — Pick the nearest option",
+            "body": "The option closest to 400 kJ is 412 kJ. (With the exact bond energies, 3466 − 2642 = 824 kJ is released per mole, and half a mole releases 412 kJ, confirming it.)"
+          },
+          {
+            "heading": "Note",
+            "body": "If you already know the below formula, you can use it:\n\nΔH = Σ(bond energies of reactants) − Σ(bond energies of products)\n\nwhich gives ΔH ≈ 2600 − 3400 = −800 kJ per mole of methane: the same 800 kJ released, with the negative sign built in. The formula isn't needed, though. The information in the stem alone is enough, as the working above shows."
+          }
+        ],
+        "answer": "C — 412 kJ",
+        "strategy": "Underline **heat released**, **8.0 g of methane** and **burns completely in oxygen**. “Burns completely” means complete combustion, so the products are carbon dioxide and water — you’ll need to write and balance that reaction yourself. The stem then says the bonds in the reactants are broken and the bonds in the products are formed, with breaking a bond needing energy and forming one releasing the same amount. So the heat released overall is whatever is left over after the energy released forming the products has paid for the energy absorbed breaking the reactants. Finally, “8.0 g” is a mass, not a number of moles, so it will need converting at the end.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "used the general C=O value (745 kJ/mol) for the bonds in CO₂. That makes the energy given out forming the products too small (about 700 kJ released per mole rather than 800, so about 350 kJ for half a mole). The note says C=O in carbon dioxide is 799 kJ/mol."
+          },
+          {
+            "option": "B",
+            "reason": "the heat released per mole of methane. The question asks about 8.0 g, which is only half a mole."
+          },
+          {
+            "option": "D",
+            "reason": "divided the molar mass by the mass (16 ÷ 8.0 = 2 mol) instead of the mass by the molar mass. 8.0 g is less than 16 g, so it must be less than one mole."
+          }
+        ],
+        "answerIndex": 6
+      }
+    },
+    {
+      "id": "q4",
+      "prompt": "Estimate the heat of formation of ammonia, NH₃.",
+      "options": [
+        "−109 kJ/mol",
+        "−1173 kJ/mol",
+        "−55 kJ/mol",
+        "−271 kJ/mol"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Which elements, and in what form?",
+            "body": "Ammonia is made of nitrogen and hydrogen. In their standard states these are the gases N₂ and H₂ — diatomic molecules, not separate atoms. So the reactants are N₂ and H₂, and making ammonia will involve breaking the bonds holding those molecules together."
+          },
+          {
+            "heading": "Step 2 — Write the reaction for exactly one mole of NH₃",
+            "body": "The familiar balanced equation makes two moles:\n\n$${N}_{2}+3\\,{H}_{2}\\rightarrow 2\\,N{H}_{3}$$\n\nBut the heat of formation is for one mole, so halve every coefficient:\n\n$$\\frac{1}{2}\\,{N}_{2}+\\frac{3}{2}\\,{H}_{2}\\rightarrow N{H}_{3}$$\n\nCheck: ½ N₂ supplies 1 N and ³⁄₂ H₂ supplies 3 H — exactly one NH₃. (Half a molecule sounds odd, but these are moles: half a mole of N₂ is perfectly real.)"
+          },
+          {
+            "heading": "Step 3 — Draw each molecule and count its bonds",
+            "body": "The structures are shown below for reference:\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1794813781/question-bank/qb_img_1794813781473_de8fc1.png)\n\n- **Broken (reactants):** each N₂ has one N≡N triple bond, and each H₂ has one H–H bond — so ½ N≡N and ³⁄₂ H–H.\n- **Formed (product):** NH₃ has three N–H bonds."
+          },
+          {
+            "heading": "Step 4 — Energy absorbed and released, without a calculator",
+            "body": "Round each bond energy to an easy number — the nearest 50:\n\n$$N\\equiv N:\\ 941\\approx 950\\ \\ H-H:\\ 432\\approx 450\\ \\ N-H:\\ 391\\approx 400$$\n\nEnergy absorbed breaking the reactant bonds:\n\n$$\\frac{1}{2}\\times 950+\\frac{3}{2}\\times 450$$\n\n$$=475+675$$\n\n$$=1150\\ \\text{kJ}$$\n\nEnergy released forming the product bonds:\n\n$$3\\times 400=1200\\ \\text{kJ}$$"
+          },
+          {
+            "heading": "Step 5 — Compare the two, and decide the sign",
+            "body": "Breaking the reactant bonds takes in about 1150 kJ, while forming the product bonds gives out about 1200 kJ. More is given out than taken in, so the difference is released as heat:\n\n$$\\text{net}\\ \\text{heat}\\ \\text{released}\\approx 1200-1150$$\n\n$$\\approx 50\\ \\text{kJ}\\ \\text{per}\\ \\text{mole}\\ \\text{of}\\ N{H}_{3}$$\n\nUnlike Question 3, this question asks for a heat of formation, which the additional information defines as an enthalpy change — so the answer needs a sign. The additional information says that, by convention, ΔH is negative when heat is released to the surroundings, and that this applies equally to heats of formation. Heat is released to the surroundings when ammonia forms, so its heat of formation is negative:\n\n$$\\text{heat}\\ \\text{of}\\ \\text{formation}\\approx -50\\ \\text{kJ}/\\text{mol}$$"
+          },
+          {
+            "heading": "Step 6 — Pick the nearest option",
+            "body": "The option closest to −50 kJ/mol is −55 kJ/mol; the next nearest, −109, is about 60 away. (With the exact bond energies, 1173 − (470.5 + 648) = 54.5 kJ is given out per mole, so the heat of formation is −54.5 kJ/mol, confirming it.)"
+          },
+          {
+            "heading": "Note — using the formula",
+            "body": "If you already know it, you can go straight to\n\nΔH = Σ(bond energies of reactants) − Σ(bond energies of products)\n\nwhich gives ΔH ≈ 1150 − 1200 = −50 kJ/mol — the same answer, with the negative sign built in. The formula isn't needed, though — the information in the stem alone is enough, as the working above shows."
+          }
+        ],
+        "answer": "C — −55 kJ/mol",
+        "strategy": "Underline **heat of formation** and **ammonia**. The additional information defines the heat of formation as the enthalpy change when **one mole** of a substance is formed **from its elements in their standard states** — so the whole question hinges on writing exactly that reaction for ammonia. Once it’s written, it’s the same approach as Question 3: the bonds in the reactants are broken, the bonds in the product are formed, and comparing the two tells you how much heat is involved and whether it is given out or taken in — which decides the sign.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "used N₂ + 3H₂ → 2NH₃ without halving it. That is the enthalpy change for forming two moles of ammonia; the heat of formation is for one."
+          },
+          {
+            "option": "B",
+            "reason": "treated the elements as separate N and H atoms, so no bonds were broken and only the three N–H bonds were counted. In their standard states, nitrogen and hydrogen are the diatomic gases N₂ and H₂, whose bonds must be broken first."
+          },
+          {
+            "option": "D",
+            "reason": "used ½ N₂ + H₂, which only supplies two hydrogen atoms. Ammonia has three, so ³⁄₂ H₂ are needed."
+          }
+        ],
+        "answerIndex": 6
+      }
+    },
+    {
+      "id": "q5",
+      "prompt": "The heat of formation of hydrazine, H₂NNH₂(g), is +95 kJ/mol. Estimate the N–N bond energy.",
+      "options": [
+        "336 kJ/mol",
+        "241 kJ/mol",
+        "146 kJ/mol",
+        "537 kJ/mol"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Write the formation reaction for one mole",
+            "body": "Hydrazine is made of nitrogen and hydrogen, whose standard states are the diatomic gases N₂ and H₂. One molecule of H₂NNH₂ contains 2 N and 4 H, so one N₂ and two H₂ are needed:\n\n$${N}_{2}+2\\,{H}_{2}\\rightarrow {H}_{2}N N{H}_{2}$$\n\nThis time there are no fractions — one N₂ already supplies exactly the two nitrogens."
+          },
+          {
+            "heading": "Step 2 — Draw hydrazine and count the bonds",
+            "body": "The formula H₂NNH₂ shows each nitrogen carrying two hydrogens and joined to the other nitrogen. Each nitrogen therefore has three bonds — two to H and one to N — which is all a nitrogen needs, so the N–N link must be a single bond. The structures are shown below for reference:\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1794813782/question-bank/qb_img_1794813782281_d6a97c.png)\n\n- **Broken (reactants):** one N≡N and two H–H.\n- **Formed (product):** one N–N (the unknown) and four N–H."
+          },
+          {
+            "heading": "Step 3 — Energy in and energy out, without a calculator",
+            "body": "The stem says bond energy is the energy needed to break a bond, and that the same amount is released when the bond forms. So breaking the reactant bonds is energy going **in**, and forming the product bonds is energy coming **out**. (Careful: breaking bonds never releases energy — it always takes energy in.)\n\nRound each known bond energy to the nearest 50:\n\n$$N\\equiv N:\\ 941\\approx 950\\ \\ H-H:\\ 432\\approx 450\\ \\ N-H:\\ 391\\approx 400$$\n\nEnergy **in**, used to break the reactant bonds:\n\n$$950+2\\times 450$$\n\n$$=950+900$$\n\n$$=1850\\ \\text{kJ}$$\n\nEnergy **out**, released as the product bonds form, with the N–N bond still unknown:\n\n$$N-N+4\\times 400=N-N+1600\\ \\text{kJ}$$"
+          },
+          {
+            "heading": "Step 4 — Use the sign to set up the equation",
+            "body": "The heat of formation is **+95 kJ/mol**. By the convention in the additional information, a positive value means heat is absorbed from the surroundings — so the energy out must be less than the energy in, by 95 kJ. (Only if the value were negative would the energy out be the bigger one.) The bigger amount therefore goes first:\n\n$$\\text{energy}\\ \\text{in}-\\text{energy}\\ \\text{out}=95$$\n\n$$1850-\\left(N-N+1600\\right)=95$$\n\nWriting it the other way round, (N–N + 1600) − 1850 = 95, would make the energy out the bigger amount — which contradicts the positive sign."
+          },
+          {
+            "heading": "Step 5 — Solve for the N–N bond energy",
+            "body": "$$1850-\\left(N-N+1600\\right)=95$$\n\n$$250-N-N=95$$\n\n$$N-N=250-95$$\n\n$$N-N\\approx 155\\ \\text{kJ}/\\text{mol}$$"
+          },
+          {
+            "heading": "Step 6 — Pick the nearest option",
+            "body": "The option closest to 155 kJ/mol is 146 kJ/mol; the next nearest, 241, is more than 80 away. (With the exact bond energies, 1805 − 1564 − 95 = 146 kJ/mol, confirming it.)"
+          },
+          {
+            "heading": "Note — using the formula",
+            "body": "If you already know it, you can use\n\n$$\\Delta H=\\sum \\left(\\text{bond}\\ \\text{energies}\\ \\text{of}\\ \\text{reactants}\\right)-\\sum \\left(\\text{bond}\\ \\text{energies}\\ \\text{of}\\ \\text{products}\\right)$$\n\nwith ΔH = +95: 95 = 1850 − (N–N + 1600), giving N–N ≈ 155 kJ/mol — the same answer. Watch the order: for bond energies it is **reactants minus products**. The formula isn’t needed, though — the information given in the stem and additional information alone is enough, as the working above shows."
+          }
+        ],
+        "answer": "C — 146 kJ/mol",
+        "strategy": "Underline **heat of formation**, **H₂NNH₂**, **+95 kJ/mol** and **N–N bond energy**. Check the table first: there is no N–N entry — so that is the unknown you’re solving for, and this question runs the Question 4 method in reverse. The additional information defines the heat of formation as the enthalpy change when one mole is formed from its elements, so write that reaction and count its bonds. Then look closely at the sign: the additional information says ΔH is positive when heat is absorbed from the surroundings, and this heat of formation is **positive** — unlike ammonia’s in Question 4.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "treated +95 as heat released, so added the 95 instead of subtracting it. A positive heat of formation means heat is absorbed: breaking costs more than forming gives back, which makes the N–N bond weaker, not stronger."
+          },
+          {
+            "option": "B",
+            "reason": "ignored the heat of formation altogether, as if the energy absorbed and released were equal. The +95 kJ/mol is the whole point of the difference."
+          },
+          {
+            "option": "D",
+            "reason": "counted only three N–H bonds, as in ammonia. Hydrazine has two hydrogens on each nitrogen, so four N–H bonds form."
+          }
+        ],
+        "answerIndex": 6
+      }
+    },
+    {
+      "id": "q6",
+      "prompt": "Compared with ethers, alcohols with the same molecular formula have, when estimated from bond energies,",
+      "options": [
+        "a higher total bond energy, and release more heat on combustion.",
+        "a lower total bond energy, and release less heat on combustion.",
+        "a higher total bond energy, but release less heat on combustion.",
+        "a lower total bond energy, but release more heat on combustion."
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Pick the simplest pair and draw it",
+            "body": "The smallest alcohol that has an isomeric ether needs two carbons and one oxygen, C₂H₆O. As an alcohol, that is ethanol, CH₃CH₂OH; as an ether, it is dimethyl ether, CH₃OCH₃:\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1794813783/question-bank/qb_img_1794813782970_43dd86.png)"
+          },
+          {
+            "heading": "Step 2 — Count the bonds, and cancel what they share",
+            "body": "- **Ethanol:** 5 C–H, 1 C–C, 1 C–O, 1 O–H\n- **Dimethyl ether:** 6 C–H, 2 C–O\n\nBoth have at least 5 C–H and 1 C–O, so those cancel. What’s left:\n\n- **Ethanol:** 1 C–C and 1 O–H\n- **Dimethyl ether:** 1 C–O and 1 C–H"
+          },
+          {
+            "heading": "Step 3 — Which has the higher total bond energy?",
+            "body": "Compare just the leftover bonds, rounding to the nearest 50:\n\n$$\\text{ethanol}:\\ C-C\\ +\\ O-H\\approx 350+450=800\\ \\text{kJ}$$\n\n$$\\text{dimethyl}\\ \\text{ether}:\\ C-O\\ +\\ C-H\\approx 350+400=750\\ \\text{kJ}$$\n\nSo the alcohol has the higher total bond energy. (Exactly: 347 + 467 = 814 against 358 + 413 = 771 — the same order.)"
+          },
+          {
+            "heading": "Step 4 — Does this hold for every alcohol–ether pair?",
+            "body": "The question is about alcohols and ethers in general, so check that ethanol isn’t a special case. Turning any alcohol into an isomeric ether moves the oxygen from the end of a chain into the middle of it: one C–C link in the chain is replaced by a C–O link, and the hydrogen that was on the oxygen ends up on a carbon, so one O–H is replaced by one C–H. That is exactly the swap found in Step 2, so every alcohol has a higher total bond energy than its isomeric ether. (For example, propan-1-ol, CH₃CH₂CH₂OH, has 2 C–C, 1 C–O, 1 O–H and 7 C–H; its isomer methoxyethane, CH₃OCH₂CH₃, has 1 C–C, 2 C–O and 8 C–H — the same one-for-one swap.)"
+          },
+          {
+            "heading": "Step 5 — Which releases more heat on combustion?",
+            "body": "Because the two compounds have the same molecular formula, they burn by the same balanced equation, use the same amount of O₂, and make the same amounts of CO₂ and H₂O. So:\n\n- the energy **out**, from forming the product bonds, is **identical** for both;\n- the energy **in** is the fuel’s total bond energy plus the O=O bonds — and the O=O part is identical too.\n\nThe only difference is the fuel’s own bonds. The alcohol’s bonds take more energy to break, so more of the (identical) energy out is used up paying for them, and **less is left over to be released as heat**. So a higher total bond energy means less heat released — the two go in opposite directions."
+          }
+        ],
+        "answer": "C — a higher total bond energy, but release less heat on combustion.",
+        "strategy": "Underline **alcohols**, **ethers**, **same molecular formula** and **estimated from bond energies**. “Same molecular formula” means each alcohol is being compared with an ether that is its isomer — same atoms, arranged differently. The question gives no specific compounds, so pick the simplest isomer pair, compare their bonds, then check whether the result holds for any pair. Each option makes two claims — one about total bond energy, one about heat released — so settle them one at a time.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "the intuitive “more bond energy means more energy released” idea. But bond energy is what has to be put in to break the fuel apart; with the energy out fixed, more energy in leaves less heat released."
+          },
+          {
+            "option": "B",
+            "reason": "the alcohol’s total bond energy is higher, not lower: it has C–C + O–H (≈ 800) where the ether has C–O + C–H (≈ 750)."
+          },
+          {
+            "option": "D",
+            "reason": "gets both claims the wrong way round; this describes the ether, not the alcohol."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q7",
+      "prompt": "For straight-chain alkanes, by approximately how much does the heat released when one mole burns completely increase for each extra CH₂ group in the chain?",
+      "options": [
+        "1170 kJ/mol",
+        "510 kJ/mol",
+        "620 kJ/mol",
+        "860 kJ/mol"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — What bonds does one extra CH₂ add to the molecule?",
+            "body": "Compare two neighbouring alkanes, such as propane and butane:\n\n![](https://res.cloudinary.com/dn2hfglba/image/upload/v1794813783/question-bank/qb_img_1794813783575_e35c80.png)\n\nButane has one more carbon in the chain than propane. That extra carbon is joined into the chain by **one more C–C bond**, and it brings **two more C–H bonds** with it. Every other bond is the same. Whichever alkane you start from, adding one CH₂ to the chain always adds exactly this: 1 C–C and 2 C–H."
+          },
+          {
+            "heading": "Step 2 — What does it add to the combustion equation?",
+            "body": "Complete combustion turns every carbon into CO₂ and every pair of hydrogens into H₂O. The extra CH₂ brings one C and two H, so it adds:\n\n- **one more CO₂** (from the extra C);\n- **one more H₂O** (from the two extra H);\n- the extra oxygen these need: 2 O in the CO₂ plus 1 O in the H₂O = 3 O atoms, which is **1½ more O₂**."
+          },
+          {
+            "heading": "Step 3 — Extra energy in, without a calculator",
+            "body": "Breaking bonds takes energy in, and the extra bonds broken are the fuel’s new C–C and two C–H, plus 1½ extra O=O. Rounding to the nearest 50:\n\n$$C-C+2\\ C-H+1\\frac{1}{2}O=O$$\n\n$$\\approx 350+2\\times 400+1\\frac{1}{2}\\times 500$$\n\n$$=350+800+750$$\n\n$$=1900\\ \\text{kJ}$$"
+          },
+          {
+            "heading": "Step 4 — Extra energy out",
+            "body": "Forming bonds gives energy out, and the extra bonds formed are those in one CO₂ (two C=O — using the note’s value for CO₂, 799 ≈ 800) and one H₂O (two O–H):\n\n$$2\\ {C=O\\ (\\text{in}\\ C O}_{2})+2\\ O-H$$\n\n$$\\approx 2\\times 800+2\\times 450$$\n\n$$=1600+900$$\n\n$$=2500\\ \\text{kJ}$$"
+          },
+          {
+            "heading": "Step 5 — Compare",
+            "body": "The extra energy out is bigger than the extra energy in, so each extra CH₂ makes more heat available to be released:\n\n$$\\text{extra}\\ \\text{heat}\\ \\text{released}\\approx 2500-1900$$\n\n$$\\approx 600\\ \\text{kJ}/\\text{mol}$$"
+          },
+          {
+            "heading": "Step 6 — Pick the nearest option",
+            "body": "The option closest to 600 kJ/mol is 620 kJ/mol. (With the exact bond energies, 2532 − 1915.5 = 616.5 kJ/mol, confirming it. As a check against Question 3: methane releases 824 kJ/mol and ethane, one CH₂ larger, releases about 1441 kJ/mol — a difference of about 617.)"
+          }
+        ],
+        "answer": "C — 620 kJ/mol",
+        "strategy": "Underline **straight-chain alkanes**, **heat released**, **burns completely** and **each extra CH₂ group**. No particular alkane is named, and the question asks about the change from one extra CH₂ — which suggests the answer is the same whichever alkane you start from. So rather than working out a whole combustion, focus only on what one extra CH₂ adds: the extra bonds in the fuel, and the extra oxygen and products it brings into the combustion equation. The extra energy out minus the extra energy in is the extra heat released.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "counted only the bonds the CH₂ adds to the fuel (C–C + 2 C–H ≈ 1170). That is the extra energy needed to break the fuel apart, not the extra heat released — it leaves out the extra oxygen and the extra CO₂ and H₂O formed."
+          },
+          {
+            "option": "B",
+            "reason": "used 745 kJ/mol for the C=O bonds. The note says C=O bonds in carbon dioxide are 799 kJ/mol, which makes the extra energy out about 100 kJ/mol larger."
+          },
+          {
+            "option": "D",
+            "reason": "added only one extra O₂ instead of 1½. The extra CO₂ and H₂O together need three oxygen atoms, which is 1½ O₂."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,416 @@
+{
+  "categoryId": "general-chemistry",
+  "subcategoryId": "general-chemistry-equilibrium",
+  "title": "Complex Ion Equilibria and Colour - Stem 2",
+  "isPublished": true,
+  "stem": [
+    {
+      "type": "text",
+      "value": "A metal ion in solution binds ligands (Lewis bases) to form a complex ion; different ligands give different complexes. Each complex absorbs visible light at a characteristic wavelength and reflects the rest, and the colour reflected is the complement of the colour absorbed. For each band of absorbed wavelength, the table gives the colour absorbed and the colour reflected."
+    },
+    {
+      "type": "table",
+      "columns": [
+        "Wavelength absorbed (nm)",
+        "Colour absorbed",
+        "Colour reflected"
+      ],
+      "rows": [
+        [
+          "400–430",
+          "violet",
+          "green-yellow"
+        ],
+        [
+          "430–490",
+          "blue",
+          "orange"
+        ],
+        [
+          "490–560",
+          "green",
+          "red"
+        ],
+        [
+          "560–580",
+          "yellow",
+          "violet"
+        ],
+        [
+          "580–620",
+          "orange",
+          "blue"
+        ],
+        [
+          "620–700",
+          "red",
+          "green"
+        ]
+      ]
+    },
+    {
+      "type": "text",
+      "value": "Binding is an equilibrium. For a metal M and ligand L forming $M{L}_{n}$,"
+    },
+    {
+      "type": "equation",
+      "value": "M+n L\\rightleftharpoons M{L}_{n},\\ \\ {K}_{f}=\\frac{\\left[M{L}_{n}\\right]}{\\left[M\\right]\\,{\\left[L\\right]}^{n}},",
+      "mode": "block"
+    },
+    {
+      "type": "text",
+      "value": "where ${K}_{f}$ is the formation (stability) constant and a large ${K}_{f}$ means the complex is strongly favoured. When the ligands add one at a time, the overall constant is the product of the stepwise constants:"
+    },
+    {
+      "type": "equation",
+      "value": "{K}_{f}={K}_{1}\\times {K}_{2}\\times \\cdots \\times {K}_{n}.",
+      "mode": "block"
+    },
+    {
+      "type": "text",
+      "value": "Metal M can form the complexes below, each absorbing light at a characteristic wavelength:"
+    },
+    {
+      "type": "table",
+      "columns": [
+        "Complex",
+        "Wavelength absorbed (nm)"
+      ],
+      "rows": [
+        [
+          "MW₆",
+          "430"
+        ],
+        [
+          "MX₆",
+          "500"
+        ],
+        [
+          "MY₂",
+          "610"
+        ],
+        [
+          "MZ₄",
+          "660"
+        ]
+      ]
+    },
+    {
+      "type": "text",
+      "value": "Ligands also differ in field strength (for example H₂O < NH₃ < CN⁻): a stronger-field ligand splits the metal’s d-orbitals more, so its complex absorbs light of shorter (higher-energy) wavelength."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "A solution of metal M contains two ligands competing for it. Ligand X binds as MX₆ (six X per metal), with formation constant ${K}_{f}\\left(X\\right)=1.0\\times {10}^{3}$ and [X] = 1.0 M. Ligand Y binds as MY₂ (two Y per metal), with ${K}_{f}\\left(Y\\right)=1.0\\times {10}^{4}$ and [Y] = 0.10 M. What colour does the solution appear?",
+      "options": [
+        "Blue",
+        "Purple",
+        "Red",
+        "Green"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Write each formation constant, then rearrange for the complex",
+            "body": "$${K}_{f}\\left(X\\right)=\\frac{\\left[M{X}_{6}\\right]}{\\left[M\\right]{\\left[X\\right]}^{6}}\\ \\Rightarrow \\ \\left[M{X}_{6}\\right]={K}_{f}\\left(X\\right)\\,\\left[M\\right]\\,{\\left[X\\right]}^{6}$$\n\n$${K}_{f}\\left(Y\\right)=\\frac{\\left[M{Y}_{2}\\right]}{\\left[M\\right]{\\left[Y\\right]}^{2}}\\ \\Rightarrow \\ \\left[M{Y}_{2}\\right]={K}_{f}\\left(Y\\right)\\,\\left[M\\right]\\,{\\left[Y\\right]}^{2}$$"
+          },
+          {
+            "heading": "Step 2 — Take the ratio; the free metal cancels",
+            "body": "$$\\frac{\\left[M{X}_{6}\\right]}{\\left[M{Y}_{2}\\right]}=\\frac{{K}_{f}\\left(X\\right)\\,{\\left[X\\right]}^{6}}{{K}_{f}\\left(Y\\right)\\,{\\left[Y\\right]}^{2}}$$\n\nSo dominance is decided by ${K}_{f}\\times {\\left[L\\right]}^{n}$ for each — the free metal is never needed."
+          },
+          {
+            "heading": "Step 3 — Put the numbers in (mind the powers)",
+            "body": "$${K}_{f}\\left(X\\right)\\,{\\left[X\\right]}^{6}={10}^{3}\\times {\\left(1.0\\right)}^{6}={10}^{3}=1000$$\n\n$${K}_{f}\\left(Y\\right)\\,{\\left[Y\\right]}^{2}={10}^{4}\\times {\\left(0.10\\right)}^{2}={10}^{4}\\times {10}^{-2}={10}^{2}=100$$\n\n$$\\left[M{X}_{6}\\right]:\\left[M{Y}_{2}\\right]=1000:100=10:1$$\n\nSo **MX₆ dominates** — even though Y has the larger formation constant. (The exponents are decisive: drop them and you’d get ${10}^{3}\\times 1$ vs ${10}^{4}\\times 0.1$ = 1000 vs 1000, a tie — raising [X] to the 6th and [Y] to the 2nd is what separates them.)"
+          },
+          {
+            "heading": "Step 4 — Colour",
+            "body": "From the stem’s complex table, MX₆ absorbs at 500 nm — green light. From the table, a complex that absorbs green **reflects red**; the reflected light is what reaches your eye, so the solution appears **red**. The 10:1 dominance from Step 3 matters here — with MX₆ so far in the majority (about 91% of the coloured complex), the solution takes its colour; the two complexes’ colours do **not** average into a blend."
+          }
+        ],
+        "answer": "C — Red",
+        "strategy": "Both ligands are present, so both complexes form — you can’t just crown the one with the bigger constant. You need which complex is present in greater amount, then its colour. The move that unlocks it: both complexes draw on the same pool of free metal, so if you take their ratio the free [M] cancels, leaving you to compare ${K}_{f}\\times {\\left[L\\right]}^{n}$ for each — and the powers matter.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "the colour of MY₂; chosen by assuming the bigger formation constant (Y, ${10}^{4}$) wins. It doesn’t: X’s much higher concentration, raised to the 6th power, more than offsets its smaller ${K}_{f}$."
+          },
+          {
+            "option": "B",
+            "reason": "the tempting “both complexes are present, so their colours (red + blue) blend” idea. But they are not present equally: Step 3 gives MX₆ : MY₂ = 10 : 1, so ~91% of the coloured complex is MX₆ and the solution is dominated by red, not an even purple. A blend would need the two in comparable amounts — the equilibrium rules that out."
+          },
+          {
+            "option": "D",
+            "reason": "the colour MX₆ absorbs, not the colour it reflects. You see the reflected light, so read the “reflected” column, not “absorbed”."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "prompt": "Metal M binds ligand L one at a time, forming ML, then ML₂, then ML₃. The stepwise formation constants are ${K}_{1}=100$, ${K}_{2}=10$ and ${K}_{3}=0.1$. In a solution where the free-ligand concentration is [L] = 1.0 M, what colour does the solution appear?",
+      "contentBlocks": [
+        {
+          "type": "table",
+          "columns": [
+            "Species",
+            "Wavelength absorbed (nm)"
+          ],
+          "rows": [
+            [
+              "ML",
+              "500"
+            ],
+            [
+              "ML₂",
+              "610"
+            ],
+            [
+              "ML₃",
+              "660"
+            ]
+          ]
+        }
+      ],
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Orange"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — The question involves ML, ML₂ and ML₃, so write out their equilibrium constants",
+            "body": "The stem’s ${K}_{f}$ describes a complex forming in one go, but here the ligands add one at a time — so there is one reaction, and one constant, for each ligand added. Writing each as products ÷ reactants:\n\n$$M+L\\rightleftharpoons M L\\ \\ {K}_{1}=\\frac{\\left[M L\\right]}{\\left[M\\right]\\,\\left[L\\right]}$$\n\n$$M L+L\\rightleftharpoons M{L}_{2}\\ \\ {K}_{2}=\\frac{\\left[M{L}_{2}\\right]}{\\left[M L\\right]\\,\\left[L\\right]}$$\n\n$$M{L}_{2}+L\\rightleftharpoons M{L}_{3}\\ \\ {K}_{3}=\\frac{\\left[M{L}_{3}\\right]}{\\left[M{L}_{2}\\right]\\,\\left[L\\right]}$$"
+          },
+          {
+            "heading": "Step 2 — Substitute what the question gives you",
+            "body": "You are told ${K}_{1}=100$, ${K}_{2}=10$, ${K}_{3}=0.1$ and $\\left[L\\right]=1.0$ M. Put these straight into the three expressions:\n\n$$100=\\frac{\\left[M L\\right]}{\\left[M\\right]\\times 1.0}\\ \\ \\Rightarrow \\ \\ \\frac{\\left[M L\\right]}{\\left[M\\right]}=100$$\n\n$$10=\\frac{\\left[M{L}_{2}\\right]}{\\left[M L\\right]\\times 1.0}\\ \\ \\Rightarrow \\ \\ \\frac{\\left[M{L}_{2}\\right]}{\\left[M L\\right]}=10$$\n\n$$0.1=\\frac{\\left[M{L}_{3}\\right]}{\\left[M{L}_{2}\\right]\\times 1.0}\\ \\ \\Rightarrow \\ \\ \\frac{\\left[M{L}_{3}\\right]}{\\left[M{L}_{2}\\right]}=0.1$$\n\nLook at what is left unknown in each line: two concentrations, sitting together as a ratio. You can’t pin down either one on its own, but each line tells you **how much of one species there is relative to the one before it**:\n\n- $\\left[M L\\right]/\\left[M\\right]=100$ — there is 100 times more ML than free M.\n- $\\left[M{L}_{2}\\right]/\\left[M L\\right]=10$ — there is 10 times more ML₂ than ML.\n- $\\left[M{L}_{3}\\right]/\\left[M{L}_{2}\\right]=0.1$ — there is only a tenth as much ML₃ as ML₂.\n\nSo the amount grows from M to ML to ML₂, then falls at ML₃. Notice that each constant only ever compares two neighbours — ${K}_{1}$ says nothing about ML₂ or ML₃ — which is why the biggest $K$ does not automatically pick the winner."
+          },
+          {
+            "heading": "Step 3 — Build up the relative amounts to find the winner",
+            "body": "Pick a reference value for the free metal, $\\left[M\\right]=1$, and use each proportion from Step 2 to get the next species from the one before it:\n\n$$\\left[M\\right]=1$$\n\n$$\\left[M L\\right]=100\\times \\left[M\\right]=100\\times 1=100$$\n\n$$\\left[M{L}_{2}\\right]=10\\times \\left[M L\\right]=10\\times 100=1000$$\n\n$$\\left[M{L}_{3}\\right]=0.1\\times \\left[M{L}_{2}\\right]=0.1\\times 1000=100$$\n\nSo $\\left[M\\right]:\\left[M L\\right]:\\left[M{L}_{2}\\right]:\\left[M{L}_{3}\\right]=1:100:1000:100$, and **ML₂ dominates** — ten times more than either neighbour, even though its constant (${K}_{2}=10$) is smaller than ${K}_{1}$. The large ${K}_{1}$ shows up as very little free M remaining, not as lots of ML."
+          },
+          {
+            "heading": "Step 4 — Colour",
+            "body": "From the table, ML₂ absorbs at 610 nm — orange light. From the stem’s colour table, a complex that absorbs orange reflects blue; the reflected light is what reaches your eye, so the solution appears **blue**."
+          }
+        ],
+        "answer": "C — Blue",
+        "strategy": "The ligands add one at a time, so the metal steps up through M → ML → ML₂ → ML₃, and at this ligand concentration one of these is present in the greatest amount. You’re not told which — deduce it.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "the colour of ML, chosen by reasoning “${K}_{1}$ is the biggest constant, so ML dominates.” But ${K}_{1}$ only compares ML with free M — it drains M into ML. The next proportion, $\\left[M{L}_{2}\\right]/\\left[M L\\right]=10$, shows there is ten times more ML₂ than ML, so ML is not the winner."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "prompt": "The solid salt MX is only sparingly soluble. It dissolves slightly to release its ions*,",
+      "contentBlocks": [
+        {
+          "type": "equation",
+          "value": "M X\\left(s\\right)\\rightleftharpoons M+X,\\ \\ {K}_{\\text{sp}}=\\left[M\\right]\\,\\left[X\\right]=1.0\\times {10}^{-8},",
+          "mode": "block"
+        },
+        {
+          "type": "text",
+          "value": "where ${K}_{\\text{sp}}$ is its solubility product. Ligand L binds M to form ML₂, with ${K}_{f}=1.0\\times {10}^{6}$. What total concentration of L must be added so that 0.010 M of MX dissolves?"
+        }
+      ],
+      "options": [
+        "0.10 M",
+        "0.020 M",
+        "0.12 M",
+        "0.030 M"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Build ${K}_{f}$ for ML₂ from the stem, and substitute the givens",
+            "body": "The stem gives the general form ${K}_{f}=\\left[{M L}_{n}\\right]/\\left(\\left[M\\right]{\\left[L\\right]}^{n}\\right)$. Here the complex is ML₂ — two ligands per metal — so the reaction is M + 2L ⇌ ML₂ and the power on [L] is 2:\n\n$${K}_{f}=\\frac{\\left[M{L}_{2}\\right]}{\\left[M\\right]{\\left[L\\right]}^{2}}$$\n\nNow substitute the given values into both constants:\n\n$$1.0\\times {10}^{-8}=\\left[M\\right]\\left[X\\right]$$\n\n$$1.0\\times {10}^{6}=\\frac{\\left[M{L}_{2}\\right]}{\\left[M\\right]{\\left[L\\right]}^{2}}$$\n\nBoth contain the free metal $\\left[M\\right]$, which you don’t know. It is the link between the two: the M released when MX dissolves is exactly the M that the ligand then binds."
+          },
+          {
+            "heading": "Step 2 — Combine them so $\\left[M\\right]$ cancels",
+            "body": "Multiply the two expressions together:\n\n$${K}_{\\text{sp}}\\times {K}_{f}=\\left[M\\right]\\left[X\\right]\\times \\frac{\\left[M{L}_{2}\\right]}{\\left[M\\right]{\\left[L\\right]}^{2}}$$\n\n$${K}_{\\text{sp}}\\times {K}_{f}=\\frac{\\left[M{L}_{2}\\right]\\left[X\\right]}{{\\left[L\\right]}^{2}}$$\n\n$${10}^{-8}\\times {10}^{6}=\\frac{\\left[M{L}_{2}\\right]\\left[X\\right]}{{\\left[L\\right]}^{2}}$$\n\n$${10}^{-2}=\\frac{\\left[M{L}_{2}\\right]\\left[X\\right]}{{\\left[L\\right]}^{2}}$$\n\nThis matches the stem’s rule that constants multiply when reactions are chained together (${K}_{f}={K}_{1}\\times {K}_{2}\\times \\cdots$): here the two reactions add up to MX(s) + 2L ⇌ ML₂ + X."
+          },
+          {
+            "heading": "Step 3 — What does “0.010 M dissolves” give you?",
+            "body": "Follow the metal first. Each MX that dissolves releases one M, so dissolving 0.010 M of MX releases 0.010 M of M in total. But that M doesn’t stay free: ${K}_{f}$ is huge (${10}^{6}$), so almost every M released is grabbed by the ligand into ML₂. So then,\n\n$$\\left[M{L}_{2}\\right]\\approx 0.010\\ M.$$\n\nThe X released has nothing to bind to, so it simply stays in solution: each MX also gives one X, so\n\n$$\\left[X\\right]=0.010\\ M.$$"
+          },
+          {
+            "heading": "Step 4 — Substitute and solve for the free ligand",
+            "body": "$${10}^{-2}=\\frac{\\left(0.010\\right)\\left(0.010\\right)}{{\\left[L\\right]}^{2}}$$\n\n$${\\left[L\\right]}^{2}=\\frac{{10}^{-4}}{{10}^{-2}}$$\n\n$${\\left[L\\right]}^{2}={10}^{-2}$$\n\n$$\\left[L\\right]=0.10\\ M\\ \\ \\left(\\text{free}\\ \\text{ligand}\\right)$$"
+          },
+          {
+            "heading": "Step 5 — The question asks for the total L added",
+            "body": "Some L is free in solution and some is locked inside the complex — two per ML₂:\n\n$$L\\ \\text{in}\\ \\text{complex}=2\\times \\left[M{L}_{2}\\right]=2\\times 0.010=0.020\\ M$$\n\n$$\\text{Total}\\ L=0.10+0.020=0.12\\ M$$"
+          },
+          {
+            "heading": "Note",
+            "body": "* In a real salt the ions carry charges — for example, NaCl(s) ⇌ Na⁺ + Cl⁻ — so MX would typically dissolve into M⁺ and X⁻. The charges are left off here to follow the same convention as the stem’s formation constant, ${K}_{f}$, where the metal — which in reality is a charged ion — is written simply as M rather than M⁺. Keeping to that convention throughout does not change any of the working."
+          },
+          {
+            "heading": "Another way to the same answer — treat them like simultaneous equations",
+            "body": "You don’t have to multiply the constants. Instead, make $\\left[M\\right]$ the subject of each equation on its own, then set the two equal, just as you would with a pair of simultaneous equations.\n\nFrom the ${K}_{\\text{sp}}$ equation:\n\n$$1.0\\times {10}^{-8}=\\left[M\\right]\\left[X\\right]$$\n\n$$\\left[M\\right]=\\frac{{10}^{-8}}{\\left[X\\right]}\\ \\ \\ldots \\left(1\\right)$$\n\nFrom the ${K}_{f}$ equation:\n\n$$1.0\\times {10}^{6}=\\frac{\\left[M{L}_{2}\\right]}{\\left[M\\right]{\\left[L\\right]}^{2}}$$\n\n$$\\left[M\\right]=\\frac{\\left[M{L}_{2}\\right]}{{10}^{6}\\,{\\left[L\\right]}^{2}}\\ \\ \\ldots \\left(2\\right)$$\n\nUsing $\\left[X\\right]=0.010$ M from Step 3, equation (1) gives the free metal directly:\n\n$$\\left[M\\right]=\\frac{{10}^{-8}}{0.010}={10}^{-6}M$$\n\nBoth equations describe the same free metal, so equation (2) must give the same value. Set it equal to ${10}^{-6}$ and use $\\left[M{L}_{2}\\right]=0.010$ M:\n\n$${10}^{-6}=\\frac{0.010}{{10}^{6}\\,{\\left[L\\right]}^{2}}$$\n\n$${\\left[L\\right]}^{2}=\\frac{0.010}{{10}^{6}\\times {10}^{-6}}$$\n\n$${\\left[L\\right]}^{2}=0.010$$\n\n$$\\left[L\\right]=0.10\\ M\\ \\ \\left(\\text{free}\\ \\text{ligand}\\right)$$\n\nThat is the same free-ligand concentration as Step 4, and adding the 0.020 M locked in the complex gives the same total of 0.12 M. Both routes are correct — use whichever you find more natural."
+          }
+        ],
+        "answer": "C — 0.12 M",
+        "strategy": "Underline what the question hands you: a **solid** MX with its ${K}_{\\text{sp}}$ written out, a ligand that binds M to form **ML₂** with a ${K}_{f}$, and a target — the **total L added** for **0.010 M to dissolve**. The ${K}_{f}$ isn’t written out for you, so build it from the stem’s formation-constant expression. Then substitute what you know into both and see what they have in common.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "only the free ligand; it forgets the ligand used up inside the ML₂ that formed."
+          },
+          {
+            "option": "B",
+            "reason": "only the ligand in the complex; it forgets that free L must remain in solution to hold the equilibrium where it is."
+          },
+          {
+            "option": "D",
+            "reason": "set $\\left[M\\right]=\\left[X\\right]={10}^{-4}$ M from ${K}_{\\text{sp}}$ alone and put that into ${K}_{f}$. That shortcut only holds in pure water; with ligand present almost all the M is in ML₂, so free $\\left[M\\right]$ is only ${10}^{-6}$ M."
+          }
+        ],
+        "answerIndex": 5
+      }
+    },
+    {
+      "id": "q4",
+      "prompt": "Figure 1 shows how the metal from Question 2 is shared between M, ML, ML₂ and ML₃ as the free-ligand concentration changes. The curves are not labelled. Over what range of free [L] does the solution appear red?",
+      "contentBlocks": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1794813769/question-bank/qb_img_1794813767974_db15c1.png",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "table",
+          "columns": [
+            "Species",
+            "Wavelength absorbed (nm)"
+          ],
+          "rows": [
+            [
+              "ML",
+              "500"
+            ],
+            [
+              "ML₂",
+              "610"
+            ],
+            [
+              "ML₃",
+              "660"
+            ]
+          ]
+        }
+      ],
+      "options": [
+        "0.1 M to 10 M",
+        "Above 10 M",
+        "0.01 M to 0.1 M",
+        "About 0.001 M to 1 M"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Which species makes the solution look red?",
+            "body": "From the stem’s colour table, red is reflected when green is absorbed, which is 490–560 nm. In the species table, only ML absorbs in that band (500 nm). So the question is really asking: over what range of [L] is ML the main form of the metal?"
+          },
+          {
+            "heading": "Step 2 — Which curve is ML?",
+            "body": "Question 2 said the ligands add one at a time: M, then ML, then ML₂, then ML₃. So as [L] rises, the species take over in that order:\n\n- Curve 1 starts near 1 and falls away, so it is free **M** (no ligand yet).\n- Curve 4 only rises at high [L], so it is **ML₃** (fully loaded).\n- The humps in between come in order, so **curve 2 is ML** and curve 3 is ML₂."
+          },
+          {
+            "heading": "Step 3 — Read where curve 2 is on top",
+            "body": "Curve 2 becomes the highest line where it crosses curve 1, at ${10}^{-2}=0.01$ M. It stops being the highest where curve 3 overtakes it, at ${10}^{-1}=0.1$ M. (The axis is logarithmic, so each gridline is ten times the one before.) So ML dominates — and the solution looks red — from 0.01 M to 0.1 M."
+          }
+        ],
+        "answer": "C — 0.01 M to 0.1 M",
+        "strategy": "Underline the keywords: **appear red**, **range of free [L]**, and **curves not labelled**. “Red” points to the stem’s colour table. “Curves not labelled” means you’ll have to work out which curve is which before you can read anything off the graph.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "the range where curve 3 (ML₂) is on top. ML₂ absorbs orange and so looks blue."
+          },
+          {
+            "option": "B",
+            "reason": "where ML₃ dominates. ML₃ absorbs red (660 nm), so this catches anyone who looks for the species that absorbs red instead of the one that reflects it."
+          },
+          {
+            "option": "D",
+            "reason": "roughly where ML is merely present in noticeable amounts. The colour is set by the species that is on top, not by every species that is ther"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "prompt": "In a solution, the total concentration of metal M is 0.010 M and the total concentration of ligand L is 0.036 M where each total includes both the free species and the amount bound in the complex. The metal forms only the complex ML₂. The solution appears blue, and its absorbance, measured at the wavelength of light the solution absorbs, is 0.40. Figure 2 below shows calibration lines for ML₂ measured at 500 nm and at 610 nm. What is the formation constant, ${K}_{f}$, of ML₂?",
+      "contentBlocks": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1794813770/question-bank/qb_img_1794813770328_9dab25.png",
+          "alt": "",
+          "caption": ""
+        }
+      ],
+      "options": [
+        "2.0 × 10³",
+        "2.0 × 10²",
+        "1.0 × 10⁴",
+        "5.1 × 10³"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Which calibration line?",
+            "body": "The solution appears blue, so blue is the colour reflected. From the stem’s colour table, a solution that reflects blue absorbs orange, which is 580–620 nm. The absorbance was measured at the wavelength the solution absorbs, so use the **610 nm** line, not the 500 nm one. (As a check: on the 500 nm line, an absorbance of 0.40 isn’t even on the graph — it would need 0.020 M of ML₂, more than the 0.010 M of metal available.)"
+          },
+          {
+            "heading": "Step 2 — Read [ML₂] off the graph",
+            "body": "On the 610 nm line, an absorbance of 0.40 corresponds to\n\n$$\\left[M{L}_{2}\\right]=0.008\\ M.$$"
+          },
+          {
+            "heading": "Step 3 — How much metal is still free?",
+            "body": "The 0.010 M of total metal is either free or inside the complex:\n\n$$\\text{total}\\ M=\\left[M\\right]+\\left[M{L}_{2}\\right]$$\n\n$$0.010=\\left[M\\right]+0.008$$\n\n$$\\left[M\\right]=0.002\\ M$$"
+          },
+          {
+            "heading": "Step 4 — How much ligand is still free?",
+            "body": "The 0.036 M of total ligand is either free or inside the complex, and each ML₂ holds **two** L:\n\n$$\\text{total}\\ L=\\left[L\\right]+2\\times \\left[M{L}_{2}\\right]$$\n\n$$0.036=\\left[L\\right]+2\\times 0.008$$\n\n$$0.036=\\left[L\\right]+0.016$$\n\n$$\\left[L\\right]=0.020\\ M$$"
+          },
+          {
+            "heading": "Step 5 — Build ${K}_{f}$ and substitute",
+            "body": "The stem’s general form is ${K}_{f}=\\left[{M L}_{n}\\right]/\\left(\\left[M\\right]{\\left[L\\right]}^{n}\\right)$. The complex is ML₂, so the power on [L] is 2:\n\n$${K}_{f}=\\frac{\\left[M{L}_{2}\\right]}{\\left[M\\right]{\\left[L\\right]}^{2}}$$\n\n$${K}_{f}=\\frac{0.008}{0.002\\times {\\left(0.020\\right)}^{2}}$$\n\n$${K}_{f}=\\frac{0.008}{0.002\\times 4\\times {10}^{-4}}$$\n\n$${K}_{f}=\\frac{0.008}{8\\times {10}^{-7}}$$\n\n$${K}_{f}=1.0\\times {10}^{4}$$"
+          }
+        ],
+        "answer": "C — 1.0 × 10⁴",
+        "strategy": "Underline the keywords: **total** metal (0.010 M) and **total** ligand (0.036 M), **only ML₂**, **appears blue**, **absorbance 0.40 at the wavelength it absorbs**, and **two calibration lines**. The target is ${K}_{f}$, which links to the stem’s formation-constant expression. To use it you need three concentrations at equilibrium — ML₂, free M and free L — and none of them is given directly. The word “total” is the warning: the 0.010 M and 0.036 M include what is bound in the complex, not just what is free, so they can’t go straight into ${K}_{f}$. Work out each concentration one at a time, starting with the graph.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "used the total metal (0.010 M) instead of the free metal. The 0.008 M locked inside ML₂ isn’t free."
+          },
+          {
+            "option": "B",
+            "reason": "forgot to square [L]. Two ligands per complex means the power on [L] is 2."
+          },
+          {
+            "option": "D",
+            "reason": "subtracted only one ligand per complex (0.036 − 0.008 = 0.028 M). ML₂ holds two, so 0.016 M of ligand is bound."
+          }
+        ]
+      }
+    }
+  ]
+}
