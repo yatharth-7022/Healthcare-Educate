@@ -10,7 +10,7 @@
     },
     {
       "type": "text",
-      "value": "Amino acids differ in how readily they fit into this structure. The table below gives each amino acid’s **ΔΔG**: the free energy change, per residue, of placing that amino acid in an α-helix minus that of placing alanine there — so alanine’s value is zero. These are average values; the actual effect of a residue can vary depending on the residues around it."
+      "value": "Amino acids differ in how readily they fit into this structure. The table below gives each amino acid’s ΔΔG: the free energy change, per residue, of placing that amino acid in an α-helix minus that of placing alanine there — so alanine’s value is zero. These are average values; the actual effect of a residue can vary depending on the residues around it."
     },
     {
       "type": "text",
@@ -111,7 +111,7 @@
     },
     {
       "type": "text",
-      "value": "Two amino acids stand out. **Proline** has no N–H group to donate a hydrogen bond, and its ring-shaped side chain clashes with the backbone of the preceding turn, so inside a helix it breaks or kinks the chain; it is, however, often found as the first residue of a helix. **Glycine**, with only a hydrogen atom as its side chain, is highly flexible, so holding it in the constrained helical shape is entropically costly."
+      "value": "Two amino acids stand out. Proline has no N–H group to donate a hydrogen bond, and its ring-shaped side chain clashes with the backbone of the preceding turn, so inside a helix it breaks or kinks the chain; it is, however, often found as the first residue of a helix. Glycine, with only a hydrogen atom as its side chain, is highly flexible, so holding it in the constrained helical shape is entropically costly."
     }
   ],
   "questions": [

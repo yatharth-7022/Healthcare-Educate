@@ -103,7 +103,7 @@
   "questions": [
     {
       "id": "q1",
-      "prompt": "A solution of metal M contains two ligands competing for it. Ligand X binds as MX₆ (six X per metal), with formation constant ${K}_{f}\\left(X\\right)=1.0\\times {10}^{3}$ and [X] = 1.0 M. Ligand Y binds as MY₂ (two Y per metal), with ${K}_{f}\\left(Y\\right)=1.0\\times {10}^{4}$ and [Y] = 0.10 M. What colour does the solution appear?",
+      "prompt": "A solution of metal M contains two ligands competing for it. Ligand X binds as MX₆, with formation constant ${K}_{f}\\left(X\\right)=1.0\\times {10}^{3}$ and [X] = 1.0 M. Ligand Y binds as MY₂, with ${K}_{f}\\left(Y\\right)=1.0\\times {10}^{4}$ and [Y] = 0.10 M. What colour does the solution appear?",
       "options": [
         "Blue",
         "Purple",
@@ -212,7 +212,7 @@
     },
     {
       "id": "q3",
-      "prompt": "The solid salt MX is only sparingly soluble. It dissolves slightly to release its ions*,",
+      "prompt": "The solid salt MX is only sparingly soluble. It dissolves slightly to release its ions,",
       "contentBlocks": [
         {
           "type": "equation",
@@ -255,7 +255,7 @@
           },
           {
             "heading": "Note",
-            "body": "* In a real salt the ions carry charges — for example, NaCl(s) ⇌ Na⁺ + Cl⁻ — so MX would typically dissolve into M⁺ and X⁻. The charges are left off here to follow the same convention as the stem’s formation constant, ${K}_{f}$, where the metal — which in reality is a charged ion — is written simply as M rather than M⁺. Keeping to that convention throughout does not change any of the working."
+            "body": "In a real salt the ions carry charges — for example, NaCl(s) ⇌ Na⁺ + Cl⁻ — so MX would typically dissolve into M⁺ and X⁻. The charges are left off here to follow the same convention as the stem’s formation constant, ${K}_{f}$, where the metal — which in reality is a charged ion — is written simply as M rather than M⁺. Keeping to that convention throughout does not change any of the working."
           },
           {
             "heading": "Another way to the same answer — treat them like simultaneous equations",

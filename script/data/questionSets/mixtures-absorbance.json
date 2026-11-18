@@ -220,7 +220,7 @@
     },
     {
       "id": "q4",
-      "prompt": "A solution initially containing 2.0 mmol L⁻¹ of S is gradually converted into T, with each molecule of S forming **two** molecules of T. At a certain time, the absorbance of the solution at 450 nm is 0.35. What fraction of the S has been converted into T at that time?",
+      "prompt": "A solution initially containing 2.0 mmol L⁻¹ of S is gradually converted into T, with each molecule of S forming two molecules of T. At a certain time, the absorbance of the solution at 450 nm is 0.35. What fraction of the S has been converted into T at that time?",
       "options": [
         "44%",
         "75%",

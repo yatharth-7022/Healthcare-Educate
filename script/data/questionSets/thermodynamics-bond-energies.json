@@ -75,12 +75,17 @@
     },
     {
       "type": "text",
-      "value": "**Note:** The C=O bond in CO₂ has an energy of **799 kJ/mol**. The value of 745 kJ/mol applies to C=O bonds in other molecules."
+      "value": "Note: The C=O bond in CO₂ has an energy of 799 kJ/mol. The value of 745 kJ/mol applies to C=O bonds in other molecules."
+    },
+    {
+      "type": "text",
+      "variant": "additional-info",
+      "value": "ADDITIONAL INFORMATION:",
+      "revealAtQuestion": 3
     },
     {
       "type": "text",
       "value": "In a chemical reaction, the bonds in the reactants are broken and the bonds in the products are formed. The heat of combustion of a substance is the enthalpy change, ΔH, when one mole of it burns completely in oxygen. The heat of formation of a substance is the enthalpy change, ΔH, when one mole of it is formed from its elements in their standard states. By convention, the enthalpy change, ΔH, is negative when heat is released to the surroundings and positive when heat is absorbed from them; this applies equally to heats of combustion and formation.",
-      "variant": "additional-info",
       "revealAtQuestion": 3
     }
   ],

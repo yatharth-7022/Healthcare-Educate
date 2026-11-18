@@ -64,7 +64,7 @@
     },
     {
       "type": "text",
-      "value": "**Note:** Throughout, take R = 0.083 L atm mol⁻¹ K⁻¹ and T = 300 K."
+      "value": "Note: Throughout, take R = 0.083 L atm mol⁻¹ K⁻¹ and T = 300 K."
     }
   ],
   "questions": [
@@ -82,38 +82,38 @@
         "steps": [
           {
             "heading": "Step 1 — Occupied sites for each gas (from the K’s)",
-            "body": "[AS] = $K_{A}$ × $p_{A}$ × [S] = 1.5 × 2.0 × [S] = 3.0[S]\n\n[BS] = $K_{B}$ × $p_{B}$ × [S] = 2.0 × 1.0 × [S] = 2.0[S]"
+            "body": "$$\\left[A S\\right]={K}_{A}\\times {p}_{A}\\times \\left[S\\right]=1.5\\times 2.0\\times \\left[S\\right]=3.0\\,\\left[S\\right]$$\n\n$$\\left[B S\\right]={K}_{B}\\times {p}_{B}\\times \\left[S\\right]=2.0\\times 1.0\\times \\left[S\\right]=2.0\\,\\left[S\\right]$$"
           },
           {
             "heading": "Step 2 — Total sites (site balance with both gases)",
-            "body": "$S_{0}$ = [S] + [AS] + [BS]\n\n$S_{0}$ = [S] + 3.0[S] + 2.0[S]\n\n$S_{0}$ = 6.0[S]"
+            "body": "$${S}_{0}=\\left[S\\right]+\\left[A S\\right]+\\left[B S\\right]$$\n\n$${S}_{0}=\\left[S\\right]+3.0\\,\\left[S\\right]+2.0\\,\\left[S\\right]$$\n\n$${S}_{0}=6.0\\,\\left[S\\right]$$"
           },
           {
             "heading": "Step 3 — Fraction occupied by A",
-            "body": "$\\theta_{A}$ = [AS] ÷ $S_{0}$\n\n$\\theta_{A}$ = 3.0[S] ÷ 6.0[S]\n\n$\\theta_{A}$ = 0.50"
+            "body": "$${\\theta }_{A}=\\frac{\\left[A S\\right]}{{S}_{0}}$$\n\n$${\\theta }_{A}=\\frac{3.0\\,\\left[S\\right]}{6.0\\,\\left[S\\right]}$$\n\n$${\\theta }_{A}=0.50$$"
           }
         ],
         "answer": "A — 0.50",
-        "strategy": "First, the background you bring to this: an equilibrium constant is just products ÷ reactants — here the “product” is the occupied site AS, and the “reactants” are the gas A and the empty site S. So the occupied sites go on top, and the gas and the empty sites sit underneath, exactly as the stem’s equilibrium constant shows.\n\nWith that in mind: both gases take sites, so both appear in the site balance. Use each equilibrium constant to write its occupied sites in terms of the empty sites [S], add everything for the total, then take the fraction that is A. The key is not to forget B — it competes for the same sites.",
+        "strategy": "First, the background you bring to this: an equilibrium constant is just products ÷ reactants — here the “product” is the occupied site AS, and the “reactants” are the gas A and the empty site S. So the occupied sites go on top, and the gas and the empty sites sit underneath, exactly as the stem’s equilibrium constant shows.\n\nWith that in mind: both gases take sites, so both appear in the site balance. Use each equilibrium constant to write its occupied sites in terms of the empty sites $\\left[S\\right]$, add everything for the total, then take the fraction that is A. The key is not to forget B — it competes for the same sites.",
         "eliminations": [
           {
             "option": "B",
-            "reason": "forgot the competitor: this is the single-gas result $K_{A}p_{A}$/(1 + $K_{A}p_{A}$) = 3/4. With B also taking sites, A’s share drops."
+            "reason": "forgot the competitor: this is the single-gas result $\\frac{{K}_{A}{p}_{A}}{1+{K}_{A}{p}_{A}}=\\frac{3}{4}$. With B also taking sites, A’s share drops."
           },
           {
             "option": "C",
-            "reason": "that is $\\theta_{B}$, the coverage by B ([BS]/$S_{0}$ = 2/6), not by A."
+            "reason": "that is ${\\theta }_{B}$, the coverage by B ($\\left[B S\\right]/{S}_{0}=2/6$), not by A."
           },
           {
             "option": "D",
-            "reason": "that is the total coverage $\\theta_{A}$ + $\\theta_{B}$ = 5/6 (all occupied sites), not the fraction that is A."
+            "reason": "that is the total coverage ${\\theta }_{A}+{\\theta }_{B}=5/6$ (all occupied sites), not the fraction that is A."
           }
         ]
       }
     },
     {
       "id": "q2",
-      "prompt": "A sample of gas A contains n = 0.40 mol in a volume V = 5.0 L, and the binding equilibrium constant is $K_{A}$ = 1.5 $\\text{atm}^{-1}$. What fraction of the sites are occupied by A ($\\theta_{A}$)?",
+      "prompt": "A sample of gas A contains $n$ = 0.40 mol in a volume $V$ = 5.0 L, and the binding equilibrium constant is $K_{A}$ = 1.5 $\\text{atm}^{-1}$. What fraction of the sites are occupied by A ($\\theta_{A}$)?",
       "options": [
         "0.75",
         "0.25",
@@ -125,35 +125,35 @@
         "steps": [
           {
             "heading": "Step 1 — Get the partial pressure from the ideal gas law",
-            "body": "pV = nRT\n\n$p_{A}$ = nRT ÷ V\n\n$p_{A}$ = (0.40 × 0.083 × 300) ÷ 5.0\n\n$p_{A}$ = 9.96 ÷ 5.0\n\n$p_{A}$ ≈ 2.0 atm"
+            "body": "$$p V=nRT$$\n\n$${p}_{A}=\\frac{nRT}{V}$$\n\n$${p}_{A}=\\frac{0.40\\times 0.083\\times 300}{5.0}$$\n\n$${p}_{A}=\\frac{9.96}{5.0}$$\n\n$${p}_{A}\\approx 2.0\\ \\text{atm}$$"
           },
           {
             "heading": "Step 2 — Occupied vs empty sites (from K)",
-            "body": "[AS] = $K_{A}$ × $p_{A}$ × [S] = 1.5 × 2.0 × [S] = 3.0[S]"
+            "body": "$$\\left[A S\\right]={K}_{A}\\times {p}_{A}\\times \\left[S\\right]=1.5\\times 2.0\\times \\left[S\\right]=3.0\\,\\left[S\\right]$$"
           },
           {
             "heading": "Step 3 — Site balance",
-            "body": "$S_{0}$ = [S] + [AS] = [S] + 3.0[S] = 4.0[S]"
+            "body": "$${S}_{0}=\\left[S\\right]+\\left[A S\\right]=\\left[S\\right]+3.0\\,\\left[S\\right]=4.0\\,\\left[S\\right]$$"
           },
           {
             "heading": "Step 4 — Fraction occupied",
-            "body": "$\\theta_{A}$ = [AS] ÷ $S_{0}$ = 3.0[S] ÷ 4.0[S] = 0.75"
+            "body": "$${\\theta }_{A}=\\frac{\\left[A S\\right]}{{S}_{0}}=\\frac{3.0\\,\\left[S\\right]}{4.0\\,\\left[S\\right]}=0.75$$"
           }
         ],
         "answer": "A — 0.75",
-        "strategy": "The equilibrium constant needs a partial pressure, but you are handed n, V, R and T for a gas. Ask: which equation ties all of those together? The ideal gas law, pV = nRT — and it is exactly what you want, because it contains the pressure you are after. Rearrange it for p, then run the usual Langmuir chain: relate occupied sites to empty sites, do the site balance, then take the fraction occupied.",
+        "strategy": "The equilibrium constant needs a partial pressure, but you are handed $n$, $V$, $R$ and $T$ for a gas. Ask: which equation ties all of those together? The ideal gas law, $p V=nRT$ — and it is exactly what you want, because it contains the pressure you are after. Rearrange it for $p$, then run the usual Langmuir chain: relate occupied sites to empty sites, do the site balance, then take the fraction occupied.",
         "eliminations": [
           {
             "option": "B",
-            "reason": "the fraction of empty sites (1 − $\\theta_{A}$), not the fraction occupied."
+            "reason": "the fraction of empty sites $\\left(1-{\\theta }_{A}\\right)$, not the fraction occupied."
           },
           {
             "option": "C",
-            "reason": "the occupied : empty ratio ($K_{A}p_{A}$); you must divide by the total sites, not just the empty ones."
+            "reason": "the occupied : empty ratio (${K}_{A}{p}_{A}$); you must divide by the total sites, not just the empty ones."
           },
           {
             "option": "D",
-            "reason": "the key trap: used n/V (= 0.08) as the pressure instead of solving pV = nRT for p. The ideal gas law is what turns n and V into a pressure (0.08 vs 2.0 is a 25× difference)."
+            "reason": "the key trap: used $n/V$ ($=0.08$) as the pressure instead of solving $p V=nRT$ for $p$. The ideal gas law is what turns $n$ and $V$ into a pressure (0.08 vs 2.0 is a 25× difference)."
           }
         ]
       }
