@@ -42,7 +42,7 @@
         },
         {
           "heading": "Step 4 — Solving  $\\frac{1}{{T}_{g}}=\\frac{0.30}{204}+\\frac{0.70}{491}$  without a calculator",
-          "body": "Once you have this equation set up, the calculator-free path is much faster than computing each decimal reciprocal separately.\n\n**Trick 1: multiply top and bottom by 100 to clear the decimals**\n\n$$\\frac{0.30}{204}=\\frac{30}{20,400} \\frac{0.70}{491}=\\frac{70}{49,100}$$\n\n**Trick 2: cancel a factor of 10 in each fraction**\n\n$$\\frac{30}{20,400}=\\frac{3}{2,040} \\frac{70}{49,100}=\\frac{7}{4,910}$$\n\n**Trick 3: simplify each fraction to  $\\frac{1}{\\text{something}}$**\n\nFor the first term, notice $\\frac{3}{2,040}=\\frac{1}{680}$ (since $2,040=3\\times 680$).\n\nFor the second term, round $4,910\\approx 4,900$, and simplify: $\\frac{7}{4,900}=\\frac{1}{700}$.\n\nSo the equation becomes:\n\n$$\\frac{1}{{T}_{g}}\\approx \\frac{1}{680}+\\frac{1}{700}$$\n\n**Trick 4: approximate both denominators as equal**\n\nSince 680 and 700 are close, treat them both as 700:\n\n$$\\frac{1}{{T}_{g}}\\approx \\frac{1}{700}+\\frac{1}{700}=\\frac{2}{700}$$\n\n**Trick 5: invert to get ${T}_{g}$**\n\n$${T}_{g}\\approx \\frac{700}{2}=350\\,\\mathrm{K}$$\n\nSubtract 273 to convert to °C:\n\n$${T}_{g}\\approx 350-273={77}^{\\circ}\\mathrm{C}$$\n\nClose enough to Option C (72 °C)"
+          "body": "Once you have this equation set up, the calculator-free path is much faster than computing each decimal reciprocal separately.\n\n**Trick 1: multiply top and bottom by 100 to clear the decimals**\n\n$$\\frac{0.30}{204}=\\frac{30}{20,400} \\quad\\text{and}\\quad \\frac{0.70}{491}=\\frac{70}{49,100}$$\n\n**Trick 2: cancel a factor of 10 in each fraction**\n\n$$\\frac{30}{20,400}=\\frac{3}{2,040} \\quad\\text{and}\\quad \\frac{70}{49,100}=\\frac{7}{4,910}$$\n\n**Trick 3: simplify each fraction to  $\\frac{1}{\\text{something}}$**\n\nFor the first term, notice $\\frac{3}{2,040}=\\frac{1}{680}$ (since $2,040=3\\times 680$).\n\nFor the second term, round $4,910\\approx 4,900$, and simplify: $\\frac{7}{4,900}=\\frac{1}{700}$.\n\nSo the equation becomes:\n\n$$\\frac{1}{{T}_{g}}\\approx \\frac{1}{680}+\\frac{1}{700}$$\n\n**Trick 4: approximate both denominators as equal**\n\nSince 680 and 700 are close, treat them both as 700:\n\n$$\\frac{1}{{T}_{g}}\\approx \\frac{1}{700}+\\frac{1}{700}=\\frac{2}{700}$$\n\n**Trick 5: invert to get ${T}_{g}$**\n\n$${T}_{g}\\approx \\frac{700}{2}=350\\,\\mathrm{K}$$\n\nSubtract 273 to convert to °C:\n\n$${T}_{g}\\approx 350-273={77}^{\\circ}\\mathrm{C}$$\n\nClose enough to Option C (72 °C)"
         }
       ]
     },
@@ -126,7 +126,7 @@
       "steps": [
         {
           "heading": "Strategy",
-          "body": "Tg corresponds to the peak of the G″ (loss modulus) curve — the dashed lines in Figure 2a. Read off the peak temperature for each polymer:\n\n- P3DDT G″ (purple dashed):  peak ≈ −30 °C\n- P3OT G″ (teal dashed):  peak ≈ −20 °C\n- P3HT G″ (orange dashed):  peak ≈ +10 °C\n- P3BT G″ (yellow dashed):  peak ≈ +45 °C **← highest**\n\nP3BT has the shortest side chain (C4H9) of the set, so by the trend established in Q5/Q6 we expect it to have the highest Tg — and it does."
+          "body": "Tg corresponds to the peak of the G″ (loss modulus) curve — the dashed lines in Figure 2a. Read off the peak temperature for each polymer:\n\n- P3DDT G″ (purple dashed):  peak ≈ −30 °C\n- P3OT G″ (teal dashed):  peak ≈ −15 °C\n- P3HT G″ (orange dashed):  peak ≈ +15 °C\n- P3BT G″ (yellow dashed):  peak ≈ +45 °C **← highest**\n\n![Figure 2a annotated](https://res.cloudinary.com/dn2hfglba/image/upload/v1795326384/question-bank/matchem_q7_fig2a_annotated.png)\n\nFigure 2a annotated: each G″ (dashed) peak is circled and traced straight down to the temperature axis to read off Tg."
         }
       ],
       "answer": "D — P3BT"
@@ -294,30 +294,32 @@
     "q5": {
       "steps": [
         {
-          "heading": "Step 1 — Extract the formula from the additional information",
-          "body": "The additional information tells us that when Western blot results are reported, the raw signal is divided by a housekeeping protein signal:\n\n**Reported Plin2 = Raw Plin2 signal ÷ Raw GAPDH signal**\n\nThe reason for dividing: the raw signal is confounded by how much sample was loaded onto the gel. Dividing by GAPDH — assumed to be constant across cells — corrects for that, so the ratio isolates the \"true\" Plin2 amount. This assumption is what makes the technique work."
+          "heading": "Strategy",
+          "body": "The question gives you two facts: the raw Plin2 signal is identical, and GAPDH is naturally lower in one group. To predict what happens to the reported values, you first need to build the normalisation formula yourself from the additional information, then see what a smaller denominator does to it."
         },
         {
-          "heading": "Step 2 — Identify what the question tells us",
-          "body": "The question anchors two facts:\n\n- **Raw Plin2 signal is identical** across all lanes — so the numerator of the ratio is the same in both populations.\n- **GAPDH is lower in the Chinese population** than in the European population — so the denominator differs.\n\nIf the numerator is fixed and the denominator differs, the ratio must differ. The question is: in which direction?"
+          "heading": "Step 1 — Build the formula from the additional information",
+          "body": "The additional information says researchers divide the target’s raw signal by that of a housekeeping protein, and that GAPDH is a common housekeeping protein. In this question the target is Plin2 and the housekeeping protein is GAPDH, so:\n\n$$\\text{Reported Plin2}=\\frac{\\text{Raw Plin2 signal}}{\\text{Raw GAPDH signal}}$$\n\nCheck it against the table: Sample A gives $\\frac{100}{100}=1.0$ and Sample B gives $\\frac{200}{200}=1.0$, which match the reported values shown."
         },
         {
-          "heading": "Step 3 — Work it out with sample numbers",
-          "body": "Assign arbitrary units to make the arithmetic concrete. Say the raw Plin2 signal is 100 units in both populations. Let GAPDH be 100 units in the European group and 50 units in the Chinese group (naturally lower).\n\nFor the European population:\n\n- Raw Plin2 = 100\n- GAPDH = 100\n- **Reported Plin2 = 100 / 100 = 1.0**\n\nFor the Chinese population:\n\n- Raw Plin2 = 100 (same as European — this is stated in the question)\n- GAPDH = 50 (lower per the question)\n- **Reported Plin2 = 100 / 50 = 2.0**\n\nEven though the actual raw Plin2 is identical, the reported values differ by 2×. The Chinese group *appears* to have twice as much Plin2 — but this is purely a mathematical artefact of the smaller denominator, not a biological difference."
+          "heading": "Step 2 — Why divide at all?",
+          "body": "The raw signal mixes two things: how much Plin2 the cells actually contain, and how much sample was loaded into the lane. In the table, Sample B’s raw target signal is double Sample A’s even though the cells contain the same amount — purely because twice as much was loaded.\n\nGAPDH works like a built-in measuring cup. Its signal rises and falls with how much sample went in, so dividing by it cancels the loading out and leaves a “per same amount of cells” value. But this only works if GAPDH is the same in every cell — the assumption the last line of the additional information flags."
         },
         {
-          "heading": "Step 4 — Why smaller denominator inflates the ratio",
-          "body": "This is basic arithmetic. Dividing the same numerator by a smaller number gives a bigger result:\n\n- 100 / 100 = 1.0\n- 100 / 50 = 2.0\n- 100 / 25 = 4.0\n\nThe numerator (raw Plin2) hasn't changed. The denominator (raw GAPDH) has shrunk. So the reported value grows — even though the underlying Plin2 hasn't. That inflation looks like a biological signal when it's actually a normalisation artefact."
+          "heading": "Step 3 — Identify what the question tells us",
+          "body": "- Raw Plin2 signal is identical across all lanes — so the numerator is the same in both groups.\n- GAPDH is naturally lower in the Chinese population — so the denominator is smaller for that group.\n\nThis is exactly the situation the additional information warns about: the housekeeping protein is no longer constant, so it is no longer a stable reference."
         },
         {
-          "heading": "Step 5 — Apply to the question",
-          "body": "Given:\n\n- Raw Plin2 is identical across populations (numerator fixed)\n- GAPDH is smaller in the Chinese group (smaller denominator)\n- Smaller denominator → larger reported value\n\nSo reported Plin2 will look **artificially higher** in the Chinese population — even though the actual Plin2 levels are the same. That matches option A."
+          "heading": "Step 4 — Work it out with sample numbers",
+          "body": "Give both groups a raw Plin2 signal of 100. Let GAPDH be 100 in the European group and 50 in the Chinese group (naturally lower).\n\nEuropean group:\n\n$$\\text{Reported Plin2}=\\frac{100}{100}=1.0$$\n\nChinese group:\n\n$$\\text{Reported Plin2}=\\frac{100}{50}=2.0$$\n\nSame numerator, smaller denominator, bigger reported value. The Chinese group appears to have twice as much Plin2 — but this is an artefact of the smaller GAPDH signal, not a real biological difference."
         },
         {
           "heading": "Eliminations",
-          "body": "- **B (Plin2 would appear artificially lower in the Chinese population)** — Reverses the trend explained above.\n- **C (No effect, because housekeeping proteins always control for variability)** — This is wrong - see above\n- **D (GAPDH would biologically increase Plin2 expression)** — Nowhere does it suggest GAPDH affects Plin2 levels."
+          "body": "- **B (artificially lower)** — reverses the direction: dividing the same numerator by a smaller denominator makes the reported value larger, not smaller.\n- **C (no effect)** — assumes GAPDH is constant, but the question states it is naturally lower in Chinese participants, which is exactly when normalisation breaks.\n- **D (GAPDH increases Plin2)** — mistakes a measurement artefact for biology; GAPDH only changes the denominator, not how much Plin2 the cells make."
         }
-      ]
+      ],
+      "answer": "A — Plin2 would appear artificially higher in the Chinese population compared to Europeans, even though raw Plin2 signals were the same.",
+      "answerIndex": 5
     }
   },
   "biology-sardine": {

@@ -13,94 +13,106 @@ const input: CreatePracticeQuestionSetInput = {
   title: TITLE,
   isPublished: true,
   stem: [
-    {
-      type: "text",
-      value:
-        "When a metal object is held at a fixed voltage, electric charge redistributes across its surface, producing electric forces in the surrounding space. While these effects can be calculated exactly for simple shapes, complex geometries require approximate methods.",
-    },
-    {
-      type: "text",
-      value:
-        "This study examines how electric potential $V$ and surface charge density $\\sigma$ distribute on a conducting spherical cap — a metal surface shaped like part of a hollow sphere held at a constant voltage.",
-    },
-    {
-      type: "image",
-      url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554179/question-bank/qb_img_1780554179420_31.png",
-      alt: "Diagram of a conducting spherical cap showing cross-section and aperture angle",
-      caption: "Spherical cap geometry",
-    },
-    {
-      type: "text",
-      value:
-        "The left diagram shows how a spherical cap is formed by cutting a sphere; the aperture angle $\\alpha$ determines the size of the opening and hence the shape of the cap. The right diagram illustrates the corresponding three-dimensional hollow metal cap.",
-    },
-    {
-      type: "text",
-      value:
-        "To analyse this system, the cap was treated as a conducting surface connected to a voltage source, with no free charge in the surrounding space. The surface was divided into small angular segments, and the electric potential was determined numerically by enforcing the fixed-voltage condition. By varying the aperture angle $\\alpha$, the study explored how $V$ and $\\sigma$ depend on position along the cap's surface.",
-    },
-    {
-      type: "text",
-      value: "The relevant figures below demonstrate the results of the experiment.",
-    },
-    {
-      type: "image",
-      url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554180/question-bank/qb_img_1780554180304_32.png",
-      alt: "Figure 1: Surface charge density plotted against angular position along the spherical cap",
-      caption: "Figure 1",
-    },
-    {
-      type: "text",
-      value:
-        "Figure 1: Surface charge density $\\sigma(\\theta)$ plotted against angular position (radians) along the spherical cap.",
-    },
-    {
-      type: "image",
-      url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554181/question-bank/qb_img_1780554181224_33.png",
-      alt: "Table I: Capacitance values compared against aperture angle for numerical and exact solutions",
-      caption: "Table I",
-    },
-    {
-      type: "text",
-      value:
-        "Table I: Capacitance $C$ (F) compared against aperture angle $\\alpha$ for numerical and exact analytical solutions.",
-    },
-    {
-      type: "text",
-      value:
-        "Additionally, here are relevant equations. Electric potential expansion: $V(r,\\theta) = \\sum_n A_n r^n P_n(\\cos\\theta)$, where $r$ is radial distance (m), $\\theta$ is angular position (rad), $A_n$ are constants determined by geometry and applied voltage, and $P_n$ are Legendre polynomials.",
-    },
-    {
-      type: "equation",
-      value: "\\Phi(r, \\theta) = A_0 + A_1 r P_1(\\cos\\theta) + A_2 r^2 P_2(\\cos\\theta)",
-      mode: "block",
-    },
-    {
-      type: "text",
-      value:
-        "Surface charge density: $\\sigma(\\theta) = -\\varepsilon_0 \\left.\\frac{\\partial V}{\\partial r}\\right|_{\\text{surface}}$, where $\\varepsilon_0 = 8.85 \\times 10^{-12}\\ \\text{F m}^{-1}$ is the vacuum permittivity and $\\partial V / \\partial r$ is the radial gradient of potential at the surface.",
-    },
-    {
-      type: "equation",
-      value: "\\sigma(\\theta) = -\\varepsilon_0 \\frac{\\Delta\\Phi}{\\Delta r}",
-      mode: "block",
-    },
-    {
-      type: "text",
-      value:
-        "Capacitance: $C = Q/V$, where $Q$ is the total charge on the conductor (C) and $V$ is the applied voltage (V).",
-    },
-  ],
+      {
+        "type": "text",
+        "value": "When a metal object is held at a fixed voltage, electric charge redistributes across its surface, producing electric forces in the surrounding space. While these effects can be calculated exactly for simple shapes, complex geometries require approximate methods."
+      },
+      {
+        "type": "text",
+        "value": "This study examines how electric potential and surface charge distribute on a conducting spherical cap, a metal surface shaped like part of a hollow sphere and held at a constant voltage (shown below)."
+      },
+      {
+        "type": "image",
+        "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554179/question-bank/qb_img_1780554179420_31.png",
+        "alt": "Diagram of a conducting spherical cap showing cross-section and aperture angle",
+        "caption": "Spherical cap geometry"
+      },
+      {
+        "type": "text",
+        "value": "The left diagram shows how a spherical cap is formed by cutting a sphere; the aperture angle $\\theta$ determines the size of the opening and hence the shape of the cap. The right diagram illustrates the corresponding three-dimensional hollow metal cap."
+      },
+      {
+        "type": "text",
+        "value": "To analyse this system, the cap was treated as a conducting surface connected to a voltage source, with no free charge in the surrounding space. The surface was divided into small angular segments, and the electric potential was determined numerically by enforcing the fixed-voltage condition. By varying the aperture angle, the study explored how electric potential and surface charge depend on position along the cap’s surface."
+      },
+      {
+        "type": "text",
+        "value": "The relevant figures below demonstrate the results of the experiment."
+      },
+      {
+        "type": "image",
+        "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554180/question-bank/qb_img_1780554180304_32.png",
+        "alt": "Figure 1: Surface charge density plotted against angular position along the spherical cap",
+        "caption": "Figure 1"
+      },
+      {
+        "type": "text",
+        "value": "Figure 1: Surface charge density $\\sigma(\\theta)$ plotted against angular position (radians) along the spherical cap."
+      },
+      {
+        "type": "image",
+        "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554181/question-bank/qb_img_1780554181224_33.png",
+        "alt": "Table I: Capacitance values compared against aperture angle for numerical and exact solutions",
+        "caption": "Table I"
+      },
+      {
+        "type": "text",
+        "value": "Table I: Capacitance values compared against aperture angle for numerical $C_{ap}$ and exact $C_{ex}$ solutions."
+      },
+      {
+        "type": "text",
+        "value": "Additionally, here are relevant equations that pertain to electrostatic systems involving conductors."
+      },
+      {
+        "type": "text",
+        "value": "Electric potential expansion"
+      },
+      {
+        "type": "equation",
+        "value": "\\Phi(r,\\theta) = A_0 + A_1 r P_1(\\cos\\theta) + A_2 r^2 P_2(\\cos\\theta)",
+        "mode": "block"
+      },
+      {
+        "type": "text",
+        "value": "• $\\Phi(r,\\theta)$: electric potential at a point in space (V)\n• $r$: radial distance from the centre of the spherical conductor (m)\n• $\\theta$: angular position around the conductor (rad)\n• $A_0, A_1, A_2$: constants determined by the geometry of the conductor and applied voltage (units chosen so each term is in volts)\n• $P_1(\\cos\\theta), P_2(\\cos\\theta)$: angular functions describing how the potential varies with direction; dimensionless"
+      },
+      {
+        "type": "text",
+        "value": "Surface charge density"
+      },
+      {
+        "type": "equation",
+        "value": "\\sigma(\\theta) = -\\varepsilon_0 \\frac{\\Delta\\Phi}{\\Delta r}",
+        "mode": "block"
+      },
+      {
+        "type": "text",
+        "value": "• $\\sigma(\\theta)$: surface charge density on the conductor at angular position $\\theta$ ($\\mathrm{C \\cdot m^{-2}}$)\n• $\\varepsilon_0$: vacuum permittivity, a constant relating electric fields to charge ($\\mathrm{C^2 \\cdot N^{-1} \\cdot m^{-2}}$)\n• $\\Phi$: electric potential (V)\n• $\\Delta\\Phi$: change in electric potential over a small radial distance (V)\n• $\\Delta r$: change in radial distance measured outward from the conductor surface (m)"
+      },
+      {
+        "type": "text",
+        "value": "Capacitance"
+      },
+      {
+        "type": "equation",
+        "value": "C = \\frac{Q}{V}",
+        "mode": "block"
+      },
+      {
+        "type": "text",
+        "value": "• $C$: capacitance (F)\n• $Q$: total charge on the conductor (C)\n• $V$: applied voltage (V)"
+      }
+    ],
   questions: [
     {
       id: "q1",
       prompt:
-        "A conducting spherical cap is held at a fixed electrical potential $V_0 = 10$ V. For aperture angle $\\alpha = 1.439$, Table I gives a numerical capacitance $C_{\\text{ap}} = 0.788$. Determine the total charge $Q$ on the spherical cap.",
+        "A conducting spherical cap is held at a fixed electrical potential. The cap is connected to a voltage source of $10$ V. For an aperture angle of $\\theta = 1.439$, determine the total charge on the spherical cap.",
       options: [
-        "$7.68\\ C$",
-        "$7.88\\ C$",
-        "$8.08\\ C$",
-        "$8.28\\ C$",
+        "$7.68$ C",
+        "$7.88$ C",
+        "$8.08$ C",
+        "$8.28$ C"
       ],
       correctOptionIndex: 1,
       explanation:
@@ -128,8 +140,13 @@ const input: CreatePracticeQuestionSetInput = {
     {
       id: "q2",
       prompt:
-        "At a fixed angular position $\\theta$, the electric potential is $V(r) = A_0 + A_1 r + A_2 r^2$, with $A_0 = 4$ V. Measurements show that at $r = r_1$, $V = 10$ V and at $r = 2r_1$, $V = 20$ V. What is the value of $V$ at $r = 3r_1$?",
-      options: ["$28$ V", "$30$ V", "$34$ V", "$40$ V"],
+        "At a fixed angular position $\\theta$, the electric potential is: $$\\Phi(r) = A_0 + A_1 r + A_2 r^2$$ Measurements show that: at $r = r_1$, the electric potential is $\\Phi = 10$ V; at $r = 2r_1$, the electric potential is $\\Phi = 20$ V. If the constant term $A_0 = 4$ V, what is the value of $\\Phi$ at $r = 3r_1$?",
+      options: [
+        "28 V",
+        "30 V",
+        "34 V",
+        "40 V"
+      ],
       correctOptionIndex: 2,
       explanation:
         "Let $X = A_1 r_1$ and $Y = A_2 r_1^2$. From $V(r_1) = 10$: $4 + X + Y = 10 \\Rightarrow X + Y = 6$. From $V(2r_1) = 20$: $4 + 2X + 4Y = 20 \\Rightarrow X + 2Y = 8$. Subtracting: $Y = 2$, $X = 4$. Then $V(3r_1) = 4 + 3(4) + 9(2) = 4 + 12 + 18 = 34$ V. The critical trap is forgetting the quadratic term scales as $r^2$ — it contributes 18 V at $3r_1$, more than half the answer.",
@@ -163,12 +180,12 @@ const input: CreatePracticeQuestionSetInput = {
     {
       id: "q3",
       prompt:
-        "At a fixed angular position $\\theta$, the electric potential is $V(r) = A_0 + A_1 r + A_2 r^2$ ($A_0$, $A_1$, $A_2$ constant at this angle). Measurements at a particular radial distance $r_0$ show that the linear term $A_1 r_0$ contributes twice as much as the constant term $A_0$, and the quadratic term $A_2 r_0^2$ contributes the same amount as the constant term $A_0$. If the radial distance is increased from $r_0$ to $2r_0$, what is the factor change in $V$?",
+        "At a fixed angular position $\\theta$, the electric potential is given by: $$\\Phi(r) = A_0 + A_1 r + A_2 r^2$$ (Assume $P_1(\\cos\\theta)$ and $P_2(\\cos\\theta)$ are constant at this angle.) Measurements show that at a particular radial distance $r = r_0$: the linear term contributes twice as much to the potential as the constant term, and the quadratic term contributes the same amount as the constant term. If the radial distance is increased from $r_0$ to $2r_0$, what is the factor change in the electric potential $\\Phi$?",
       options: [
-        "$V$ increases by a factor of $2.25$",
-        "$V$ increases by a factor of $3$",
-        "$V$ increases by a factor of $4$",
-        "$V$ increases by a factor of $5$",
+        "$\\Phi$ increases by a factor of 2.25",
+        "$\\Phi$ increases by a factor of 3",
+        "$\\Phi$ increases by a factor of 4",
+        "$\\Phi$ increases by a factor of 5"
       ],
       correctOptionIndex: 0,
       explanation:
@@ -202,12 +219,12 @@ const input: CreatePracticeQuestionSetInput = {
     {
       id: "q4",
       prompt:
-        "At an angular position $\\theta_1$, the magnitude of the surface charge density $|\\sigma(\\theta_1)|$ is twice that at another angular position $\\theta_2$. Assuming the radial distance over which the potential is measured is the same at both angles, which of the following statements is most consistent with the data?",
+        "At an angular position $\\theta_1$, the magnitude of the surface charge density is twice that at another angular position $\\theta_2$. Assuming the radial distance over which the potential is measured is the same at both angles, which of the following statements is most consistent with the data?",
       options: [
-        "The change in electric potential with distance at $\\theta_1$ is twice that at $\\theta_2$.",
-        "The electric potential at $\\theta_1$ is twice that at $\\theta_2$.",
-        "The angular variation of electric potential is greater at $\\theta_1$.",
-        "The electric field is zero at $\\theta_2$.",
+        "The change in electric potential with distance at $\\theta_1$ is twice that at $\\theta_2$",
+        "The electric potential at $\\theta_1$ is twice that at $\\theta_2$",
+        "The angular variation of electric potential is greater at $\\theta_1$",
+        "The electric field is zero at $\\theta_2$"
       ],
       correctOptionIndex: 0,
       explanation:
@@ -235,10 +252,10 @@ const input: CreatePracticeQuestionSetInput = {
       prompt:
         "Based on both Figure 1 and Table I, which of the following explanations is most consistent with the data?",
       options: [
-        "Increasing the aperture angle $\\alpha$ concentrates charge near the rim, increasing the total stored charge $Q$ and hence the capacitance $C$.",
-        "Increasing $\\alpha$ reduces the electric field near the rim, lowering the surface charge density $\\sigma$.",
-        "The capacitance $C$ depends only on the applied voltage $V_0$ and is independent of the charge distribution.",
-        "The increase in $C$ with $\\alpha$ occurs despite a uniform surface charge density $\\sigma$.",
+        "Increasing the aperture angle raises the surface charge density on the cap, so at fixed voltage the conductor holds more charge.",
+        "Capacitance depends only on the applied voltage; the surface charge density in Figure 1 is a separate quantity and has no bearing on C.",
+        "Because $\\sigma$ rises with $\\theta$, Table I would show capacitance decreasing with $\\theta$, since higher charge density means less voltage is needed to store the same charge.",
+        "Both figures suggest capacitance is roughly constant across the range of $\\theta$, with only small variations that reflect measurement noise in the numerical method."
       ],
       correctOptionIndex: 0,
       explanation:

@@ -15,48 +15,91 @@ const stems: CreatePracticeQuestionSetInput[] = [
     isPublished: true,
     stem: [
       {
-        type: "text",
-        value:
-          "During fasting, adipose tissue releases free fatty acids (FFAs) into the circulation. These may be oxidised for energy or stored as triglycerides (TG) within lipid droplets in the heart. The transcription factor peroxisome proliferator-activated receptor-alpha ($\\text{PPAR}\\alpha$) regulates cardiac fatty acid metabolism.",
+        "type": "text",
+        "value": "During fasting, adipose tissue releases free fatty acids (FFAs) into the circulation. These may be oxidised for energy or stored as triglycerides (TG) within lipid droplets in the heart. The transcription factor peroxisome proliferator-activated receptor-alpha ($\\text{PPAR}\\alpha$) regulates cardiac fatty acid metabolism."
       },
       {
-        type: "text",
-        value:
-          "Plin2 is a lipid droplet–associated protein that coats lipid droplets and stabilises triglyceride storage. Changes in Plin2 expression are thought to influence how the heart stores fatty acids as TG.",
+        "type": "text",
+        "value": "Plin2 is a lipid droplet–associated protein that coats lipid droplets and stabilises triglyceride storage. Changes in Plin2 expression are thought to influence how the heart stores fatty acids as TG."
       },
       {
-        type: "text",
-        value:
-          "Researchers compared Control and cardiac-specific $\\text{PPAR}\\alpha$ knockout ($\\text{cPPAR}\\alpha^{-/-}$) mice. They measured:\n• Graph A: Cardiac TG levels (fed vs fasted, Control vs $\\text{cPPAR}\\alpha^{-/-}$)\n• Graph B: Plin2 protein levels (fed vs fasted, Control vs $\\text{cPPAR}\\alpha^{-/-}$)",
+        "type": "text",
+        "value": "Researchers compared Control and cardiac-specific $\\text{PPAR}\\alpha$ knockout ($\\text{cPPAR}\\alpha^{-/-}$) mice. They measured:\n• Graph A: Cardiac TG levels (fed vs fasted, Control vs $\\text{cPPAR}\\alpha^{-/-}$)\n• Graph B: Plin2 protein levels (fed vs fasted, Control vs $\\text{cPPAR}\\alpha^{-/-}$)"
       },
       {
-        type: "image",
-        url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554169/question-bank/qb_img_1780554169455_19.png",
-        alt: "Graph A: Cardiac TG levels and Graph B: Plin2 protein levels in Control and cPPARα knockout mice",
-        caption: "Graphs A and B",
+        "type": "image",
+        "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554169/question-bank/qb_img_1780554169455_19.png",
+        "alt": "Figure 1"
       },
       {
-        type: "text",
-        value:
-          "Graph A: Cardiac triglyceride (TG) levels in fed vs. fasted Control and $\\text{cPPAR}\\alpha^{-/-}$ mice. Graph B: Plin2 protein levels in fed vs. fasted Control and $\\text{cPPAR}\\alpha^{-/-}$ mice.",
+        "type": "text",
+        "value": "Figure 1: Effect of fasting and cPPAR deficiency on serum fatty acids and cardiac triglyceride content."
       },
       {
-        type: "image",
-        url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554171/question-bank/qb_img_1780554170724_20.png",
-        alt: "Additional experimental data from Control and cPPARα knockout mice",
-        caption: "Figure 2",
+        "type": "image",
+        "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554171/question-bank/qb_img_1780554170724_20.png",
+        "alt": "Figure 2"
       },
       {
-        type: "text",
-        value:
-          "Figure 2: Additional experimental data comparing Control and cardiac-specific $\\text{PPAR}\\alpha$ knockout ($\\text{cPPAR}\\alpha^{-/-}$) mice.",
+        "type": "text",
+        "value": "Figure 2: Effect of cPPAR deficiency on lipid droplet-associated proteins Plin2 & Plin5 and lipase activity."
       },
+      {
+        "type": "text",
+        "value": "ADDITIONAL INFORMATION:",
+        "variant": "additional-info",
+        "revealAtQuestion": 5
+      },
+      {
+        "type": "text",
+        "value": "In Western blotting, proteins are measured as bands on a gel. A band’s raw signal depends on how much protein was in the cells, but also on how much total sample was loaded: load twice as much, and every band doubles.",
+        "revealAtQuestion": 5
+      },
+      {
+        "type": "text",
+        "value": "To correct for this, researchers divide the target’s raw signal by that of a housekeeping protein, assumed constant in every cell, giving the reported value. GAPDH is a common housekeeping protein.",
+        "revealAtQuestion": 5
+      },
+      {
+        "type": "text",
+        "value": "Below, two samples contain the same amount of target protein per cell, but Sample B was accidentally loaded at double the volume:",
+        "revealAtQuestion": 5
+      },
+      {
+        "type": "table",
+        "columns": [
+          "",
+          "Raw target signal",
+          "Raw housekeeping signal",
+          "Reported value"
+        ],
+        "rows": [
+          [
+            "Sample A (normal load)",
+            "100",
+            "100",
+            "1.0"
+          ],
+          [
+            "Sample B (double load)",
+            "200",
+            "200",
+            "1.0"
+          ]
+        ],
+        "revealAtQuestion": 5
+      },
+      {
+        "type": "text",
+        "value": "This only works if the housekeeping protein is truly constant across all samples. If it varies, the denominator is no longer a stable reference and the reported value can mislead.",
+        "revealAtQuestion": 5
+      }
     ],
     questions: [
       {
         id: "q1",
         prompt:
-          "Which best describes the relationship between Plin2 and TG accumulation across the two graphs?",
+        "Which best describes the relationship between Plin2 and TG accumulation across the two figures?",
         options: [
           "Fasting causes a large increase in Plin2 in Controls, which explains the parallel rise in cardiac TG; knockouts fail to increase Plin2 during fasting, so no TG accumulates.",
           "Plin2 levels rise with fasting in knockouts but not in Controls, redirecting cardiac fatty acids away from storage into oxidation.",
@@ -221,13 +264,13 @@ const stems: CreatePracticeQuestionSetInput[] = [
       {
         id: "q5",
         prompt:
-          "Suppose Plin2 protein levels were normalised to the housekeeping protein GAPDH. Imagine that in one population (e.g., Chinese participants) GAPDH expression is naturally lower than in another population (e.g., Eurasian/European participants). What implication would this have for the reported Plin2 expression values?",
+        "A research group is comparing cardiac Plin2 expression between Chinese and European participants. Their raw Western blot data shows identical Plin2 band intensities across all lanes. However, when they normalise to GAPDH, which is naturally lower in the Chinese population, the reported Plin2 values differ significantly between the two groups. Which best describes the reported Plin2 values?",
         options: [
-          "Plin2 would appear artificially higher in the Chinese population compared to Europeans, even if actual Plin2 levels were the same.",
-          "Plin2 would appear artificially lower in the Chinese population compared to Europeans, even if actual Plin2 levels were the same.",
-          "There would be no effect on the reported Plin2 values because housekeeping proteins always control for variability.",
-          "GAPDH would increase Plin2 expression in Chinese participants.",
-        ],
+        "Plin2 would appear artificially higher in the Chinese population compared to Europeans, even though raw Plin2 signals were the same.",
+        "Plin2 would appear artificially lower in the Chinese population compared to Europeans, even though raw Plin2 signals were the same.",
+        "There would be no effect on the reported Plin2 values because housekeeping proteins always control for variability.",
+        "GAPDH would increase Plin2 expression in Chinese participants."
+      ],
         correctOptionIndex: 0,
         explanation:
           "Reported Plin2 = Plin2 signal / GAPDH signal. If GAPDH is genuinely lower in the Chinese population (smaller denominator), the same absolute Plin2 protein content (same numerator) produces a LARGER ratio — so Plin2 appears artificially elevated. Option B reverses the algebra. Option C is the assumption being challenged — GAPDH only controls for variability if it is actually constant across groups. Option D nonsensically suggests GAPDH regulates Plin2 expression.",
