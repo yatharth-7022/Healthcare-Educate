@@ -36,21 +36,12 @@ const input: CreatePracticeQuestionSetInput = {
       },
       {
         "type": "text",
-        "value": "Figure 2a:"
+        "value": "Figure 2:"
       },
       {
         "type": "image",
-        "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795326381/question-bank/matchem_fig2a_combined.png",
-        "alt": "Figure 2a: Structures and rheological curves (G′ and G″ vs. temperature) for the Group 1 polymers"
-      },
-      {
-        "type": "text",
-        "value": "Figure 2b:"
-      },
-      {
-        "type": "image",
-        "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795326382/question-bank/matchem_fig2b_combined.png",
-        "alt": "Figure 2b: Structures and rheological curves (G′ and G″ vs. temperature) for the Group 2 polymers"
+        "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795328104/question-bank/matchem_fig2_ab_combined.png",
+        "alt": "Figure 2: a) Group 1 and b) Group 2 polymer structures with G′ and G″ vs. temperature"
       },
       {
         "type": "text",
