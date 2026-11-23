@@ -184,7 +184,7 @@
         },
         {
           "heading": "Step 2 — Rank the three molecules by aromatic ring content",
-          "body": "- **Molecule B** — backbone packed with multiple aromatic rings (fused ring systems). Structurally similar to Group 2 polymers. **Most rings → highest Tg.**\n- **Molecule A** — backbone contains a single aromatic ring per repeat unit. Some rigidity, but far less than Molecule 2. **Intermediate Tg.**\n- **Molecule C** — backbone is entirely aliphatic (–CH₂–CH₂–), no aromatic rings at all. **No ring-based rigidity → lowest Tg.**\n\nRanking: **Molecule B > Molecule A > Molecule C**"
+          "body": "- **Molecule B** — backbone packed with multiple aromatic rings (fused ring systems). Structurally similar to Group 2 polymers. **Most rings → highest Tg.**\n- **Molecule A** — backbone contains a single aromatic ring per repeat unit. Some rigidity, but far less than Molecule B. **Intermediate Tg.**\n- **Molecule C** — backbone is entirely aliphatic (–CH₂–CH₂–), no aromatic rings at all. **No ring-based rigidity → lowest Tg.**\n\nRanking: **Molecule B > Molecule A > Molecule C**"
         }
       ],
       "answer": "B — B > A > C\n\n"

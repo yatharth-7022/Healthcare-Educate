@@ -36,12 +36,21 @@ const input: CreatePracticeQuestionSetInput = {
       },
       {
         "type": "text",
-        "value": "Figure 2:"
+        "value": "Figure 2a:"
       },
       {
         "type": "image",
-        "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795328104/question-bank/matchem_fig2_ab_combined.png",
-        "alt": "Figure 2: a) Group 1 and b) Group 2 polymer structures with G′ and G″ vs. temperature"
+        "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795326381/question-bank/matchem_fig2a_combined.png",
+        "alt": "Figure 2a: Structures and rheological curves (G′ and G″ vs. temperature) for the Group 1 polymers"
+      },
+      {
+        "type": "text",
+        "value": "Figure 2b:"
+      },
+      {
+        "type": "image",
+        "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795326382/question-bank/matchem_fig2b_combined.png",
+        "alt": "Figure 2b: Structures and rheological curves (G′ and G″ vs. temperature) for the Group 2 polymers"
       },
       {
         "type": "text",
@@ -374,20 +383,20 @@ const input: CreatePracticeQuestionSetInput = {
         {
           type: "image",
           url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554167/question-bank/qb_img_1780554167171_16.png",
-          alt: "Molecule 1 parent chain structure",
-          caption: "Molecule 1",
+          alt: "Molecule A parent chain structure",
+          caption: "Molecule A",
         },
         {
           type: "image",
           url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554168/question-bank/qb_img_1780554167849_17.png",
-          alt: "Molecule 2 parent chain structure",
-          caption: "Molecule 2",
+          alt: "Molecule B parent chain structure",
+          caption: "Molecule B",
         },
         {
           type: "image",
           url: "https://res.cloudinary.com/dn2hfglba/image/upload/v1780554168/question-bank/qb_img_1780554168456_18.png",
-          alt: "Molecule 3 parent chain structure",
-          caption: "Molecule 3",
+          alt: "Molecule C parent chain structure",
+          caption: "Molecule C",
         },
       ],
       options: [

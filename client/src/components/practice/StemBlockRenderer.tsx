@@ -2,7 +2,7 @@ import type { StemBlock, StemImageBlock } from "@shared/models/practice";
 import { BlockMath, InlineMath } from "react-katex";
 import { MathText } from "./MathText";
 import { useState } from "react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { ImageLightbox } from "./ImageLightbox";
 import { ZoomIn } from "lucide-react";
 
 type StemBlockRendererProps = {
@@ -100,22 +100,13 @@ function ImageBlock({ block, compact }: { block: StemImageBlock; compact: boolea
         )}
       </figure>
 
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-4xl w-full p-4">
-          <img
-            src={optimizedUrl}
-            alt={block.alt || "Stem figure"}
-            className="w-full max-h-[80vh] object-contain"
-            draggable={false}
-            onContextMenu={(event) => event.preventDefault()}
-          />
-          {block.caption && (
-            <p className="text-sm text-muted-foreground text-center mt-2">
-              <MathText text={block.caption} />
-            </p>
-          )}
-        </DialogContent>
-      </Dialog>
+      <ImageLightbox
+        open={open}
+        onOpenChange={setOpen}
+        src={optimizedUrl}
+        alt={block.alt || "Stem figure"}
+        caption={block.caption}
+      />
     </>
   );
 }

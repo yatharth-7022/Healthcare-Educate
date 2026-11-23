@@ -1,5 +1,7 @@
-import { Fragment, type ReactNode } from "react";
+import { Fragment, useState, type ReactNode } from "react";
 import { BlockMath } from "react-katex";
+import { ZoomIn } from "lucide-react";
+import { ImageLightbox } from "@/components/practice/ImageLightbox";
 import type { WorkedSolution } from "@shared/models/practice";
 import { MathText } from "@/components/practice/MathText";
 
@@ -46,6 +48,33 @@ function Inline({ text }: { text: string }) {
         }
         return <MathText key={i} text={part} />;
       })}
+    </>
+  );
+}
+
+function SolutionImage({ src, alt }: { src: string; alt: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className="group relative mx-auto block cursor-zoom-in"
+        aria-label={`Enlarge image: ${alt}`}
+      >
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          draggable={false}
+          onContextMenu={(event) => event.preventDefault()}
+          className="mx-auto max-h-[28rem] max-w-full rounded-md border border-border bg-white object-contain"
+        />
+        <span className="absolute top-2 right-2 rounded bg-background/80 p-1 opacity-0 transition-opacity group-hover:opacity-100">
+          <ZoomIn className="h-4 w-4 text-muted-foreground" />
+        </span>
+      </button>
+      <ImageLightbox open={open} onOpenChange={setOpen} src={src} alt={alt} />
     </>
   );
 }
@@ -116,13 +145,7 @@ export function SolutionText({ text }: { text: string }) {
         const image = block.trim().match(IMAGE_RE);
         if (image) {
           return (
-            <img
-              key={i}
-              src={image[2]}
-              alt={image[1]}
-              loading="lazy"
-              className="mx-auto max-h-[28rem] max-w-full rounded-md border border-border bg-white object-contain"
-            />
+            <SolutionImage key={i} src={image[2]} alt={image[1]} />
           );
         }
 
