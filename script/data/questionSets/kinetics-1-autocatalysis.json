@@ -81,10 +81,15 @@
       "revealAtQuestion": 5
     },
     {
+      "type": "text",
+      "value": "Figure 3 depicts how the peak inhibitor concentration, the peak catalyst concentration and the rate of substrate consumption vary with the substrate feed rate for this oscillator.",
+      "revealAtQuestion": 5
+    },
+    {
       "type": "image",
       "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795585092/question-bank/kinetics_s1_fig3.png",
       "alt": "Figure 3: peak inhibitor concentration, peak catalyst concentration and rate of substrate consumption against substrate feed rate",
-      "caption": "Figure 3. Peak inhibitor concentration, peak catalyst concentration, and rate of substrate consumption, each plotted against substrate feed rate.",
+      "caption": "",
       "revealAtQuestion": 5
     }
   ],

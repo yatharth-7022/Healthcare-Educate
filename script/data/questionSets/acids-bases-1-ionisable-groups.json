@@ -114,14 +114,41 @@
         "Graph D"
       ],
       "correctOptionIndex": 0,
-      "contentBlocks": [
-        {
-          "type": "image",
-          "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795585086/question-bank/acidbase_s1_q2_options.png",
-          "alt": "Four titration curves, Graphs A to D, pH against equivalents of base added",
-          "caption": ""
-        }
+      "optionBlocks": [
+        [
+          {
+            "type": "image",
+            "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795600486/question-bank/acidbase_s1_q2_graph_a.png",
+            "alt": "Graph A",
+            "caption": ""
+          }
+        ],
+        [
+          {
+            "type": "image",
+            "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795600487/question-bank/acidbase_s1_q2_graph_b.png",
+            "alt": "Graph B",
+            "caption": ""
+          }
+        ],
+        [
+          {
+            "type": "image",
+            "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795600487/question-bank/acidbase_s1_q2_graph_c.png",
+            "alt": "Graph C",
+            "caption": ""
+          }
+        ],
+        [
+          {
+            "type": "image",
+            "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795600488/question-bank/acidbase_s1_q2_graph_d.png",
+            "alt": "Graph D",
+            "caption": ""
+          }
+        ]
       ],
+      "optionColumns": 2,
       "workedSolution": {
         "steps": [
           {

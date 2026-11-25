@@ -266,14 +266,41 @@
         "Option D"
       ],
       "correctOptionIndex": 0,
-      "contentBlocks": [
-        {
-          "type": "image",
-          "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795585104/question-bank/analysis_s1_q5_options.png",
-          "alt": "Four graphs of 1/a(q) against amount of quencher q, Options A to D",
-          "caption": ""
-        }
+      "optionBlocks": [
+        [
+          {
+            "type": "image",
+            "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795600489/question-bank/analysis_s1_q5_option_a.png",
+            "alt": "Option A",
+            "caption": ""
+          }
+        ],
+        [
+          {
+            "type": "image",
+            "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795600490/question-bank/analysis_s1_q5_option_b.png",
+            "alt": "Option B",
+            "caption": ""
+          }
+        ],
+        [
+          {
+            "type": "image",
+            "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795600491/question-bank/analysis_s1_q5_option_c.png",
+            "alt": "Option C",
+            "caption": ""
+          }
+        ],
+        [
+          {
+            "type": "image",
+            "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795600491/question-bank/analysis_s1_q5_option_d.png",
+            "alt": "Option D",
+            "caption": ""
+          }
+        ]
       ],
+      "optionColumns": 2,
       "workedSolution": {
         "steps": [
           {
