@@ -1,0 +1,271 @@
+{
+  "categoryId": "general-chemistry",
+  "subcategoryId": "general-chemistry-kinetics",
+  "title": "Amyloid fibrils kinetics - Stem 2",
+  "isPublished": true,
+  "stem": [
+    {
+      "type": "text",
+      "value": "Amyloid fibrils are ordered protein aggregates found in several neurodegenerative diseases. A fibril grows by adding free monomers to its ends in a process called elongation. Growth is a competition: monomers join the fibril end (the forward reaction) and also leave it (the reverse reaction). Whether a fibril grows or dissolves therefore depends on how much free monomer is present."
+    },
+    {
+      "type": "text",
+      "value": "There is a threshold monomer concentration, the critical concentration $c_{sat}$, at which the forward and reverse reactions exactly balance and the net rate is zero. Above $c_{sat}$ the fibril grows; below it, the fibril dissolves. A more stable fibril has a lower critical concentration. Adding a denaturant such as urea destabilises the fibril and raises it. The rate constant for monomer addition, $k_{on}$, is a kinetic property and is essentially unaffected by urea."
+    },
+    {
+      "type": "text",
+      "value": "Fifteen single point mutants of the protein were made, each changing the fibril’s stability and/or its growth kinetics. The elongation rate was measured against monomer concentration; the fibril’s stability was probed by dissolving it in increasing urea; and the critical concentration was measured as urea was added."
+    },
+    {
+      "type": "text",
+      "value": "The relevant figures below demonstrate the results."
+    },
+    {
+      "type": "image",
+      "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795585100/question-bank/kinetics_s2_fig1.png",
+      "alt": "Figure 1: net elongation rate against monomer concentration for WT, V74A, Y8A and I77A",
+      "caption": "Figure 1. Net elongation rate plotted against monomer concentration (at 0 M urea), for the wild type and three mutants."
+    },
+    {
+      "type": "image",
+      "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795585100/question-bank/kinetics_s2_fig2.png",
+      "alt": "Figure 2: fraction of fibril dissolved against urea concentration for seven variants",
+      "caption": "Figure 2. Fraction of fibril dissolved plotted against urea concentration, for seven variants."
+    },
+    {
+      "type": "image",
+      "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795585101/question-bank/kinetics_s2_fig3.png",
+      "alt": "Figure 3: critical concentration against urea concentration for WT, V74A, Y8A and I53A",
+      "caption": "Figure 3. Critical concentration plotted against urea concentration, for four variants."
+    },
+    {
+      "type": "text",
+      "value": "Additionally, here are relevant equations for fibril growth:"
+    },
+    {
+      "type": "equation",
+      "value": "\\text{Net elongation rate} = k_{on}\\left([M] - c_{sat}\\right)",
+      "mode": "block"
+    },
+    {
+      "type": "text",
+      "value": "• $[M]$ = free monomer concentration (µM)\n• $c_{sat}$ = critical concentration (µM)\n• $k_{on}$ = rate constant for monomer addition"
+    },
+    {
+      "type": "equation",
+      "value": "\\Delta G = \\Delta H - T\\Delta S",
+      "mode": "block"
+    },
+    {
+      "type": "text",
+      "value": "• A process is spontaneous when $\\Delta G < 0$.\n• $\\Delta H$ = enthalpy change, $\\Delta S$ = entropy change, $T$ = temperature (K)"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "A batch of Y8A fibrils is held at a monomer concentration of 13 µM in 2 M urea. Is the fibril growing or dissolving, and at what net rate?",
+      "options": [
+        "Dissolving, at about −0.5",
+        "Dissolving, at about −1",
+        "Dissolving, at about −2",
+        "Dissolving, at about −4"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Is the fibril intact? (Figure 2)",
+            "body": "Read Y8A’s denaturation curve at 2 M urea. Its midpoint (half-dissolved) is around 2.5 M, and 2 M sits below that — only about a quarter of the fibril has dissolved. So there is still fibril present, and “growing or dissolving” is a real question."
+          },
+          {
+            "heading": "Step 2 — Growing or dissolving? (Figure 3 + spontaneity)",
+            "body": "The critical concentration is the threshold: above it the fibril grows, below it the fibril dissolves. Read Y8A on Figure 3 at 2 M urea — its $c_{sat}$ is 17 µM. Note this is not the 12 µM from Figure 1, because that is the 0-urea value and urea has raised the threshold. The monomer is at 13 µM, which is below 17 µM — the solution is under-saturated. Adding monomer is therefore non-spontaneous ($\\Delta G > 0$), so the fibril dissolves."
+          },
+          {
+            "heading": "Step 3 — How fast? (reaction order + Figure 1)",
+            "body": "Figure 1 plots net rate against monomer concentration — that is a rate-versus-concentration graph, the general form you meet in first-year chemistry kinetics. That should trigger the three standard shapes:\n\n![Rate against concentration for zero, first and second order reactions](https://res.cloudinary.com/dn2hfglba/image/upload/v1795585102/question-bank/kinetics_s2_ws_rate_orders.png)\n\nA flat line is zero order ($\\text{rate} = k$); a straight rising line is first order ($\\text{rate} = k[A]$); an upward curve is second order ($\\text{rate} = k[A]^2$). Y8A’s line is straight, so the reaction is first order in monomer.\n\nFor a first-order reaction the rate constant $k_{on}$ is the **gradient** of the line. A tempting shortcut is to take $\\text{rate} \\div [M]$ at a single point — but that only works if the line passes through the origin. Our line does not: it crosses the axis at $c_{sat}$ (12 µM at 0 urea), not at zero.\n\nUsing the gradient and reading two points on Y8A’s line, (20, 4) and (6, −3):\n\n$$k_{on} = \\frac{\\text{rise}}{\\text{run}}$$\n\n$$k_{on} = \\frac{4 - (-3)}{20 - 6}$$\n\n$$k_{on} = \\frac{7}{14}$$\n\n$$k_{on} = 0.5$$\n\nNow apply equation 1 with the urea-shifted threshold from Step 2:\n\n$$\\text{net rate} = k_{on}\\left([M] - c_{sat}\\right)$$\n\n$$\\text{net rate} = 0.5 \\times (13 - 17)$$\n\n$$\\text{net rate} = 0.5 \\times (-4)$$\n\n$$\\text{net rate} = -2$$\n\nNegative, so the fibril is dissolving."
+          }
+        ],
+        "answer": "C — dissolving, at about −2",
+        "strategy": "Three things must be settled, and none is named for you: is the fibril still there at this urea (Figure 2); is it growing or dissolving (Figure 3 gives the threshold, then the spontaneity rule); and how fast (Figure 1, read through what you know about reaction order). The last step is the one that rewards real kinetics understanding."
+      }
+    },
+    {
+      "id": "q2",
+      "prompt": "A wild-type (WT) fibril is placed in 4 M urea with no free monomer present initially. It dissolves, releasing monomer, until the dissolving stops. The released monomer is then diluted to exactly half its concentration. At that instant, is the fibril growing, dissolving, or holding steady — and what is the net rate?",
+      "options": [
+        "Dissolving, at about −1.5",
+        "Dissolving, at about −2",
+        "Dissolving, at about −3.5",
+        "Dissolving, at about −7"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Where does the dissolving stop? (spontaneity + Figure 3)",
+            "body": "A fibril in pure buffer keeps dissolving, releasing monomer, until the free monomer builds up to the point where the forward and reverse reactions balance — that is, until $[M]$ reaches $c_{sat}$ (where $\\Delta G = 0$). So the “stops” concentration is WT’s critical concentration at 4 M urea. Read Figure 3: $c_{sat} = 14\\ \\mu\\text{M}$. So dissolving halts when the freed monomer reaches 14 µM."
+          },
+          {
+            "heading": "Step 2 — Dilute (uses Step 1’s output)",
+            "body": "Halve that concentration:\n\n$$[M]_{new} = \\frac{14\\ \\mu\\text{M}}{2}$$\n\n$$[M]_{new} = 7\\ \\mu\\text{M}$$\n\nThis number exists only because Step 1 produced 14 — it cannot be read off any figure directly."
+          },
+          {
+            "heading": "Step 3 — Grow or dissolve now? (Figure 3 again + spontaneity)",
+            "body": "The urea is unchanged, so the threshold is still $c_{sat} = 14\\ \\mu\\text{M}$. The new monomer level is 7 µM, which is below 14, so the solution is under-saturated: $\\Delta G > 0$ and the fibril dissolves."
+          },
+          {
+            "heading": "Step 4 — How fast? (Figure 1 gradient + equation 1)",
+            "body": "Read WT’s gradient from Figure 1 — for a first-order line the gradient is $k_{on} = 0.5$. Then:\n\n$$\\text{net rate} = k_{on}\\left([M] - c_{sat}\\right)$$\n\n$$\\text{net rate} = 0.5 \\times (7 - 14)$$\n\n$$\\text{net rate} = 0.5 \\times (-7)$$\n\n$$\\text{net rate} = -3.5$$"
+          },
+          {
+            "heading": "Two conceptual tells",
+            "body": "If you forget the dilution, $[M]$ stays at $14\\ \\mu\\text{M} = c_{sat}$ and the net rate is 0 — it would hold, not dissolve, a sign you skipped the halving. And if you used the 0-urea threshold (4 µM), you’d get $0.5 \\times (7 - 4) = +1.5$ — growing — which isn’t offered, the tell that the urea shift matters."
+          }
+        ],
+        "answer": "C — dissolving, at about −3.5",
+        "strategy": "This is a chain — each step produces the number the next step needs, so nothing can be read off a single figure. Dissolution stops at equilibrium (the critical concentration); that value is then diluted; and only the diluted value decides the direction and the rate. Figure 3 gets used twice — first to find where dissolving stops, then as the threshold for the diluted solution — and Figure 1 is needed once, for the gradient.",
+        "eliminations": [
+          {
+            "option": "A and B (−1.5, −2)",
+            "reason": "both under-read WT’s critical concentration at 4 M urea. It is 14 µM — follow the WT curve right up to 4 M on the urea axis; reading it lower (≈10–11 µM) gives these values."
+          },
+          {
+            "option": "D (−7)",
+            "reason": "found the driving gap ($7 - 14 = -7$) but forgot to multiply by the gradient (0.5)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "prompt": "At 0 M urea and 10 µM free monomer, WT fibrils grow three times faster than V74A fibrils. A student concludes that WT must have a larger rate constant ($k_{on}$) than V74A. Is this the right explanation?",
+      "options": [
+        "Correct — a faster growth rate means a larger rate constant.",
+        "Incorrect — the two have the same rate constant; WT grows faster because it is more stable (lower critical concentration), giving a larger driving concentration.",
+        "Incorrect — WT has a smaller rate constant, offset by a much lower critical concentration.",
+        "Correct at 0 M urea, but the conclusion would reverse at high urea."
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — What controls the rate? (equation 1)",
+            "body": "$$\\text{net rate} = k_{on}\\left([M] - c_{sat}\\right)$$\n\nTwo independent levers: the gradient $k_{on}$ and the threshold $c_{sat}$. Faster growth could come from a bigger gradient or from a lower threshold — the observation alone doesn’t distinguish them."
+          },
+          {
+            "heading": "Step 2 — Read the rate constants (Figure 1 gradients)",
+            "body": "The WT and V74A lines are parallel — both rise with the same slope, 0.5 — so they have the same rate constant. That is enough to reject the student’s explanation: $k_{on}$ is identical for the two."
+          },
+          {
+            "heading": "Step 3 — So why is WT faster? (Figure 1 intercepts)",
+            "body": "The lines cross the axis at different points: WT at $c_{sat} = 4\\ \\mu\\text{M}$, V74A at $c_{sat} = 8\\ \\mu\\text{M}$. At 10 µM the driving concentrations are:\n\n$$\\text{WT: } [M] - c_{sat} = 10 - 4 = 6$$\n\n$$\\text{V74A: } [M] - c_{sat} = 10 - 8 = 2$$\n\nThat is a 3 : 1 ratio, which with equal $k_{on}$ gives exactly the threefold rate difference observed. WT grows faster because it is more stable (lower $c_{sat}$, so a larger supersaturation at the same monomer level), not because it adds monomers faster."
+          }
+        ],
+        "answer": "B — same rate constant; WT is faster because it is more stable",
+        "strategy": "A growth rate is set by two things, not one. Equation 1 says $\\text{net rate} = k_{on}\\left([M] - c_{sat}\\right)$ — the gradient $k_{on}$ (kinetics) and the driving concentration $[M] - c_{sat}$, which is set by the threshold $c_{sat}$ (stability). So a rate difference on its own cannot tell you which lever differs. The claim blames $k_{on}$ — test that directly by reading the gradients off Figure 1, then check what the intercepts say about stability.",
+        "eliminations": [
+          {
+            "option": "A",
+            "reason": "conflates the rate with the rate constant. The rate has two factors, and the difference here comes from the driving concentration (stability), not the rate constant."
+          },
+          {
+            "option": "C",
+            "reason": "right that the stability differs, but wrong that the rate constants differ: the lines are parallel, so the rate constants are equal."
+          },
+          {
+            "option": "D",
+            "reason": "urea raises both thresholds but does not swap the stability ordering (WT stays the more stable), and the rate constants are equal regardless, so nothing reverses."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "prompt": "For adding a monomer to the fibril (at 300 K): WT has ΔH = −50 kJ mol⁻¹ and ΔS = −0.12 kJ mol⁻¹ K⁻¹; variant M has ΔH = −44 kJ mol⁻¹ and ΔS = −0.10 kJ mol⁻¹ K⁻¹. M and WT have the same rate constant. At 2 M urea and 6 µM monomer, how does M’s fibril behave?",
+      "options": [
+        "Growing, at about +1",
+        "Dissolving, at about −1",
+        "Dissolving, at about −2",
+        "Dissolving faster than WT would, because M is less stable"
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Compare stability with Gibbs, not ΔH alone",
+            "body": "For WT:\n\n$$\\Delta G_{WT} = \\Delta H - T\\Delta S$$\n\n$$\\Delta G_{WT} = -50 - 300 \\times (-0.12)$$\n\n$$\\Delta G_{WT} = -50 + 36$$\n\n$$\\Delta G_{WT} = -14\\ \\text{kJ mol}^{-1}$$\n\nFor M:\n\n$$\\Delta G_{M} = \\Delta H - T\\Delta S$$\n\n$$\\Delta G_{M} = -44 - 300 \\times (-0.10)$$\n\n$$\\Delta G_{M} = -44 + 30$$\n\n$$\\Delta G_{M} = -14\\ \\text{kJ mol}^{-1}$$\n\nThey are equal — M is exactly as stable as WT. M’s weaker enthalpy is offset by its smaller entropy penalty (enthalpy–entropy compensation). So M has the same critical concentration as WT."
+          },
+          {
+            "heading": "Step 2 — Read the critical concentration at 2 M urea (Figure 3)",
+            "body": "WT’s $c_{sat}$ at 2 M urea is 8 µM, so M’s is 8 µM as well."
+          },
+          {
+            "heading": "Step 3 — Direction (spontaneity)",
+            "body": "The monomer is at 6 µM, below $c_{sat} = 8\\ \\mu\\text{M}$ — under-saturated, so $\\Delta G > 0$ for addition and the fibril dissolves."
+          },
+          {
+            "heading": "Step 4 — Rate (Figure 1 + equation 1)",
+            "body": "The rate constant is WT’s gradient, $k_{on} = 0.5$ (same for M). Then:\n\n$$\\text{net rate} = k_{on}\\left([M] - c_{sat}\\right)$$\n\n$$\\text{net rate} = 0.5 \\times (6 - 8)$$\n\n$$\\text{net rate} = 0.5 \\times (-2)$$\n\n$$\\text{net rate} = -1$$"
+          }
+        ],
+        "answer": "B — dissolving, at about −1",
+        "strategy": "The tempting move is to rank stability by $\\Delta H$ — M’s is less negative, so “M is less stable.” But stability is set by $\\Delta G = \\Delta H - T\\Delta S$, both terms. So compute each $\\Delta G$ to place M relative to WT; that fixes M’s critical concentration through the figures; then spontaneity gives the direction and equation 1 the rate.",
+        "eliminations": [
+          {
+            "option": "A (growing, +1)",
+            "reason": "used the 0-urea threshold (4 µM) instead of the 2 M-urea value (8 µM): $0.5 \\times (6 - 4) = +1$. The urea shift flips the direction."
+          },
+          {
+            "option": "C (−2)",
+            "reason": "found the driving gap ($6 - 8 = -2$) but forgot to multiply by the gradient (0.5)."
+          },
+          {
+            "option": "D (M less stable)",
+            "reason": "the $\\Delta H$-only trap: M’s less negative enthalpy looks destabilising, but its smaller entropy penalty compensates exactly (same $\\Delta G$), so M is equally stable and dissolves at the same rate WT would, not faster."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "prompt": "WT fibrils must grow at a net rate of +3 (a.u.), but only 12 µM monomer is available. What is the highest urea concentration at which this rate can still be achieved?",
+      "options": [
+        "0.5 M",
+        "1 M",
+        "2 M",
+        "3 M"
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — What threshold delivers a rate of +3? (equation 1 + Figure 1)",
+            "body": "The gradient of WT’s line in Figure 1 is $k_{on} = 0.5$. Set the net rate to the target in equation 1:\n\n$$\\text{net rate} = k_{on}\\left([M] - c_{sat}\\right)$$\n\n$$3 = 0.5 \\times (12 - c_{sat})$$\n\n$$6 = 12 - c_{sat} \\quad (\\div 0.5 \\text{ both sides})$$\n\n$$c_{sat} = 12 - 6$$\n\n$$c_{sat} = 6\\ \\mu\\text{M}$$\n\nTo hit rate 3 at 12 µM, the threshold must be 6 µM or lower."
+          },
+          {
+            "heading": "Step 2 — What urea gives that threshold? (reverse-read Figure 3)",
+            "body": "Follow WT’s curve in Figure 3 to where $c_{sat} = 6\\ \\mu\\text{M}$ — that happens at about 1 M urea. Below 1 M the threshold is under 6 (rate above target, fine); above 1 M it climbs past 6 (rate below target). So the highest tolerable urea is about 1 M."
+          }
+        ],
+        "answer": "B — 1 M",
+        "strategy": "Work backwards. The target is a rate, so start from equation 1 and solve for the critical concentration that delivers it — using the gradient from Figure 1 — then read off the urea that produces that critical concentration from Figure 3. More urea raises $c_{sat}$ and lowers the rate, so the required $c_{sat}$ is a ceiling on the urea: go above it and the rate drops below target.",
+        "eliminations": [
+          {
+            "option": "A (0.5 M)",
+            "reason": "tolerable, but not the highest: at 0.5 M the threshold is below 6 µM, so the rate exceeds 3 and you can still push the urea higher."
+          },
+          {
+            "option": "C (2 M)",
+            "reason": "at 2 M urea WT’s threshold is 8 µM, giving $0.5 \\times (12 - 8) = 2$, which is below the target of 3."
+          },
+          {
+            "option": "D (3 M)",
+            "reason": "at 3 M urea the threshold is about 11 µM, giving $0.5 \\times (12 - 11) = 0.5$ — far too slow."
+          }
+        ]
+      }
+    }
+  ]
+}

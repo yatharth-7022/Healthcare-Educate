@@ -1,0 +1,284 @@
+{
+  "categoryId": "general-chemistry",
+  "subcategoryId": "general-chemistry-acids-and-bases",
+  "title": "Ionisable groups and pKₐ - Stem 1",
+  "isPublished": true,
+  "stem": [
+    {
+      "type": "text",
+      "value": "A molecule with several ionisable groups does not titrate as a single acid — each group has its own pKₐ, and titrating the molecule with base reveals them one at a time. Aspartic acid is a good example: it carries three ionisable groups — two carboxyl groups (–COOH) and one amino group (–NH₃⁺)."
+    },
+    {
+      "type": "image",
+      "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795585082/question-bank/acidbase_s1_aspartic_acid.png",
+      "alt": "Structure of aspartic acid",
+      "caption": "Aspartic acid"
+    },
+    {
+      "type": "text",
+      "value": "Starting from this fully protonated form, aspartic acid was titrated with sodium hydroxide (a strong base), and the pH was followed as OH⁻ was added. Each group loses its proton in turn, producing a step in the curve."
+    },
+    {
+      "type": "text",
+      "value": "Note the following relevant information for figure 1:\n1. Equivalence point is the point on the graph where a group has lost all of its protons. It appears as the steep vertical jump in the curve.\n2. Half-equivalence point is the point on the graph where half of the group’s protons have been removed, so [A⁻] = [HA]. By Henderson–Hasselbalch this makes pH = pKₐ. It sits at the flat midpoint of the buffer region, halfway through that step."
+    },
+    {
+      "type": "image",
+      "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795585084/question-bank/acidbase_s1_fig1.png",
+      "alt": "Figure 1: titration curve of aspartic acid, pH against equivalents of OH⁻ added",
+      "caption": "Figure 1. pH of aspartic acid plotted against the equivalents of OH⁻ added, titrated from the fully protonated form."
+    },
+    {
+      "type": "text",
+      "value": "Relevant equations:"
+    },
+    {
+      "type": "equation",
+      "value": "K_a = \\frac{[\\text{H}^{+}][\\text{A}^{-}]}{[\\text{HA}]}",
+      "mode": "block"
+    },
+    {
+      "type": "equation",
+      "value": "\\text{pH} = \\text{p}K_a + \\log\\left(\\frac{[\\text{A}^{-}]}{[\\text{HA}]}\\right)",
+      "mode": "block"
+    },
+    {
+      "type": "text",
+      "value": "ADDITIONAL INFORMATION:",
+      "variant": "additional-info",
+      "revealAtQuestion": 3
+    },
+    {
+      "type": "text",
+      "value": "In a folded protein, ionisable groups can sit close enough to interact strongly. Here, three acidic groups are clustered together. Because deprotonating an acid leaves a negative charge, and like charges repel, the groups influence one another’s protonation. Utilise the two graphs below to answer the following questions.",
+      "revealAtQuestion": 3
+    },
+    {
+      "type": "image",
+      "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795585088/question-bank/acidbase_s1_panelA.png",
+      "alt": "Panel A: average charge on each of the three groups against pH",
+      "caption": "Panel A. Average charge on each of the three groups as a function of pH.",
+      "revealAtQuestion": 3
+    },
+    {
+      "type": "image",
+      "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795585088/question-bank/acidbase_s1_panelB.png",
+      "alt": "Panel B: fraction of molecules in each overall protonation state against pH",
+      "caption": "Panel B. Fraction of molecules in each overall protonation state (0, 1, 2 or 3 groups deprotonated) as a function of pH.",
+      "revealAtQuestion": 3
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "What is the pKₐ of Aspartic acid’s amino (–NH₃⁺) group?",
+      "options": [
+        "2.0",
+        "3.9",
+        "9.9",
+        "11.5"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Which step is the amino group?",
+            "body": "The amino group (–NH₃⁺) is the weakest acid of the three — it holds its proton most tightly, while carboxyl groups are stronger acids with lower pKₐ. So it loses its proton last, on the highest-pH step: the one near the top of the curve, around 2–3 equivalents of OH⁻."
+          },
+          {
+            "heading": "Step 2 — Read pKₐ at half-equivalence (not equivalence)",
+            "body": "The amino group is the third proton to come off, so its step runs from 2 equivalents (the first two protons already removed) to 3 equivalents (all three gone). Half-equivalence is the midpoint of that step: (2 + 3) ÷ 2 = 2.5 equivalents. There the group is half-deprotonated — [A⁻] = [HA], so pH = pKₐ — and reading the pH off the curve at 2.5 equivalents gives about 9.9."
+          }
+        ],
+        "answer": "C — 9.9",
+        "strategy": "Two moves: work out which of the three steps belongs to the amino group, then read its pKₐ at the right point on that step — the half-equivalence point, not the equivalence point.",
+        "eliminations": [
+          {
+            "option": "A (2.0) and B (3.9)",
+            "reason": "these are the two carboxyl pKₐ values (the first and second steps). The amino group is a much weaker acid and titrates last, not first."
+          },
+          {
+            "option": "D (11.5)",
+            "reason": "the classic trap: read at the equivalence point (the steep jump at 3 equivalents) instead of half-equivalence. pKₐ is the flat buffer midpoint, not the cliff."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "prompt": "How would the titration curve appear if the same titration was carried out with NH₃ instead of NaOH?",
+      "options": [
+        "Graph A",
+        "Graph B",
+        "Graph C",
+        "Graph D"
+      ],
+      "correctOptionIndex": 0,
+      "contentBlocks": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795585086/question-bank/acidbase_s1_q2_options.png",
+          "alt": "Four titration curves, Graphs A to D, pH against equivalents of base added",
+          "caption": ""
+        }
+      ],
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — The acidic start is unchanged",
+            "body": "Early in the titration the pH is set by aspartic acid’s own carboxyl groups sitting as a mix of protonated (–COOH) and deprotonated (–COO⁻) forms. That balance — and therefore the pH — is a property of the acid: it is fixed by how readily the acid’s groups let go of their protons, not by which base is mopping those protons up. So the low-pH portion of the curve looks the same whether the base is strong or weak. (Eliminates C, whose whole curve, acidic start included, has dropped.)"
+          },
+          {
+            "heading": "Step 2 — The top is compressed",
+            "body": "A weak base only partially ionises, so it cannot drive the pH nearly as high as a strong base. The final rise is blunted and the curve levels off at a much lower pH — around 9 rather than ~12–13. This is the key feature. Any curve that still shoots up to ~12–13 — whether shifted sideways or made even sharper — cannot be the weak-base result. (Eliminates B and D.)"
+          },
+          {
+            "heading": "Step 3 — Match",
+            "body": "Same lower half, with a blunted top levelling off near pH 9: curve A."
+          }
+        ],
+        "answer": "A",
+        "strategy": "Swapping a strong base for a weak one changes only how high the pH can be pushed — not the amount of base needed, and not the acidic start. So decide what stays the same at the low-pH start and what changes at the high-pH top; that alone singles out the curve.",
+        "eliminations": [
+          {
+            "option": "B",
+            "reason": "as well as still reaching a high pH (already ruled out), it is drawn needing more base to reach each equivalence point. That is wrong: a weak base still neutralises the acid mole-for-mole, so the equivalence points sit at the same volumes — only the pH values change, not the volumes. Nothing shifts sideways."
+          },
+          {
+            "option": "C",
+            "reason": "whole curve dropped: this also lowers the acidic start, but that region is fixed by the acid, not by the base."
+          },
+          {
+            "option": "D",
+            "reason": "sharper, higher jumps reaching ~13: the opposite of a weak base, which gives less sharp jumps and a lower final pH."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "prompt": "Near pH 4, which group contributes most to the one-deprotonated population?",
+      "options": [
+        "Group 1",
+        "Group 2",
+        "Group 3",
+        "Cannot be determined"
+      ],
+      "correctOptionIndex": 0,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — How many groups are deprotonated? (Panel B, pH 4)",
+            "body": "At pH 4 the yellow ‘one deprotonated’ curve is the tallest, so most molecules have exactly one of the three groups deprotonated. The question is which group that mostly is."
+          },
+          {
+            "heading": "Step 2 — Which group carries it? (Panel A, pH 4)",
+            "body": "At pH 4, Group 1 sits at about −0.4 while Groups 2 and 3 are close to zero. So the single negative charge is mostly on Group 1."
+          },
+          {
+            "heading": "Step 3 — Why Group 1?",
+            "body": "Group 1 has the lowest intrinsic pKₐ — it deprotonates at the lowest pH — so at pH 4 it is the first and cheapest group to give up its proton, which is why the −1 charge sits on it."
+          }
+        ],
+        "answer": "A — Group 1",
+        "strategy": "Two separate things are needed — how many groups are deprotonated, and which one. Panel B gives the count; Panel A gives the identity. Neither panel answers it alone, so read them together at the stated pH.",
+        "eliminations": [
+          {
+            "option": "B (Group 2)",
+            "reason": "Panel A shows Group 2 barely charged at pH 4 (near zero); it is the last of the three to deprotonate."
+          },
+          {
+            "option": "C (Group 3)",
+            "reason": "Group 3 carries a small share of the −1 population, but far less than Group 1 (Panel A: about −0.1 versus −0.4)."
+          },
+          {
+            "option": "D",
+            "reason": "it can be determined: Panel B fixes the count at one, and Panel A shows that one is Group 1. Together the two panels pin it down."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "prompt": "In Panel A, between about pH 5 and pH 7.5 the charge on Group 1 changes. What is happening to Group 1, and why?",
+      "options": [
+        "It is gaining a proton: over this range a second group deprotonates — Panel B shifts from one- to two-deprotonated — and that new negative charge repels Group 1’s, pushing a proton back onto it.",
+        "It is losing a proton: as the pH rises it keeps ionising, which is what changes its charge.",
+        "It is gaining a proton: at higher pH there are more free protons available to re-protonate it.",
+        "It is losing a proton: Group 1 is the weakest acid, so it is the last to lose its proton."
+      ],
+      "correctOptionIndex": 0,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Which way is Group 1 going? (read the sign)",
+            "body": "For an acidic group, charge 0 means fully protonated and −1 means fully deprotonated. Group 1’s charge is moving from about −0.65 toward −0.45 — closer to zero — so the group is becoming more protonated: it is gaining a proton back. Losing a proton would drive the charge the other way, more negative. So this is re-protonation, which rules out the two ‘deprotonating’ options straight away."
+          },
+          {
+            "heading": "Step 2 — Why is it re-protonating? (both panels + repulsion)",
+            "body": "Panel B shows that over pH 5–7.5 the population shifts from one-deprotonated to two-deprotonated — a second group is losing its proton and becoming negative. A second negative charge right next to Group 1 is strongly unfavourable (the groups are clustered), so the system relieves the repulsion by putting a proton back on Group 1 to recreate some stability. That is exactly the re-protonation seen in Panel A."
+          }
+        ],
+        "answer": "A",
+        "strategy": "The options disagree on two things: whether Group 1 is gaining or losing a proton, and why. Settle the direction first from the sign of the charge, then — only among the options that got the direction right — use both panels to find the correct reason.",
+        "eliminations": [
+          {
+            "option": "B",
+            "reason": "wrong direction: losing a proton makes an acid more negative, but Group 1’s charge is moving toward zero. It is gaining a proton, not losing one."
+          },
+          {
+            "option": "C",
+            "reason": "right direction (re-protonating) but wrong reason: higher pH means a lower concentration of protons, not more, so ‘more protons available’ cannot be it."
+          },
+          {
+            "option": "D",
+            "reason": "wrong direction again (deprotonating), and it does not explain a charge that moves toward zero."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "prompt": "What is the average total charge on the molecule at pH 6?",
+      "options": [
+        "about −0.7",
+        "about −1.0",
+        "about −1.3",
+        "about −2.0"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Route 1: add up the parts (Panel A, pH 6)",
+            "body": "The molecule’s total charge is just the sum of the charges on its groups. At pH 6 the three groups read about −0.6, −0.34 and −0.39, so the total is −0.6 + (−0.34) + (−0.39) ≈ −1.3."
+          },
+          {
+            "heading": "Step 2 — Route 2: average over the population (Panel B, pH 6)",
+            "body": "At pH 6 about 0.67 of the molecules are in the −1 state and about 0.33 are in the −2 state (the 0 and −3 states are negligible here). The average charge is therefore (0.67)(−1) + (0.33)(−2) ≈ −0.67 + (−0.66) ≈ −1.3."
+          },
+          {
+            "heading": "Step 3 — The two routes agree",
+            "body": "Both give about −1.3, as they must — the sum of the average group charges is the same thing as the population-weighted average of the total charge. Note the answer is not a whole number: it is an average over many molecules, not the charge of any single one."
+          }
+        ],
+        "answer": "C — about −1.3",
+        "strategy": "You are not handed a formula for the molecule’s overall charge — but you can build it from what charge means, and there are two independent routes that must give the same answer. Either add up the charges on the individual groups (Panel A), or treat the molecule as a mixture of charge states and take the population-weighted average (Panel B). Doing both is its own check.",
+        "eliminations": [
+          {
+            "option": "A (−0.7)",
+            "reason": "counted only the −1 contribution (0.67 × −1) and forgot to add the −2 contribution; or read only one group’s charge from Panel A."
+          },
+          {
+            "option": "B (−1.0)",
+            "reason": "took the most common state (−1) as the answer. That is the most frequent charge, not the average — a third of the molecules carry −2."
+          },
+          {
+            "option": "D (−2.0)",
+            "reason": "used the charge of the two-deprotonated state as if every molecule were in it; only about a third are."
+          }
+        ]
+      }
+    }
+  ]
+}

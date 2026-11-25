@@ -1,0 +1,300 @@
+{
+  "categoryId": "general-chemistry",
+  "subcategoryId": "general-chemistry-methods-of-analysis-and-detection",
+  "title": "Time-resolved fluorescence - Stem 1",
+  "isPublished": true,
+  "stem": [
+    {
+      "type": "text",
+      "value": "A research team develops a fluorescence-based method to analyse mixtures containing fluorescent compounds A and B. Following a brief excitation pulse, the fluorescence from each compound decreases at equal time intervals. Experiments with pure compounds establish the following behaviour."
+    },
+    {
+      "type": "table",
+      "columns": [
+        "Compound",
+        "Fluorescence retained after each interval"
+      ],
+      "rows": [
+        [
+          "A",
+          "½ of the preceding intensity"
+        ],
+        [
+          "B",
+          "¼ of the preceding intensity"
+        ]
+      ]
+    },
+    {
+      "type": "text",
+      "value": "The detector also records a constant background, which is added to the fluorescence from both compounds. The total signal after $t$ intervals is"
+    },
+    {
+      "type": "equation",
+      "value": "S_t = a\\left(\\frac{1}{2}\\right)^{t} + b\\left(\\frac{1}{4}\\right)^{t} + c",
+      "mode": "block"
+    },
+    {
+      "type": "text",
+      "value": "Here $a$ and $b$ are the initial fluorescence contributions from A and B, respectively, $c$ is the constant detector background, and $t = 0, 1, 2, \\ldots$ denotes elapsed measurement intervals. Signals are expressed in arbitrary fluorescence units. At $t = 0$, neither compound has decayed."
+    },
+    {
+      "type": "text",
+      "value": "ADDITIONAL INFORMATION:",
+      "variant": "additional-info",
+      "revealAtQuestion": 4
+    },
+    {
+      "type": "text",
+      "value": "A quencher is added to the original mixture containing compounds A and B. The quencher changes the initial fluorescence contribution of A according to:",
+      "revealAtQuestion": 4
+    },
+    {
+      "type": "equation",
+      "value": "a(q) = \\frac{a_0}{1 + q}",
+      "mode": "block",
+      "revealAtQuestion": 4
+    },
+    {
+      "type": "text",
+      "value": "Here, $a_0$ is the contribution of A before quenching, and $q \\geq 0$ measures the amount of quencher. The quencher does not affect B or the decay factors of either compound.",
+      "revealAtQuestion": 4
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "A mixture produces the following detector signals. A separate blank measurement establishes that $c = 4$ units.",
+      "options": [
+        "40%",
+        "50%",
+        "60%",
+        "Approximately 55%"
+      ],
+      "correctOptionIndex": 2,
+      "contentBlocks": [
+        {
+          "type": "table",
+          "columns": [
+            "Time, t",
+            "Measured signal, Sₜ"
+          ],
+          "rows": [
+            [
+              "0",
+              "44"
+            ],
+            [
+              "1",
+              "20"
+            ],
+            [
+              "2",
+              "11"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "value": "What percentage of the initial fluorescence excluding background was contributed by compound A?"
+        }
+      ],
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Begin with the general relationship.",
+            "body": "We need the initial fluorescence from A as a fraction of the combined initial fluorescence from A and B, so the quantity required is $\\frac{a}{a+b} \\times 100\\%$. The stimulus gives the model that relates these unknowns to each recorded signal:\n\n$$S_t = a\\left(\\frac{1}{2}\\right)^{t} + b\\left(\\frac{1}{4}\\right)^{t} + c$$"
+          },
+          {
+            "heading": "Step 2 — Substitute the time-zero reading.",
+            "body": "At $t = 0$, both decay factors are $1$, so the reading measures both initial contributions plus background.\n\n$$44 = a\\left(\\frac{1}{2}\\right)^{0} + b\\left(\\frac{1}{4}\\right)^{0} + 4$$\n\n$$44 = a + b + 4$$\n\n$$a + b = 40 \\quad (1)$$"
+          },
+          {
+            "heading": "Step 3 — Substitute the reading after one interval.",
+            "body": "A retains half and B retains one-quarter of their initial intensities, providing a second relationship.\n\n$$20 = \\frac{a}{2} + \\frac{b}{4} + 4$$\n\n$$16 = \\frac{a}{2} + \\frac{b}{4}$$\n\n$$64 = 2a + b \\quad (2)$$"
+          },
+          {
+            "heading": "Step 4 — Solve the two equations.",
+            "body": "Subtract Equation (1) from Equation (2) to remove $b$:\n\n$$(2a + b) - (a + b) = 64 - 40$$\n\n$$a = 24$$\n\nThen use Equation (1):\n\n$$24 + b = 40$$\n\n$$b = 16$$"
+          },
+          {
+            "heading": "Step 5 — Answer the specified percentage.",
+            "body": "The background is excluded from the denominator because it is not fluorescence from A or B.\n\n$$\\frac{a}{a+b} \\times 100\\% = \\frac{24}{40} \\times 100\\% = 60\\%$$\n\nThe optional $t = 2$ check is $\\frac{24}{4} + \\frac{16}{16} + 4 = 11$, matching the measured signal. A gives B’s percentage; B assumes equal contributions; D incorrectly includes background in the denominator, giving $\\frac{24}{44} \\times 100\\% \\approx 55\\%$."
+          }
+        ],
+        "answer": "C — 60%"
+      }
+    },
+    {
+      "id": "q2",
+      "prompt": "A second mixture contains the same fluorescent compounds, but the background has not been measured separately.",
+      "options": [
+        "4 units",
+        "8 units",
+        "10 units",
+        "12 units"
+      ],
+      "correctOptionIndex": 2,
+      "contentBlocks": [
+        {
+          "type": "table",
+          "columns": [
+            "Time, t",
+            "Measured signal, Sₜ"
+          ],
+          "rows": [
+            [
+              "0",
+              "66"
+            ],
+            [
+              "1",
+              "30"
+            ],
+            [
+              "2",
+              "18"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "value": "What is the constant detector background signal in this experiment?"
+        }
+      ],
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Write an equation for each observation.",
+            "body": "Unlike Q1, $c$ is unknown. We have three unknowns ($a$, $b$ and $c$) and three recorded signals. Start from the same model and substitute each time separately:\n\n$$S_t = a\\left(\\frac{1}{2}\\right)^{t} + b\\left(\\frac{1}{4}\\right)^{t} + c$$\n\n$$66 = a + b + c \\quad (1)$$\n\n$$30 = \\frac{a}{2} + \\frac{b}{4} + c \\quad (2)$$\n\n$$18 = \\frac{a}{4} + \\frac{b}{16} + c \\quad (3)$$"
+          },
+          {
+            "heading": "Step 2 — Subtract Equation (2) from Equation (1).",
+            "body": "The background is constant, so it cancels when we subtract successive observations.\n\n$$66 - 30 = (a + b + c) - \\left(\\frac{a}{2} + \\frac{b}{4} + c\\right)$$\n\n$$36 = a - \\frac{a}{2} + b - \\frac{b}{4} + c - c$$\n\n$$36 = \\frac{a}{2} + \\frac{3b}{4} \\quad (4)$$"
+          },
+          {
+            "heading": "Step 3 — Subtract Equation (3) from Equation (2).",
+            "body": "We need a second equation involving only $a$ and $b$, and another subtraction removes $c$ again.\n\n$$30 - 18 = \\left(\\frac{a}{2} + \\frac{b}{4} + c\\right) - \\left(\\frac{a}{4} + \\frac{b}{16} + c\\right)$$\n\n$$12 = \\frac{a}{2} - \\frac{a}{4} + \\frac{b}{4} - \\frac{b}{16} + c - c$$\n\n$$12 = \\frac{a}{4} + \\frac{3b}{16} \\quad (5)$$"
+          },
+          {
+            "heading": "Step 4 — Eliminate $b$.",
+            "body": "Multiply Equation (4) by $4$ and Equation (5) by $16$ to obtain matching coefficients for $b$.\n\n$$144 = 2a + 3b$$\n\n$$192 = 4a + 3b$$\n\nSubtract the first from the second:\n\n$$192 - 144 = (4a + 3b) - (2a + 3b)$$\n\n$$48 = 2a$$\n\n$$a = 24$$\n\nSubstitute into $144 = 2a + 3b$:\n\n$$144 = 48 + 3b$$\n\n$$96 = 3b$$\n\n$$b = 32$$"
+          },
+          {
+            "heading": "Step 5 — Recover the unknown background.",
+            "body": "Return to Equation (1), where $c$ is now the only unknown.\n\n$$66 = 24 + 32 + c$$\n\n$$c = 10\\ \\text{units}$$\n\nThe reading at $t = 2$ is **not** just background: both compounds continue to fluoresce after two intervals."
+          }
+        ],
+        "answer": "C — 10 units"
+      }
+    },
+    {
+      "id": "q3",
+      "prompt": "A researcher obtains the following background-corrected fluorescence trace for Sample C. The detector readings are taken at the same intervals and under the same conditions described in the stimulus.",
+      "options": [
+        "The measurements are consistent with equal initial contributions from A and B.",
+        "The measurements cannot all be explained by the stated two-compound model.",
+        "The measurements are consistent with fluorescence from compound B alone.",
+        "The measurements establish that a third fluorescent compound must be present."
+      ],
+      "correctOptionIndex": 1,
+      "contentBlocks": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795585103/question-bank/analysis_s1_q3_trace.png",
+          "alt": "Sample C background-corrected fluorescence trace: 32 units at t = 0, 12 at t = 1, 4 at t = 2",
+          "caption": ""
+        },
+        {
+          "type": "text",
+          "value": "Which conclusion is best supported by the results?"
+        }
+      ],
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Decide where to start.",
+            "body": "The question asks which conclusion the data support. The stimulus provides a model for the time-dependent signal, so we can use the graph to check whether that model reproduces all the observations. We first need the initial contributions of A and B.\n\nBecause the graph already excludes the constant background, the fluorescence model becomes:\n\n$$F_t = a\\left(\\frac{1}{2}\\right)^{t} + b\\left(\\frac{1}{4}\\right)^{t}$$"
+          },
+          {
+            "heading": "Step 2 — Use the first two readings to determine the unknown initial contributions.",
+            "body": "From the graph, at time 0 the fluorescence is 32 units. Substituting t = 0:\n\n$$32 = a + b$$\n\nAt time 1 the fluorescence is 12 units. Since A retains one-half and B retains one-quarter of its initial fluorescence:\n\n$$12 = \\frac{a}{2} + \\frac{b}{4}$$\n\nMultiply both sides by 4:\n\n$$48 = 2a + b$$\n\nSubtract a + b = 32 from this equation:\n\n$$48 - 32 = (2a + b) - (a + b)$$\n\n$$a = 16$$\n\nReturn to a + b = 32:\n\n$$b = 32 - 16 = 16$$"
+          },
+          {
+            "heading": "Step 3 — Test the remaining reading.",
+            "body": "The first two observations can be explained by equal initial contributions, but that does not establish whether the complete trace follows the model. At time 2, A retains one-quarter of its initial fluorescence and B retains one-sixteenth.\n\n$$F_2 = \\frac{a}{4} + \\frac{b}{16}$$\n\n$$F_2 = \\frac{16}{4} + \\frac{16}{16}$$\n\n$$F_2 = 4 + 1 = 5$$\n\nThe graph instead shows 4 units at time 2. Since the model predicts 5 units, it cannot reproduce all three measurements with the same initial contributions."
+          },
+          {
+            "heading": "Step 4 — Assess the options.",
+            "body": "- A is incorrect: equal initial contributions fit the first two readings, but predict 5 units rather than 4 at time 2.\n- B is correct: no pair of initial contributions can reproduce all three observations under the stated model.\n- C is incorrect: if only B contributed, the signal after one interval would be one-quarter of its starting value (8 units), not the observed 12 units.\n- D is incorrect: a third compound could be one explanation, but the inconsistency alone does not prove that one is present. A measurement or model assumption could also be wrong."
+          }
+        ],
+        "answer": "B"
+      }
+    },
+    {
+      "id": "q4",
+      "prompt": "What value of $q$ makes compounds A and B contribute equal fluorescence after exactly one measurement interval?",
+      "options": [
+        "2",
+        "4",
+        "1",
+        "3"
+      ],
+      "correctOptionIndex": 0,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Use the original contributions.",
+            "body": "From Question 1, the original fluorescence contributions were 24 units for A and 16 units for B."
+          },
+          {
+            "heading": "Step 2 — Use the measurement interval.",
+            "body": "After one interval, A retains one-half of its fluorescence and B retains one-quarter. The required equality is:\n\n$$\\frac{a(q)}{2} = \\frac{b}{4}$$\n\nSubstitute the quenching equation and the original contributions:\n\n$$\\frac{24}{2(1 + q)} = \\frac{16}{4}$$\n\n$$\\frac{12}{1 + q} = 4$$\n\n$$12 = 4(1 + q)$$\n\n$$12 = 4 + 4q$$\n\n$$q = 2$$\n\nSetting the initial contributions equal would be incorrect because the question asks about the intensities after one interval of decay."
+          }
+        ],
+        "answer": "A — 2"
+      }
+    },
+    {
+      "id": "q5",
+      "prompt": "Which graph best represents the relationship between the reciprocal of A’s initial fluorescence contribution, $1/a(q)$, and the amount of quencher, $q$?",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correctOptionIndex": 0,
+      "contentBlocks": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795585104/question-bank/analysis_s1_q5_options.png",
+          "alt": "Four graphs of 1/a(q) against amount of quencher q, Options A to D",
+          "caption": ""
+        }
+      ],
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Start with the quenching relationship.",
+            "body": "The question asks about $1/a(q)$, not $a(q)$ itself, so rewrite the given equation to show the reciprocal.\n\n$$a(q) = \\frac{a_0}{1 + q}$$"
+          },
+          {
+            "heading": "Step 2 — Take the reciprocal of both sides:",
+            "body": "$$\\frac{1}{a(q)} = \\frac{1 + q}{a_0}$$\n\nSeparate the terms in the numerator:\n\n$$\\frac{1}{a(q)} = \\frac{1}{a_0} + \\frac{q}{a_0}$$"
+          },
+          {
+            "heading": "Step 3 — Compare the rearranged equation with the general equation of a straight line.",
+            "body": "$$y = mx + c$$\n\nThe rearranged quenching equation has exactly this form:\n\n$$\\frac{1}{a(q)} = \\left(\\frac{1}{a_0}\\right)q + \\frac{1}{a_0}$$\n\nHere the vertical axis is $1/a(q)$, the horizontal axis is $q$, the gradient is $1/a_0$, and the vertical intercept is also $1/a_0$. Because $a_0$ is a positive constant, the graph is a rising straight line."
+          },
+          {
+            "heading": "Step 4 — Determine where the graph begins.",
+            "body": "When $q = 0$, the original intensity is unchanged:\n\n$$\\frac{1}{a(0)} = \\frac{1}{a_0}$$\n\nAs $q$ increases, the denominator $(1 + q)$ in the quenching equation becomes larger, while the numerator stays fixed at the original fluorescence of A. Dividing that fixed amount by a larger denominator gives a smaller fluorescence contribution from A. Taking 1 divided by this smaller contribution then produces a larger number. Therefore, the reciprocal of A’s fluorescence increases as $q$ increases, so the graph rises.\n\nOption A is correct: an increasing straight line with a positive vertical intercept. B is incorrect because it starts at zero. C decreases rather than increases. D curves rather than increasing by the same amount for each equal increase in $q$."
+          }
+        ],
+        "answer": "A"
+      }
+    }
+  ]
+}

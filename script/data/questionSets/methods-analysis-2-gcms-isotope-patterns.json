@@ -1,0 +1,255 @@
+{
+  "categoryId": "general-chemistry",
+  "subcategoryId": "general-chemistry-methods-of-analysis-and-detection",
+  "title": "GC–MS isotope-pattern identification - Stem 2",
+  "isPublished": true,
+  "stem": [
+    {
+      "type": "text",
+      "value": "Mass spectrometry identifies chemical compounds by measuring the mass-to-charge ratio ($m/z$) of ions. Some elements exist as isotopes, which have different masses. The presence of these isotopes can produce multiple molecular-ion peaks."
+    },
+    {
+      "type": "text",
+      "value": "Chlorine and bromine have the following approximate natural isotope abundances:"
+    },
+    {
+      "type": "table",
+      "columns": [
+        "Element",
+        "Lighter isotope",
+        "Heavier isotope"
+      ],
+      "rows": [
+        [
+          "Chlorine",
+          "³⁵Cl (75%)",
+          "³⁷Cl (25%)"
+        ],
+        [
+          "Bromine",
+          "⁷⁹Br (50%)",
+          "⁸¹Br (50%)"
+        ]
+      ]
+    },
+    {
+      "type": "text",
+      "value": "A laboratory investigates two compounds. Compound X contains two chlorine atoms. Compound Y contains one chlorine atom and one bromine atom. Their singly charged molecular ions have the same lowest nominal $m/z$ value of 200."
+    },
+    {
+      "type": "text",
+      "value": "The researcher measures one reference portion each of pure X and pure Y, and an unknown Sample U containing only X and Y. Figure 1 shows the resulting molecular-ion isotope patterns. The detector intensity at each $m/z$ is proportional to the amount of the compound present. Contributions from the two compounds add together."
+    },
+    {
+      "type": "text",
+      "value": "The instrument can also detect a diagnostic fragment ion at $m/z = 150$. Reference experiments establish that Y produces this fragment but X does not. The fragment intensity increases in direct proportion to the amount of Y. Figure 2 presents these measurements."
+    },
+    {
+      "type": "image",
+      "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795585104/question-bank/analysis_s2_fig1_fig2.png",
+      "alt": "Figure 1: molecular-ion isotope pattern for Reference X, Reference Y and Unknown U at m/z 200, 202 and 204. Figure 2: diagnostic fragment signal at m/z 150",
+      "caption": "Figure 1. Molecular-ion isotope pattern. Figure 2. Diagnostic fragment signal at m/z = 150."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Approximately what percentage of the total detector intensity at $m/z = 202$ in Sample U is contributed by compound Y?",
+      "options": [
+        "43%",
+        "50%",
+        "57%",
+        "67%"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Identify the requested quantity.",
+            "body": "We need the part of Sample U’s intensity at $m/z = 202$ that comes from Y. Figure 1 shows that the total signal there is **14 units**, but both X and Y contribute."
+          },
+          {
+            "heading": "Step 2 — Use the diagnostic fragment to determine the amount of Y.",
+            "body": "Figure 2 establishes that the fragment at $m/z = 150$ comes only from Y. One reference portion of Y produces 4 units there; Sample U produces 8 units. Because the fragment signal is directly proportional to the amount of Y:\n\n$$\\frac{8}{4} = 2$$\n\nThus, Sample U contains twice the reference amount of Y."
+          },
+          {
+            "heading": "Step 3 — Find Y’s intensity at $m/z = 202$.",
+            "body": "Figure 1 gives 4 units at $m/z = 202$ for one reference portion of Y. Twice that amount contributes\n\n$$2 \\times 4 = 8\\ \\text{units}$$"
+          },
+          {
+            "heading": "Step 4 — Calculate the percentage.",
+            "body": "Y produces 8 of the 14 total measured units at $m/z = 202$:\n\n$$\\frac{8}{14} \\times 100 = 57.1\\% \\approx 57\\%$$\n\nTherefore, **C is correct**. Note that the question asks for the share of the signal at one particular peak, not the fraction of reference portions. As a check, X contributes the other $14 - 8 = 6$ units, matching one reference portion of X."
+          }
+        ],
+        "answer": "C — 57%"
+      }
+    },
+    {
+      "id": "q2",
+      "prompt": "A third compound, Z, contains two bromine atoms.",
+      "options": [
+        "$1:1:1$",
+        "$1:2:1$",
+        "$3:4:1$",
+        "$9:6:1$"
+      ],
+      "correctOptionIndex": 1,
+      "contentBlocks": [
+        {
+          "type": "text",
+          "value": "Which ratio best represents the relative intensities of the three molecular-ion peaks of compound Z, arranged from lowest to highest $m/z$?"
+        }
+      ],
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Identify the possible isotope combinations.",
+            "body": "Z contains two bromine atoms, each of which can be ${}^{79}\\text{Br}$ or ${}^{81}\\text{Br}$. The four combinations are:\n\n| First bromine | Second bromine | Combined isotope mass |\n|---|---|---|\n| ${}^{79}\\text{Br}$ | ${}^{79}\\text{Br}$ | 158 |\n| ${}^{79}\\text{Br}$ | ${}^{81}\\text{Br}$ | 160 |\n| ${}^{81}\\text{Br}$ | ${}^{79}\\text{Br}$ | 160 |\n| ${}^{81}\\text{Br}$ | ${}^{81}\\text{Br}$ | 162 |\n\nThe other atoms in Z contribute the same mass in each case, so only the relative peak positions matter."
+          },
+          {
+            "heading": "Step 2 — Explain why four combinations give three peaks.",
+            "body": "The two mixed-isotope combinations both have a combined isotope mass of 160. They therefore contribute to the **same** molecular-ion peak."
+          },
+          {
+            "heading": "Step 3 — Count the relative contributions.",
+            "body": "Since both isotopes are equally abundant, each combination has probability\n\n$$\\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}$$\n\nThe lowest-mass peak represents one combination; the middle peak represents two; the highest-mass peak represents one. Thus the peak-intensity ratio is\n\n$$1:2:1$$\n\n**Why the other options are wrong:** A overlooks the two distinct combinations contributing to the middle peak. C is the chlorine–bromine pattern of Y, and D is the two-chlorine pattern of X."
+          }
+        ],
+        "answer": "B — $1:2:1$"
+      }
+    },
+    {
+      "id": "q3",
+      "prompt": "A researcher prepares five samples containing increasing concentrations of pure Y. All have the same chemical composition. Normally, detector intensity at each molecular-ion $m/z$ rises in direct proportion to concentration. A detector has a maximum recordable intensity for an individual signal; beyond that point the measured reading remains constant even if the actual signal increases.",
+      "options": [
+        "40%",
+        "50%",
+        "60%",
+        "80%"
+      ],
+      "correctOptionIndex": 2,
+      "contentBlocks": [
+        {
+          "type": "image",
+          "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795585105/question-bank/analysis_s2_fig3.png",
+          "alt": "Detector response measured at three molecular-ion mass-to-charge ratios",
+          "caption": "Figure 3. Measured detector intensity at three molecular-ion positions across increasing concentrations of Y."
+        },
+        {
+          "type": "text",
+          "value": "At a relative concentration of 5, approximately what percentage of the expected detector intensity at $m/z = 202$ is actually recorded?"
+        }
+      ],
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Identify the comparison.",
+            "body": "The question asks for recorded intensity as a percentage of expected intensity. We therefore need both quantities."
+          },
+          {
+            "heading": "Step 2 — Read the recorded value.",
+            "body": "The $m/z = 202$ series in Figure 3 reads **12 units** at relative concentration 5."
+          },
+          {
+            "heading": "Step 3 — Work out the expected value.",
+            "body": "At concentration 1, its intensity is 4 units. Because the stem says signal normally increases in direct proportion to concentration, a fivefold concentration gives a fivefold expected intensity:\n\n$$5 \\times 4 = 20\\ \\text{units}$$"
+          },
+          {
+            "heading": "Step 4 — Calculate the percentage.",
+            "body": "The detector recorded 12 units out of 20 expected units:\n\n$$\\frac{12}{20} \\times 100 = 60\\%$$\n\nThe $m/z = 202$ signal has stopped increasing because of the detector limit, not because the concentration of Y has fallen."
+          }
+        ],
+        "answer": "C — 60%"
+      }
+    },
+    {
+      "id": "q4",
+      "prompt": "The original mass spectrometer measures singly charged molecular ions. Mass-to-charge ratio is defined by",
+      "options": [
+        "$100, 102, 104$",
+        "$200, 202, 204$",
+        "$400, 404, 408$",
+        "$100, 101, 102$"
+      ],
+      "correctOptionIndex": 3,
+      "contentBlocks": [
+        {
+          "type": "equation",
+          "value": "\\frac{m}{z} = \\frac{\\text{mass of ion}}{\\text{charge number}}",
+          "mode": "block"
+        },
+        {
+          "type": "text",
+          "value": "The instrument is adjusted to detect ions carrying two positive charges instead of one. Assume the mass of each ion is unchanged for this comparison."
+        },
+        {
+          "type": "text",
+          "value": "Which set of $m/z$ values would be observed for the three molecular-ion peaks of X after the charge changes?"
+        }
+      ],
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Read the original peaks.",
+            "body": "Figure 1 shows X peaks at $m/z = 200, 202, 204$, when ions have one positive charge."
+          },
+          {
+            "heading": "Step 2 — Identify what changes.",
+            "body": "The mass stays the same, but the charge number doubles from 1 to 2. Since $m/z$ is **mass divided by charge number**, each original position is divided by two."
+          },
+          {
+            "heading": "Step 3 — Calculate each position separately.",
+            "body": "$$\\frac{200}{2} = 100$$\n\n$$\\frac{202}{2} = 101$$\n\n$$\\frac{204}{2} = 102$$\n\nThe new peaks are therefore $100, 101, 102$, with spacing of **1 unit** rather than 2. Option A incorrectly preserves the original spacing."
+          }
+        ],
+        "answer": "D — $100, 101, 102$"
+      }
+    },
+    {
+      "id": "q5",
+      "prompt": "A treatment replaces every chlorine atom in compounds X and Y with the heavier isotope ³⁷Cl. Afterwards, every chlorine atom is ³⁷Cl, while bromine isotope abundances are unchanged. The treatment does not change the numbers of molecules, ion charge or total molecular-ion detector intensity of either compound.",
+      "options": [
+        "$0:1:1$",
+        "$0:1:3$",
+        "$0:3:1$",
+        "$1:2:1$"
+      ],
+      "correctOptionIndex": 1,
+      "contentBlocks": [
+        {
+          "type": "text",
+          "value": "The researcher applies the treatment to the original Sample U from Question 1."
+        },
+        {
+          "type": "text",
+          "value": "Which ratio best represents the resulting detector intensities of U at $m/z = 200, 202, 204$, respectively?"
+        }
+      ],
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Recover the sample composition.",
+            "body": "From Q1, Sample U contains the equivalent of one reference portion of X and two of Y. Figure 1 gives their original intensities:\n\n| Compound (one reference portion) | $m/z = 200$ | $m/z = 202$ | $m/z = 204$ |\n|---|---|---|---|\n| X | 9 | 6 | 1 |\n| Y | 3 | 4 | 1 |"
+          },
+          {
+            "heading": "Step 2 — Track what happens to X.",
+            "body": "X contains two chlorine atoms. After treatment both are ${}^{37}\\text{Cl}$, so all molecular ions of X have its heaviest original isotope combination and appear at $m/z = 204$. The total intensity of one reference portion was\n\n$$9 + 6 + 1 = 16$$\n\nAll **16 units** now contribute at $m/z = 204$."
+          },
+          {
+            "heading": "Step 3 — Track what happens to Y.",
+            "body": "Y contains one chlorine atom and one bromine atom. Chlorine is now always heavy, but bromine can still be light or heavy, each with probability 50%.\n\n| Chlorine isotope | Bromine isotope | Resulting $m/z$ |\n|---|---|---|\n| ${}^{37}\\text{Cl}$ | ${}^{79}\\text{Br}$ | 202 |\n| ${}^{37}\\text{Cl}$ | ${}^{81}\\text{Br}$ | 204 |\n\nOriginally one reference portion of Y had total intensity\n\n$$3 + 4 + 1 = 8$$\n\nBecause the two remaining isotope combinations are equally likely, half goes to each peak:\n\n$$\\frac{8}{2} = 4$$"
+          },
+          {
+            "heading": "Step 4 — Account for two portions of Y.",
+            "body": "Two portions contribute $2 \\times 4 = 8$ units at 202 and **8 units** at 204."
+          },
+          {
+            "heading": "Step 5 — Combine X and Y.",
+            "body": "| $m/z$ | X contribution | Y contribution | Total |\n|---|---|---|---|\n| 200 | 0 | 0 | 0 |\n| 202 | 0 | 8 | 8 |\n| 204 | 16 | 8 | 24 |\n\nSo the ratio is\n\n$$0:8:24 = 0:1:3$$\n\nThe treatment redistributes signal among isotope peaks without changing total signal under the stated conditions."
+          }
+        ],
+        "answer": "B — $0:1:3$"
+      }
+    }
+  ]
+}

@@ -1,0 +1,405 @@
+{
+  "categoryId": "general-chemistry",
+  "subcategoryId": "general-chemistry-acids-and-bases",
+  "title": "Chemical shifts in proteins - Stem 2",
+  "isPublished": true,
+  "stem": [
+    {
+      "type": "text",
+      "value": "A charged group in a protein sets up an electric field, and that field shifts the NMR chemical shift ($\\Delta\\delta$) of nearby atoms. The size of the shift depends on three things: a constant $A$ that describes how sensitive a given atom’s shift is to an electric field; the strength $E$ of the field produced by the nearby charge; and the angle $\\theta$ between the field and the bond being measured. The effect is largest when the field lies along the bond ($\\theta = 0^\\circ$) and falls to zero when the field is perpendicular to it ($\\theta = 90^\\circ$)."
+    },
+    {
+      "type": "text",
+      "value": "The chemical shift change is given by:"
+    },
+    {
+      "type": "equation",
+      "value": "\\Delta\\delta = A_{\\text{atom}} \\times E \\times \\cos\\theta",
+      "mode": "block"
+    },
+    {
+      "type": "text",
+      "value": "Atom sensitivities:"
+    },
+    {
+      "type": "table",
+      "columns": [
+        "Atom",
+        "A (atom)"
+      ],
+      "rows": [
+        [
+          "Amide N–H",
+          "2.0"
+        ],
+        [
+          "Carbonyl C=O",
+          "1.6"
+        ],
+        [
+          "Cα–H",
+          "a"
+        ],
+        [
+          "Aromatic C–H",
+          "1.2"
+        ],
+        [
+          "Methyl C–H",
+          "0.8"
+        ],
+        [
+          "Hydroxyl O–H",
+          "2.4"
+        ],
+        [
+          "Thiol S–H",
+          "1.4"
+        ],
+        [
+          "Imine C=N",
+          "1.8"
+        ]
+      ]
+    },
+    {
+      "type": "text",
+      "value": "Charge sources (field strength $E$):"
+    },
+    {
+      "type": "table",
+      "columns": [
+        "Charge source",
+        "E"
+      ],
+      "rows": [
+        [
+          "Carboxylate (Asp)",
+          "3.0"
+        ],
+        [
+          "Ammonium (Lys)",
+          "e"
+        ],
+        [
+          "Imidazolium (His)",
+          "2.5"
+        ],
+        [
+          "Phosphate",
+          "4.0"
+        ],
+        [
+          "Guanidinium (Arg)",
+          "2.8"
+        ],
+        [
+          "Sulfonate",
+          "3.6"
+        ],
+        [
+          "Carboxylate (Glu)",
+          "3.1"
+        ],
+        [
+          "Metal ion (Ca²⁺)",
+          "5.0"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "Which of the following most accurately represents the chemical shift change ($\\Delta\\delta$) of the amide N–H proton produced by a nearby aspartate carboxylate, when the angle $\\theta$ between the field and the N–H bond is $60^\\circ$?",
+      "options": [
+        "3.0",
+        "6.0",
+        "5.2",
+        "1.5"
+      ],
+      "correctOptionIndex": 0,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Gather the three factors",
+            "body": "From the tables: $A$ for the amide N–H = 2.0; $E$ for the carboxylate = 3.0. The angle is given: $\\theta = 60^\\circ$."
+          },
+          {
+            "heading": "Step 2 — Evaluate cos θ",
+            "body": "$\\cos 60^\\circ = 0.5$."
+          },
+          {
+            "heading": "Step 3 — Multiply",
+            "body": "$$\\Delta\\delta = A \\times E \\times \\cos\\theta = 2.0 \\times 3.0 \\times 0.5 = 3.0$$"
+          }
+        ],
+        "answer": "A — 3.0",
+        "strategy": "$\\Delta\\delta$ is a product of three factors — the atom’s sensitivity $A$ (atoms table), the field strength $E$ of the charge (charges table), and $\\cos\\theta$. Pull each value from the stem, evaluate $\\cos\\theta$, and multiply. The usual slips are dropping the $\\cos\\theta$ factor or misreading the angle.",
+        "eliminations": [
+          {
+            "option": "B (6.0)",
+            "reason": "forgot the $\\cos\\theta$ factor and used only $2.0 \\times 3.0$. The field is not aligned with the bond, so the angle must be included."
+          },
+          {
+            "option": "C (5.2)",
+            "reason": "used $\\cos 30^\\circ$ ($\\approx 0.87$) instead of $\\cos 60^\\circ$. $\\theta$ is measured from the bond; $60^\\circ$ gives 0.5, not 0.87."
+          },
+          {
+            "option": "D (1.5)",
+            "reason": "dropped the atom sensitivity $A$ and computed only $E \\times \\cos\\theta = 3.0 \\times 0.5$."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "prompt": "A carbonyl C=O group lies near a phosphate charge, and its measured chemical shift change is $\\Delta\\delta = 3.2$. What is the angle $\\theta$ between the field and the C=O bond?",
+      "options": [
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$90^\\circ$"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Gather A and E",
+            "body": "Carbonyl C=O: $A = 1.6$. Phosphate: $E = 4.0$. Their product $A \\times E = 6.4$."
+          },
+          {
+            "heading": "Step 2 — Isolate cos θ",
+            "body": "$\\Delta\\delta = A \\times E \\times \\cos\\theta$, so\n\n$$\\cos\\theta = \\frac{\\Delta\\delta}{A \\times E} = \\frac{3.2}{6.4} = 0.5$$"
+          },
+          {
+            "heading": "Step 3 — Find the angle",
+            "body": "The angle whose cosine is 0.5 is $60^\\circ$. (Watch the common slip: it is $\\sin 30^\\circ$ that equals 0.5, whereas $\\cos 30^\\circ = 0.87$.)"
+          }
+        ],
+        "answer": "C — 60°",
+        "strategy": "This runs the equation backwards: you are given $\\Delta\\delta$ and must find the angle. Pull $A$ and $E$ from the tables, rearrange $\\Delta\\delta = A \\times E \\times \\cos\\theta$ to isolate $\\cos\\theta$, then read the angle off the unit circle. The trap is picking the wrong angle for a given cosine.",
+        "eliminations": [
+          {
+            "option": "A (30°)",
+            "reason": "the classic sin/cos mix-up: $\\sin 30^\\circ = 0.5$, but $\\cos 30^\\circ = 0.87$. We need the angle whose cosine is 0.5, which is $60^\\circ$."
+          },
+          {
+            "option": "B (45°)",
+            "reason": "$\\cos 45^\\circ = 0.71$, not 0.5."
+          },
+          {
+            "option": "D (90°)",
+            "reason": "$\\cos 90^\\circ = 0$, which would make $\\Delta\\delta = 0$. Here $\\Delta\\delta$ is non-zero, so the field cannot be perpendicular to the bond."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "prompt": "An amide N–H and a carbonyl C=O each lie near the same two charges, X and Y, whose field strengths are unknown. When an atom is near more than one charge, the shift contributions from each charge add together. Using the measured shifts and angles below, what are the field strengths $E_X$ and $E_Y$?",
+      "options": [
+        "$E_X = 3.0,\\ E_Y = 2.0$",
+        "$E_X = 2.0,\\ E_Y = 3.0$",
+        "$E_X = 4.0,\\ E_Y = 3.5$",
+        "$E_X = 2.5,\\ E_Y = 2.5$"
+      ],
+      "correctOptionIndex": 0,
+      "contentBlocks": [
+        {
+          "type": "table",
+          "columns": [
+            "Atom",
+            "θ to X",
+            "θ to Y",
+            "Δδ"
+          ],
+          "rows": [
+            [
+              "Amide N–H",
+              "0°",
+              "60°",
+              "8.0"
+            ],
+            [
+              "Carbonyl C=O",
+              "60°",
+              "0°",
+              "5.6"
+            ]
+          ]
+        }
+      ],
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Equation from the amide N–H",
+            "body": "It feels X at $0^\\circ$ ($\\cos 0^\\circ = 1$) and Y at $60^\\circ$ ($\\cos 60^\\circ = 0.5$), with $A = 2.0$:\n\n$$2.0\\left(E_X \\times 1 + E_Y \\times 0.5\\right) = 8.0$$\n\n$$E_X + 0.5E_Y = 4$$\n\n$$2E_X + E_Y = 8 \\quad \\text{(1)}$$"
+          },
+          {
+            "heading": "Step 2 — Equation from the carbonyl C=O",
+            "body": "It feels X at $60^\\circ$ ($\\cos 60^\\circ = 0.5$) and Y at $0^\\circ$ ($\\cos 0^\\circ = 1$), with $A = 1.6$:\n\n$$1.6\\left(E_X \\times 0.5 + E_Y \\times 1\\right) = 5.6$$\n\n$$0.5E_X + E_Y = 3.5$$\n\n$$E_X + 2E_Y = 7 \\quad \\text{(2)}$$"
+          },
+          {
+            "heading": "Step 3 — Solve the pair",
+            "body": "$$E_Y = 8 - 2E_X \\quad \\text{(from (1))}$$\n\n$$E_X + 2\\left(8 - 2E_X\\right) = 7 \\quad \\text{(into (2))}$$\n\n$$E_X + 16 - 4E_X = 7$$\n\n$$-3E_X = -9$$\n\n$$E_X = 3.0$$\n\n$$E_Y = 8 - 6 = 2.0$$"
+          }
+        ],
+        "answer": "A — $E_X = 3.0,\\ E_Y = 2.0$",
+        "strategy": "Each atom sits near both charges, so its shift is the sum of two contributions — one term for X, one for Y — and each atom therefore gives one equation containing both unknown fields. Two atoms give two equations; solve them together.",
+        "eliminations": [
+          {
+            "option": "B",
+            "reason": "the two values swapped. Plugging $E_X = 2$, $E_Y = 3$ into the amide equation gives $2.0\\left(2 + 1.5\\right) = 7.0$, not 8.0, so it fails."
+          },
+          {
+            "option": "C",
+            "reason": "the trap: it treats each atom as feeling only one charge (amide only X → $2.0 \\times E_X = 8$ → 4; carbonyl only Y → $1.6 \\times E_Y = 5.6$ → 3.5). But both shifts are sums of two contributions, so the charges are coupled and must be solved together."
+          },
+          {
+            "option": "D",
+            "reason": "satisfies neither equation; a guess that ignores the algebra."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "prompt": "Which of the following atom–charge pairings produces a chemical shift change $\\Delta\\delta$ of 4.0? (Use the atom and charge tables from the stem.)",
+      "options": [
+        "Amide N–H, Phosphate, $45^\\circ$",
+        "Aromatic C–H, Guanidinium (Arg), $30^\\circ$",
+        "Carbonyl C=O, Metal ion (Ca²⁺), $60^\\circ$",
+        "Hydroxyl O–H, Imidazolium (His), $0^\\circ$"
+      ],
+      "correctOptionIndex": 2,
+      "optionTable": {
+        "columns": [
+          "Option",
+          "Atom",
+          "Charge source",
+          "$\\theta$"
+        ],
+        "rows": [
+          [
+            "A",
+            "Amide N–H",
+            "Phosphate",
+            "$45^\\circ$"
+          ],
+          [
+            "B",
+            "Aromatic C–H",
+            "Guanidinium (Arg)",
+            "$30^\\circ$"
+          ],
+          [
+            "C",
+            "Carbonyl C=O",
+            "Metal ion (Ca²⁺)",
+            "$60^\\circ$"
+          ],
+          [
+            "D",
+            "Hydroxyl O–H",
+            "Imidazolium (His)",
+            "$0^\\circ$"
+          ]
+        ]
+      },
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Option A: Amide N–H + Phosphate at 45°",
+            "body": "$A = 2.0$,  $E = 4.0$,  $\\cos 45^\\circ = 0.71$\n\n$$\\Delta\\delta = 2.0 \\times 4.0 \\times 0.71 = 5.66$$"
+          },
+          {
+            "heading": "Step 2 — Option B: Aromatic C–H + Guanidinium at 30°",
+            "body": "$A = 1.2$,  $E = 2.8$,  $\\cos 30^\\circ = 0.87$\n\n$$\\Delta\\delta = 1.2 \\times 2.8 \\times 0.87 = 2.91$$"
+          },
+          {
+            "heading": "Step 3 — Option C: Carbonyl C=O + Ca²⁺ at 60°",
+            "body": "$A = 1.6$,  $E = 5.0$,  $\\cos 60^\\circ = 0.5$\n\n$$\\Delta\\delta = 1.6 \\times 5.0 \\times 0.5 = 4.0 \\quad \\checkmark$$"
+          },
+          {
+            "heading": "Step 4 — Option D: Hydroxyl O–H + Imidazolium at 0°",
+            "body": "$A = 2.4$,  $E = 2.5$,  $\\cos 0^\\circ = 1$\n\n$$\\Delta\\delta = 2.4 \\times 2.5 \\times 1 = 6.0$$"
+          },
+          {
+            "heading": "Knowing the unit circle",
+            "body": "Every question in this stem needs $\\cos$ (or $\\sin$) of $0^\\circ$, $30^\\circ$, $45^\\circ$, $60^\\circ$ or $90^\\circ$. Learn these five by heart — the exact value and the decimal — so you never have to work them out under exam pressure - most likely will be given to you on the day but it doesn’t hurt to know it beforehand.\n\n| $\\theta$ | $\\sin\\theta$ | $\\cos\\theta$ |\n|---|---|---|\n| $0^\\circ$ | $0$ | $1$ |\n| $30^\\circ$ | $\\frac{1}{2} = 0.5$ | $\\frac{\\sqrt{3}}{2} \\approx 0.87$ |\n| $45^\\circ$ | $\\frac{\\sqrt{2}}{2} \\approx 0.71$ | $\\frac{\\sqrt{2}}{2} \\approx 0.71$ |\n| $60^\\circ$ | $\\frac{\\sqrt{3}}{2} \\approx 0.87$ | $\\frac{1}{2} = 0.5$ |\n| $90^\\circ$ | $1$ | $0$ |\n\n**Pattern to remember:** $\\sin$ runs $\\frac{\\sqrt{0}}{2}, \\frac{\\sqrt{1}}{2}, \\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{3}}{2}, \\frac{\\sqrt{4}}{2}$ as the angle climbs from $0^\\circ$ to $90^\\circ$; $\\cos$ is the same list in reverse."
+          }
+        ],
+        "answer": "C — $\\Delta\\delta = 4.0$",
+        "strategy": "For each option, look up $A$ (atoms table) and $E$ (charges table), evaluate $\\cos\\theta$, then multiply out $\\Delta\\delta = A \\times E \\times \\cos\\theta$. Only one pairing lands on 4.0. Work through them one at a time.",
+        "eliminations": [
+          {
+            "option": "A (5.66)",
+            "reason": "too high: the $45^\\circ$ angle only cuts the product to 0.71 of its full value, leaving 5.66."
+          },
+          {
+            "option": "B (2.91)",
+            "reason": "too low: small $A$ and $E$ with $\\cos 30^\\circ$ give under 3."
+          },
+          {
+            "option": "D (6.0)",
+            "reason": "too high: at $0^\\circ$ the field is aligned with the bond ($\\cos = 1$), so the full product $2.4 \\times 2.5$ comes through."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "prompt": "Two measurements are made in a protein:",
+      "options": [
+        "4.5",
+        "6.4",
+        "3.2",
+        "5.7"
+      ],
+      "correctOptionIndex": 0,
+      "contentBlocks": [
+        {
+          "type": "text",
+          "value": "(i) An amide N–H next to the lysine ammonium group ($\\theta = 60^\\circ$) shows $\\Delta\\delta = 1.5$.\n(ii) A Cα–H that sits next to both the ammonium group ($\\theta = 60^\\circ$) and an aspartate carboxylate ($\\theta = 0^\\circ$) shows a total $\\Delta\\delta = 6.0$."
+        },
+        {
+          "type": "text",
+          "value": "Using these, what is the chemical shift change for that same Cα–H when it instead lies next to a phosphate group alone at $\\theta = 45^\\circ$?"
+        }
+      ],
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Find the ammonium field e (from measurement i)",
+            "body": "Amide N–H: $A = 2.0$; angle $\\theta = 60^\\circ$.\n\n$$1.5 = 2.0 \\times e \\times \\cos 60^\\circ$$\n\n$$1.5 = 2.0 \\times e \\times 0.5$$\n\n$$1.5 = 1.0 \\times e$$\n\n$$e = 1.5$$"
+          },
+          {
+            "heading": "Step 2 — Find the Cα–H sensitivity a (from measurement ii)",
+            "body": "The Cα–H feels two charges, so add their contributions — ammonium ($E = 1.5$, $\\theta = 60^\\circ$) and carboxylate ($E = 3.0$, $\\theta = 0^\\circ$):\n\n$$6.0 = a \\times \\left(1.5 \\times \\cos 60^\\circ + 3.0 \\times \\cos 0^\\circ\\right)$$\n\n$$6.0 = a \\times \\left(1.5 \\times 0.5 + 3.0 \\times 1\\right)$$\n\n$$6.0 = a \\times \\left(0.75 + 3.0\\right)$$\n\n$$6.0 = a \\times 3.75$$\n\n$$a = 1.6$$"
+          },
+          {
+            "heading": "Step 3 — Cα–H next to phosphate alone at 45°",
+            "body": "Now use $a = 1.6$ with the phosphate field $E = 4.0$ and $\\theta = 45^\\circ$:\n\n$$\\Delta\\delta = 1.6 \\times 4.0 \\times \\cos 45^\\circ$$\n\n$$\\Delta\\delta = 1.6 \\times 0.7 \\times 4.0$$\n\n(take $\\cos 45^\\circ \\approx 0.7$ to keep the mental maths easy)\n\n$$\\Delta\\delta = 1.12 \\times 4.0$$\n\n($1.6 \\times 0.7 = 1.12$)\n\n$$\\Delta\\delta = 4.48 \\approx 4.5$$"
+          }
+        ],
+        "answer": "A — 4.5",
+        "strategy": "This chains the equation three times. First find the ammonium field $e$ from measurement (i). Then feed $e$ into the two-charge (additive) measurement (ii) to find the Cα–H sensitivity $a$. Finally put $a$ into the equation for the phosphate case. Each stage depends on the one before, so the order matters — you cannot reach $a$ without $e$, or the final answer without $a$.",
+        "eliminations": [
+          {
+            "option": "B (6.4)",
+            "reason": "forgot the $\\cos 45^\\circ$ factor in the final step (just $1.6 \\times 4.0$)."
+          },
+          {
+            "option": "C (3.2)",
+            "reason": "used $\\cos 60^\\circ$ (0.5) instead of $\\cos 45^\\circ$ in the final step."
+          },
+          {
+            "option": "D (5.7)",
+            "reason": "in Step 2, ignored the ammonium’s contribution and used only the carboxylate, giving $a = 2.0$ instead of 1.6; that inflated $a$ then feeds a too-large final answer ($2.0 \\times 4.0 \\times 0.71 \\approx 5.7$)."
+          }
+        ]
+      }
+    }
+  ]
+}

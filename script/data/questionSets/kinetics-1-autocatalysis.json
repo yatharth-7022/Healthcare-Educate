@@ -1,0 +1,332 @@
+{
+  "categoryId": "general-chemistry",
+  "subcategoryId": "general-chemistry-kinetics",
+  "title": "Autocatalysis - Stem 1",
+  "isPublished": true,
+  "stem": [
+    {
+      "type": "text",
+      "value": "Some reactions, held away from equilibrium, do not approach a steady concentration but make their intermediates rise and fall repeatedly. Such chemical oscillators are studied as models of biological rhythms and of self-organisation far from equilibrium."
+    },
+    {
+      "type": "text",
+      "value": "The reaction here is a bromate-driven oscillator of the Belousov–Zhabotinsky family. One intermediate, bromous acid (HBrO₂), is autocatalytic, meaning it accelerates its own formation, and acts as the activator. A second species, bromide (Br⁻), is produced as a downstream consequence of the activator and switches the autocatalysis off; it acts as the inhibitor. The mixture was kept well stirred, and the concentrations of activator and inhibitor were followed over time. Separately, the net rate of change of the activator was determined as a function of its own concentration, at several fixed inhibitor levels."
+    },
+    {
+      "type": "text",
+      "value": "Because the inhibitor is generated from the activator, it responds only after the activator changes. Where the net activator rate is zero the activator concentration is momentarily balanced; the system can rest at only a certain number of these balance points."
+    },
+    {
+      "type": "text",
+      "value": "The relevant figures below demonstrate the results of the experiment."
+    },
+    {
+      "type": "text",
+      "value": "• Figure 1. Activator and inhibitor concentrations plotted against time."
+    },
+    {
+      "type": "image",
+      "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795585090/question-bank/kinetics_s1_fig1.png",
+      "alt": "Figure 1: activator [HBrO₂] and inhibitor [Br⁻] concentrations against time",
+      "caption": ""
+    },
+    {
+      "type": "text",
+      "value": "• Figure 2. Net rate of change of the activator plotted against activator concentration, at three fixed inhibitor levels."
+    },
+    {
+      "type": "image",
+      "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795585091/question-bank/kinetics_s1_fig2.png",
+      "alt": "Figure 2: net rate of change of the activator against activator concentration at low, medium and high inhibitor",
+      "caption": ""
+    },
+    {
+      "type": "text",
+      "value": "Additionally, here are relevant equations that pertain to the oscillator:"
+    },
+    {
+      "type": "text",
+      "value": "• Autocatalytic production rate of the activator"
+    },
+    {
+      "type": "equation",
+      "value": "R_p = k\\,[\\text{HBrO}_2][\\text{BrO}_3^{-}][\\text{H}^{+}]",
+      "mode": "block"
+    },
+    {
+      "type": "text",
+      "value": "*Note: BrO₃⁻ is bromate."
+    },
+    {
+      "type": "text",
+      "value": "• Net activator rate (production minus inhibitor-driven removal $R_c$)"
+    },
+    {
+      "type": "equation",
+      "value": "\\frac{\\Delta[\\text{HBrO}_2]}{\\Delta t} = R_p - R_c",
+      "mode": "block"
+    },
+    {
+      "type": "text",
+      "value": "Additionally, the following general rate laws may be useful:"
+    },
+    {
+      "type": "text",
+      "value": "First order: $\\text{rate} = k[A]$\nSecond order: $\\text{rate} = k[A]^2$\nWhere [A] is the concentration of the reacting species and k is the rate constant."
+    },
+    {
+      "type": "text",
+      "value": "ADDITIONAL INFORMATION:",
+      "variant": "additional-info",
+      "revealAtQuestion": 5
+    },
+    {
+      "type": "image",
+      "url": "https://res.cloudinary.com/dn2hfglba/image/upload/v1795585092/question-bank/kinetics_s1_fig3.png",
+      "alt": "Figure 3: peak inhibitor concentration, peak catalyst concentration and rate of substrate consumption against substrate feed rate",
+      "caption": "Figure 3. Peak inhibitor concentration, peak catalyst concentration, and rate of substrate consumption, each plotted against substrate feed rate.",
+      "revealAtQuestion": 5
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "In an experiment that was run, the inhibitor levels in Figure 2 are classed as low ([Br⁻] < 1), medium (1–2) and high (> 2). When [Br⁻] = 2.3, what is the net rate of change of the activator at that instant?",
+      "options": [
+        "+0.8",
+        "−0.2",
+        "−1.2",
+        "−2.3"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Find the instant in Figure 1",
+            "body": "Run across from 2.3 on the y-axis until you meet the red inhibitor curve. It reaches 2.3 right at the top of its peak, at about t ≈ 54 s — exactly where the blue activator curve is crashing down through it. The two curves cross there, so at that instant the activator is also ≈ 2.3.\n\n![Figure 1 annotated: inhibitor reaches 2.3 where the activator curve crosses it](https://res.cloudinary.com/dn2hfglba/image/upload/v1795585093/question-bank/kinetics_s1_ws_q1_step1.png)"
+          },
+          {
+            "heading": "Step 2 — Choose the curve in Figure 2",
+            "body": "[Br⁻] = 2.3 is above 2, so the inhibitor is high: use the purple (high-inhibitor) curve."
+          },
+          {
+            "heading": "Step 3 — Read the net rate (Figure 2)",
+            "body": "Go up from [HBrO₂] = 2.3 on the x-axis to the purple curve, then across to the y-axis. It sits between the −1.0 and −1.5 gridlines, at about −1.2.\n\n![Figure 2 annotated: high-inhibitor curve read at [HBrO₂] = 2.3](https://res.cloudinary.com/dn2hfglba/image/upload/v1795585094/question-bank/kinetics_s1_ws_q1_step3.png)\n\nThis fits Figure 1: a large negative net rate is exactly why the activator is crashing at this moment."
+          }
+        ],
+        "answer": "C — −1.2",
+        "strategy": "Two phrases point to different figures. “[Br⁻] = 2.3” gives an inhibitor concentration, and concentrations over time are in Figure 1. “Net rate of change of the activator” is what Figure 2 plots — but before you can read Figure 2 you need two things: which curve (set by the inhibitor level, using the low/medium/high classes in the question) and which point on the x-axis (the activator concentration at that same instant). Figure 1 gives you both.",
+        "eliminations": [
+          {
+            "option": "A (+0.8)",
+            "reason": "reads the low-inhibitor (green) curve; 2.3 is above 2, so the inhibitor is high, not low."
+          },
+          {
+            "option": "B (−0.2)",
+            "reason": "reads the medium (orange) curve, treating 2.3 as medium."
+          },
+          {
+            "option": "D (−2.3)",
+            "reason": "gives the concentration as the rate; Figure 2’s y-axis doesn’t even reach −2.3."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q2",
+      "prompt": "At the inhibitor level of the middle rate curve, the reaction has a certain number of activator concentrations where the net rate is zero, of which only some are states the system can rest at. These numbers are:",
+      "options": [
+        "3 balance points, all 3 stable",
+        "3 balance points, 2 stable",
+        "1 balance point, 1 stable",
+        "3 balance points, 1 stable"
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Count where the net rate is zero",
+            "body": "Following the pointer above, read the middle-inhibitor curve in Figure 2 and count where it crosses the zero-rate axis. It does so three times — at a low, a middle, and a high activator concentration. So there are three balance points."
+          },
+          {
+            "heading": "Step 2 — Decide which balance points the system can rest at",
+            "body": "The stem doesn’t say which balance points the system can rest at, so we bring that idea ourselves — and it’s one you already know from **equilibrium**.\n\nThink of a reversible reaction at equilibrium. If you are **above** the equilibrium point (too much product), the reaction runs in **reverse** and brings you back down to it. If you are **below** it (too little product), the reaction runs **forward** and brings you back up to it. Either way, you end up back at the same point. That push back from **both sides** is what makes it a point the system can rest at — like a ball in a **valley**, which rolls back however you nudge it. A point where a nudge pushes you further away is like a ball balanced on a **hilltop**: it can’t stay there.\n\nFigure 2 lets you run exactly this test on each balance point, because the sign of the net rate tells you which way the activator moves:\n\n- **Net rate positive** (curve above the zero line): HBrO₂ is made faster than it is used up, so [HBrO₂] rises — the point slides **right**. This is the “runs forward” case.\n- **Net rate negative** (curve below the zero line): HBrO₂ is used up faster than it is made, so [HBrO₂] falls — the point slides **left**. This is the “runs in reverse” case.\n\nOn the medium (orange) curve there are three balance points, at [HBrO₂] ≈ 0.77, 2.5 and 4.2. Test each one the same way: step a little to the **right** of it (more HBrO₂) and a little to the **left** (less HBrO₂), read the net rate at each, and ask: does that push the activator **back to** the balance point, or **away from** it?"
+          },
+          {
+            "heading": "The middle balance point (≈ 2.5)",
+            "body": "![Figure 2 annotated: middle balance point at about 2.5](https://res.cloudinary.com/dn2hfglba/image/upload/v1795585096/question-bank/kinetics_s1_ws_q2_middle.png)\n\nStep to the right, to [HBrO₂] = 3.0 — a bit more HBrO₂ than at the balance point. The net rate there is about **+0.5**: positive, so HBrO₂ is being made faster than it is used up and its concentration keeps rising. To get back to the balance point it would need to fall back down to 2.5 — but a positive rate does the opposite and pushes it further up, away from 2.5.\n\nNow step to the left, to [HBrO₂] = 2.0 — a bit less than the balance point. The net rate is about **−0.5**: negative, so HBrO₂ is used up faster than it is made and its concentration keeps falling. To get back to 2.5 it would need to rise — but instead it drops further, down towards 1.7 and below.\n\nBoth nudges run **away** from 2.5 — the opposite of an equilibrium, which always pushes back. So the system can’t rest here: it is a hilltop."
+          },
+          {
+            "heading": "The low balance point (≈ 0.77)",
+            "body": "![Figure 2 annotated: low balance point at about 0.77](https://res.cloudinary.com/dn2hfglba/image/upload/v1795585097/question-bank/kinetics_s1_ws_q2_low.png)\n\nStep to the right, to [HBrO₂] = 1.0. The net rate is about **−0.4**: negative, so the activator is used up faster than it is made and its concentration falls back down towards 0.77. That is exactly what an equilibrium does when you are above it — it runs in reverse to bring you back.\n\nStep to the left, to [HBrO₂] = 0.5. The net rate is about **+0.7**: positive, so the activator is made faster than it is used up and its concentration rises back up towards 0.77 — like a reaction running forward when you are below equilibrium.\n\nBoth nudges come **back** to 0.77, so the system can rest here: it is a valley."
+          },
+          {
+            "heading": "The high balance point (≈ 4.2)",
+            "body": "![Figure 2 annotated: high balance point at about 4.2](https://res.cloudinary.com/dn2hfglba/image/upload/v1795585098/question-bank/kinetics_s1_ws_q2_high.png)\n\nStep to the right, to [HBrO₂] = 4.5. The net rate is about **−0.7**: negative, so the concentration falls back down towards 4.2.\n\nStep to the left, to [HBrO₂] = 4.0. The net rate is about **+0.4**: positive, so the concentration rises back up towards 4.2.\n\nAgain both nudges come **back**, so the system can rest here too: another valley."
+          },
+          {
+            "heading": "Step 3 — Combine",
+            "body": "Three balance points from Step 1; Step 2 shows the outer two are valleys (stable) and the middle is a hilltop (unstable). So the system can rest at two of them."
+          }
+        ],
+        "answer": "B — 3 balance points, 2 stable",
+        "strategy": "The question asks two separate things, and each phrase points somewhere specific. “The net rate is zero” is about rate versus concentration — and that is exactly what Figure 2 plots — so it sends us to Figure 2, not the concentration-versus-time traces in Figure 1. The stem then tells us that where a curve crosses the zero-rate line the activator is momentarily balanced, so “net rate is zero” becomes “count where the named curve meets the horizontal axis,” reading only the middle-inhibitor curve the question specifies. The second phrase, “can actually rest at,” is a different idea — stability — and the stem deliberately does not tell us which balance points are stable. That part we have to bring ourselves (Step 2).",
+        "eliminations": [
+          {
+            "option": "A (all 3 stable)",
+            "reason": "counts the crossings correctly but skips the stability test; the middle crossing is a hilltop and runs away, so the system can never rest there."
+          },
+          {
+            "option": "C (1 balance point)",
+            "reason": "reads a single-crossing curve (the low- or high-inhibitor curve) instead of the middle one the question names."
+          },
+          {
+            "option": "D (3, only 1 stable)",
+            "reason": "over-corrects; both outer crossings are valleys, so two are stable, not one."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q3",
+      "prompt": "Over a single cycle, the bromate and H⁺ concentrations stay essentially constant. How does the autocatalytic production rate of the activator at the lowest point of a cycle compare with its value at the highest point?",
+      "options": [
+        "About the same",
+        "About one-tenth as large",
+        "About one-hundredth as large",
+        "About ten times larger"
+      ],
+      "correctOptionIndex": 1,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Read the peak and trough in Figure 1",
+            "body": "The activator (blue) peaks at about 4.3 and drops to a low of about 0.5."
+          },
+          {
+            "heading": "Step 2 — Write $R_p$ at both points and divide",
+            "body": "From the stem:\n\n$$R_p = k\\,[\\text{HBrO}_2][\\text{BrO}_3^{-}][\\text{H}^{+}]$$\n\nDivide the value at the trough by the value at the peak:\n\n$$\\frac{R_{p,\\text{low}}}{R_{p,\\text{high}}} = \\frac{k(0.5)[\\text{BrO}_3^{-}][\\text{H}^{+}]}{k(4.3)[\\text{BrO}_3^{-}][\\text{H}^{+}]}$$\n\nk, [BrO₃⁻] and [H⁺] are the same at both points, so they cancel:\n\n$$\\frac{R_{p,\\text{low}}}{R_{p,\\text{high}}} = \\frac{0.5}{4.3}$$"
+          },
+          {
+            "heading": "Step 3 — Simplify without a calculator",
+            "body": "Round 4.3 to 4.5, then multiply top and bottom by 2:\n\n$$\\frac{0.5}{4.5} = \\frac{1}{9} \\approx 0.1$$\n\nThe production rate at the trough is about one-tenth of its peak value. Rounding 4.3 to 4 instead gives 1/8, which is still far closer to one-tenth than to any other option."
+          }
+        ],
+        "answer": "B — About one-tenth as large",
+        "strategy": "Three phrases tell you where to look. “Lowest point… highest point of a cycle” is about the activator over time, which is Figure 1. “Autocatalytic production rate” is the stem’s $R_p$ (equation 1), not what Figure 2 plots: Figure 2 shows the net rate of change, which is production minus removal, and at the peak that is roughly zero even though production is at its fastest. “Bromate and H⁺… stay essentially constant” tells you which parts of the $R_p$ equation drop out.",
+        "eliminations": [
+          {
+            "option": "A (about the same)",
+            "reason": "[HBrO₂] is itself in the $R_p$ equation, so a roughly nine-fold drop in activator drops $R_p$ roughly nine-fold, even with bromate (BrO₃⁻) and H⁺ fixed."
+          },
+          {
+            "option": "C (one-hundredth)",
+            "reason": "squares the ratio, (1/9)² ≈ 1/80, which would only apply if $R_p$ were second order in [HBrO₂]; the stem’s equation is first order."
+          },
+          {
+            "option": "D (ten times larger)",
+            "reason": "flips the ratio: the trough has less activator, so production there is slower, not faster."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "prompt": "The bromate and H⁺ concentrations stay constant, and the inhibitor is held at the level of the middle rate curve. At an activator concentration of 1.0, the autocatalytic production rate is 0.6. What is the inhibitor-driven removal rate at an activator concentration of 3.0?",
+      "options": [
+        "0.1",
+        "0.5",
+        "1.3",
+        "2.3"
+      ],
+      "correctOptionIndex": 2,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Write the production rate at an activator concentration of 1.0",
+            "body": "Start from the stem’s production-rate equation:\n\n$$R_p = k\\,[\\text{HBrO}_2][\\text{BrO}_3^{-}][\\text{H}^{+}]$$\n\nThe question says the activator concentration is 1.0, so put $[\\text{HBrO}_2] = 1.0$ into the equation:\n\n$$R_p = k(1.0)[\\text{BrO}_3^{-}][\\text{H}^{+}]$$\n\n$$R_p = k[\\text{BrO}_3^{-}][\\text{H}^{+}]$$\n\nThe question also says the autocatalytic production rate here is 0.6, so $R_p = 0.6$:\n\n$$0.6 = k[\\text{BrO}_3^{-}][\\text{H}^{+}]$$\n\nk is a constant, and bromate and H⁺ stay constant, so the whole group $k[\\text{BrO}_3^{-}][\\text{H}^{+}]$ has the same value at any activator concentration: 0.6."
+          },
+          {
+            "heading": "Step 2 — Write the production rate at an activator concentration of 3.0",
+            "body": "Use the same equation, this time with $[\\text{HBrO}_2] = 3.0$:\n\n$$R_p = k(3.0)[\\text{BrO}_3^{-}][\\text{H}^{+}]$$\n\n$$R_p = 3 \\times k[\\text{BrO}_3^{-}][\\text{H}^{+}]$$\n\nSo the production rate is now 3 lots of $k[\\text{BrO}_3^{-}][\\text{H}^{+}]$. From Step 1 that group equals 0.6, so substitute it in:\n\n$$R_p = 3 \\times 0.6$$\n\n$$R_p = 1.8$$"
+          },
+          {
+            "heading": "Step 3 — Read the net rate at 3.0 (Figure 2)",
+            "body": "On the orange (middle) curve, go up from an activator concentration of 3.0 and across to the y-axis: the net rate of change is about +0.5."
+          },
+          {
+            "heading": "Step 4 — Solve for the removal rate",
+            "body": "The stem gives the net rate as production minus removal:\n\n$$\\text{net rate} = R_p - R_c$$\n\nSubstitute the net rate (0.5) and the production rate from Step 2 (1.8):\n\n$$0.5 = 1.8 - R_c$$\n\nRearrange to make $R_c$ the subject:\n\n$$R_c = 1.8 - 0.5$$\n\n$$R_c = 1.3$$\n\nThe net rate is positive because production (1.8) beats removal (1.3), which matches the activator climbing at this concentration."
+          }
+        ],
+        "answer": "C — 1.3",
+        "strategy": "The question asks for the removal rate, $R_c$, which no figure plots. The stem’s second equation links it to two things: the net rate of change is $R_p$ − $R_c$. So you need $R_p$ and the net rate, both at an activator concentration of 3.0. “Production rate is 0.6” gives $R_p$, but at 1.0, not 3.0, so it has to be scaled using the stem’s $R_p$ equation. “Held at the level of the middle rate curve” points to the middle curve in Figure 2, which gives the net rate.",
+        "eliminations": [
+          {
+            "option": "A (0.1)",
+            "reason": "uses the production rate at 1.0 (0.6 − 0.5) without scaling it up to 3.0."
+          },
+          {
+            "option": "B (0.5)",
+            "reason": "takes the net rate from Figure 2 as the removal rate; the curve shows production minus removal, not removal alone."
+          },
+          {
+            "option": "D (2.3)",
+            "reason": "adds the net rate instead of subtracting it (1.8 + 0.5), getting the sign of $R_c$ in the equation backwards."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q5",
+      "prompt": "The activator is also destroyed by a disproportionation reaction, 2 HBrO₂ → products, which is second order in [HBrO₂]. In a separate calibration, the disproportionation rate is 0.8 when [HBrO₂] = 2.0. The reaction is run at a substrate feed rate of 4.0. At the instant in the cycle when the activator’s net rate of change is −0.25, the disproportionation rate is closest to:",
+      "options": [
+        "0.05",
+        "0.2",
+        "0.8",
+        "1.25"
+      ],
+      "correctOptionIndex": 0,
+      "workedSolution": {
+        "steps": [
+          {
+            "heading": "Step 1 — Write the rate law for disproportionation",
+            "body": "The question says the reaction, 2 HBrO₂ → products, is second order in [HBrO₂]. The stem’s second-order rate law is:\n\n$$\\text{rate} = k[A]^2$$\n\nHere the reacting species A is the activator, HBrO₂, so:\n\n$$\\text{rate} = k[\\text{HBrO}_2]^2$$"
+          },
+          {
+            "heading": "Step 2 — Find k from the calibration",
+            "body": "The calibration says the rate is 0.8 when $[\\text{HBrO}_2] = 2.0$. Substitute both into the rate law:\n\n$$0.8 = k \\times (2.0)^2$$\n\n$$0.8 = 4k$$\n\n$$k = \\frac{0.8}{4}$$\n\n$$k = 0.2$$\n\nSo for this reaction:\n\n$$\\text{rate} = 0.2[\\text{HBrO}_2]^2$$\n\nTo finish, we need [HBrO₂] at the instant the question describes. But the question doesn’t give it directly: it gives a substrate feed rate of 4.0 and a net rate of change of −0.25."
+          },
+          {
+            "heading": "Step 3 — Use the feed rate to pick the curve (Figure 3, then Figure 1)",
+            "body": "The net rate of −0.25 is read off Figure 2, but Figure 2 has three curves (low, medium and high inhibitor). Knowing the net rate alone doesn’t tell you which one to use: you first need the inhibitor level.\n\nThat is what the feed rate is for. In Figure 3, only the peak-inhibitor curve (blue) matters here: the catalyst curve is a different species, and the substrate-consumption curve is a rate, not a concentration. At a feed rate of 4.0, the peak inhibitor reads about 2.4.\n\nNow compare with Figure 1: the inhibitor (red) tops out at about 2.4, so 2.4 is the highest inhibitor level the system reaches. That makes this the high-inhibitor case, so use the purple curve in Figure 2."
+          },
+          {
+            "heading": "Step 4 — Read the activator concentration (Figure 2)",
+            "body": "Go to −0.25 on the y-axis and run across until you hit the purple curve. Then drop straight down to the x-axis: the activator concentration sits at about 0.5.\n\n![Figure 2 annotated: high-inhibitor curve at a net rate of −0.25 gives an activator concentration of about 0.5](https://res.cloudinary.com/dn2hfglba/image/upload/v1795585099/question-bank/kinetics_s1_ws_q5_step4.png)"
+          },
+          {
+            "heading": "Step 5 — Substitute into the rate law",
+            "body": "Put $[\\text{HBrO}_2] \\approx 0.5$ into the rate law from Step 2:\n\n$$\\text{rate} = 0.2 \\times (0.5)^2$$\n\n$$\\text{rate} = 0.2 \\times 0.25$$\n\n$$\\text{rate} = 0.05$$\n\n**Mental arithmetic tip:** skip k altogether. The concentration falls from 2.0 to 0.5, a quarter. Squared, that is 1/16, and 0.8 ÷ 16 = 0.05."
+          }
+        ],
+        "answer": "A — 0.05",
+        "strategy": "No figure plots the disproportionation rate, so the way in is its rate law. That needs two things: its rate constant, which the calibration reading gives you, and the activator concentration at that instant, which you reach through the figures. The feed rate fixes the inhibitor level (Figure 3), the inhibitor level picks the rate curve, and the net rate of −0.25 locates the concentration on that curve (Figure 2).",
+        "eliminations": [
+          {
+            "option": "B (0.2)",
+            "reason": "first-order thinking: scaled the rate by ¼ instead of ¼² (0.8 × ¼), or stopped at k."
+          },
+          {
+            "option": "C (0.8)",
+            "reason": "divided by the concentration squared instead of multiplying (0.2 ÷ 0.25), the “small number should make it bigger” trap."
+          },
+          {
+            "option": "D (1.25)",
+            "reason": "squared the inhibitor (0.2 × 2.5²) instead of the activator; the reaction is second order in [HBrO₂]."
+          }
+        ]
+      }
+    }
+  ]
+}
